@@ -1,0 +1,788 @@
+NR 11 - SEGURANÇA NA OPERAÇÃO 
+DE TRANSPALETEIRA
+
+Objetivo
+
+Capacitar operadores para a utilização segura e eficiente da transpaleteira, garantindo o
+cumprimento das normas regulamentadoras e evitando acidentes e danos aos equipamentos.
+
+Introduzir os participantes às regulamentações e requisitos da Norma Regulamentadora 11, que
+estabelece diretrizes para transporte, movimentação, armazenagem e manuseio de materiais.
+
+A norma é fundamental para garantir que o operador esteja ciente de suas responsabilidades e
+do papel das normas de segurança no ambiente de trabalho.
+
+O seu cumprimento contribuirá para a prevenção de acidentes nesta atividade, e é obrigatório
+para todos os operadores de equipamentos com força motriz.
+
+Conteúdo Programático
+
+✓ Introdução a NR 11;
+
+✓ Requisitos para a operação segura;
+
+✓ Características técnicas do equipamento;
+
+✓ Manutenção e conservação do equipamento;
+
+✓ Regras Internas e sinalização;
+
+✓ Medidas de Segurança para operação de transpaleteira;
+
+✓ Equipamentos de Proteção Individuais – EPI’s;
+
+✓ Riscos provenientes da operação com transpaleteira;
+
+✓ Emergências;
+
+Introdução a Norma Regulamentadora NR-11
+
+Transporte, Movimentação, Armazenagem e Manuseio de Materiais
+
+11.1. Normas de segurança para operação de elevadores, guindastes,
+industriais e máquinas transportadoras;
+
+transportadores
+
+11.1.3.2. Em todo o equipamento será indicada, em lugar visível, a carga máxima de trabalho
+permitida;
+
+11.1.5. Nos equipamentos de transporte, com força motriz própria, o operador deverá receber um
+treinamento específico, dado pela empresa, que o habilitará nessa função.
+
+11.1.6.1 - O cartão terá a validade de 1 (um) ano, salvo imprevisto, e, para a revalidação, o
+empregado deverá passar por exame de saúde completo, por conta do empregador.
+
+Obs. O operador de transpaleteira é também responsável pela
+observação do vencimento de sua autorização para operar o
+equipamento e deve comunicar a sua chefia quando estiver próximo
+ao vencimento.
+
+Introdução a Norma Regulamentadora NR-11
+
+Transporte, Movimentação, Armazenagem e Manuseio de Materiais
+
+11.1.6 - Os operadores de equipamentos de transporte
+motorizado deverão ser habilitados e só poderão dirigir se
+durante o horário de trabalho portarem um cartão de
+identificação, com o nome e fotografia, em lugar visível.
+
+Requisitos para Operação – NR-11
+
+O operador de equipamentos de transporte motorizado deverá:
+
+✓ Estar apto do ponto de vista médico.
+
+✓ Ter participado de treinamento teórico e prático.
+
+✓ Participar de reciclagens anuais.
+
+Quiz
+
+“O operador de transpaleteira deve possuir”? Assinale a alternativa correta.
+
+a) Formação específica e certificado de treinamento.
+
+b) Habilitação de motorista de caminhão.
+
+c) Apenas experiência no uso de empilhadeiras
+
+Tipos de Transpaleteira e Paleteiras
+
+Existem vários tipos de Palteiras e Transpaleteiras disponíveis no mercado, que
+atendem a inúmeras demandas e necessidades específicas, dentre elas destacamos
+03 modelos que são mais utilizados pelas empresas devido as suas características:
+
+➢ Paleteira manual;
+
+➢ Transpaleteira e Paleteira Elétrica;
+
+➢ Transpaleteira Elétrica Tripulada;
+
+Paleteira Manual
+
+Descrição:  Operada de forma manual, usando força humana para elevar e 
+movimentar a carga.
+
+Características: Simples e de baixo custo, usada para transporte de curtas distâncias 
+e em superfícies planas.
+
+Capacidade: Geralmente entre 1.5 e 3 toneladas.
+
+Transpaleteira e Paleteira Elétrica
+
+Descrição: Equipamento motorizado, que utiliza um motor elétrico para elevar e mover a
+carga.
+
+Características: Maior eficiência e esforço reduzido para o operador;
+transporte em longas distâncias e cargas mais pesadas.
+
+ideal para
+
+Capacidade: Varia entre 1.5 e 3 toneladas.
+
+Transpaleteira Elétrica Tripulada (jet)
+
+Descrição: variante da transpaleteira elétrica em que o operador realiza a operação de pé em uma 
+plataforma dentro do equipamento, permitindo maior controle e conforto, especialmente em trajetos 
+longos ou em ambientes de alta demanda. 
+
+Características: Design ergonômico proporciona maior conforto, principalmente em ambientes 
+que exigem movimentação contínua ao longo do dia.
+
+Capacidade: varia entre 2 a 3 toneladas.
+
+Conhecendo a Transpaleteira
+
+✓ Componentes principais: Detalhamento das partes essenciais da transpaleteira, 
+
+como garfos, rodas, bateria, freios, motor elétrico, comandos de elevação e 
+deslocamento.
+
+✓ Painel de controle e Timão: As funcionalidades do painel da transpaleteira, 
+incluindo botões de controle de direção, acionamento de freios, controle de 
+velocidade e elevação.
+
+✓ Inspeção pré-uso: A importância de realizar uma inspeção visual do equipamento 
+antes de iniciar o trabalho, identificando possíveis falhas ou desgastes nos pneus, 
+garfos e sistema elétrico.
+
+Conhecendo o Equipamento - Painel de Controle
+
+1. Chave de contato:
+
+Montada no painel de controle e ligada a uma luz piloto, esta chave imobiliza o circuito de
+tração e a máquina não pode ser movida sem a ligação da mesma.
+
+Devemos sempre desligar a chave ao se afastar da máquina.
+
+Conhecendo o Equipamento - Painel de Controle
+
+Horímetro
+
+Comandos 
+rápido e devagar
+
+Buzina
+
+Comandos sobe 
+e desce
+
+Conhecendo o Equipamento - Timão 
+
+2. Timão:
+
+As borboletas de cada lado do painel de controle acionam as três velocidades de frente e
+ré.
+
+Quando o timão está na posição vertical, um freio mecânico entra em operação e o
+circuito elétrico de tração fica desligado.
+
+Baixando o timão na posição horizontal, também aciona o freio e desliga o circuito
+elétrico de tração.
+
+Conhecendo o Equipamento - Timão 
+
+Comandos:
+Sobe, desce.
+Buzina, devagar e freio.
+
+de
+
+condição
+
+que
+Timão
+favorece no deslocamento da paleteira e
+direcionamento e freio da mesma.
+
+ergonômica
+
+Obs. Ante esmagamento.
+O pulsar (frente e para trás), não deve ser usado como reverso para
+situações de freio.
+
+Conhecendo o Equipamento - Timão 
+
+NÃO SE DEVE USAR "REVERSO" COMO FREIO
+O EQUIPAMENTO FREIA COM O "TIMÃO NA POSIÇÃO
+INICIAL E NA POSIÇÃO EXTREMA HORIZONTAL“!
+
+Conhecendo o Equipamento - Geral
+
+Quiz
+
+Qual é a principal diferença entre uma transpaleteira manual e uma elétrica? 
+Assinale a resposta correta!!
+
+a) A transpaleteira manual é movida por um motor, enquanto a elétrica precisa ser 
+
+pressionada;
+
+b) b) A transpaleteira manual é movida pela força do operador, enquanto a elétrica 
+
+usa um motor para mover;
+
+c) c) A transpaleteira manual pode ser usada apenas em terrenos irregulares, 
+
+enquanto a elétrica só pode ser usada em áreas lisas.
+
+Operação Segura da Transpaleteira
+
+Procedimentos seguros de operação: Operar a transpaleteira de forma segura, com ênfase 
+em manter a atenção, utilizar corretamente os comandos e evitar comportamentos perigosos.
+
+Capacidade de carga: Identificar a capacidade máxima do equipamento e a importância de 
+respeitá-la, evitando sobrecargas.
+
+Distribuição da carga: Técnicas para carregar e transportar a carga de maneira equilibrada, 
+mantendo o centro de gravidade adequado para evitar tombamento.
+
+Manobras seguras: Realizar manobras em áreas restritas, em corredores estreitos e em 
+curvas, sempre reduzindo a velocidade e mantendo a estabilidade.
+
+Cuidados com rampas e superfícies inclinadas: Operar com velocidade reduzida em aclives 
+ou declives, e cuidados para evitar que a transpaleteira perca tração ou que a carga se 
+desloque.
+
+Procedimentos Operacionais
+
+✓ Fazer inspeção no início de cada turno antes de usar o equipamento;
+
+✓ Verificar a limpeza e se as placas de aviso e identificação estão intactas;
+
+✓ Verificar o nível de carga da bateria e se ela está bem fixa no respectivo compartimento,
+
+observando se a trava de segurança se encontra no lugar;
+
+✓ Se o equipamento estiver na manutenção, não deve ser utilizado sem a liberação do mecânico;
+
+✓ Informar toda e qualquer ocorrência detectada à chefia imediata ou à manutenção, para evitar
+
+acidentes;
+
+Procedimentos Operacionais
+
+✓ Verificar no ckecklist os itens obrigatórios, para os assinalados em vermelho, comunicar
+
+com a chefia imediatamente e encaminhar para a manutenção;
+
+✓ Dar preferência a pedestres, evitando fazer
+
+bruscas com os
+equipamentos, atenção ao dar passagem para outro equipamento em corredores e
+evitar andar costurando entre obstáculos;
+
+conversões
+
+✓ Sempre transitar com o corpo à frente do "timão“ da paleteira, pois com isso o
+
+operador ganha maior visibilidade e controle sobre a paleteira;
+
+✓ Toque a buzina somente quando for necessário chamar a atenção de outras pessoas;
+
+Procedimentos Operacionais
+
+✓ Manter postura adequada para utilização do equipamento, evitar freadas e arrancadas
+
+bruscas, reduzir velocidade nas curvas e em locais de pouca visibilidade;
+
+✓ Dar preferência a pedestres, evitando fazer conversões
+
+bruscas com os
+equipamentos, atenção ao dar passagem para outro equipamento em corredores e
+evitar andar costurando entre obstáculos;
+
+✓ Sempre transitar com o corpo à frente do "timão“ da paleteira, pois com isso o
+
+operador ganha maior visibilidade e controle sobre a paleteira;
+
+✓ Toque a buzina somente quando for necessário chamar a atenção de outras pessoas;
+
+Procedimentos Operacionais
+
+Operar a paleteira sempre de forma segura e eficiente;
+
+Se você operar a paleteira desta forma, o risco de acidente aumenta, pois
+se perde a visibilidade.
+
+Procedimentos Operacionais
+
+✓ Parada obrigatória em cruzamentos e ao fazer uma  conversão, dando preferência 
+
+para empilhadeiras e paleteiras carregadas;
+
+✓ Não dar carona a outras pessoas no equipamento e não  assentar sobre a bateria;
+
+✓ Conduzir com cuidado quando recolher ou largar uma carga;
+
+✓ Cuidado especial ao movimentar cargas altas;
+
+✓ Movimentar carga somente dentro da capacidade limitada do
+
+equipamento,
+
+comprimento e largura dos garfos;
+
+Procedimentos Operacionais
+
+✓ Os garfos devem estar posicionados completamente sob a carga;
+
+✓ Movimentar apenas cargas estáveis, que estejam arrumadas de forma segura (filmadas);
+
+✓ Estacione sempre com o suporte de cargas completamente abaixado, rente ao chão;
+
+✓ Estacione em local permitido e disponível;
+
+✓ Nunca deixe com a chave na ignição
+
+Procedimentos Operacionais
+
+✓ Nunca estacione o equipamento obstruindo saída de emergência, hidrantes e
+extintor de incêndio, painéis elétricos, trânsito de pessoas, ruas de acesso e
+prateleiras;
+
+✓ Ao carregar
+
+cargas, é
+
+necessário primeiramente ligar
+
+a chave
+
+elétrica e empurrar os garfos até o centro da carga da paleteira;
+
+✓ Pressione o botão de elevação para elevar a carga a uma
+
+altura
+adequada para movimentar, puxando em seguida o braço para transferir
+a carga;
+
+Procedimentos Operacionais
+
+A paleteira encontra-se equipada com botão de parada de emergência, devendo ser utilizado
+somente em caso de:
+
+✓ Risco de acidente;
+
+✓ Acidente;
+
+✓ Emergência;
+
+Procedimentos Operacionais
+
+Empilhamento máximo de dez paletes para movimentação.
+
+Procedimentos Operacionais
+
+Altura da Carga x Solo
+
+Ao transportar carga, o operador deverá manter a base inferior a aproximadamente de 15 a
+20 cm do solo, para terrenos regulares.
+
+Quiz
+
+Antes de iniciar a operação da transpaleteira, o operador deve:
+
+a)
+
+Inspecionar visualmente o equipamento.
+
+b) Ligar o equipamento diretamente e começar a operar.
+
+c) Solicitar autorização do supervisor.
+
+Manutenção e Conservação da Transpaleteira
+
+Importância da manutenção preventiva: Com o cuidado constante com o equipamento pode 
+se evitar falhas inesperadas e aumentar a durabilidade da transpaleteira.
+
+Checklist diário: Elaboração de um roteiro de inspeção diário, verificando o estado dos pneus, 
+freios, bateria, nível de carga e possíveis vazamentos de fluido.
+
+Problemas comuns: Identificar e relatar defeitos no sistema elétrico, freios, garfos e outros 
+componentes antes que causem acidentes.
+
+Ação em caso de falhas: Ao identificar um problema técnico durante a operação, estacione 
+imediatamente o equipamento em local seguro e relate o fato a chefia e à equipe de 
+manutenção.
+
+Segurança na Substituição da Bateria
+
+Troca de bateria
+
+✓ Ligue a chave elétrica;
+
+✓ Verifique na transpaleteira o nível da bateria.
+
+✓ Quando o display de LED do horímetro
+marcar 20% e começar a piscar, é o aviso de
+que a bateria precisa ser substituída e que o
+equipamento
+unidade
+hidráulica, como medida de segurança.
+
+bloquear
+
+vai
+
+a
+
+✓
+
+Segurança na Substituição da Bateria
+
+Troca de bateria
+
+✓ Desligar o equipamento na chave de ignição;
+
+✓ Desconectar a bateria segurando no conector, retirar a trava de segurança.
+
+Segurança na Substituição da Bateria
+
+Troca de bateria
+
+Após fazer a instalação da bateria recarregada no
+equipamento utilizá-lo normalmente, o display de led do
+horímetro do equipamento vai marcar 100% de carga
+da bateria;
+
+Segurança na Substituição da Bateria
+
+Troca de bateria
+
+1 - Desligue a chave elétrica;
+
+2 - Abra a tampa dabateria;
+
+3 - Solte a trava da bateria;
+
+4 - Desconecte o cabo da bateria;
+
+5 - Retire a bateria;
+
+6 - Instale a nova bateria e assegure
+que a bateria de substituição seja
+posicionada no lugar exatamente da
+bateria antiga;
+
+7 - Verifique a polaridade e conecte a
+bateria e o cabo;
+
+8 - Prenda a bateria com a trava;
+
+9 - Feche a tampa da bateria.
+
+Segurança na Substituição da Bateria
+
+Troca de bateria
+
+Certificar que a bateria que está sendo instalada no equipamento esteja carregada no
+prazo e trava devidamente acondicionada;
+
+Após a substituição da bateria, conectar a mesma no carregador para ser carregada;
+
+Após o carregamento da bateria, deixar ela descansar por um período de 1,5 h antes
+de ser liberada para uso;
+
+Segurança na Substituição da Bateria
+
+Troca de bateria
+
+Identificar com placas de “carregada”, “descarregada” e “descanso” a situação das
+baterias no boxe de carregamento das baterias;
+
+Verificar o nível de água da bateria e completar, se for o caso;
+
+Não bater nas boias com os dedos;
+
+Nunca abasteça de água a bateria antes de carregá-la;
+
+Segurança na Substituição da Bateria
+
+Troca de bateria
+
+Preencher o formulário “controle de bateria” e todos os seus respectivos campos, a fim de
+controlar o ciclo das baterias, e sua vida útil.
+
+Segurança na Substituição da Bateria
+
+Restrição quanto ao uso da bateria
+
+Não fume, não use chamas ou produza fagulhas
+próximo a uma bateria.
+
+Não deixe a solução de bateria entrar em
+contato com os olhos, pele ou roupas, em caso
+abundantemente
+de contato,
+com água pura, e caso os olhos sejam afetados,
+procure imediatamente socorro médico.
+
+lave imediata e
+
+Segurança na Substituição da Bateria
+
+Restrição quanto ao uso da bateria
+
+Caso o ácido seja derramado acidentalmente, ele
+bicarbonato de sódio e água até que se pare de borbulhar.
+
+deve ser neutralizado com
+
+Mantenha a bateria sempre limpa e seca para evitar corrosão e fuga de corrente à terra;
+
+Não coloque nenhum objeto sobre a bateria, ferramentas, panos, etc.
+
+Segurança na Substituição da Bateria
+
+Restrição quanto ao uso da bateria
+
+Obedecer aos períodos de descanso e deixar a bateria
+carregadores;
+
+carregar totalmente nos
+
+Evitar que a bateria sofra impactos, pois isso causa danos internos;
+
+Nunca use a bateria até o final de carga, isto reduzirá muito a vida útil da bateria e do
+equipamento;
+
+Quiz
+
+A manutenção das transpaleteiras deve ser feita:
+
+a) Somente quando houver falhas operacionais.
+
+b) Regularmente, conforme orientações do fabricante.
+
+c) Apenas no final do expediente.
+
+Regras Internas para a Operação de Transpaleteiras
+
+Regras de trânsito interno: Conduzir a transpaleteira em áreas compartilhadas com
+pedestres e outros veículos, respeitando as sinalizações de prioridade, limites de velocidade
+e faixas de circulação.
+
+Sinalização visual e sonora: Muito importante a utilização buzinas e luzes de sinalização
+ao manobrar ou transportar cargas em áreas de pouca visibilidade ou com grande fluxo de
+pessoas.
+
+Uso de EPI: Equipamentos de proteção individual obrigatórios para o operador (capacete,
+calçado de segurança, luvas, protetor auricular) e para qualquer pessoa que esteja nas
+áreas de operação.
+
+Áreas restritas: Atenção para identificar as áreas onde a transpaleteira não deve operar,
+como locais com piso frágil, áreas com risco de explosão ou proximidade com máquinas
+perigosas.
+
+Medidas de Segurança para a Operação de Transpaleteiras
+
+✓ Nunca operar o veículo sentado ou em pé no mesmo;
+
+✓ O veículo não deve servir de escada;
+
+✓ O veículo não é um meio de transporte para pessoas;
+
+✓ O operador deve olhar na direção do movimento e deve ter sempre uma vista
+
+adequada sobre a área de trabalho;
+
+✓ Especialmente quando dirigindo de ré, ele deve ter certeza de que o caminho esteja
+
+livre e sem obstrução;
+
+✓ Freie o equipamento sempre suavemente para não derrubar a carga.
+
+Medidas de Segurança para a Operação de Transpaleteiras
+
+✓ Subir inclinações com carga na frente e descer com a carga atrás;
+
+✓ O operador deve verificar que as rodas possam agarrar na superfície e que a mesma esteja
+
+limpa;
+
+✓ Nunca atravesse declives na direção horizontal;
+
+✓ Nunca tente fazer a volta num declive;
+
+✓ Nunca estacione a paleteira numa rampa;
+
+✓ Reduzir a velocidade ao descer uma rampa;
+
+✓ Não efetue manutenção no equipamento.
+
+Medidas de Segurança para a Operação de Transpaleteiras
+
+Não utilize o transpalete como plataforma para trabalho.
+
+Cargas soltas ou instáveis não são permitidas.
+
+Não tente consertar sem treinamento.
+
+Evite operar o transpalete em rampas, porém, se for inevitável, siga as seguintes
+instruções.
+
+Medidas de Segurança para a Operação de Transpaleteiras
+
+✓ Aproxime-se de frente para a carga;
+
+✓ Avalie o peso e demais condições da carga;
+
+✓ Conheça a capacidade de seu equipamento;
+
+✓ Fixe a carga adequadamente nos garfos;
+
+✓ Redobre a atenção ao trabalhar com um ajudante;
+
+Medidas de Segurança para a Operação de Transpaleteiras
+
+✓ Certifique-se de que há espaço suficiente para realizar a manobra
+
+desejada;
+
+✓ Observe se a carga está segura, principalmente no caso de peças soltas;
+
+✓ Tome cuidado com piso molhado, sujo de óleo ou irregular;
+
+✓ Conserve as mãos firmes no Timão e na Barra de apoio, e não coloque
+
+braços e pernas para fora do perímetro do equipamento.
+
+Medidas de Segurança para a Operação de Transpaleteiras
+
+Paletes ou Estrados: São dotados de aberturas para acesso do garfo da paleteira,
+sobre os quais se arruma a carga. Os mais comuns são:
+
+De duas entradas: Possuem aberturas para entrada do garfo em direções opostas,
+limitando o acesso à carga, pela paleteira.
+
+Medidas de Segurança para a Operação de Transpaleteiras
+
+De quatro entradas: Possuem abertura nos quatro lados e assim o garfo pode ser 
+inserido em qualquer direção.
+
+Facilitam a movimentação da carga,  principalmente em depósitos em que os corredores 
+sejam muito estreitos e a paleteira não possua área suficiente para a manobra.
+
+Quiz
+
+É permitido transportar pessoas na transpaleteira?
+
+a) Sim, desde que a pessoa esteja na plataforma do operador.
+
+b) Não, o transporte de pessoas é proibido.
+
+c) Sim, mas somente em curtas distâncias.
+
+Tipos de Cargas para a Operação de Transpaleteiras
+
+Granel: São cargas transportadas em grandes quantidades, sem embalagem, contidas
+apenas pela carroceria do veículo transportador.
+
+Ex: Cimento, areia, combustível, gases, etc.
+
+Especiais: São cargas que, por alguma característica própria, exigem cuidados
+especiais.
+
+Ex: Produtos perecíveis ou perigosos.
+
+Tipos de Cargas para a Operação de Transpaleteiras
+
+Diversas: São transportadas sem embalagens e algumas de forma individual.
+
+Ex: bobinas, chapas, trilhos.
+
+Tipos de Cargas para a Operação de Transpaleteiras
+
+Embaladas: São as acondicionadas em caixas, sacos, feixes, fardos.
+
+Ex: Dispositivos metálicos, caixas de papelão ou filmes stretch.
+
+Armazenamento de Materiais
+
+O peso do material armazenado não poderá exceder a capacidade de carga calculada
+para o piso.
+
+Material empilhado deverá ficar afastado das estruturas laterais do prédio e entre os
+corredores de circulação a uma distância de pelo menos 50 cm.
+
+Quiz
+
+Quais dos itens abaixo podem ser transportados por uma transpaleteira? 
+Assinale a alternativa errada!
+
+a) Paletes com produtos pesados e empilhados.
+
+b) Materiais a granel, como areia ou líquidos sem contenção. 
+
+c) Paletes com produtos diversos, como caixas, sacos ou equipamentos
+
+Equipamento de Proteção Individual - EPI
+
+A empresa fornece, orienta, treina e exige o uso de todos os EPI’s necessários à função.
+Use-os corretamente. Os tipos mais comuns utilizados por operadores de paleteiras
+são:
+
+✓ Botina;
+
+✓ Protetor auricular para as áreas de
+
+produção; 
+
+✓ Luvas.
+
+Quiz
+
+É obrigatório o uso de quais EPI's (Equipamentos de Proteção Individual) 
+durante a operação da transpaleteira?
+
+a) Capacete e luvas.
+
+b) Protetor Auricular, luvas e calçado de segurança.
+
+c) Apenas calçado de segurança.
+
+Riscos Provenientes da Operação de Paleteira
+
+Riscos Provenientes da Operação de Paleteira
+
+Tombamentos, Colisões, Atropelamentos, Quedas, Falta de 
+Manutenção
+
+Emergências
+
+Saiba como agir em casos de emergências:
+
+✓ Ao ouvir o alarme de incêndio, estacione o veículo em local seguro, deixando passagem
+
+livre;
+
+✓ Conheça o manejo de extintores;
+
+No caso de princípio de incêndio no veículo, primeiramente peça ajuda e comunique, e
+então inicie o combate às chamas utilizando o extintor adequado (Pó Químico ou CO²).
+
+Quiz
+
+Referente aos “riscos provenientes da operação com transpaleteira” 
+assinale a alternativa errada:
+
+a) Garfo mal posicionado, tombamento e falta de manutenção;
+
+b) Quedas, atropelamentos e colisões;
+
+c) transitar em velocidade baixa, sinalizar antes fazer curvas e respeitar os 
+pedestres.
+
+As normas constantes deste manual foram preparadas para orientar os operadores de
+paleteira no desenvolvimento de um trabalho correto e seguro.
+
+O seu cumprimento contribuirá para a prevenção de acidentes nesta atividade, e é 
+obrigatório para todos os operadores de equipamentos com força motriz.
+
+A SEGURANÇA É DEVER DE TODOS! 
+
+SEJA VOCÊ PARTE DESSA CAUSA!
+
+
