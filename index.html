@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 
 <!-- Deploy trigger: v1.0.1 -->
@@ -44,10 +44,33 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
-      background: var(--black);
+      background-color: #050b1c;
+      background-image:
+        radial-gradient(ellipse 1200px 900px at 8% 8%, rgba(0, 187, 249, 0.44), transparent 64%),
+        radial-gradient(ellipse 1100px 950px at 95% 95%, rgba(0, 120, 230, 0.48), transparent 64%),
+        radial-gradient(ellipse 850px 700px at 90% 4%, rgba(86, 213, 255, 0.28), transparent 58%),
+        radial-gradient(ellipse 800px 650px at 4% 96%, rgba(0, 160, 210, 0.34), transparent 60%),
+        linear-gradient(135deg, #030814 0%, #081b3d 30%, #0d3363 55%, #081b3d 80%, #030814 100%);
+      background-attachment: fixed;
       font-family: var(--font-b);
       color: var(--cream);
       -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── SUBTLE BACKGROUND TEXTURE ── */
+    #bg-texture {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 1;
+      background-image: repeating-linear-gradient(to bottom,
+          rgba(160, 215, 255, 0.05) 0px,
+          rgba(160, 215, 255, 0.05) 1px,
+          transparent 1px,
+          transparent 4px);
+      background-size: 100% 4px;
+      background-position: 0 0;
     }
 
 
@@ -165,10 +188,7 @@
       /* Nav */
       #nav {
         padding: 10px 10px max(14px, env(safe-area-inset-bottom));
-        background: linear-gradient(to top,
-            rgba(5, 5, 5, 0.97) 0%,
-            rgba(5, 5, 5, 0.7) 50%,
-            transparent 100%);
+        background: transparent;
         gap: 8px;
         width: 100%;
         max-width: 100vw;
@@ -474,8 +494,15 @@
       .s1-inner {
         padding: 45px 20px 80px !important;
         justify-content: flex-start !important;
+        align-items: stretch !important;
         flex-direction: column !important;
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0.3) 70%, transparent 100%) !important;
+      }
+
+      .s1-text-col {
+        width: 100% !important;
+        max-width: 100% !important;
+        align-self: stretch !important;
       }
 
       .s1-img-col {
@@ -497,21 +524,50 @@
 
       .s1-inner p {
         font-size: 15px !important;
-        margin-bottom: 28px;
+        margin-bottom: 20px;
         max-width: 100%;
         text-shadow: 0 2px 10px rgba(0, 0, 0, 1);
         font-weight: 600;
         line-height: 1.4 !important;
       }
 
+      .s1-badges {
+        gap: 8px;
+        margin-bottom: 22px;
+        width: 100%;
+        align-items: stretch;
+      }
+
+      .s1-badge {
+        flex: 0 1 47%;
+        min-width: 0;
+        padding: 8px 10px;
+        gap: 6px;
+        border-radius: 10px;
+        background: rgba(0, 0, 0, 0.35);
+        box-sizing: border-box;
+      }
+
+      .s1-badge svg {
+        width: 15px;
+        height: 15px;
+      }
+
+      .s1-badge strong {
+        font-size: 11px;
+        white-space: nowrap;
+      }
+
+      .s1-badge span {
+        font-size: 7.5px;
+        white-space: normal;
+        display: block;
+      }
+
       .btn-start {
         padding: 15px 36px;
         font-size: 16px;
         box-shadow: 0 10px 25px rgba(0, 187, 249, 0.4);
-      }
-
-      .s1-nr {
-        display: none !important;
       }
 
       /* Video */
@@ -967,10 +1023,7 @@
       justify-content: space-between;
       z-index: 900;
       isolation: isolate;
-      background: linear-gradient(to top,
-          rgba(5, 5, 5, 0.97) 0%,
-          rgba(5, 5, 5, 0.75) 45%,
-          transparent 100%);
+      background: transparent;
       transition: opacity 0.3s ease, visibility 0.3s ease;
     }
 
@@ -1000,13 +1053,14 @@
       left: 0;
       right: 0;
       bottom: 0;
-      height: 100%;
+      height: 220%;
       pointer-events: none;
       z-index: -1;
       background: linear-gradient(to top,
-          rgba(0, 187, 249, 0.14) 0%,
-          rgba(0, 187, 249, 0.05) 40%,
-          transparent 85%);
+          rgba(0, 148, 198, 0.32) 0%,
+          rgba(0, 187, 249, 0.16) 30%,
+          rgba(86, 213, 255, 0.05) 60%,
+          transparent 100%);
     }
 
     .nav-hidden {
@@ -1141,8 +1195,9 @@
     }
 
     .slide-subtitle {
+      display: none !important;
       font-size: 13px;
-      color: var(--gold-dk);
+      color: rgba(255, 255, 255, 0.85);
       margin-top: 4px;
       font-weight: 600;
     }
@@ -1280,7 +1335,7 @@
 
       /* Navigation adjustments */
       .video-slide~#nav {
-        background: linear-gradient(to top, rgba(5, 5, 5, 0.9), transparent);
+        background: transparent;
       }
     }
 
@@ -2210,6 +2265,41 @@
       width: 100%;
       max-width: 860px;
       margin: 10px auto 0;
+    }
+
+    @media (min-width: 1100px) {
+      .sum-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1180px;
+        gap: 18px;
+      }
+
+      .sum-item {
+        padding: 20px 24px;
+        gap: 8px;
+      }
+
+      .sum-text {
+        font-size: 16px;
+        line-height: 1.28;
+      }
+    }
+
+    @media (min-width: 1100px) and (max-height: 860px) {
+      .sum-item {
+        padding: 16px 20px;
+        gap: 6px;
+      }
+
+      .sum-num-big {
+        font-size: 11px;
+        padding: 4px 10px;
+      }
+
+      .sum-text {
+        font-size: 14.5px;
+        line-height: 1.22;
+      }
     }
 
     @media (max-width: 768px) {
@@ -4472,12 +4562,14 @@
    SLIDE 1 — CAPA
    ============================================================ */
     #s1 {
-      background-color: var(--black);
+      background-color: #050b16;
       background-image:
-        radial-gradient(ellipse at 30% 60%, rgba(0, 187, 249, 0.25) 0%, transparent 60%);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: auto;
+        linear-gradient(100deg, rgba(3, 8, 18, 0.96) 0%, rgba(3, 8, 18, 0.86) 28%, rgba(3, 8, 18, 0.45) 52%, rgba(3, 8, 18, 0.2) 68%, rgba(3, 8, 18, 0.55) 100%),
+        radial-gradient(ellipse at 22% 55%, rgba(0, 187, 249, 0.22) 0%, transparent 62%),
+        url('img/BACKGROUND.png');
+      background-position: center, center, center;
+      background-repeat: no-repeat, no-repeat, no-repeat;
+      background-size: auto, auto, cover;
     }
 
     .s1-inner {
@@ -4487,7 +4579,7 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       padding: 30px clamp(24px, 4vw, 48px) 60px;
       gap: clamp(24px, 4vw, 48px);
       width: 100%;
@@ -4497,44 +4589,68 @@
     }
 
     .s1-text-col {
-      flex: 1 1 380px;
-      max-width: 580px;
+      flex: 0 1 460px;
+      max-width: 460px;
       min-width: 0;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
+      background: linear-gradient(160deg, #1a3564 0%, #12274c 32%, #0a1730 62%, #050c1a 100%);
+      border: 1px solid rgba(0, 187, 249, 0.28);
+      border-radius: 22px;
+      padding: clamp(24px, 2.8vw, 34px);
+      box-sizing: border-box;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(0, 187, 249, 0.06) inset, 0 0 44px rgba(0, 187, 249, 0.1);
     }
 
     .s1-img-col {
-      flex: 1 1 400px;
-      max-width: 620px;
+      flex: 1.8 1 560px;
+      max-width: 1500px;
       min-width: 0;
       display: flex;
       justify-content: center;
       align-items: center;
-    }
-
-    .img-card {
-      background: var(--white);
-      padding: 0.5rem;
-      border-radius: 16px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      max-width: 620px;
-      width: 100%;
-      aspect-ratio: 1 / 1;
       position: relative;
-      overflow: hidden;
     }
 
-    .img-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 12px;
+    .s1-img-col::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 1.5%;
+      transform: translateX(-50%);
+      width: 76%;
+      height: 5%;
+      background: radial-gradient(ellipse at center, rgba(0, 187, 249, 0.45), rgba(0, 0, 0, 0.6) 55%, transparent 75%);
+      filter: blur(10px);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .hero-3d-img {
+      width: auto;
+      height: auto;
+      max-width: min(1500px, 66vw, 100%);
+      max-height: min(94vh, calc(100vh - 120px), 1000px);
+      display: block;
+      mix-blend-mode: lighten;
+      filter: drop-shadow(0 25px 45px rgba(0, 0, 0, 0.5));
+      animation: heroFloat 8s ease-in-out infinite;
+    }
+
+    @keyframes heroFloat {
+      0%, 100% { transform: translateX(-36px) translateY(0); }
+      50% { transform: translateX(-36px) translateY(-16px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-3d-img {
+        animation: none;
+        transform: translateX(-36px);
+      }
     }
 
     @media screen and (max-height: 480px) {
@@ -4545,42 +4661,32 @@
 
     .s1-tag {
       font-family: var(--font-h);
-      font-size: clamp(10px, 1vw, 13px);
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      color: var(--cream-dk);
+      font-size: clamp(10px, 1vw, 12px);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--red-lt);
       text-transform: uppercase;
-      margin-bottom: 12px;
-      display: flex;
+      margin-bottom: 16px;
+      display: inline-flex;
       align-items: center;
       gap: 8px;
-    }
-
-    .s1-nr {
-      font-family: var(--font-h);
-      font-weight: 900;
-      font-size: clamp(50px, 10vw, 110px);
-      line-height: 0.9;
-      color: transparent;
-      -webkit-text-stroke: 2px var(--red);
-      opacity: 0.15;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      letter-spacing: -4px;
-      white-space: nowrap;
-      z-index: 2;
+      background: rgba(0, 187, 249, 0.1);
+      border: 1px solid rgba(0, 187, 249, 0.35);
+      border-radius: 999px;
+      padding: 7px 16px;
+      line-height: 1.4;
     }
 
     .s1-inner h1 {
       font-family: var(--font-h);
       font-weight: 900;
-      font-size: clamp(24px, 4vw, 48px);
-      line-height: 1.1;
+      font-size: clamp(22px, 3vw, 38px);
+      line-height: 1.12;
       color: var(--cream);
-      margin-bottom: 6px;
+      margin-bottom: 8px;
+      max-width: 100%;
+      overflow-wrap: break-word;
+      word-break: break-word;
     }
 
     .s1-inner h1 em {
@@ -4589,36 +4695,79 @@
     }
 
     .s1-inner p {
-      font-size: clamp(13px, 1.2vw, 16px);
+      font-size: clamp(13px, 1.1vw, 15px);
       color: rgba(245, 245, 245, 0.65);
-      max-width: 500px;
-      line-height: 1.6;
-      margin-bottom: 28px;
+      max-width: 100%;
+      line-height: 1.55;
+      margin-bottom: 16px;
+    }
+
+    .s1-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .s1-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 13px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      color: var(--red);
+    }
+
+    .s1-badge svg {
+      flex-shrink: 0;
+    }
+
+    .s1-badge>div {
+      min-width: 0;
+    }
+
+    .s1-badge strong {
+      display: block;
+      font-family: var(--font-h);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.3;
+    }
+
+    .s1-badge span {
+      display: block;
+      font-size: 10.5px;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.3;
     }
 
     .btn-start {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      background: var(--red);
+      gap: 8px;
+      background: linear-gradient(135deg, #00bbf9, #0094c6);
       color: var(--white);
       font-family: var(--font-h);
       font-weight: 700;
       font-size: 13px;
-      letter-spacing: 0.07em;
-      padding: 12px 30px;
+      letter-spacing: 0.06em;
+      padding: 14px 28px;
       border-radius: 999px;
       border: none;
       cursor: pointer;
       transition: all 0.25s;
-      box-shadow: 0 6px 24px rgba(0, 187, 249, 0.4);
+      box-shadow: 0 10px 30px rgba(0, 187, 249, 0.45);
       align-self: flex-start;
+      white-space: nowrap;
     }
 
     .btn-start:hover {
-      background: var(--red-dk);
+      background: linear-gradient(135deg, #56d5ff, #00bbf9);
       transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(0, 187, 249, 0.5);
+      box-shadow: 0 12px 36px rgba(0, 187, 249, 0.6);
     }
 
     .s1-modules {
@@ -4648,9 +4797,17 @@
       margin: 0 auto;
     }
 
+
     .video-slide .content-area {
       width: 100%;
       align-self: stretch;
+    }
+
+    @media screen and (min-width: 769px) {
+      .video-slide .top-bar {
+        min-height: 128px;
+        box-sizing: border-box;
+      }
     }
 
     .video-box {
@@ -4662,7 +4819,8 @@
       background: #000;
       border-radius: 14px;
       border: none;
-      box-shadow: 0 0 40px rgba(0, 187, 249, 0.1);
+      outline: none;
+      box-shadow: none;
       cursor: default;
     }
 
@@ -5631,23 +5789,25 @@
       }
 
       #s1 .s1-inner {
-        max-width: min(1280px, calc(100% - 80px));
-        padding-top: clamp(36px, 5vh, 56px);
-        padding-bottom: clamp(64px, 9vh, 88px);
-        gap: clamp(40px, 5vw, 80px);
+        max-width: min(1640px, calc(100% - 80px));
+        padding-top: clamp(20px, 3vh, 40px);
+        padding-bottom: clamp(20px, 3vh, 40px);
+        gap: clamp(24px, 3vw, 56px);
       }
 
       #s1 .s1-text-col {
-        flex: 1 1 40%;
+        flex: 0 1 460px;
       }
 
       #s1 .s1-img-col {
-        flex: 1 1 48%;
+        flex: 1 1 auto;
       }
 
       .video-slide .content-area {
-        max-width: 1180px;
-        justify-content: center !important;
+        max-width: 1400px;
+        justify-content: flex-start !important;
+        padding-top: 16px !important;
+        padding-bottom: 70px !important;
       }
 
       .content-area::-webkit-scrollbar {
@@ -5659,7 +5819,7 @@
       }
 
       .video-wrap {
-        max-width: min(1050px, calc(66vh * 16 / 9));
+        max-width: min(1300px, calc((100vh - 235px) * 16 / 9));
         box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
       }
 
@@ -7664,7 +7824,7 @@
     }
 
     #s2e .mod1-game-card {
-      background: rgba(255, 255, 255, 0.04);
+      background: linear-gradient(160deg, #1a3564 0%, #12274c 40%, #0a1730 75%, #050c1a 100%);
       border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 24px;
       padding: clamp(28px, 5vw, 40px) clamp(20px, 4vw, 32px);
@@ -8056,6 +8216,40 @@
       }
     }
 
+    @media (min-width: 769px) and (max-height: 860px) {
+      #s2e .mod1-game-wrap {
+        max-width: 760px !important;
+      }
+
+      #s2e #mod1-game-intro {
+        padding: 38px 46px 44px !important;
+        border-radius: 28px !important;
+      }
+
+      #s2e #mod1-game-intro .ic-circle {
+        width: 96px !important;
+        height: 96px !important;
+        font-size: 44px !important;
+        margin-bottom: 22px !important;
+      }
+
+      #s2e #mod1-game-intro h3 {
+        font-size: 29px !important;
+        margin-bottom: 14px !important;
+      }
+
+      #s2e #mod1-game-intro p {
+        font-size: 16.5px !important;
+        line-height: 1.6 !important;
+        margin-bottom: 26px !important;
+      }
+
+      #s2e #mod1-game-intro .btn-start {
+        padding: 16px 38px !important;
+        font-size: 15.5px !important;
+      }
+    }
+
     /* Card intro — Desafio Módulo 1, 2, 3, 4, 5 e 6 (mobile + tablet) */
     #s2e #mod1-game-intro,
     #s3f #mod2-quiz-intro,
@@ -8065,7 +8259,7 @@
     #s5f #mod5-game-play,
     #s6f #mod6-quiz-intro {
       padding: 32px 24px 36px;
-      background: rgba(255, 255, 255, 0.04);
+      background: linear-gradient(160deg, #1a3564 0%, #12274c 40%, #0a1730 75%, #050c1a 100%);
       border: 1px solid rgba(0, 187, 249, 0.28);
       border-radius: 24px;
       box-shadow: 0 28px 64px rgba(0, 0, 0, 0.4);
@@ -9512,6 +9706,7 @@
 </head>
 
 <body>
+  <div id="bg-texture" aria-hidden="true"></div>
   <!-- BACKGROUND MUSIC -->
   <audio id="bg-music" src="musica/musica_foco.mp3" loop></audio>
 
@@ -9588,9 +9783,34 @@
       <section class="slide active" id="s1">
         <div class="s1-inner">
           <div class="s1-text-col">
-            <div class="s1-tag">Módulo de Treinamento · Segurança do Trabalho</div>
+            <div class="s1-tag">Segurança do Trabalho</div>
             <h1><em>NR 11</em> —<br>EMPILHADEIRA</h1>
             <p>Capacitação em movimentação, armazenagem e manuseio de materiais com empilhadeira conforme NR-11.</p>
+            <div class="s1-badges">
+              <div class="s1-badge">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="6" y="3" width="12" height="18" rx="2" />
+                  <path d="M9 3v2h6V3M9 9h6M9 13h6M9 17h3" />
+                </svg>
+                <div>
+                  <strong>6 Módulos</strong>
+                  <span>Conteúdo completo</span>
+                </div>
+              </div>
+              <div class="s1-badge">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="3" />
+                  <path
+                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z" />
+                </svg>
+                <div>
+                  <strong>Treinamento</strong>
+                  <span>100% online</span>
+                </div>
+              </div>
+            </div>
             <button class="btn-start" onclick="startCourse()">
               <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
                 <polygon points="5,3 17,10 5,17" />
@@ -9599,18 +9819,12 @@
             </button>
           </div>
           <div class="s1-img-col">
-            <div class="img-card">
-              <div class="s1-nr">NR-11</div>
-              <img src="img/PAGE-INICIAL.png" alt="NR11 - OPERADOR DE EMPILHADEIRA">
-            </div>
+            <img class="hero-3d-img" src="img/INICIAL3D.png" alt="NR11 - OPERADOR DE EMPILHADEIRA">
           </div>
         </div>
         <div class="wave">
           <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,50 C360,10 720,90 1080,40 C1260,15 1380,65 1440,50 L1440,100 L0,100 Z"
-              fill="rgba(0, 187, 249,0.08)" />
-            <path d="M0,70 C240,30 600,100 960,55 C1200,25 1380,80 1440,70 L1440,100 L0,100 Z"
-              fill="rgba(255,255,255,0.05)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(0, 187, 249,0.07)" />
           </svg>
         </div>
       </section>
@@ -9901,7 +10115,7 @@
           <span class="section-tag">📋 Legislação</span>
           <div class="slide-title" style="margin-top:6px">O Cartão de <span>Identificação</span></div>
         </div>
-        <div class="content-area" style="display:grid; grid-template-columns: 1.3fr 1fr; gap: 50px; align-items: center; max-width: 1100px; margin: 0 auto; padding: 0 20px;">
+        <div class="content-area" style="display:grid; grid-template-columns: 1.3fr 1fr; gap: 50px; align-items: center; max-width: 1100px; margin: 0 auto; padding: 0 20px; transform: scale(0.8); transform-origin: center;">
           <!-- Left side: Text -->
           <div id="s2b3-text" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; padding: 45px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); animation: slideRight 0.8s ease;">
             <div style="display:flex; align-items:center; gap:12px; margin-bottom:24px;">
@@ -10030,7 +10244,7 @@
       <section class="slide" id="s2c2">
         <style>
           #s2c2 .civcrim-civil {
-            background: linear-gradient(135deg, rgba(0, 187, 249, 0.07), rgba(255, 255, 255, 0.025));
+            background: linear-gradient(135deg, #0f1b22, #0b0f14);
             border: 1px solid rgba(0, 187, 249, 0.18);
             border-radius: 20px;
             padding: 20px 28px;
@@ -10087,11 +10301,11 @@
             content: '';
             flex: 1;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255, 90, 90, 0.5));
+            background: linear-gradient(90deg, transparent, rgba(0, 187, 249, 0.5));
           }
 
           #s2c2 .civcrim-subhead::after {
-            background: linear-gradient(90deg, rgba(255, 90, 90, 0.5), transparent);
+            background: linear-gradient(90deg, rgba(0, 187, 249, 0.5), transparent);
           }
 
           #s2c2 .civcrim-subhead-text {
@@ -10114,8 +10328,8 @@
           }
 
           #s2c2 .civcrim-card {
-            background: linear-gradient(160deg, rgba(255, 80, 80, 0.07), rgba(255, 255, 255, 0.02));
-            border: 1px solid rgba(255, 100, 100, 0.22);
+            background: linear-gradient(160deg, #10161e, #0a0e14);
+            border: 1px solid rgba(0, 187, 249, 0.24);
             border-radius: 18px;
             padding: 18px 22px;
             display: flex;
@@ -10129,8 +10343,8 @@
 
           #s2c2 .civcrim-card:hover {
             transform: translateY(-4px);
-            border-color: rgba(255, 100, 100, 0.5);
-            box-shadow: 0 18px 36px rgba(185, 28, 28, 0.22);
+            border-color: rgba(0, 187, 249, 0.55);
+            box-shadow: 0 18px 36px rgba(0, 187, 249, 0.2);
           }
 
           #s2c2 .civcrim-card::before {
@@ -10140,7 +10354,7 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, #ff5f5f, #b91c1c);
+            background: linear-gradient(90deg, #00bbf9, #56d5ff);
             opacity: 0.9;
           }
 
@@ -10155,12 +10369,12 @@
             height: 40px;
             border-radius: 11px;
             flex-shrink: 0;
-            background: rgba(255, 90, 90, 0.12);
-            border: 1px solid rgba(255, 90, 90, 0.3);
+            background: rgba(0, 187, 249, 0.14);
+            border: 1px solid rgba(0, 187, 249, 0.35);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #ff8080;
+            color: #00bbf9;
           }
 
           #s2c2 .civcrim-card-title {
@@ -10193,9 +10407,9 @@
           #s2c2 .civcrim-pena {
             display: inline-block;
             margin-top: 2px;
-            background: rgba(255, 90, 90, 0.14);
-            border: 1px solid rgba(255, 90, 90, 0.3);
-            color: #ff9d9d;
+            background: rgba(255, 199, 0, 0.14);
+            border: 1px solid rgba(255, 199, 0, 0.35);
+            color: #ffc837;
             font-family: var(--font-h);
             font-weight: 700;
             font-size: 11.5px;
@@ -10317,11 +10531,11 @@
             content: '';
             flex: 1;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255, 90, 90, 0.5));
+            background: linear-gradient(90deg, transparent, rgba(0, 187, 249, 0.5));
           }
 
           #s2d .civcrim-subhead::after {
-            background: linear-gradient(90deg, rgba(255, 90, 90, 0.5), transparent);
+            background: linear-gradient(90deg, rgba(0, 187, 249, 0.5), transparent);
           }
 
           #s2d .civcrim-subhead-text {
@@ -10344,8 +10558,8 @@
           }
 
           #s2d .civcrim-card {
-            background: linear-gradient(160deg, rgba(255, 80, 80, 0.07), rgba(255, 255, 255, 0.02));
-            border: 1px solid rgba(255, 100, 100, 0.22);
+            background: linear-gradient(160deg, #10161e, #0a0e14);
+            border: 1px solid rgba(0, 187, 249, 0.24);
             border-radius: 18px;
             padding: 16px 22px;
             display: flex;
@@ -10359,12 +10573,12 @@
 
           #s2d .civcrim-card:hover {
             transform: translateY(-4px);
-            border-color: rgba(255, 100, 100, 0.5);
-            box-shadow: 0 18px 36px rgba(185, 28, 28, 0.22);
+            border-color: rgba(0, 187, 249, 0.55);
+            box-shadow: 0 18px 36px rgba(0, 187, 249, 0.2);
           }
 
           #s2d .civcrim-card.is-civil {
-            background: linear-gradient(160deg, rgba(0, 187, 249, 0.08), rgba(255, 255, 255, 0.02));
+            background: linear-gradient(160deg, #0f1b22, #0b0f14);
             border-color: rgba(0, 187, 249, 0.25);
           }
 
@@ -10380,7 +10594,7 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, #ff5f5f, #b91c1c);
+            background: linear-gradient(90deg, #00bbf9, #56d5ff);
             opacity: 0.9;
           }
 
@@ -10399,12 +10613,12 @@
             height: 40px;
             border-radius: 11px;
             flex-shrink: 0;
-            background: rgba(255, 90, 90, 0.12);
-            border: 1px solid rgba(255, 90, 90, 0.3);
+            background: rgba(0, 187, 249, 0.14);
+            border: 1px solid rgba(0, 187, 249, 0.35);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #ff8080;
+            color: #00bbf9;
           }
 
           #s2d .civcrim-card.is-civil .civcrim-card-icon {
@@ -10443,9 +10657,9 @@
           #s2d .civcrim-pena {
             display: inline-block;
             margin-top: 2px;
-            background: rgba(255, 90, 90, 0.14);
-            border: 1px solid rgba(255, 90, 90, 0.3);
-            color: #ff9d9d;
+            background: rgba(255, 199, 0, 0.14);
+            border: 1px solid rgba(255, 199, 0, 0.35);
+            color: #ffc837;
             font-family: var(--font-h);
             font-weight: 700;
             font-size: 11.5px;
@@ -10614,7 +10828,7 @@
               </div>
             </div>
 
-            <div id="mod1-game-card" class="mod1-game-card" style="margin-bottom: 20px; padding: 24px; border-radius: 16px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);">
+            <div id="mod1-game-card" class="mod1-game-card" style="margin-bottom: 20px; padding: 24px; border-radius: 16px;">
               <p id="mod1-game-text" class="mod1-game-text" style="font-family: var(--font-h); font-size: 18px; font-weight: 700; color: #ffffff; text-align: center; margin: 0; line-height: 1.45;">...</p>
             </div>
 
@@ -10624,7 +10838,7 @@
           </div>
 
           <div id="mod1-game-result" class="mod1-game-wrap"
-            style="display:none; text-align:center; padding: 24px 20px; background: rgba(255,255,255,0.03); border-radius: 28px; border: 1px solid rgba(255,255,255,0.1); animation: slideUp 0.6s ease;">
+            style="display:none; text-align:center; padding: 24px 20px; background: linear-gradient(160deg, #1a3564 0%, #12274c 40%, #0a1730 75%, #050c1a 100%); border-radius: 28px; border: 1px solid rgba(255,255,255,0.1); animation: slideUp 0.6s ease;">
             <div class="r-icon" style="font-size: 56px; margin-bottom: 12px;">🏅</div>
             <h3
               style="font-family:var(--font-h); font-size: clamp(24px, 5vw, 30px); color:var(--gold); margin-bottom:8px; font-weight:900;">
@@ -10661,23 +10875,23 @@
           </svg></div>
       </section>
 
-      <!-- ── S-MOD2-VIDEO: VÍDEO — Conhecendo a Empilhadeira ── -->
+      <!-- ── S-MOD2-VIDEO: VÍDEO — Saúde Física e Mental na Operação ── -->
       <section class="slide video-slide" id="s-mod2-video">
         <div class="top-bar">
           <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Conhecendo a <span>Empilhadeira</span></div>
+            <div class="slide-title" style="margin-top:6px">Saúde Física <span>e Mental na Operação</span></div>
             <div class="slide-subtitle">Aptidão Psicofísica, Saúde e Regras de Acesso</div>
           </div>
         </div>
         <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
           <div class="video-wrap">
             <div class="video-box">
-              <iframe id="panda-58256971-986e-4b93-9989-c4957b3976ef"
-                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=58256971-986e-4b93-9989-c4957b3976ef"
+              <iframe id="panda-91cb3145-4704-43f6-be30-68825b93eb9b"
+                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=91cb3145-4704-43f6-be30-68825b93eb9b"
                 frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
                 allowfullscreen="true" fetchpriority="high"
                 style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
-                title="Conhecendo a Empilhadeira — NR11 - OPERADOR DE EMPILHADEIRA">
+                title="Saúde Física e Mental na Operação — NR11 - OPERADOR DE EMPILHADEIRA">
               </iframe>
             </div>
           </div>
@@ -10687,23 +10901,23 @@
           </svg></div>
       </section>
 
-      <!-- ── S-MOD2-VIDEO2: VÍDEO — Empilhadeiras Elétricas e Tripuladas ── -->
+      <!-- ── S-MOD2-VIDEO2: VÍDEO — Controle de Acesso e Integração de Segurança ── -->
       <section class="slide video-slide" id="s-mod2-video2">
         <div class="top-bar">
           <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Empilhadeiras <span>Elétricas e Tripuladas</span></div>
+            <div class="slide-title" style="margin-top:6px">Controle de Acesso <span>e Integração de Segurança</span></div>
             <div class="slide-subtitle">Aptidão Psicofísica, Saúde e Regras de Acesso</div>
           </div>
         </div>
         <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
           <div class="video-wrap">
             <div class="video-box">
-              <iframe id="panda-7c283aa9-db98-412b-a935-661b716fecf7"
-                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=7c283aa9-db98-412b-a935-661b716fecf7"
+              <iframe id="panda-3b2684c7-6736-4f65-bd03-06d80455cf0b"
+                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=3b2684c7-6736-4f65-bd03-06d80455cf0b"
                 frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
                 allowfullscreen="true" fetchpriority="high"
                 style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
-                title="Empilhadeiras Elétricas e Tripuladas — NR11 - OPERADOR DE EMPILHADEIRA">
+                title="Controle de Acesso e Integração de Segurança — NR11 - OPERADOR DE EMPILHADEIRA">
               </iframe>
             </div>
           </div>
@@ -10713,403 +10927,23 @@
           </svg></div>
       </section>
 
-      <!-- ── S-MOD2-TIPOS: TIPOS DE EMPILHADEIRA ── -->
-      <section class="slide" id="s-mod2-tipos">
-        <style>
-          #s-mod2-tipos .type-card {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            width: 100%;
-            max-width: 380px;
-            padding: 40px 30px 32px;
-            border-radius: 28px;
-            background: linear-gradient(160deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.015));
-            border: 1px solid rgba(0, 187, 249, 0.28);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(0, 187, 249, 0.05);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            animation: slideUp 0.7s ease both;
-            transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
-          }
-          #s-mod2-tipos .type-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(0, 187, 249, 0.55);
-            box-shadow: 0 34px 70px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 187, 249, 0.2);
-          }
-          #s-mod2-tipos .type-badge {
-            position: absolute;
-            top: -16px;
-            left: 24px;
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #00bbf9, #0094c6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: var(--font-h);
-            font-weight: 900;
-            font-size: 14px;
-            color: #ffffff;
-            box-shadow: 0 8px 20px rgba(0, 187, 249, 0.5);
-            border: 2px solid var(--black);
-          }
-          #s-mod2-tipos .type-img-wrap {
-            position: relative;
-            width: 100%;
-            max-width: 270px;
-          }
-          #s-mod2-tipos .type-img-glow {
-            position: absolute;
-            inset: -22px;
-            background: radial-gradient(circle, rgba(0, 187, 249, 0.32), transparent 70%);
-            filter: blur(14px);
-            z-index: 0;
-          }
-          #s-mod2-tipos .type-img-box {
-            position: relative;
-            z-index: 1;
-            width: 100%;
-            aspect-ratio: 1/1;
-            background: #ffffff;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
-          }
-          #s-mod2-tipos .type-icon {
-            font-size: 22px;
-            line-height: 1;
-          }
-          #s-mod2-tipos .type-title {
-            font-family: var(--font-h);
-            font-weight: 800;
-            font-size: 16px;
-            color: var(--white);
-          }
-          #s-mod2-tipos .type-caption {
-            margin-top: 6px;
-            font-size: 12.5px;
-            color: rgba(255, 255, 255, 0.55);
-            line-height: 1.4;
-          }
-          #s-mod2-tipos .type-underline {
-            margin-top: 16px;
-            height: 3px;
-            width: 44px;
-            background: linear-gradient(90deg, #00bbf9, #56d5ff);
-            border-radius: 3px;
-          }
-          @media screen and (min-width: 769px), screen and (orientation: landscape) {
-            #s-mod2-tipos {
-              overflow: hidden;
-            }
-            #s-mod2-tipos .content-area {
-              flex: 1;
-              display: flex !important;
-              align-items: center !important;
-              justify-content: center !important;
-              padding: 10px 32px 80px !important;
-            }
-            #s-mod2-tipos .tipos-desktop-grid {
-              display: grid !important;
-              grid-template-columns: repeat(3, 1fr) !important;
-              gap: 28px;
-              max-width: 1340px;
-              width: 100%;
-              justify-items: center;
-            }
-            #s-mod2-tipos .type-card {
-              max-width: 420px;
-              width: 100%;
-              padding: 48px 36px 36px;
-            }
-            #s-mod2-tipos .type-img-wrap {
-              max-width: 100%;
-            }
-          }
-          @media screen and (max-width: 768px) and (orientation: portrait) {
-
-            @keyframes tiposFadeIn {
-              from { opacity: 0; transform: translateY(10px); }
-              to   { opacity: 1; transform: translateY(0); }
-            }
-
-            /* Slide: flex column, sem scroll */
-            #s-mod2-tipos {
-              display: flex !important;
-              flex-direction: column !important;
-              overflow: hidden !important;
-            }
-
-            /* Esconde grid desktop */
-            #s-mod2-tipos .content-area {
-              display: none !important;
-            }
-
-            /* Seção mobile ocupa o espaço restante */
-            #tipos-mobile-section {
-              display: flex !important;
-              flex-direction: column !important;
-              align-items: center !important;
-              justify-content: center !important;
-              flex: 1 1 0 !important;
-              min-height: 0 !important;
-              overflow: hidden !important;
-              padding: 8px 16px 72px !important;
-              width: 100% !important;
-              box-sizing: border-box !important;
-              gap: 12px !important;
-            }
-
-            /* Viewport: contaêner do card visível */
-            #tipos-card-viewport {
-              width: 100%;
-              max-width: 300px;
-              flex-shrink: 0;
-              position: relative;
-            }
-
-            /* Todos os cards ocultos por padrão */
-            #tipos-mobile-section .type-card {
-              display: none;
-              width: 100% !important;
-              max-width: 100% !important;
-              margin: 0 !important;
-              padding: 36px 20px 24px !important;
-              box-sizing: border-box !important;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              text-align: center;
-            }
-
-            /* Card ativo: visível com fade */
-            #tipos-mobile-section .type-card.tipos-active {
-              display: flex !important;
-              animation: tiposFadeIn 0.35s ease forwards;
-            }
-
-            /* Imagem */
-            #tipos-mobile-section .type-img-wrap {
-              max-width: 180px;
-              width: 100%;
-              margin: 0 auto;
-            }
-            #tipos-mobile-section .type-img-box {
-              aspect-ratio: 1/1;
-              width: 100%;
-            }
-
-            /* Badge (número) */
-            #tipos-mobile-section .type-badge {
-              top: -14px;
-              left: 18px;
-            }
-
-            /* Nav arrows + dots */
-            #tipos-carousel-nav {
-              display: flex !important;
-              align-items: center;
-              justify-content: center;
-              gap: 20px;
-              flex-shrink: 0;
-              width: 100%;
-              max-width: 300px;
-            }
-
-            .tipos-arrow {
-              width: 46px;
-              height: 46px;
-              border-radius: 50%;
-              background: linear-gradient(135deg, #00bbf9, #0094c6);
-              border: none;
-              color: #fff;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              cursor: pointer;
-              box-shadow: 0 6px 18px rgba(0, 187, 249,0.45);
-              transition: transform 0.15s;
-              -webkit-tap-highlight-color: transparent;
-              flex-shrink: 0;
-            }
-
-            .tipos-arrow:active  { transform: scale(0.88); }
-            .tipos-arrow:disabled { opacity: 0.28; pointer-events: none; }
-
-            #tipos-dots {
-              display: flex;
-              gap: 7px;
-              align-items: center;
-              flex: 1;
-              justify-content: center;
-            }
-
-            .tipos-dot {
-              width: 8px;
-              height: 8px;
-              border-radius: 50%;
-              background: rgba(255,255,255,0.25);
-              transition: all 0.3s;
-              flex-shrink: 0;
-            }
-
-            .tipos-dot.active {
-              background: #00bbf9;
-              width: 22px;
-              border-radius: 4px;
-              box-shadow: 0 0 8px rgba(0, 187, 249,0.7);
-            }
-
-          }
-        </style>
-        <div class="top-bar">
-          <span class="section-tag">🚜 Equipamento</span>
-          <div class="slide-title" style="margin-top:6px">Tipos de <span>Empilhadeira</span></div>
-          <div class="slide-subtitle">Aptidão Psicofísica, Saúde e Regras de Acesso</div>
-        </div>
-        <!-- ── DESKTOP: grid 3 colunas ── -->
-        <div class="content-area">
-          <div class="tipos-desktop-grid">
-          <div class="type-card" style="animation-delay: 0s;">
-            <div class="type-badge">01</div>
-            <div class="type-img-wrap">
-              <div class="type-img-glow"></div>
-              <div class="type-img-box">
-                <img src="img/TRANSPALETEIRAMANUAL.png" alt="Empilhadeira Manual" style="width:100%; height:100%; object-fit:contain;">
-              </div>
-            </div>
-            <div style="margin-top:14px; display:flex; align-items:center; gap:8px;">
-              <span class="type-icon">🖐️</span>
-              <div class="type-title">Empilhadeira Manual</div>
-            </div>
-            <div class="type-caption">Força humana · curtas distâncias</div>
-            <div class="type-underline"></div>
-          </div>
-
-          <div class="type-card" style="animation-delay: 0.12s;">
-            <div class="type-badge">02</div>
-            <div class="type-img-wrap">
-              <div class="type-img-glow"></div>
-              <div class="type-img-box">
-                <img src="img/transpaleteiraeletrica.jpg" alt="Empilhadeira Elétrica" style="width:100%; height:100%; object-fit:contain;">
-              </div>
-            </div>
-            <div style="margin-top:14px; display:flex; align-items:center; gap:8px;">
-              <span class="type-icon">⚡</span>
-              <div class="type-title">Empilhadeira Elétrica</div>
-            </div>
-            <div class="type-caption">Motor elétrico · maior eficiência</div>
-            <div class="type-underline"></div>
-          </div>
-          <div class="type-card" style="animation-delay: 0.24s;">
-            <div class="type-badge">03</div>
-            <div class="type-img-wrap">
-              <div class="type-img-glow"></div>
-              <div class="type-img-box">
-                <img src="img/transpaleteiraeletricatripulada.jpg" alt="Empilhadeira Elétrica Tripulada" style="width:100%; height:100%; object-fit:contain;">
-              </div>
-            </div>
-            <div style="margin-top:14px; display:flex; align-items:center; gap:8px;">
-              <span class="type-icon">🧍</span>
-              <div class="type-title">Empilhadeira Elétrica Tripulada</div>
-            </div>
-            <div class="type-caption">Operador a bordo · longos trajetos</div>
-            <div class="type-underline"></div>
-          </div>
-          </div><!-- /tipos-desktop-grid -->
-        </div><!-- /content-area -->
-
-        <!-- ── MOBILE: seção carousel (fora da content-area grid) ── -->
-        <div id="tipos-mobile-section" style="display:none;">
-          <!-- Viewport do card ativo -->
-          <div id="tipos-card-viewport">
-            <div class="type-card tipos-active" data-idx="0">
-              <div class="type-badge">01</div>
-              <div class="type-img-wrap">
-                <div class="type-img-glow"></div>
-                <div class="type-img-box">
-                  <img src="img/TRANSPALETEIRAMANUAL.png" alt="Empilhadeira Manual" style="width:100%; height:100%; object-fit:contain;">
-                </div>
-              </div>
-              <div style="margin-top:14px; display:flex; align-items:center; gap:8px;">
-                <span class="type-icon">🖐️</span>
-                <div class="type-title">Empilhadeira Manual</div>
-              </div>
-              <div class="type-caption">Força humana · curtas distâncias</div>
-              <div class="type-underline"></div>
-            </div>
-            <div class="type-card" data-idx="1">
-              <div class="type-badge">02</div>
-              <div class="type-img-wrap">
-                <div class="type-img-glow"></div>
-                <div class="type-img-box">
-                  <img src="img/transpaleteiraeletrica.jpg" alt="Empilhadeira Elétrica" style="width:100%; height:100%; object-fit:contain;">
-                </div>
-              </div>
-              <div style="margin-top:14px; display:flex; align-items:center; gap:8px;">
-                <span class="type-icon">⚡</span>
-                <div class="type-title">Empilhadeira Elétrica</div>
-              </div>
-              <div class="type-caption">Motor elétrico · maior eficiência</div>
-              <div class="type-underline"></div>
-            </div>
-            <div class="type-card" data-idx="2">
-              <div class="type-badge">03</div>
-              <div class="type-img-wrap">
-                <div class="type-img-glow"></div>
-                <div class="type-img-box">
-                  <img src="img/transpaleteiraeletricatripulada.jpg" alt="Empilhadeira Elétrica Tripulada" style="width:100%; height:100%; object-fit:contain;">
-                </div>
-              </div>
-              <div style="margin-top:14px; display:flex; align-items:center; gap:8px;">
-                <span class="type-icon">🧍</span>
-                <div class="type-title">Empilhadeira Elétrica Tripulada</div>
-              </div>
-              <div class="type-caption">Operador a bordo · longos trajetos</div>
-              <div class="type-underline"></div>
-            </div>
-          </div>
-          <!-- Setas + dots -->
-          <div id="tipos-carousel-nav">
-            <button class="tipos-arrow" id="tipos-prev" aria-label="Anterior" onclick="tiposCarouselNav(-1)">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-            </button>
-            <div id="tipos-dots">
-              <div class="tipos-dot active"></div>
-              <div class="tipos-dot"></div>
-              <div class="tipos-dot"></div>
-            </div>
-            <button class="tipos-arrow" id="tipos-next" aria-label="Próximo" onclick="tiposCarouselNav(1)">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
-            </button>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(0, 187, 249,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S-MOD2-VIDEO3: VÍDEO — Componentes Principais da Empilhadeira ── -->
+      <!-- ── S-MOD2-VIDEO3: VÍDEO — Distrações e Proibições no Setor Logístico ── -->
       <section class="slide video-slide" id="s-mod2-video3">
         <div class="top-bar">
           <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Componentes Principais <span>da Empilhadeira</span></div>
+            <div class="slide-title" style="margin-top:6px">Distrações e Proibições <span>no Setor Logístico</span></div>
             <div class="slide-subtitle">Aptidão Psicofísica, Saúde e Regras de Acesso</div>
           </div>
         </div>
         <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
           <div class="video-wrap">
             <div class="video-box">
-              <iframe id="panda-7949804a-1ac4-4e57-a5fd-992d625f92f0"
-                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=7949804a-1ac4-4e57-a5fd-992d625f92f0"
+              <iframe id="panda-26e6ccab-7db6-4b44-b977-7af8c412a43c"
+                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=26e6ccab-7db6-4b44-b977-7af8c412a43c"
                 frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
                 allowfullscreen="true" fetchpriority="high"
                 style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
-                title="Componentes Principais da Empilhadeira — NR11 - OPERADOR DE EMPILHADEIRA">
+                title="Distrações e Proibições no Setor Logístico — NR11 - OPERADOR DE EMPILHADEIRA">
               </iframe>
             </div>
           </div>
@@ -11119,57 +10953,6 @@
           </svg></div>
       </section>
 
-      <!-- ── S-MOD2-VIDEO4: VÍDEO — O Painel de Controle e a Chave de Contato ── -->
-      <section class="slide video-slide" id="s-mod2-video4">
-        <div class="top-bar">
-          <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">O Painel de Controle <span>e a Chave de Contato</span></div>
-            <div class="slide-subtitle">Aptidão Psicofísica, Saúde e Regras de Acesso</div>
-          </div>
-        </div>
-        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div class="video-wrap">
-            <div class="video-box">
-              <iframe id="panda-b399f850-fda6-41a6-813f-99378764262b"
-                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=b399f850-fda6-41a6-813f-99378764262b"
-                frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
-                allowfullscreen="true" fetchpriority="high"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
-                title="O Painel de Controle e a Chave de Contato — NR11 - OPERADOR DE EMPILHADEIRA">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(0, 187, 249,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S-MOD2-VIDEO5: VÍDEO — O Sistema de Freios e a Proibição do Reverso ── -->
-      <section class="slide video-slide" id="s-mod2-video5">
-        <div class="top-bar">
-          <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">O Sistema de Freios <span>e a Proibição do Reverso</span></div>
-            <div class="slide-subtitle">Aptidão Psicofísica, Saúde e Regras de Acesso</div>
-          </div>
-        </div>
-        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div class="video-wrap">
-            <div class="video-box">
-              <iframe id="panda-72313d8d-ee3d-4284-98bc-bef59a9ebd2d"
-                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=72313d8d-ee3d-4284-98bc-bef59a9ebd2d"
-                frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
-                allowfullscreen="true" fetchpriority="high"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
-                title="O Sistema de Freios e a Proibição do Reverso — NR11 - OPERADOR DE EMPILHADEIRA">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(0, 187, 249,0.07)" />
-          </svg></div>
-      </section>
 
       <!-- ── S-MOD2-GAME: DESAFIO — Verdadeiro ou Falso ── -->
       <section class="slide" id="s-mod2-game">
@@ -11193,7 +10976,7 @@
           }
           #s-mod2-game #mod2tf-intro {
             padding: 32px 24px 36px;
-            background: rgba(255, 255, 255, 0.04);
+            background: linear-gradient(160deg, #1a3564 0%, #12274c 40%, #0a1730 75%, #050c1a 100%);
             border: 1px solid rgba(0, 187, 249, 0.28);
             border-radius: 24px;
             box-shadow: 0 28px 64px rgba(0, 0, 0, 0.4);
@@ -11234,7 +11017,7 @@
             }
           }
           #s-mod2-game .mod2tf-card {
-            background: rgba(255, 255, 255, 0.04);
+            background: linear-gradient(160deg, #1a3564 0%, #12274c 40%, #0a1730 75%, #050c1a 100%);
             border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 24px;
             padding: clamp(28px, 5vw, 40px) clamp(20px, 4vw, 32px);
@@ -11386,7 +11169,7 @@
           </div>
 
           <div id="mod2tf-result" class="mod2tf-wrap"
-            style="display:none; text-align:center; padding: 24px 20px; background: rgba(255,255,255,0.03); border-radius: 28px; border: 1px solid rgba(255,255,255,0.1); animation: slideUp 0.6s ease;">
+            style="display:none; text-align:center; padding: 24px 20px; background: linear-gradient(160deg, #1a3564 0%, #12274c 40%, #0a1730 75%, #050c1a 100%); border-radius: 28px; border: 1px solid rgba(255,255,255,0.1); animation: slideUp 0.6s ease;">
             <div class="r-icon" style="font-size: 56px; margin-bottom: 12px;">🏅</div>
             <h3
               style="font-family:var(--font-h); font-size: clamp(24px, 5vw, 30px); color:var(--gold); margin-bottom:8px; font-weight:900;">
@@ -11423,23 +11206,23 @@
           </svg></div>
       </section>
 
-      <!-- ── S-MOD3-VIDEO: VÍDEO — Inspeção Pré-Uso e o Checklist Diário ── -->
+      <!-- ── S-MOD3-VIDEO: VÍDEO — Velocidade Máxima e Consciência Situacional ── -->
       <section class="slide video-slide" id="s-mod3-video">
         <div class="top-bar">
           <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Inspeção Pré-Uso <span>e o Checklist Diário</span></div>
+            <div class="slide-title" style="margin-top:6px">Velocidade Máxima <span>e Consciência Situacional</span></div>
             <div class="slide-subtitle">Normas de Trânsito Interno e Circulação</div>
           </div>
         </div>
         <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
           <div class="video-wrap">
             <div class="video-box">
-              <iframe id="panda-72313d8d-ee3d-4284-98bc-bef59a9ebd2d-mod3"
-                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=72313d8d-ee3d-4284-98bc-bef59a9ebd2d"
+              <iframe id="panda-7c2abc9c-5d8a-44b4-aeb1-62a7d8786dc1"
+                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=7c2abc9c-5d8a-44b4-aeb1-62a7d8786dc1"
                 frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
                 allowfullscreen="true" fetchpriority="high"
                 style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
-                title="Inspeção Pré-Uso e o Checklist Diário — NR11 - OPERADOR DE EMPILHADEIRA">
+                title="Velocidade Máxima e Consciência Situacional — NR11 - OPERADOR DE EMPILHADEIRA">
               </iframe>
             </div>
           </div>
@@ -11449,206 +11232,24 @@
           </svg></div>
       </section>
 
-      <!-- ── S-MOD3-CHECKLIST: CONTEÚDO — Inspeção Pré-Uso: Checklist do Operador ── -->
-      <section class="slide" id="s-mod3-checklist">
-        <style>
-          #s-mod3-checklist .checklist-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 16px;
-            width: 100%;
-            max-width: 1100px;
-            margin: 0 auto;
-          }
-          #s-mod3-checklist .ck-card {
-            flex: 0 0 calc(33.33% - 12px);
-            max-width: calc(33.33% - 12px);
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.07);
-            border-radius: 20px;
-            padding: 22px 20px 18px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-            animation: ckFadeUp 0.5s ease both;
-          }
-          #s-mod3-checklist .ck-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(0, 187, 249,0.45);
-            box-shadow: 0 20px 40px rgba(0, 187, 249,0.12);
-          }
-          #s-mod3-checklist .ck-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #00bbf9, #56d5ff);
-            opacity: 0.85;
-          }
-          #s-mod3-checklist .ck-num {
-            position: absolute;
-            top: 14px; right: 16px;
-            font-family: var(--font-h);
-            font-size: 38px;
-            font-weight: 900;
-            color: rgba(0, 187, 249,0.28);
-            line-height: 1;
-            user-select: none;
-          }
-          #s-mod3-checklist .ck-icon-wrap {
-            width: 46px;
-            height: 46px;
-            border-radius: 12px;
-            background: rgba(0, 187, 249,0.1);
-            border: 1px solid rgba(0, 187, 249,0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #00bbf9;
-            flex-shrink: 0;
-            transition: background 0.3s;
-          }
-          #s-mod3-checklist .ck-card:hover .ck-icon-wrap {
-            background: rgba(0, 187, 249,0.2);
-          }
-          #s-mod3-checklist .ck-text {
-            font-family: var(--font-p);
-            font-size: 14.5px;
-            line-height: 1.6;
-            color: rgba(255,255,255,0.82);
-          }
-          #s-mod3-checklist .ck-text strong { color: #00bbf9; }
-          #s-mod3-checklist .ck-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            background: rgba(255,200,55,0.1);
-            border: 1px solid rgba(255,200,55,0.25);
-            color: #ffc837;
-            font-size: 11px;
-            font-weight: 700;
-            font-family: var(--font-h);
-            padding: 3px 10px;
-            border-radius: 100px;
-            letter-spacing: 0.4px;
-            align-self: flex-start;
-          }
-          @keyframes ckFadeUp {
-            from { opacity: 0; transform: translateY(18px); }
-            to   { opacity: 1; transform: translateY(0); }
-          }
-          @media screen and (max-width: 768px) and (orientation: portrait) {
-            #s-mod3-checklist .checklist-grid {
-              gap: 8px !important;
-            }
-            #s-mod3-checklist .ck-card {
-              flex: 0 0 calc(50% - 5px) !important;
-              max-width: calc(50% - 5px) !important;
-              padding: 12px 10px 10px !important;
-              gap: 7px !important;
-              border-radius: 14px !important;
-            }
-            #s-mod3-checklist .ck-icon-wrap { width: 32px !important; height: 32px !important; border-radius: 8px !important; }
-            #s-mod3-checklist .ck-icon-wrap svg { width: 16px !important; height: 16px !important; }
-            #s-mod3-checklist .ck-text { font-size: 10.5px !important; line-height: 1.45 !important; }
-            #s-mod3-checklist .ck-num { font-size: 24px !important; top: 8px !important; right: 8px !important; }
-            #s-mod3-checklist .ck-badge { font-size: 9px !important; padding: 2px 7px !important; }
-            #s-mod3-checklist .ck-header-strip { font-size: 12px !important; padding: 8px 12px !important; }
-          }
-        </style>
-
-        <div class="top-bar">
-          <span class="section-tag">🔧 Procedimentos</span>
-          <div class="slide-title" style="margin-top:6px">Inspeção Pré-Uso: <span>Checklist do Operador</span></div>
-          <div class="slide-subtitle">Normas de Trânsito Interno e Circulação</div>
-        </div>
-
-        <div class="content-area" style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; padding: 20px 24px; width:100%; max-width:1100px; margin:0 auto; box-sizing:border-box;">
-
-          <!-- Header strip -->
-          <div class="ck-header-strip" style="display:flex; align-items:center; gap:14px; background:rgba(0, 187, 249,0.06); border:1px solid rgba(0, 187, 249,0.18); border-radius:14px; padding:10px 20px; width:100%; box-sizing:border-box;">
-            <span style="font-size:22px; flex-shrink:0;">📋</span>
-            <p style="font-family:var(--font-p); font-size:15px; color:rgba(255,255,255,0.85); margin:0; line-height:1.5; font-weight:500;">
-              Antes de iniciar a operação, realize a <strong style="color:#00bbf9;">inspeção pré-uso</strong> verificando cada item. Em caso de irregularidade, <strong style="color:#ffc837;">não opere o equipamento.</strong>
-            </p>
-          </div>
-
-          <!-- Cards grid -->
-          <div class="checklist-grid">
-
-            <div class="ck-card" style="animation-delay:0.05s">
-              <span class="ck-num">01</span>
-              <div class="ck-icon-wrap">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-              </div>
-              <p class="ck-text">Fazer <strong>inspeção no início de cada turno</strong> antes de usar o equipamento.</p>
-              <span class="ck-badge">⚡ Obrigatório</span>
-            </div>
-
-            <div class="ck-card" style="animation-delay:0.12s">
-              <span class="ck-num">02</span>
-              <div class="ck-icon-wrap">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-              </div>
-              <p class="ck-text">Verificar a <strong>limpeza</strong> e se as <strong>placas de aviso e identificação</strong> estão intactas.</p>
-            </div>
-
-            <div class="ck-card" style="animation-delay:0.19s">
-              <span class="ck-num">03</span>
-              <div class="ck-icon-wrap">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
-              </div>
-              <p class="ck-text">Verificar o <strong>nível de carga da bateria</strong> e se está bem fixa, com a <strong>trava de segurança</strong> no lugar.</p>
-            </div>
-
-            <div class="ck-card" style="animation-delay:0.26s">
-              <span class="ck-num">04</span>
-              <div class="ck-icon-wrap">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-              </div>
-              <p class="ck-text">Equipamento em <strong>manutenção</strong> não deve ser utilizado sem a <strong>liberação do mecânico</strong>.</p>
-              <span class="ck-badge">⚠️ Atenção</span>
-            </div>
-
-            <div class="ck-card" style="animation-delay:0.33s">
-              <span class="ck-num">05</span>
-              <div class="ck-icon-wrap">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.64 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.55 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91A16 16 0 0 0 14 15.91l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              </div>
-              <p class="ck-text">Informar <strong>toda e qualquer ocorrência</strong> detectada à <strong>chefia imediata</strong> ou à <strong>manutenção</strong>, para evitar acidentes.</p>
-              <span class="ck-badge">📢 Comunicar sempre</span>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(0, 187, 249,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S-MOD3-VIDEO2: VÍDEO — Postura Corporal, Visibilidade e Condução ── -->
+      <!-- ── S-MOD3-VIDEO2: VÍDEO — Sinalização Luminosa e Visibilidade Ativa ── -->
 
       <section class="slide video-slide" id="s-mod3-video2">
         <div class="top-bar">
           <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Postura Corporal, <span>Visibilidade e Condução</span></div>
+            <div class="slide-title" style="margin-top:6px">Sinalização Luminosa <span>e Visibilidade Ativa</span></div>
             <div class="slide-subtitle">Normas de Trânsito Interno e Circulação</div>
           </div>
         </div>
         <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
           <div class="video-wrap">
             <div class="video-box">
-              <iframe id="panda-dcbd74e6-012d-42a2-b538-2c2295928a17"
-                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=dcbd74e6-012d-42a2-b538-2c2295928a17"
+              <iframe id="panda-fc2f2f1a-95bc-481c-bffb-7ba88addf73a"
+                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=fc2f2f1a-95bc-481c-bffb-7ba88addf73a"
                 frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
                 allowfullscreen="true" fetchpriority="high"
                 style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
-                title="Postura Corporal, Visibilidade e Condução — NR11 - OPERADOR DE EMPILHADEIRA">
+                title="Sinalização Luminosa e Visibilidade Ativa — NR11 - OPERADOR DE EMPILHADEIRA">
               </iframe>
             </div>
           </div>
@@ -11658,23 +11259,23 @@
           </svg></div>
       </section>
 
-      <!-- ── S-MOD3-VIDEO3: VÍDEO — Regras de Trânsito Interno e Preferências ── -->
+      <!-- ── S-MOD3-VIDEO3: VÍDEO — Cinto de Segurança e Ergonomia na Cabine ── -->
       <section class="slide video-slide" id="s-mod3-video3">
         <div class="top-bar">
           <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Regras de Trânsito Interno <span>e Preferências</span></div>
+            <div class="slide-title" style="margin-top:6px">Cinto de Segurança <span>e Ergonomia na Cabine</span></div>
             <div class="slide-subtitle">Normas de Trânsito Interno e Circulação</div>
           </div>
         </div>
         <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
           <div class="video-wrap">
             <div class="video-box">
-              <iframe id="panda-3ada3a57-c63a-4cda-a8ee-77a3a1dded48"
-                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=3ada3a57-c63a-4cda-a8ee-77a3a1dded48"
+              <iframe id="panda-6fc365ea-4105-4884-9506-d098c529cae3"
+                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=6fc365ea-4105-4884-9506-d098c529cae3"
                 frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
                 allowfullscreen="true" fetchpriority="high"
                 style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
-                title="Regras de Trânsito Interno e Preferências — NR11 - OPERADOR DE EMPILHADEIRA">
+                title="Cinto de Segurança e Ergonomia na Cabine — NR11 - OPERADOR DE EMPILHADEIRA">
               </iframe>
             </div>
           </div>
@@ -11684,763 +11285,209 @@
           </svg></div>
       </section>
 
-      <!-- ── S-MOD3-TRANSIT-RULES: CONTEÚDO — Regras de Trânsito Interno ── -->
-      <section class="slide" id="s-mod3-transit-rules">
+      <!-- ── S-MOD3-DRIVER-RULES: CONTEÚDO — Regras para Motoristas e Manobristas ── -->
+      <section class="slide" id="s-mod3-driver-rules">
         <style>
-          #s-mod3-transit-rules .tr-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 14px;
-            width: 100%;
-            max-width: 1080px;
-            margin: 0 auto;
-          }
-          #s-mod3-transit-rules .tr-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.07);
-            border-radius: 18px;
-            padding: 18px 16px 16px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-            animation: ckFadeUp 0.5s ease both;
-          }
-          #s-mod3-transit-rules .tr-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(0, 187, 249,0.4);
-            box-shadow: 0 18px 36px rgba(0, 187, 249,0.1);
-          }
-          #s-mod3-transit-rules .tr-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #00bbf9, #56d5ff);
-            opacity: 0.8;
-          }
-          #s-mod3-transit-rules .tr-card.tr-danger::before {
-            background: linear-gradient(90deg, #e74c3c, #ff7675);
-          }
-          #s-mod3-transit-rules .tr-card.tr-warn::before {
-            background: linear-gradient(90deg, #f39c12, #ffc837);
-          }
-          #s-mod3-transit-rules .tr-icon-wrap {
-            width: 44px; height: 44px;
-            border-radius: 12px;
-            background: rgba(0, 187, 249,0.1);
-            border: 1px solid rgba(0, 187, 249,0.2);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 22px; flex-shrink: 0;
-            transition: background 0.3s;
-          }
-          #s-mod3-transit-rules .tr-card.tr-danger .tr-icon-wrap {
-            background: rgba(231,76,60,0.1); border-color: rgba(231,76,60,0.25);
-          }
-          #s-mod3-transit-rules .tr-card.tr-warn .tr-icon-wrap {
-            background: rgba(243,156,18,0.1); border-color: rgba(243,156,18,0.25);
-          }
-          #s-mod3-transit-rules .tr-card:hover .tr-icon-wrap { background: rgba(0, 187, 249,0.2); }
-          #s-mod3-transit-rules .tr-title {
-            font-family: var(--font-h); font-size: 13.5px; font-weight: 800;
-            color: #ffffff; line-height: 1.3;
-          }
-          #s-mod3-transit-rules .tr-text {
-            font-family: var(--font-p); font-size: 12.5px;
-            color: rgba(255,255,255,0.72); line-height: 1.55;
-          }
-          #s-mod3-transit-rules .tr-text strong { color: #00bbf9; }
-          #s-mod3-transit-rules .tr-card.tr-danger .tr-text strong { color: #ff7675; }
-          #s-mod3-transit-rules .tr-card.tr-warn .tr-text strong { color: #ffc837; }
-          #s-mod3-transit-rules .tr-alert-bar {
-            display: flex; align-items: center; gap: 14px;
-            background: rgba(0, 187, 249,0.06);
-            border: 1px solid rgba(0, 187, 249,0.2);
-            border-radius: 14px; padding: 10px 18px;
-            width: 100%; max-width: 1080px; margin: 0 auto;
-            box-sizing: border-box;
-          }
-          @media screen and (max-width: 768px) and (orientation: portrait) {
-            #s-mod3-transit-rules {
-              display: flex !important; flex-direction: column !important;
-              overflow: hidden !important;
-            }
-            #s-mod3-transit-rules .content-area { display: none !important; }
-            #tr-mobile-section {
-              display: flex !important; flex-direction: column !important;
-              align-items: center !important; justify-content: center !important;
-              flex: 1 1 0 !important; min-height: 0 !important;
-              overflow: hidden !important; padding: 10px 16px 72px !important;
-              width: 100% !important; box-sizing: border-box !important; gap: 12px !important;
-            }
-            #tr-mobile-alert {
-              width: 100%; background: rgba(0, 187, 249,0.06);
-              border: 1px solid rgba(0, 187, 249,0.22); border-radius: 12px;
-              padding: 16px 18px; display: flex; align-items: flex-start; gap: 12px;
-            }
-            #tr-mobile-alert p { font-size: 17px; color: rgba(255,255,255,0.88); margin: 0; line-height: 1.6; }
-            #tr-card-viewport { width: 100%; flex-shrink: 0; }
-            #tr-mobile-section .tr-card {
-              display: none; width: 100% !important; max-width: 100% !important;
-              margin: 0 !important; padding: 26px 22px 22px !important;
-              box-sizing: border-box !important; flex-direction: column;
-              gap: 14px;
-            }
-            #tr-mobile-section .tr-card.tr-active {
-              display: flex !important;
-              animation: tiposFadeIn 0.35s ease forwards;
-            }
-            #tr-mobile-section .tr-icon-wrap {
-              width: 56px !important; height: 56px !important; font-size: 28px !important;
-            }
-            #tr-mobile-section .tr-title { font-size: 22px !important; }
-            #tr-mobile-section .tr-text  { font-size: 17px !important; }
-            #tr-carousel-nav {
-              display: flex !important; align-items: center; justify-content: center;
-              gap: 20px; width: 100%; flex-shrink: 0;
-            }
-            .tr-arrow {
-              width: 46px; height: 46px; border-radius: 50%;
-              background: linear-gradient(135deg, #00bbf9, #0094c6);
-              border: none; color: #fff;
-              display: flex; align-items: center; justify-content: center;
-              cursor: pointer; box-shadow: 0 6px 18px rgba(0, 187, 249,0.45);
-              transition: transform 0.15s; -webkit-tap-highlight-color: transparent;
-              flex-shrink: 0; font-size: 20px;
-            }
-            .tr-arrow:active  { transform: scale(0.88); }
-            .tr-arrow:disabled { opacity: 0.28; pointer-events: none; }
-            #tr-dots { display: flex; gap: 7px; align-items: center; flex: 1; justify-content: center; }
-            .tr-dot {
-              width: 8px; height: 8px; border-radius: 50%;
-              background: rgba(255,255,255,0.25); transition: all 0.3s; flex-shrink: 0;
-            }
-            .tr-dot.active {
-              background: #00bbf9; width: 22px; border-radius: 4px;
-              box-shadow: 0 0 8px rgba(0, 187, 249,0.7);
-            }
-          }
-          @media screen and (min-width: 769px) {
-            #s-mod3-transit-rules .tr-title { font-size: 16px; }
-            #s-mod3-transit-rules .tr-text  { font-size: 15px; }
-            #s-mod3-transit-rules .tr-alert-bar p { font-size: 16px !important; }
-            #s-mod3-transit-rules .tr-icon-wrap { width: 52px; height: 52px; font-size: 26px; }
-            #s-mod3-transit-rules .tr-card { padding: 22px 20px 18px; gap: 12px; }
-            #s-mod3-transit-rules .content-area {
-              justify-content: center !important;
-              padding-top: 32px !important;
-              padding-bottom: 100px !important;
-            }
-          }
-        </style>
-
-        <div class="top-bar">
-          <span class="section-tag">🚦 Trânsito</span>
-          <div class="slide-title" style="margin-top:6px">Regras de <span>Trânsito Interno</span></div>
-          <div class="slide-subtitle">Normas de Trânsito Interno e Circulação</div>
-        </div>
-
-        <div class="content-area" style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; padding:14px 24px 0; width:100%; max-width:1080px; margin:0 auto; box-sizing:border-box;">
-
-          <!-- Banner topo -->
-          <div class="tr-alert-bar">
-            <span style="font-size:22px; flex-shrink:0;">🚦</span>
-            <p style="font-family:var(--font-p); font-size:14.5px; color:rgba(255,255,255,0.88); margin:0; line-height:1.5; font-weight:500;">
-              Na operação logística do dia a dia, a circulação segura exige <strong style="color:#00bbf9;">disciplina e atenção constante</strong>. Conheça as regras essenciais de trânsito interno.
-            </p>
-          </div>
-
-          <!-- Grid de cards -->
-          <div class="tr-grid">
-
-            <div class="tr-card" style="animation-delay:0.05s">
-              <div class="tr-icon-wrap">🚶</div>
-              <div class="tr-title">Pedestres em Primeiro</div>
-              <p class="tr-text">Dê sempre <strong>preferência absoluta aos pedestres</strong>. Evite conversões bruscas e circule com atenção redobrada em corredores compartilhados.</p>
-            </div>
-
-            <div class="tr-card tr-danger" style="animation-delay:0.1s">
-              <div class="tr-icon-wrap">⛔</div>
-              <div class="tr-title">Parada Obrigatória</div>
-              <p class="tr-text">A parada é <strong>obrigatória em todos os cruzamentos e curvas</strong>, dando preferência a empilhadeiras e paleteiras carregadas.</p>
-            </div>
-
-            <div class="tr-card" style="animation-delay:0.15s">
-              <div class="tr-icon-wrap">🧵</div>
-              <div class="tr-title">Sem "Costurar"</div>
-              <p class="tr-text">Não tente <strong>costurar entre obstáculos</strong>. Circule por rotas livres e sinalize sua passagem antes de dar passagem para outra máquina.</p>
-            </div>
-
-            <div class="tr-card" style="animation-delay:0.2s">
-              <div class="tr-icon-wrap">🛞</div>
-              <div class="tr-title">Condução Suave</div>
-              <p class="tr-text">Mantenha postura adequada. Evite <strong>freadas e arrancadas bruscas</strong>. Reduza a velocidade em curvas e locais de pouca visibilidade.</p>
-            </div>
-
-            <div class="tr-card tr-warn" style="animation-delay:0.25s">
-              <div class="tr-icon-wrap">📢</div>
-              <div class="tr-title">Buzina com Moderação</div>
-              <p class="tr-text">Use a buzina <strong>somente quando estritamente necessário</strong> para alertar outras pessoas. Não buzine de forma excessiva ou em zonas de silêncio.</p>
-            </div>
-
-            <div class="tr-card tr-danger" style="animation-delay:0.3s">
-              <div class="tr-icon-wrap">💧</div>
-              <div class="tr-title">Pisos com Risco</div>
-              <p class="tr-text">Se o piso estiver <strong>molhado, com óleo ou irregular</strong>, reduza imediatamente a velocidade e redobre o cuidado para evitar derrapagens.</p>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- ── MOBILE: carousel (portrait only) ── -->
-        <div id="tr-mobile-section" style="display:none;">
-          <div id="tr-mobile-alert">
-            <span style="font-size:18px;flex-shrink:0;">🚦</span>
-            <p>Circulação segura exige <strong style="color:#00bbf9;">disciplina e atenção constante</strong>. Navegue pelos cards para conhecer as regras.</p>
-          </div>
-          <div id="tr-card-viewport">
-            <div class="tr-card tr-active" data-tr-idx="0">
-              <div class="tr-icon-wrap">🚶</div>
-              <div class="tr-title">Pedestres em Primeiro</div>
-              <p class="tr-text">Dê sempre <strong>preferência absoluta aos pedestres</strong>. Evite conversões bruscas e circule com atenção redobrada em corredores compartilhados.</p>
-            </div>
-            <div class="tr-card tr-danger" data-tr-idx="1">
-              <div class="tr-icon-wrap">⛔</div>
-              <div class="tr-title">Parada Obrigatória</div>
-              <p class="tr-text">A parada é <strong>obrigatória em todos os cruzamentos e curvas</strong>, dando preferência a empilhadeiras e paleteiras carregadas.</p>
-            </div>
-            <div class="tr-card" data-tr-idx="2">
-              <div class="tr-icon-wrap">🧵</div>
-              <div class="tr-title">Sem &quot;Costurar&quot;</div>
-              <p class="tr-text">Não tente <strong>costurar entre obstáculos</strong>. Circule por rotas livres e sinalize sua passagem antes de dar passagem para outra máquina.</p>
-            </div>
-            <div class="tr-card" data-tr-idx="3">
-              <div class="tr-icon-wrap">🛞</div>
-              <div class="tr-title">Condução Suave</div>
-              <p class="tr-text">Mantenha postura adequada. Evite <strong>freadas e arrancadas bruscas</strong>. Reduza a velocidade em curvas e locais de pouca visibilidade.</p>
-            </div>
-            <div class="tr-card tr-warn" data-tr-idx="4">
-              <div class="tr-icon-wrap">📢</div>
-              <div class="tr-title">Buzina com Moderação</div>
-              <p class="tr-text">Use a buzina <strong>somente quando estritamente necessário</strong> para alertar outras pessoas. Não buzine de forma excessiva.</p>
-            </div>
-            <div class="tr-card tr-danger" data-tr-idx="5">
-              <div class="tr-icon-wrap">💧</div>
-              <div class="tr-title">Pisos com Risco</div>
-              <p class="tr-text">Se o piso estiver <strong>molhado, com óleo ou irregular</strong>, reduza imediatamente a velocidade e redobre o cuidado para evitar derrapagens.</p>
-            </div>
-          </div>
-          <div id="tr-carousel-nav">
-            <button class="tr-arrow" id="tr-prev" onclick="trCarouselNav(-1)" disabled>&#8592;</button>
-            <div id="tr-dots"></div>
-            <button class="tr-arrow" id="tr-next" onclick="trCarouselNav(1)">&#8594;</button>
-          </div>
-        </div>
-
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(0, 187, 249,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S-MOD3-VIDEO4: VÍDEO — Técnicas de Manuseio e Transporte de Cargas ── -->
-      <section class="slide video-slide" id="s-mod3-video4">
-        <div class="top-bar">
-          <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Técnicas de Manuseio <span>e Transporte de Cargas</span></div>
-            <div class="slide-subtitle">Normas de Trânsito Interno e Circulação</div>
-          </div>
-        </div>
-        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div class="video-wrap">
-            <div class="video-box">
-              <iframe id="panda-6b711f04-88ec-4c16-9776-7c87d18ddf95"
-                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=6b711f04-88ec-4c16-9776-7c87d18ddf95"
-                frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
-                allowfullscreen="true" fetchpriority="high"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
-                title="Técnicas de Manuseio e Transporte de Cargas — NR11 - OPERADOR DE EMPILHADEIRA">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(0, 187, 249,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S-MOD3-VIDEO5: VÍDEO - Operação Segura em Rampas e Inclinações ── -->
-      <section class="slide video-slide" id="s-mod3-video5">
-        <div class="top-bar">
-          <div><span class="section-tag">🎥 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Operação Segura <span>em Rampas e Inclinações</span></div>
-            <div class="slide-subtitle">Normas de Trânsito Interno e Circulação</div>
-          </div>
-        </div>
-        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div class="video-wrap">
-            <div class="video-box">
-              <iframe id="panda-a37d831a-25b5-4b50-9fe6-45f0e617a3ae"
-                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=a37d831a-25b5-4b50-9fe6-45f0e617a3ae"
-                frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
-                allowfullscreen="true" fetchpriority="high"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
-                title="Operação Segura em Rampas e Inclinações - NR11 - OPERADOR DE EMPILHADEIRA">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(0, 187, 249,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S-MOD3-RAMPAS-RULES: CONTEÚDO — Operação em Rampas ── -->
-      <section class="slide" id="s-mod3-rampas-rules">
-        <style>
-          #s-mod3-rampas-rules { overflow: hidden; }
-          #s-mod3-rampas-rules .rr-content {
+          #s-mod3-driver-rules .dr-content {
             display: flex; flex-direction: column; align-items: center;
-            justify-content: center; gap: clamp(8px,1.8cqh,14px);
+            justify-content: center; gap: clamp(10px,1.8cqh,16px);
             padding: clamp(14px,3cqh,32px) clamp(16px,2.6cqw,28px) clamp(60px,9cqh,100px);
             width: 100%; box-sizing: border-box;
             container-type: size;
           }
-          /* Banner */
-          #s-mod3-rampas-rules .rr-alert {
+          #s-mod3-driver-rules .dr-intro {
             display: flex; align-items: center; gap: clamp(8px,1.4cqw,14px);
-            background: rgba(0, 187, 249,0.06);
-            border: 1px solid rgba(0, 187, 249,0.22);
+            background: #14100a;
+            border: 1px solid rgba(255,199,0,0.28);
             border-radius: 14px; padding: clamp(8px,1.8cqh,12px) clamp(12px,2cqw,20px);
-            width: 100%; max-width: 1220px; box-sizing: border-box;
+            width: 100%; max-width: 1300px; box-sizing: border-box;
           }
-          /* Regras de ouro */
-          #s-mod3-rampas-rules .rr-golden {
-            display: grid; grid-template-columns: 1fr 1fr;
-            gap: clamp(10px,1.6cqw,18px); width: 100%; max-width: 1220px;
+          #s-mod3-driver-rules .dr-intro p {
+            font-family: var(--font-p); font-size: clamp(14.5px,2.5cqh,18px);
+            color: rgba(255,255,255,0.88); margin: 0; line-height: 1.4;
           }
-          #s-mod3-rampas-rules .rr-gold-card {
-            display: flex; align-items: center; gap: clamp(10px,1.8cqw,20px);
-            background: linear-gradient(135deg, rgba(255,199,0,0.08), rgba(255,199,0,0.03));
-            border: 1px solid rgba(255,199,0,0.3);
-            border-radius: 20px; padding: clamp(14px,3.2cqh,28px) clamp(16px,2.6cqw,30px) clamp(26px,5cqh,36px);
-            position: relative; overflow: hidden;
+          #s-mod3-driver-rules .dr-grid {
+            display: grid; grid-template-columns: repeat(5, 1fr);
+            grid-auto-rows: 1fr;
+            gap: clamp(8px,1.2cqw,14px); width: 100%; max-width: 1300px;
           }
-          #s-mod3-rampas-rules .rr-gold-card::before {
-            content: '';
-            position: absolute; top: 0; left: 0; right: 0; height: 3px;
-            background: linear-gradient(90deg, #ffc837, #f6a623);
-          }
-          #s-mod3-rampas-rules .rr-gold-badge {
-            width: clamp(44px,8cqh,56px); height: clamp(44px,8cqh,56px);
-            border-radius: 50%;
-            background: linear-gradient(135deg, #ffc837, #f6a623);
-            display: flex; align-items: center; justify-content: center;
-            font-size: clamp(21px,3.8cqh,26px); flex-shrink: 0;
-            box-shadow: 0 6px 20px rgba(255,200,0,0.35);
-          }
-          #s-mod3-rampas-rules .rr-gold-label {
-            font-family: var(--font-h); font-size: clamp(12px,1.9cqh,13px); font-weight: 900;
-            letter-spacing: 0.1em; text-transform: uppercase; color: #ffc837;
-            margin-bottom: clamp(2px,0.8cqh,6px);
-          }
-          #s-mod3-rampas-rules .rr-gold-title {
-            font-family: var(--font-h); font-size: clamp(19px,3.5cqh,24px); font-weight: 900;
-            color: #ffffff; line-height: 1.3; margin-bottom: clamp(2px,0.8cqh,6px);
-          }
-          #s-mod3-rampas-rules .rr-gold-sub {
-            font-family: var(--font-p); font-size: clamp(14px,2.5cqh,17px);
-            color: rgba(255,255,255,0.65); margin-top: 4px; line-height: 1.5;
-          }
-          /* Cards secundários */
-          #s-mod3-rampas-rules .rr-grid {
-            display: grid; grid-template-columns: repeat(4, 1fr);
-            gap: clamp(8px,1.4cqw,16px); width: 100%; max-width: 1220px;
-          }
-          #s-mod3-rampas-rules .rr-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.07);
-            border-radius: 18px; padding: clamp(12px,3.4cqh,26px) clamp(12px,2.4cqw,22px) clamp(28px,5.6cqh,40px);
-            display: flex; flex-direction: column; gap: clamp(6px,1.4cqh,12px);
-            position: relative; overflow: hidden;
+          #s-mod3-driver-rules .dr-card {
+            height: 100%; box-sizing: border-box;
+            background: #141414;
+            border: 1px solid rgba(0, 187, 249,0.3);
+            border-radius: 16px;
+            padding: clamp(12px,2.6cqh,18px) clamp(8px,1.6cqw,14px);
+            display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+            gap: clamp(6px,1.2cqh,10px);
             transition: transform 0.3s, border-color 0.3s;
-            animation: ckFadeUp 0.5s ease both;
           }
-          #s-mod3-rampas-rules .rr-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(0, 187, 249,0.35);
+          #s-mod3-driver-rules .dr-card:hover { transform: translateY(-4px); border-color: rgba(0, 187, 249,0.55); }
+          #s-mod3-driver-rules .dr-badge {
+            width: clamp(40px,7.5cqh,52px); height: clamp(40px,7.5cqh,52px);
+            border-radius: 50%; flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center;
+            font-size: clamp(18px,3.4cqh,24px); font-weight: 900;
+            color: #fff;
+            background: linear-gradient(135deg, #00bbf9, #0094c6);
+            box-shadow: 0 6px 16px rgba(0, 187, 249,0.4);
           }
-          #s-mod3-rampas-rules .rr-card::before {
-            content: ''; position: absolute;
-            top: 0; left: 0; right: 0; height: 3px;
-            background: linear-gradient(90deg, #00bbf9, #56d5ff);
+          #s-mod3-driver-rules .dr-card-title {
+            font-family: var(--font-h); font-size: clamp(12.5px,2cqh,14px); font-weight: 800; color: #fff;
+            line-height: 1.25;
           }
-          #s-mod3-rampas-rules .rr-card.rr-danger::before {
-            background: linear-gradient(90deg, #e74c3c, #ff7675);
+          #s-mod3-driver-rules .dr-card-text {
+            font-family: var(--font-p); font-size: clamp(11px,1.7cqh,12.5px);
+            color: rgba(255,255,255,0.65); line-height: 1.4;
           }
-          #s-mod3-rampas-rules .rr-icon {
-            font-size: clamp(28px,5.2cqh,38px);
+          @media (max-width: 980px) {
+            #s-mod3-driver-rules .dr-grid { grid-template-columns: repeat(3, 1fr); }
           }
-          #s-mod3-rampas-rules .rr-ctitle {
-            font-family: var(--font-h); font-size: clamp(16.5px,2.9cqh,19px); font-weight: 800; color: #fff;
-          }
-          #s-mod3-rampas-rules .rr-ctext {
-            font-family: var(--font-p); font-size: clamp(13.5px,2.4cqh,16px);
-            color: rgba(255,255,255,0.7); line-height: 1.5;
-          }
-          #s-mod3-rampas-rules .rr-ctext strong { color: #00bbf9; }
-          #s-mod3-rampas-rules .rr-card.rr-danger .rr-ctext strong { color: #ff7675; }
-
-          /* Flip interativo (desktop) */
-          #s-mod3-rampas-rules .rr-flip {
-            perspective: 1400px;
-            cursor: pointer;
-            -webkit-tap-highlight-color: transparent;
-          }
-          #s-mod3-rampas-rules .rr-golden .rr-flip { min-height: clamp(120px,22cqh,190px); }
-          #s-mod3-rampas-rules .rr-grid .rr-flip { min-height: clamp(150px,27cqh,230px); }
-          #s-mod3-rampas-rules .rr-flip-inner {
-            position: relative;
-            width: 100%; height: 100%;
-            transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
-            transform-style: preserve-3d;
-          }
-          #s-mod3-rampas-rules .rr-flip.rr-flipped .rr-flip-inner {
-            transform: rotateY(180deg);
-          }
-          #s-mod3-rampas-rules .rr-flip:hover .rr-flip-inner {
-            transform: rotateY(-6deg);
-          }
-          #s-mod3-rampas-rules .rr-flip.rr-flipped:hover .rr-flip-inner {
-            transform: rotateY(186deg);
-          }
-          /* Front fica em fluxo normal (define a altura real do card, evitando corte de texto),
-             mas também se estica para acompanhar o card mais alto da mesma linha do grid. */
-          #s-mod3-rampas-rules .rr-flip-front {
-            position: relative;
-            width: 100%; height: 100%; box-sizing: border-box;
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-          }
-          /* Back fica sobreposto, ocupando exatamente a altura que o front definiu */
-          #s-mod3-rampas-rules .rr-flip-back {
-            position: absolute; inset: 0;
-            transform: rotateY(180deg);
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-            display: flex; flex-direction: column; justify-content: center; gap: clamp(6px,1.2cqh,10px);
-            padding: clamp(14px,3cqh,26px) clamp(14px,2.6cqw,28px); box-sizing: border-box; overflow: hidden;
-            background: linear-gradient(135deg, rgba(0, 187, 249,0.14), rgba(18,18,18,0.96));
-            border: 1px solid rgba(0, 187, 249,0.4);
-            border-radius: 18px;
-          }
-          #s-mod3-rampas-rules .rr-golden .rr-flip-back { border-radius: 20px; }
-          #s-mod3-rampas-rules .rr-back-label {
-            font-family: var(--font-h); font-size: clamp(12px,1.9cqh,13px); font-weight: 900;
-            letter-spacing: 0.08em; text-transform: uppercase; color: #56d5ff;
-          }
-          #s-mod3-rampas-rules .rr-back-text {
-            font-family: var(--font-p); font-size: clamp(13.5px,2.4cqh,16px); line-height: 1.5;
-            color: rgba(255,255,255,0.9);
-          }
-          #s-mod3-rampas-rules .rr-flip-hint {
-            position: absolute; bottom: 8px; right: 14px;
-            font-family: var(--font-h); font-size: 10.5px; font-weight: 700;
-            letter-spacing: 0.04em; color: rgba(255,255,255,0.35);
-            display: flex; align-items: center; gap: 5px;
-            pointer-events: none;
-          }
-          #s-mod3-rampas-rules .rr-flip-hint svg {
-            width: 12px; height: 12px; animation: rrHintPulse 1.8s ease-in-out infinite;
-          }
-          @keyframes rrHintPulse {
-            0%, 100% { opacity: 0.4; transform: translateX(0); }
-            50% { opacity: 1; transform: translateX(2px); }
-          }
-
-          /* Mobile carousel */
-          @media screen and (max-width: 768px) and (orientation: portrait) {
-            #s-mod3-rampas-rules {
-              display: flex !important; flex-direction: column !important;
-              overflow: hidden !important;
-            }
-            #s-mod3-rampas-rules .content-area { display: none !important; }
-            #rr-mobile-section {
-              display: flex !important; flex-direction: column !important;
-              align-items: center !important; justify-content: center !important;
-              flex: 1 1 0 !important; min-height: 0 !important;
-              overflow: hidden !important; padding: 10px 16px 72px !important;
-              width: 100% !important; box-sizing: border-box !important; gap: 12px !important;
-            }
-            #rr-mobile-alert {
-              width: 100%; background: rgba(0, 187, 249,0.06);
-              border: 1px solid rgba(0, 187, 249,0.22); border-radius: 12px;
-              padding: 16px 18px; display: flex; align-items: flex-start; gap: 12px;
-            }
-            #rr-mobile-alert p { font-size: 22px !important; color: rgba(255,255,255,0.88); margin: 0; line-height: 1.6; }
-            #rr-card-viewport { width: 100%; flex-shrink: 0; }
-            #rr-mobile-section .rr-mcard {
-              display: none; width: 100% !important;
-              box-sizing: border-box !important;
-            }
-            #rr-mobile-section .rr-mcard.rr-active {
-              display: block !important;
-              animation: tiposFadeIn 0.35s ease forwards;
-            }
-            /* Golden cards on mobile */
-            #rr-mobile-section .rr-gold-card {
-              display: flex; align-items: center; gap: 16px;
-              border-radius: 18px; padding: 22px 20px;
-              width: 100%; box-sizing: border-box;
-            }
-            #rr-mobile-section .rr-gold-badge { width: 54px; height: 54px; font-size: 26px; }
-            #rr-mobile-section .rr-gold-label { font-size: 14px !important; }
-            #rr-mobile-section .rr-gold-title { font-size: 26px !important; }
-            #rr-mobile-section .rr-gold-sub { font-size: 20px !important; }
-            /* Secondary cards on mobile */
-            #rr-mobile-section .rr-card {
-              width: 100% !important; box-sizing: border-box !important;
-              padding: 26px 22px 22px !important; gap: 14px;
-              border-radius: 18px !important;
-            }
-            #rr-mobile-section .rr-icon { font-size: 32px; }
-            #rr-mobile-section .rr-ctitle { font-size: 26px !important; }
-            #rr-mobile-section .rr-ctext { font-size: 20px !important; line-height: 1.6 !important; }
-            #rr-carousel-nav {
-              display: flex !important; align-items: center; justify-content: center;
-              gap: 20px; width: 100%; flex-shrink: 0;
-            }
-            .rr-arrow {
-              width: 46px; height: 46px; border-radius: 50%;
-              background: linear-gradient(135deg, #00bbf9, #0094c6);
-              border: none; color: #fff;
-              display: flex; align-items: center; justify-content: center;
-              cursor: pointer; box-shadow: 0 6px 18px rgba(0, 187, 249,0.45);
-              transition: transform 0.15s; -webkit-tap-highlight-color: transparent;
-              flex-shrink: 0; font-size: 20px;
-            }
-            .rr-arrow:active  { transform: scale(0.88); }
-            .rr-arrow:disabled { opacity: 0.28; pointer-events: none; }
-            #rr-dots { display: flex; gap: 7px; align-items: center; flex: 1; justify-content: center; }
-            .rr-dot {
-              width: 8px; height: 8px; border-radius: 50%;
-              background: rgba(255,255,255,0.25); transition: all 0.3s; flex-shrink: 0;
-            }
-            .rr-dot.active {
-              background: #ffc837; width: 22px; border-radius: 4px;
-              box-shadow: 0 0 8px rgba(255,200,0,0.7);
-            }
+          @media (max-width: 560px) {
+            #s-mod3-driver-rules .dr-grid { grid-template-columns: repeat(2, 1fr); }
           }
         </style>
 
         <div class="top-bar">
-          <span class="section-tag">⛰️ Rampas</span>
-          <div class="slide-title" style="margin-top:6px">Operação Segura <span>em Rampas</span></div>
+          <span class="section-tag">🚦 Circulação</span>
+          <div class="slide-title" style="margin-top:6px">Regras <span>de Trânsito Interno</span></div>
           <div class="slide-subtitle">Normas de Trânsito Interno e Circulação</div>
         </div>
 
-        <div class="content-area rr-content">
+        <div class="content-area dr-content">
 
-          <!-- Banner intro -->
-          <div class="rr-alert">
-            <span style="font-size:clamp(19px,3.6cqh,24px); flex-shrink:0;">⛰️</span>
-            <p style="font-family:var(--font-p); font-size:clamp(15px,2.6cqh,19px); color:rgba(255,255,255,0.88); margin:0; line-height:1.45;">
-              A operação em rampas exige <strong style="color:#ffc837;">técnicas específicas</strong>. Se o tráfego em rampa for inevitável, memorize as regras de ouro abaixo e <strong style="color:#00bbf9;">trabalhe sempre com segurança!</strong>
-            </p>
+          <div class="dr-intro">
+            <span style="font-size:clamp(19px,3.6cqh,24px); flex-shrink:0;">🚦</span>
+            <p>Os <strong style="color:#ffc837;">motoristas e manobristas</strong> devem conduzir seus veículos de forma a proteger o pedestre seguindo as seguintes regras:</p>
           </div>
 
-          <!-- Regras de ouro -->
-          <div class="rr-golden">
-            <div class="rr-flip" onclick="this.classList.toggle('rr-flipped')" tabindex="0" role="button" aria-label="Toque para ver por que essa regra importa">
-              <div class="rr-flip-inner">
-                <div class="rr-flip-front rr-gold-card">
-                  <div class="rr-gold-badge">⬆️</div>
-                  <div>
-                    <div class="rr-gold-label">🥇 Regra de Ouro 1</div>
-                    <div class="rr-gold-title">Subindo a Rampa</div>
-                    <p class="rr-gold-sub">Mantenha a <strong style="color:#ffc837;">carga sempre à frente</strong> ao subir inclinações. Isso garante controle físico e evita deslizamentos.</p>
-                  </div>
-                  <div class="rr-flip-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg>toque para saber por quê</div>
-                </div>
-                <div class="rr-flip-back">
-                  <div class="rr-back-label">🎯 Por que isso importa</div>
-                  <p class="rr-back-text">Se a carga fosse na traseira ao subir, ela tamparia sua visão da pista à frente e poderia escorregar em direção ao operador em caso de perda de tração.</p>
-                </div>
-              </div>
+          <div class="dr-grid">
+            <div class="dr-card">
+              <div class="dr-badge">20</div>
+              <div class="dr-card-title">20 km/h</div>
+              <p class="dr-card-text">Velocidade máxima dentro da unidade.</p>
             </div>
-            <div class="rr-flip" onclick="this.classList.toggle('rr-flipped')" tabindex="0" role="button" aria-label="Toque para ver por que essa regra importa">
-              <div class="rr-flip-inner">
-                <div class="rr-flip-front rr-gold-card">
-                  <div class="rr-gold-badge">⬇️</div>
-                  <div>
-                    <div class="rr-gold-label">🥇 Regra de Ouro 2</div>
-                    <div class="rr-gold-title">Descendo a Rampa</div>
-                    <p class="rr-gold-sub">Mantenha a <strong style="color:#ffc837;">carga sempre atrás</strong> ao descer. Reduza sempre a velocidade e desça de forma controlada.</p>
-                  </div>
-                  <div class="rr-flip-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg>toque para saber por quê</div>
-                </div>
-                <div class="rr-flip-back">
-                  <div class="rr-back-label">🎯 Por que isso importa</div>
-                  <p class="rr-back-text">Descer com a carga à frente reduz sua visibilidade da pista e aumenta o risco de o equipamento ganhar velocidade descontrolada morro abaixo.</p>
-                </div>
-              </div>
+            <div class="dr-card">
+              <div class="dr-badge">🚨</div>
+              <div class="dr-card-title">Pisca-alerta + Faróis</div>
+              <p class="dr-card-text">Sempre ligados na circulação interna.</p>
             </div>
-          </div>
-
-          <!-- Cards secundários -->
-          <div class="rr-grid">
-            <div class="rr-flip" style="animation-delay:0.1s" onclick="this.classList.toggle('rr-flipped')" tabindex="0" role="button" aria-label="Toque para ver o risco real">
-              <div class="rr-flip-inner">
-                <div class="rr-flip-front rr-card">
-                  <div class="rr-icon">🛞</div>
-                  <div class="rr-ctitle">Reduza a Velocidade</div>
-                  <p class="rr-ctext">Ao descer qualquer rampa, <strong>reduza sempre a velocidade</strong>. O controle do transpalete depende da sua ação antes de iniciar a descida.</p>
-                  <div class="rr-flip-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg>toque para o risco</div>
-                </div>
-                <div class="rr-flip-back">
-                  <div class="rr-back-label">⚠️ Risco real</div>
-                  <p class="rr-back-text">Excesso de velocidade na descida causa perda de controle da carga, tombamento do equipamento e colisões com pessoas ou estruturas.</p>
-                </div>
-              </div>
+            <div class="dr-card">
+              <div class="dr-badge">🔒</div>
+              <div class="dr-card-title">Cinto + Condutor Habilitado</div>
+              <p class="dr-card-text">Cinto obrigatório. Somente condutor habilitado.</p>
             </div>
-            <div class="rr-flip" style="animation-delay:0.15s" onclick="this.classList.toggle('rr-flipped')" tabindex="0" role="button" aria-label="Toque para ver o risco real">
-              <div class="rr-flip-inner">
-                <div class="rr-flip-front rr-card">
-                  <div class="rr-icon">🔍</div>
-                  <div class="rr-ctitle">Verifique a Pista</div>
-                  <p class="rr-ctext">Certifique-se de que a pista esteja <strong>limpa e com boa aderência</strong>. As rodas precisam agarrar bem na superfície para evitar acidentes.</p>
-                  <div class="rr-flip-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg>toque para o risco</div>
-                </div>
-                <div class="rr-flip-back">
-                  <div class="rr-back-label">⚠️ Risco real</div>
-                  <p class="rr-back-text">Pisos molhados, com óleo ou detritos reduzem a aderência das rodas de poliuretano, causando derrapagem em rampas.</p>
-                </div>
-              </div>
+            <div class="dr-card">
+              <div class="dr-badge">🛑</div>
+              <div class="dr-card-title">Faixa de Pedestre = PARE</div>
+              <p class="dr-card-text">Pare, olhe os dois lados e dê preferência ao pedestre (contato visual).</p>
             </div>
-            <div class="rr-flip" style="animation-delay:0.2s" onclick="this.classList.toggle('rr-flipped')" tabindex="0" role="button" aria-label="Toque para ver a consequência">
-              <div class="rr-flip-inner">
-                <div class="rr-flip-front rr-card rr-danger">
-                  <div class="rr-icon">🚫</div>
-                  <div class="rr-ctitle">Proibições em Rampas</div>
-                  <p class="rr-ctext"><strong>Nunca</strong> atravesse rampas na horizontal, <strong>nunca</strong> dê a volta sobre um declive e <strong>nunca</strong> estacione a paleteira em rampas.</p>
-                  <div class="rr-flip-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg>toque para a consequência</div>
-                </div>
-                <div class="rr-flip-back">
-                  <div class="rr-back-label">⚠️ Consequência</div>
-                  <p class="rr-back-text">Atravessar de lado, virar ou estacionar em rampa pode causar o tombamento lateral do equipamento e da carga.</p>
-                </div>
-              </div>
+            <div class="dr-card">
+              <div class="dr-badge">📵</div>
+              <div class="dr-card-title">Celular: Proibido</div>
+              <p class="dr-card-text">Proibido usar/manusear celular ao dirigir.</p>
             </div>
-            <div class="rr-flip" style="animation-delay:0.25s" onclick="this.classList.toggle('rr-flipped')" tabindex="0" role="button" aria-label="Toque para ver a dica extra">
-              <div class="rr-flip-inner">
-                <div class="rr-flip-front rr-card">
-                  <div class="rr-icon">✅</div>
-                  <div class="rr-ctitle">Lembre-se Sempre</div>
-                  <p class="rr-ctext">Desça <strong>devagar e com atenção total</strong>. A segurança em rampas começa com planejamento antes de iniciar qualquer manobra.</p>
-                  <div class="rr-flip-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg>toque para a dica</div>
-                </div>
-                <div class="rr-flip-back">
-                  <div class="rr-back-label">💡 Dica extra</div>
-                  <p class="rr-back-text">Na dúvida sobre a segurança da rampa, prefira um caminho alternativo ou peça auxílio de outro operador ou do supervisor.</p>
-                </div>
-              </div>
+            <div class="dr-card">
+              <div class="dr-badge">🚫</div>
+              <div class="dr-card-title">Nunca Bloqueie Áreas Críticas</div>
+              <p class="dr-card-text">Não pare sobre faixas, rampas ou em frente a equipamentos de emergência.</p>
+            </div>
+            <div class="dr-card">
+              <div class="dr-badge">📦</div>
+              <div class="dr-card-title">Carga/Descarga só nas Docas</div>
+              <p class="dr-card-text">Use apenas áreas sinalizadas para carga e descarga.</p>
+            </div>
+            <div class="dr-card">
+              <div class="dr-badge">🚧</div>
+              <div class="dr-card-title">Red Zone: Nunca Pessoa + Empilhadeira</div>
+              <p class="dr-card-text">Na Red Zone, nunca pessoa e empilhadeira ao mesmo tempo.</p>
+            </div>
+            <div class="dr-card">
+              <div class="dr-badge">🚛</div>
+              <div class="dr-card-title">Parada Segura do Caminhão</div>
+              <p class="dr-card-text">Caminhão desligado, freio estacionário acionado e trava-rodas.</p>
+            </div>
+            <div class="dr-card">
+              <div class="dr-badge">🦺</div>
+              <div class="dr-card-title">Rota Segura ao Descer</div>
+              <p class="dr-card-text">Transite pela frente da doca e pelas faixas de pedestres.</p>
             </div>
           </div>
 
         </div>
-
-        <!-- ── MOBILE: carousel (portrait only) ── -->
-        <div id="rr-mobile-section" style="display:none;">
-          <div id="rr-mobile-alert">
-            <span style="font-size:20px;flex-shrink:0;">⛰️</span>
-            <p>Operação em rampas exige <strong style="color:#ffc837;">técnicas específicas</strong>. Memorize as regras e <strong style="color:#00bbf9;">trabalhe com segurança!</strong></p>
-          </div>
-          <div id="rr-card-viewport">
-            <!-- Card 1: Regra de Ouro 1 -->
-            <div class="rr-mcard rr-active" data-rr-idx="0">
-              <div class="rr-gold-card">
-                <div class="rr-gold-badge">⬆️</div>
-                <div>
-                  <div class="rr-gold-label">🥇 Regra de Ouro 1</div>
-                  <div class="rr-gold-title">Subindo a Rampa</div>
-                  <p class="rr-gold-sub">Mantenha a <strong style="color:#ffc837;">carga sempre à frente</strong> ao subir. Isso garante controle físico e evita deslizamentos.</p>
-                </div>
-              </div>
-            </div>
-            <!-- Card 2: Regra de Ouro 2 -->
-            <div class="rr-mcard" data-rr-idx="1">
-              <div class="rr-gold-card">
-                <div class="rr-gold-badge">⬇️</div>
-                <div>
-                  <div class="rr-gold-label">🥇 Regra de Ouro 2</div>
-                  <div class="rr-gold-title">Descendo a Rampa</div>
-                  <p class="rr-gold-sub">Mantenha a <strong style="color:#ffc837;">carga sempre atrás</strong> ao descer. Reduza sempre a velocidade e desça de forma controlada.</p>
-                </div>
-              </div>
-            </div>
-            <!-- Card 3 -->
-            <div class="rr-mcard" data-rr-idx="2">
-              <div class="rr-card">
-                <div class="rr-icon">🛞</div>
-                <div class="rr-ctitle">Reduza a Velocidade</div>
-                <p class="rr-ctext">Ao descer qualquer rampa, <strong>reduza sempre a velocidade</strong>. O controle depende da sua ação antes de iniciar a descida.</p>
-              </div>
-            </div>
-            <!-- Card 4 -->
-            <div class="rr-mcard" data-rr-idx="3">
-              <div class="rr-card">
-                <div class="rr-icon">🔍</div>
-                <div class="rr-ctitle">Verifique a Pista</div>
-                <p class="rr-ctext">Certifique-se de que a pista esteja <strong>limpa e com boa aderência</strong>. As rodas precisam agarrar bem para evitar acidentes.</p>
-              </div>
-            </div>
-            <!-- Card 5 -->
-            <div class="rr-mcard" data-rr-idx="4">
-              <div class="rr-card rr-danger">
-                <div class="rr-icon">🚫</div>
-                <div class="rr-ctitle">Proibições em Rampas</div>
-                <p class="rr-ctext"><strong>Nunca</strong> atravesse rampas na horizontal, <strong>nunca</strong> dê a volta sobre um declive e <strong>nunca</strong> estacione a paleteira em rampas.</p>
-              </div>
-            </div>
-            <!-- Card 6 -->
-            <div class="rr-mcard" data-rr-idx="5">
-              <div class="rr-card">
-                <div class="rr-icon">✅</div>
-                <div class="rr-ctitle">Lembre-se Sempre</div>
-                <p class="rr-ctext">Desça <strong>devagar e com atenção total</strong>. A segurança em rampas começa com planejamento antes de iniciar qualquer manobra.</p>
-              </div>
-            </div>
-          </div>
-          <div id="rr-carousel-nav">
-            <button class="rr-arrow" id="rr-prev" onclick="rrCarouselNav(-1)" disabled>&#8592;</button>
-            <div id="rr-dots"></div>
-            <button class="rr-arrow" id="rr-next" onclick="rrCarouselNav(1)">&#8594;</button>
-          </div>
-        </div>
-
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
             <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(0, 187, 249,0.07)" />
           </svg></div>
       </section>
 
-      <!-- ── S-MOD3-VIDEO6: VÍDEO — Proibições Críticas e Parada de Emergência ── -->
+      <!-- ── S-MOD3-VIDEO4: VÍDEO — Curvas, Cruzamentos e Sinalização Sonora ── -->
+      <section class="slide video-slide" id="s-mod3-video4">
+        <div class="top-bar">
+          <div><span class="section-tag">📹 Vídeo</span>
+            <div class="slide-title" style="margin-top:6px">Curvas, Cruzamentos <span>e Sinalização Sonora</span></div>
+            <div class="slide-subtitle">Normas de Trânsito Interno e Circulação</div>
+          </div>
+        </div>
+        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
+          <div class="video-wrap">
+            <div class="video-box">
+              <iframe id="panda-0b32495f-7f76-44c1-8c3e-182864505b56"
+                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=0b32495f-7f76-44c1-8c3e-182864505b56"
+                frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+                allowfullscreen="true" fetchpriority="high"
+                style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
+                title="Curvas, Cruzamentos e Sinalização Sonora — NR11 - OPERADOR DE EMPILHADEIRA">
+              </iframe>
+            </div>
+          </div>
+        </div>
+        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(0, 187, 249,0.07)" />
+          </svg></div>
+      </section>
+
+      <!-- ── S-MOD3-VIDEO5: VÍDEO - Subida, Descida e Estacionamento Preventivo ── -->
+      <section class="slide video-slide" id="s-mod3-video5">
+        <div class="top-bar">
+          <div><span class="section-tag">🎥 Vídeo</span>
+            <div class="slide-title" style="margin-top:6px">Subida, Descida <span>e Estacionamento Preventivo</span></div>
+            <div class="slide-subtitle">Normas de Trânsito Interno e Circulação</div>
+          </div>
+        </div>
+        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
+          <div class="video-wrap">
+            <div class="video-box">
+              <iframe id="panda-39ed3dbe-24a5-4bf5-bdcc-0469c29291f8"
+                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=39ed3dbe-24a5-4bf5-bdcc-0469c29291f8"
+                frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+                allowfullscreen="true" fetchpriority="high"
+                style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
+                title="Subida, Descida e Estacionamento Preventivo - NR11 - OPERADOR DE EMPILHADEIRA">
+              </iframe>
+            </div>
+          </div>
+        </div>
+        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(0, 187, 249,0.07)" />
+          </svg></div>
+      </section>
+
+      <!-- ── S-MOD3-VIDEO6: VÍDEO — Transporte de Cargas e Estabilidade Operacional ── -->
       <section class="slide video-slide" id="s-mod3-video6">
         <div class="top-bar">
           <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Proibições Críticas <span>e Parada de Emergência</span></div>
+            <div class="slide-title" style="margin-top:6px">Transporte de Cargas <span>e Estabilidade Operacional</span></div>
             <div class="slide-subtitle">Normas de Trânsito Interno e Circulação</div>
           </div>
         </div>
         <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
           <div class="video-wrap">
             <div class="video-box">
-              <iframe id="panda-9cd74e1a-cb21-4b04-a197-c3af1c516e50"
-                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=9cd74e1a-cb21-4b04-a197-c3af1c516e50"
+              <iframe id="panda-f9e6c996-8c4b-4ba3-81ad-e4dcd0a046bd"
+                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=f9e6c996-8c4b-4ba3-81ad-e4dcd0a046bd"
                 frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
                 allowfullscreen="true" fetchpriority="high"
                 style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
-                title="Proibições Críticas e Parada de Emergência — NR11 - OPERADOR DE EMPILHADEIRA">
+                title="Transporte de Cargas e Estabilidade Operacional - NR11 - OPERADOR DE EMPILHADEIRA">
               </iframe>
             </div>
           </div>
@@ -12450,24 +11497,127 @@
           </svg></div>
       </section>
 
-      <!-- ── S-MOD3-VIDEO7: VÍDEO — Estacionamento Seguro e Finalização de Turno ── -->
-      <section class="slide video-slide" id="s-mod3-video7">
+      <!-- ── S-MOD3-VISIBILIDADE: CONTEÚDO — Espelhos, Ré e Velocidade Máxima ── -->
+      <section class="slide" id="s-mod3-visibilidade">
+        <style>
+          #s-mod3-visibilidade .cr-content {
+            display: flex; align-items: center; justify-content: center;
+            padding: clamp(14px,3cqh,32px) clamp(16px,2.6cqw,28px) clamp(60px,9cqh,100px);
+            width: 100%; box-sizing: border-box;
+            container-type: size;
+          }
+          #s-mod3-visibilidade .cr-grid {
+            display: grid; grid-template-columns: 0.85fr 1.15fr; align-items: stretch;
+            gap: clamp(12px,2cqw,22px); width: 100%; max-width: 1220px;
+          }
+          #s-mod3-visibilidade .cr-left {
+            display: flex; flex-direction: column; gap: clamp(12px,2cqh,20px);
+            height: 100%; box-sizing: border-box; min-width: 0;
+          }
+          #s-mod3-visibilidade .cr-left .cr-card:last-child {
+            flex: 1; justify-content: center;
+          }
+          #s-mod3-visibilidade .cr-right {
+            height: 100%; box-sizing: border-box; justify-content: center; min-width: 0;
+          }
+          #s-mod3-visibilidade .cr-card {
+            background: linear-gradient(160deg, #1a3564 0%, #12274c 40%, #0a1730 75%, #050c1a 100%);
+            border: 1px solid rgba(0, 187, 249,0.25);
+            border-radius: 20px;
+            padding: clamp(14px,2.6cqh,22px);
+            display: flex; flex-direction: column; align-items: center; gap: clamp(8px,1.4cqh,14px);
+            min-width: 0; box-sizing: border-box;
+          }
+          #s-mod3-visibilidade .cr-img-box {
+            width: 100%; min-width: 0; background: #ffffff; border-radius: 14px; overflow: hidden;
+            display: flex; align-items: center; justify-content: center;
+          }
+          #s-mod3-visibilidade .cr-img-box img {
+            width: 100%; height: 100%; object-fit: contain; padding: 10px; box-sizing: border-box;
+          }
+          #s-mod3-visibilidade .cr-left .cr-img-box { aspect-ratio: 16/9; }
+          #s-mod3-visibilidade .cr-caption {
+            font-family: var(--font-p); font-size: clamp(13.5px,2.2cqh,15.5px);
+            color: rgba(255,255,255,0.82); line-height: 1.45; text-align: center; margin: 0;
+            width: 100%; max-width: 100%; box-sizing: border-box;
+          }
+          #s-mod3-visibilidade .cr-speed-title {
+            font-family: var(--font-h); font-size: clamp(14.5px,2.4cqh,17px); font-weight: 800;
+            color: #fff; text-align: center;
+            width: 100%; max-width: 100%; box-sizing: border-box;
+          }
+          #s-mod3-visibilidade .cr-speed-row {
+            display: flex; gap: clamp(14px,2.4cqw,26px); align-items: center; justify-content: center;
+          }
+          #s-mod3-visibilidade .cr-speed-sign {
+            display: flex; flex-direction: column; align-items: center; gap: clamp(6px,1cqh,10px);
+          }
+          #s-mod3-visibilidade .cr-sign-circle {
+            width: clamp(64px,11cqh,88px); height: clamp(64px,11cqh,88px);
+            border-radius: 50%; background: #ffffff; border: clamp(5px,0.9cqh,7px) solid #e74c3c;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            font-family: var(--font-h); font-weight: 900; color: #111;
+            font-size: clamp(20px,3.6cqh,26px); line-height: 1;
+            box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+          }
+          #s-mod3-visibilidade .cr-sign-circle span {
+            font-size: clamp(9px,1.5cqh,11px); font-weight: 800; margin-top: 2px;
+          }
+          #s-mod3-visibilidade .cr-sign-label {
+            font-family: var(--font-p); font-size: clamp(12px,1.9cqh,13.5px);
+            color: rgba(255,255,255,0.75);
+          }
+          #s-mod3-visibilidade .cr-right .cr-img-box { aspect-ratio: 4/3; }
+          @media (min-width: 769px) and (max-height: 820px) {
+            #s-mod3-visibilidade .cr-content { padding-bottom: 60px; }
+            #s-mod3-visibilidade .cr-grid { gap: 12px; }
+            #s-mod3-visibilidade .cr-left { gap: 10px; }
+            #s-mod3-visibilidade .cr-card { padding: 12px 16px; gap: 8px; }
+            #s-mod3-visibilidade .cr-left .cr-img-box { aspect-ratio: 20/9; }
+            #s-mod3-visibilidade .cr-right .cr-img-box { aspect-ratio: 16/9; }
+            #s-mod3-visibilidade .cr-sign-circle { width: 56px; height: 56px; font-size: 17px; border-width: 4px; }
+            #s-mod3-visibilidade .cr-caption { font-size: 13px; }
+            #s-mod3-visibilidade .cr-speed-title { font-size: 14px; }
+          }
+          @media (max-width: 780px) {
+            #s-mod3-visibilidade .cr-grid { grid-template-columns: 1fr; }
+          }
+        </style>
+
         <div class="top-bar">
-          <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Estacionamento Seguro <span>e Finalização de Turno</span></div>
-            <div class="slide-subtitle">Normas de Trânsito Interno e Circulação</div>
-          </div>
+          <span class="section-tag">🪞 Visibilidade</span>
+          <div class="slide-title" style="margin-top:6px">Espelhos, Ré <span>e Velocidade Máxima</span></div>
+          <div class="slide-subtitle">Normas de Trânsito Interno e Circulação</div>
         </div>
-        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div class="video-wrap">
-            <div class="video-box">
-              <iframe id="panda-9cd74e1a-cb21-4b04-a197-c3af1c516e50-mod3v7"
-                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=9cd74e1a-cb21-4b04-a197-c3af1c516e50"
-                frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
-                allowfullscreen="true" fetchpriority="high"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
-                title="Estacionamento Seguro e Finalização de Turno — NR11 - OPERADOR DE EMPILHADEIRA">
-              </iframe>
+
+        <div class="content-area cr-content">
+          <div class="cr-grid">
+            <div class="cr-left">
+              <div class="cr-card">
+                <div class="cr-img-box">
+                  <img src="img/ESPELHOS.png" alt="Espelhos convexos de segurança">
+                </div>
+                <p class="cr-caption">Pessoas e operadores de empilhadeira, olhe sempre nos espelhos.</p>
+              </div>
+              <div class="cr-card">
+                <div class="cr-speed-title">Respeite a Velocidade Máxima</div>
+                <div class="cr-speed-row">
+                  <div class="cr-speed-sign">
+                    <div class="cr-sign-circle">20<span>km/h</span></div>
+                    <div class="cr-sign-label">Veículos</div>
+                  </div>
+                  <div class="cr-speed-sign">
+                    <div class="cr-sign-circle">10<span>km/h</span></div>
+                    <div class="cr-sign-label">Empilhadeiras</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cr-right cr-card">
+              <div class="cr-img-box">
+                <img src="img/ANDAR RÉ.png" alt="Empilhadeira transportando carga em marcha à ré">
+              </div>
+              <p class="cr-caption">Sempre que a empilhadeira estiver com materiais, o operador deve andar em ré.</p>
             </div>
           </div>
         </div>
@@ -12494,7 +11644,7 @@
           }
           .m3g-shell {
             background: radial-gradient(ellipse at 50% 0%, rgba(0, 187, 249,0.1), transparent 55%),
-                        linear-gradient(160deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+                        linear-gradient(160deg, #1a3564 0%, #12274c 40%, #0a1730 75%, #050c1a 100%);
             border: 1px solid rgba(255,255,255,0.12);
             border-radius: clamp(18px,2.5vw,26px);
             padding: clamp(24px,4vh,36px) clamp(20px,3vw,28px);
@@ -12612,6 +11762,33 @@
             font-family: var(--font-h); font-size: 11px;
             color: rgba(255,255,255,0.5); position: relative; z-index: 1;
           }
+          @media (max-height: 860px) {
+            .m3g-shell { max-height: calc(100dvh - 130px); }
+          }
+          @media (min-width: 769px) and (max-width: 1499px) {
+            .m3g-shell { padding: 28px 34px; }
+            .m3g-progress-row { margin-bottom: 10px; }
+            .m3g-bar-bg { margin-bottom: 20px; }
+            .m3g-situation { padding: 26px 30px; min-height: 130px; margin-bottom: 20px; }
+            .m3g-sit-emoji { font-size: 36px; margin-bottom: 12px; }
+            .m3g-sit-text { font-size: 19px; }
+            .m3g-options { gap: 14px; }
+            .m3g-opt { padding: 16px 22px; font-size: 16.5px; }
+            .m3g-opt-letter { min-width: 32px; height: 32px; font-size: 14px; }
+            .m3g-feedback { margin-top: 14px; font-size: 13.5px; }
+          }
+          @media (min-width: 769px) and (max-width: 1499px) and (max-height: 860px) {
+            .m3g-shell { padding: 18px 22px; }
+            .m3g-progress-row { margin-bottom: 6px; }
+            .m3g-bar-bg { margin-bottom: 12px; }
+            .m3g-situation { padding: 16px 20px; min-height: 90px; margin-bottom: 12px; }
+            .m3g-sit-emoji { font-size: 26px; margin-bottom: 6px; }
+            .m3g-sit-text { font-size: 15.5px; }
+            .m3g-options { gap: 8px; }
+            .m3g-opt { padding: 11px 16px; font-size: 13.5px; }
+            .m3g-opt-letter { min-width: 26px; height: 26px; font-size: 12px; }
+            .m3g-feedback { margin-top: 8px; font-size: 12px; }
+          }
           @media (max-height: 700px) {
             .m3g-shell { padding: 14px 16px; }
             .m3g-situation { padding: 16px; min-height: 80px; margin-bottom: 10px; }
@@ -12638,16 +11815,41 @@
             max-width: clamp(360px, 68cqw, 860px);
             margin: 0 auto;
           }
+          @media (min-width: 769px) and (max-width: 1499px) {
+            #s-mod3-game .m3g-wrap { max-width: 1000px; }
+          }
+          @media (min-width: 1500px) {
+            #s-mod3-game .m3g-wrap { max-width: 1080px; }
+            .m3g-shell { padding: 34px 40px; }
+            .m3g-label { font-size: 13px; }
+            .m3g-counter { font-size: 15px; padding: 6px 16px; }
+            .m3g-bar-bg { height: 10px; margin-bottom: 20px; }
+            .m3g-situation { min-height: 160px; padding: 34px 38px; margin-bottom: 22px; }
+            .m3g-sit-emoji { font-size: 42px; margin-bottom: 12px; }
+            .m3g-sit-text { font-size: 21px; max-width: 760px; }
+            .m3g-options { gap: 14px; }
+            .m3g-opt { padding: 17px 22px; font-size: 17px; }
+            .m3g-opt-letter { min-width: 34px; height: 34px; font-size: 14.5px; }
+            .m3g-feedback { font-size: 14px; margin-top: 16px; }
+            .m3g-hint { font-size: 13.5px; }
+          }
+          @media (min-width: 1500px) and (max-height: 860px) {
+            .m3g-shell { padding: 22px 28px; }
+            .m3g-situation { min-height: 110px; padding: 20px 24px; margin-bottom: 14px; }
+            .m3g-sit-emoji { font-size: 30px; margin-bottom: 8px; }
+            .m3g-sit-text { font-size: 17px; }
+            .m3g-opt { padding: 13px 18px; font-size: 15px; }
+          }
           #s-mod3-game #m3g-intro {
             padding: clamp(24px,10cqh,64px) clamp(24px,6cqw,48px) !important;
-            background: rgba(255,255,255,0.04);
+            background: linear-gradient(160deg, #1a3564 0%, #12274c 40%, #0a1730 75%, #050c1a 100%);
             border: 1px solid rgba(0, 187, 249,0.28);
             border-radius: clamp(16px,3cqw,26px);
             box-shadow: 0 28px 64px rgba(0,0,0,0.4);
             box-sizing: border-box;
           }
           #s-mod3-game #m3g-result {
-            background: rgba(255,255,255,0.04) !important;
+            background: linear-gradient(160deg, #1a3564 0%, #12274c 40%, #0a1730 75%, #050c1a 100%) !important;
             border: 1px solid rgba(0, 187, 249,0.28) !important;
             border-radius: clamp(16px,3cqw,26px) !important;
             box-shadow: 0 28px 64px rgba(0,0,0,0.4) !important;
@@ -12689,7 +11891,7 @@
             <h3 style="font-family:var(--font-h); font-size:clamp(22px,3vw,28px); color:var(--white); margin-bottom:12px; font-weight:900;">
               Desafio Módulo 3</h3>
             <p style="color:rgba(255,255,255,0.72); font-size:clamp(14px,1.8vw,16px); line-height:1.65; margin-bottom:28px; max-width:540px; margin-left:auto; margin-right:auto;">
-              Você vai ler <strong>5 situações reais</strong> de operação e escolher a atitude correta. Coloque em prática tudo o que aprendeu sobre inspeção, postura, trânsito interno, cargas e emergências!
+              Você vai ler <strong>5 situações reais</strong> de operação e escolher a atitude correta. Coloque em prática tudo o que aprendeu sobre velocidade, sinalização, cinto de segurança, cruzamentos e embarque/desembarque!
             </p>
             <button class="btn-start" onclick="startM3Game()" style="padding:16px 42px; font-size:15px; text-transform:uppercase;">
               INICIAR MISSÃO
@@ -12754,49 +11956,23 @@
           </svg></div>
       </section>
 
-      <!-- ── S-MOD4-VIDEO: VÍDEO — Estabilidade e Segurança da Carga ── -->
-      <section class="slide video-slide" id="s-mod4-video">
-        <div class="top-bar">
-          <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Estabilidade <span>e Segurança da Carga</span></div>
-            <div class="slide-subtitle">Interação Máquina x Pedestre, Red Zone e Pontos Cegos</div>
-          </div>
-        </div>
-        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div class="video-wrap">
-            <div class="video-box">
-              <iframe id="panda-b66e4f88-2d13-49de-81e2-6a94a8bcac98"
-                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=b66e4f88-2d13-49de-81e2-6a94a8bcac98"
-                frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
-                allowfullscreen="true" fetchpriority="high"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
-                title="Estabilidade e Segurança da Carga — NR11 - OPERADOR DE EMPILHADEIRA">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(0, 187, 249,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S-MOD4-VIDEO2: VÍDEO — Conhecendo os Paletes: Duas e Quatro Entradas ── -->
+      <!-- ── S-MOD4-VIDEO2: VÍDEO — A Regra de Ouro da Red Zone ── -->
       <section class="slide video-slide" id="s-mod4-video2">
         <div class="top-bar">
           <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Conhecendo os Paletes: <span>Duas e Quatro Entradas</span></div>
+            <div class="slide-title" style="margin-top:6px">A Regra de Ouro <span>da Red Zone</span></div>
             <div class="slide-subtitle">Interação Máquina x Pedestre, Red Zone e Pontos Cegos</div>
           </div>
         </div>
         <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
           <div class="video-wrap">
             <div class="video-box">
-              <iframe id="panda-10135b54-324f-4219-8151-100ca9238ef3"
-                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=10135b54-324f-4219-8151-100ca9238ef3"
+              <iframe id="panda-7374adbb-c8d4-44e4-8b19-28536d206a1f"
+                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=7374adbb-c8d4-44e4-8b19-28536d206a1f"
                 frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
                 allowfullscreen="true" fetchpriority="high"
                 style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
-                title="Conhecendo os Paletes: Duas e Quatro Entradas — NR11 - OPERADOR DE EMPILHADEIRA">
+                title="A Regra de Ouro da Red Zone - NR11 - OPERADOR DE EMPILHADEIRA">
               </iframe>
             </div>
           </div>
@@ -12806,141 +11982,150 @@
           </svg></div>
       </section>
 
-      <!-- ── S-MOD4-PALETES: CONTEÚDO — Dois Tipos de Palete ── -->
-      <section class="slide" id="s-mod4-paletes">
+      <!-- ── S-MOD4-REDZONE: CONTEÚDO — Entendendo a Red Zone ── -->
+      <section class="slide" id="s-mod4-redzone">
         <style>
-          #s-mod4-paletes .content-area {
-            display: flex; align-items: center; justify-content: center;
+          #s-mod4-redzone .rz-content {
+            display: flex; flex-direction: column; align-items: center;
+            justify-content: center; gap: clamp(10px,1.8cqh,16px);
+            padding: clamp(14px,3cqh,32px) clamp(16px,2.6cqw,28px) clamp(60px,9cqh,100px);
+            width: 100%; box-sizing: border-box;
+            container-type: size;
           }
-          #s-mod4-paletes .pal-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: clamp(20px, 3vw, 36px);
-            max-width: 900px;
-            width: 100%;
-            justify-items: center;
+          #s-mod4-redzone .rz-alert {
+            display: flex; align-items: center; gap: clamp(8px,1.4cqw,14px);
+            background: #1c0e0d;
+            border: 1px solid rgba(231,76,60,0.3);
+            border-radius: 14px; padding: clamp(8px,1.8cqh,12px) clamp(12px,2cqw,20px);
+            width: 100%; max-width: 1220px; box-sizing: border-box;
           }
-          #s-mod4-paletes .pal-card {
-            position: relative;
-            display: flex; flex-direction: column; align-items: center; text-align: center;
-            width: 100%; max-width: 360px;
-            padding: clamp(32px,4vh,44px) clamp(22px,3vw,30px) clamp(24px,3vh,30px);
-            border-radius: 26px;
-            background: linear-gradient(160deg, rgba(255,255,255,0.06), rgba(255,255,255,0.015));
-            border: 1px solid rgba(0, 187, 249,0.28);
-            box-shadow: 0 26px 54px rgba(0,0,0,0.45);
-            transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+          #s-mod4-redzone .rz-alert p {
+            font-family: var(--font-p); font-size: clamp(14.5px,2.5cqh,18px);
+            color: rgba(255,255,255,0.88); margin: 0; line-height: 1.45;
           }
-          #s-mod4-paletes .pal-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(0, 187, 249,0.55);
-            box-shadow: 0 30px 64px rgba(0,0,0,0.5), 0 0 36px rgba(0, 187, 249,0.18);
+          #s-mod4-redzone .rz-row {
+            display: grid; grid-template-columns: 0.9fr 1.1fr;
+            gap: clamp(10px,1.6cqw,18px); width: 100%; max-width: 1220px;
           }
-          #s-mod4-paletes .pal-badge {
-            position: absolute; top: -16px; left: 24px;
-            width: 36px; height: 36px; border-radius: 50%;
-            background: linear-gradient(135deg, #00bbf9, #0094c6);
-            display: flex; align-items: center; justify-content: center;
-            font-family: var(--font-h); font-weight: 900; font-size: 13px; color: #fff;
-            box-shadow: 0 8px 20px rgba(0, 187, 249,0.5);
-            border: 2px solid var(--black);
+          #s-mod4-redzone .rz-visual {
+            position: relative; border-radius: 20px; overflow: hidden;
+            min-height: clamp(150px,24cqh,220px);
+            border: 1px solid rgba(231,76,60,0.35);
           }
-          #s-mod4-paletes .pal-img-wrap { position: relative; width: 100%; max-width: 240px; }
-          #s-mod4-paletes .pal-img-glow {
-            position: absolute; inset: -20px;
-            background: radial-gradient(circle, rgba(0, 187, 249,0.3), transparent 70%);
-            filter: blur(14px); z-index: 0;
+          #s-mod4-redzone .rz-visual img {
+            width: 100%; height: 100%; object-fit: cover; display: block;
           }
-          #s-mod4-paletes .pal-img-box {
-            position: relative; z-index: 1; width: 100%; aspect-ratio: 1/1;
-            background: #ffffff; border-radius: 18px; overflow: hidden;
-            box-shadow: 0 18px 40px rgba(0,0,0,0.4);
+          #s-mod4-redzone .rz-negotiable {
+            background: #141414;
+            border: 1px solid rgba(255,255,255,0.14);
+            border-radius: 20px; padding: clamp(16px,3.2cqh,26px) clamp(18px,2.8cqw,28px);
+            display: flex; flex-direction: column; justify-content: center; gap: clamp(6px,1.2cqh,10px);
           }
-          #s-mod4-paletes .pal-img-box img {
-            width: 100%; height: 100%; object-fit: contain; padding: 12px; box-sizing: border-box;
+          #s-mod4-redzone .rz-negotiable-title {
+            font-family: var(--font-h); font-size: clamp(16px,2.8cqh,20px); font-weight: 900;
+            letter-spacing: 0.04em; color: #ff7675;
+            display: flex; align-items: center; gap: 8px;
           }
-          #s-mod4-paletes .pal-title-row {
-            margin-top: 16px; display: flex; align-items: center; gap: 8px;
+          #s-mod4-redzone .rz-negotiable p {
+            font-family: var(--font-p); font-size: clamp(14px,2.4cqh,16.5px);
+            color: rgba(255,255,255,0.85); margin: 0; line-height: 1.5;
           }
-          #s-mod4-paletes .pal-icon { font-size: 20px; line-height: 1; }
-          #s-mod4-paletes .pal-title {
-            font-family: var(--font-h); font-weight: 800; font-size: clamp(15px,1.8vw,17px); color: var(--white);
+          #s-mod4-redzone .rz-negotiable ul {
+            margin: 0; padding: 0; list-style: none;
+            display: flex; flex-direction: column; gap: clamp(4px,1cqh,8px);
           }
-          #s-mod4-paletes .pal-caption {
-            margin-top: 8px; font-size: clamp(12px,1.3vw,13px);
-            color: rgba(255,255,255,0.62); line-height: 1.5;
+          #s-mod4-redzone .rz-negotiable li {
+            font-family: var(--font-p); font-size: clamp(14px,2.4cqh,16.5px);
+            color: rgba(255,255,255,0.9); line-height: 1.4;
+            display: flex; align-items: flex-start; gap: 8px;
           }
-          #s-mod4-paletes .pal-underline {
-            margin-top: 16px; height: 3px; width: 44px;
-            background: linear-gradient(90deg, #00bbf9, #56d5ff); border-radius: 3px;
+          #s-mod4-redzone .rz-negotiable li strong { color: #ffc837; }
+          #s-mod4-redzone .rz-callout {
+            display: flex; align-items: center; gap: clamp(10px,1.8cqw,16px);
+            background: #241b06;
+            border: 1px solid rgba(255,199,0,0.4);
+            border-radius: 16px; padding: clamp(12px,2.4cqh,18px) clamp(16px,2.6cqw,24px);
+            width: 100%; max-width: 1220px; box-sizing: border-box;
+          }
+          #s-mod4-redzone .rz-callout-icon { font-size: clamp(24px,4.4cqh,32px); flex-shrink: 0; }
+          #s-mod4-redzone .rz-callout p {
+            font-family: var(--font-p); font-size: clamp(14px,2.4cqh,16.5px); font-weight: 700;
+            color: #ffe9a8; margin: 0; line-height: 1.5;
           }
           @media (max-width: 720px) {
-            #s-mod4-paletes .pal-grid { grid-template-columns: 1fr; max-width: 360px; }
+            #s-mod4-redzone .rz-row { grid-template-columns: 1fr; }
+          }
+          @media (min-width: 1500px) {
+            #s-mod4-redzone .rz-alert, #s-mod4-redzone .rz-row, #s-mod4-redzone .rz-callout {
+              max-width: 1560px;
+            }
+            #s-mod4-redzone .rz-alert p { font-size: 21px; }
+            #s-mod4-redzone .rz-visual { min-height: 300px; }
+            #s-mod4-redzone .rz-negotiable { padding: 34px 38px; gap: 14px; }
+            #s-mod4-redzone .rz-negotiable-title { font-size: 26px; }
+            #s-mod4-redzone .rz-negotiable p,
+            #s-mod4-redzone .rz-negotiable li { font-size: 20px; }
+            #s-mod4-redzone .rz-callout { padding: 24px 32px; }
+            #s-mod4-redzone .rz-callout-icon { font-size: 38px; }
+            #s-mod4-redzone .rz-callout p { font-size: 20px; }
           }
         </style>
 
         <div class="top-bar">
-          <span class="section-tag">🟫 Equipamento</span>
-          <div class="slide-title" style="margin-top:6px">Dois Tipos <span>de Palete</span></div>
+          <span class="section-tag">🟥 Red Zone</span>
+          <div class="slide-title" style="margin-top:6px">Entendendo <span>a Red Zone</span></div>
           <div class="slide-subtitle">Interação Máquina x Pedestre, Red Zone e Pontos Cegos</div>
         </div>
 
-        <div class="content-area">
-          <div class="pal-grid">
-            <div class="pal-card">
-              <div class="pal-badge">01</div>
-              <div class="pal-img-wrap">
-                <div class="pal-img-glow"></div>
-                <div class="pal-img-box">
-                  <img src="img/PALLET DUAS.png" alt="Palete de Duas Entradas">
-                </div>
-              </div>
-              <div class="pal-title-row">
-                <span class="pal-icon">🔀</span>
-                <div class="pal-title">Palete de Duas Entradas</div>
-              </div>
-              <p class="pal-caption">Aberturas apenas em lados opostos — acesso mais limitado para os garfos da empilhadeira.</p>
-              <div class="pal-underline"></div>
+        <div class="content-area rz-content">
+
+          <div class="rz-alert">
+            <span style="font-size:clamp(19px,3.6cqh,24px); flex-shrink:0;">🟥</span>
+            <p>As <strong style="color:#ff7675;">Red Zones (Zonas Vermelhas)</strong> são as áreas entre docas, sendo destinadas ao acesso lateral para colocar/retirar produtos.</p>
+          </div>
+
+          <div class="rz-row">
+            <div class="rz-visual">
+              <img src="img/REDZONE.png" alt="Área entre docas — Red Zone">
             </div>
-            <div class="pal-card">
-              <div class="pal-badge">02</div>
-              <div class="pal-img-wrap">
-                <div class="pal-img-glow"></div>
-                <div class="pal-img-box">
-                  <img src="img/PALLET 4.webp" alt="Palete de Quatro Entradas">
-                </div>
-              </div>
-              <div class="pal-title-row">
-                <span class="pal-icon">⛶</span>
-                <div class="pal-title">Palete de Quatro Entradas</div>
-              </div>
-              <p class="pal-caption">Aberturas nos quatro lados — o mais versátil, ideal para corredores estreitos.</p>
-              <div class="pal-underline"></div>
+            <div class="rz-negotiable">
+              <div class="rz-negotiable-title">🚫 INEGOCIÁVEL</div>
+              <p>Na Red Zone, <strong style="color:#ffc837;">NUNCA</strong> pode ter:</p>
+              <ul>
+                <li>🧍 <span><strong>Pessoa dentro</strong> da área <strong>ao mesmo tempo</strong> que</span></li>
+                <li>🚧 <span><strong>Empilhadeira em operação</strong> (entrando, manobrando, carregando ou saindo).</span></li>
+              </ul>
             </div>
           </div>
+
+          <div class="rz-callout">
+            <span class="rz-callout-icon">⚠️</span>
+            <p>O acesso à Red Zone é permitido apenas para o <strong>conferente</strong>, <strong>motorista</strong> (abrir e fechar lona) e <strong>amarradores</strong>.</p>
+          </div>
+
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
             <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(0, 187, 249,0.07)" />
           </svg></div>
       </section>
 
-      <!-- ── S-MOD4-VIDEO3: VÍDEO — Classificação das Cargas no Treinamento ── -->
-      <section class="slide video-slide" id="s-mod4-video3">
+      <!-- ── S-MOD4-VIDEO5: VÍDEO — Interação em Cruzamentos e Pontos Cegos ── -->
+      <section class="slide video-slide" id="s-mod4-video5">
         <div class="top-bar">
           <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Classificação das Cargas <span>no Treinamento</span></div>
+            <div class="slide-title" style="margin-top:6px">Interação em Cruzamentos <span>e Pontos Cegos</span></div>
             <div class="slide-subtitle">Interação Máquina x Pedestre, Red Zone e Pontos Cegos</div>
           </div>
         </div>
         <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
           <div class="video-wrap">
             <div class="video-box">
-              <iframe id="panda-aca185e5-3852-49eb-9c78-01409c691d61"
-                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=aca185e5-3852-49eb-9c78-01409c691d61"
+              <iframe id="panda-82c5f974-d12c-47af-83b6-37f19b349a4e"
+                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=82c5f974-d12c-47af-83b6-37f19b349a4e"
                 frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
                 allowfullscreen="true" fetchpriority="high"
                 style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
-                title="Classificação das Cargas no Treinamento — NR11 - OPERADOR DE EMPILHADEIRA">
+                title="Interação em Cruzamentos e Pontos Cegos - NR11 - OPERADOR DE EMPILHADEIRA">
               </iframe>
             </div>
           </div>
@@ -12950,24 +12135,119 @@
           </svg></div>
       </section>
 
-      <!-- ── S-MOD4-VIDEO4: VÍDEO — Regras de Armazenamento e Limites do Piso ── -->
-      <section class="slide video-slide" id="s-mod4-video4">
+      <!-- ── S-MOD4-PONTOSCEGOS: CONTEÚDO — Pontos Cegos da Empilhadeira ── -->
+      <section class="slide" id="s-mod4-pontoscegos">
+        <style>
+          #s-mod4-pontoscegos .pc-content {
+            display: flex; align-items: center; justify-content: center;
+            padding: clamp(14px,3cqh,32px) clamp(16px,2.6cqw,28px) clamp(60px,9cqh,100px);
+            width: 100%; box-sizing: border-box;
+            container-type: size;
+          }
+          #s-mod4-pontoscegos .pc-inner {
+            display: flex; flex-direction: column; align-items: center;
+            gap: clamp(10px,1.8cqh,16px); width: 100%; max-width: 1220px;
+          }
+          #s-mod4-pontoscegos .pc-intro {
+            font-family: var(--font-h); font-size: clamp(17px,3cqh,22px); font-weight: 700;
+            color: rgba(255,255,255,0.9); text-align: center; margin: 0;
+          }
+          #s-mod4-pontoscegos .pc-intro strong { color: #ff7675; }
+          #s-mod4-pontoscegos .pc-row {
+            display: grid; grid-template-columns: 1fr 1.05fr; align-items: stretch;
+            gap: clamp(12px,2cqw,20px); width: 100%; min-width: 0;
+          }
+          #s-mod4-pontoscegos .pc-img-card {
+            background: #ffffff; border-radius: 20px; overflow: hidden;
+            border: 1px solid rgba(0, 187, 249,0.25);
+            min-width: 0; display: flex; align-items: center; justify-content: center;
+          }
+          #s-mod4-pontoscegos .pc-img-card img {
+            width: 100%; height: 100%; object-fit: contain; padding: clamp(8px,1.4cqh,16px); box-sizing: border-box;
+          }
+          #s-mod4-pontoscegos .pc-list-card {
+            position: relative; overflow: hidden;
+            background: #10161e;
+            border: 1px solid rgba(0, 187, 249,0.35);
+            border-radius: 20px;
+            padding: clamp(18px,3.2cqh,28px) clamp(20px,2.8cqw,30px);
+            display: flex; flex-direction: column; justify-content: center; gap: clamp(14px,2.4cqh,22px);
+            min-width: 0; box-sizing: border-box;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+          }
+          #s-mod4-pontoscegos .pc-list-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, #00bbf9, #56d5ff);
+          }
+          #s-mod4-pontoscegos .pc-list-title {
+            font-family: var(--font-h); font-size: clamp(19px,3.4cqh,25px); font-weight: 900;
+            color: #56d5ff; display: flex; align-items: center; gap: 10px;
+          }
+          #s-mod4-pontoscegos .pc-list-title-icon {
+            flex-shrink: 0; width: clamp(30px,5cqh,38px); height: clamp(30px,5cqh,38px);
+            border-radius: 50%; background: linear-gradient(135deg, #00bbf9, #0094c6);
+            display: flex; align-items: center; justify-content: center;
+            font-size: clamp(15px,2.6cqh,19px); color: #fff;
+            box-shadow: 0 6px 16px rgba(0, 187, 249,0.4);
+          }
+          #s-mod4-pontoscegos .pc-list {
+            list-style: none; margin: 0; padding: 0;
+            display: flex; flex-direction: column; gap: clamp(14px,2.4cqh,22px);
+          }
+          #s-mod4-pontoscegos .pc-list li {
+            display: flex; align-items: center; gap: clamp(12px,1.8cqw,18px);
+          }
+          #s-mod4-pontoscegos .pc-num {
+            flex-shrink: 0; width: clamp(30px,5cqh,38px); height: clamp(30px,5cqh,38px);
+            border-radius: 50%; background: linear-gradient(135deg, #e74c3c, #ff7675);
+            display: flex; align-items: center; justify-content: center;
+            font-family: var(--font-h); font-weight: 900; font-size: clamp(14px,2.3cqh,17px); color: #fff;
+            box-shadow: 0 6px 16px rgba(231,76,60,0.4);
+          }
+          #s-mod4-pontoscegos .pc-list p {
+            margin: 0; font-family: var(--font-p); font-size: clamp(16px,2.8cqh,20px);
+            color: rgba(255,255,255,0.92); line-height: 1.4;
+          }
+          @media (min-width: 769px) and (max-height: 820px) {
+            #s-mod4-pontoscegos .pc-inner { gap: 10px; max-width: 980px; }
+            #s-mod4-pontoscegos .pc-intro { font-size: 16px; }
+            #s-mod4-pontoscegos .pc-row { gap: 14px; }
+            #s-mod4-pontoscegos .pc-list-card { padding: 16px 20px; gap: 12px; }
+            #s-mod4-pontoscegos .pc-list { gap: 12px; }
+            #s-mod4-pontoscegos .pc-list-title { font-size: 18px; }
+            #s-mod4-pontoscegos .pc-list-title-icon { width: 28px; height: 28px; font-size: 14px; }
+            #s-mod4-pontoscegos .pc-num { width: 26px; height: 26px; font-size: 13px; }
+            #s-mod4-pontoscegos .pc-list p { font-size: 14.5px; }
+          }
+          @media (max-width: 780px) {
+            #s-mod4-pontoscegos .pc-row { grid-template-columns: 1fr; }
+          }
+        </style>
+
         <div class="top-bar">
-          <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Regras de Armazenamento <span>e Limites do Piso</span></div>
-            <div class="slide-subtitle">Interação Máquina x Pedestre, Red Zone e Pontos Cegos</div>
-          </div>
+          <span class="section-tag">👁️ Pontos Cegos</span>
+          <div class="slide-title" style="margin-top:6px">Proteja-se dos <span>Pontos Cegos</span></div>
+          <div class="slide-subtitle">Interação Máquina x Pedestre, Red Zone e Pontos Cegos</div>
         </div>
-        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div class="video-wrap">
-            <div class="video-box">
-              <iframe id="panda-1a8d22fb-e816-4b13-8294-36b95f033f73"
-                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=1a8d22fb-e816-4b13-8294-36b95f033f73"
-                frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
-                allowfullscreen="true" fetchpriority="high"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
-                title="Regras de Armazenamento e Limites do Piso — NR11 - OPERADOR DE EMPILHADEIRA">
-              </iframe>
+
+        <div class="content-area pc-content">
+          <div class="pc-inner">
+            <p class="pc-intro">Ponto cego = área onde o operador pode <strong>NÃO</strong> te ver.</p>
+            <div class="pc-row">
+              <div class="pc-img-card">
+                <img src="img/PONTOS CEGOS.png" alt="Empilhadeira com pontos cegos numerados">
+              </div>
+              <div class="pc-list-card">
+                <div class="pc-list-title"><span class="pc-list-title-icon">👁️</span>Pontos Cegos da Máquina:</div>
+                <ol class="pc-list">
+                  <li><span class="pc-num">1</span><p>Coluna traseira esquerda do protetor superior.</p></li>
+                  <li><span class="pc-num">2</span><p>Estrutura superior (teto de proteção) e coluna central.</p></li>
+                  <li><span class="pc-num">3</span><p>Parte superior do mastro e estrutura frontal.</p></li>
+                  <li><span class="pc-num">4</span><p>Região atrás do mastro e do porta-garfos.</p></li>
+                  <li><span class="pc-num">5</span><p>Coluna dianteira direita do protetor superior.</p></li>
+                  <li><span class="pc-num">6</span><p>Coluna traseira direita do protetor superior (lado do operador).</p></li>
+                </ol>
+              </div>
             </div>
           </div>
         </div>
@@ -13000,14 +12280,14 @@
           }
           #s-mod4-game #m4g-intro {
             padding: clamp(24px,10cqh,64px) clamp(24px,6cqw,48px) !important;
-            background: rgba(255,255,255,0.04);
+            background: linear-gradient(160deg, #1a3564 0%, #12274c 40%, #0a1730 75%, #050c1a 100%);
             border: 1px solid rgba(0, 187, 249,0.28);
             border-radius: clamp(16px,3cqw,26px);
             box-shadow: 0 28px 64px rgba(0,0,0,0.4);
             box-sizing: border-box;
           }
           #s-mod4-game #m4g-result {
-            background: rgba(255,255,255,0.04) !important;
+            background: linear-gradient(160deg, #1a3564 0%, #12274c 40%, #0a1730 75%, #050c1a 100%) !important;
             border: 1px solid rgba(0, 187, 249,0.28) !important;
             border-radius: clamp(16px,3cqw,26px) !important;
             box-shadow: 0 28px 64px rgba(0,0,0,0.4) !important;
@@ -13059,7 +12339,7 @@
           }
 
           #s-mod4-game .m4g-card {
-            background: rgba(255,255,255,0.04); border: 2px solid rgba(255,255,255,0.12);
+            background: linear-gradient(160deg, #1a3564 0%, #12274c 40%, #0a1730 75%, #050c1a 100%); border: 2px solid rgba(255,255,255,0.12);
             border-radius: 24px; padding: clamp(26px,5vw,38px) clamp(20px,4vw,30px);
             min-height: 150px; display: flex; flex-direction: column; align-items: center;
             justify-content: center; text-align: center; box-shadow: 0 24px 48px rgba(0,0,0,.35);
@@ -13120,7 +12400,7 @@
             <h3 style="font-family:var(--font-h); font-size:clamp(22px,3vw,28px); color:var(--white); margin-bottom:12px; font-weight:900;">
               Desafio Módulo 4 — Turno Relâmpago</h3>
             <p style="color:rgba(255,255,255,0.72); font-size:clamp(14px,1.8vw,16px); line-height:1.65; margin-bottom:28px; max-width:540px; margin-left:auto; margin-right:auto;">
-              5 afirmações rápidas sobre estabilidade de carga, paletes, tipos de carga e armazenamento.
+              5 afirmações rápidas sobre distância de segurança e a regra de ouro da Red Zone.
               Você tem <strong>12 segundos</strong> e <strong>3 vidas</strong> para responder <strong>Certo</strong> ou <strong>Errado</strong> em cada uma. Acerte em sequência para ganhar combo! 🔥
             </p>
             <button class="btn-start" onclick="startM4Game()" style="padding:16px 42px; font-size:15px; text-transform:uppercase;">
@@ -13891,7 +13171,7 @@
           #s-mod5-game #m5g-intro,
           #s-mod5-game #m5g-result {
             padding: clamp(24px,10cqh,64px) clamp(24px,6cqw,48px);
-            background: rgba(255,255,255,0.04);
+            background: linear-gradient(160deg, #1a3564 0%, #12274c 40%, #0a1730 75%, #050c1a 100%);
             border: 1px solid rgba(0, 187, 249,0.28);
             border-radius: clamp(16px,3cqw,26px);
             box-shadow: 0 28px 64px rgba(0,0,0,0.4);
@@ -14379,7 +13659,7 @@
           #s-mod6-game #m6g-intro,
           #s-mod6-game #m6g-result {
             padding: clamp(24px,10cqh,64px) clamp(24px,6cqw,48px);
-            background: rgba(255,255,255,0.04);
+            background: linear-gradient(160deg, #1a3564 0%, #12274c 40%, #0a1730 75%, #050c1a 100%);
             border: 1px solid rgba(0, 187, 249,0.28);
             border-radius: clamp(16px,3cqw,26px);
             box-shadow: 0 28px 64px rgba(0,0,0,0.4);
@@ -14431,7 +13711,7 @@
           #s-mod6-game .m6g-item {
             position: relative;
             display: flex; align-items: center; gap: 14px;
-            background: rgba(255,255,255,0.04); border: 2px solid rgba(255,255,255,0.12);
+            background: linear-gradient(160deg, #1a3564 0%, #12274c 40%, #0a1730 75%, #050c1a 100%); border: 2px solid rgba(255,255,255,0.12);
             border-radius: 16px; padding: clamp(12px,2.6cqh,20px) clamp(16px,2.6cqw,22px);
             cursor: pointer; transition: all 0.2s ease;
           }
@@ -14539,6 +13819,128 @@
     </div>
 
   </main><!-- /app -->
+
+  <style>
+    /* ── Padronização de tamanho dos cards de jogo — igual ao Módulo 1 (#s2e) ── */
+    @media (min-width: 768px) {
+      #s2e .mod1-game-wrap,
+      #s-mod2-game .mod2tf-wrap,
+      #s-mod3-game .m3g-wrap,
+      #s-mod4-game .m4g-wrap,
+      #s-mod5-game .m5g-wrap,
+      #s-mod6-game .m6g-wrap {
+        max-width: 980px !important;
+        margin-top: 56px !important;
+      }
+      #s-mod2-game #mod2tf-intro,
+      #s-mod3-game #m3g-intro,
+      #s-mod3-game #m3g-result,
+      #s-mod4-game #m4g-intro,
+      #s-mod4-game #m4g-result,
+      #s-mod5-game #m5g-intro,
+      #s-mod5-game #m5g-result,
+      #s-mod6-game #m6g-intro,
+      #s-mod6-game #m6g-result {
+        padding: 52px 64px 56px !important;
+        border-radius: 32px !important;
+      }
+      #s-mod2-game #mod2tf-intro .ic-circle,
+      #s-mod3-game #m3g-intro .ic-circle,
+      #s-mod4-game #m4g-intro .ic-circle,
+      #s-mod5-game #m5g-intro .ic-circle,
+      #s-mod6-game #m6g-intro .ic-circle {
+        width: 132px !important;
+        height: 132px !important;
+        font-size: 64px !important;
+        margin: 0 auto 32px !important;
+      }
+      #s-mod2-game #mod2tf-intro h3,
+      #s-mod3-game #m3g-intro h3,
+      #s-mod4-game #m4g-intro h3,
+      #s-mod5-game #m5g-intro h3,
+      #s-mod6-game #m6g-intro h3 {
+        font-size: 40px !important;
+        margin-bottom: 20px !important;
+        line-height: 1.2 !important;
+      }
+      #s-mod2-game #mod2tf-intro p,
+      #s-mod3-game #m3g-intro p,
+      #s-mod4-game #m4g-intro p,
+      #s-mod5-game #m5g-intro p,
+      #s-mod6-game #m6g-intro p {
+        font-size: 20px !important;
+        line-height: 1.7 !important;
+        margin-bottom: 40px !important;
+      }
+      #s-mod2-game #mod2tf-intro .btn-start,
+      #s-mod3-game #m3g-intro .btn-start,
+      #s-mod4-game #m4g-intro .btn-start,
+      #s-mod5-game #m5g-intro .btn-start,
+      #s-mod6-game #m6g-intro .btn-start {
+        padding: 20px 56px !important;
+        font-size: 18px !important;
+      }
+    }
+
+    @media (min-width: 769px) and (max-height: 860px) {
+      #s2e .mod1-game-wrap,
+      #s-mod2-game .mod2tf-wrap,
+      #s-mod3-game .m3g-wrap,
+      #s-mod4-game .m4g-wrap,
+      #s-mod5-game .m5g-wrap,
+      #s-mod6-game .m6g-wrap {
+        max-width: 760px !important;
+        margin-top: 30px !important;
+      }
+      #s-mod2-game #mod2tf-intro,
+      #s-mod3-game #m3g-intro,
+      #s-mod3-game #m3g-result,
+      #s-mod4-game #m4g-intro,
+      #s-mod4-game #m4g-result,
+      #s-mod5-game #m5g-intro,
+      #s-mod5-game #m5g-result,
+      #s-mod6-game #m6g-intro,
+      #s-mod6-game #m6g-result {
+        padding: 38px 46px 44px !important;
+        border-radius: 28px !important;
+      }
+      #s-mod2-game #mod2tf-intro .ic-circle,
+      #s-mod3-game #m3g-intro .ic-circle,
+      #s-mod4-game #m4g-intro .ic-circle,
+      #s-mod5-game #m5g-intro .ic-circle,
+      #s-mod6-game #m6g-intro .ic-circle {
+        width: 96px !important;
+        height: 96px !important;
+        font-size: 44px !important;
+        margin: 0 auto 22px !important;
+      }
+      #s-mod2-game #mod2tf-intro h3,
+      #s-mod3-game #m3g-intro h3,
+      #s-mod4-game #m4g-intro h3,
+      #s-mod5-game #m5g-intro h3,
+      #s-mod6-game #m6g-intro h3 {
+        font-size: 29px !important;
+        margin-bottom: 14px !important;
+      }
+      #s-mod2-game #mod2tf-intro p,
+      #s-mod3-game #m3g-intro p,
+      #s-mod4-game #m4g-intro p,
+      #s-mod5-game #m5g-intro p,
+      #s-mod6-game #m6g-intro p {
+        font-size: 16.5px !important;
+        line-height: 1.6 !important;
+        margin-bottom: 26px !important;
+      }
+      #s-mod2-game #mod2tf-intro .btn-start,
+      #s-mod3-game #m3g-intro .btn-start,
+      #s-mod4-game #m4g-intro .btn-start,
+      #s-mod5-game #m5g-intro .btn-start,
+      #s-mod6-game #m6g-intro .btn-start {
+        padding: 16px 38px !important;
+        font-size: 15.5px !important;
+      }
+    }
+  </style>
 
   <audio id="click-sound" src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3"
     preload="auto"></audio>
@@ -18224,95 +17626,6 @@
       document.getElementById('imgModal').style.display = "none";
     }
 
-    /* ── TIPOS DE EMPILHADEIRA — Mobile Carousel ── */
-    (function () {
-      /* ── TIPOS DE EMPILHADEIRA — Mobile Carousel ── */
-      var tiposIdx = 0;
-      var tiposTotal = 3;
-
-      function isMobilePortrait() {
-        return window.matchMedia(
-          'screen and (max-width: 768px) and (orientation: portrait)'
-        ).matches;
-      }
-
-      function tiposSetVisibility() {
-        var section     = document.getElementById('tipos-mobile-section');
-        var contentArea = document.querySelector('#s-mod2-tipos .content-area');
-        if (!section || !contentArea) return;
-        if (isMobilePortrait()) {
-          section.style.display     = 'flex';
-          contentArea.style.display = 'none';
-        } else {
-          section.style.display     = 'none';
-          contentArea.style.display = '';
-        }
-      }
-
-      function tiposUpdateUI() {
-        /* dots */
-        document.querySelectorAll('#tipos-dots .tipos-dot').forEach(function (d, i) {
-          d.classList.toggle('active', i === tiposIdx);
-        });
-        /* arrows */
-        var prev = document.getElementById('tipos-prev');
-        var next = document.getElementById('tipos-next');
-        if (prev) prev.disabled = (tiposIdx === 0);
-        if (next) next.disabled = (tiposIdx === tiposTotal - 1);
-      }
-
-      function tiposShowCard(idx) {
-        var cards = document.querySelectorAll('#tipos-card-viewport .type-card');
-        cards.forEach(function (c, i) {
-          if (i === idx) {
-            c.classList.add('tipos-active');
-          } else {
-            c.classList.remove('tipos-active');
-          }
-        });
-      }
-
-      window.tiposCarouselNav = function (dir) {
-        var newIdx = tiposIdx + dir;
-        if (newIdx < 0 || newIdx >= tiposTotal) return;
-        tiposIdx = newIdx;
-        tiposShowCard(tiposIdx);
-        tiposUpdateUI();
-      };
-
-      /* Touch / swipe */
-      var tsX = 0;
-      function tiposInitSwipe() {
-        var vp = document.getElementById('tipos-card-viewport');
-        if (!vp) return;
-        vp.addEventListener('touchstart', function (e) {
-          tsX = e.changedTouches[0].screenX;
-        }, { passive: true });
-        vp.addEventListener('touchend', function (e) {
-          var diff = tsX - e.changedTouches[0].screenX;
-          if (Math.abs(diff) > 40) window.tiposCarouselNav(diff > 0 ? 1 : -1);
-        }, { passive: true });
-      }
-
-      function tiposInit() {
-        tiposSetVisibility();
-        tiposShowCard(0);
-        tiposUpdateUI();
-        tiposInitSwipe();
-      }
-
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', tiposInit);
-      } else {
-        tiposInit();
-      }
-
-      window.addEventListener('resize', tiposSetVisibility);
-      window.addEventListener('orientationchange', function () {
-        setTimeout(tiposSetVisibility, 120);
-      });
-    })();
-
     /* ── RESTRIÇÕES NO USO DA BATERIA — Mobile Carousel ── */
     (function () {
       var restrIdx = 0;
@@ -18559,126 +17872,6 @@
       });
     })();
 
-    /* ── Transit Rules Carousel (mobile portrait) ── */
-    (function () {
-      var trIdx = 0;
-      var trCards = [];
-      var trTotal = 0;
-
-      function trInit() {
-        trCards = Array.from(document.querySelectorAll('#tr-card-viewport .tr-card'));
-        trTotal = trCards.length;
-        if (!trTotal) return;
-
-        var dots = document.getElementById('tr-dots');
-        if (dots) {
-          dots.innerHTML = '';
-          for (var i = 0; i < trTotal; i++) {
-            var d = document.createElement('span');
-            d.className = 'tr-dot' + (i === 0 ? ' active' : '');
-            d.dataset.i = i;
-            dots.appendChild(d);
-          }
-        }
-        trShow(0);
-      }
-
-      function trShow(idx) {
-        trCards.forEach(function (c) { c.classList.remove('tr-active'); });
-        if (trCards[idx]) trCards[idx].classList.add('tr-active');
-
-        var dots = document.querySelectorAll('.tr-dot');
-        dots.forEach(function (d, i) {
-          d.classList.toggle('active', i === idx);
-        });
-
-        var prev = document.getElementById('tr-prev');
-        var next = document.getElementById('tr-next');
-        if (prev) prev.disabled = idx === 0;
-        if (next) next.disabled = idx === trTotal - 1;
-        trIdx = idx;
-      }
-
-      window.trCarouselNav = function (dir) {
-        var newIdx = trIdx + dir;
-        if (newIdx >= 0 && newIdx < trTotal) trShow(newIdx);
-      };
-
-      function trSetVisibility() {
-        var isMobilePortrait = window.matchMedia('(max-width: 768px) and (orientation: portrait)').matches;
-        var mob = document.getElementById('tr-mobile-section');
-        var desk = document.querySelector('#s-mod3-transit-rules .content-area');
-        if (mob) mob.style.display = isMobilePortrait ? 'flex' : 'none';
-        if (desk) desk.style.display = isMobilePortrait ? 'none' : '';
-        if (isMobilePortrait && trTotal === 0) trInit();
-      }
-
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function () { trInit(); trSetVisibility(); });
-      } else {
-        trInit(); trSetVisibility();
-      }
-      window.addEventListener('resize', trSetVisibility);
-      window.addEventListener('orientationchange', function () { setTimeout(trSetVisibility, 120); });
-    })();
-
-    /* ── Rampas Rules Carousel (mobile portrait) ── */
-    (function () {
-      var rrIdx = 0;
-      var rrCards = [];
-      var rrTotal = 0;
-
-      function rrInit() {
-        rrCards = Array.from(document.querySelectorAll('#rr-card-viewport .rr-mcard'));
-        rrTotal = rrCards.length;
-        if (!rrTotal) return;
-        var dots = document.getElementById('rr-dots');
-        if (dots) {
-          dots.innerHTML = '';
-          for (var i = 0; i < rrTotal; i++) {
-            var d = document.createElement('span');
-            d.className = 'rr-dot' + (i === 0 ? ' active' : '');
-            dots.appendChild(d);
-          }
-        }
-        rrShow(0);
-      }
-
-      function rrShow(idx) {
-        rrCards.forEach(function (c) { c.classList.remove('rr-active'); });
-        if (rrCards[idx]) rrCards[idx].classList.add('rr-active');
-        var dots = document.querySelectorAll('.rr-dot');
-        dots.forEach(function (d, i) { d.classList.toggle('active', i === idx); });
-        var prev = document.getElementById('rr-prev');
-        var next = document.getElementById('rr-next');
-        if (prev) prev.disabled = idx === 0;
-        if (next) next.disabled = idx === rrTotal - 1;
-        rrIdx = idx;
-      }
-
-      window.rrCarouselNav = function (dir) {
-        var newIdx = rrIdx + dir;
-        if (newIdx >= 0 && newIdx < rrTotal) rrShow(newIdx);
-      };
-
-      function rrSetVisibility() {
-        var isMobilePortrait = window.matchMedia('(max-width: 768px) and (orientation: portrait)').matches;
-        var mob = document.getElementById('rr-mobile-section');
-        var desk = document.querySelector('#s-mod3-rampas-rules .content-area');
-        if (mob) mob.style.display = isMobilePortrait ? 'flex' : 'none';
-        if (desk) desk.style.display = isMobilePortrait ? 'none' : '';
-        if (isMobilePortrait && rrTotal === 0) rrInit();
-      }
-
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function () { rrInit(); rrSetVisibility(); });
-      } else {
-        rrInit(); rrSetVisibility();
-      }
-      window.addEventListener('resize', rrSetVisibility);
-      window.addEventListener('orientationchange', function () { setTimeout(rrSetVisibility, 120); });
-    })();
-
     /* ════════════════════════════════════════
        DESAFIO MÓDULO 3 — Missão do Operador
     ════════════════════════════════════════ */
@@ -18689,59 +17882,59 @@
 
       var m3gDeck = [
         {
-          emoji: '🔍',
-          sit: 'Ao chegar no início do turno, você encontra a empilhadeira com uma etiqueta de manutenção. O que você deve fazer?',
-          opts: [
-            'Reconectar a bateria e usar o equipamento normalmente.',
-            'Aguardar a liberação expressa do mecânico antes de qualquer uso.',
-            'Usar apenas para trajetos curtos, sem elevar a carga.'
-          ],
-          ans: 1,
-          fb: '✅ Correto! Equipamento em manutenção nunca deve ser usado sem liberação do mecânico.'
-        },
-        {
-          emoji: '🧭',
-          sit: 'Durante o deslocamento com carga, qual é a posição correta do seu corpo em relação ao timão?',
-          opts: [
-            'Ao lado do timão, para ter mais espaço de manobra.',
-            'Atrás do timão, empurrando o equipamento à frente.',
-            'À frente do timão, puxando e mantendo ampla visibilidade.'
-          ],
-          ans: 2,
-          fb: '✅ Correto! Transitar à frente do timão garante maior visibilidade e controle total.'
-        },
-        {
           emoji: '🚦',
-          sit: 'Você se aproxima de um cruzamento interno movimentado. Qual é a atitude correta?',
+          sit: 'Você está circulando dentro da unidade, sem carga, e o corredor está livre. Qual é a velocidade máxima permitida?',
           opts: [
-            'Passar rapidamente para não atrasar o fluxo de trabalho.',
-            'Parar completamente e dar preferência a pedestres e empilhadeiras carregadas.',
-            'Buzinar continuamente e atravessar sem parar.'
+            '30 km/h, já que o corredor está livre.',
+            '20 km/h, o limite máximo em toda a unidade.',
+            'Não há limite, desde que o operador tenha experiência.'
           ],
           ans: 1,
-          fb: '✅ Correto! A parada é obrigatória em cruzamentos, sempre com preferência a pedestres.'
+          fb: '✅ Correto! A velocidade máxima é de 20 km/h em toda a unidade — a pressa é o caminho mais rápido para um acidente grave.'
         },
         {
-          emoji: '🚫',
-          sit: 'Um colega pede carona na empilhadeira enquanto você faz a movimentação de paletes. O que você faz?',
+          emoji: '💡',
+          sit: 'Ao trafegar pelos corredores do armazém, mesmo em áreas bem iluminadas, como devem estar os sinalizadores da empilhadeira?',
           opts: [
-            'Aceita, pois o percurso é curto e seguro.',
-            'Deixa o colega sentar sobre a bateria, que é mais estável.',
-            'Recusa imediatamente — dar carona é terminantemente proibido pela norma.'
+            'Apagados durante o dia, para economizar bateria.',
+            'Acesos apenas em áreas escuras ou externas.',
+            'Faróis e pisca-alerta sempre ativos durante qualquer deslocamento.'
           ],
           ans: 2,
-          fb: '✅ Correto! É proibido transportar passageiros ou permitir que sentem sobre a bateria.'
+          fb: '✅ Correto! Os dispositivos de sinalização devem estar ativos durante qualquer deslocamento, para que você veja e seja visto a tempo.'
         },
         {
-          emoji: '⛰️',
-          sit: 'Você precisa descer uma rampa com carga. Qual é a orientação correta?',
+          emoji: '🔒',
+          sit: 'Antes de iniciar a operação, qual é o procedimento obrigatório do operador em relação à sua segurança pessoal?',
           opts: [
-            'Descer com a carga à frente, em alta velocidade para ganhar tempo.',
-            'Atravessar a rampa na horizontal para reduzir a inclinação.',
-            'Descer de ré, com a carga atrás, em velocidade reduzida.'
+            'Colocar o cinto de segurança e ajustar bem a postura no assento.',
+            'Verificar apenas o nível de combustível.',
+            'O cinto só é necessário em rampas ou áreas externas.'
           ],
-          ans: 2,
-          fb: '✅ Correto! Ao descer rampas, a carga deve ficar atrás e a velocidade deve ser reduzida.'
+          ans: 0,
+          fb: '✅ Correto! O cinto de segurança é obrigatório durante toda a condução — em um tombamento, ele evita que o corpo seja projetado para fora da cabine.'
+        },
+        {
+          emoji: '📯',
+          sit: 'Você se aproxima de um cruzamento de corredores com visibilidade reduzida. Qual é a conduta correta?',
+          opts: [
+            'Acelerar para atravessar rapidamente antes de outra máquina chegar.',
+            'Reduzir a marcha, buzinar repetidamente e observar os espelhos convexos.',
+            'Manter a velocidade e confiar que os pedestres vão perceber a aproximação.'
+          ],
+          ans: 1,
+          fb: '✅ Correto! Em cruzamentos e pontos cegos, reduza a marcha, buzine repetidamente e observe os espelhos convexos antes de avançar.'
+        },
+        {
+          emoji: '🪜',
+          sit: 'Qual é a forma correta de subir ou descer da cabine da empilhadeira?',
+          opts: [
+            'Pular diretamente do assento para o piso, para agilizar.',
+            'Usar sempre as alças de apoio e o degrau integrado da máquina.',
+            'Descer de costas para a cabine, sem se apoiar em nada.'
+          ],
+          ans: 1,
+          fb: '✅ Correto! Utilize sempre as alças de apoio e o degrau integrado — nunca pule para subir ou descer da cabine.'
         }
       ];
 
@@ -18794,6 +17987,8 @@
         var isOk  = (chosen === item.ans);
 
         if (isOk) { m3gScore++; }
+
+        if (typeof playGameFeedback === 'function') playGameFeedback(isOk ? 'ok' : 'nok');
 
         // style all buttons
         var btns = document.querySelectorAll('#m3g-options .m3g-opt');
@@ -18860,11 +18055,11 @@
       var M4G_TIME_MS = 12000;
 
       var m4gDeck = [
-        { emoji: '📦', text: 'Cargas soltas ou instáveis podem ser transportadas sem problema, desde que o trajeto seja curto.', ans: false, tip: 'Cargas soltas ou instáveis nunca são permitidas — o equilíbrio deve ser garantido antes de mover.' },
-        { emoji: '🟩', text: 'O palete de quatro entradas permite a inserção dos garfos por qualquer um dos quatro lados.', ans: true, tip: 'Correto! O palete de quatro entradas é o mais versátil, com abertura em todos os lados.' },
-        { emoji: '🏖️', text: 'Areia solta, sem contenção, pode ser transportada normalmente na empilhadeira.', ans: false, tip: 'Materiais a granel sem contenção, como areia solta ou líquidos livres, nunca devem ser transportados na empilhadeira.' },
-        { emoji: '🧵', text: 'Bobinas e chapas soltas, sem embalagem individual, são classificadas como carga diversa.', ans: true, tip: 'Correto! Cargas diversas são transportadas sem embalagem, de forma individual, como bobinas e chapas.' },
-        { emoji: '📐', text: 'O material empilhado deve ficar a pelo menos 50 cm de distância das estruturas laterais do prédio.', ans: true, tip: 'Correto! O afastamento mínimo de 50 cm também vale para os corredores de circulação.' }
+        { emoji: '📏', text: 'Como pedestre, você deve manter a distância mínima de 4 metros de qualquer empilhadeira ativa quando não houver barreira física de proteção.', ans: true, tip: 'Correto! A regra dos 4 metros é a distância mínima segura em relação a máquinas ativas sem barreira de proteção.' },
+        { emoji: '🚶', text: 'É permitido caminhar por qualquer parte do corredor, desde que o pedestre preste atenção ao redor.', ans: false, tip: 'Errado! A circulação de pedestres deve ser feita exclusivamente pelas guias e faixas demarcadas no piso.' },
+        { emoji: '🛑', text: 'É seguro parar rapidamente no raio de giro da empilhadeira, mesmo que por poucos segundos.', ans: false, tip: 'Nunca pare no trajeto ou no raio de giro da empilhadeira — um único passo fora da área segura pode causar prensamento.' },
+        { emoji: '🟥', text: 'Na Red Zone, pode haver uma pessoa e uma empilhadeira ativa ao mesmo tempo, desde que seja por poucos segundos.', ans: false, tip: 'Errado! Na Red Zone nunca podem estar uma pessoa e uma empilhadeira ativa ao mesmo tempo — é uma regra inegociável.' },
+        { emoji: '⛔', text: 'Se um pedestre invade a Red Zone do seu equipamento, o operador deve parar a máquina imediatamente e pedir a saída da pessoa.', ans: true, tip: 'Correto! É obrigação do operador parar a máquina de imediato e só retomar as manobras quando a área estiver completamente livre.' }
       ];
 
       function m4gShow(id) {
