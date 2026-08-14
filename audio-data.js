@@ -44,7 +44,17 @@ const NARRATION_OVERRIDES = {
   's-mod2-video3':
     'Vídeo. Componentes Principais da Transpaleteira. Conhecendo o Equipamento. Assista ao vídeo sobre os componentes principais da transpaleteira. Avance quando concluir.',
   's-mod2-video4':
-    'Vídeo. O Painel de Controle e a Chave de Contato. Conhecendo o Equipamento. Assista ao vídeo sobre o painel de controle e a chave de contato. Avance quando concluir.',
+    'Vídeo. Faixas de Trânsito e Preferências de Passagem. Aptidão Psicofísica, Saúde e Regras de Acesso. Assista ao vídeo sobre faixas de trânsito e preferências de passagem. Avance quando concluir.',
+  's-mod2-video5':
+    'Vídeo. Bloqueio de Áreas Críticas e Estacionamento Preventivo. Aptidão Psicofísica, Saúde e Regras de Acesso. Assista ao vídeo sobre bloqueio de áreas críticas e estacionamento preventivo. Avance quando concluir.',
+  's-mod2-motoristas':
+    'Regras para Motoristas e Manobristas. Os motoristas e manobristas devem conduzir seus veículos de forma a proteger o pedestre. Velocidade máxima de 20 quilômetros por hora dentro da unidade. Pisca-alerta e faróis sempre ligados na circulação interna. Cinto obrigatório e somente condutor habilitado. Na faixa de pedestre, pare, olhe os dois lados e dê preferência ao pedestre, com contato visual. Proibido usar ou manusear celular ao dirigir. Nunca bloqueie áreas críticas: não pare sobre faixas, rampas ou em frente a equipamentos de emergência. Carga e descarga somente nas docas, em áreas sinalizadas. Na Red Zone, nunca pessoa e empilhadeira ao mesmo tempo. Parada segura do caminhão: desligado, freio estacionário acionado e trava-rodas. Se precisar descer, use a rota segura pela frente da doca e pelas faixas de pedestres.',
+  's-mod5-picking':
+    'Abastecimento do Picking. O processo de ressuprir, ou abastecer, o picking parece simples, mas se não for executado seguindo as regras, pode causar graves acidentes. Pessoas são prensadas entre paletes no momento do ressuprimento. Isto ocorre porque a visão do operador é obstruída por paletes, principalmente quando as pessoas estão abaixadas. No corredor de abastecimento, o operador avança com a empilhadeira em direção à célula de picking, onde pode haver um trabalhador abaixado e fora do campo de visão.',
+  's-mod5-video-picking':
+    'Vídeo. Protocolo de Aproximação Segura no Picking. Operações de Alta Complexidade, Ressuprimento de Picking e Docas. Assista ao vídeo sobre o protocolo de aproximação segura no picking. Avance quando concluir.',
+  's-mod5-aproximacao':
+    'A Regra Inicial de Ouro. Nunca se aproxime de uma empilhadeira em movimento. Mantenha-se à distância segura de 4 metros e faça contato visual com o condutor para chamar sua atenção. Os 3 passos para a aproximação segura: o pedestre só pode se aproximar e iniciar a conversa após o operador realizar rigorosamente estes três passos. Passo 1: parada total do equipamento. A empilhadeira deve estar completamente estática. Passo 2: descida completa do garfo até o solo. Os garfos devem ser baixados e deitados planos contra o chão. Passo 3: desligamento do motor e retirada da chave. O motor deve ser desligado e a chave de ignição removida pelo operador.',
 };
 
 function cleanText(text) {

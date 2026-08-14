@@ -73,6 +73,25 @@
       background-position: 0 0;
     }
 
+    /* Mobile: vinheta leve — o azul permanece, as bordas ganham sombra */
+    @media screen and (max-width: 768px), screen and (max-height: 500px) {
+      #bg-texture {
+        background-image:
+          radial-gradient(ellipse 78% 62% at 50% 40%, transparent 42%, rgba(2, 10, 24, 0.32) 100%),
+          repeating-linear-gradient(to bottom,
+              rgba(160, 215, 255, 0.05) 0px,
+              rgba(160, 215, 255, 0.05) 1px,
+              transparent 1px,
+              transparent 4px);
+        background-size: 100% 100%, 100% 4px;
+        background-position: 0 0, 0 0;
+      }
+
+      .nav-btn {
+        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35), 0 0 18px rgba(0, 187, 249, 0.28);
+      }
+    }
+
 
     /* ── PORTRAIT MOBILE: Full responsive layout ── */
     @media screen and (max-width: 768px) and (orientation: portrait) {
@@ -492,7 +511,7 @@
       }
 
       .s1-inner {
-        padding: 45px 20px 80px !important;
+        padding: 132px 20px 48px !important;
         justify-content: flex-start !important;
         align-items: stretch !important;
         flex-direction: column !important;
@@ -9857,6 +9876,53 @@
 
       <!-- ── S6: SUMÁRIO — Conteúdo Programático ── -->
       <section class="slide" id="s6">
+        <style>
+          @media screen and (max-width: 768px) and (orientation: portrait) {
+            #s6 { overflow: hidden; }
+            #s6 .top-bar { flex-shrink: 0; }
+            #s6 .slide-title { font-size: 22px !important; margin-top: 4px !important; }
+            #s6 .content-area {
+              overflow: hidden !important;
+              padding: 6px 12px 76px !important;
+              justify-content: stretch !important;
+              min-height: 0;
+              flex: 1 1 0;
+            }
+            #s6 .sum-grid {
+              display: flex !important;
+              flex-direction: column !important;
+              gap: 6px !important;
+              height: 100%;
+              max-width: 100% !important;
+              margin: 0 !important;
+            }
+            #s6 .sum-item {
+              flex: 1 1 0;
+              min-height: 0;
+              padding: 8px 12px !important;
+              gap: 2px !important;
+              justify-content: center;
+              border-radius: 12px !important;
+              border-left-width: 4px !important;
+            }
+            #s6 .sum-item::before {
+              width: 28px !important;
+              height: 28px !important;
+              right: -4px !important;
+              top: -4px !important;
+            }
+            #s6 .sum-num-big {
+              font-size: 9px !important;
+              padding: 3px 8px !important;
+              margin-bottom: 0 !important;
+            }
+            #s6 .sum-text {
+              font-size: 12px !important;
+              line-height: 1.22 !important;
+              margin: 0 !important;
+            }
+          }
+        </style>
         <div class="top-bar"><span class="section-tag">🗺️ Sumário</span>
           <div class="slide-title" style="margin-top:6px">Conteúdo <span>Programático</span></div>
         </div>
@@ -9979,8 +10045,14 @@
             animation: floatBadge 5s ease-in-out infinite;
           }
 
-          /* ── MOBILE PORTRAIT ── */
+          #s2b3 .s2b3-carousel-nav { display: none; }
+
+          /* ── MOBILE PORTRAIT: carrossel texto / cartão ── */
           @media screen and (max-width: 768px) and (orientation: portrait) {
+            @keyframes s2b3FadeIn {
+              from { opacity: 0; transform: translateX(18px); }
+              to   { opacity: 1; transform: translateX(0); }
+            }
 
             #s2b3 {
               display: flex !important;
@@ -9988,127 +10060,159 @@
               overflow: hidden !important;
             }
 
-            /* Switch grid to column stack */
             #s2b3 .content-area {
               display: flex !important;
-              flex-direction: row !important;
+              flex-direction: column !important;
               align-items: center !important;
               justify-content: center !important;
               gap: 12px !important;
-              padding: 6px 12px 72px !important;
+              padding: 8px 16px 78px !important;
               overflow: hidden !important;
               flex: 1 1 0 !important;
               min-height: 0 !important;
+              transform: none !important;
+              max-width: 100% !important;
+              width: 100% !important;
             }
 
-            /* Left: text box */
-            #s2b3-text {
-              flex: 1 1 0;
-              min-width: 0;
-              background: rgba(255,255,255,0.03) !important;
-              border: 1px solid rgba(255,255,255,0.08) !important;
-              border-radius: 16px !important;
-              padding: 14px 12px !important;
-              box-shadow: none !important;
+            #s2b3-text,
+            #s2b3-card {
+              display: none !important;
               animation: none !important;
-              display: flex;
+            }
+
+            #s2b3-text.s2b3-card-active,
+            #s2b3-card.s2b3-card-active {
+              display: flex !important;
+              animation: s2b3FadeIn 0.3s ease forwards;
+            }
+
+            #s2b3-text.s2b3-card-active {
               flex-direction: column;
-              gap: 10px;
-              align-self: center;
+              width: 100%;
+              max-width: 360px;
+              background: linear-gradient(160deg, #1a3564 0%, #12274c 40%, #0a1730 100%) !important;
+              border: 1px solid rgba(0, 187, 249, 0.28) !important;
+              border-radius: 18px !important;
+              padding: 20px 18px !important;
+              box-shadow: 0 12px 28px rgba(0,0,0,0.28) !important;
+              gap: 12px;
             }
 
             #s2b3-text .nr-badge {
-              font-size: 9px !important;
-              padding: 4px 10px !important;
+              font-size: 10px !important;
+              padding: 5px 12px !important;
             }
 
             #s2b3-text p {
-              font-size: 11px !important;
+              font-size: 14.5px !important;
               line-height: 1.55 !important;
               margin: 0 !important;
             }
 
             #s2b3-text .text-line {
-              height: 2px !important;
-              width: 40px !important;
-              margin-top: 6px !important;
+              height: 3px !important;
+              width: 48px !important;
+              margin-top: 4px !important;
             }
 
-            /* Right: ID card mockup — scaled down */
-            #s2b3-card {
-              flex-shrink: 0;
-              display: flex;
+            #s2b3-card.s2b3-card-active {
+              flex-direction: row;
               align-items: center;
               justify-content: center;
-              animation: none !important;
+              width: 100%;
+              max-width: 360px;
+              padding: 0;
             }
 
             #s2b3-card .id-card {
-              width: 150px !important;
-              height: 250px !important;
-              border-radius: 14px !important;
+              width: min(210px, 64vw) !important;
+              height: min(350px, 48vh) !important;
+              border-radius: 16px !important;
               border-width: 3px !important;
             }
 
             #s2b3-card .id-card-clip {
-              width: 30px !important;
-              height: 7px !important;
-              margin: 8px auto 0 !important;
+              width: 40px !important;
+              height: 8px !important;
+              margin: 10px auto 0 !important;
             }
 
             #s2b3-card .id-card-header {
-              padding: 8px 10px 3px !important;
+              padding: 8px 12px 2px !important;
             }
 
             #s2b3-card .id-card-logo {
-              max-height: 14px !important;
+              max-height: 18px !important;
             }
 
             #s2b3-card .id-card-seal {
-              width: 20px !important;
-              height: 20px !important;
+              width: 26px !important;
+              height: 26px !important;
             }
 
             #s2b3-card .id-card-seal svg {
-              width: 10px !important;
-              height: 10px !important;
+              width: 13px !important;
+              height: 13px !important;
             }
 
             #s2b3-card .id-card-role {
-              font-size: 7px !important;
-              letter-spacing: 0.5px !important;
+              font-size: 9px !important;
+              letter-spacing: 0.8px !important;
             }
 
             #s2b3-card .id-card-photo {
-              width: 64px !important;
-              height: 76px !important;
+              width: 88px !important;
+              height: 104px !important;
               margin: 8px auto !important;
               border-radius: 10px !important;
             }
 
             #s2b3-card .id-card-namebar {
-              font-size: 10px !important;
-              padding: 6px 4px !important;
+              font-size: 14px !important;
+              padding: 8px 6px !important;
             }
 
             #s2b3-card .id-card-footer {
-              padding: 6px 10px 8px !important;
-              gap: 5px !important;
+              padding: 8px 12px 10px !important;
+              gap: 6px !important;
             }
 
             #s2b3-card .id-card-field span:first-child {
-              font-size: 6px !important;
+              font-size: 8px !important;
             }
 
             #s2b3-card .id-card-field strong {
-              font-size: 9px !important;
+              font-size: 11px !important;
             }
 
             #s2b3-card .id-card-barcode {
               height: 12px !important;
-              margin-top: 3px !important;
+              margin-top: 2px !important;
             }
 
+            #s2b3 .s2b3-carousel-nav {
+              display: flex !important;
+              align-items: center; justify-content: center; gap: 16px;
+              width: 100%; max-width: 360px; flex-shrink: 0;
+            }
+
+            #s2b3 .s2b3-nav-btn {
+              background: linear-gradient(135deg, #00bbf9, #0094c6);
+              color: #fff; border: none; border-radius: 50%;
+              width: 46px; height: 46px; min-width: 46px; min-height: 46px;
+              cursor: pointer; display: flex; align-items: center; justify-content: center;
+              box-shadow: 0 6px 16px rgba(0, 187, 249, 0.4);
+              touch-action: manipulation; -webkit-tap-highlight-color: transparent;
+            }
+            #s2b3 .s2b3-nav-btn:active:not(:disabled) { transform: scale(0.94); }
+            #s2b3 .s2b3-nav-btn:disabled { opacity: 0.3; cursor: default; }
+            #s2b3 .s2b3-nav-btn svg { pointer-events: none; }
+            #s2b3 .s2b3-counter {
+              font-family: var(--font-h); font-size: 14px; font-weight: 800;
+              color: rgba(255,255,255,0.9); min-width: 56px; text-align: center;
+              letter-spacing: 0.04em;
+            }
           }
         </style>
         <div class="top-bar">
@@ -10117,7 +10221,7 @@
         </div>
         <div class="content-area" style="display:grid; grid-template-columns: 1.3fr 1fr; gap: 50px; align-items: center; max-width: 1100px; margin: 0 auto; padding: 0 20px; transform: scale(0.8); transform-origin: center;">
           <!-- Left side: Text -->
-          <div id="s2b3-text" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; padding: 45px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); animation: slideRight 0.8s ease;">
+          <div id="s2b3-text" class="s2b3-slide s2b3-card-active" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; padding: 45px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); animation: slideRight 0.8s ease;">
             <div style="display:flex; align-items:center; gap:12px; margin-bottom:24px;">
               <span class="nr-badge" style="background:rgba(0, 187, 249, 0.12); color:#00bbf9; border:1px solid rgba(0, 187, 249, 0.25); padding:6px 14px; border-radius:100px; font-size:12px; font-weight:700; letter-spacing:0.5px; font-family:var(--font-h)">CARTÃO DE IDENTIFICAÇÃO</span>
             </div>
@@ -10131,7 +10235,7 @@
           </div>
 
           <!-- Right side: Badge Mockup -->
-          <div id="s2b3-card" class="floating-badge" style="display:flex; justify-content:center; align-items:center; transition: transform 0.8s ease;">
+          <div id="s2b3-card" class="floating-badge s2b3-slide" style="display:flex; justify-content:center; align-items:center; transition: transform 0.8s ease;">
             <div class="id-card" style="width: 320px; height: 525px; background: #ffffff; border-radius: 24px; box-shadow: 0 25px 60px rgba(0,0,0,0.5); display: flex; flex-direction: column; position: relative; overflow: hidden; color: #1a1f2e; border: 4px solid #00bbf9;">
               <!-- Card Clip Slot -->
               <div class="id-card-clip" style="width: 60px; height: 12px; background: #cbd5e0; border-radius: 6px; margin: 15px auto 0; box-shadow: inset 0 2px 4px rgba(0,0,0,0.15);"></div>
@@ -10208,6 +10312,17 @@
               </div>
             </div>
           </div>
+
+          <div class="s2b3-carousel-nav" id="s2b3-carousel-nav">
+            <button type="button" class="s2b3-nav-btn" id="s2b3-prev" aria-label="Anterior" onclick="s2b3CarouselNav(-1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <span class="s2b3-counter" id="s2b3-counter">1 / 2</span>
+            <button type="button" class="s2b3-nav-btn" id="s2b3-next" aria-label="Próximo" onclick="s2b3CarouselNav(1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+            </button>
+          </div>
+
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
             <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(0, 187, 249,0.07)" />
@@ -10418,29 +10533,97 @@
             width: fit-content;
           }
 
-          @media screen and (max-width: 768px) and (orientation: portrait) {
-            #s2c2 .content-area {
-              padding: 10px 14px 90px !important;
-              gap: 14px !important;
-            }
+          #s2c2 .s2c2-mobile-subhead,
+          #s2c2 .s2c2-carousel-nav { display: none; }
 
-            #s2c2 .civcrim-civil {
-              padding: 14px 16px !important;
+          #s2c2 .s2c2-card-viewport {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            width: 100%;
+          }
+
+          @media screen and (max-width: 768px) and (orientation: portrait) {
+            @keyframes s2c2FadeIn {
+              from { opacity: 0; transform: translateX(18px); }
+              to   { opacity: 1; transform: translateX(0); }
+            }
+            #s2c2 { overflow: hidden; }
+            #s2c2 .content-area {
+              overflow: hidden !important;
+              justify-content: center !important;
+              padding: 8px 16px 78px !important;
               gap: 12px !important;
             }
-
-            #s2c2 .civcrim-civil-icon {
-              width: 36px !important;
-              height: 36px !important;
+            #s2c2 .civcrim-subhead { display: none !important; }
+            #s2c2 .s2c2-mobile-subhead {
+              display: flex !important;
+              align-items: center;
+              justify-content: center;
+              font-family: var(--font-h);
+              font-size: 11px;
+              font-weight: 800;
+              color: #56d5ff;
+              text-transform: uppercase;
+              letter-spacing: 0.5px;
+              text-align: center;
+              line-height: 1.35;
+              padding: 0 8px;
             }
-
-            #s2c2 .civcrim-grid {
-              grid-template-columns: 1fr !important;
-              gap: 10px !important;
+            #s2c2 .civcrim-grid { display: contents !important; }
+            #s2c2 .s2c2-card-viewport {
+              display: block;
+              width: 100%;
+              max-width: 360px;
+              margin: 0 auto;
             }
-
+            #s2c2 .civcrim-civil,
             #s2c2 .civcrim-card {
-              padding: 14px 16px !important;
+              display: none !important;
+              width: 100%;
+              min-height: 250px;
+              padding: 22px 20px !important;
+              gap: 12px !important;
+              border-radius: 20px;
+              box-sizing: border-box;
+            }
+            #s2c2 .civcrim-civil.s2c2-card-active,
+            #s2c2 .civcrim-card.s2c2-card-active {
+              display: flex !important;
+              animation: s2c2FadeIn 0.3s ease forwards;
+            }
+            #s2c2 .civcrim-civil {
+              flex-direction: column;
+              align-items: flex-start;
+              text-align: left;
+            }
+            #s2c2 .civcrim-civil-icon { width: 44px !important; height: 44px !important; }
+            #s2c2 .civcrim-quote { font-size: 15px !important; }
+            #s2c2 .civcrim-card-icon { width: 44px; height: 44px; }
+            #s2c2 .civcrim-card-title { font-size: 18px !important; }
+            #s2c2 .civcrim-card-sub { font-size: 12px !important; }
+            #s2c2 .civcrim-card-text { font-size: 14.5px !important; line-height: 1.55 !important; }
+            #s2c2 .civcrim-pena { font-size: 12.5px; padding: 5px 12px; }
+            #s2c2 .s2c2-carousel-nav {
+              display: flex !important;
+              align-items: center; justify-content: center; gap: 16px;
+              width: 100%; max-width: 360px; margin: 0 auto; flex-shrink: 0;
+            }
+            #s2c2 .s2c2-nav-btn {
+              background: linear-gradient(135deg, #00bbf9, #0094c6);
+              color: #fff; border: none; border-radius: 50%;
+              width: 46px; height: 46px; min-width: 46px; min-height: 46px;
+              cursor: pointer; display: flex; align-items: center; justify-content: center;
+              box-shadow: 0 6px 16px rgba(0, 187, 249, 0.4);
+              touch-action: manipulation; -webkit-tap-highlight-color: transparent;
+            }
+            #s2c2 .s2c2-nav-btn:active:not(:disabled) { transform: scale(0.94); }
+            #s2c2 .s2c2-nav-btn:disabled { opacity: 0.3; cursor: default; }
+            #s2c2 .s2c2-nav-btn svg { pointer-events: none; }
+            #s2c2 .s2c2-counter {
+              font-family: var(--font-h); font-size: 14px; font-weight: 800;
+              color: rgba(255,255,255,0.9); min-width: 56px; text-align: center;
+              letter-spacing: 0.04em;
             }
           }
         </style>
@@ -10451,8 +10634,11 @@
         </div>
         <div class="content-area" style="display:flex; flex-direction:column; gap: 18px; width:100%; max-width:1100px; margin:0 auto; padding: 4px 20px 20px;">
 
+          <div class="s2c2-mobile-subhead" id="s2c2-mobile-subhead">Responsabilidade Civil</div>
+
+          <div class="s2c2-card-viewport" id="s2c2-card-viewport">
           <!-- Responsabilidade Civil -->
-          <div class="civcrim-civil">
+          <div class="civcrim-civil s2c2-slide s2c2-card-active" data-group="Responsabilidade Civil">
             <div class="civcrim-civil-icon">
               <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 3v18M7 21h10M5 7l3-2 3 2M13 7l3-2 3 2M2 7h6M16 7h6M5 7l-3 6a3 3 0 0 0 6 0Zm11 0-3 6a3 3 0 0 0 6 0Z" />
@@ -10469,7 +10655,7 @@
 
           <div class="civcrim-grid">
             <!-- Artigo 132 -->
-            <div class="civcrim-card">
+            <div class="civcrim-card s2c2-slide" data-group="Responsabilidade Criminal — Código Penal">
               <div class="civcrim-card-head">
                 <div class="civcrim-card-icon">
                   <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -10490,7 +10676,7 @@
             </div>
 
             <!-- Artigo 129 -->
-            <div class="civcrim-card">
+            <div class="civcrim-card s2c2-slide" data-group="Responsabilidade Criminal — Código Penal">
               <div class="civcrim-card-head">
                 <div class="civcrim-card-icon">
                   <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -10508,6 +10694,18 @@
               </div>
             </div>
           </div>
+          </div>
+
+          <div class="s2c2-carousel-nav" id="s2c2-carousel-nav">
+            <button type="button" class="s2c2-nav-btn" id="s2c2-prev" aria-label="Anterior" onclick="s2c2CarouselNav(-1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <span class="s2c2-counter" id="s2c2-counter">1 / 3</span>
+            <button type="button" class="s2c2-nav-btn" id="s2c2-next" aria-label="Próximo" onclick="s2c2CarouselNav(1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+            </button>
+          </div>
+
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
             <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(0, 187, 249,0.07)" />
@@ -10674,19 +10872,89 @@
             color: #7fd8ff;
           }
 
+          #s2d .s2d-mobile-subhead,
+          #s2d .s2d-carousel-nav { display: none; }
+
+          #s2d .s2d-card-viewport {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            width: 100%;
+          }
+
           @media screen and (max-width: 768px) and (orientation: portrait) {
+            @keyframes s2dFadeIn {
+              from { opacity: 0; transform: translateX(18px); }
+              to   { opacity: 1; transform: translateX(0); }
+            }
+            #s2d { overflow: hidden; }
             #s2d .content-area {
-              padding: 10px 14px 90px !important;
-              gap: 14px !important;
+              overflow: hidden !important;
+              justify-content: center !important;
+              padding: 8px 16px 78px !important;
+              gap: 12px !important;
             }
-
+            #s2d .civcrim-subhead { display: none !important; }
+            #s2d .s2d-mobile-subhead {
+              display: flex !important;
+              align-items: center;
+              justify-content: center;
+              font-family: var(--font-h);
+              font-size: 11px;
+              font-weight: 800;
+              color: #56d5ff;
+              text-transform: uppercase;
+              letter-spacing: 0.5px;
+              text-align: center;
+              line-height: 1.35;
+              padding: 0 8px;
+            }
             #s2d .civcrim-grid {
-              grid-template-columns: 1fr !important;
-              gap: 10px !important;
+              display: contents !important;
             }
-
+            #s2d .s2d-card-viewport {
+              display: block;
+              width: 100%;
+              max-width: 360px;
+              margin: 0 auto;
+            }
             #s2d .civcrim-card {
-              padding: 14px 16px !important;
+              display: none !important;
+              width: 100%;
+              min-height: 250px;
+              padding: 22px 20px !important;
+              gap: 12px !important;
+              border-radius: 20px;
+            }
+            #s2d .civcrim-card.s2d-card-active {
+              display: flex !important;
+              animation: s2dFadeIn 0.3s ease forwards;
+            }
+            #s2d .civcrim-card-icon { width: 44px; height: 44px; }
+            #s2d .civcrim-card-title { font-size: 18px !important; }
+            #s2d .civcrim-card-sub { font-size: 12px !important; }
+            #s2d .civcrim-card-text { font-size: 14.5px !important; line-height: 1.55 !important; }
+            #s2d .civcrim-pena { font-size: 12.5px; padding: 5px 12px; }
+            #s2d .s2d-carousel-nav {
+              display: flex !important;
+              align-items: center; justify-content: center; gap: 16px;
+              width: 100%; max-width: 360px; margin: 0 auto; flex-shrink: 0;
+            }
+            #s2d .s2d-nav-btn {
+              background: linear-gradient(135deg, #00bbf9, #0094c6);
+              color: #fff; border: none; border-radius: 50%;
+              width: 46px; height: 46px; min-width: 46px; min-height: 46px;
+              cursor: pointer; display: flex; align-items: center; justify-content: center;
+              box-shadow: 0 6px 16px rgba(0, 187, 249, 0.4);
+              touch-action: manipulation; -webkit-tap-highlight-color: transparent;
+            }
+            #s2d .s2d-nav-btn:active:not(:disabled) { transform: scale(0.94); }
+            #s2d .s2d-nav-btn:disabled { opacity: 0.3; cursor: default; }
+            #s2d .s2d-nav-btn svg { pointer-events: none; }
+            #s2d .s2d-counter {
+              font-family: var(--font-h); font-size: 14px; font-weight: 800;
+              color: rgba(255,255,255,0.9); min-width: 56px; text-align: center;
+              letter-spacing: 0.04em;
             }
           }
         </style>
@@ -10697,11 +10965,14 @@
         </div>
         <div class="content-area" style="display:flex; flex-direction:column; gap: 18px; width:100%; max-width:1100px; margin:0 auto; padding: 4px 20px 20px;">
 
+          <div class="s2d-mobile-subhead" id="s2d-mobile-subhead">Homicídio — Código Penal (Art. 121)</div>
+
+          <div class="s2d-card-viewport" id="s2d-card-viewport">
           <div class="civcrim-subhead"><span class="civcrim-subhead-text">Homicídio — Código Penal (Art. 121)</span></div>
 
           <div class="civcrim-grid">
             <!-- Homicídio Culposo -->
-            <div class="civcrim-card">
+            <div class="civcrim-card s2d-card-active" data-group="Homicídio — Código Penal (Art. 121)">
               <div class="civcrim-card-head">
                 <div class="civcrim-card-icon">
                   <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -10722,7 +10993,7 @@
             </div>
 
             <!-- Homicídio Doloso -->
-            <div class="civcrim-card">
+            <div class="civcrim-card" data-group="Homicídio — Código Penal (Art. 121)">
               <div class="civcrim-card-head">
                 <div class="civcrim-card-icon">
                   <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -10747,7 +11018,7 @@
 
           <div class="civcrim-grid">
             <!-- CLT Artigo 482 -->
-            <div class="civcrim-card">
+            <div class="civcrim-card" data-group="Responsabilidade Trabalhista e Civil">
               <div class="civcrim-card-head">
                 <div class="civcrim-card-icon">
                   <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -10766,7 +11037,7 @@
             </div>
 
             <!-- Código Civil Artigo 159 -->
-            <div class="civcrim-card is-civil">
+            <div class="civcrim-card is-civil" data-group="Responsabilidade Trabalhista e Civil">
               <div class="civcrim-card-head">
                 <div class="civcrim-card-icon">
                   <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -10783,6 +11054,18 @@
               </div>
             </div>
           </div>
+          </div>
+
+          <div class="s2d-carousel-nav" id="s2d-carousel-nav">
+            <button type="button" class="s2d-nav-btn" id="s2d-prev" aria-label="Anterior" onclick="s2dCarouselNav(-1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <span class="s2d-counter" id="s2d-counter">1 / 4</span>
+            <button type="button" class="s2d-nav-btn" id="s2d-next" aria-label="Próximo" onclick="s2dCarouselNav(1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+            </button>
+          </div>
+
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
             <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(0, 187, 249,0.07)" />
@@ -10927,6 +11210,230 @@
           </svg></div>
       </section>
 
+      <!-- ── S-MOD2-MOTORISTAS: CONTEÚDO — Regras para Motoristas e Manobristas ── -->
+      <section class="slide" id="s-mod2-motoristas">
+        <style>
+          #s-mod2-motoristas .mn-content {
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            padding: clamp(12px,2.2cqh,22px) clamp(22px,4cqw,44px) clamp(68px,10cqh,100px);
+            width: 100%; box-sizing: border-box; min-height: 0;
+            overflow: auto; container-type: size;
+          }
+          #s-mod2-motoristas .mn-shell {
+            display: flex; flex-direction: column; gap: 24px;
+            width: min(100%, 1080px); margin: 0 auto;
+            height: min(600px, 80cqh); min-height: 0;
+          }
+          #s-mod2-motoristas .mn-intro {
+            display: flex; align-items: center; gap: 12px; flex-shrink: 0;
+            background: linear-gradient(160deg, #1a3564 0%, #12274c 40%, #0a1730 75%, #050c1a 100%);
+            border: 1px solid rgba(0, 187, 249, 0.28);
+            border-radius: 14px; padding: 10px 16px;
+            position: relative; overflow: hidden;
+          }
+          #s-mod2-motoristas .mn-intro::before {
+            content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+            background: linear-gradient(180deg, #00bbf9, #56d5ff);
+          }
+          #s-mod2-motoristas .mn-intro-icon {
+            flex-shrink: 0; width: 32px; height: 32px; border-radius: 8px;
+            background: linear-gradient(135deg, #00bbf9, #0094c6);
+            display: flex; align-items: center; justify-content: center; font-size: 16px;
+            box-shadow: 0 6px 16px rgba(0, 187, 249, 0.35);
+          }
+          #s-mod2-motoristas .mn-intro p {
+            font-family: var(--font-p); font-size: clamp(13px, 2.1cqh, 15px);
+            color: rgba(255,255,255,0.9); margin: 0; line-height: 1.4;
+          }
+          #s-mod2-motoristas .mn-intro strong { color: #56d5ff; font-weight: 800; }
+          #s-mod2-motoristas .mn-timeline {
+            flex: 1 1 0; min-height: 0;
+            display: flex; flex-direction: column; justify-content: space-evenly;
+            gap: clamp(12px, 2.4cqh, 22px);
+            padding-top: 8px;
+          }
+          #s-mod2-motoristas .mn-row {
+            display: flex; align-items: flex-start;
+            position: relative; flex: 1 1 0; min-height: 0;
+          }
+          #s-mod2-motoristas .mn-row::before {
+            content: ''; position: absolute; z-index: 0;
+            left: 10%; right: 10%; top: 16px; height: 3px;
+            background: linear-gradient(90deg, #00bbf9, #56d5ff, #00bbf9);
+            border-radius: 99px;
+            box-shadow: 0 0 12px rgba(0, 187, 249, 0.45);
+          }
+          #s-mod2-motoristas .mn-step {
+            flex: 1 1 0; min-width: 0;
+            display: flex; flex-direction: column; align-items: center;
+            text-align: center; position: relative; z-index: 1;
+            padding: 0 6px;
+          }
+          #s-mod2-motoristas .mn-node {
+            flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-family: var(--font-h); font-size: 12px; font-weight: 900; color: #fff;
+            background: linear-gradient(135deg, #00bbf9, #0094c6);
+            box-shadow: 0 0 0 5px #07101f, 0 0 0 7px rgba(0,187,249,0.5);
+            margin-bottom: 8px;
+          }
+          #s-mod2-motoristas .mn-ico {
+            font-size: 16px; line-height: 1; margin-bottom: 4px;
+          }
+          #s-mod2-motoristas .mn-copy { min-width: 0; }
+          #s-mod2-motoristas .mn-title {
+            font-family: var(--font-h); font-size: clamp(11.5px, 1.8cqh, 13px); font-weight: 800;
+            color: #fff; line-height: 1.25; margin: 0;
+          }
+          #s-mod2-motoristas .mn-text {
+            font-family: var(--font-p); font-size: clamp(10.5px, 1.55cqh, 12px);
+            color: rgba(255,255,255,0.7); line-height: 1.3; margin: 3px 0 0;
+          }
+          #s-mod2-motoristas .mn-carousel-nav { display: none; }
+          @media (min-width: 769px) and (max-height: 820px) {
+            #s-mod2-motoristas .mn-shell { height: min(500px, 74cqh); gap: 20px; }
+            #s-mod2-motoristas .mn-intro p { font-size: 12.5px; }
+            #s-mod2-motoristas .mn-title { font-size: 11.5px; }
+            #s-mod2-motoristas .mn-text { font-size: 10.5px; }
+          }
+          @media screen and (max-width: 768px) and (orientation: portrait) {
+            #s-mod2-motoristas { overflow: hidden; }
+            #s-mod2-motoristas .slide-title { font-size: 22px !important; }
+            #s-mod2-motoristas .mn-content {
+              overflow: hidden !important;
+              padding: 8px 16px 78px !important; gap: 10px;
+            }
+            #s-mod2-motoristas .mn-shell {
+              height: auto; width: 100%; max-width: 360px; gap: 20px;
+            }
+            #s-mod2-motoristas .mn-timeline {
+              flex-direction: row; overflow-x: auto; overflow-y: hidden;
+              -webkit-overflow-scrolling: touch;
+              flex: none; gap: 0; padding: 8px 4px 12px;
+            }
+            #s-mod2-motoristas .mn-row {
+              flex: 0 0 auto; width: max-content;
+            }
+            #s-mod2-motoristas .mn-row::before {
+              left: 75px; right: 75px; top: 16px;
+            }
+            #s-mod2-motoristas .mn-step {
+              flex: 0 0 150px; padding: 0 8px;
+            }
+            #s-mod2-motoristas .mn-title { font-size: 12.5px !important; }
+            #s-mod2-motoristas .mn-text { font-size: 11.5px !important; }
+            #s-mod2-motoristas .mn-intro p { font-size: 13px !important; }
+            #s-mod2-motoristas .mn-carousel-nav { display: none !important; }
+          }
+        </style>
+
+        <div class="top-bar">
+          <span class="section-tag">🚦 Pedestre</span>
+          <div class="slide-title" style="margin-top:6px">Regras para <span>Motoristas e Manobristas</span></div>
+          <div class="slide-subtitle">Aptidão Psicofísica, Saúde e Regras de Acesso</div>
+        </div>
+
+        <div class="content-area mn-content">
+          <div class="mn-shell">
+            <div class="mn-intro">
+              <span class="mn-intro-icon">🚶</span>
+              <p>Os <strong>motoristas e manobristas</strong> devem conduzir seus veículos de forma a proteger o pedestre, seguindo as seguintes regras:</p>
+            </div>
+
+            <div class="mn-timeline">
+              <div class="mn-row">
+                <div class="mn-step">
+                  <div class="mn-node">1</div>
+                  <span class="mn-ico">🚦</span>
+                  <div class="mn-copy">
+                    <p class="mn-title">20 km/h</p>
+                    <p class="mn-text">Velocidade máxima dentro da unidade.</p>
+                  </div>
+                </div>
+                <div class="mn-step">
+                  <div class="mn-node">2</div>
+                  <span class="mn-ico">🚨</span>
+                  <div class="mn-copy">
+                    <p class="mn-title">Pisca-alerta + faróis</p>
+                    <p class="mn-text">Sempre ligados na circulação interna.</p>
+                  </div>
+                </div>
+                <div class="mn-step">
+                  <div class="mn-node">3</div>
+                  <span class="mn-ico">🔒</span>
+                  <div class="mn-copy">
+                    <p class="mn-title">Cinto + condutor habilitado</p>
+                    <p class="mn-text">Cinto obrigatório. Somente condutor habilitado.</p>
+                  </div>
+                </div>
+                <div class="mn-step">
+                  <div class="mn-node">4</div>
+                  <span class="mn-ico">🛑</span>
+                  <div class="mn-copy">
+                    <p class="mn-title">Faixa de pedestre = PARE</p>
+                    <p class="mn-text">Pare, olhe os dois lados e dê preferência ao pedestre (contato visual).</p>
+                  </div>
+                </div>
+                <div class="mn-step">
+                  <div class="mn-node">5</div>
+                  <span class="mn-ico">📵</span>
+                  <div class="mn-copy">
+                    <p class="mn-title">Celular: proibido</p>
+                    <p class="mn-text">Proibido usar/manusear celular ao dirigir.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="mn-row">
+                <div class="mn-step">
+                  <div class="mn-node">6</div>
+                  <span class="mn-ico">🚫</span>
+                  <div class="mn-copy">
+                    <p class="mn-title">Nunca bloqueie áreas críticas</p>
+                    <p class="mn-text">Não pare sobre faixas, rampas ou em frente a equipamentos de emergência.</p>
+                  </div>
+                </div>
+                <div class="mn-step">
+                  <div class="mn-node">7</div>
+                  <span class="mn-ico">🚛</span>
+                  <div class="mn-copy">
+                    <p class="mn-title">Carga/descarga só nas docas</p>
+                    <p class="mn-text">Use apenas áreas sinalizadas para carga e descarga.</p>
+                  </div>
+                </div>
+                <div class="mn-step">
+                  <div class="mn-node">8</div>
+                  <span class="mn-ico">🟥</span>
+                  <div class="mn-copy">
+                    <p class="mn-title">Na Red Zone</p>
+                    <p class="mn-text">NUNCA pessoa e empilhadeira ao mesmo tempo.</p>
+                  </div>
+                </div>
+                <div class="mn-step">
+                  <div class="mn-node">9</div>
+                  <span class="mn-ico">🅿️</span>
+                  <div class="mn-copy">
+                    <p class="mn-title">Parada segura do caminhão</p>
+                    <p class="mn-text">Caminhão desligado, freio estacionário acionado e trava-rodas.</p>
+                  </div>
+                </div>
+                <div class="mn-step">
+                  <div class="mn-node">10</div>
+                  <span class="mn-ico">🚸</span>
+                  <div class="mn-copy">
+                    <p class="mn-title">Se precisar descer, use a rota segura</p>
+                    <p class="mn-text">Transite pela frente da doca e pelas faixas de pedestres.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(0, 187, 249,0.07)" />
+          </svg></div>
+      </section>
+
       <!-- ── S-MOD2-VIDEO3: VÍDEO — Distrações e Proibições no Setor Logístico ── -->
       <section class="slide video-slide" id="s-mod2-video3">
         <div class="top-bar">
@@ -10944,6 +11451,58 @@
                 allowfullscreen="true" fetchpriority="high"
                 style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
                 title="Distrações e Proibições no Setor Logístico — NR11 - OPERADOR DE EMPILHADEIRA">
+              </iframe>
+            </div>
+          </div>
+        </div>
+        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(0, 187, 249,0.07)" />
+          </svg></div>
+      </section>
+
+      <!-- ── S-MOD2-VIDEO4: VÍDEO — Faixas de Trânsito e Preferências de Passagem ── -->
+      <section class="slide video-slide" id="s-mod2-video4">
+        <div class="top-bar">
+          <div><span class="section-tag">📹 Vídeo</span>
+            <div class="slide-title" style="margin-top:6px">Faixas de Trânsito <span>e Preferências de Passagem</span></div>
+            <div class="slide-subtitle">Aptidão Psicofísica, Saúde e Regras de Acesso</div>
+          </div>
+        </div>
+        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
+          <div class="video-wrap">
+            <div class="video-box">
+              <iframe id="panda-09e3ee91-9772-4e7e-b719-9c2cf674c04a"
+                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=09e3ee91-9772-4e7e-b719-9c2cf674c04a"
+                frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+                allowfullscreen="true" fetchpriority="high"
+                style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
+                title="Faixas de Trânsito e Preferências de Passagem — NR11 - OPERADOR DE EMPILHADEIRA">
+              </iframe>
+            </div>
+          </div>
+        </div>
+        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(0, 187, 249,0.07)" />
+          </svg></div>
+      </section>
+
+      <!-- ── S-MOD2-VIDEO5: VÍDEO — Bloqueio de Áreas Críticas e Estacionamento Preventivo ── -->
+      <section class="slide video-slide" id="s-mod2-video5">
+        <div class="top-bar">
+          <div><span class="section-tag">📹 Vídeo</span>
+            <div class="slide-title" style="margin-top:6px">Bloqueio de Áreas Críticas <span>e Estacionamento Preventivo</span></div>
+            <div class="slide-subtitle">Aptidão Psicofísica, Saúde e Regras de Acesso</div>
+          </div>
+        </div>
+        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
+          <div class="video-wrap">
+            <div class="video-box">
+              <iframe id="panda-168d9989-2f60-43c9-bc79-b5f272231045"
+                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=168d9989-2f60-43c9-bc79-b5f272231045"
+                frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+                allowfullscreen="true" fetchpriority="high"
+                style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
+                title="Bloqueio de Áreas Críticas e Estacionamento Preventivo — NR11 - OPERADOR DE EMPILHADEIRA">
               </iframe>
             </div>
           </div>
@@ -11345,6 +11904,73 @@
           @media (max-width: 560px) {
             #s-mod3-driver-rules .dr-grid { grid-template-columns: repeat(2, 1fr); }
           }
+
+          #s-mod3-driver-rules .dr-carousel-nav { display: none; }
+
+          @media screen and (max-width: 768px) and (orientation: portrait) {
+            @keyframes drFadeIn {
+              from { opacity: 0; transform: translateX(18px); }
+              to   { opacity: 1; transform: translateX(0); }
+            }
+            #s-mod3-driver-rules { overflow: hidden; }
+            #s-mod3-driver-rules .dr-content {
+              overflow: hidden !important;
+              justify-content: center !important;
+              padding: 8px 16px 78px !important;
+              gap: 12px !important;
+            }
+            #s-mod3-driver-rules .dr-intro {
+              max-width: 100%;
+              padding: 8px 12px;
+            }
+            #s-mod3-driver-rules .dr-intro p { font-size: 12px !important; line-height: 1.4 !important; }
+            #s-mod3-driver-rules .dr-grid {
+              display: block !important;
+              width: 100%;
+              max-width: 340px;
+              margin: 0 auto;
+            }
+            #s-mod3-driver-rules .dr-card {
+              display: none !important;
+              width: 100%;
+              min-height: 250px;
+              padding: 32px 22px 28px !important;
+              gap: 12px !important;
+              border-radius: 20px;
+              background: linear-gradient(160deg, #1a3564 0%, #12274c 40%, #0a1730 75%, #050c1a 100%);
+              border: 1px solid rgba(0, 187, 249, 0.35);
+            }
+            #s-mod3-driver-rules .dr-card.dr-card-active {
+              display: flex !important;
+              animation: drFadeIn 0.3s ease forwards;
+            }
+            #s-mod3-driver-rules .dr-badge {
+              width: 64px !important; height: 64px !important; font-size: 28px !important;
+            }
+            #s-mod3-driver-rules .dr-card-title { font-size: 18px !important; }
+            #s-mod3-driver-rules .dr-card-text { font-size: 14.5px !important; line-height: 1.55 !important; color: rgba(255,255,255,0.8); }
+            #s-mod3-driver-rules .dr-carousel-nav {
+              display: flex !important;
+              align-items: center; justify-content: center; gap: 16px;
+              width: 100%; max-width: 340px; flex-shrink: 0;
+            }
+            #s-mod3-driver-rules .dr-nav-btn {
+              background: linear-gradient(135deg, #00bbf9, #0094c6);
+              color: #fff; border: none; border-radius: 50%;
+              width: 46px; height: 46px; min-width: 46px; min-height: 46px;
+              cursor: pointer; display: flex; align-items: center; justify-content: center;
+              box-shadow: 0 6px 16px rgba(0, 187, 249, 0.4);
+              touch-action: manipulation; -webkit-tap-highlight-color: transparent;
+            }
+            #s-mod3-driver-rules .dr-nav-btn:active:not(:disabled) { transform: scale(0.94); }
+            #s-mod3-driver-rules .dr-nav-btn:disabled { opacity: 0.3; cursor: default; }
+            #s-mod3-driver-rules .dr-nav-btn svg { pointer-events: none; }
+            #s-mod3-driver-rules .dr-counter {
+              font-family: var(--font-h); font-size: 14px; font-weight: 800;
+              color: rgba(255,255,255,0.9); min-width: 56px; text-align: center;
+              letter-spacing: 0.04em;
+            }
+          }
         </style>
 
         <div class="top-bar">
@@ -11360,8 +11986,8 @@
             <p>Os <strong style="color:#ffc837;">motoristas e manobristas</strong> devem conduzir seus veículos de forma a proteger o pedestre seguindo as seguintes regras:</p>
           </div>
 
-          <div class="dr-grid">
-            <div class="dr-card">
+          <div class="dr-grid" id="dr-card-viewport">
+            <div class="dr-card dr-card-active">
               <div class="dr-badge">20</div>
               <div class="dr-card-title">20 km/h</div>
               <p class="dr-card-text">Velocidade máxima dentro da unidade.</p>
@@ -11411,6 +12037,16 @@
               <div class="dr-card-title">Rota Segura ao Descer</div>
               <p class="dr-card-text">Transite pela frente da doca e pelas faixas de pedestres.</p>
             </div>
+          </div>
+
+          <div class="dr-carousel-nav" id="dr-carousel-nav">
+            <button type="button" class="dr-nav-btn" id="dr-prev" aria-label="Anterior" onclick="drCarouselNav(-1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <span class="dr-counter" id="dr-counter">1 / 10</span>
+            <button type="button" class="dr-nav-btn" id="dr-next" aria-label="Próximo" onclick="drCarouselNav(1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+            </button>
           </div>
 
         </div>
@@ -11501,18 +12137,20 @@
       <section class="slide" id="s-mod3-visibilidade">
         <style>
           #s-mod3-visibilidade .cr-content {
-            display: flex; flex-direction: column; align-items: stretch; justify-content: stretch;
-            padding: clamp(10px,2.2cqh,22px) clamp(16px,2.6cqw,28px) clamp(56px,8.5cqh,92px);
+            display: flex; align-items: center; justify-content: center;
+            padding: clamp(12px,2.2cqh,22px) clamp(22px,4cqw,44px) clamp(68px,10cqh,100px);
             width: 100%; box-sizing: border-box; min-height: 0;
             container-type: size;
           }
           #s-mod3-visibilidade .cr-grid {
-            display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: minmax(0,1fr);
-            align-items: stretch; gap: clamp(12px,2cqw,20px);
-            width: 100%; max-width: 1220px; height: 100%; min-height: 0; margin: 0 auto;
+            display: grid; grid-template-columns: 1fr 1fr; align-items: stretch;
+            gap: clamp(10px,1.6cqw,16px);
+            width: min(100%, 1080px);
+            height: min(600px, 80cqh);
+            min-height: 0; margin: 0 auto;
           }
           #s-mod3-visibilidade .cr-left {
-            display: flex; flex-direction: column; gap: clamp(12px,2cqh,20px);
+            display: flex; flex-direction: column; gap: clamp(10px,1.6cqh,16px);
             min-width: 0; min-height: 0; height: 100%;
           }
           #s-mod3-visibilidade .cr-left .cr-card:first-child {
@@ -11527,14 +12165,14 @@
           #s-mod3-visibilidade .cr-card {
             background: linear-gradient(160deg, #1a3564 0%, #12274c 40%, #0a1730 75%, #050c1a 100%);
             border: 1px solid rgba(0, 187, 249,0.25);
-            border-radius: 20px;
-            padding: clamp(10px,1.8cqh,14px);
-            display: flex; flex-direction: column; align-items: center; gap: clamp(8px,1.2cqh,12px);
+            border-radius: 18px;
+            padding: clamp(8px,1.4cqh,12px);
+            display: flex; flex-direction: column; align-items: center; gap: clamp(6px,1cqh,10px);
             min-width: 0; min-height: 0; box-sizing: border-box;
           }
           #s-mod3-visibilidade .cr-img-box {
             width: 100%; flex: 1 1 0; min-width: 0; min-height: 0;
-            background: #d8d8d8; border-radius: 12px; overflow: hidden;
+            background: #d8d8d8; border-radius: 10px; overflow: hidden;
             display: flex; align-items: center; justify-content: center;
           }
           #s-mod3-visibilidade .cr-img-box img {
@@ -11545,55 +12183,117 @@
             transform: scale(1.22); transform-origin: center 42%;
           }
           #s-mod3-visibilidade .cr-caption {
-            font-family: var(--font-p); font-size: clamp(13.5px,2.2cqh,15.5px);
-            color: rgba(255,255,255,0.82); line-height: 1.45; text-align: center; margin: 0;
+            font-family: var(--font-p); font-size: clamp(13px,2cqh,14.5px);
+            color: rgba(255,255,255,0.82); line-height: 1.4; text-align: center; margin: 0;
             width: 100%; max-width: 100%; box-sizing: border-box; flex-shrink: 0;
           }
           #s-mod3-visibilidade .cr-speed-title {
-            font-family: var(--font-h); font-size: clamp(14.5px,2.4cqh,17px); font-weight: 800;
+            font-family: var(--font-h); font-size: clamp(14px,2.2cqh,16px); font-weight: 800;
             color: #fff; text-align: center;
             width: 100%; max-width: 100%; box-sizing: border-box;
           }
           #s-mod3-visibilidade .cr-speed-row {
-            display: flex; gap: clamp(14px,2.4cqw,26px); align-items: center; justify-content: center;
+            display: flex; gap: clamp(12px,2cqw,22px); align-items: center; justify-content: center;
           }
           #s-mod3-visibilidade .cr-speed-sign {
-            display: flex; flex-direction: column; align-items: center; gap: clamp(6px,1cqh,10px);
+            display: flex; flex-direction: column; align-items: center; gap: clamp(4px,0.8cqh,8px);
           }
           #s-mod3-visibilidade .cr-sign-circle {
-            width: clamp(64px,11cqh,88px); height: clamp(64px,11cqh,88px);
-            border-radius: 50%; background: #ffffff; border: clamp(5px,0.9cqh,7px) solid #e74c3c;
+            width: clamp(56px,9cqh,74px); height: clamp(56px,9cqh,74px);
+            border-radius: 50%; background: #ffffff; border: clamp(4px,0.7cqh,6px) solid #e74c3c;
             display: flex; flex-direction: column; align-items: center; justify-content: center;
             font-family: var(--font-h); font-weight: 900; color: #111;
-            font-size: clamp(20px,3.6cqh,26px); line-height: 1;
-            box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+            font-size: clamp(17px,3cqh,22px); line-height: 1;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.35);
           }
           #s-mod3-visibilidade .cr-sign-circle span {
-            font-size: clamp(9px,1.5cqh,11px); font-weight: 800; margin-top: 2px;
+            font-size: clamp(8px,1.3cqh,10px); font-weight: 800; margin-top: 1px;
           }
           #s-mod3-visibilidade .cr-sign-label {
-            font-family: var(--font-p); font-size: clamp(12px,1.9cqh,13.5px);
+            font-family: var(--font-p); font-size: clamp(11px,1.7cqh,12.5px);
             color: rgba(255,255,255,0.75);
           }
+          #s-mod3-visibilidade .cr-carousel-nav { display: none; }
+
           @media (min-width: 769px) and (max-height: 820px) {
-            #s-mod3-visibilidade .cr-content { padding-bottom: 60px; }
-            #s-mod3-visibilidade .cr-grid { gap: 12px; }
-            #s-mod3-visibilidade .cr-left { gap: 10px; }
-            #s-mod3-visibilidade .cr-card { padding: 8px 10px; gap: 6px; }
-            #s-mod3-visibilidade .cr-sign-circle { width: 56px; height: 56px; font-size: 17px; border-width: 4px; }
+            #s-mod3-visibilidade .cr-content { padding-bottom: 72px; }
+            #s-mod3-visibilidade .cr-grid { height: min(500px, 74cqh); gap: 10px; }
+            #s-mod3-visibilidade .cr-left { gap: 8px; }
+            #s-mod3-visibilidade .cr-card { padding: 8px; gap: 6px; }
+            #s-mod3-visibilidade .cr-sign-circle { width: 52px; height: 52px; font-size: 16px; border-width: 4px; }
             #s-mod3-visibilidade .cr-caption { font-size: 13px; }
             #s-mod3-visibilidade .cr-speed-title { font-size: 14px; }
           }
-          @media (max-width: 780px) {
+          @media screen and (max-width: 768px) and (orientation: portrait) {
+            @keyframes crFadeIn {
+              from { opacity: 0; transform: translateX(18px); }
+              to   { opacity: 1; transform: translateX(0); }
+            }
+            #s-mod3-visibilidade { overflow: hidden; }
+            #s-mod3-visibilidade .slide-title { font-size: 22px !important; }
+            #s-mod3-visibilidade .cr-content {
+              overflow: hidden !important;
+              justify-content: center !important;
+              padding: 8px 16px 78px !important;
+              gap: 12px;
+              flex-direction: column;
+            }
             #s-mod3-visibilidade .cr-grid {
-              grid-template-columns: 1fr; grid-template-rows: auto;
+              display: block !important;
+              width: 100%;
+              max-width: 360px;
+              height: auto !important;
+              margin: 0 auto;
+            }
+            #s-mod3-visibilidade .cr-left {
+              display: contents;
               height: auto;
             }
-            #s-mod3-visibilidade .cr-left,
             #s-mod3-visibilidade .cr-right { height: auto; }
-            #s-mod3-visibilidade .cr-left .cr-card:first-child { flex: 0 0 auto; }
+            #s-mod3-visibilidade .cr-card {
+              display: none !important;
+              width: 100%;
+              min-height: 280px;
+              padding: 16px 14px !important;
+              gap: 12px !important;
+            }
+            #s-mod3-visibilidade .cr-card.cr-slide-active {
+              display: flex !important;
+              animation: crFadeIn 0.3s ease forwards;
+            }
             #s-mod3-visibilidade .cr-img-box {
-              flex: none; aspect-ratio: 16 / 9; min-height: 160px;
+              flex: 1 1 auto;
+              aspect-ratio: 16 / 10;
+              min-height: 160px;
+              max-height: 220px;
+            }
+            #s-mod3-visibilidade .cr-caption {
+              font-size: 14px !important;
+              line-height: 1.45 !important;
+            }
+            #s-mod3-visibilidade .cr-speed-title { font-size: 16px !important; }
+            #s-mod3-visibilidade .cr-sign-circle {
+              width: 64px !important; height: 64px !important; font-size: 20px !important;
+            }
+            #s-mod3-visibilidade .cr-carousel-nav {
+              display: flex !important;
+              align-items: center; justify-content: center; gap: 16px;
+              width: 100%; max-width: 360px; margin: 0 auto; flex-shrink: 0;
+            }
+            #s-mod3-visibilidade .cr-nav-btn {
+              background: linear-gradient(135deg, #00bbf9, #0094c6);
+              color: #fff; border: none; border-radius: 50%;
+              width: 46px; height: 46px; min-width: 46px; min-height: 46px;
+              cursor: pointer; display: flex; align-items: center; justify-content: center;
+              box-shadow: 0 6px 16px rgba(0, 187, 249, 0.4);
+              touch-action: manipulation; -webkit-tap-highlight-color: transparent;
+            }
+            #s-mod3-visibilidade .cr-nav-btn:active:not(:disabled) { transform: scale(0.94); }
+            #s-mod3-visibilidade .cr-nav-btn:disabled { opacity: 0.3; cursor: default; }
+            #s-mod3-visibilidade .cr-nav-btn svg { pointer-events: none; }
+            #s-mod3-visibilidade .cr-counter {
+              font-family: var(--font-h); font-size: 14px; font-weight: 800;
+              color: rgba(255,255,255,0.9); min-width: 56px; text-align: center;
             }
           }
         </style>
@@ -11607,13 +12307,13 @@
         <div class="content-area cr-content">
           <div class="cr-grid">
             <div class="cr-left">
-              <div class="cr-card">
+              <div class="cr-card cr-slide cr-slide-active">
                 <div class="cr-img-box">
                   <img src="img/ESPELHOS.png" alt="Espelhos convexos de segurança">
                 </div>
                 <p class="cr-caption">Pessoas e operadores de empilhadeira, olhe sempre nos espelhos.</p>
               </div>
-              <div class="cr-card">
+              <div class="cr-card cr-slide">
                 <div class="cr-speed-title">Respeite a Velocidade Máxima</div>
                 <div class="cr-speed-row">
                   <div class="cr-speed-sign">
@@ -11627,13 +12327,24 @@
                 </div>
               </div>
             </div>
-            <div class="cr-right cr-card">
+            <div class="cr-right cr-card cr-slide">
               <div class="cr-img-box">
                 <img src="img/ANDAR RÉ.png" alt="Empilhadeira transportando carga em marcha à ré">
               </div>
               <p class="cr-caption">Sempre que a empilhadeira estiver com materiais, o operador deve andar em ré.</p>
             </div>
           </div>
+
+          <div class="cr-carousel-nav" id="cr-carousel-nav">
+            <button type="button" class="cr-nav-btn" id="cr-prev" aria-label="Anterior" onclick="crCarouselNav(-1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <span class="cr-counter" id="cr-counter">1 / 3</span>
+            <button type="button" class="cr-nav-btn" id="cr-next" aria-label="Próximo" onclick="crCarouselNav(1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+            </button>
+          </div>
+
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
             <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(0, 187, 249,0.07)" />
@@ -12000,88 +12711,137 @@
       <section class="slide" id="s-mod4-redzone">
         <style>
           #s-mod4-redzone .rz-content {
-            display: flex; flex-direction: column; align-items: center;
-            justify-content: center; gap: clamp(10px,1.8cqh,16px);
-            padding: clamp(14px,3cqh,32px) clamp(16px,2.6cqw,28px) clamp(60px,9cqh,100px);
-            width: 100%; box-sizing: border-box;
+            display: flex; align-items: center; justify-content: center;
+            padding: clamp(12px,2.2cqh,22px) clamp(22px,4cqw,44px) clamp(68px,10cqh,100px);
+            width: 100%; box-sizing: border-box; min-height: 0;
             container-type: size;
           }
+          #s-mod4-redzone .rz-shell {
+            display: flex; flex-direction: column; gap: clamp(10px,1.6cqh,14px);
+            width: min(100%, 1080px); margin: 0 auto;
+          }
+          #s-mod4-redzone .rz-card {
+            background: linear-gradient(160deg, #1a3564 0%, #12274c 40%, #0a1730 75%, #050c1a 100%);
+            border: 1px solid rgba(0, 187, 249, 0.28);
+            border-radius: 18px; box-sizing: border-box;
+            box-shadow: 0 18px 40px rgba(0,0,0,0.28);
+          }
           #s-mod4-redzone .rz-alert {
-            display: flex; align-items: center; gap: clamp(8px,1.4cqw,14px);
-            background: #1c0e0d;
-            border: 1px solid rgba(231,76,60,0.3);
-            border-radius: 14px; padding: clamp(8px,1.8cqh,12px) clamp(12px,2cqw,20px);
-            width: 100%; max-width: 1220px; box-sizing: border-box;
+            display: flex; align-items: center; gap: clamp(10px,1.6cqw,16px);
+            padding: clamp(10px,1.8cqh,14px) clamp(14px,2cqw,20px);
+            position: relative; overflow: hidden;
+          }
+          #s-mod4-redzone .rz-alert::before {
+            content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+            background: linear-gradient(180deg, #00bbf9, #56d5ff);
+          }
+          #s-mod4-redzone .rz-alert-icon {
+            flex-shrink: 0; width: clamp(32px,5cqh,40px); height: clamp(32px,5cqh,40px);
+            border-radius: 10px;
+            background: linear-gradient(135deg, #00bbf9, #0094c6);
+            display: flex; align-items: center; justify-content: center;
+            font-size: clamp(15px,2.4cqh,18px);
+            box-shadow: 0 6px 16px rgba(0, 187, 249, 0.35);
           }
           #s-mod4-redzone .rz-alert p {
-            font-family: var(--font-p); font-size: clamp(14.5px,2.5cqh,18px);
-            color: rgba(255,255,255,0.88); margin: 0; line-height: 1.45;
+            font-family: var(--font-p); font-size: clamp(13.5px,2.2cqh,15.5px);
+            color: rgba(255,255,255,0.9); margin: 0; line-height: 1.45;
           }
+          #s-mod4-redzone .rz-alert strong { color: #56d5ff; font-weight: 800; }
           #s-mod4-redzone .rz-row {
-            display: grid; grid-template-columns: 0.9fr 1.1fr;
-            gap: clamp(10px,1.6cqw,18px); width: 100%; max-width: 1220px;
+            display: grid; grid-template-columns: 1fr 1fr; align-items: stretch;
+            gap: clamp(10px,1.6cqw,16px); min-height: min(320px, 42cqh);
           }
           #s-mod4-redzone .rz-visual {
-            position: relative; border-radius: 20px; overflow: hidden;
-            min-height: clamp(150px,24cqh,220px);
-            border: 1px solid rgba(231,76,60,0.35);
+            position: relative; overflow: hidden; min-height: 0; padding: 8px;
+            display: flex;
           }
           #s-mod4-redzone .rz-visual img {
             width: 100%; height: 100%; object-fit: cover; display: block;
+            border-radius: 12px; flex: 1; min-height: 0;
           }
           #s-mod4-redzone .rz-negotiable {
-            background: #141414;
-            border: 1px solid rgba(255,255,255,0.14);
-            border-radius: 20px; padding: clamp(16px,3.2cqh,26px) clamp(18px,2.8cqw,28px);
-            display: flex; flex-direction: column; justify-content: center; gap: clamp(6px,1.2cqh,10px);
+            position: relative; overflow: hidden;
+            padding: clamp(16px,2.8cqh,24px) clamp(16px,2.4cqw,24px);
+            display: flex; flex-direction: column; justify-content: center;
+            gap: clamp(8px,1.4cqh,12px); min-width: 0;
+          }
+          #s-mod4-redzone .rz-negotiable::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, #00bbf9, #56d5ff);
           }
           #s-mod4-redzone .rz-negotiable-title {
-            font-family: var(--font-h); font-size: clamp(16px,2.8cqh,20px); font-weight: 900;
-            letter-spacing: 0.04em; color: #ff7675;
-            display: flex; align-items: center; gap: 8px;
+            font-family: var(--font-h); font-size: clamp(16px,2.6cqh,20px); font-weight: 900;
+            letter-spacing: 0.04em; color: #56d5ff;
+            display: flex; align-items: center; gap: 10px;
+          }
+          #s-mod4-redzone .rz-neg-icon {
+            flex-shrink: 0; width: clamp(30px,5cqh,36px); height: clamp(30px,5cqh,36px);
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00bbf9, #0094c6);
+            display: flex; align-items: center; justify-content: center;
+            font-size: clamp(14px,2.2cqh,17px);
+            box-shadow: 0 6px 16px rgba(0, 187, 249, 0.4);
           }
           #s-mod4-redzone .rz-negotiable p {
-            font-family: var(--font-p); font-size: clamp(14px,2.4cqh,16.5px);
+            font-family: var(--font-p); font-size: clamp(13.5px,2.2cqh,15.5px);
             color: rgba(255,255,255,0.85); margin: 0; line-height: 1.5;
           }
+          #s-mod4-redzone .rz-negotiable p strong { color: #00bbf9; }
           #s-mod4-redzone .rz-negotiable ul {
             margin: 0; padding: 0; list-style: none;
-            display: flex; flex-direction: column; gap: clamp(4px,1cqh,8px);
+            display: flex; flex-direction: column; gap: clamp(8px,1.4cqh,12px);
           }
           #s-mod4-redzone .rz-negotiable li {
-            font-family: var(--font-p); font-size: clamp(14px,2.4cqh,16.5px);
+            font-family: var(--font-p); font-size: clamp(13.5px,2.2cqh,15.5px);
             color: rgba(255,255,255,0.9); line-height: 1.4;
-            display: flex; align-items: flex-start; gap: 8px;
+            display: flex; align-items: flex-start; gap: 10px;
+            background: rgba(0, 187, 249, 0.08);
+            border: 1px solid rgba(0, 187, 249, 0.18);
+            border-radius: 12px; padding: clamp(8px,1.4cqh,10px) clamp(10px,1.4cqw,12px);
           }
-          #s-mod4-redzone .rz-negotiable li strong { color: #ffc837; }
+          #s-mod4-redzone .rz-li-icon {
+            flex-shrink: 0; width: 28px; height: 28px; border-radius: 8px;
+            background: rgba(0, 187, 249, 0.18);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px;
+          }
+          #s-mod4-redzone .rz-negotiable li strong { color: #56d5ff; }
           #s-mod4-redzone .rz-callout {
-            display: flex; align-items: center; gap: clamp(10px,1.8cqw,16px);
-            background: #241b06;
-            border: 1px solid rgba(255,199,0,0.4);
-            border-radius: 16px; padding: clamp(12px,2.4cqh,18px) clamp(16px,2.6cqw,24px);
-            width: 100%; max-width: 1220px; box-sizing: border-box;
+            display: flex; align-items: center; gap: clamp(10px,1.6cqw,16px);
+            padding: clamp(10px,1.8cqh,14px) clamp(14px,2cqw,20px);
+            position: relative; overflow: hidden;
           }
-          #s-mod4-redzone .rz-callout-icon { font-size: clamp(24px,4.4cqh,32px); flex-shrink: 0; }
+          #s-mod4-redzone .rz-callout::before {
+            content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+            background: linear-gradient(180deg, #00bbf9, #56d5ff);
+          }
+          #s-mod4-redzone .rz-callout-icon {
+            flex-shrink: 0; width: clamp(32px,5cqh,40px); height: clamp(32px,5cqh,40px);
+            border-radius: 10px;
+            background: linear-gradient(135deg, #00bbf9, #0094c6);
+            display: flex; align-items: center; justify-content: center;
+            font-size: clamp(15px,2.4cqh,18px);
+            box-shadow: 0 6px 16px rgba(0, 187, 249, 0.35);
+          }
           #s-mod4-redzone .rz-callout p {
-            font-family: var(--font-p); font-size: clamp(14px,2.4cqh,16.5px); font-weight: 700;
-            color: #ffe9a8; margin: 0; line-height: 1.5;
+            font-family: var(--font-p); font-size: clamp(13.5px,2.2cqh,15.5px); font-weight: 600;
+            color: rgba(255,255,255,0.92); margin: 0; line-height: 1.5;
           }
-          @media (max-width: 720px) {
-            #s-mod4-redzone .rz-row { grid-template-columns: 1fr; }
-          }
-          @media (min-width: 1500px) {
-            #s-mod4-redzone .rz-alert, #s-mod4-redzone .rz-row, #s-mod4-redzone .rz-callout {
-              max-width: 1560px;
-            }
-            #s-mod4-redzone .rz-alert p { font-size: 21px; }
-            #s-mod4-redzone .rz-visual { min-height: 300px; }
-            #s-mod4-redzone .rz-negotiable { padding: 34px 38px; gap: 14px; }
-            #s-mod4-redzone .rz-negotiable-title { font-size: 26px; }
+          #s-mod4-redzone .rz-callout strong { color: #56d5ff; font-weight: 800; }
+          @media (min-width: 769px) and (max-height: 820px) {
+            #s-mod4-redzone .rz-content { padding-bottom: 72px; }
+            #s-mod4-redzone .rz-shell { gap: 8px; }
+            #s-mod4-redzone .rz-row { min-height: 250px; gap: 10px; }
+            #s-mod4-redzone .rz-negotiable { padding: 12px 16px; gap: 8px; }
+            #s-mod4-redzone .rz-alert p,
             #s-mod4-redzone .rz-negotiable p,
-            #s-mod4-redzone .rz-negotiable li { font-size: 20px; }
-            #s-mod4-redzone .rz-callout { padding: 24px 32px; }
-            #s-mod4-redzone .rz-callout-icon { font-size: 38px; }
-            #s-mod4-redzone .rz-callout p { font-size: 20px; }
+            #s-mod4-redzone .rz-negotiable li,
+            #s-mod4-redzone .rz-callout p { font-size: 13px; }
+          }
+          @media (max-width: 780px) {
+            #s-mod4-redzone .rz-row { grid-template-columns: 1fr; min-height: 0; }
+            #s-mod4-redzone .rz-visual { min-height: 180px; }
           }
         </style>
 
@@ -12092,31 +12852,33 @@
         </div>
 
         <div class="content-area rz-content">
+          <div class="rz-shell">
 
-          <div class="rz-alert">
-            <span style="font-size:clamp(19px,3.6cqh,24px); flex-shrink:0;">🟥</span>
-            <p>As <strong style="color:#ff7675;">Red Zones (Zonas Vermelhas)</strong> são as áreas entre docas, sendo destinadas ao acesso lateral para colocar/retirar produtos.</p>
-          </div>
-
-          <div class="rz-row">
-            <div class="rz-visual">
-              <img src="img/REDZONE.png" alt="Área entre docas — Red Zone">
+            <div class="rz-card rz-alert">
+              <span class="rz-alert-icon">🟥</span>
+              <p>As <strong>Red Zones (Zonas Vermelhas)</strong> são as áreas entre docas, sendo destinadas ao acesso lateral para colocar/retirar produtos.</p>
             </div>
-            <div class="rz-negotiable">
-              <div class="rz-negotiable-title">🚫 INEGOCIÁVEL</div>
-              <p>Na Red Zone, <strong style="color:#ffc837;">NUNCA</strong> pode ter:</p>
-              <ul>
-                <li>🧍 <span><strong>Pessoa dentro</strong> da área <strong>ao mesmo tempo</strong> que</span></li>
-                <li>🚧 <span><strong>Empilhadeira em operação</strong> (entrando, manobrando, carregando ou saindo).</span></li>
-              </ul>
+
+            <div class="rz-row">
+              <div class="rz-card rz-visual">
+                <img src="img/REDZONE.png" alt="Área entre docas — Red Zone">
+              </div>
+              <div class="rz-card rz-negotiable">
+                <div class="rz-negotiable-title"><span class="rz-neg-icon">🚫</span> INEGOCIÁVEL</div>
+                <p>Na Red Zone, <strong>NUNCA</strong> pode ter:</p>
+                <ul>
+                  <li><span class="rz-li-icon">🧍</span><span><strong>Pessoa dentro</strong> da área <strong>ao mesmo tempo</strong> que</span></li>
+                  <li><span class="rz-li-icon">🚧</span><span><strong>Empilhadeira em operação</strong> (entrando, manobrando, carregando ou saindo).</span></li>
+                </ul>
+              </div>
             </div>
-          </div>
 
-          <div class="rz-callout">
-            <span class="rz-callout-icon">⚠️</span>
-            <p>O acesso à Red Zone é permitido apenas para o <strong>conferente</strong>, <strong>motorista</strong> (abrir e fechar lona) e <strong>amarradores</strong>.</p>
-          </div>
+            <div class="rz-card rz-callout">
+              <span class="rz-callout-icon">⚠️</span>
+              <p>O acesso à Red Zone é permitido apenas para o <strong>conferente</strong>, <strong>motorista</strong> (abrir e fechar lona) e <strong>amarradores</strong>.</p>
+            </div>
 
+          </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
             <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(0, 187, 249,0.07)" />
@@ -12476,176 +13238,170 @@
           </svg></div>
       </section>
 
-      <!-- ── S-MOD5-MANUTENCAO: CONTEÚDO — Manutenção e Conservação da Empilhadeira ── -->
-      <section class="slide" id="s-mod5-manutencao">
+      <!-- ── S-MOD5-PICKING: CONTEÚDO — Abastecimento do Picking ── -->
+      <section class="slide" id="s-mod5-picking">
         <style>
-          #s-mod5-manutencao .content-area {
+          #s-mod5-picking .pk-content {
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            padding: clamp(12px,2.2cqh,22px) clamp(22px,4cqw,44px) clamp(68px,10cqh,100px);
+            width: 100%; box-sizing: border-box; min-height: 0;
+            overflow: auto; container-type: size;
+          }
+          #s-mod5-picking .pk-shell {
+            display: flex; flex-direction: column; gap: 10px;
+            width: min(100%, 1080px); margin: 0 auto;
+            height: min(600px, 80cqh);
+            min-height: 0;
+          }
+          #s-mod5-picking .pk-card {
+            background: linear-gradient(160deg, #1a3564 0%, #12274c 40%, #0a1730 75%, #050c1a 100%);
+            border: 1px solid rgba(0, 187, 249, 0.28);
+            border-radius: 16px; box-sizing: border-box;
+            box-shadow: 0 18px 40px rgba(0,0,0,0.28);
+          }
+          #s-mod5-picking .pk-intro {
+            display: flex; align-items: center; gap: 12px;
+            padding: 10px 16px; flex-shrink: 0;
+            position: relative; overflow: hidden;
+          }
+          #s-mod5-picking .pk-intro::before {
+            content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+            background: linear-gradient(180deg, #00bbf9, #56d5ff);
+          }
+          #s-mod5-picking .pk-intro p {
+            font-family: var(--font-p); font-size: clamp(13px, 2.1cqh, 15px);
+            color: rgba(255,255,255,0.9); margin: 0; line-height: 1.4;
+          }
+          #s-mod5-picking .pk-intro strong { color: #56d5ff; font-weight: 800; }
+          #s-mod5-picking .pk-warn {
+            display: flex; align-items: center; gap: 12px;
+            padding: 10px 16px; flex-shrink: 0;
+            position: relative; overflow: hidden;
+          }
+          #s-mod5-picking .pk-warn::before {
+            content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+            background: linear-gradient(180deg, #00bbf9, #56d5ff);
+          }
+          #s-mod5-picking .pk-icon {
+            flex-shrink: 0; width: 32px; height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #00bbf9, #0094c6);
             display: flex; align-items: center; justify-content: center;
+            font-size: 15px;
+            box-shadow: 0 6px 16px rgba(0, 187, 249, 0.35);
           }
-          #s-mod5-manutencao .m5c-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: clamp(14px, 2.2vw, 24px);
-            width: 100%;
-            max-width: 1080px;
-            margin: 0 auto;
+          #s-mod5-picking .pk-warn p {
+            font-family: var(--font-p); font-size: clamp(13px, 2.1cqh, 15px); font-weight: 600;
+            color: rgba(255,255,255,0.92); margin: 0; line-height: 1.4;
           }
-          #s-mod5-manutencao .m5c-card {
-            position: relative;
-            background: linear-gradient(160deg, rgba(255,255,255,0.06), rgba(255,255,255,0.015));
-            border: 1px solid rgba(255,255,255,0.09);
-            border-radius: 22px;
-            padding: clamp(20px,2.6vw,28px) clamp(20px,2.4vw,26px);
+          #s-mod5-picking .pk-warn strong { color: #56d5ff; font-weight: 800; }
+          #s-mod5-picking .pk-visual {
+            flex: 1 1 0; width: 100%; min-height: 0; padding: 8px;
+            display: flex; align-items: center; justify-content: center;
             overflow: hidden;
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
           }
-          #s-mod5-manutencao .m5c-card::before {
-            content: '';
-            position: absolute; top: 0; left: 0; right: 0; height: 4px;
-            background: var(--m5c-accent);
+          #s-mod5-picking .pk-visual img {
+            width: 100%; height: 100%;
+            object-fit: contain; object-position: center;
+            display: block; border-radius: 10px; background: #fff;
           }
-          #s-mod5-manutencao .m5c-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--m5c-accent);
-            box-shadow: 0 20px 44px rgba(0,0,0,0.4);
+          #s-mod5-picking .pk-carousel-nav { display: none; }
+          @media (min-width: 769px) and (max-height: 820px) {
+            #s-mod5-picking .pk-shell { height: min(500px, 74cqh); gap: 8px; }
+            #s-mod5-picking .pk-intro,
+            #s-mod5-picking .pk-warn { padding: 8px 14px; }
+            #s-mod5-picking .pk-intro p,
+            #s-mod5-picking .pk-warn p { font-size: 13px; }
           }
-          #s-mod5-manutencao .m5c-num {
-            position: absolute; top: 16px; right: 20px;
-            font-family: var(--font-h); font-size: 13px; font-weight: 800;
-            color: rgba(255,255,255,0.16); letter-spacing: 0.06em;
-          }
-          #s-mod5-manutencao .m5c-icon {
-            width: 54px; height: 54px; border-radius: 16px;
-            background: color-mix(in srgb, var(--m5c-accent) 18%, transparent);
-            border: 1px solid color-mix(in srgb, var(--m5c-accent) 45%, transparent);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 26px; margin-bottom: 16px;
-          }
-          #s-mod5-manutencao .m5c-title {
-            font-family: var(--font-h); font-weight: 800;
-            font-size: clamp(16px,1.7vw,19px); color: var(--white);
-            margin-bottom: 10px; line-height: 1.3;
-          }
-          #s-mod5-manutencao .m5c-text {
-            font-family: var(--font-p); font-size: clamp(13px,1.3vw,14.5px);
-            color: rgba(255,255,255,0.72); line-height: 1.62;
-          }
-          @media (max-width: 760px) {
-            #s-mod5-manutencao .m5c-grid { grid-template-columns: 1fr; }
-          }
-
-          /* ── MOBILE: carrossel com setas (mesmo padrão do Módulo 2) ── */
           @media screen and (max-width: 768px) and (orientation: portrait) {
-            @keyframes m5cFadeIn {
-              from { opacity: 0; transform: translateY(10px); }
-              to   { opacity: 1; transform: translateY(0); }
+            @keyframes pkFadeIn {
+              from { opacity: 0; transform: translateX(18px); }
+              to   { opacity: 1; transform: translateX(0); }
             }
-            #s-mod5-manutencao {
-              display: flex !important; flex-direction: column !important; overflow: hidden !important;
+            #s-mod5-picking { overflow: hidden; }
+            #s-mod5-picking .slide-title { font-size: 22px !important; }
+            #s-mod5-picking .pk-content {
+              overflow: hidden !important;
+              flex-direction: column;
+              padding: 8px 16px 78px !important;
+              gap: 12px;
             }
-            #s-mod5-manutencao .content-area { display: none !important; }
-            #m5c-mobile-section {
-              display: flex !important; flex-direction: column !important;
-              align-items: center !important; justify-content: center !important;
-              flex: 1 1 0 !important; min-height: 0 !important; overflow: hidden !important;
-              padding: 8px 16px 72px !important; width: 100% !important;
-              box-sizing: border-box !important; gap: 14px !important;
+            #s-mod5-picking .pk-shell {
+              height: auto; width: 100%; max-width: 360px; gap: 0;
             }
-            #m5c-card-viewport { width: 100%; max-width: 340px; flex-shrink: 0; position: relative; }
-            #m5c-mobile-section .m5c-card {
-              display: none; width: 100% !important; max-width: 100% !important;
-              margin: 0 !important; padding: 34px 24px 28px !important; box-sizing: border-box !important;
+            #s-mod5-picking .pk-slide { display: none !important; }
+            #s-mod5-picking .pk-slide.pk-slide-active {
+              display: flex !important;
+              animation: pkFadeIn 0.3s ease forwards;
             }
-            #m5c-mobile-section .m5c-card.m5c-active {
-              display: flex !important; flex-direction: column; align-items: center; text-align: center;
-              animation: m5cFadeIn 0.35s ease forwards;
+            #s-mod5-picking .pk-intro,
+            #s-mod5-picking .pk-warn {
+              width: 100%; min-height: 0;
             }
-            #m5c-mobile-section .m5c-num { top: 14px; right: 18px; }
-            #m5c-mobile-section .m5c-icon { width: 60px !important; height: 60px !important; font-size: 28px !important; }
-            #m5c-mobile-section .m5c-title { font-size: 19px !important; }
-            #m5c-mobile-section .m5c-text { font-size: 14px !important; line-height: 1.6 !important; }
-            #m5c-carousel-nav {
-              display: flex !important; align-items: center; justify-content: center; gap: 20px;
-              flex-shrink: 0; width: 100%; max-width: 300px;
+            #s-mod5-picking .pk-visual {
+              width: 100%; min-height: 0; flex: none;
+              padding: 8px; overflow: hidden;
+              aspect-ratio: 2133 / 678;
+              max-height: 38vh;
             }
-            #m5c-dots { display: flex; gap: 7px; align-items: center; justify-content: center; }
+            #s-mod5-picking .pk-visual img {
+              width: 100%; height: 100%;
+              max-height: none;
+              object-fit: contain; object-position: center;
+            }
+            #s-mod5-picking .pk-intro p,
+            #s-mod5-picking .pk-warn p { font-size: 14px !important; }
+            #s-mod5-picking .pk-carousel-nav {
+              display: flex !important;
+              align-items: center; justify-content: center; gap: 16px;
+              width: 100%; max-width: 360px; margin: 0 auto; flex-shrink: 0;
+            }
+            #s-mod5-picking .pk-nav-btn {
+              background: linear-gradient(135deg, #00bbf9, #0094c6);
+              color: #fff; border: none; border-radius: 50%;
+              width: 46px; height: 46px; min-width: 46px; min-height: 46px;
+              cursor: pointer; display: flex; align-items: center; justify-content: center;
+              box-shadow: 0 6px 16px rgba(0, 187, 249, 0.4);
+              touch-action: manipulation; -webkit-tap-highlight-color: transparent;
+            }
+            #s-mod5-picking .pk-nav-btn:active:not(:disabled) { transform: scale(0.94); }
+            #s-mod5-picking .pk-nav-btn:disabled { opacity: 0.3; cursor: default; }
+            #s-mod5-picking .pk-nav-btn svg { pointer-events: none; }
+            #s-mod5-picking .pk-counter {
+              font-family: var(--font-h); font-size: 14px; font-weight: 800;
+              color: rgba(255,255,255,0.9); min-width: 56px; text-align: center;
+            }
           }
         </style>
 
         <div class="top-bar">
-          <span class="section-tag">📘 Conteúdo</span>
-          <div class="slide-title" style="margin-top:6px">Manutenção <span>e Conservação da Empilhadeira</span></div>
+          <span class="section-tag">📦 Picking</span>
+          <div class="slide-title" style="margin-top:6px">Abastecimento <span>do Picking</span></div>
           <div class="slide-subtitle">Operações de Alta Complexidade, Ressuprimento de Picking e Docas</div>
         </div>
 
-        <div class="content-area">
-          <div class="m5c-grid">
-            <div class="m5c-card" style="--m5c-accent:#00bbf9;">
-              <div class="m5c-num">01</div>
-              <div class="m5c-icon">🔧</div>
-              <h3 class="m5c-title">Importância da Manutenção Preventiva</h3>
-              <p class="m5c-text">Com o cuidado constante com o equipamento, é possível evitar falhas inesperadas e aumentar a durabilidade da empilhadeira.</p>
+        <div class="content-area pk-content">
+          <div class="pk-shell">
+            <div class="pk-card pk-intro pk-slide pk-slide-active">
+              <span class="pk-icon">📦</span>
+              <p>O processo de <strong>ressuprir (abastecer) o picking</strong> parece simples, mas se não for executado seguindo as regras, pode causar <strong>graves acidentes</strong>.</p>
             </div>
-            <div class="m5c-card" style="--m5c-accent:#ffc837;">
-              <div class="m5c-num">02</div>
-              <div class="m5c-icon">📋</div>
-              <h3 class="m5c-title">Checklist Diário</h3>
-              <p class="m5c-text">Elaboração de um roteiro de inspeção diário, verificando o estado dos pneus, freios, bateria, nível de carga e possíveis vazamentos de fluido.</p>
+            <div class="pk-card pk-warn pk-slide">
+              <span class="pk-icon">⚠️</span>
+              <p><strong>Pessoas são prensadas entre paletes</strong> no momento do ressuprimento. Isto ocorre porque a visão do operador é obstruída por paletes, principalmente quando as pessoas estão abaixadas.</p>
             </div>
-            <div class="m5c-card" style="--m5c-accent:#ff9f43;">
-              <div class="m5c-num">03</div>
-              <div class="m5c-icon">⚠️</div>
-              <h3 class="m5c-title">Problemas Comuns</h3>
-              <p class="m5c-text">Identificar e relatar defeitos no sistema elétrico, freios, garfos e outros componentes antes que causem acidentes.</p>
-            </div>
-            <div class="m5c-card" style="--m5c-accent:#e74c3c;">
-              <div class="m5c-num">04</div>
-              <div class="m5c-icon">🛑</div>
-              <h3 class="m5c-title">Ação em Caso de Falhas</h3>
-              <p class="m5c-text">Ao identificar um problema técnico durante a operação, estacione imediatamente o equipamento em local seguro e relate o fato à chefia e à equipe de manutenção.</p>
+            <div class="pk-card pk-visual pk-slide">
+              <img src="img/picking.png" alt="Corredor de abastecimento do picking e célula de picking — risco de prensamento">
             </div>
           </div>
-        </div>
 
-        <!-- ── MOBILE: carrossel com setas ── -->
-        <div id="m5c-mobile-section" style="display:none;">
-          <div id="m5c-card-viewport">
-            <div class="m5c-card m5c-active" data-idx="0" style="--m5c-accent:#00bbf9;">
-              <div class="m5c-num">01</div>
-              <div class="m5c-icon">🔧</div>
-              <h3 class="m5c-title">Importância da Manutenção Preventiva</h3>
-              <p class="m5c-text">Com o cuidado constante com o equipamento, é possível evitar falhas inesperadas e aumentar a durabilidade da empilhadeira.</p>
-            </div>
-            <div class="m5c-card" data-idx="1" style="--m5c-accent:#ffc837;">
-              <div class="m5c-num">02</div>
-              <div class="m5c-icon">📋</div>
-              <h3 class="m5c-title">Checklist Diário</h3>
-              <p class="m5c-text">Elaboração de um roteiro de inspeção diário, verificando o estado dos pneus, freios, bateria, nível de carga e possíveis vazamentos de fluido.</p>
-            </div>
-            <div class="m5c-card" data-idx="2" style="--m5c-accent:#ff9f43;">
-              <div class="m5c-num">03</div>
-              <div class="m5c-icon">⚠️</div>
-              <h3 class="m5c-title">Problemas Comuns</h3>
-              <p class="m5c-text">Identificar e relatar defeitos no sistema elétrico, freios, garfos e outros componentes antes que causem acidentes.</p>
-            </div>
-            <div class="m5c-card" data-idx="3" style="--m5c-accent:#e74c3c;">
-              <div class="m5c-num">04</div>
-              <div class="m5c-icon">🛑</div>
-              <h3 class="m5c-title">Ação em Caso de Falhas</h3>
-              <p class="m5c-text">Ao identificar um problema técnico durante a operação, estacione imediatamente o equipamento em local seguro e relate o fato à chefia e à equipe de manutenção.</p>
-            </div>
-          </div>
-          <div id="m5c-carousel-nav">
-            <button class="tipos-arrow" id="m5c-prev" aria-label="Anterior" onclick="m5cCarouselNav(-1)">
+          <div class="pk-carousel-nav" id="pk-carousel-nav">
+            <button type="button" class="pk-nav-btn" id="pk-prev" aria-label="Anterior" onclick="pkCarouselNav(-1)">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
             </button>
-            <div id="m5c-dots">
-              <div class="tipos-dot active"></div>
-              <div class="tipos-dot"></div>
-              <div class="tipos-dot"></div>
-              <div class="tipos-dot"></div>
-            </div>
-            <button class="tipos-arrow" id="m5c-next" aria-label="Próximo" onclick="m5cCarouselNav(1)">
+            <span class="pk-counter" id="pk-counter">1 / 3</span>
+            <button type="button" class="pk-nav-btn" id="pk-next" aria-label="Próximo" onclick="pkCarouselNav(1)">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
             </button>
           </div>
@@ -12655,23 +13411,23 @@
           </svg></div>
       </section>
 
-      <!-- ── S-MOD5-VIDEO: VÍDEO — Gestão da Carga e Ciclo de Vida da Bateria ── -->
-      <section class="slide video-slide" id="s-mod5-video">
+      <!-- ── S-MOD5-VIDEO-PICKING: VÍDEO — Protocolo de Aproximação Segura no Picking ── -->
+      <section class="slide video-slide" id="s-mod5-video-picking">
         <div class="top-bar">
           <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Gestão da Carga <span>e Ciclo de Vida da Bateria</span></div>
+            <div class="slide-title" style="margin-top:6px">Protocolo de Aproximação Segura <span>no Picking</span></div>
             <div class="slide-subtitle">Operações de Alta Complexidade, Ressuprimento de Picking e Docas</div>
           </div>
         </div>
         <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
           <div class="video-wrap">
             <div class="video-box">
-              <iframe id="panda-dc21b4e7-b9d9-46fc-a25b-a3a11c65bed2"
-                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=dc21b4e7-b9d9-46fc-a25b-a3a11c65bed2"
+              <iframe id="panda-1c7a8508-8387-4094-865f-dc4684baf374"
+                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=1c7a8508-8387-4094-865f-dc4684baf374"
                 frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
                 allowfullscreen="true" fetchpriority="high"
                 style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
-                title="Gestão da Carga e Ciclo de Vida da Bateria — NR11 - OPERADOR DE EMPILHADEIRA">
+                title="Protocolo de Aproximação Segura no Picking — NR11 - OPERADOR DE EMPILHADEIRA">
               </iframe>
             </div>
           </div>
@@ -12681,489 +13437,224 @@
           </svg></div>
       </section>
 
-      <!-- ── S-MOD5-TROCA-BATERIA: CONTEÚDO — Passo a Passo Troca de Bateria ── -->
-      <section class="slide" id="s-mod5-troca-bateria">
+      <!-- ── S-MOD5-APROXIMACAO: CONTEÚDO — A Regra Inicial de Ouro ── -->
+      <section class="slide" id="s-mod5-aproximacao">
         <style>
-          #s-mod5-troca-bateria .content-area {
+          #s-mod5-aproximacao .apx-content {
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            padding: clamp(12px,2.2cqh,22px) clamp(22px,4cqw,44px) clamp(68px,10cqh,100px);
+            width: 100%; box-sizing: border-box; min-height: 0;
+            overflow: auto; container-type: size;
+          }
+          #s-mod5-aproximacao .apx-shell {
+            display: flex; flex-direction: column; gap: 10px;
+            width: min(100%, 1080px); margin: 0 auto;
+            height: min(600px, 80cqh); min-height: 0;
+          }
+          #s-mod5-aproximacao .apx-top {
+            display: flex; flex-direction: column; gap: 10px;
+            flex-shrink: 0; min-width: 0;
+          }
+          #s-mod5-aproximacao .apx-card {
+            background: linear-gradient(160deg, #1a3564 0%, #12274c 40%, #0a1730 75%, #050c1a 100%);
+            border: 1px solid rgba(0, 187, 249, 0.28);
+            border-radius: 16px; box-sizing: border-box;
+            box-shadow: 0 18px 40px rgba(0,0,0,0.28);
+          }
+          #s-mod5-aproximacao .apx-gold {
+            display: flex; align-items: flex-start; gap: 12px;
+            padding: 12px 16px; flex-shrink: 0;
+            position: relative; overflow: hidden;
+          }
+          #s-mod5-aproximacao .apx-gold::before {
+            content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+            background: linear-gradient(180deg, #00bbf9, #56d5ff);
+          }
+          #s-mod5-aproximacao .apx-icon {
+            flex-shrink: 0; width: 36px; height: 36px; border-radius: 10px;
+            background: linear-gradient(135deg, #00bbf9, #0094c6);
             display: flex; align-items: center; justify-content: center;
-            container-type: size;
+            font-size: 16px; box-shadow: 0 6px 16px rgba(0, 187, 249, 0.35);
           }
-          #s-mod5-troca-bateria .m5t-wrap {
-            width: 100%; max-width: 1180px; margin: 0 auto;
+          #s-mod5-aproximacao .apx-gold-body { min-width: 0; }
+          #s-mod5-aproximacao .apx-kicker {
+            font-family: var(--font-h); font-size: 11px; font-weight: 800;
+            letter-spacing: 0.08em; text-transform: uppercase;
+            color: #56d5ff; margin: 0 0 4px;
           }
-          #s-mod5-troca-bateria .m5t-row {
-            display: grid;
-            gap: clamp(4px,1.4cqw,16px);
-            margin-bottom: clamp(10px,3cqh,22px);
+          #s-mod5-aproximacao .apx-gold p {
+            font-family: var(--font-p); font-size: clamp(13px, 2.1cqh, 15px);
+            color: rgba(255,255,255,0.9); margin: 0; line-height: 1.4;
           }
-          #s-mod5-troca-bateria .m5t-row:last-of-type { margin-bottom: 0; }
-          #s-mod5-troca-bateria .m5t-step {
-            position: relative;
+          #s-mod5-aproximacao .apx-gold strong { color: #56d5ff; font-weight: 800; }
+          #s-mod5-aproximacao .apx-lead {
+            display: flex; align-items: center; gap: 10px;
+            padding: 8px 14px; flex-shrink: 0;
+          }
+          #s-mod5-aproximacao .apx-lead-icon {
+            flex-shrink: 0; width: 28px; height: 28px; border-radius: 8px;
+            background: rgba(0, 187, 249, 0.18);
+            display: flex; align-items: center; justify-content: center; font-size: 14px;
+          }
+          #s-mod5-aproximacao .apx-lead p {
+            font-family: var(--font-p); font-size: clamp(12.5px, 2cqh, 14px);
+            color: rgba(255,255,255,0.82); margin: 0; line-height: 1.4;
+          }
+          #s-mod5-aproximacao .apx-lead strong { color: #fff; font-weight: 800; }
+          #s-mod5-aproximacao .apx-flow {
+            flex: 1 1 0; min-height: 0;
+            display: flex; align-items: stretch; gap: 8px;
+          }
+          #s-mod5-aproximacao .apx-step {
+            flex: 1 1 0; min-width: 0; min-height: 0;
             display: flex; flex-direction: column; align-items: center;
-            text-align: center;
-            padding: 0 clamp(2px,0.6cqw,8px);
+            justify-content: center; text-align: center; gap: 8px;
+            padding: clamp(12px, 2cqh, 20px) clamp(12px, 1.6cqw, 18px);
           }
-          #s-mod5-troca-bateria .m5t-step:not(:first-child)::before {
-            content: '';
-            position: absolute;
-            left: -50%; width: 100%;
-            top: clamp(20px,9cqh,26px);
-            height: 2px;
-            background: linear-gradient(90deg, rgba(0, 187, 249,0.9), rgba(0, 187, 249,0.35));
-            z-index: 0;
-          }
-          #s-mod5-troca-bateria .m5t-node {
-            width: clamp(38px,11cqh,56px); height: clamp(38px,11cqh,56px);
-            border-radius: 50%;
-            background: linear-gradient(135deg, #00bbf9, #0e9285);
+          #s-mod5-aproximacao .apx-num {
+            width: 42px; height: 42px; border-radius: 50%;
+            background: linear-gradient(135deg, #00bbf9, #0094c6);
+            color: #fff; font-family: var(--font-h); font-weight: 900; font-size: 16px;
             display: flex; align-items: center; justify-content: center;
-            font-family: var(--font-h); font-weight: 900; font-size: clamp(15px,4.4cqh,22px); color: #03201c;
-            box-shadow: 0 6px 16px rgba(0, 187, 249,0.35);
-            position: relative; z-index: 1; flex-shrink: 0;
-            margin-bottom: clamp(6px,2.4cqh,12px);
+            box-shadow: 0 8px 18px rgba(0, 187, 249, 0.4);
           }
-          #s-mod5-troca-bateria .m5t-icon {
-            font-size: clamp(15px,4.2cqh,21px); margin-right: 5px;
-            display: inline-block; vertical-align: -3px;
+          #s-mod5-aproximacao .apx-step-label {
+            font-family: var(--font-h); font-size: 11px; font-weight: 800;
+            letter-spacing: 0.12em; text-transform: uppercase; color: #56d5ff;
+            margin: 0;
           }
-          #s-mod5-troca-bateria .m5t-title {
-            font-family: var(--font-h); font-weight: 800;
-            font-size: clamp(13px,1.45cqw,16.5px); color: var(--white);
-            margin-bottom: clamp(3px,1cqh,6px); line-height: 1.28;
-            display: block; text-align: center;
-            min-height: 2.6em;
-            width: 100%;
+          #s-mod5-aproximacao .apx-step h3 {
+            font-family: var(--font-h); font-size: clamp(14px, 2.2cqh, 16px);
+            font-weight: 800; color: #fff; margin: 0; line-height: 1.25;
           }
-          #s-mod5-troca-bateria .m5t-text {
-            font-family: var(--font-p); font-size: clamp(11.5px,1.2cqw,13.5px);
-            color: rgba(255,255,255,0.7); line-height: 1.42;
-            min-height: 2.85em;
+          #s-mod5-aproximacao .apx-step p {
+            font-family: var(--font-p); font-size: clamp(12.5px, 2cqh, 14px);
+            color: rgba(255,255,255,0.82); margin: 0; line-height: 1.4;
           }
-          #s-mod5-troca-bateria .m5t-callout {
-            margin-top: clamp(12px,3.5cqh,26px);
-            display: flex; align-items: center; justify-content: center; gap: 12px;
-            background: linear-gradient(135deg, rgba(0, 187, 249,0.14), rgba(0, 187, 249,0.03));
-            border: 1px solid rgba(0, 187, 249,0.35);
-            border-radius: 14px;
-            padding: clamp(10px,3cqh,16px) clamp(16px,3cqw,20px);
+          #s-mod5-aproximacao .apx-step strong { color: #56d5ff; }
+          #s-mod5-aproximacao .apx-arrow {
+            flex: 0 0 auto; align-self: center;
+            color: #00bbf9; font-size: 22px; font-weight: 900;
+            text-shadow: 0 0 12px rgba(0, 187, 249, 0.45);
+            line-height: 1; padding: 0 2px;
           }
-          #s-mod5-troca-bateria .m5t-callout-icon { font-size: clamp(16px,4cqh,22px); flex-shrink: 0; }
-          #s-mod5-troca-bateria .m5t-callout p {
-            font-family: var(--font-h); font-weight: 700; font-size: clamp(13px,1.5cqw,16px); color: var(--white); margin: 0;
+          #s-mod5-aproximacao .apx-carousel-nav { display: none; }
+          @media (min-width: 769px) and (max-height: 820px) {
+            #s-mod5-aproximacao .apx-shell { height: min(500px, 74cqh); gap: 8px; }
+            #s-mod5-aproximacao .apx-gold { padding: 10px 14px; }
+            #s-mod5-aproximacao .apx-gold p,
+            #s-mod5-aproximacao .apx-step p { font-size: 13px; }
+            #s-mod5-aproximacao .apx-step h3 { font-size: 14px; }
           }
-          @media (max-width: 720px) {
-            #s-mod5-troca-bateria .m5t-row { grid-template-columns: repeat(3, 1fr) !important; }
-            #s-mod5-troca-bateria .m5t-text { display: none; }
-          }
-
-          /* ── MOBILE: carrossel com setas (mesmo padrão do Módulo 2) ── */
           @media screen and (max-width: 768px) and (orientation: portrait) {
-            @keyframes m5tFadeIn {
-              from { opacity: 0; transform: translateY(10px); }
-              to   { opacity: 1; transform: translateY(0); }
+            @keyframes apxFadeIn {
+              from { opacity: 0; transform: translateX(18px); }
+              to   { opacity: 1; transform: translateX(0); }
             }
-            #s-mod5-troca-bateria {
-              display: flex !important; flex-direction: column !important; overflow: hidden !important;
+            #s-mod5-aproximacao { overflow: hidden; }
+            #s-mod5-aproximacao .slide-title { font-size: 22px !important; }
+            #s-mod5-aproximacao .apx-content {
+              overflow: hidden !important;
+              padding: 8px 16px 78px !important; gap: 12px;
             }
-            #s-mod5-troca-bateria .content-area { display: none !important; }
-            #m5t-mobile-section {
-              display: flex !important; flex-direction: column !important;
-              align-items: center !important; justify-content: center !important;
-              flex: 1 1 0 !important; min-height: 0 !important; overflow: hidden !important;
-              padding: 8px 16px 72px !important; width: 100% !important;
-              box-sizing: border-box !important; gap: 14px !important;
+            #s-mod5-aproximacao .apx-shell {
+              height: auto; width: 100%; max-width: 360px; gap: 12px;
             }
-            #m5t-card-viewport { width: 100%; max-width: 340px; flex-shrink: 0; position: relative; }
-            #m5t-mobile-section .m5t-mstep {
-              display: none; width: 100% !important; max-width: 100% !important;
-              margin: 0 !important; padding: 28px 22px !important; box-sizing: border-box !important;
-              background: rgba(255,255,255,0.04); border: 1px solid rgba(0, 187, 249,0.28);
-              border-radius: 22px; box-shadow: 0 20px 44px rgba(0,0,0,0.4);
+            #s-mod5-aproximacao .apx-slide { display: none !important; }
+            #s-mod5-aproximacao .apx-slide.apx-slide-active {
+              display: flex !important;
+              animation: apxFadeIn 0.3s ease forwards;
             }
-            #m5t-mobile-section .m5t-mstep.m5t-active {
-              display: flex !important; flex-direction: column; align-items: center; text-align: center;
-              animation: m5tFadeIn 0.35s ease forwards;
+            #s-mod5-aproximacao .apx-top.apx-slide-active {
+              flex-direction: column;
             }
-            #m5t-mobile-section .m5t-node {
-              width: 56px !important; height: 56px !important; font-size: 22px !important;
-              margin-bottom: 14px !important;
+            #s-mod5-aproximacao .apx-arrow { display: none !important; }
+            #s-mod5-aproximacao .apx-flow {
+              display: block; flex: none; width: 100%;
             }
-            #m5t-mobile-section .m5t-icon { font-size: 20px !important; }
-            #m5t-mobile-section .m5t-title {
-              font-size: 19px !important; margin-bottom: 8px !important; min-height: 0 !important;
+            #s-mod5-aproximacao .apx-step {
+              width: 100%; min-height: 280px; padding: 22px 18px;
             }
-            #m5t-mobile-section .m5t-text { font-size: 14.5px !important; line-height: 1.55 !important; min-height: 0 !important; }
-            #m5t-carousel-nav {
-              display: flex !important; align-items: center; justify-content: center; gap: 20px;
-              flex-shrink: 0; width: 100%; max-width: 300px;
+            #s-mod5-aproximacao .apx-gold p,
+            #s-mod5-aproximacao .apx-lead p,
+            #s-mod5-aproximacao .apx-step p { font-size: 14px !important; }
+            #s-mod5-aproximacao .apx-step h3 { font-size: 16px !important; }
+            #s-mod5-aproximacao .apx-carousel-nav {
+              display: flex !important;
+              align-items: center; justify-content: center; gap: 16px;
+              width: 100%; max-width: 360px; margin: 0 auto; flex-shrink: 0;
             }
-            #m5t-dots { display: flex; gap: 6px; align-items: center; justify-content: center; }
-            #m5t-mobile-callout {
-              display: flex; align-items: center; gap: 10px;
-              background: linear-gradient(135deg, rgba(0, 187, 249,0.14), rgba(0, 187, 249,0.03));
-              border: 1px solid rgba(0, 187, 249,0.35); border-radius: 14px;
-              padding: 10px 16px; max-width: 340px; width: 100%; box-sizing: border-box; flex-shrink: 0;
+            #s-mod5-aproximacao .apx-nav-btn {
+              background: linear-gradient(135deg, #00bbf9, #0094c6);
+              color: #fff; border: none; border-radius: 50%;
+              width: 46px; height: 46px; min-width: 46px; min-height: 46px;
+              cursor: pointer; display: flex; align-items: center; justify-content: center;
+              box-shadow: 0 6px 16px rgba(0, 187, 249, 0.4);
+              touch-action: manipulation; -webkit-tap-highlight-color: transparent;
             }
-            #m5t-mobile-callout span { font-size: 16px; flex-shrink: 0; }
-            #m5t-mobile-callout p {
-              font-family: var(--font-h); font-weight: 700; font-size: 12px; color: var(--white); margin: 0;
+            #s-mod5-aproximacao .apx-nav-btn:active:not(:disabled) { transform: scale(0.94); }
+            #s-mod5-aproximacao .apx-nav-btn:disabled { opacity: 0.3; cursor: default; }
+            #s-mod5-aproximacao .apx-nav-btn svg { pointer-events: none; }
+            #s-mod5-aproximacao .apx-counter {
+              font-family: var(--font-h); font-size: 14px; font-weight: 800;
+              color: rgba(255,255,255,0.9); min-width: 56px; text-align: center;
             }
           }
         </style>
 
         <div class="top-bar">
-          <span class="section-tag">🔋 Procedimento</span>
-          <div class="slide-title" style="margin-top:6px">Passo a Passo <span>Troca de Bateria</span></div>
+          <span class="section-tag">🛑 Aproximação</span>
+          <div class="slide-title" style="margin-top:6px">A Regra Inicial <span>de Ouro</span></div>
           <div class="slide-subtitle">Operações de Alta Complexidade, Ressuprimento de Picking e Docas</div>
         </div>
 
-        <div class="content-area">
-          <div class="m5t-wrap">
-            <div class="m5t-row" style="grid-template-columns: repeat(5, 1fr);">
-              <div class="m5t-step">
-                <div class="m5t-node">1</div>
-                <h3 class="m5t-title"><span class="m5t-icon">🔑</span>Confirme o nível de carga</h3>
-                <p class="m5t-text">Ligue a chave e verifique a carga.</p>
+        <div class="content-area apx-content">
+          <div class="apx-shell">
+            <div class="apx-top apx-slide apx-slide-active">
+              <div class="apx-card apx-gold">
+                <span class="apx-icon">❌</span>
+                <div class="apx-gold-body">
+                  <p class="apx-kicker">A Regra Inicial de Ouro</p>
+                  <p><strong>NUNCA</strong> se aproxime de uma empilhadeira em movimento. Mantenha-se à distância segura de <strong>4 metros</strong> e faça <strong>contato visual</strong> com o condutor para chamar sua atenção.</p>
+                </div>
               </div>
-              <div class="m5t-step">
-                <div class="m5t-node">2</div>
-                <h3 class="m5t-title"><span class="m5t-icon">⏻</span>Desligue o equipamento</h3>
-                <p class="m5t-text">Desligue na chave de ignição.</p>
-              </div>
-              <div class="m5t-step">
-                <div class="m5t-node">3</div>
-                <h3 class="m5t-title"><span class="m5t-icon">🔓</span>Abra a tampa e solte a trava</h3>
-                <p class="m5t-text">Com cuidado, solte a trava de segurança.</p>
-              </div>
-              <div class="m5t-step">
-                <div class="m5t-node">4</div>
-                <h3 class="m5t-title"><span class="m5t-icon">🔌</span>Desconecte o cabo</h3>
-                <p class="m5t-text">Segure firme pelo conector.</p>
-              </div>
-              <div class="m5t-step">
-                <div class="m5t-node">5</div>
-                <h3 class="m5t-title"><span class="m5t-icon">📤</span>Retire a bateria antiga</h3>
-                <p class="m5t-text">Atenção ao peso e ao equilíbrio.</p>
+              <div class="apx-card apx-lead">
+                <span class="apx-lead-icon">🛑</span>
+                <p>O pedestre só pode se aproximar e iniciar a conversa após o operador realizar rigorosamente estes <strong>3 passos</strong>:</p>
               </div>
             </div>
-            <div class="m5t-row" style="grid-template-columns: repeat(4, 1fr);">
-              <div class="m5t-step">
-                <div class="m5t-node">6</div>
-                <h3 class="m5t-title"><span class="m5t-icon">📥</span>Posicione a nova bateria</h3>
-                <p class="m5t-text">No mesmo lugar da anterior.</p>
-              </div>
-              <div class="m5t-step">
-                <div class="m5t-node">7</div>
-                <h3 class="m5t-title"><span class="m5t-icon">🔋</span>Verifique a polaridade e conecte</h3>
-                <p class="m5t-text">Conecte a bateria e o cabo elétrico.</p>
-              </div>
-              <div class="m5t-step">
-                <div class="m5t-node">8</div>
-                <h3 class="m5t-title"><span class="m5t-icon">🔒</span>Trave e feche a tampa</h3>
-                <p class="m5t-text">Bateria carregada e trava acondicionada.</p>
-              </div>
-              <div class="m5t-step">
-                <div class="m5t-node">9</div>
-                <h3 class="m5t-title"><span class="m5t-icon">🔌</span>Conecte no carregador</h3>
-                <p class="m5t-text">Bateria descarregada vai para recarga.</p>
-              </div>
-            </div>
-            <div class="m5t-callout">
-              <span class="m5t-callout-icon">✅</span>
-              <p>Procedimento correto é garantia de um trabalho seguro!</p>
-            </div>
-          </div>
-        </div>
 
-        <!-- ── MOBILE: carrossel com setas ── -->
-        <div id="m5t-mobile-section" style="display:none;">
-          <div id="m5t-card-viewport">
-            <div class="m5t-mstep m5t-active" data-idx="0">
-              <div class="m5t-node">1</div>
-              <h3 class="m5t-title"><span class="m5t-icon">🔑</span>Confirme o nível de carga</h3>
-              <p class="m5t-text">Ligue a chave elétrica e confirme o nível de carga da bateria antes de iniciar a troca.</p>
-            </div>
-            <div class="m5t-mstep" data-idx="1">
-              <div class="m5t-node">2</div>
-              <h3 class="m5t-title"><span class="m5t-icon">⏻</span>Desligue o equipamento</h3>
-              <p class="m5t-text">Desligue o equipamento na chave de ignição antes de manusear a bateria.</p>
-            </div>
-            <div class="m5t-mstep" data-idx="2">
-              <div class="m5t-node">3</div>
-              <h3 class="m5t-title"><span class="m5t-icon">🔓</span>Abra a tampa e solte a trava</h3>
-              <p class="m5t-text">Com cuidado, abra a tampa da bateria e solte a trava de segurança.</p>
-            </div>
-            <div class="m5t-mstep" data-idx="3">
-              <div class="m5t-node">4</div>
-              <h3 class="m5t-title"><span class="m5t-icon">🔌</span>Desconecte o cabo</h3>
-              <p class="m5t-text">Desconecte o cabo segurando firme pelo conector, para evitar danos aos contatos.</p>
-            </div>
-            <div class="m5t-mstep" data-idx="4">
-              <div class="m5t-node">5</div>
-              <h3 class="m5t-title"><span class="m5t-icon">📤</span>Retire a bateria antiga</h3>
-              <p class="m5t-text">Retire a bateria antiga do compartimento com atenção ao peso e ao equilíbrio.</p>
-            </div>
-            <div class="m5t-mstep" data-idx="5">
-              <div class="m5t-node">6</div>
-              <h3 class="m5t-title"><span class="m5t-icon">📥</span>Posicione a nova bateria</h3>
-              <p class="m5t-text">Certifique-se de que a nova bateria seja posicionada exatamente no mesmo lugar da anterior.</p>
-            </div>
-            <div class="m5t-mstep" data-idx="6">
-              <div class="m5t-node">7</div>
-              <h3 class="m5t-title"><span class="m5t-icon">🔋</span>Verifique a polaridade e conecte</h3>
-              <p class="m5t-text">Verifique a polaridade e conecte a bateria e o cabo elétrico corretamente.</p>
-            </div>
-            <div class="m5t-mstep" data-idx="7">
-              <div class="m5t-node">8</div>
-              <h3 class="m5t-title"><span class="m5t-icon">🔒</span>Trave e feche a tampa</h3>
-              <p class="m5t-text">Prenda a bateria firmemente com a trava e feche a tampa, garantindo que a bateria esteja carregada no prazo e a trava devidamente acondicionada.</p>
-            </div>
-            <div class="m5t-mstep" data-idx="8">
-              <div class="m5t-node">9</div>
-              <h3 class="m5t-title"><span class="m5t-icon">🔌</span>Conecte no carregador</h3>
-              <p class="m5t-text">Ao terminar o processo, conecte a bateria descarregada no carregador para a próxima recarga.</p>
+            <div class="apx-flow">
+              <div class="apx-card apx-step apx-slide">
+                <div class="apx-num">1</div>
+                <p class="apx-step-label">Passo 1</p>
+                <h3>Parada Total do Equipamento</h3>
+                <p><strong>Parada Total:</strong> a empilhadeira deve estar completamente estática.</p>
+              </div>
+              <div class="apx-arrow" aria-hidden="true">▶</div>
+              <div class="apx-card apx-step apx-slide">
+                <div class="apx-num">2</div>
+                <p class="apx-step-label">Passo 2</p>
+                <h3>Descida Completa do Garfo até o Solo</h3>
+                <p><strong>Garfos no Solo:</strong> os garfos devem ser baixados e deitados planos contra o chão.</p>
+              </div>
+              <div class="apx-arrow" aria-hidden="true">▶</div>
+              <div class="apx-card apx-step apx-slide">
+                <div class="apx-num">3</div>
+                <p class="apx-step-label">Passo 3</p>
+                <h3>Desligamento do Motor e Retirada da Chave</h3>
+                <p><strong>Desligamento:</strong> o motor deve ser desligado e a chave de ignição removida pelo operador.</p>
+              </div>
             </div>
           </div>
-          <div id="m5t-carousel-nav">
-            <button class="tipos-arrow" id="m5t-prev" aria-label="Anterior" onclick="m5tCarouselNav(-1)">
+
+          <div class="apx-carousel-nav" id="apx-carousel-nav">
+            <button type="button" class="apx-nav-btn" id="apx-prev" aria-label="Anterior" onclick="apxCarouselNav(-1)">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
             </button>
-            <div id="m5t-dots">
-              <div class="tipos-dot active"></div>
-              <div class="tipos-dot"></div>
-              <div class="tipos-dot"></div>
-              <div class="tipos-dot"></div>
-              <div class="tipos-dot"></div>
-              <div class="tipos-dot"></div>
-              <div class="tipos-dot"></div>
-              <div class="tipos-dot"></div>
-              <div class="tipos-dot"></div>
-            </div>
-            <button class="tipos-arrow" id="m5t-next" aria-label="Próximo" onclick="m5tCarouselNav(1)">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
-            </button>
-          </div>
-          <div id="m5t-mobile-callout">
-            <span>✅</span>
-            <p>Procedimento correto é garantia de um trabalho seguro!</p>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(0, 187, 249,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S-MOD5-VIDEO2: VÍDEO — Cuidados com a Água da Bateria e Controle Organizacional ── -->
-      <section class="slide video-slide" id="s-mod5-video2">
-        <div class="top-bar">
-          <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Cuidados com a Água da Bateria <span>e Controle Organizacional</span></div>
-            <div class="slide-subtitle">Operações de Alta Complexidade, Ressuprimento de Picking e Docas</div>
-          </div>
-        </div>
-        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div class="video-wrap">
-            <div class="video-box">
-              <iframe id="panda-091f1e7b-29a4-4398-a926-c0037854b907"
-                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=091f1e7b-29a4-4398-a926-c0037854b907"
-                frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
-                allowfullscreen="true" fetchpriority="high"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
-                title="Cuidados com a Água da Bateria e Controle Organizacional — NR11 - OPERADOR DE EMPILHADEIRA">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(0, 187, 249,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S-MOD5-RESTRICOES: CONTEÚDO — Restrições no Uso da Bateria ── -->
-      <section class="slide" id="s-mod5-restricoes">
-        <style>
-          #s-mod5-restricoes .content-area {
-            display: flex; align-items: center; justify-content: center;
-            container-type: size;
-          }
-          #s-mod5-restricoes .m5r-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: clamp(12px, 2.4cqh, 28px) clamp(12px, 2.2cqw, 28px);
-            width: 100%;
-            max-width: 1250px;
-            margin: 0 auto;
-          }
-          #s-mod5-restricoes .m5r-card {
-            position: relative;
-            background: linear-gradient(160deg, rgba(255,255,255,0.06), rgba(255,255,255,0.015));
-            border: 1px solid rgba(255,255,255,0.09);
-            border-radius: clamp(12px,3cqh,22px);
-            padding: clamp(16px,4.6cqh,34px) clamp(14px,3.4cqw,28px);
-            overflow: hidden;
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-          }
-          #s-mod5-restricoes .m5r-card::before {
-            content: '';
-            position: absolute; top: 0; left: 0; right: 0; height: 4px;
-            background: var(--m5r-accent);
-          }
-          #s-mod5-restricoes .m5r-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--m5r-accent);
-            box-shadow: 0 18px 38px rgba(0,0,0,0.4);
-          }
-          #s-mod5-restricoes .m5r-icon {
-            width: clamp(36px,10cqh,60px); height: clamp(36px,10cqh,60px);
-            border-radius: clamp(10px,2.4cqh,16px);
-            background: color-mix(in srgb, var(--m5r-accent) 18%, transparent);
-            border: 1px solid color-mix(in srgb, var(--m5r-accent) 45%, transparent);
-            display: flex; align-items: center; justify-content: center;
-            font-size: clamp(18px,4.6cqh,28px);
-            margin-bottom: clamp(8px,2.4cqh,18px);
-          }
-          #s-mod5-restricoes .m5r-title {
-            font-family: var(--font-h); font-weight: 800;
-            font-size: clamp(15px,3.4cqh,20px); color: var(--white);
-            margin-bottom: clamp(4px,1.4cqh,9px); line-height: 1.28;
-          }
-          #s-mod5-restricoes .m5r-text {
-            font-family: var(--font-p); font-size: clamp(12.5px,2.7cqh,15.5px);
-            color: rgba(255,255,255,0.7); line-height: 1.45;
-          }
-          @media (max-width: 900px) {
-            #s-mod5-restricoes .m5r-grid { grid-template-columns: repeat(2, 1fr); }
-          }
-
-          /* ── MOBILE: carrossel com setas (mesmo padrão do Módulo 2) ── */
-          @media screen and (max-width: 768px) and (orientation: portrait) {
-            @keyframes restrFadeIn {
-              from { opacity: 0; transform: translateY(10px); }
-              to   { opacity: 1; transform: translateY(0); }
-            }
-            #s-mod5-restricoes {
-              display: flex !important; flex-direction: column !important; overflow: hidden !important;
-            }
-            #s-mod5-restricoes .content-area { display: none !important; }
-            #restr-mobile-section {
-              display: flex !important; flex-direction: column !important;
-              align-items: center !important; justify-content: center !important;
-              flex: 1 1 0 !important; min-height: 0 !important; overflow: hidden !important;
-              padding: 8px 16px 72px !important; width: 100% !important;
-              box-sizing: border-box !important; gap: 14px !important;
-            }
-            #restr-card-viewport { width: 100%; max-width: 340px; flex-shrink: 0; position: relative; }
-            #restr-mobile-section .m5r-card {
-              display: none; width: 100% !important; max-width: 100% !important;
-              margin: 0 !important; padding: 30px 22px 26px !important;
-              box-sizing: border-box !important;
-            }
-            #restr-mobile-section .m5r-card.m5r-active {
-              display: flex !important; flex-direction: column; align-items: center; text-align: center;
-              animation: restrFadeIn 0.35s ease forwards;
-            }
-            #restr-mobile-section .m5r-icon {
-              width: 58px !important; height: 58px !important; font-size: 27px !important;
-              margin-bottom: 14px !important;
-            }
-            #restr-mobile-section .m5r-title { font-size: 18px !important; margin-bottom: 8px !important; }
-            #restr-mobile-section .m5r-text { font-size: 14px !important; line-height: 1.55 !important; }
-            #restr-carousel-nav {
-              display: flex !important; align-items: center; justify-content: center; gap: 20px;
-              flex-shrink: 0; width: 100%; max-width: 300px;
-            }
-            #restr-dots { display: flex; gap: 7px; align-items: center; flex: 1; justify-content: center; }
-          }
-        </style>
-
-        <div class="top-bar">
-          <span class="section-tag">⚠️ Segurança</span>
-          <div class="slide-title" style="margin-top:6px">Restrições <span>no Uso da Bateria</span></div>
-          <div class="slide-subtitle">Operações de Alta Complexidade, Ressuprimento de Picking e Docas</div>
-        </div>
-
-        <div class="content-area">
-          <div class="m5r-grid">
-            <div class="m5r-card" style="--m5r-accent:#e74c3c;">
-              <div class="m5r-icon">🚭</div>
-              <h3 class="m5r-title">Proibido Fumar e Fontes de Ignição</h3>
-              <p class="m5r-text">Não fume, não use chamas de forma alguma nem produza fagulhas próximo a uma bateria — os riscos químicos são sérios.</p>
-            </div>
-            <div class="m5r-card" style="--m5r-accent:#ff9f43;">
-              <div class="m5r-icon">💥</div>
-              <h3 class="m5r-title">Evite Impactos</h3>
-              <p class="m5r-text">Nunca permita que a bateria sofra impactos, para evitar danos internos à sua estrutura.</p>
-            </div>
-            <div class="m5r-card" style="--m5r-accent:#ffc837;">
-              <div class="m5r-icon">🚫</div>
-              <h3 class="m5r-title">Não Apoie Objetos</h3>
-              <p class="m5r-text">Não coloque nenhum objeto, ferramenta ou pano sobre a bateria, evitando curto-circuito.</p>
-            </div>
-            <div class="m5r-card" style="--m5r-accent:#00bbf9;">
-              <div class="m5r-icon">🧼</div>
-              <h3 class="m5r-title">Mantenha Limpa e Seca</h3>
-              <p class="m5r-text">Mantenha o corpo da bateria sempre limpo e seco, para evitar corrosão e fuga de corrente à terra.</p>
-            </div>
-            <div class="m5r-card" style="--m5r-accent:#e84393;">
-              <div class="m5r-icon">👁️</div>
-              <h3 class="m5r-title">Contato com Pele ou Olhos</h3>
-              <p class="m5r-text">Se a solução ácida atingir olhos, pele ou roupas, lave imediatamente com água pura em abundância. Se os olhos forem atingidos, procure socorro médico sem demora.</p>
-            </div>
-            <div class="m5r-card" style="--m5r-accent:#5352ed;">
-              <div class="m5r-icon">🧪</div>
-              <h3 class="m5r-title">Derramamento Acidental</h3>
-              <p class="m5r-text">Neutralize o ácido derramado com bicarbonato de sódio e água, até que pare de borbulhar.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- ── MOBILE: carrossel com setas ── -->
-        <div id="restr-mobile-section" style="display:none;">
-          <div id="restr-card-viewport">
-            <div class="m5r-card m5r-active" data-idx="0" style="--m5r-accent:#e74c3c;">
-              <div class="m5r-icon">🚭</div>
-              <h3 class="m5r-title">Proibido Fumar e Fontes de Ignição</h3>
-              <p class="m5r-text">Não fume, não use chamas de forma alguma nem produza fagulhas próximo a uma bateria — os riscos químicos são sérios.</p>
-            </div>
-            <div class="m5r-card" data-idx="1" style="--m5r-accent:#ff9f43;">
-              <div class="m5r-icon">💥</div>
-              <h3 class="m5r-title">Evite Impactos</h3>
-              <p class="m5r-text">Nunca permita que a bateria sofra impactos, para evitar danos internos à sua estrutura.</p>
-            </div>
-            <div class="m5r-card" data-idx="2" style="--m5r-accent:#ffc837;">
-              <div class="m5r-icon">🚫</div>
-              <h3 class="m5r-title">Não Apoie Objetos</h3>
-              <p class="m5r-text">Não coloque nenhum objeto, ferramenta ou pano sobre a bateria, evitando curto-circuito.</p>
-            </div>
-            <div class="m5r-card" data-idx="3" style="--m5r-accent:#00bbf9;">
-              <div class="m5r-icon">🧼</div>
-              <h3 class="m5r-title">Mantenha Limpa e Seca</h3>
-              <p class="m5r-text">Mantenha o corpo da bateria sempre limpo e seco, para evitar corrosão e fuga de corrente à terra.</p>
-            </div>
-            <div class="m5r-card" data-idx="4" style="--m5r-accent:#e84393;">
-              <div class="m5r-icon">👁️</div>
-              <h3 class="m5r-title">Contato com Pele ou Olhos</h3>
-              <p class="m5r-text">Se a solução ácida atingir olhos, pele ou roupas, lave imediatamente com água pura em abundância. Se os olhos forem atingidos, procure socorro médico sem demora.</p>
-            </div>
-            <div class="m5r-card" data-idx="5" style="--m5r-accent:#5352ed;">
-              <div class="m5r-icon">🧪</div>
-              <h3 class="m5r-title">Derramamento Acidental</h3>
-              <p class="m5r-text">Neutralize o ácido derramado com bicarbonato de sódio e água, até que pare de borbulhar.</p>
-            </div>
-          </div>
-          <div id="restr-carousel-nav">
-            <button class="tipos-arrow" id="restr-prev" aria-label="Anterior" onclick="restrCarouselNav(-1)">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-            </button>
-            <div id="restr-dots">
-              <div class="tipos-dot active"></div>
-              <div class="tipos-dot"></div>
-              <div class="tipos-dot"></div>
-              <div class="tipos-dot"></div>
-              <div class="tipos-dot"></div>
-              <div class="tipos-dot"></div>
-            </div>
-            <button class="tipos-arrow" id="restr-next" aria-label="Próximo" onclick="restrCarouselNav(1)">
+            <span class="apx-counter" id="apx-counter">1 / 4</span>
+            <button type="button" class="apx-nav-btn" id="apx-next" aria-label="Próximo" onclick="apxCarouselNav(1)">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
             </button>
           </div>
@@ -17640,249 +18131,609 @@
       document.getElementById('imgModal').style.display = "none";
     }
 
-    /* ── RESTRIÇÕES NO USO DA BATERIA — Mobile Carousel ── */
+    /* ── REGRAS DE TRÂNSITO INTERNO — Mobile Carousel ── */
     (function () {
-      var restrIdx = 0;
-      var restrTotal = 6;
+      var drIdx = 0;
+      var drTotal = 10;
 
-      function isMobilePortraitRestr() {
+      function isMobilePortraitDr() {
         return window.matchMedia(
           'screen and (max-width: 768px) and (orientation: portrait)'
         ).matches;
       }
 
-      function restrSetVisibility() {
-        var section     = document.getElementById('restr-mobile-section');
-        var contentArea = document.querySelector('#s-mod5-restricoes .content-area');
-        if (!section || !contentArea) return;
-        if (isMobilePortraitRestr()) {
-          section.style.display     = 'flex';
-          contentArea.style.display = 'none';
-        } else {
-          section.style.display     = 'none';
-          contentArea.style.display = '';
-        }
+      function drCards() {
+        return document.querySelectorAll('#s-mod3-driver-rules .dr-grid .dr-card');
       }
 
-      function restrUpdateUI() {
-        document.querySelectorAll('#restr-dots .tipos-dot').forEach(function (d, i) {
-          d.classList.toggle('active', i === restrIdx);
-        });
-        var prev = document.getElementById('restr-prev');
-        var next = document.getElementById('restr-next');
-        if (prev) prev.disabled = (restrIdx === 0);
-        if (next) next.disabled = (restrIdx === restrTotal - 1);
-      }
-
-      function restrShowCard(idx) {
-        var cards = document.querySelectorAll('#restr-card-viewport .m5r-card');
+      function drUpdateUI() {
+        var cards = drCards();
+        drTotal = cards.length || 10;
         cards.forEach(function (c, i) {
-          c.classList.toggle('m5r-active', i === idx);
+          c.classList.toggle('dr-card-active', i === drIdx);
         });
+        var counter = document.getElementById('dr-counter');
+        if (counter) counter.textContent = (drIdx + 1) + ' / ' + drTotal;
+        var prev = document.getElementById('dr-prev');
+        var next = document.getElementById('dr-next');
+        if (prev) prev.disabled = (drIdx === 0);
+        if (next) next.disabled = (drIdx === drTotal - 1);
       }
 
-      window.restrCarouselNav = function (dir) {
-        var newIdx = restrIdx + dir;
-        if (newIdx < 0 || newIdx >= restrTotal) return;
-        restrIdx = newIdx;
-        restrShowCard(restrIdx);
-        restrUpdateUI();
+      window.drCarouselNav = function (dir) {
+        if (!isMobilePortraitDr()) return;
+        var newIdx = drIdx + dir;
+        if (newIdx < 0 || newIdx >= drTotal) return;
+        drIdx = newIdx;
+        if (typeof playClickSound === 'function') playClickSound();
+        drUpdateUI();
       };
 
-      /* Touch / swipe */
-      var rsX = 0;
-      function restrInitSwipe() {
-        var vp = document.getElementById('restr-card-viewport');
+      var drSX = 0;
+      function drInitSwipe() {
+        var vp = document.getElementById('dr-card-viewport');
         if (!vp) return;
         vp.addEventListener('touchstart', function (e) {
-          rsX = e.changedTouches[0].screenX;
+          drSX = e.changedTouches[0].screenX;
         }, { passive: true });
         vp.addEventListener('touchend', function (e) {
-          var diff = rsX - e.changedTouches[0].screenX;
-          if (Math.abs(diff) > 40) window.restrCarouselNav(diff > 0 ? 1 : -1);
+          var diff = drSX - e.changedTouches[0].screenX;
+          if (Math.abs(diff) > 40) window.drCarouselNav(diff > 0 ? 1 : -1);
         }, { passive: true });
       }
 
-      function restrInit() {
-        restrSetVisibility();
-        restrShowCard(0);
-        restrUpdateUI();
-        restrInitSwipe();
+      function drInit() {
+        drIdx = 0;
+        drUpdateUI();
+        drInitSwipe();
       }
 
       if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', restrInit);
+        document.addEventListener('DOMContentLoaded', drInit);
       } else {
-        restrInit();
+        drInit();
       }
 
-      window.addEventListener('resize', restrSetVisibility);
+      window.addEventListener('resize', function () {
+        if (!isMobilePortraitDr()) drIdx = 0;
+        drUpdateUI();
+      });
       window.addEventListener('orientationchange', function () {
-        setTimeout(restrSetVisibility, 120);
+        setTimeout(function () {
+          if (!isMobilePortraitDr()) drIdx = 0;
+          drUpdateUI();
+        }, 120);
       });
     })();
 
-    /* ── PASSO A PASSO TROCA DE BATERIA — Mobile Carousel ── */
+    /* ── MOTORISTAS E MANOBRISTAS — Mobile Carousel ── */
     (function () {
-      var m5tCIdx = 0;
-      var m5tCTotal = 9;
+      var mnIdx = 0;
+      var mnTotal = 10;
 
-      function isMobilePortraitM5t() {
+      function isMobilePortraitMn() {
         return window.matchMedia(
           'screen and (max-width: 768px) and (orientation: portrait)'
         ).matches;
       }
 
-      function m5tSetVisibility() {
-        var section     = document.getElementById('m5t-mobile-section');
-        var contentArea = document.querySelector('#s-mod5-troca-bateria .content-area');
-        if (!section || !contentArea) return;
-        if (isMobilePortraitM5t()) {
-          section.style.display     = 'flex';
-          contentArea.style.display = 'none';
-        } else {
-          section.style.display     = 'none';
-          contentArea.style.display = '';
-        }
+      function mnCards() {
+        return document.querySelectorAll('#s-mod2-motoristas .mn-grid .mn-card');
       }
 
-      function m5tUpdateUI() {
-        document.querySelectorAll('#m5t-dots .tipos-dot').forEach(function (d, i) {
-          d.classList.toggle('active', i === m5tCIdx);
-        });
-        var prev = document.getElementById('m5t-prev');
-        var next = document.getElementById('m5t-next');
-        if (prev) prev.disabled = (m5tCIdx === 0);
-        if (next) next.disabled = (m5tCIdx === m5tCTotal - 1);
-      }
-
-      function m5tShowCard(idx) {
-        var cards = document.querySelectorAll('#m5t-card-viewport .m5t-mstep');
+      function mnUpdateUI() {
+        var cards = mnCards();
+        mnTotal = cards.length || 10;
         cards.forEach(function (c, i) {
-          c.classList.toggle('m5t-active', i === idx);
+          c.classList.toggle('mn-card-active', i === mnIdx);
         });
+        var counter = document.getElementById('mn-counter');
+        if (counter) counter.textContent = (mnIdx + 1) + ' / ' + mnTotal;
+        var prev = document.getElementById('mn-prev');
+        var next = document.getElementById('mn-next');
+        if (prev) prev.disabled = (mnIdx === 0);
+        if (next) next.disabled = (mnIdx === mnTotal - 1);
       }
 
-      window.m5tCarouselNav = function (dir) {
-        var newIdx = m5tCIdx + dir;
-        if (newIdx < 0 || newIdx >= m5tCTotal) return;
-        m5tCIdx = newIdx;
-        m5tShowCard(m5tCIdx);
-        m5tUpdateUI();
+      window.mnCarouselNav = function (dir) {
+        if (!isMobilePortraitMn()) return;
+        var newIdx = mnIdx + dir;
+        if (newIdx < 0 || newIdx >= mnTotal) return;
+        mnIdx = newIdx;
+        if (typeof playClickSound === 'function') playClickSound();
+        mnUpdateUI();
       };
 
-      /* Touch / swipe */
-      var m5tSX = 0;
-      function m5tInitSwipe() {
-        var vp = document.getElementById('m5t-card-viewport');
+      var mnSX = 0;
+      function mnInitSwipe() {
+        var vp = document.getElementById('mn-card-viewport');
         if (!vp) return;
         vp.addEventListener('touchstart', function (e) {
-          m5tSX = e.changedTouches[0].screenX;
+          mnSX = e.changedTouches[0].screenX;
         }, { passive: true });
         vp.addEventListener('touchend', function (e) {
-          var diff = m5tSX - e.changedTouches[0].screenX;
-          if (Math.abs(diff) > 40) window.m5tCarouselNav(diff > 0 ? 1 : -1);
+          var diff = mnSX - e.changedTouches[0].screenX;
+          if (Math.abs(diff) > 40) window.mnCarouselNav(diff > 0 ? 1 : -1);
         }, { passive: true });
       }
 
-      function m5tInit() {
-        m5tSetVisibility();
-        m5tShowCard(0);
-        m5tUpdateUI();
-        m5tInitSwipe();
+      function mnInit() {
+        mnIdx = 0;
+        mnUpdateUI();
+        mnInitSwipe();
       }
 
       if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', m5tInit);
+        document.addEventListener('DOMContentLoaded', mnInit);
       } else {
-        m5tInit();
+        mnInit();
       }
 
-      window.addEventListener('resize', m5tSetVisibility);
+      window.addEventListener('resize', function () {
+        if (!isMobilePortraitMn()) mnIdx = 0;
+        mnUpdateUI();
+      });
       window.addEventListener('orientationchange', function () {
-        setTimeout(m5tSetVisibility, 120);
+        setTimeout(function () {
+          if (!isMobilePortraitMn()) mnIdx = 0;
+          mnUpdateUI();
+        }, 120);
       });
     })();
 
-    /* ── MANUTENÇÃO E CONSERVAÇÃO DA EMPILHADEIRA — Mobile Carousel ── */
+    /* ── SANÇÕES PENAIS, TRABALHISTAS E CIVIS — Mobile Carousel ── */
     (function () {
-      var m5cCIdx = 0;
-      var m5cCTotal = 4;
+      var s2dIdx = 0;
+      var s2dTotal = 4;
 
-      function isMobilePortraitM5c() {
+      function isMobilePortraitS2d() {
         return window.matchMedia(
           'screen and (max-width: 768px) and (orientation: portrait)'
         ).matches;
       }
 
-      function m5cSetVisibility() {
-        var section     = document.getElementById('m5c-mobile-section');
-        var contentArea = document.querySelector('#s-mod5-manutencao .content-area');
-        if (!section || !contentArea) return;
-        if (isMobilePortraitM5c()) {
-          section.style.display     = 'flex';
-          contentArea.style.display = 'none';
-        } else {
-          section.style.display     = 'none';
-          contentArea.style.display = '';
-        }
+      function s2dCards() {
+        return document.querySelectorAll('#s2d .civcrim-card');
       }
 
-      function m5cUpdateUI() {
-        document.querySelectorAll('#m5c-dots .tipos-dot').forEach(function (d, i) {
-          d.classList.toggle('active', i === m5cCIdx);
-        });
-        var prev = document.getElementById('m5c-prev');
-        var next = document.getElementById('m5c-next');
-        if (prev) prev.disabled = (m5cCIdx === 0);
-        if (next) next.disabled = (m5cCIdx === m5cCTotal - 1);
-      }
-
-      function m5cShowCard(idx) {
-        var cards = document.querySelectorAll('#m5c-card-viewport .m5c-card');
+      function s2dUpdateUI() {
+        var cards = s2dCards();
+        s2dTotal = cards.length || 4;
+        var active = cards[s2dIdx];
         cards.forEach(function (c, i) {
-          c.classList.toggle('m5c-active', i === idx);
+          c.classList.toggle('s2d-card-active', i === s2dIdx);
         });
+        var counter = document.getElementById('s2d-counter');
+        if (counter) counter.textContent = (s2dIdx + 1) + ' / ' + s2dTotal;
+        var prev = document.getElementById('s2d-prev');
+        var next = document.getElementById('s2d-next');
+        if (prev) prev.disabled = (s2dIdx === 0);
+        if (next) next.disabled = (s2dIdx === s2dTotal - 1);
+        var sub = document.getElementById('s2d-mobile-subhead');
+        if (sub && active) sub.textContent = active.getAttribute('data-group') || '';
       }
 
-      window.m5cCarouselNav = function (dir) {
-        var newIdx = m5cCIdx + dir;
-        if (newIdx < 0 || newIdx >= m5cCTotal) return;
-        m5cCIdx = newIdx;
-        m5cShowCard(m5cCIdx);
-        m5cUpdateUI();
+      window.s2dCarouselNav = function (dir) {
+        if (!isMobilePortraitS2d()) return;
+        var newIdx = s2dIdx + dir;
+        if (newIdx < 0 || newIdx >= s2dTotal) return;
+        s2dIdx = newIdx;
+        if (typeof playClickSound === 'function') playClickSound();
+        s2dUpdateUI();
       };
 
-      /* Touch / swipe */
-      var m5cSX = 0;
-      function m5cInitSwipe() {
-        var vp = document.getElementById('m5c-card-viewport');
+      var s2dSX = 0;
+      function s2dInitSwipe() {
+        var vp = document.getElementById('s2d-card-viewport');
         if (!vp) return;
         vp.addEventListener('touchstart', function (e) {
-          m5cSX = e.changedTouches[0].screenX;
+          s2dSX = e.changedTouches[0].screenX;
         }, { passive: true });
         vp.addEventListener('touchend', function (e) {
-          var diff = m5cSX - e.changedTouches[0].screenX;
-          if (Math.abs(diff) > 40) window.m5cCarouselNav(diff > 0 ? 1 : -1);
+          var diff = s2dSX - e.changedTouches[0].screenX;
+          if (Math.abs(diff) > 40) window.s2dCarouselNav(diff > 0 ? 1 : -1);
         }, { passive: true });
       }
 
-      function m5cInit() {
-        m5cSetVisibility();
-        m5cShowCard(0);
-        m5cUpdateUI();
-        m5cInitSwipe();
+      function s2dInit() {
+        s2dIdx = 0;
+        s2dUpdateUI();
+        s2dInitSwipe();
       }
 
       if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', m5cInit);
+        document.addEventListener('DOMContentLoaded', s2dInit);
       } else {
-        m5cInit();
+        s2dInit();
       }
 
-      window.addEventListener('resize', m5cSetVisibility);
+      window.addEventListener('resize', function () {
+        if (!isMobilePortraitS2d()) s2dIdx = 0;
+        s2dUpdateUI();
+      });
       window.addEventListener('orientationchange', function () {
-        setTimeout(m5cSetVisibility, 120);
+        setTimeout(function () {
+          if (!isMobilePortraitS2d()) s2dIdx = 0;
+          s2dUpdateUI();
+        }, 120);
+      });
+    })();
+
+    /* ── RESPONSABILIDADE CIVIL E CRIMINAL — Mobile Carousel ── */
+    (function () {
+      var s2c2Idx = 0;
+      var s2c2Total = 3;
+
+      function isMobilePortraitS2c2() {
+        return window.matchMedia(
+          'screen and (max-width: 768px) and (orientation: portrait)'
+        ).matches;
+      }
+
+      function s2c2Cards() {
+        return document.querySelectorAll('#s2c2 .s2c2-slide');
+      }
+
+      function s2c2UpdateUI() {
+        var cards = s2c2Cards();
+        s2c2Total = cards.length || 3;
+        var active = cards[s2c2Idx];
+        cards.forEach(function (c, i) {
+          c.classList.toggle('s2c2-card-active', i === s2c2Idx);
+        });
+        var counter = document.getElementById('s2c2-counter');
+        if (counter) counter.textContent = (s2c2Idx + 1) + ' / ' + s2c2Total;
+        var prev = document.getElementById('s2c2-prev');
+        var next = document.getElementById('s2c2-next');
+        if (prev) prev.disabled = (s2c2Idx === 0);
+        if (next) next.disabled = (s2c2Idx === s2c2Total - 1);
+        var sub = document.getElementById('s2c2-mobile-subhead');
+        if (sub && active) sub.textContent = active.getAttribute('data-group') || '';
+      }
+
+      window.s2c2CarouselNav = function (dir) {
+        if (!isMobilePortraitS2c2()) return;
+        var newIdx = s2c2Idx + dir;
+        if (newIdx < 0 || newIdx >= s2c2Total) return;
+        s2c2Idx = newIdx;
+        if (typeof playClickSound === 'function') playClickSound();
+        s2c2UpdateUI();
+      };
+
+      var s2c2SX = 0;
+      function s2c2InitSwipe() {
+        var vp = document.getElementById('s2c2-card-viewport');
+        if (!vp) return;
+        vp.addEventListener('touchstart', function (e) {
+          s2c2SX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        vp.addEventListener('touchend', function (e) {
+          var diff = s2c2SX - e.changedTouches[0].screenX;
+          if (Math.abs(diff) > 40) window.s2c2CarouselNav(diff > 0 ? 1 : -1);
+        }, { passive: true });
+      }
+
+      function s2c2Init() {
+        s2c2Idx = 0;
+        s2c2UpdateUI();
+        s2c2InitSwipe();
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', s2c2Init);
+      } else {
+        s2c2Init();
+      }
+
+      window.addEventListener('resize', function () {
+        if (!isMobilePortraitS2c2()) s2c2Idx = 0;
+        s2c2UpdateUI();
+      });
+      window.addEventListener('orientationchange', function () {
+        setTimeout(function () {
+          if (!isMobilePortraitS2c2()) s2c2Idx = 0;
+          s2c2UpdateUI();
+        }, 120);
+      });
+    })();
+
+    /* ── CARTÃO DE IDENTIFICAÇÃO — Mobile Carousel ── */
+    (function () {
+      var s2b3Idx = 0;
+      var s2b3Total = 2;
+
+      function isMobilePortraitS2b3() {
+        return window.matchMedia(
+          'screen and (max-width: 768px) and (orientation: portrait)'
+        ).matches;
+      }
+
+      function s2b3Cards() {
+        return document.querySelectorAll('#s2b3 .s2b3-slide');
+      }
+
+      function s2b3UpdateUI() {
+        var cards = s2b3Cards();
+        s2b3Total = cards.length || 2;
+        cards.forEach(function (c, i) {
+          c.classList.toggle('s2b3-card-active', i === s2b3Idx);
+        });
+        var counter = document.getElementById('s2b3-counter');
+        if (counter) counter.textContent = (s2b3Idx + 1) + ' / ' + s2b3Total;
+        var prev = document.getElementById('s2b3-prev');
+        var next = document.getElementById('s2b3-next');
+        if (prev) prev.disabled = (s2b3Idx === 0);
+        if (next) next.disabled = (s2b3Idx === s2b3Total - 1);
+      }
+
+      window.s2b3CarouselNav = function (dir) {
+        if (!isMobilePortraitS2b3()) return;
+        var newIdx = s2b3Idx + dir;
+        if (newIdx < 0 || newIdx >= s2b3Total) return;
+        s2b3Idx = newIdx;
+        if (typeof playClickSound === 'function') playClickSound();
+        s2b3UpdateUI();
+      };
+
+      var s2b3SX = 0;
+      function s2b3InitSwipe() {
+        var vp = document.querySelector('#s2b3 .content-area');
+        if (!vp) return;
+        vp.addEventListener('touchstart', function (e) {
+          s2b3SX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        vp.addEventListener('touchend', function (e) {
+          var diff = s2b3SX - e.changedTouches[0].screenX;
+          if (Math.abs(diff) > 40) window.s2b3CarouselNav(diff > 0 ? 1 : -1);
+        }, { passive: true });
+      }
+
+      function s2b3Init() {
+        s2b3Idx = 0;
+        s2b3UpdateUI();
+        s2b3InitSwipe();
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', s2b3Init);
+      } else {
+        s2b3Init();
+      }
+
+      window.addEventListener('resize', function () {
+        if (!isMobilePortraitS2b3()) s2b3Idx = 0;
+        s2b3UpdateUI();
+      });
+      window.addEventListener('orientationchange', function () {
+        setTimeout(function () {
+          if (!isMobilePortraitS2b3()) s2b3Idx = 0;
+          s2b3UpdateUI();
+        }, 120);
+      });
+    })();
+
+    /* ── ESPELHOS, RÉ E VELOCIDADE — Mobile Carousel ── */
+    (function () {
+      var crIdx = 0;
+      var crTotal = 3;
+
+      function isMobilePortraitCr() {
+        return window.matchMedia(
+          'screen and (max-width: 768px) and (orientation: portrait)'
+        ).matches;
+      }
+
+      function crCards() {
+        return document.querySelectorAll('#s-mod3-visibilidade .cr-slide');
+      }
+
+      function crUpdateUI() {
+        var cards = crCards();
+        crTotal = cards.length || 3;
+        cards.forEach(function (c, i) {
+          c.classList.toggle('cr-slide-active', i === crIdx);
+        });
+        var counter = document.getElementById('cr-counter');
+        if (counter) counter.textContent = (crIdx + 1) + ' / ' + crTotal;
+        var prev = document.getElementById('cr-prev');
+        var next = document.getElementById('cr-next');
+        if (prev) prev.disabled = (crIdx === 0);
+        if (next) next.disabled = (crIdx === crTotal - 1);
+      }
+
+      window.crCarouselNav = function (dir) {
+        if (!isMobilePortraitCr()) return;
+        var newIdx = crIdx + dir;
+        if (newIdx < 0 || newIdx >= crTotal) return;
+        crIdx = newIdx;
+        if (typeof playClickSound === 'function') playClickSound();
+        crUpdateUI();
+      };
+
+      var crSX = 0;
+      function crInitSwipe() {
+        var vp = document.querySelector('#s-mod3-visibilidade .cr-content');
+        if (!vp) return;
+        vp.addEventListener('touchstart', function (e) {
+          crSX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        vp.addEventListener('touchend', function (e) {
+          var diff = crSX - e.changedTouches[0].screenX;
+          if (Math.abs(diff) > 40) window.crCarouselNav(diff > 0 ? 1 : -1);
+        }, { passive: true });
+      }
+
+      function crInit() {
+        crIdx = 0;
+        crUpdateUI();
+        crInitSwipe();
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', crInit);
+      } else {
+        crInit();
+      }
+
+      window.addEventListener('resize', function () {
+        if (!isMobilePortraitCr()) crIdx = 0;
+        crUpdateUI();
+      });
+      window.addEventListener('orientationchange', function () {
+        setTimeout(function () {
+          if (!isMobilePortraitCr()) crIdx = 0;
+          crUpdateUI();
+        }, 120);
+      });
+    })();
+
+    /* ── ABASTECIMENTO DO PICKING — Mobile Carousel ── */
+    (function () {
+      var pkIdx = 0;
+      var pkTotal = 3;
+
+      function isMobilePortraitPk() {
+        return window.matchMedia(
+          'screen and (max-width: 768px) and (orientation: portrait)'
+        ).matches;
+      }
+
+      function pkCards() {
+        return document.querySelectorAll('#s-mod5-picking .pk-slide');
+      }
+
+      function pkUpdateUI() {
+        var cards = pkCards();
+        pkTotal = cards.length || 3;
+        cards.forEach(function (c, i) {
+          c.classList.toggle('pk-slide-active', i === pkIdx);
+        });
+        var counter = document.getElementById('pk-counter');
+        if (counter) counter.textContent = (pkIdx + 1) + ' / ' + pkTotal;
+        var prev = document.getElementById('pk-prev');
+        var next = document.getElementById('pk-next');
+        if (prev) prev.disabled = (pkIdx === 0);
+        if (next) next.disabled = (pkIdx === pkTotal - 1);
+      }
+
+      window.pkCarouselNav = function (dir) {
+        if (!isMobilePortraitPk()) return;
+        var newIdx = pkIdx + dir;
+        if (newIdx < 0 || newIdx >= pkTotal) return;
+        pkIdx = newIdx;
+        if (typeof playClickSound === 'function') playClickSound();
+        pkUpdateUI();
+      };
+
+      var pkSX = 0;
+      function pkInitSwipe() {
+        var vp = document.querySelector('#s-mod5-picking .pk-content');
+        if (!vp) return;
+        vp.addEventListener('touchstart', function (e) {
+          pkSX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        vp.addEventListener('touchend', function (e) {
+          var diff = pkSX - e.changedTouches[0].screenX;
+          if (Math.abs(diff) > 40) window.pkCarouselNav(diff > 0 ? 1 : -1);
+        }, { passive: true });
+      }
+
+      function pkInit() {
+        pkIdx = 0;
+        pkUpdateUI();
+        pkInitSwipe();
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', pkInit);
+      } else {
+        pkInit();
+      }
+
+      window.addEventListener('resize', function () {
+        if (!isMobilePortraitPk()) pkIdx = 0;
+        pkUpdateUI();
+      });
+      window.addEventListener('orientationchange', function () {
+        setTimeout(function () {
+          if (!isMobilePortraitPk()) pkIdx = 0;
+          pkUpdateUI();
+        }, 120);
+      });
+    })();
+
+    /* ── APROXIMAÇÃO SEGURA — Mobile Carousel ── */
+    (function () {
+      var apxIdx = 0;
+      var apxTotal = 4;
+
+      function isMobilePortraitApx() {
+        return window.matchMedia(
+          'screen and (max-width: 768px) and (orientation: portrait)'
+        ).matches;
+      }
+
+      function apxCards() {
+        return document.querySelectorAll('#s-mod5-aproximacao .apx-slide');
+      }
+
+      function apxUpdateUI() {
+        var cards = apxCards();
+        apxTotal = cards.length || 4;
+        cards.forEach(function (c, i) {
+          c.classList.toggle('apx-slide-active', i === apxIdx);
+        });
+        var counter = document.getElementById('apx-counter');
+        if (counter) counter.textContent = (apxIdx + 1) + ' / ' + apxTotal;
+        var prev = document.getElementById('apx-prev');
+        var next = document.getElementById('apx-next');
+        if (prev) prev.disabled = (apxIdx === 0);
+        if (next) next.disabled = (apxIdx === apxTotal - 1);
+      }
+
+      window.apxCarouselNav = function (dir) {
+        if (!isMobilePortraitApx()) return;
+        var newIdx = apxIdx + dir;
+        if (newIdx < 0 || newIdx >= apxTotal) return;
+        apxIdx = newIdx;
+        if (typeof playClickSound === 'function') playClickSound();
+        apxUpdateUI();
+      };
+
+      var apxSX = 0;
+      function apxInitSwipe() {
+        var vp = document.querySelector('#s-mod5-aproximacao .apx-content');
+        if (!vp) return;
+        vp.addEventListener('touchstart', function (e) {
+          apxSX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        vp.addEventListener('touchend', function (e) {
+          var diff = apxSX - e.changedTouches[0].screenX;
+          if (Math.abs(diff) > 40) window.apxCarouselNav(diff > 0 ? 1 : -1);
+        }, { passive: true });
+      }
+
+      function apxInit() {
+        apxIdx = 0;
+        apxUpdateUI();
+        apxInitSwipe();
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', apxInit);
+      } else {
+        apxInit();
+      }
+
+      window.addEventListener('resize', function () {
+        if (!isMobilePortraitApx()) apxIdx = 0;
+        apxUpdateUI();
+      });
+      window.addEventListener('orientationchange', function () {
+        setTimeout(function () {
+          if (!isMobilePortraitApx()) apxIdx = 0;
+          apxUpdateUI();
+        }, 120);
       });
     })();
 
