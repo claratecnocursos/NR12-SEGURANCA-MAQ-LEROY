@@ -18,11 +18,11 @@ const MANIFEST_PATH = path.join(OUTPUT_DIR, 'manifest.json');
 /** Textos customizados para slides com pouco conteúdo textual ou conteúdo dinâmico. */
 const NARRATION_OVERRIDES = {
   s1:
-    'Módulo de Treinamento. Segurança do Trabalho. NR11 - OPERADOR DE TRANSPALETEIRA. Capacitação em movimentação, armazenagem e manuseio de materiais com transpaleteira conforme NR-11.',
+    'Módulo de Treinamento. Segurança do Trabalho. NR 11 — EMPILHADEIRA. Inclui conteúdo complementar da NR 12. Treinamento de capacitação e reciclagem em movimentação, armazenagem e manuseio de materiais com empilhadeira conforme NR-11.',
   s2:
     'Apresentação. Bem-vindo ao Treinamento. NR11 - OPERADOR DE TRANSPALETEIRA. Assista ao vídeo de introdução e avance quando concluir.',
   s6:
-    'Sumário. Conteúdo Programático. Módulo 1: Fundamentos, Legislação e Requisitos. Módulo 2: Conhecendo o Equipamento. Módulo 3: Procedimentos Operacionais e Operação Segura. Módulo 4: Movimentação, Cargas e Armazenamento. Módulo 5: Manutenção e Segurança com Baterias. Módulo 6: Gestão de Riscos, Emergências e EPIs.',
+    'Sumário. Conteúdo Programático. Módulo 1: Fundamentos, Legislação e Requisitos. Módulo 2: Conhecendo o Equipamento. Módulo 3: Procedimentos Operacionais e Operação Segura. Módulo 4: Movimentação, Cargas e Armazenamento. Módulo 5: Manutenção e Segurança com Baterias. Módulo 6: Gestão de Riscos, Emergências e EPIs. Módulo 7: NR 12 — Segurança no Trabalho em Máquinas e Equipamentos.',
   's-mod1':
     'Início do Módulo 1. Fundamentos, Legislação e Requisitos.',
   s2b:
@@ -55,6 +55,46 @@ const NARRATION_OVERRIDES = {
     'Vídeo. Protocolo de Aproximação Segura no Picking. Operações de Alta Complexidade, Ressuprimento de Picking e Docas. Assista ao vídeo sobre o protocolo de aproximação segura no picking. Avance quando concluir.',
   's-mod5-aproximacao':
     'A Regra Inicial de Ouro. Nunca se aproxime de uma empilhadeira em movimento. Mantenha-se à distância segura de 4 metros e faça contato visual com o condutor para chamar sua atenção. Os 3 passos para a aproximação segura: o pedestre só pode se aproximar e iniciar a conversa após o operador realizar rigorosamente estes três passos. Passo 1: parada total do equipamento. A empilhadeira deve estar completamente estática. Passo 2: descida completa do garfo até o solo. Os garfos devem ser baixados e deitados planos contra o chão. Passo 3: desligamento do motor e retirada da chave. O motor deve ser desligado e a chave de ignição removida pelo operador.',
+  's-mod5-doca':
+    'Protocolo crítico na doca. Durante todo o processo de carregamento ou descarregamento na doca, um protocolo crítico deve ser seguido. As chaves do caminhão nunca devem permanecer na ignição ou sob a posse do motorista. Elas devem ser recolhidas e mantidas sob a guarda da equipe de expedição para evitar que o veículo saia antes da hora. O motorista externo deve aguardar o fim da operação permanecendo de forma contínua dentro da área segura demarcada e protegida para pedestres. Ele é expressamente proibido de caminhar pela Red Zone ou pela baia operacional enquanto as empilhadeiras realizam as manobras de carga. Organização gera segurança.',
+  's-mod5-video-garfos':
+    'Vídeo. Riscos de Garfos Elevados e Movimentações Práticas. Operações de Alta Complexidade, Ressuprimento de Picking e Docas. Assista ao vídeo sobre os riscos de dirigir com garfos elevados e as movimentações práticas. Avance quando concluir.',
+  's-mod6':
+    'Início do Módulo 6. Abastecimento (Pit Stop), Zoneamento de Risco e Comportamento.',
+  's-mod6-video':
+    'Vídeo. O Pit Stop e as Regras de Entrada. Abastecimento (Pit Stop), Zoneamento de Risco e Comportamento. Assista ao vídeo sobre o pit stop e as regras de entrada. Avance quando concluir.',
+  's-mod6-video2':
+    'Vídeo. Proibições Críticas no Abastecimento. Abastecimento (Pit Stop), Zoneamento de Risco e Comportamento. Assista ao vídeo sobre as proibições críticas no abastecimento. Avance quando concluir.',
+  's-mod6-guia':
+    'Guia rápido de segurança do Pit Stop. Regras fundamentais para a baia de abastecimento de GLP e baterias. A área de abastecimento é uma das zonas de maior risco químico e de explosão do armazém. Três regras de acesso e operação. Primeira: permitido apenas um equipamento por vez dentro da baia. Aguarde a sua vez na fila recuada. Segunda: o operador deve apenas estacionar, desligar a máquina e puxar o freio. A troca do cilindro de GLP ou a conexão das baterias é de responsabilidade exclusiva do técnico abastecedor habilitado. Terceira: respeite os avisos de piso e mantenha as saídas do Pit Stop sempre totalmente livres. Fontes de ignição proibidas, tolerância zero. Proibido fumar ou portar qualquer chama exposta. Proibido manusear celulares ou qualquer dispositivo eletrônico ligado, pelo perigo de faíscas estáticas e distração.',
+  's-mod6-video3':
+    'Vídeo. Manobra de Abastecimento pelo Técnico. Abastecimento (Pit Stop), Zoneamento de Risco e Comportamento. Assista ao vídeo sobre a manobra de abastecimento pelo técnico. Avance quando concluir.',
+  's-mod6-zonas':
+    'Zoneamento de risco do armazém. Entenda onde cada máquina e pessoa deve circular. Para evitar colisões e atropelamentos, o armazém é dividido em três setores de fluxo. Conhecer e respeitar essas barreiras invisíveis é um dever de todos. Zona vermelha: movimentação de empilhadeira. Risco altíssimo de atropelamento e prensagem. Pedestres e ajudantes são proibidos nas ruas de estoque, salvo com bloqueio de segurança. Zona amarela: operações mistas. Risco médio, tráfego compartilhado controlado. Permitido apenas ajudantes com paleteiras e conferentes em auditoria de cargas. Zona verde: paleteiras e pedestres. Risco baixo. Empilhadeiras motorizadas são proibidas nestas vias.',
+  's-mod6-video4':
+    'Vídeo. Condições Adversas de Luz e Ofuscamento. Abastecimento (Pit Stop), Zoneamento de Risco e Comportamento. Assista ao vídeo sobre condições adversas de luz e ofuscamento. Avance quando concluir.',
+  's-mod6-video5':
+    'Vídeo. Comportamento e a Tolerância Zero a Brincadeiras. Abastecimento (Pit Stop), Zoneamento de Risco e Comportamento. Assista ao vídeo sobre comportamento e a tolerância zero a brincadeiras. Avance quando concluir.',
+  's-mod6-video6':
+    'Vídeo. Compromisso Coletivo e Encerramento. Abastecimento (Pit Stop), Zoneamento de Risco e Comportamento. Assista ao vídeo de compromisso coletivo e encerramento. Avance quando concluir.',
+  's-mod7':
+    'Início do Módulo 7. NR 12 — Segurança no Trabalho em Máquinas e Equipamentos.',
+  's-mod7-video':
+    'Vídeo. O que é a NR 12 e o seu Objetivo. NR 12 — Segurança no Trabalho em Máquinas e Equipamentos. Assista ao vídeo sobre o que é a NR 12 e o seu objetivo. Avance quando concluir.',
+  's-mod7-video2':
+    'Vídeo. Os Deveres e Responsabilidades do Operador. NR 12 — Segurança no Trabalho em Máquinas e Equipamentos. Assista ao vídeo sobre os deveres e responsabilidades do operador. Avance quando concluir.',
+  's-mod7-pilares':
+    'Os quatro pilares de responsabilidade do operador. A sua atitude determina a segurança de todos. A NR 12 estabelece quatro responsabilidades diárias. Primeiro: inspeção diária. Verifique o estado mecânico e os sistemas de segurança antes de iniciar o turno, sem nenhuma exceção. Segundo: comunicação de falhas. Barulho estranho, mau funcionamento, folga no freio ou falha em luzes: não opere. Comunique imediatamente o supervisor ou a manutenção. Terceiro: respeito absoluto à capacidade. Nunca exceda o limite máximo de carga da placa do fabricante. A sobrecarga gera perda de controle e tombamentos. Quarto: seguir os procedimentos internos de tráfego, manuseio e segurança da empresa.',
+  's-mod7-video3':
+    'Vídeo. Identificando os Riscos Mecânicos e Elétricos. NR 12 — Segurança no Trabalho em Máquinas e Equipamentos. Assista ao vídeo sobre os riscos mecânicos e elétricos. Avance quando concluir.',
+  's-mod7-video4':
+    'Vídeo. Dispositivos de Segurança Obrigatórios. NR 12 — Segurança no Trabalho em Máquinas e Equipamentos. Assista ao vídeo sobre os dispositivos de segurança obrigatórios. Avance quando concluir.',
+  's-mod7-protecao':
+    'Sistemas de proteção e regras de proteção física. Dispositivos obrigatórios: seus escudos contra acidentes. Nunca neutralize, altere ou opere com qualquer dispositivo de segurança desligado ou danificado. Verifique diariamente: a grade de proteção superior, que resguarda a cabeça em caso de queda de objetos; o botão de desligamento de emergência, que trava a energia, a tração e a hidráulica; e a buzina, o giroflex e o alarme de ré, que avisam pedestres em áreas ruidosas. Duas regras de ouro: o cinto de segurança é obrigatório em todos os deslocamentos — em um tombamento, evita que o operador seja arremessado e esmagado pelo chassi. E o corpo deve permanecer sempre dentro do perímetro da cabine: nunca apoie o corpo na coluna de elevação nem coloque membros para fora com o veículo em movimento.',
+  's-mod7-video5':
+    'Vídeo. Condutas Proibidas e Boas Práticas. NR 12 — Segurança no Trabalho em Máquinas e Equipamentos. Assista ao vídeo sobre condutas proibidas e boas práticas. Avance quando concluir.',
+  's-fim':
+    'Parabéns. Você concluiu o treinamento NR 11 — Operador de Empilhadeira, com conteúdo complementar da NR 12. Por mérito, dedicação e compromisso com a segurança, você percorreu os sete módulos e demonstrou responsabilidade com a sua vida e com a vida dos seus colegas. A segurança é um direito de todos e um dever de cada um. Continue fazendo a sua parte.',
 };
 
 function cleanText(text) {
@@ -284,29 +324,27 @@ function parseM5gDeck(html) {
 }
 
 function buildM5gNarration(deck) {
-  const zoneLabels = {
-    manutencao: 'Manutenção',
-    bateria: 'Troca de Bateria',
-    restricao: 'Restrição de Segurança',
-  };
-
   if (!deck.length) {
-    return 'Desafio Módulo 5 — Central de Manutenção. Classifique cinco situações sobre manutenção, troca de bateria e restrições de segurança.';
+    return 'Desafio Módulo 5 — Picking, Docas e Protocolos. Leia cinco situações reais e escolha a atitude correta.';
   }
 
+  const letters = ['A', 'B', 'C'];
   const parts = [
-    'Desafio Módulo 5 — Central de Manutenção. Classifique cinco situações sobre manutenção, troca de bateria e restrições de segurança.',
+    'Desafio Módulo 5 — Picking, Docas e Protocolos. Leia cinco situações reais e escolha a atitude correta.',
   ];
 
   deck.forEach((item, index) => {
-    parts.push(`Situação ${index + 1}: ${cleanText(item.text)}`);
-    parts.push(`Setor correto: ${zoneLabels[item.zone] || item.zone}. ${cleanText(item.tip)}`);
+    parts.push(`Situação ${index + 1}: ${cleanText(item.sit)}`);
+    item.opts.forEach((opt, optIndex) => {
+      parts.push(`Alternativa ${letters[optIndex] || optIndex + 1}: ${cleanText(opt)}`);
+    });
+    parts.push(`Resposta correta: alternativa ${letters[item.ans] || item.ans + 1}. ${cleanText(item.fb)}`);
   });
 
   return parts.join(' ');
 }
 
-function parseM6gRounds(html) {
+function parseM6gDeck(html) {
   const match = html.match(/var\s+m6gRounds\s*=\s*(\[[\s\S]*?\n\s*\]);/);
   if (!match) return [];
 
@@ -317,25 +355,80 @@ function parseM6gRounds(html) {
   }
 }
 
-function buildM6gNarration(rounds) {
-  if (!rounds.length) {
-    return 'Desafio Final — Ordem Certa. Toque nos itens na ordem correta em cada rodada.';
+function buildM6gNarration(deck) {
+  if (!deck.length) {
+    return 'Missão Pit Stop, Módulo 6. Três etapas práticas: acesso ao Pit Stop, proibições e ordem da manobra.';
   }
 
   const parts = [
-    'Desafio Final — Ordem Certa. Duas rodadas: toque nos itens na ordem correta.',
+    'Missão Pit Stop, Módulo 6. Três etapas práticas: acesso ao Pit Stop, proibições e ordem da manobra.',
   ];
 
-  rounds.forEach((round, index) => {
-    parts.push(`Rodada ${index + 1}: ${cleanText(round.title)}. ${cleanText(round.instr)}`);
-    const order = round.items.map((item) => cleanText(item.label)).join(', depois ');
-    parts.push(`Ordem correta: ${order}.`);
+  deck.forEach((item, index) => {
+    parts.push(`Etapa ${index + 1}: ${cleanText(item.title)}. ${cleanText(item.inst)}`);
+    if (item.type === 'order') {
+      parts.push('Ordem correta:');
+      item.items.forEach((opt, optIndex) => {
+        parts.push(`Passo ${optIndex + 1}: ${cleanText(opt.t)}`);
+      });
+    } else if (item.type === 'select') {
+      const yes = item.items.filter((opt) => opt.ok).map((opt) => cleanText(opt.t));
+      const no = item.items.filter((opt) => !opt.ok).map((opt) => cleanText(opt.t));
+      parts.push(`Marque: ${yes.join('; ')}.`);
+      if (no.length) parts.push(`Não marque: ${no.join('; ')}.`);
+    } else {
+      item.items.forEach((opt) => {
+        parts.push(`${opt.ok ? 'Regra correta' : 'Opção incorreta'}: ${cleanText(opt.t)}`);
+      });
+    }
+    parts.push(cleanText(item.fb));
   });
 
   return parts.join(' ');
 }
 
-function parseQm4Questions(html) {
+function parseM7gDeck(html) {
+  const match = html.match(/var\s+m7gRounds\s*=\s*(\[[\s\S]*?\n\s*\]);/);
+  if (!match) return [];
+
+  try {
+    return Function(`"use strict"; return (${match[1]});`)();
+  } catch {
+    return [];
+  }
+}
+
+function buildM7gNarration(deck) {
+  if (!deck.length) {
+    return 'Missão NR 12, Módulo 7. Cinco perguntas simples sobre a norma, os deveres do operador, os riscos, os dispositivos e as condutas.';
+  }
+
+  const parts = [
+    'Missão NR 12, Módulo 7. Cinco perguntas simples sobre a norma, os deveres do operador, os riscos, os dispositivos e as condutas.',
+  ];
+
+  deck.forEach((item, index) => {
+    parts.push(`Etapa ${index + 1}: ${cleanText(item.title)}. ${cleanText(item.inst)}`);
+    if (item.type === 'order') {
+      parts.push('Ordem correta:');
+      item.items.forEach((opt, optIndex) => {
+        parts.push(`Passo ${optIndex + 1}: ${cleanText(opt.t)}`);
+      });
+    } else if (item.type === 'select') {
+      const yes = item.items.filter((opt) => opt.ok).map((opt) => cleanText(opt.t));
+      const no = item.items.filter((opt) => !opt.ok).map((opt) => cleanText(opt.t));
+      parts.push(`Marque: ${yes.join('; ')}.`);
+      if (no.length) parts.push(`Não marque: ${no.join('; ')}.`);
+    } else {
+      item.items.forEach((opt) => {
+        parts.push(`${opt.ok ? 'Regra correta' : 'Opção incorreta'}: ${cleanText(opt.t)}`);
+      });
+    }
+    parts.push(cleanText(item.fb));
+  });
+
+  return parts.join(' ');
+}
   const match = html.match(/const\s+qm4_data\s*=\s*(\[[\s\S]*?\n\s*\]);/);
   if (!match) return [];
   try {
@@ -434,7 +527,9 @@ function buildManifest(htmlPath = HTML_PATH) {
     } else if ((text === undefined || text === null) && id === 's-mod5-game') {
       text = buildM5gNarration(parseM5gDeck(html));
     } else if ((text === undefined || text === null) && id === 's-mod6-game') {
-      text = buildM6gNarration(parseM6gRounds(html));
+      text = buildM6gNarration(parseM6gDeck(html));
+    } else if ((text === undefined || text === null) && id === 's-mod7-game') {
+      text = buildM7gNarration(parseM7gDeck(html));
     } else if (text === undefined || text === null) {
       text = extractSlideText(slide);
     }
