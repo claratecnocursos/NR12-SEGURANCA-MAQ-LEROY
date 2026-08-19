@@ -9896,50 +9896,141 @@
       <!-- ── S6: SUMÁRIO — Conteúdo Programático ── -->
       <section class="slide" id="s6">
         <style>
-          @media screen and (max-width: 768px) and (orientation: portrait) {
-            #s6 { overflow: hidden; }
-            #s6 .top-bar { flex-shrink: 0; }
-            #s6 .slide-title { font-size: 22px !important; margin-top: 4px !important; }
-            #s6 .content-area {
-              overflow: hidden !important;
-              padding: 6px 12px 76px !important;
-              justify-content: stretch !important;
-              min-height: 0;
-              flex: 1 1 0;
+          #s6 {
+            align-items: stretch !important;
+            overflow: hidden;
+          }
+          #s6 .top-bar { flex-shrink: 0; }
+          #s6 .content-area {
+            flex: 1 1 0;
+            min-height: 0;
+            width: 100%;
+            max-width: 1360px !important;
+            margin: 0 auto;
+            overflow: hidden !important;
+            justify-content: center !important;
+            align-items: center;
+            padding-top: 12px !important;
+            padding-bottom: 100px !important;
+          }
+          #s6 .sum-grid {
+            display: flex !important;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+            gap: clamp(16px, 2vh, 22px) clamp(18px, 1.8vw, 24px) !important;
+            width: 100%;
+            max-width: 1320px !important;
+            margin: 0 auto !important;
+          }
+          #s6 .sum-item {
+            position: relative;
+            flex: 0 0 calc(25% - 18px);
+            width: calc(25% - 18px);
+            max-width: 310px;
+            min-height: clamp(196px, 28vh, 248px);
+            min-width: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center !important;
+            justify-content: center;
+            text-align: center;
+            padding: 28px 22px 26px !important;
+            gap: 14px !important;
+            border-radius: 20px !important;
+            border: 1px solid rgba(0, 187, 249, 0.28) !important;
+            background: linear-gradient(160deg, #1a3564 0%, #12274c 40%, #0a1730 75%, #050c1a 100%) !important;
+            box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
+            transform: none !important;
+            overflow: hidden;
+          }
+          #s6 .sum-item::before { display: none !important; }
+          #s6 .sum-item::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #00bbf9, #56d5ff);
+            border-radius: 18px 18px 0 0;
+            pointer-events: none;
+          }
+          #s6 .sum-item:hover {
+            transform: translateY(-4px) !important;
+            border-color: rgba(86, 213, 255, 0.55) !important;
+            box-shadow: 0 18px 36px rgba(0, 187, 249, 0.18);
+          }
+          #s6 .sum-num-big {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px !important;
+            letter-spacing: 0.12em;
+            padding: 7px 14px !important;
+            margin: 0 auto !important;
+            border-radius: 999px !important;
+            background: linear-gradient(135deg, #00bbf9, #0094c6) !important;
+            box-shadow: 0 6px 14px rgba(0, 187, 249, 0.32);
+            flex-shrink: 0;
+          }
+          #s6 .sum-text {
+            width: 100%;
+            text-align: center !important;
+            font-size: 17px !important;
+            line-height: 1.38 !important;
+            margin: 0 !important;
+            color: rgba(255, 255, 255, 0.92) !important;
+          }
+
+          @media (max-width: 1099px) {
+            #s6 .sum-item {
+              flex-basis: calc(33.333% - 16px);
+              width: calc(33.333% - 16px);
+              max-width: 320px;
             }
+          }
+
+          @media (max-width: 820px) {
+            #s6 .sum-item {
+              flex-basis: calc(50% - 12px);
+              width: calc(50% - 12px);
+              max-width: none;
+              min-height: 132px;
+            }
+          }
+
+          @media screen and (max-width: 768px) and (orientation: portrait) {
+            #s6 .slide-title { font-size: 22px !important; margin-top: 4px !important; }
+            #s6 .content-area { padding: 6px 14px 76px !important; }
             #s6 .sum-grid {
-              display: flex !important;
               flex-direction: column !important;
-              gap: 6px !important;
+              flex-wrap: nowrap;
+              gap: 7px !important;
               height: 100%;
               max-width: 100% !important;
-              margin: 0 !important;
             }
             #s6 .sum-item {
               flex: 1 1 0;
+              width: 100% !important;
+              max-width: none;
               min-height: 0;
               padding: 8px 12px !important;
-              gap: 2px !important;
-              justify-content: center;
+              gap: 4px !important;
               border-radius: 12px !important;
-              border-left-width: 4px !important;
-            }
-            #s6 .sum-item::before {
-              width: 28px !important;
-              height: 28px !important;
-              right: -4px !important;
-              top: -4px !important;
             }
             #s6 .sum-num-big {
               font-size: 9px !important;
-              padding: 3px 8px !important;
-              margin-bottom: 0 !important;
+              padding: 3px 9px !important;
             }
             #s6 .sum-text {
               font-size: 12px !important;
               line-height: 1.22 !important;
-              margin: 0 !important;
             }
+          }
+
+          @media (max-height: 780px) {
+            #s6 .sum-item { min-height: 168px; padding: 20px 18px !important; gap: 10px !important; }
+            #s6 .sum-text { font-size: 15.5px !important; }
           }
         </style>
         <div class="top-bar"><span class="section-tag">🗺️ Sumário</span>
@@ -19391,7 +19482,7 @@
       {
         text: 'Estacionar a empilhadeira com garfos totalmente abaixados, chave removida e sem obstruir extintores ou rotas de fuga.',
         allowed: true,
-        tip: 'Permitido — esta é a forma correta e segura de estacionar o equipamento.'
+        tip: 'Permitido — esta éo a forma correta e segura de estacionar o equipamento.'
       },
       {
         text: 'Usar buzina continuamente para assustar colegas de trabalho e abrir caminho.',
