@@ -9772,18 +9772,6 @@
       </button>
       <span class="top-control-label">Transcrição</span>
     </div>
-    <div class="top-control-item">
-      <button id="btn-simulation" type="button" onclick="toggleSimulationMode()" class="btn-simulation-toggle"
-        title="Modo simulação — avançar sem concluir vídeos, jogos ou quizzes" aria-pressed="false"
-        aria-label="Ativar modo simulação">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path
-            d="M13 2.05v3.03c3.39.49 6 3.39 6 6.92 0 .9-.18 1.76-.5 2.54l2.6 1.53c.63-1.24 1-2.65 1-4.15 0-5.16-3.99-9.41-9-9.95zM12 19c-3.87 0-7-3.13-7-7 0-3.53 2.61-6.43 6-6.92V2.05c-5.06.5-9 4.76-9 9.95 0 5.52 4.47 10 9.99 10 3.31 0 6.24-1.61 8.06-4.09l-2.6-1.53C16.17 17.98 14.21 19 12 19z" />
-        </svg>
-        <span class="control-btn-text simulation-text">Simulação: OFF</span>
-      </button>
-      <span class="top-control-label">Simulação</span>
-    </div>
     <div class="top-control-item" id="tutorial-control-item">
       <button id="btn-tutorial" type="button" onclick="openTutorialModal()" class="btn-tutorial-toggle"
         title="Abrir tutorial do curso" aria-label="Abrir tutorial do curso">
@@ -11865,7 +11853,7 @@
             <h3 style="font-family:var(--font-h); font-size:26px; color:var(--white); margin-bottom:12px;">
               Desafio NR-11 — Módulo 2</h3>
             <p style="color:rgba(255,255,255,0.72); font-size:16px; line-height:1.65; margin-bottom:28px; max-width: 600px; margin-left: auto; margin-right: auto;">
-              Responda <strong>Verdadeiro ou Falso</strong> para 6 afirmações sobre o equipamento e valide o que você aprendeu no Módulo 2!
+              Responda <strong>Verdadeiro ou Falso</strong> para 6 afirmações sobre aptidão psicofísica, acesso, distrações e regras de circulação — e valide o que você aprendeu no Módulo 2!
             </p>
             <button class="btn-start" style="padding: 16px 40px; font-size: 15px; text-transform: uppercase;"
               onclick="startMod2TfGame()">INICIAR DESAFIO</button>
@@ -11910,7 +11898,7 @@
               Desafio Concluído!</h3>
             <div class="r-status ap"
               style="display:inline-block; padding: 6px 18px; font-size: 13px; margin-bottom:12px; font-weight:700;">
-              Módulo 2 — Equipamento Validado
+              Módulo 2 — Aptidão e Acesso Validados
             </div>
             <p id="mod2tf-result-msg"
               style="color:rgba(255,255,255,0.88); font-size:15px; line-height:1.55; margin-bottom:20px;"></p>
@@ -15181,8 +15169,8 @@
         <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
           <div class="video-wrap">
             <div class="video-box">
-              <iframe id="panda-faa41109-72ad-4a63-872b-064bc9c101f1"
-                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=faa41109-72ad-4a63-872b-064bc9c101f1"
+              <iframe id="panda-3b991aa8-85ae-49ee-af83-3e1c85b9d50d"
+                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=3b991aa8-85ae-49ee-af83-3e1c85b9d50d"
                 frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
                 allowfullscreen="true" fetchpriority="high"
                 style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
@@ -18718,34 +18706,34 @@
 
     const mod2tfDeck = [
       {
-        text: 'A paleteira manual é ideal para longas distâncias e cargas muito pesadas, acima de 5 toneladas.',
+        text: 'Se o operador estiver cansado, com sono ou sob efeito de medicamento que altere os reflexos, ainda pode operar reduzindo a velocidade.',
         answer: false,
-        tip: 'Falso! A paleteira manual é indicada para curtas distâncias em superfícies planas, com capacidade entre 1,5 e 3 toneladas.'
+        tip: 'Falso! A aptidão psicofísica é obrigatória. Cansaço, sono, álcool, drogas ou medicamentos que alterem os reflexos impedem a operação.'
       },
       {
-        text: 'Na empilhadeira elétrica tripulada (jet), o operador trabalha em pé, sobre uma plataforma do próprio equipamento.',
+        text: 'Somente condutor habilitado pode circular na unidade, e o uso do cinto de segurança é obrigatório.',
         answer: true,
-        tip: 'Verdadeiro! Esse modelo permite maior conforto e controle em trajetos longos, com capacidade entre 2 e 3 toneladas.'
+        tip: 'Verdadeiro! O acesso é controlado: cinto obrigatório e somente condutor habilitado e integrado.'
       },
       {
-        text: 'Os garfos e as rodas de poliuretano fazem parte dos componentes principais da empilhadeira elétrica.',
-        answer: true,
-        tip: 'Verdadeiro! Os garfos sustentam a carga e as rodas de poliuretano garantem o movimento seguro do equipamento.'
-      },
-      {
-        text: 'É permitido deixar a chave de contato ligada ao se afastar da máquina, desde que por pouco tempo.',
+        text: 'É permitido manusear o celular ao dirigir se for uma ligação de trabalho.',
         answer: false,
-        tip: 'Falso! A chave de contato deve sempre ser desligada ao se afastar da máquina, evitando uso não autorizado e acidentes.'
+        tip: 'Falso! É proibido usar ou manusear celular ao dirigir — distração no setor logístico causa acidentes graves.'
       },
       {
-        text: 'A empilhadeira freia somente quando o timão está na posição vertical inicial ou na posição extrema horizontal.',
+        text: 'Na faixa de pedestre, o motorista deve parar, olhar os dois lados e dar preferência ao pedestre, com contato visual.',
         answer: true,
-        tip: 'Verdadeiro! São essas as duas posições do timão que acionam o freio mecânico e desligam a tração.'
+        tip: 'Verdadeiro! Faixa de pedestre = PARE. Prefira o pedestre e confirme o contato visual antes de seguir.'
       },
       {
-        text: 'O pulsar do timão para frente e para trás (reverso) deve ser usado como manobra de freio de emergência.',
+        text: 'É permitido parar o veículo sobre faixas, rampas ou em frente a equipamentos de emergência por poucos minutos.',
         answer: false,
-        tip: 'Falso! Nunca se deve usar o reverso como freio — utilize sempre as posições limites do timão para frear com segurança.'
+        tip: 'Falso! Nunca bloqueie áreas críticas: faixas, rampas e equipamentos de emergência devem permanecer livres.'
+      },
+      {
+        text: 'A velocidade máxima dentro da unidade é de 20 km/h, e pisca-alerta e faróis devem permanecer ligados na circulação interna.',
+        answer: true,
+        tip: 'Verdadeiro! 20 km/h é o limite interno. Pisca-alerta e faróis ligados aumentam a visibilidade e protegem o pedestre.'
       }
     ];
 
@@ -18824,8 +18812,8 @@
       const msg = document.getElementById('mod2tf-result-msg');
       if (msg) {
         msg.textContent = mod2tfMistakes === 0
-          ? 'Excelente! Você acertou todas as afirmações e demonstrou total domínio sobre o equipamento.'
-          : 'Desafio concluído! Você errou ' + mod2tfMistakes + ' afirmação(ões). Revise os pontos sobre os tipos de empilhadeira, componentes, painel e freios.';
+          ? 'Excelente! Você acertou todas as afirmações e demonstrou domínio sobre aptidão, acesso e regras de circulação.'
+          : 'Desafio concluído! Você errou ' + mod2tfMistakes + ' afirmação(ões). Revise saúde na operação, controle de acesso, distrações, faixas de trânsito e bloqueio de áreas críticas.';
       }
       updateNextButton();
     }

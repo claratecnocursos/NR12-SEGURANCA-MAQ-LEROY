@@ -18,47 +18,83 @@ const MANIFEST_PATH = path.join(OUTPUT_DIR, 'manifest.json');
 /** Textos customizados para slides com pouco conteúdo textual ou conteúdo dinâmico. */
 const NARRATION_OVERRIDES = {
   s1:
-    'Módulo de Treinamento. Segurança do Trabalho. NR 11 — EMPILHADEIRA. Inclui conteúdo complementar da NR 12. Treinamento de capacitação e reciclagem em movimentação, armazenagem e manuseio de materiais com empilhadeira conforme NR-11.',
+    'Módulo de Treinamento. Segurança do Trabalho. NR 11 — Empilhadeira. Inclui conteúdo complementar da NR 12. Treinamento de capacitação e reciclagem em movimentação, armazenagem e manuseio de materiais com empilhadeira conforme NR-11. São sete módulos, conteúdo completo, cento por cento online.',
   s2:
-    'Apresentação. Bem-vindo ao Treinamento. NR11 - OPERADOR DE TRANSPALETEIRA. Assista ao vídeo de introdução e avance quando concluir.',
+    'Apresentação. Bem-vindo ao Treinamento. NR 11 — Operador de Empilhadeira. Assista ao vídeo de introdução à NR 11 e o nosso objetivo. Avance quando concluir.',
   s6:
-    'Sumário. Conteúdo Programático. Módulo 1: Fundamentos, Legislação e Requisitos. Módulo 2: Conhecendo o Equipamento. Módulo 3: Procedimentos Operacionais e Operação Segura. Módulo 4: Movimentação, Cargas e Armazenamento. Módulo 5: Manutenção e Segurança com Baterias. Módulo 6: Gestão de Riscos, Emergências e EPIs. Módulo 7: NR 12 — Segurança no Trabalho em Máquinas e Equipamentos.',
+    'Sumário. Conteúdo Programático. Módulo 1: Introdução à NR 11, Responsabilidades e Aspectos Legais. Módulo 2: Aptidão Psicofísica, Saúde e Regras de Acesso. Módulo 3: Normas de Trânsito Interno e Circulação. Módulo 4: Interação Máquina e Pedestre, Red Zone e Pontos Cegos. Módulo 5: Operações de Alta Complexidade, Ressuprimento de Picking e Docas. Módulo 6: Abastecimento, Pit Stop, Zoneamento de Risco e Comportamento. Módulo 7: NR 12 — Segurança no Trabalho em Máquinas e Equipamentos.',
   's-mod1':
-    'Início do Módulo 1. Fundamentos, Legislação e Requisitos.',
+    'Início do Módulo 1. Introdução à NR 11, Responsabilidades e Aspectos Legais.',
   s2b:
-    'Vídeo. A Norma NR 11 e os Equipamentos Motorizados. Fundamentos, Legislação e Requisitos. Assista ao vídeo e conheça as exigências legais e a importância do treinamento de segurança na operação de transpaleteiras e outros equipamentos motorizados de movimentação de materiais. Avance quando concluir.',
+    'Vídeo. A Norma NR 11 e os Equipamentos Motorizados. Introdução à NR 11, Responsabilidades e Aspectos Legais. Assista ao vídeo sobre a NR 11 e os equipamentos motorizados. Avance quando concluir.',
   s2b2:
-    'Vídeo. Habilitação e o Cartão de Identificação. Fundamentos, Legislação e Requisitos. Assista ao vídeo sobre habilitação e o porte obrigatório do cartão de identificação na operação de transpaleteiras. Avance quando concluir.',
+    'Vídeo. Qualificação e o Cartão de Identificação. Introdução à NR 11, Responsabilidades e Aspectos Legais. Assista ao vídeo sobre a qualificação do operador e o cartão de identificação. Avance quando concluir.',
   s2b3:
-    'Legislação. O Cartão de Identificação. Conforme o item 11.1.6 da NR-11, os operadores de equipamentos de transporte motorizado deverão ser habilitados e só poderão dirigir se durante o horário de trabalho portarem um cartão de identificação, com o nome e fotografia, em lugar visível. Veja a simulação do cartão de identificação à direita, com os dados do operador, fotografia, número de chapa e o respectivo setor de trabalho. Avance quando concluir.',
+    'O Cartão de Identificação. Após comprovar aptidão em avaliações médicas frequentes, o operador recebe um cartão com nome, foto e tipo sanguíneo, que deve ficar visível durante todo o expediente. A validade é de apenas um ano, exigindo novo exame para renovar. Sem o cartão válido e visível, a operação fica suspensa.',
   s2c:
-    'Vídeo. Validade do Cartão e Responsabilidade do Operador. Fundamentos, Legislação e Requisitos. Assista ao vídeo sobre a validade do cartão de identificação e a responsabilidade do operador. Avance quando concluir.',
-  s2d: null,
+    'Vídeo. Responsabilidades do Operador e o Direito de Recusa. Introdução à NR 11, Responsabilidades e Aspectos Legais. Assista ao vídeo sobre as responsabilidades do operador e o direito de recusa. Avance quando concluir.',
+  s2c2:
+    'Responsabilidade Civil e Criminal. Ninguém se escusa de cumprir a lei, alegando que não a conhece. Artigo 132 do Código Penal: expor a vida ou a saúde de outrem. Pena de três meses a um ano de detenção. A pena aumenta em um terço se o crime resultar de inobservância de regra técnica de profissão, ou se o operador deixar de prestar socorro, ou fugir para evitar prisão em flagrante. Artigo 129: lesão corporal. Detenção de dois meses a um ano, com o mesmo aumento de um terço pela inobservância de regra técnica.',
+  s2d:
+    'Sanções Penais, Trabalhistas e Civis. Homicídio culposo: morte do acidentado sem intenção. Detenção de um a três anos, com aumento de um terço se resultar de inobservância de regra técnica de profissão. Homicídio doloso: morte com intenção. Reclusão de seis a vinte anos, também com aumento de um terço nas mesmas hipóteses, inclusive deixar de prestar socorro ou fugir. Na CLT, artigo 482: o ato faltoso permite advertência oral ou escrita e, por reincidência, demissão por justa causa. No Código Civil, artigo 159: quem, por ação ou omissão voluntária, negligência ou imprudência, causar prejuízo a outrem, fica obrigado a reparar os danos.',
   s2e: null, // montado a partir do deck do jogo Módulo 1
   's-mod2':
-    'Início do Módulo 2. Conhecendo o Equipamento.',
+    'Início do Módulo 2. Aptidão Psicofísica, Saúde e Regras de Acesso.',
   's-mod2-video':
-    'Vídeo. Conhecendo a Transpaleteira. Conhecendo o Equipamento. Assista ao vídeo sobre os componentes principais e o funcionamento da transpaleteira. Avance quando concluir.',
+    'Vídeo. Saúde Física e Mental na Operação. Aptidão Psicofísica, Saúde e Regras de Acesso. Assista ao vídeo sobre saúde física e mental na operação. Avance quando concluir.',
   's-mod2-video2':
-    'Vídeo. Transpaleteiras Elétricas e Tripuladas. Conhecendo o Equipamento. Assista ao vídeo sobre as transpaleteiras elétricas e tripuladas. Avance quando concluir.',
+    'Vídeo. Controle de Acesso e Integração de Segurança. Aptidão Psicofísica, Saúde e Regras de Acesso. Assista ao vídeo sobre controle de acesso e integração de segurança. Avance quando concluir.',
   's-mod2-video3':
-    'Vídeo. Componentes Principais da Transpaleteira. Conhecendo o Equipamento. Assista ao vídeo sobre os componentes principais da transpaleteira. Avance quando concluir.',
+    'Vídeo. Distrações e Proibições no Setor Logístico. Aptidão Psicofísica, Saúde e Regras de Acesso. Assista ao vídeo sobre distrações e proibições no setor logístico. Avance quando concluir.',
   's-mod2-video4':
     'Vídeo. Faixas de Trânsito e Preferências de Passagem. Aptidão Psicofísica, Saúde e Regras de Acesso. Assista ao vídeo sobre faixas de trânsito e preferências de passagem. Avance quando concluir.',
   's-mod2-video5':
     'Vídeo. Bloqueio de Áreas Críticas e Estacionamento Preventivo. Aptidão Psicofísica, Saúde e Regras de Acesso. Assista ao vídeo sobre bloqueio de áreas críticas e estacionamento preventivo. Avance quando concluir.',
   's-mod2-motoristas':
     'Regras para Motoristas e Manobristas. Os motoristas e manobristas devem conduzir seus veículos de forma a proteger o pedestre. Velocidade máxima de 20 quilômetros por hora dentro da unidade. Pisca-alerta e faróis sempre ligados na circulação interna. Cinto obrigatório e somente condutor habilitado. Na faixa de pedestre, pare, olhe os dois lados e dê preferência ao pedestre, com contato visual. Proibido usar ou manusear celular ao dirigir. Nunca bloqueie áreas críticas: não pare sobre faixas, rampas ou em frente a equipamentos de emergência. Carga e descarga somente nas docas, em áreas sinalizadas. Na Red Zone, nunca pessoa e empilhadeira ao mesmo tempo. Parada segura do caminhão: desligado, freio estacionário acionado e trava-rodas. Se precisar descer, use a rota segura pela frente da doca e pelas faixas de pedestres.',
+  's-mod3':
+    'Início do Módulo 3. Normas de Trânsito Interno e Circulação.',
+  's-mod3-video':
+    'Vídeo. Velocidade Máxima e Consciência Situacional. Normas de Trânsito Interno e Circulação. Assista ao vídeo sobre velocidade máxima e consciência situacional. Avance quando concluir.',
+  's-mod3-video2':
+    'Vídeo. Sinalização Luminosa e Visibilidade Ativa. Normas de Trânsito Interno e Circulação. Assista ao vídeo sobre sinalização luminosa e visibilidade ativa. Avance quando concluir.',
+  's-mod3-video3':
+    'Vídeo. Cinto de Segurança e Ergonomia na Cabine. Normas de Trânsito Interno e Circulação. Assista ao vídeo sobre o cinto de segurança e a ergonomia na cabine. Avance quando concluir.',
+  's-mod3-driver-rules':
+    'Regras de Trânsito Interno. Os motoristas e manobristas devem conduzir seus veículos de forma a proteger o pedestre. Velocidade máxima de vinte quilômetros por hora dentro da unidade. Pisca-alerta e faróis sempre ligados na circulação interna. Cinto obrigatório e somente condutor habilitado. Na faixa de pedestre, pare, olhe os dois lados e dê preferência ao pedestre, com contato visual. Proibido usar ou manusear celular ao dirigir. Nunca bloqueie áreas críticas: não pare sobre faixas, rampas ou em frente a equipamentos de emergência. Carga e descarga somente nas docas, em áreas sinalizadas. Na Red Zone, nunca pessoa e empilhadeira ao mesmo tempo. Parada segura do caminhão: desligado, freio estacionário acionado e trava-rodas. Se precisar descer, use a rota segura pela frente da doca e pelas faixas de pedestres.',
+  's-mod3-video4':
+    'Vídeo. Curvas, Cruzamentos e Sinalização Sonora. Normas de Trânsito Interno e Circulação. Assista ao vídeo sobre curvas, cruzamentos e sinalização sonora. Avance quando concluir.',
+  's-mod3-video5':
+    'Vídeo. Subida, Descida e Estacionamento Preventivo. Normas de Trânsito Interno e Circulação. Assista ao vídeo sobre subida, descida e estacionamento preventivo. Avance quando concluir.',
+  's-mod3-video6':
+    'Vídeo. Transporte de Cargas e Estabilidade Operacional. Normas de Trânsito Interno e Circulação. Assista ao vídeo sobre transporte de cargas e estabilidade operacional. Avance quando concluir.',
+  's-mod3-visibilidade':
+    'Espelhos, Ré e Velocidade Máxima. Pessoas e operadores de empilhadeira, olhe sempre nos espelhos. Respeite a velocidade máxima: veículos, vinte quilômetros por hora; empilhadeiras, dez quilômetros por hora. Sempre que a empilhadeira estiver com materiais, o operador deve andar em ré.',
+  's-mod3-game': null, // montado a partir do deck do jogo Módulo 3
+  's-mod4':
+    'Início do Módulo 4. Interação Máquina e Pedestre, Red Zone e Pontos Cegos.',
+  's-mod4-video2':
+    'Vídeo. A Regra de Ouro da Red Zone. Interação Máquina e Pedestre, Red Zone e Pontos Cegos. Assista ao vídeo sobre a regra de ouro da Red Zone. Avance quando concluir.',
+  's-mod4-redzone':
+    'Entendendo a Red Zone. As Red Zones, ou Zonas Vermelhas, são as áreas entre docas, destinadas ao acesso lateral para colocar ou retirar produtos. Esta regra é inegociável: na Red Zone nunca pode haver uma pessoa dentro da área ao mesmo tempo que uma empilhadeira em operação, seja entrando, manobrando, carregando ou saindo. O acesso à Red Zone é permitido apenas para o conferente, o motorista, para abrir e fechar a lona, e os amarradores.',
+  's-mod4-video5':
+    'Vídeo. Interação em Cruzamentos e Pontos Cegos. Interação Máquina e Pedestre, Red Zone e Pontos Cegos. Assista ao vídeo sobre interação em cruzamentos e pontos cegos. Avance quando concluir.',
+  's-mod4-pontoscegos':
+    'Proteja-se dos Pontos Cegos. Ponto cego é a área onde o operador pode não te ver. Pontos cegos da máquina: um, coluna traseira esquerda do protetor superior. Dois, estrutura superior, o teto de proteção, e coluna central. Três, parte superior do mastro e estrutura frontal. Quatro, região atrás do mastro e do porta-garfos. Cinco, coluna dianteira direita do protetor superior. Seis, coluna traseira direita do protetor superior, no lado do operador.',
+  's-mod4-game': null, // montado a partir do deck do jogo Módulo 4
+  's-mod5':
+    'Início do Módulo 5. Operações de Alta Complexidade, Ressuprimento de Picking e Docas.',
   's-mod5-picking':
     'Abastecimento do Picking. O processo de ressuprir, ou abastecer, o picking parece simples, mas se não for executado seguindo as regras, pode causar graves acidentes. Pessoas são prensadas entre paletes no momento do ressuprimento. Isto ocorre porque a visão do operador é obstruída por paletes, principalmente quando as pessoas estão abaixadas. No corredor de abastecimento, o operador avança com a empilhadeira em direção à célula de picking, onde pode haver um trabalhador abaixado e fora do campo de visão.',
   's-mod5-video-picking':
     'Vídeo. Protocolo de Aproximação Segura no Picking. Operações de Alta Complexidade, Ressuprimento de Picking e Docas. Assista ao vídeo sobre o protocolo de aproximação segura no picking. Avance quando concluir.',
   's-mod5-aproximacao':
-    'A Regra Inicial de Ouro. Nunca se aproxime de uma empilhadeira em movimento. Mantenha-se à distância segura de 4 metros e faça contato visual com o condutor para chamar sua atenção. Os 3 passos para a aproximação segura: o pedestre só pode se aproximar e iniciar a conversa após o operador realizar rigorosamente estes três passos. Passo 1: parada total do equipamento. A empilhadeira deve estar completamente estática. Passo 2: descida completa do garfo até o solo. Os garfos devem ser baixados e deitados planos contra o chão. Passo 3: desligamento do motor e retirada da chave. O motor deve ser desligado e a chave de ignição removida pelo operador.',
+    'A Regra Inicial de Ouro. Nunca se aproxime de uma empilhadeira em movimento. Mantenha-se à distância segura de quatro metros e faça contato visual com o condutor para chamar sua atenção. O pedestre só pode se aproximar e iniciar a conversa após o operador realizar rigorosamente estes três passos. Passo 1: parada total do equipamento. A empilhadeira deve estar completamente estática. Passo 2: descida completa do garfo até o solo. Os garfos devem ser baixados e deitados planos contra o chão. Passo 3: desligamento do motor e retirada da chave. O motor deve ser desligado e a chave de ignição removida pelo operador.',
   's-mod5-doca':
-    'Protocolo crítico na doca. Durante todo o processo de carregamento ou descarregamento na doca, um protocolo crítico deve ser seguido. As chaves do caminhão nunca devem permanecer na ignição ou sob a posse do motorista. Elas devem ser recolhidas e mantidas sob a guarda da equipe de expedição para evitar que o veículo saia antes da hora. O motorista externo deve aguardar o fim da operação permanecendo de forma contínua dentro da área segura demarcada e protegida para pedestres. Ele é expressamente proibido de caminhar pela Red Zone ou pela baia operacional enquanto as empilhadeiras realizam as manobras de carga. Organização gera segurança.',
+    'Chaves, Motorista e Área Segura. Durante todo o processo de carregamento ou descarregamento na doca, um protocolo crítico deve ser seguido para que o veículo não saia antes da hora e ninguém entre na área de manobra. As chaves do caminhão nunca devem permanecer na ignição ou sob a posse do motorista. Elas devem ser recolhidas e mantidas sob a guarda da equipe de expedição. O motorista externo deve aguardar o fim da operação permanecendo de forma contínua dentro da área segura demarcada e protegida para pedestres. Ele é expressamente proibido de caminhar pela Red Zone ou pela baia operacional enquanto as empilhadeiras realizam as manobras de carga. Organização gera segurança.',
   's-mod5-video-garfos':
     'Vídeo. Riscos de Garfos Elevados e Movimentações Práticas. Operações de Alta Complexidade, Ressuprimento de Picking e Docas. Assista ao vídeo sobre os riscos de dirigir com garfos elevados e as movimentações práticas. Avance quando concluir.',
+  's-mod5-game': null, // montado a partir do deck do jogo Módulo 5
   's-mod6':
     'Início do Módulo 6. Abastecimento (Pit Stop), Zoneamento de Risco e Comportamento.',
   's-mod6-video':
@@ -77,6 +113,7 @@ const NARRATION_OVERRIDES = {
     'Vídeo. Comportamento e a Tolerância Zero a Brincadeiras. Abastecimento (Pit Stop), Zoneamento de Risco e Comportamento. Assista ao vídeo sobre comportamento e a tolerância zero a brincadeiras. Avance quando concluir.',
   's-mod6-video6':
     'Vídeo. Compromisso Coletivo e Encerramento. Abastecimento (Pit Stop), Zoneamento de Risco e Comportamento. Assista ao vídeo de compromisso coletivo e encerramento. Avance quando concluir.',
+  's-mod6-game': null, // montado a partir do deck do jogo Módulo 6
   's-mod7':
     'Início do Módulo 7. NR 12 — Segurança no Trabalho em Máquinas e Equipamentos.',
   's-mod7-video':
@@ -93,6 +130,7 @@ const NARRATION_OVERRIDES = {
     'Sistemas de proteção e regras de proteção física. Dispositivos obrigatórios: seus escudos contra acidentes. Nunca neutralize, altere ou opere com qualquer dispositivo de segurança desligado ou danificado. Verifique diariamente: a grade de proteção superior, que resguarda a cabeça em caso de queda de objetos; o botão de desligamento de emergência, que trava a energia, a tração e a hidráulica; e a buzina, o giroflex e o alarme de ré, que avisam pedestres em áreas ruidosas. Duas regras de ouro: o cinto de segurança é obrigatório em todos os deslocamentos — em um tombamento, evita que o operador seja arremessado e esmagado pelo chassi. E o corpo deve permanecer sempre dentro do perímetro da cabine: nunca apoie o corpo na coluna de elevação nem coloque membros para fora com o veículo em movimento.',
   's-mod7-video5':
     'Vídeo. Condutas Proibidas e Boas Práticas. NR 12 — Segurança no Trabalho em Máquinas e Equipamentos. Assista ao vídeo sobre condutas proibidas e boas práticas. Avance quando concluir.',
+  's-mod7-game': null, // montado a partir do deck do jogo Módulo 7
   's-fim':
     'Parabéns. Você concluiu o treinamento NR 11 — Operador de Empilhadeira, com conteúdo complementar da NR 12. Por mérito, dedicação e compromisso com a segurança, você percorreu os sete módulos e demonstrou responsabilidade com a sua vida e com a vida dos seus colegas. A segurança é um direito de todos e um dever de cada um. Continue fazendo a sua parte.',
 };
@@ -172,11 +210,11 @@ function parseQm2Questions(html) {
 
 function buildMod1Narration(deck) {
   if (!deck.length) {
-    return 'Quiz NR-11 — Módulo 1. Legislação e Requisitos. Responda a três perguntas rápidas sobre os conceitos legais do módulo e valide seu aprendizado.';
+    return 'Quiz NR-11 — Módulo 1. Introdução à NR 11, Responsabilidades e Aspectos Legais. Responda a três perguntas rápidas sobre os conceitos do módulo e valide seu aprendizado.';
   }
 
   const parts = [
-    'Quiz NR-11 — Módulo 1. Legislação e Requisitos. Responda a três perguntas rápidas sobre os conceitos legais do módulo e valide seu aprendizado.',
+    'Quiz NR-11 — Módulo 1. Introdução à NR 11, Responsabilidades e Aspectos Legais. Responda a três perguntas rápidas sobre os conceitos do módulo e valide seu aprendizado.',
   ];
 
   deck.forEach((item, index) => {
@@ -203,11 +241,11 @@ function parseMod2tfDeck(html) {
 
 function buildMod2tfNarration(deck) {
   if (!deck.length) {
-    return 'Desafio Módulo 2 — Verdadeiro ou Falso. Responda seis afirmações sobre o equipamento e valide o que você aprendeu no módulo.';
+    return 'Desafio Módulo 2 — Verdadeiro ou Falso. Aptidão Psicofísica, Saúde e Regras de Acesso. Responda seis afirmações sobre saúde na operação, controle de acesso, distrações e regras de circulação.';
   }
 
   const parts = [
-    'Desafio Módulo 2 — Verdadeiro ou Falso. Responda seis afirmações sobre o equipamento e valide o que você aprendeu no módulo.',
+    'Desafio Módulo 2 — Verdadeiro ou Falso. Aptidão Psicofísica, Saúde e Regras de Acesso. Responda seis afirmações sobre saúde na operação, controle de acesso, distrações e regras de circulação.',
   ];
 
   deck.forEach((item, index) => {
@@ -265,12 +303,12 @@ function parseM3gDeck(html) {
 
 function buildM3gNarration(deck) {
   if (!deck.length) {
-    return 'Desafio Módulo 3 — Missão do Operador. Leia cinco situações reais de operação e escolha a atitude correta.';
+    return 'Quiz NR-11 — Módulo 3. Você vai ler cinco situações reais de operação e escolher a atitude correta. Coloque em prática o que aprendeu sobre velocidade, sinalização, cinto de segurança, cruzamentos e embarque e desembarque.';
   }
 
   const letters = ['A', 'B', 'C'];
   const parts = [
-    'Desafio Módulo 3 — Missão do Operador. Leia cinco situações reais de operação e escolha a atitude correta.',
+    'Quiz NR-11 — Módulo 3. Você vai ler cinco situações reais de operação e escolher a atitude correta. Coloque em prática o que aprendeu sobre velocidade, sinalização, cinto de segurança, cruzamentos e embarque e desembarque.',
   ];
 
   deck.forEach((item, index) => {
@@ -297,11 +335,11 @@ function parseM4gDeck(html) {
 
 function buildM4gNarration(deck) {
   if (!deck.length) {
-    return 'Desafio Módulo 4 — Turno Relâmpago. Responda Certo ou Errado para cinco afirmações sobre estabilidade de carga, paletes, tipos de carga e armazenamento.';
+    return 'Quiz NR-11 — Módulo 4. Cinco afirmações rápidas sobre distância de segurança e a regra de ouro da Red Zone. Responda Certo ou Errado em cada uma.';
   }
 
   const parts = [
-    'Desafio Módulo 4 — Turno Relâmpago. Responda Certo ou Errado para cinco afirmações sobre estabilidade de carga, paletes, tipos de carga e armazenamento.',
+    'Quiz NR-11 — Módulo 4. Cinco afirmações rápidas sobre distância de segurança e a regra de ouro da Red Zone. Responda Certo ou Errado em cada uma.',
   ];
 
   deck.forEach((item, index) => {
@@ -325,12 +363,12 @@ function parseM5gDeck(html) {
 
 function buildM5gNarration(deck) {
   if (!deck.length) {
-    return 'Desafio Módulo 5 — Picking, Docas e Protocolos. Leia cinco situações reais e escolha a atitude correta.';
+    return 'Quiz NR-11 — Módulo 5. Você vai responder cinco situações sobre picking, aproximação segura, conversa com o operador, docas e garfos elevados. Escolha a atitude correta.';
   }
 
   const letters = ['A', 'B', 'C'];
   const parts = [
-    'Desafio Módulo 5 — Picking, Docas e Protocolos. Leia cinco situações reais e escolha a atitude correta.',
+    'Quiz NR-11 — Módulo 5. Você vai responder cinco situações sobre picking, aproximação segura, conversa com o operador, docas e garfos elevados. Escolha a atitude correta.',
   ];
 
   deck.forEach((item, index) => {
@@ -357,11 +395,11 @@ function parseM6gDeck(html) {
 
 function buildM6gNarration(deck) {
   if (!deck.length) {
-    return 'Missão Pit Stop, Módulo 6. Três etapas práticas: acesso ao Pit Stop, proibições e ordem da manobra.';
+    return 'Missão Pit Stop — Módulo 6. São três etapas práticas: acesso ao Pit Stop, proibições e ordem da manobra.';
   }
 
   const parts = [
-    'Missão Pit Stop, Módulo 6. Três etapas práticas: acesso ao Pit Stop, proibições e ordem da manobra.',
+    'Missão Pit Stop — Módulo 6. São três etapas práticas: acesso ao Pit Stop, proibições e ordem da manobra.',
   ];
 
   deck.forEach((item, index) => {
@@ -400,11 +438,11 @@ function parseM7gDeck(html) {
 
 function buildM7gNarration(deck) {
   if (!deck.length) {
-    return 'Missão NR 12, Módulo 7. Cinco perguntas simples sobre a norma, os deveres do operador, os riscos, os dispositivos e as condutas.';
+    return 'Missão NR 12 — Módulo 7. São cinco perguntas simples sobre a NR 12. Toque na resposta certa e valide o módulo.';
   }
 
   const parts = [
-    'Missão NR 12, Módulo 7. Cinco perguntas simples sobre a norma, os deveres do operador, os riscos, os dispositivos e as condutas.',
+    'Missão NR 12 — Módulo 7. São cinco perguntas simples sobre a NR 12. Toque na resposta certa e valide o módulo.',
   ];
 
   deck.forEach((item, index) => {
@@ -429,6 +467,8 @@ function buildM7gNarration(deck) {
 
   return parts.join(' ');
 }
+
+function parseQm4Questions(html) {
   const match = html.match(/const\s+qm4_data\s*=\s*(\[[\s\S]*?\n\s*\]);/);
   if (!match) return [];
   try {
