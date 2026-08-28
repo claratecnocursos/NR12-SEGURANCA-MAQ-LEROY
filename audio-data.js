@@ -18,7 +18,7 @@ const MANIFEST_PATH = path.join(OUTPUT_DIR, 'manifest.json');
 /** Textos customizados para slides com pouco conteúdo textual ou conteúdo dinâmico. */
 const NARRATION_OVERRIDES = {
   s1:
-    'Módulo de Treinamento. Segurança do Trabalho. NR 12. Treinamento de capacitação e reciclagem em movimentação, armazenagem e manuseio de materiais com empilhadeira conforme NR-11. São seis módulos, conteúdo completo, cento por cento online.',
+    'Módulo de Treinamento. Segurança do Trabalho. NR 12 - Segurança na Operação de Máquinas. Treinamento de capacitação e reciclagem em segurança na operação de máquinas conforme a NR 12. São seis módulos, conteúdo completo, cento por cento online.',
   s2:
     'Apresentação. Bem-vindo ao Treinamento. NR 12. Assista ao vídeo de introdução à NR 11 e o nosso objetivo. Avance quando concluir.',
   s6:
@@ -26,17 +26,13 @@ const NARRATION_OVERRIDES = {
   's-mod1':
     'Início do Módulo 1. Contexto Legal, Introdução e Fluxos do Sistema Automatizado.',
   s2b:
-    'Vídeo. A Norma NR 11 e os Equipamentos Motorizados. Contexto Legal, Introdução e Fluxos do Sistema Automatizado. Assista ao vídeo sobre a NR 11 e os equipamentos motorizados. Avance quando concluir.',
+    'Vídeo. Responsabilidades Compartilhadas: A Empresa e Você. Contexto Legal, Introdução e Fluxos do Sistema Automatizado. Assista ao vídeo sobre as responsabilidades compartilhadas entre a empresa e você. Avance quando concluir.',
   s2b2:
-    'Vídeo. Qualificação e o Cartão de Identificação. Contexto Legal, Introdução e Fluxos do Sistema Automatizado. Assista ao vídeo sobre a qualificação do operador e o cartão de identificação. Avance quando concluir.',
+    'Vídeo. Introdução ao Sistema Automatizado de Cajamar. Contexto Legal, Introdução e Fluxos do Sistema Automatizado. Assista ao vídeo de introdução ao sistema automatizado de Cajamar. Avance quando concluir.',
   s2b3:
-    'O Cartão de Identificação. Após comprovar aptidão em avaliações médicas frequentes, o operador recebe um cartão com nome, foto e tipo sanguíneo, que deve ficar visível durante todo o expediente. A validade é de apenas um ano, exigindo novo exame para renovar. Sem o cartão válido e visível, a operação fica suspensa.',
-  s2c:
-    'Vídeo. Responsabilidades do Operador e o Direito de Recusa. Contexto Legal, Introdução e Fluxos do Sistema Automatizado. Assista ao vídeo sobre as responsabilidades do operador e o direito de recusa. Avance quando concluir.',
-  s2c2:
-    'Responsabilidade Civil e Criminal. Ninguém se escusa de cumprir a lei, alegando que não a conhece. Artigo 132 do Código Penal: expor a vida ou a saúde de outrem. Pena de três meses a um ano de detenção. A pena aumenta em um terço se o crime resultar de inobservância de regra técnica de profissão, ou se o operador deixar de prestar socorro, ou fugir para evitar prisão em flagrante. Artigo 129: lesão corporal. Detenção de dois meses a um ano, com o mesmo aumento de um terço pela inobservância de regra técnica.',
+    'Vídeo. A Rota do Pallet: Entrada, Saída e Picking. Contexto Legal, Introdução e Fluxos do Sistema Automatizado. Assista ao vídeo sobre a rota do pallet: entrada, saída e picking. Avance quando concluir.',
   s2d:
-    'Sanções Penais, Trabalhistas e Civis. Homicídio culposo: morte do acidentado sem intenção. Detenção de um a três anos, com aumento de um terço se resultar de inobservância de regra técnica de profissão. Homicídio doloso: morte com intenção. Reclusão de seis a vinte anos, também com aumento de um terço nas mesmas hipóteses, inclusive deixar de prestar socorro ou fugir. Na CLT, artigo 482: o ato faltoso permite advertência oral ou escrita e, por reincidência, demissão por justa causa. No Código Civil, artigo 159: quem, por ação ou omissão voluntária, negligência ou imprudência, causar prejuízo a outrem, fica obrigado a reparar os danos.',
+    'Dimensionamento e Capacidade Operacional. Este sistema automatizado suporta a alta demanda do CD Cajamar. O equipamento foi projetado sob medida e todos os fluxos foram dimensionados prevendo a pior condição de consolidação de dados da Leroy Merlin, operando de forma simultânea. São seis transelevadores para armazenagem automática de paletes, seis baias operacionais de picking mais uma baia dedicada a avarias, e dois carros duplos responsáveis pelos fluxos de entrada e saída. O fluxo de entrada suporta de 29 a 128 paletes por hora. O fluxo de saída varia de 5 a 132 paletes por hora, o que garante alta flexibilidade para atender qualquer pico de expedição com total segurança.',
   s2e: null, // montado a partir do deck do jogo Módulo 1
   's-mod2':
     'Início do Módulo 2. Padrões Técnicos de Cargas e Triagem Visual de Pallets.',
@@ -193,11 +189,11 @@ function parseQm2Questions(html) {
 
 function buildMod1Narration(deck) {
   if (!deck.length) {
-    return 'Quiz NR-11 — Módulo 1. Contexto Legal, Introdução e Fluxos do Sistema Automatizado. Responda a três perguntas rápidas sobre os conceitos do módulo e valide seu aprendizado.';
+    return 'Quiz NR 12 — Módulo 1. Contexto Legal, Introdução e Fluxos do Sistema Automatizado. Responda a quatro perguntas rápidas sobre os conceitos do módulo e valide seu aprendizado.';
   }
 
   const parts = [
-    'Quiz NR-11 — Módulo 1. Contexto Legal, Introdução e Fluxos do Sistema Automatizado. Responda a três perguntas rápidas sobre os conceitos do módulo e valide seu aprendizado.',
+    'Quiz NR 12 — Módulo 1. Contexto Legal, Introdução e Fluxos do Sistema Automatizado. Responda a quatro perguntas rápidas sobre os conceitos do módulo e valide seu aprendizado.',
   ];
 
   deck.forEach((item, index) => {

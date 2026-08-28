@@ -7,7 +7,7 @@
  * token Bearer e então chama POST /api/tts.
  *
  * Uso:
- *   node generate-audios-proxy.js s2b s2b2 s2b3 s2c s2d s2e
+ *   node generate-audios-proxy.js s2b s2b2 s2d s2e
  *   node generate-audios-proxy.js --slide=s2b
  */
 

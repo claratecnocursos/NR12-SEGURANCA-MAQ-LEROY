@@ -7,9 +7,9 @@ window.__AUDIO_NARRATION__ = {
                    {
                        "index":  0,
                        "id":  "s1",
-                       "title":  "NR 12",
+                       "title":  "NR 12 - SEGURANÇA NA OPERAÇÃO DE MÁQUINAS",
                        "file":  "audios/s1.mp3",
-                       "text":  "Módulo de Treinamento. Segurança do Trabalho. NR 12. Treinamento de capacitação e reciclagem em movimentação, armazenagem e manuseio de materiais com empilhadeira conforme NR-11. São seis módulos, conteúdo completo, cento por cento online.",
+                       "text":  "Módulo de Treinamento. Segurança do Trabalho. NR 12 - Segurança na Operação de Máquinas. Treinamento de capacitação e reciclagem em segurança na operação de máquinas conforme a NR 12. São seis módulos, conteúdo completo, cento por cento online.",
                        "audioReady":  true
                    },
                    {
@@ -39,58 +39,42 @@ window.__AUDIO_NARRATION__ = {
                    {
                        "index":  4,
                        "id":  "s2b",
-                       "title":  "A Norma NR 11 e os Equipamentos Motorizados",
+                       "title":  "Responsabilidades Compartilhadas: A Empresa e Você",
                        "file":  "audios/s2b.mp3",
-                       "text":  "Vídeo. A Norma NR 11 e os Equipamentos Motorizados. Contexto Legal, Introdução e Fluxos do Sistema Automatizado. Assista ao vídeo sobre a NR 11 e os equipamentos motorizados. Avance quando concluir.",
+                       "text":  "Vídeo. Responsabilidades Compartilhadas: A Empresa e Você. Contexto Legal, Introdução e Fluxos do Sistema Automatizado. Assista ao vídeo sobre as responsabilidades compartilhadas entre a empresa e você. Avance quando concluir.",
                        "audioReady":  true
                    },
                    {
                        "index":  5,
                        "id":  "s2b2",
-                       "title":  "Qualificação e o Cartão de Identificação",
+                       "title":  "Introdução ao Sistema Automatizado de Cajamar",
                        "file":  "audios/s2b2.mp3",
-                       "text":  "Vídeo. Qualificação e o Cartão de Identificação. Contexto Legal, Introdução e Fluxos do Sistema Automatizado. Assista ao vídeo sobre a qualificação do operador e o cartão de identificação. Avance quando concluir.",
+                       "text":  "Vídeo. Introdução ao Sistema Automatizado de Cajamar. Contexto Legal, Introdução e Fluxos do Sistema Automatizado. Assista ao vídeo de introdução ao sistema automatizado de Cajamar. Avance quando concluir.",
                        "audioReady":  true
                    },
                    {
                        "index":  6,
                        "id":  "s2b3",
-                       "title":  "O Cartão de Identificação",
+                       "title":  "A Rota do Pallet: Entrada, Saída e Picking",
                        "file":  "audios/s2b3.mp3",
-                       "text":  "O Cartão de Identificação. Após comprovar aptidão em avaliações médicas frequentes, o operador recebe um cartão com nome, foto e tipo sanguíneo, que deve ficar visível durante todo o expediente. A validade é de apenas um ano, exigindo novo exame para renovar. Sem o cartão válido e visível, a operação fica suspensa.",
-                       "audioReady":  true
+                       "text":  "Vídeo. A Rota do Pallet: Entrada, Saída e Picking. Contexto Legal, Introdução e Fluxos do Sistema Automatizado. Assista ao vídeo sobre a rota do pallet: entrada, saída e picking. Avance quando concluir.",
+                       "audioReady":  false
                    },
                    {
                        "index":  7,
-                       "id":  "s2c",
-                       "title":  "Responsabilidades do Operador e o Direito de Recusa",
-                       "file":  "audios/s2c.mp3",
-                       "text":  "Vídeo. Responsabilidades do Operador e o Direito de Recusa. Contexto Legal, Introdução e Fluxos do Sistema Automatizado. Assista ao vídeo sobre as responsabilidades do operador e o direito de recusa. Avance quando concluir.",
-                       "audioReady":  true
-                   },
-                   {
-                       "index":  8,
-                       "id":  "s2c2",
-                       "title":  "Responsabilidade Civil e Criminal",
-                       "file":  "audios/s2c2.mp3",
-                       "text":  "Responsabilidade Civil e Criminal. Ninguém se escusa de cumprir a lei, alegando que não a conhece. Artigo 132 do Código Penal: expor a vida ou a saúde de outrem. Pena de três meses a um ano de detenção. A pena aumenta em um terço se o crime resultar de inobservância de regra técnica de profissão, ou se o operador deixar de prestar socorro, ou fugir para evitar prisão em flagrante. Artigo 129: lesão corporal. Detenção de dois meses a um ano, com o mesmo aumento de um terço pela inobservância de regra técnica.",
-                       "audioReady":  true
-                   },
-                   {
-                       "index":  9,
                        "id":  "s2d",
-                       "title":  "Sanções Penais, Trabalhistas e Civis",
+                       "title":  "Dimensionamento e Capacidade Operacional",
                        "file":  "audios/s2d.mp3",
-                       "text":  "Sanções Penais, Trabalhistas e Civis. Homicídio culposo: morte do acidentado sem intenção. Detenção de um a três anos, com aumento de um terço se resultar de inobservância de regra técnica de profissão. Homicídio doloso: morte com intenção. Reclusão de seis a vinte anos, também com aumento de um terço nas mesmas hipóteses, inclusive deixar de prestar socorro ou fugir. Na CLT, artigo 482: o ato faltoso permite advertência oral ou escrita e, por reincidência, demissão por justa causa. No Código Civil, artigo 159: quem, por ação ou omissão voluntária, negligência ou imprudência, causar prejuízo a outrem, fica obrigado a reparar os danos.",
-                       "audioReady":  true
+                       "text":  "Dimensionamento e Capacidade Operacional. Este sistema automatizado suporta a alta demanda do CD Cajamar. O equipamento foi projetado sob medida e todos os fluxos foram dimensionados prevendo a pior condição de consolidação de dados da Leroy Merlin, operando de forma simultânea. São seis transelevadores para armazenagem automática de paletes, seis baias operacionais de picking mais uma baia dedicada a avarias, e dois carros duplos responsáveis pelos fluxos de entrada e saída. O fluxo de entrada suporta de 29 a 128 paletes por hora. O fluxo de saída varia de 5 a 132 paletes por hora, o que garante alta flexibilidade para atender qualquer pico de expedição com total segurança.",
+                       "audioReady":  false
                    },
                    {
                        "index":  10,
                        "id":  "s2e",
-                       "title":  "Quiz — Módulo 1",
+                       "title":  "Quiz NR 12 — Módulo 1",
                        "file":  "audios/s2e.mp3",
-                       "text":  "Quiz NR-11 — Módulo 1. Contexto Legal, Introdução e Fluxos do Sistema Automatizado. Responda a três perguntas rápidas sobre os conceitos do módulo e valide seu aprendizado. Pergunta 1: De acordo com a NR 11, o que deve ser indicado de forma visível em todo equipamento de transporte de materiais? Alternativa A: A data do próximo exame médico obrigatório do operador. Alternativa B: A carga máxima de trabalho permitida (limite que nunca deve ser ultrapassado). Alternativa C: O nome completo do fabricante e a cor da máquina. Resposta correta: alternativa B. Muito bem! Por lei, é obrigatório indicar a carga máxima de trabalho em local visível, e este limite nunca deve ser ultrapassado. Pergunta 2: Qual é o prazo de validade da autorização e quem é o responsável por acompanhar esse vencimento? Alternativa A: A validade é vitalícia e não necessita de exames ou acompanhamento. Alternativa B: A validade é de 1 ano, sendo o próprio operador o responsável por monitorar a data e avisar a chefia. Alternativa C: A validade é de 3 anos, cabendo exclusivamente ao RH da empresa monitorar. Resposta correta: alternativa B. Excepcional! O cartão é válido por exatamente 1 ano. O operador deve ser proativo e avisar a chefia quando estiver perto do vencimento. Pergunta 3: Qual é o principal objetivo deste treinamento de segurança para operação de empilhadeiras? Alternativa A: Aumentar a velocidade de carregamento dos caminhões na planta. Alternativa B: Capacitar o operador para usar o equipamento com segurança, cumprindo a NR 11 e evitando acidentes. Alternativa C: Reduzir o número de operadores necessários na operação. Resposta correta: alternativa B. Exatamente! O objetivo central é capacitar para uma operação segura e eficiente, cumprindo a NR 11 e preservando vidas.",
-                       "audioReady":  true
+                       "text":  "Quiz NR 12 — Módulo 1. Contexto Legal, Introdução e Fluxos do Sistema Automatizado. Responda a quatro perguntas rápidas sobre responsabilidades compartilhadas, o sistema de Cajamar, a rota do palete e as capacidades nominais.",
+                       "audioReady":  false
                    },
                    {
                        "index":  11,
