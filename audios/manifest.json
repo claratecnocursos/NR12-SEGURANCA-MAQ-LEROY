@@ -71,12 +71,10 @@
                    {
                        "index":  10,
                        "id":  "s2e",
-                       "title":  "Quiz — Módulo 1",
+                       "title":  "Quiz NR 12 — Módulo 1",
                        "file":  "audios/s2e.mp3",
                        "text":  "Quiz NR 12 — Módulo 1. Contexto Legal, Introdução e Fluxos do Sistema Automatizado. Responda a quatro perguntas rápidas sobre responsabilidades compartilhadas, o sistema de Cajamar, a rota do palete e as capacidades nominais.",
                        "audioReady":  false
-                       "text":  "Quiz NR-11 — Módulo 1. Contexto Legal, Introdução e Fluxos do Sistema Automatizado. Responda a três perguntas rápidas sobre os conceitos do módulo e valide seu aprendizado. Pergunta 1: De acordo com a NR 11, o que deve ser indicado de forma visível em todo equipamento de transporte de materiais? Alternativa A: A data do próximo exame médico obrigatório do operador. Alternativa B: A carga máxima de trabalho permitida (limite que nunca deve ser ultrapassado). Alternativa C: O nome completo do fabricante e a cor da máquina. Resposta correta: alternativa B. Muito bem! Por lei, é obrigatório indicar a carga máxima de trabalho em local visível, e este limite nunca deve ser ultrapassado. Pergunta 2: Qual é o prazo de validade da autorização e quem é o responsável por acompanhar esse vencimento? Alternativa A: A validade é vitalícia e não necessita de exames ou acompanhamento. Alternativa B: A validade é de 1 ano, sendo o próprio operador o responsável por monitorar a data e avisar a chefia. Alternativa C: A validade é de 3 anos, cabendo exclusivamente ao RH da empresa monitorar. Resposta correta: alternativa B. Excepcional! O cartão é válido por exatamente 1 ano. O operador deve ser proativo e avisar a chefia quando estiver perto do vencimento. Pergunta 3: Qual é o principal objetivo deste treinamento de segurança para operação de empilhadeiras? Alternativa A: Aumentar a velocidade de carregamento dos caminhões na planta. Alternativa B: Capacitar o operador para usar o equipamento com segurança, cumprindo a NR 11 e evitando acidentes. Alternativa C: Reduzir o número de operadores necessários na operação. Resposta correta: alternativa B. Exatamente! O objetivo central é capacitar para uma operação segura e eficiente, cumprindo a NR 11 e preservando vidas.",
-                       "audioReady":  true
                    },
                    {
                        "index":  11,
@@ -89,61 +87,53 @@
                    {
                        "index":  12,
                        "id":  "s-mod2-video",
-                       "title":  "Saúde Física e Mental na Operação",
+                       "title":  "Limites de Carga",
                        "file":  "audios/s-mod2-video.mp3",
-                       "text":  "Vídeo. Saúde Física e Mental na Operação. Padrões Técnicos de Cargas e Triagem Visual de Pallets. Assista ao vídeo sobre saúde física e mental na operação. Avance quando concluir.",
+                       "text":  "Vídeo. Limites de Carga. Padrões Técnicos de Cargas e Triagem Visual de Pallets. Assista ao vídeo sobre limites de carga. Avance quando concluir.",
                        "audioReady":  true
+                   },
+                   {
+                       "index":  12,
+                       "id":  "s-mod2-pallets",
+                       "title":  "Tipos de Pallet",
+                       "file":  "audios/s-mod2-pallets.mp3",
+                       "text":  "Tipos de Pallet. O Pallet Escravo tem peso próprio de 50 quilos. O OneWay tipo A suporta até 1.950 quilos e é mais robusto, com tábuas de topo mais grossas e largas. O OneWay tipo B suporta até 950 quilos, com estrutura simplificada para cargas leves. Na simulação, o palete A é para alta resistência, cerca de 1.500 quilos, e o palete B para cargas leves, cerca de 500 quilos, em que o volume importa mais que o peso.",
+                       "audioReady":  false
                    },
                    {
                        "index":  13,
                        "id":  "s-mod2-video2",
-                       "title":  "Controle de Acesso e Integração de Segurança",
+                       "title":  "Pallet PBR: O Modelo de Automação",
                        "file":  "audios/s-mod2-video2.mp3",
-                       "text":  "Vídeo. Controle de Acesso e Integração de Segurança. Padrões Técnicos de Cargas e Triagem Visual de Pallets. Assista ao vídeo sobre controle de acesso e integração de segurança. Avance quando concluir.",
+                       "text":  "Vídeo. Pallet PBR: O Modelo de Automação. Padrões Técnicos de Cargas e Triagem Visual de Pallets. Assista ao vídeo sobre o pallet PBR, o modelo de automação. Avance quando concluir.",
                        "audioReady":  true
                    },
                    {
                        "index":  14,
-                       "id":  "s-mod2-motoristas",
-                       "title":  "Regras para Motoristas e Manobristas",
-                       "file":  "audios/s-mod2-motoristas.mp3",
-                       "text":  "Regras para Motoristas e Manobristas. Os motoristas e manobristas devem conduzir seus veículos de forma a proteger o pedestre. Velocidade máxima de 20 quilômetros por hora dentro da unidade. Pisca-alerta e faróis sempre ligados na circulação interna. Cinto obrigatório e somente condutor habilitado. Na faixa de pedestre, pare, olhe os dois lados e dê preferência ao pedestre, com contato visual. Proibido usar ou manusear celular ao dirigir. Nunca bloqueie áreas críticas: não pare sobre faixas, rampas ou em frente a equipamentos de emergência. Carga e descarga somente nas docas, em áreas sinalizadas. Na Red Zone, nunca pessoa e empilhadeira ao mesmo tempo. Parada segura do caminhão: desligado, freio estacionário acionado e trava-rodas. Se precisar descer, use a rota segura pela frente da doca e pelas faixas de pedestres.",
-                       "audioReady":  true
+                       "id":  "s-mod2-video-triagem",
+                       "title":  "Proibições Absolutas na Triagem",
+                       "file":  "audios/s-mod2-video-triagem.mp3",
+                       "text":  "Vídeo. Proibições Absolutas na Triagem. Padrões Técnicos de Cargas e Triagem Visual de Pallets. Assista ao vídeo sobre as proibições absolutas na triagem. Avance quando concluir.",
+                       "audioReady":  false
                    },
                    {
                        "index":  15,
-                       "id":  "s-mod2-video3",
-                       "title":  "Distrações e Proibições no Setor Logístico",
-                       "file":  "audios/s-mod2-video3.mp3",
-                       "text":  "Vídeo. Distrações e Proibições no Setor Logístico. Padrões Técnicos de Cargas e Triagem Visual de Pallets. Assista ao vídeo sobre distrações e proibições no setor logístico. Avance quando concluir.",
-                       "audioReady":  true
+                       "id":  "s-mod2-triagem",
+                       "title":  "Defeitos Estruturais na Triagem",
+                       "file":  "audios/s-mod2-triagem.mp3",
+                       "text":  "Defeitos Estruturais na Triagem. A triagem de pallets é etapa crítica. Pallets com defeitos estruturais não podem ser inseridos no sistema automatizado sob nenhuma circunstância. Toco quebrado: comprometimento da base de apoio causa instabilidade nos garfos dos transelevadores. Tábua quebrada ou irregular: superfície irregular impede assentamento correto da carga e aumenta risco de queda. Empenado ou espaçamento elevado: deformações estruturais causam travamento mecânico e parada não programada do sistema. Tábua superior irregular: superfície de apoio irregular compromete estabilidade da carga e pode causar desabamento. Risco principal: desabamento de cargas, instabilidade durante transporte automático e queda de produtos com risco de dano patrimonial e lesão a pessoas.",
+                       "audioReady":  false
                    },
                    {
                        "index":  16,
-                       "id":  "s-mod2-video4",
-                       "title":  "Faixas de Trânsito e Preferências de Passagem",
-                       "file":  "audios/s-mod2-video4.mp3",
-                       "text":  "Vídeo. Faixas de Trânsito e Preferências de Passagem. Padrões Técnicos de Cargas e Triagem Visual de Pallets. Assista ao vídeo sobre faixas de trânsito e preferências de passagem. Avance quando concluir.",
-                       "audioReady":  true
-                   },
-                   {
-                       "index":  17,
-                       "id":  "s-mod2-video5",
-                       "title":  "Bloqueio de Áreas Críticas e Estacionamento Preventivo",
-                       "file":  "audios/s-mod2-video5.mp3",
-                       "text":  "Vídeo. Bloqueio de Áreas Críticas e Estacionamento Preventivo. Padrões Técnicos de Cargas e Triagem Visual de Pallets. Assista ao vídeo sobre bloqueio de áreas críticas e estacionamento preventivo. Avance quando concluir.",
-                       "audioReady":  true
-                   },
-                   {
-                       "index":  18,
                        "id":  "s-mod2-game",
                        "title":  "Verdadeiro ou Falso?",
                        "file":  "audios/s-mod2-game.mp3",
-                       "text":  "Desafio Módulo 2 — Verdadeiro ou Falso. Padrões Técnicos de Cargas e Triagem Visual de Pallets. Responda seis afirmações sobre saúde na operação, controle de acesso, distrações e regras de circulação. Afirmação 1: Se o operador estiver cansado, com sono ou sob efeito de medicamento que altere os reflexos, ainda pode operar reduzindo a velocidade. Resposta correta: Falso. Falso! A aptidão psicofísica é obrigatória. Cansaço, sono, álcool, drogas ou medicamentos que alterem os reflexos impedem a operação. Afirmação 2: Somente condutor habilitado pode circular na unidade, e o uso do cinto de segurança é obrigatório. Resposta correta: Verdadeiro. Verdadeiro! O acesso é controlado: cinto obrigatório e somente condutor habilitado e integrado. Afirmação 3: É permitido manusear o celular ao dirigir se for uma ligação de trabalho. Resposta correta: Falso. Falso! É proibido usar ou manusear celular ao dirigir — distração no setor logístico causa acidentes graves. Afirmação 4: Na faixa de pedestre, o motorista deve parar, olhar os dois lados e dar preferência ao pedestre, com contato visual. Resposta correta: Verdadeiro. Verdadeiro! Faixa de pedestre = PARE. Prefira o pedestre e confirme o contato visual antes de seguir. Afirmação 5: É permitido parar o veículo sobre faixas, rampas ou em frente a equipamentos de emergência por poucos minutos. Resposta correta: Falso. Falso! Nunca bloqueie áreas críticas: faixas, rampas e equipamentos de emergência devem permanecer livres. Afirmação 6: A velocidade máxima dentro da unidade é de 10 km/h, e pisca-alerta e faróis devem permanecer ligados na circulação interna. Resposta correta: Verdadeiro. Verdadeiro! 10 km/h é o limite interno. Pisca-alerta e faróis ligados aumentam a visibilidade e protegem o pedestre.",
-                       "audioReady":  true
+                       "text":  "Desafio Módulo 2 — Verdadeiro ou Falso. Padrões Técnicos de Cargas e Triagem Visual de Pallets. Responda quatro afirmações sobre limites de carga, Pallet PBR, proibições na triagem e defeitos estruturais. Afirmação 1: O limite dimensional máximo da carga é de 1.200 mm de largura, 1.200 mm de comprimento e 1.400 mm de altura, e o filme stretch é obrigatório em todas as cargas. Resposta correta: Verdadeiro. Verdadeiro! Se a carga ultrapassar essas dimensões, não é aceita pelo sistema automático. O filme stretch é obrigatório antes de entrar nas esteiras. O conjunto pode ter no máximo 1.950 kg. Afirmação 2: No Pallet PBR, o limite máximo é de 1.500 kg, a marcação visual deve ser verde ou vermelha e o empilhamento de pallets vazios não pode passar de 10 unidades. Resposta correta: Verdadeiro. Verdadeiro! Além disso, todas as tábuas de madeira precisam estar íntegras, sem rachadura, quebra ou fragmentação. Afirmação 3: Fita adesiva, fitilhos de amarração e plásticos pendurados no pallet são permitidos, desde que em pequena quantidade. Resposta correta: Falso. Falso! São três proibições absolutas. Esses materiais podem se prender nos roletes, eixos ou sensores e paralisar todo o sistema. Afirmação 4: Pallets com toco quebrado, tábua irregular, empenamento ou espaçamento elevado não podem entrar no sistema sob nenhuma circunstância, pois há risco de desabamento e lesões. Resposta correta: Verdadeiro. Verdadeiro! A triagem visual é a primeira barreira de defesa. Defeitos estruturais podem causar queda de carga, prejuízo e acidentes graves.",
+                       "audioReady":  false
                    },
                    {
-                       "index":  19,
+                       "index":  20,
                        "id":  "s-mod3",
                        "title":  "MÓDULO 3",
                        "file":  "audios/s-mod3.mp3",
@@ -151,7 +141,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  20,
+                       "index":  21,
                        "id":  "s-mod3-video",
                        "title":  "Velocidade Máxima e Consciência Situacional",
                        "file":  "audios/s-mod3-video.mp3",
@@ -159,7 +149,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  21,
+                       "index":  22,
                        "id":  "s-mod3-video2",
                        "title":  "Sinalização Luminosa e Visibilidade Ativa",
                        "file":  "audios/s-mod3-video2.mp3",
@@ -167,7 +157,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  22,
+                       "index":  23,
                        "id":  "s-mod3-video3",
                        "title":  "Cinto de Segurança e Ergonomia na Cabine",
                        "file":  "audios/s-mod3-video3.mp3",
@@ -175,7 +165,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  23,
+                       "index":  24,
                        "id":  "s-mod3-driver-rules",
                        "title":  "Regras de Trânsito Interno",
                        "file":  "audios/s-mod3-driver-rules.mp3",
@@ -183,7 +173,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  24,
+                       "index":  25,
                        "id":  "s-mod3-video4",
                        "title":  "Curvas, Cruzamentos e Sinalização Sonora",
                        "file":  "audios/s-mod3-video4.mp3",
@@ -191,7 +181,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  25,
+                       "index":  26,
                        "id":  "s-mod3-video5",
                        "title":  "Subida, Descida e Estacionamento Preventivo",
                        "file":  "audios/s-mod3-video5.mp3",
@@ -199,7 +189,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  26,
+                       "index":  27,
                        "id":  "s-mod3-video6",
                        "title":  "Transporte de Cargas e Estabilidade Operacional",
                        "file":  "audios/s-mod3-video6.mp3",
@@ -207,7 +197,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  27,
+                       "index":  28,
                        "id":  "s-mod3-visibilidade",
                        "title":  "Espelhos, Ré e Velocidade Máxima",
                        "file":  "audios/s-mod3-visibilidade.mp3",
@@ -215,7 +205,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  28,
+                       "index":  29,
                        "id":  "s-mod3-game",
                        "title":  "Quiz — Módulo 3",
                        "file":  "audios/s-mod3-game.mp3",
@@ -223,7 +213,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  29,
+                       "index":  30,
                        "id":  "s-mod4",
                        "title":  "MÓDULO 4",
                        "file":  "audios/s-mod4.mp3",
@@ -231,7 +221,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  30,
+                       "index":  31,
                        "id":  "s-mod4-video2",
                        "title":  "A Regra de Ouro da Red Zone",
                        "file":  "audios/s-mod4-video2.mp3",
@@ -239,7 +229,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  31,
+                       "index":  32,
                        "id":  "s-mod4-redzone",
                        "title":  "Entendendo a Red Zone",
                        "file":  "audios/s-mod4-redzone.mp3",
@@ -247,7 +237,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  32,
+                       "index":  33,
                        "id":  "s-mod4-video5",
                        "title":  "Interação em Cruzamentos e Pontos Cegos",
                        "file":  "audios/s-mod4-video5.mp3",
@@ -255,7 +245,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  33,
+                       "index":  34,
                        "id":  "s-mod4-pontoscegos",
                        "title":  "Proteja-se dos Pontos Cegos",
                        "file":  "audios/s-mod4-pontoscegos.mp3",
@@ -263,7 +253,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  34,
+                       "index":  35,
                        "id":  "s-mod4-game",
                        "title":  "Quiz — Módulo 4",
                        "file":  "audios/s-mod4-game.mp3",
@@ -271,7 +261,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  35,
+                       "index":  36,
                        "id":  "s-mod5",
                        "title":  "MÓDULO 5",
                        "file":  "audios/s-mod5.mp3",
@@ -279,7 +269,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  36,
+                       "index":  37,
                        "id":  "s-mod5-picking",
                        "title":  "Abastecimento do Picking",
                        "file":  "audios/s-mod5-picking.mp3",
@@ -287,7 +277,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  37,
+                       "index":  38,
                        "id":  "s-mod5-video-picking",
                        "title":  "Protocolo de Aproximação Segura no Picking",
                        "file":  "audios/s-mod5-video-picking.mp3",
@@ -295,7 +285,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  38,
+                       "index":  39,
                        "id":  "s-mod5-aproximacao",
                        "title":  "A Regra Inicial de Ouro",
                        "file":  "audios/s-mod5-aproximacao.mp3",
@@ -303,7 +293,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  39,
+                       "index":  40,
                        "id":  "s-mod5-doca",
                        "title":  "Chaves, Motorista e Área Segura",
                        "file":  "audios/s-mod5-doca.mp3",
@@ -311,7 +301,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  40,
+                       "index":  41,
                        "id":  "s-mod5-video-garfos",
                        "title":  "Riscos de Garfos Elevados e Movimentações Práticas",
                        "file":  "audios/s-mod5-video-garfos.mp3",
@@ -319,7 +309,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  41,
+                       "index":  42,
                        "id":  "s-mod5-game",
                        "title":  "Quiz — Módulo 5",
                        "file":  "audios/s-mod5-game.mp3",
@@ -327,7 +317,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  42,
+                       "index":  43,
                        "id":  "s-mod6",
                        "title":  "MÓDULO 6",
                        "file":  "audios/s-mod6.mp3",
@@ -335,7 +325,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  43,
+                       "index":  44,
                        "id":  "s-mod6-video",
                        "title":  "O Pit Stop e as Regras de Entrada",
                        "file":  "audios/s-mod6-video.mp3",
@@ -343,7 +333,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  44,
+                       "index":  45,
                        "id":  "s-mod6-video2",
                        "title":  "Proibições Críticas no Abastecimento",
                        "file":  "audios/s-mod6-video2.mp3",
@@ -351,7 +341,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  45,
+                       "index":  46,
                        "id":  "s-mod6-guia",
                        "title":  "Guia Rápido de Segurança do Pit Stop",
                        "file":  "audios/s-mod6-guia.mp3",
@@ -359,7 +349,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  46,
+                       "index":  47,
                        "id":  "s-mod6-video3",
                        "title":  "Manobra de Abastecimento pelo Técnico",
                        "file":  "audios/s-mod6-video3.mp3",
@@ -367,7 +357,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  47,
+                       "index":  48,
                        "id":  "s-mod6-zonas",
                        "title":  "Zoneamento de Risco do Armazém",
                        "file":  "audios/s-mod6-zonas.mp3",
@@ -375,7 +365,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  48,
+                       "index":  49,
                        "id":  "s-mod6-video4",
                        "title":  "Condições Adversas de Luz e Ofuscamento",
                        "file":  "audios/s-mod6-video4.mp3",
@@ -383,7 +373,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  49,
+                       "index":  50,
                        "id":  "s-mod6-video5",
                        "title":  "Comportamento e a Tolerância Zero a Brincadeiras",
                        "file":  "audios/s-mod6-video5.mp3",
@@ -391,7 +381,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  50,
+                       "index":  51,
                        "id":  "s-mod6-video6",
                        "title":  "Compromisso Coletivo e Encerramento",
                        "file":  "audios/s-mod6-video6.mp3",
@@ -399,7 +389,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  51,
+                       "index":  52,
                        "id":  "s-mod6-game",
                        "title":  "Missão — Pit Stop",
                        "file":  "audios/s-mod6-game.mp3",
@@ -407,7 +397,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  52,
+                       "index":  53,
                        "id":  "s-fim",
                        "title":  "Treinamento — Concluído",
                        "file":  "audios/s-fim.mp3",

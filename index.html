@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="pt-BR">
 
 <!-- Deploy trigger: v1.0.1 -->
@@ -14,14 +14,14 @@
   <style>
     :root {
       --gold: #FFFFFF;
-      --gold-lt: #C9A3FF;
+      --gold-lt: #B4C2FF;
       --gold-dk: #555555;
       --black: #050505;
       --black-s: #151515;
       --black-xs: #252525;
-      --red: #8A4BB8;
-      --red-dk: #4A215C;
-      --red-lt: #B48AE8;
+      --red: #6B7AED;
+      --red-dk: #2A2D5C;
+      --red-lt: #9AA6F5;
       --cream: #EAEAEA;
       --cream-dk: #A0A0A0;
       --white: #FFFFFF;
@@ -44,12 +44,12 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
-      background-color: #0a050e;
+      background-color: #08091a;
       background-image:
-        radial-gradient(ellipse 1200px 900px at 8% 8%, rgba(138, 75, 184, 0.22), transparent 64%),
-        radial-gradient(ellipse 1100px 950px at 95% 95%, rgba(74, 33, 92, 0.28), transparent 64%),
-        radial-gradient(ellipse 850px 700px at 90% 4%, rgba(180, 138, 232, 0.12), transparent 58%),
-        radial-gradient(ellipse 800px 650px at 4% 96%, rgba(138, 75, 184, 0.16), transparent 60%),
+        radial-gradient(ellipse 1200px 900px at 8% 8%, rgba(107, 122, 237, 0.22), transparent 64%),
+        radial-gradient(ellipse 1100px 950px at 95% 95%, rgba(42, 45, 92, 0.28), transparent 64%),
+        radial-gradient(ellipse 850px 700px at 90% 4%, rgba(154, 166, 245, 0.12), transparent 58%),
+        radial-gradient(ellipse 800px 650px at 4% 96%, rgba(107, 122, 237, 0.16), transparent 60%),
         linear-gradient(135deg, #060308 0%, #120a18 30%, #2a1638 55%, #120a18 80%, #060308 100%);
       background-attachment: fixed;
       font-family: var(--font-b);
@@ -65,8 +65,8 @@
       pointer-events: none;
       opacity: 1;
       background-image: repeating-linear-gradient(to bottom,
-          rgba(201, 163, 255, 0.05) 0px,
-          rgba(201, 163, 255, 0.05) 1px,
+          rgba(180, 194, 255, 0.05) 0px,
+          rgba(180, 194, 255, 0.05) 1px,
           transparent 1px,
           transparent 4px);
       background-size: 100% 4px;
@@ -79,8 +79,8 @@
         background-image:
           radial-gradient(ellipse 78% 62% at 50% 40%, transparent 42%, rgba(18, 8, 26, 0.32) 100%),
           repeating-linear-gradient(to bottom,
-              rgba(201, 163, 255, 0.05) 0px,
-              rgba(201, 163, 255, 0.05) 1px,
+              rgba(180, 194, 255, 0.05) 0px,
+              rgba(180, 194, 255, 0.05) 1px,
               transparent 1px,
               transparent 4px);
         background-size: 100% 100%, 100% 4px;
@@ -236,6 +236,12 @@
         justify-content: center;
         overflow: hidden;
         text-overflow: ellipsis;
+      }
+
+      #nav.nav-start #btn-fwd {
+        max-width: none;
+        flex: 0 1 auto;
+        min-width: 42%;
       }
 
       .nav-btn svg {
@@ -504,7 +510,7 @@
       /* Slide 1 - Capa */
       #s1 {
         background-image:
-          radial-gradient(ellipse at 30% 60%, rgba(201, 163, 255, 0.25), transparent 60%);
+          radial-gradient(ellipse at 30% 60%, rgba(180, 194, 255, 0.25), transparent 60%);
         background-position: center;
         background-size: 100% 100%;
         background-repeat: no-repeat;
@@ -792,7 +798,7 @@
         height: 48px;
         min-width: 48px;
         min-height: 48px;
-        box-shadow: 0 4px 16px rgba(201, 163, 255, 0.45);
+        box-shadow: 0 4px 16px rgba(180, 194, 255, 0.45);
       }
 
       #s2b .atex-source-front .atex-source-icon,
@@ -938,9 +944,9 @@
       pointer-events: none;
       z-index: 0;
       background: linear-gradient(to top,
-          rgba(201, 163, 255, 0.22) 0%,
-          rgba(201, 163, 255, 0.1) 35%,
-          rgba(201, 163, 255, 0.03) 60%,
+          rgba(180, 194, 255, 0.22) 0%,
+          rgba(180, 194, 255, 0.1) 35%,
+          rgba(180, 194, 255, 0.03) 60%,
           transparent 100%);
     }
 
@@ -1065,11 +1071,11 @@
       border-radius: 1px;
       background: linear-gradient(90deg,
           transparent 0%,
-          rgba(138, 75, 184, 0.35) 22%,
-          rgba(201, 163, 255, 0.45) 50%,
-          rgba(138, 75, 184, 0.35) 78%,
+          rgba(107, 122, 237, 0.35) 22%,
+          rgba(180, 194, 255, 0.45) 50%,
+          rgba(107, 122, 237, 0.35) 78%,
           transparent 100%);
-      box-shadow: 0 0 16px 2px rgba(90, 42, 108, 0.35);
+      box-shadow: 0 0 16px 2px rgba(42, 45, 92, 0.35);
     }
 
     #nav::after {
@@ -1082,9 +1088,9 @@
       pointer-events: none;
       z-index: -1;
       background: linear-gradient(to top,
-          rgba(8, 4, 12, 0.88) 0%,
-          rgba(18, 8, 28, 0.62) 36%,
-          rgba(32, 14, 48, 0.22) 68%,
+          rgba(8, 9, 26, 0.88) 0%,
+          rgba(12, 14, 36, 0.62) 36%,
+          rgba(28, 32, 72, 0.22) 68%,
           transparent 100%);
     }
 
@@ -1092,6 +1098,14 @@
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
+    }
+
+    #nav.nav-start #btn-back {
+      display: none !important;
+    }
+
+    #nav.nav-start #btn-fwd {
+      margin-left: auto;
     }
 
     .nav-btn {
@@ -1422,8 +1436,8 @@
     }
 
     .pemt-intro-card {
-      background: rgba(201, 163, 255, 0.05);
-      border-color: rgba(201, 163, 255, 0.2);
+      background: rgba(180, 194, 255, 0.05);
+      border-color: rgba(180, 194, 255, 0.2);
       margin-bottom: 24px;
       padding: 35px 40px;
       width: 100%;
@@ -1674,8 +1688,8 @@
       padding: 20px 18px;
       box-sizing: border-box;
       border-radius: 16px;
-      background: linear-gradient(135deg, rgba(201, 163, 255, 0.12), rgba(255, 255, 255, 0.04));
-      border: 1px solid rgba(201, 163, 255, 0.28);
+      background: linear-gradient(135deg, rgba(180, 194, 255, 0.12), rgba(255, 255, 255, 0.04));
+      border: 1px solid rgba(180, 194, 255, 0.28);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
     }
 
@@ -1728,8 +1742,8 @@
     .atex-source-back {
       transform: rotateY(180deg);
       border-color: var(--red);
-      background: linear-gradient(135deg, rgba(201, 163, 255, 0.18), rgba(201, 163, 255, 0.06));
-      box-shadow: 0 10px 28px rgba(201, 163, 255, 0.35);
+      background: linear-gradient(135deg, rgba(180, 194, 255, 0.18), rgba(180, 194, 255, 0.06));
+      box-shadow: 0 10px 28px rgba(180, 194, 255, 0.35);
       justify-content: center;
       padding: 14px 12px 16px;
       overflow: hidden;
@@ -1780,8 +1794,8 @@
       display: inline-block;
       padding: 4px 9px;
       border-radius: 999px;
-      background: rgba(201, 163, 255, 0.2);
-      border: 1px solid rgba(201, 163, 255, 0.38);
+      background: rgba(180, 194, 255, 0.2);
+      border: 1px solid rgba(180, 194, 255, 0.38);
       font-size: clamp(12px, 1.2vw, 14px);
       line-height: 1.32;
       color: rgba(255, 255, 255, 0.92);
@@ -1839,7 +1853,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 6px 20px rgba(201, 163, 255, 0.4);
+      box-shadow: 0 6px 20px rgba(180, 194, 255, 0.4);
       transition: transform 0.2s, opacity 0.2s;
       touch-action: manipulation;
       -webkit-tap-highlight-color: transparent;
@@ -1914,7 +1928,7 @@
 
       #s2b .atex-source-card:hover .atex-source-front,
       #s4b .atex-source-card:hover .atex-source-front {
-        border-color: rgba(201, 163, 255, 0.55);
+        border-color: rgba(180, 194, 255, 0.55);
         transform: translateZ(1px);
       }
 
@@ -1944,7 +1958,7 @@
       align-items: center;
       justify-content: center;
       font-size: 24px;
-      box-shadow: 0 0 12px rgba(201, 163, 255, 0.3);
+      box-shadow: 0 0 12px rgba(180, 194, 255, 0.3);
     }
 
     .ic-text h4 {
@@ -1991,7 +2005,7 @@
       font-weight: 900;
       font-size: 16px;
       color: var(--white);
-      box-shadow: 0 0 10px rgba(201, 163, 255, 0.3);
+      box-shadow: 0 0 10px rgba(180, 194, 255, 0.3);
     }
 
     .num-text h4 {
@@ -2232,7 +2246,7 @@
 
     /* attention box */
     .atencao {
-      background: rgba(201, 163, 255, 0.1);
+      background: rgba(180, 194, 255, 0.1);
       border-left: 3px solid var(--red);
       border-radius: 0 10px 10px 0;
       padding: 14px 18px;
@@ -2255,7 +2269,7 @@
 
     .stat-pill {
       background: var(--black-s);
-      border: 0.5px solid rgba(201, 163, 255, 0.3);
+      border: 0.5px solid rgba(180, 194, 255, 0.3);
       border-radius: 12px;
       padding: 14px 16px;
       text-align: center;
@@ -2368,7 +2382,7 @@
       flex-direction: column;
       align-items: flex-start;
       gap: 10px;
-      background: linear-gradient(135deg, var(--black-s), rgba(201, 163, 255, 0.05));
+      background: linear-gradient(135deg, var(--black-s), rgba(180, 194, 255, 0.05));
       border: 1px solid rgba(255, 255, 255, 0.05);
       border-left: 6px solid var(--red);
       border-radius: 16px;
@@ -2386,13 +2400,13 @@
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(201, 163, 255, 0.15) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(180, 194, 255, 0.15) 0%, transparent 70%);
     }
 
     .sum-item:hover {
       border-color: var(--red);
       transform: translateY(-3px);
-      box-shadow: 0 10px 24px rgba(201, 163, 255, 0.2);
+      box-shadow: 0 10px 24px rgba(180, 194, 255, 0.2);
     }
 
     .sum-num-big {
@@ -2484,7 +2498,7 @@
 
     .risk-card {
       background: var(--black-s);
-      border: 0.5px solid rgba(201, 163, 255, 0.3);
+      border: 0.5px solid rgba(180, 194, 255, 0.3);
       border-top: 3px solid var(--red);
       border-radius: 12px;
       padding: 14px 14px;
@@ -2519,8 +2533,8 @@
     /* tool cards */
     .tool-badge {
       display: inline-block;
-      background: rgba(201, 163, 255, 0.15);
-      border: 0.5px solid rgba(201, 163, 255, 0.4);
+      background: rgba(180, 194, 255, 0.15);
+      border: 0.5px solid rgba(180, 194, 255, 0.4);
       border-radius: 8px;
       padding: 6px 12px;
       margin: 4px 3px;
@@ -2532,7 +2546,7 @@
     }
 
     .tool-badge:hover {
-      background: rgba(201, 163, 255, 0.3);
+      background: rgba(180, 194, 255, 0.3);
     }
 
     /* ── S22b: Práticas proibidas na operação ── */
@@ -2598,7 +2612,7 @@
       align-items: center;
       gap: 18px;
       padding: 18px 22px;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(201, 163, 255, 0.05));
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(180, 194, 255, 0.05));
       border: 1px solid rgba(255, 255, 255, 0.12);
       border-left: 4px solid var(--red);
       border-radius: 16px;
@@ -2607,8 +2621,8 @@
 
     .proib-item:hover {
       transform: translateX(4px);
-      border-color: rgba(201, 163, 255, 0.35);
-      background: rgba(201, 163, 255, 0.08);
+      border-color: rgba(180, 194, 255, 0.35);
+      background: rgba(180, 194, 255, 0.08);
     }
 
     .proib-letter {
@@ -2624,7 +2638,7 @@
       font-weight: 800;
       font-size: 18px;
       color: #fff;
-      box-shadow: 0 8px 20px rgba(201, 163, 255, 0.35);
+      box-shadow: 0 8px 20px rgba(180, 194, 255, 0.35);
     }
 
     .proib-body {
@@ -2925,9 +2939,9 @@
       padding: 12px 16px 12px 14px;
       border-radius: 14px;
       background:
-        radial-gradient(ellipse at 0% 50%, rgba(201, 163, 255, 0.14), transparent 60%),
-        linear-gradient(135deg, rgba(201, 163, 255, 0.08), rgba(18, 18, 18, 0.95));
-      border: 1px solid rgba(201, 163, 255, 0.32);
+        radial-gradient(ellipse at 0% 50%, rgba(180, 194, 255, 0.14), transparent 60%),
+        linear-gradient(135deg, rgba(180, 194, 255, 0.08), rgba(18, 18, 18, 0.95));
+      border: 1px solid rgba(180, 194, 255, 0.32);
       box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
       position: relative;
       overflow: hidden;
@@ -2955,7 +2969,7 @@
     .elec-alert-icon {
       font-size: clamp(22px, 2.8vw, 28px);
       line-height: 1;
-      filter: drop-shadow(0 0 10px rgba(201, 163, 255, 0.45));
+      filter: drop-shadow(0 0 10px rgba(180, 194, 255, 0.45));
     }
 
     .elec-alert-badge {
@@ -2976,11 +2990,11 @@
 
       0%,
       100% {
-        box-shadow: 0 0 0 0 rgba(201, 163, 255, 0.45);
+        box-shadow: 0 0 0 0 rgba(180, 194, 255, 0.45);
       }
 
       50% {
-        box-shadow: 0 0 0 8px rgba(201, 163, 255, 0);
+        box-shadow: 0 0 0 8px rgba(180, 194, 255, 0);
       }
     }
 
@@ -3013,7 +3027,7 @@
       font-weight: 900;
       line-height: 1;
       color: var(--red-lt);
-      text-shadow: 0 0 16px rgba(201, 163, 255, 0.35);
+      text-shadow: 0 0 16px rgba(180, 194, 255, 0.35);
     }
 
     .elec-3m-unit {
@@ -3345,7 +3359,7 @@
 
     #s26 .mod3-shell {
       background:
-        radial-gradient(ellipse at 50% 0%, rgba(201, 163, 255, 0.1), transparent 55%),
+        radial-gradient(ellipse at 50% 0%, rgba(180, 194, 255, 0.1), transparent 55%),
         linear-gradient(160deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
       border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: clamp(18px, 2.5vw, 26px);
@@ -3368,9 +3382,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(201, 163, 255, 0.12);
-      border: 1px solid rgba(201, 163, 255, 0.28);
-      box-shadow: 0 0 32px rgba(201, 163, 255, 0.16);
+      background: rgba(180, 194, 255, 0.12);
+      border: 1px solid rgba(180, 194, 255, 0.28);
+      box-shadow: 0 0 32px rgba(180, 194, 255, 0.16);
     }
 
     #s26 .mod3-intro-title {
@@ -3407,7 +3421,7 @@
 
     #s26 .mod3-step.cur {
       background: linear-gradient(90deg, var(--red), var(--gold));
-      box-shadow: 0 0 12px rgba(201, 163, 255, 0.45);
+      box-shadow: 0 0 12px rgba(180, 194, 255, 0.45);
     }
 
     #s26 .mod3-step.done {
@@ -3723,7 +3737,7 @@
     }
 
     #s34b .epi-harness-text-block {
-      background: linear-gradient(135deg, rgba(201, 163, 255, 0.06), rgba(18, 18, 18, 0.95));
+      background: linear-gradient(135deg, rgba(180, 194, 255, 0.06), rgba(18, 18, 18, 0.95));
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-left: 4px solid var(--red);
       border-radius: 14px;
@@ -4124,7 +4138,7 @@
     #s4f .mod4-risk-shell,
     #s3g .mod4-risk-shell {
       background:
-        radial-gradient(ellipse at 50% 0%, rgba(201, 163, 255, 0.12), transparent 55%),
+        radial-gradient(ellipse at 50% 0%, rgba(180, 194, 255, 0.12), transparent 55%),
         linear-gradient(160deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
       border: 1px solid rgba(255, 255, 255, 0.14);
       border-radius: clamp(24px, 2.5vw, 32px);
@@ -4149,7 +4163,7 @@
       align-items: center;
       justify-content: center;
       font-size: clamp(28px, 5vw, 36px);
-      box-shadow: 0 8px 24px rgba(201, 163, 255, 0.35);
+      box-shadow: 0 8px 24px rgba(180, 194, 255, 0.35);
     }
 
     #s4f .mod4-risk-intro-title,
@@ -4188,7 +4202,7 @@
     #s4f .mod4-risk-step.cur,
     #s3g .mod4-risk-step.cur {
       background: var(--red);
-      box-shadow: 0 0 10px rgba(201, 163, 255, 0.45);
+      box-shadow: 0 0 10px rgba(180, 194, 255, 0.45);
     }
 
     #s4f .mod4-risk-step.done,
@@ -4535,7 +4549,7 @@
       width: 100%;
       max-width: min(640px, 92vw);
       text-align: center;
-      background: linear-gradient(160deg, rgba(255, 255, 255, 0.06), rgba(201, 163, 255, 0.06));
+      background: linear-gradient(160deg, rgba(255, 255, 255, 0.06), rgba(180, 194, 255, 0.06));
       border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 28px;
       padding: clamp(28px, 5vw, 48px) clamp(22px, 4vw, 36px);
@@ -4587,10 +4601,10 @@
    SLIDE 1 — CAPA
    ============================================================ */
     #s1 {
-      background-color: #0a050e;
+      background-color: #08091a;
       background-image:
-        linear-gradient(100deg, rgba(8, 4, 12, 0.97) 0%, rgba(8, 4, 12, 0.90) 28%, rgba(8, 4, 12, 0.50) 52%, rgba(8, 4, 12, 0.28) 68%, rgba(8, 4, 12, 0.62) 100%),
-        radial-gradient(ellipse at 22% 55%, rgba(138, 75, 184, 0.16) 0%, transparent 62%),
+        linear-gradient(100deg, rgba(8, 9, 26, 0.97) 0%, rgba(8, 9, 26, 0.90) 28%, rgba(8, 9, 26, 0.50) 52%, rgba(8, 9, 26, 0.28) 68%, rgba(8, 9, 26, 0.62) 100%),
+        radial-gradient(ellipse at 22% 55%, rgba(107, 122, 237, 0.16) 0%, transparent 62%),
         url('img/BACKGROUND.png');
       background-position: center, center, center;
       background-repeat: no-repeat, no-repeat, no-repeat;
@@ -4621,14 +4635,14 @@
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
-      background: linear-gradient(160deg, #2c1844 0%, #1f1236 32%, #120a1e 62%, #0a0610 100%);
-      border: 1px solid rgba(201, 163, 255, 0.28);
+      background: linear-gradient(160deg, #1c1e44 0%, #16183a 32%, #101228 62%, #0a0b18 100%);
+      border: 1px solid rgba(180, 194, 255, 0.28);
       border-radius: 22px;
       padding: clamp(24px, 2.8vw, 34px);
       box-sizing: border-box;
       overflow-wrap: break-word;
       word-break: break-word;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(201, 163, 255, 0.06) inset, 0 0 44px rgba(201, 163, 255, 0.1);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(180, 194, 255, 0.06) inset, 0 0 44px rgba(180, 194, 255, 0.1);
     }
 
     .s1-img-col {
@@ -4649,7 +4663,7 @@
       transform: translateX(-50%);
       width: 76%;
       height: 5%;
-      background: radial-gradient(ellipse at center, rgba(201, 163, 255, 0.45), rgba(0, 0, 0, 0.6) 55%, transparent 75%);
+      background: radial-gradient(ellipse at center, rgba(180, 194, 255, 0.45), rgba(0, 0, 0, 0.6) 55%, transparent 75%);
       filter: blur(10px);
       z-index: -1;
       pointer-events: none;
@@ -4695,8 +4709,8 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(201, 163, 255, 0.1);
-      border: 1px solid rgba(201, 163, 255, 0.35);
+      background: rgba(180, 194, 255, 0.1);
+      border: 1px solid rgba(180, 194, 255, 0.35);
       border-radius: 999px;
       padding: 7px 16px;
       line-height: 1.4;
@@ -4783,7 +4797,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: linear-gradient(135deg, #8A4BB8, #4A215C);
+      background: linear-gradient(135deg, #6B7AED, #2A2D5C);
       color: var(--white);
       font-family: var(--font-h);
       font-weight: 700;
@@ -4800,7 +4814,7 @@
     }
 
     .btn-start:hover {
-      background: linear-gradient(135deg, #9B5DC9, #8A4BB8);
+      background: linear-gradient(135deg, #7C8BF5, #6B7AED);
       transform: translateY(-2px);
       box-shadow: none;
     }
@@ -4937,7 +4951,7 @@
       position: absolute;
       inset: 0;
       z-index: 1;
-      background: radial-gradient(ellipse at 50% 50%, rgba(201, 163, 255, 0.06) 0%, transparent 70%);
+      background: radial-gradient(ellipse at 50% 50%, rgba(180, 194, 255, 0.06) 0%, transparent 70%);
     }
 
     .vplay {
@@ -4949,13 +4963,13 @@
       width: 64px;
       height: 64px;
       border-radius: 50%;
-      background: rgba(201, 163, 255, 0.88);
+      background: rgba(180, 194, 255, 0.88);
       cursor: pointer;
       transition: all 0.2s;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 28px rgba(201, 163, 255, 0.5);
+      box-shadow: 0 0 28px rgba(180, 194, 255, 0.5);
     }
 
     .vplay:hover {
@@ -5173,7 +5187,7 @@
     .qdot2.cur {
       background: var(--red);
       border-color: var(--red);
-      box-shadow: 0 0 8px rgba(201, 163, 255, 0.5);
+      box-shadow: 0 0 8px rgba(180, 194, 255, 0.5);
     }
 
     .q-lbl {
@@ -5248,7 +5262,7 @@
 
     .q-opt.wrong {
       border-color: var(--red);
-      background: rgba(201, 163, 255, 0.1);
+      background: rgba(180, 194, 255, 0.1);
     }
 
     .q-opt.wrong .opt-l {
@@ -5276,7 +5290,7 @@
 
     .q-feedback.nok {
       display: block;
-      background: rgba(201, 163, 255, 0.12);
+      background: rgba(180, 194, 255, 0.12);
       border-left: 3px solid var(--red);
       color: var(--red-lt);
     }
@@ -5322,7 +5336,7 @@
 
     .result-pct.red-c {
       color: var(--red);
-      text-shadow: 0 0 30px rgba(201, 163, 255, 0.3);
+      text-shadow: 0 0 30px rgba(180, 194, 255, 0.3);
     }
 
     .r-stars {
@@ -5407,7 +5421,7 @@
       width: 100%;
       max-width: 920px;
       background: linear-gradient(180deg, #121212 0%, #080808 100%);
-      border: 1px solid rgba(201, 163, 255, 0.35);
+      border: 1px solid rgba(180, 194, 255, 0.35);
       border-radius: 18px;
       padding: 28px 24px 24px;
       box-shadow: 0 28px 90px rgba(0, 0, 0, 0.65);
@@ -5435,7 +5449,7 @@
     }
 
     .tutorial-modal-close:hover {
-      background: rgba(201, 163, 255, 0.25);
+      background: rgba(180, 194, 255, 0.25);
       color: var(--red-lt);
       transform: scale(1.05);
     }
@@ -5498,7 +5512,7 @@
       position: absolute;
       bottom: 15px;
       right: 15px;
-      background: rgba(201, 163, 255, 0.9);
+      background: rgba(180, 194, 255, 0.9);
       color: white;
       border: none;
       padding: 10px;
@@ -6002,7 +6016,7 @@
 
     .drop-zone.active-zone {
       border-color: var(--red);
-      background: rgba(201, 163, 255, 0.05);
+      background: rgba(180, 194, 255, 0.05);
     }
 
     .zone-label {
@@ -6219,7 +6233,7 @@
       padding: clamp(8px, 1vw, 11px) clamp(22px, 3.5vw, 36px);
       border-radius: 99px;
       display: inline-block;
-      box-shadow: 0 6px 22px rgba(201, 163, 255, 0.32);
+      box-shadow: 0 6px 22px rgba(180, 194, 255, 0.32);
     }
 
     .mod-intro-title {
@@ -6228,7 +6242,7 @@
       font-size: clamp(52px, 11vw, 110px);
       color: var(--red);
       line-height: 1;
-      text-shadow: 0 8px 28px rgba(201, 163, 255, 0.22);
+      text-shadow: 0 8px 28px rgba(180, 194, 255, 0.22);
     }
 
     .mod-intro-sub {
@@ -6359,7 +6373,7 @@
 
     #s21 .pemt-sort-btn.zone-maint {
       background: linear-gradient(145deg, var(--red-dk), var(--red));
-      box-shadow: 0 8px 20px rgba(201, 163, 255, 0.3);
+      box-shadow: 0 8px 20px rgba(180, 194, 255, 0.3);
     }
 
     #s21 .pemt-sort-hint {
@@ -6556,8 +6570,8 @@
     }
 
     .s3a-intro {
-      background: linear-gradient(135deg, rgba(201, 163, 255, 0.12), rgba(201, 163, 255, 0.04));
-      border: 1px solid rgba(201, 163, 255, 0.28);
+      background: linear-gradient(135deg, rgba(180, 194, 255, 0.12), rgba(180, 194, 255, 0.04));
+      border: 1px solid rgba(180, 194, 255, 0.28);
       border-radius: 18px;
       padding: 28px 32px;
       position: relative;
@@ -6571,7 +6585,7 @@
       right: -40px;
       width: 140px;
       height: 140px;
-      background: radial-gradient(circle, rgba(201, 163, 255, 0.2) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(180, 194, 255, 0.2) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -6588,8 +6602,8 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(201, 163, 255, 0.2);
-      border: 1px solid rgba(201, 163, 255, 0.4);
+      background: rgba(180, 194, 255, 0.2);
+      border: 1px solid rgba(180, 194, 255, 0.4);
       border-radius: 999px;
       padding: 8px 16px;
       font-family: var(--font-h);
@@ -6692,9 +6706,9 @@
     }
 
     .s3a-summary-pill--iii .s3a-group-icon {
-      background: rgba(201, 163, 255, 0.15);
-      border: 1px solid rgba(201, 163, 255, 0.35);
-      box-shadow: 0 4px 20px rgba(201, 163, 255, 0.15);
+      background: rgba(180, 194, 255, 0.15);
+      border: 1px solid rgba(180, 194, 255, 0.35);
+      box-shadow: 0 4px 20px rgba(180, 194, 255, 0.15);
     }
 
     .s3a-summary-pill {
@@ -6731,8 +6745,8 @@
     }
 
     .s3a-summary-pill--iii {
-      background: linear-gradient(160deg, rgba(201, 163, 255, 0.14), rgba(201, 163, 255, 0.08));
-      border-color: rgba(201, 163, 255, 0.35);
+      background: linear-gradient(160deg, rgba(180, 194, 255, 0.14), rgba(180, 194, 255, 0.08));
+      border-color: rgba(180, 194, 255, 0.35);
     }
 
     .s3a-summary-pill--iii strong {
@@ -6791,7 +6805,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 6px 20px rgba(201, 163, 255, 0.4);
+      box-shadow: 0 6px 20px rgba(180, 194, 255, 0.4);
       transition: transform 0.2s, opacity 0.2s;
       touch-action: manipulation;
       -webkit-tap-highlight-color: transparent;
@@ -6884,7 +6898,7 @@
     }
 
     .s3a-grp-iii {
-      background: linear-gradient(160deg, rgba(201, 163, 255, 0.22), rgba(201, 163, 255, 0.15));
+      background: linear-gradient(160deg, rgba(180, 194, 255, 0.22), rgba(180, 194, 255, 0.15));
       color: #e1bee7;
     }
 
@@ -6908,7 +6922,7 @@
     }
 
     .s3a-sub-iii {
-      border-left-color: rgba(201, 163, 255, 0.55);
+      border-left-color: rgba(180, 194, 255, 0.55);
     }
 
     .s3a-code {
@@ -6916,8 +6930,8 @@
       min-width: clamp(42px, 4vw, 50px);
       padding: clamp(3px, 0.6vh, 5px) clamp(8px, 1vw, 12px);
       border-radius: 8px;
-      background: rgba(201, 163, 255, 0.35);
-      border: 1px solid rgba(201, 163, 255, 0.5);
+      background: rgba(180, 194, 255, 0.35);
+      border: 1px solid rgba(180, 194, 255, 0.5);
       font-family: var(--font-h);
       font-size: clamp(12px, 1.2vh + 0.3vw, 15px);
       font-weight: 800;
@@ -7058,13 +7072,13 @@
 
     /* Zona 2 — tema roxo (como Grupo III) */
     .s3d-zone-type.s3d-row-2 {
-      background: linear-gradient(160deg, rgba(201, 163, 255, 0.22), rgba(201, 163, 255, 0.15));
+      background: linear-gradient(160deg, rgba(180, 194, 255, 0.22), rgba(180, 194, 255, 0.15));
       color: #e1bee7;
     }
 
     .s3d-zone-desc.s3d-row-2,
     .s3d-zone-freq.s3d-row-2 {
-      border-left-color: rgba(201, 163, 255, 0.55);
+      border-left-color: rgba(180, 194, 255, 0.55);
     }
 
     .s3d-zone-freq.s3d-row-2 {
@@ -7080,8 +7094,8 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--gold-dk);
-      background: rgba(201, 163, 255, 0.15);
-      border-top: 2px solid rgba(201, 163, 255, 0.35);
+      background: rgba(180, 194, 255, 0.15);
+      border-top: 2px solid rgba(180, 194, 255, 0.35);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       display: flex;
       align-items: center;
@@ -7101,7 +7115,7 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       white-space: nowrap;
-      background: rgba(201, 163, 255, 0.35);
+      background: rgba(180, 194, 255, 0.35);
       color: var(--cream);
       border: 1px solid rgba(255, 255, 255, 0.15);
     }
@@ -7113,8 +7127,8 @@
     }
 
     .s3d-group-dust .s3d-group-tag {
-      background: rgba(201, 163, 255, 0.28);
-      border-color: rgba(201, 163, 255, 0.45);
+      background: rgba(180, 194, 255, 0.28);
+      border-color: rgba(180, 194, 255, 0.45);
       color: #e1bee7;
     }
 
@@ -7146,13 +7160,13 @@
 
     /* Zona 22 — mesmo tema da Zona 2 */
     .s3d-zone-type.s3d-row-5 {
-      background: linear-gradient(160deg, rgba(201, 163, 255, 0.22), rgba(201, 163, 255, 0.15));
+      background: linear-gradient(160deg, rgba(180, 194, 255, 0.22), rgba(180, 194, 255, 0.15));
       color: #e1bee7;
     }
 
     .s3d-zone-desc.s3d-row-5,
     .s3d-zone-freq.s3d-row-5 {
-      border-left-color: rgba(201, 163, 255, 0.55);
+      border-left-color: rgba(180, 194, 255, 0.55);
     }
 
     .s3d-zone-freq.s3d-row-5 {
@@ -7202,7 +7216,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 6px 20px rgba(201, 163, 255, 0.4);
+      box-shadow: 0 6px 20px rgba(180, 194, 255, 0.4);
       transition: transform 0.2s, opacity 0.2s;
       touch-action: manipulation;
       -webkit-tap-highlight-color: transparent;
@@ -7346,8 +7360,8 @@
         padding: 10px 14px !important;
         margin: 0;
         border-top: none;
-        border-bottom: 1px solid rgba(201, 163, 255, 0.35);
-        background: rgba(201, 163, 255, 0.2);
+        border-bottom: 1px solid rgba(180, 194, 255, 0.35);
+        background: rgba(180, 194, 255, 0.2);
         color: rgba(255, 255, 255, 0.75);
         border-radius: 16px 16px 0 0;
       }
@@ -7448,7 +7462,7 @@
         height: 44px;
         min-width: 44px;
         min-height: 44px;
-        box-shadow: 0 4px 14px rgba(201, 163, 255, 0.45);
+        box-shadow: 0 4px 14px rgba(180, 194, 255, 0.45);
       }
 
       #s3d .s3d-zones-counter {
@@ -7859,7 +7873,7 @@
     }
 
     #s2e .mod1-game-card {
-      background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%);
+      background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%);
       border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 24px;
       padding: clamp(16px, 3vw, 24px) clamp(16px, 3vw, 28px);
@@ -7926,8 +7940,8 @@
     }
 
     #s2e .mod1-game-btn:hover:not(:disabled) {
-      background: rgba(201, 163, 255, 0.08);
-      border-color: rgba(201, 163, 255, 0.4);
+      background: rgba(180, 194, 255, 0.08);
+      border-color: rgba(180, 194, 255, 0.4);
       transform: translateX(4px);
     }
 
@@ -7943,12 +7957,12 @@
       font-weight: 850;
       font-size: 14px;
       margin-right: 15px;
-      color: #C9A3FF;
+      color: #B4C2FF;
       flex-shrink: 0;
     }
 
     #s2e .mod1-game-btn:hover .opt-letter {
-      background: #8A4BB8;
+      background: #6B7AED;
       color: #ffffff;
     }
 
@@ -8036,8 +8050,8 @@
       font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      background: rgba(201, 163, 255, 0.25);
-      border: 1px solid rgba(201, 163, 255, 0.45);
+      background: rgba(180, 194, 255, 0.25);
+      border: 1px solid rgba(180, 194, 255, 0.45);
       color: var(--gold-lt);
       margin-bottom: 6px;
     }
@@ -8084,7 +8098,7 @@
       #s2e #mod1-game-result {
         padding: 52px 64px 56px;
         background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(201, 163, 255, 0.28);
+        border: 1px solid rgba(180, 194, 255, 0.28);
         border-radius: 32px;
         box-shadow: 0 28px 64px rgba(0, 0, 0, 0.4);
         max-width: 980px;
@@ -8208,7 +8222,7 @@
         font-size: 13.5px !important;
         margin-right: 0 !important;
         flex-shrink: 0 !important;
-        color: #C9A3FF !important;
+        color: #B4C2FF !important;
       }
 
       #s2e .mod1-game-btn span.opt-letter {
@@ -8306,8 +8320,8 @@
     #s5f #mod5-game-play,
     #s6f #mod6-quiz-intro {
       padding: 32px 24px 36px;
-      background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%);
-      border: 1px solid rgba(201, 163, 255, 0.28);
+      background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%);
+      border: 1px solid rgba(180, 194, 255, 0.28);
       border-radius: 24px;
       box-shadow: 0 28px 64px rgba(0, 0, 0, 0.4);
     }
@@ -8555,8 +8569,8 @@
     }
 
     .btn-accessibility-toggle.active {
-      background: rgba(201, 163, 255, 0.25);
-      border-color: rgba(201, 163, 255, 0.6);
+      background: rgba(180, 194, 255, 0.25);
+      border-color: rgba(180, 194, 255, 0.6);
       color: #fff;
     }
 
@@ -8831,12 +8845,12 @@
 
     /* T4, T5, T6 group (purple accent) */
     .s3t-group-purple {
-      border-left-color: rgba(201, 163, 255, 0.55);
+      border-left-color: rgba(180, 194, 255, 0.55);
     }
 
     .s3t-group-purple.s3t-col-tcode {
       color: #e1bee7;
-      background: linear-gradient(160deg, rgba(201, 163, 255, 0.15), rgba(201, 163, 255, 0.08));
+      background: linear-gradient(160deg, rgba(180, 194, 255, 0.15), rgba(180, 194, 255, 0.08));
     }
 
     @media (max-width: 768px) {
@@ -8870,10 +8884,10 @@
         outline: none;
       }
       .s3t-tab-btn.active {
-        background: linear-gradient(135deg, #8A4BB8, #4A215C);
+        background: linear-gradient(135deg, #6B7AED, #2A2D5C);
         color: #fff;
-        border-color: rgba(201, 163, 255, 0.4);
-        box-shadow: 0 4px 12px rgba(201, 163, 255, 0.25);
+        border-color: rgba(180, 194, 255, 0.4);
+        box-shadow: 0 4px 12px rgba(180, 194, 255, 0.25);
       }
       #s3t-grid-2 {
         display: none;
@@ -8931,7 +8945,7 @@
       transform: translate(-50%, -50%);
       width: clamp(300px, 40vw, 550px);
       height: clamp(300px, 40vw, 550px);
-      background: radial-gradient(circle, rgba(201, 163, 255, 0.12) 0%, rgba(201, 163, 255, 0) 70%);
+      background: radial-gradient(circle, rgba(180, 194, 255, 0.12) 0%, rgba(180, 194, 255, 0) 70%);
       z-index: 0;
       pointer-events: none;
     }
@@ -8943,7 +8957,7 @@
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01)) !important;
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(201, 163, 255, 0.25) !important;
+      border: 1px solid rgba(180, 194, 255, 0.25) !important;
       border-radius: 24px !important;
       box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.08) !important;
       padding: clamp(24px, 4vw, 40px) !important;
@@ -8955,8 +8969,8 @@
       transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
     #s5a .atex-hero-card:hover {
-      border-color: rgba(201, 163, 255, 0.4) !important;
-      box-shadow: 0 35px 80px rgba(201, 163, 255, 0.15), 0 30px 70px rgba(0, 0, 0, 0.5) !important;
+      border-color: rgba(180, 194, 255, 0.4) !important;
+      box-shadow: 0 35px 80px rgba(180, 194, 255, 0.15), 0 30px 70px rgba(0, 0, 0, 0.5) !important;
     }
     #s5a .atex-hero-inner {
       display: flex;
@@ -9326,7 +9340,7 @@
       width: 100%;
     }
     .rules-nav-btn {
-      background: linear-gradient(135deg, #8A4BB8, #4A215C);
+      background: linear-gradient(135deg, #6B7AED, #2A2D5C);
       color: var(--white);
       border: none;
       border-radius: 50%;
@@ -9338,7 +9352,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 6px 15px rgba(201, 163, 255, 0.35);
+      box-shadow: 0 6px 15px rgba(180, 194, 255, 0.35);
       transition: transform 0.2s, opacity 0.2s;
       touch-action: manipulation;
       -webkit-tap-highlight-color: transparent;
@@ -9464,13 +9478,13 @@
       left: 0;
       width: 100%;
       height: 4px;
-      background: linear-gradient(90deg, #8A4BB8, #4A215C);
+      background: linear-gradient(90deg, #6B7AED, #2A2D5C);
       transition: height 0.4s ease;
     }
     .reqs-card:hover {
       transform: translateY(-6px);
-      border-color: rgba(201, 163, 255, 0.35);
-      box-shadow: 0 15px 30px rgba(201, 163, 255, 0.15), 0 20px 40px rgba(0, 0, 0, 0.4);
+      border-color: rgba(180, 194, 255, 0.35);
+      box-shadow: 0 15px 30px rgba(180, 194, 255, 0.15), 0 20px 40px rgba(0, 0, 0, 0.4);
     }
     .reqs-card:hover::before {
       height: 6px;
@@ -9478,7 +9492,7 @@
     .reqs-icon {
       font-size: clamp(28px, 4vh, 36px);
       margin-bottom: clamp(10px, 1.5vh, 16px);
-      filter: drop-shadow(0 4px 10px rgba(201, 163, 255, 0.25));
+      filter: drop-shadow(0 4px 10px rgba(180, 194, 255, 0.25));
       transition: transform 0.3s ease;
     }
     .reqs-card:hover .reqs-icon {
@@ -9507,7 +9521,7 @@
       width: 100%;
     }
     .reqs-nav-btn {
-      background: linear-gradient(135deg, #8A4BB8, #4A215C);
+      background: linear-gradient(135deg, #6B7AED, #2A2D5C);
       color: var(--white);
       border: none;
       border-radius: 50%;
@@ -9519,7 +9533,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 6px 15px rgba(201, 163, 255, 0.35);
+      box-shadow: 0 6px 15px rgba(180, 194, 255, 0.35);
       transition: transform 0.2s, opacity 0.2s;
       touch-action: manipulation;
       -webkit-tap-highlight-color: transparent;
@@ -9693,7 +9707,7 @@
       flex-shrink: 0;
     }
     .btn-restart-course {
-      background: linear-gradient(135deg, #8A4BB8, #4A215C);
+      background: linear-gradient(135deg, #6B7AED, #2A2D5C);
       color: var(--white);
       border: none;
       border-radius: 50px;
@@ -9703,12 +9717,12 @@
       font-weight: 800;
       letter-spacing: 1px;
       cursor: pointer;
-      box-shadow: 0 10px 25px rgba(201, 163, 255, 0.4);
+      box-shadow: 0 10px 25px rgba(180, 194, 255, 0.4);
       transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
     .btn-restart-course:hover {
       transform: translateY(-3px) scale(1.03);
-      box-shadow: 0 15px 30px rgba(201, 163, 255, 0.6);
+      box-shadow: 0 15px 30px rgba(180, 194, 255, 0.6);
     }
     .btn-restart-course:active {
       transform: translateY(-1px) scale(0.98);
@@ -9843,7 +9857,7 @@
         </div>
         <div class="wave">
           <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg>
         </div>
       </section>
@@ -9870,7 +9884,7 @@
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -9920,8 +9934,8 @@
             padding: 28px 22px 26px !important;
             gap: 14px !important;
             border-radius: 20px !important;
-            border: 1px solid rgba(201, 163, 255, 0.28) !important;
-            background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%) !important;
+            border: 1px solid rgba(180, 194, 255, 0.28) !important;
+            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%) !important;
             box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
             transform: none !important;
             overflow: hidden;
@@ -9932,14 +9946,14 @@
             position: absolute;
             top: 0; left: 0; right: 0;
             height: 3px;
-            background: linear-gradient(90deg, #8A4BB8, #B48AE8);
+            background: linear-gradient(90deg, #6B7AED, #9AA6F5);
             border-radius: 18px 18px 0 0;
             pointer-events: none;
           }
           #s6 .sum-item:hover {
             transform: translateY(-4px) !important;
-            border-color: rgba(224, 200, 255, 0.55) !important;
-            box-shadow: 0 18px 36px rgba(201, 163, 255, 0.18);
+            border-color: rgba(200, 210, 255, 0.55) !important;
+            box-shadow: 0 18px 36px rgba(180, 194, 255, 0.18);
           }
           #s6 .sum-num-big {
             display: inline-flex;
@@ -9950,8 +9964,8 @@
             padding: 7px 14px !important;
             margin: 0 auto !important;
             border-radius: 999px !important;
-            background: linear-gradient(135deg, #8A4BB8, #4A215C) !important;
-            box-shadow: 0 6px 14px rgba(201, 163, 255, 0.32);
+            background: linear-gradient(135deg, #6B7AED, #2A2D5C) !important;
+            box-shadow: 0 6px 14px rgba(180, 194, 255, 0.32);
             flex-shrink: 0;
           }
           #s6 .sum-text {
@@ -10053,7 +10067,7 @@
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
             <path d="M0,65 C360,20 720,90 1080,40 C1260,15 1390,70 1440,60 L1440,100 L0,100 Z"
-              fill="rgba(201, 163, 255,0.07)" />
+              fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -10068,7 +10082,7 @@
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
             <path d="M0,65 C360,20 720,90 1080,40 C1260,15 1390,70 1440,60 L1440,100 L0,100 Z"
-              fill="rgba(201, 163, 255,0.07)" />
+              fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -10094,7 +10108,7 @@
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -10120,7 +10134,7 @@
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -10146,7 +10160,7 @@
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -10167,11 +10181,11 @@
             content: '';
             flex: 1;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(201, 163, 255, 0.5));
+            background: linear-gradient(90deg, transparent, rgba(180, 194, 255, 0.5));
           }
 
           #s2d .civcrim-subhead::after {
-            background: linear-gradient(90deg, rgba(201, 163, 255, 0.5), transparent);
+            background: linear-gradient(90deg, rgba(180, 194, 255, 0.5), transparent);
           }
 
           #s2d .civcrim-subhead-text {
@@ -10195,7 +10209,7 @@
 
           #s2d .civcrim-card {
             background: linear-gradient(160deg, #10161e, #0a0e14);
-            border: 1px solid rgba(201, 163, 255, 0.24);
+            border: 1px solid rgba(180, 194, 255, 0.24);
             border-radius: 18px;
             padding: 16px 22px;
             display: flex;
@@ -10209,18 +10223,18 @@
 
           #s2d .civcrim-card:hover {
             transform: translateY(-4px);
-            border-color: rgba(201, 163, 255, 0.55);
-            box-shadow: 0 18px 36px rgba(201, 163, 255, 0.2);
+            border-color: rgba(180, 194, 255, 0.55);
+            box-shadow: 0 18px 36px rgba(180, 194, 255, 0.2);
           }
 
           #s2d .civcrim-card.is-civil {
             background: linear-gradient(160deg, #0f1b22, #0b0f14);
-            border-color: rgba(201, 163, 255, 0.25);
+            border-color: rgba(180, 194, 255, 0.25);
           }
 
           #s2d .civcrim-card.is-civil:hover {
-            border-color: rgba(201, 163, 255, 0.55);
-            box-shadow: 0 18px 36px rgba(201, 163, 255, 0.2);
+            border-color: rgba(180, 194, 255, 0.55);
+            box-shadow: 0 18px 36px rgba(180, 194, 255, 0.2);
           }
 
           #s2d .civcrim-card::before {
@@ -10230,12 +10244,12 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, #8A4BB8, #B48AE8);
+            background: linear-gradient(90deg, #6B7AED, #9AA6F5);
             opacity: 0.9;
           }
 
           #s2d .civcrim-card.is-civil::before {
-            background: linear-gradient(90deg, #8A4BB8, #4A215C);
+            background: linear-gradient(90deg, #6B7AED, #2A2D5C);
           }
 
           #s2d .civcrim-card-head {
@@ -10249,18 +10263,18 @@
             height: 40px;
             border-radius: 11px;
             flex-shrink: 0;
-            background: rgba(201, 163, 255, 0.14);
-            border: 1px solid rgba(201, 163, 255, 0.35);
+            background: rgba(180, 194, 255, 0.14);
+            border: 1px solid rgba(180, 194, 255, 0.35);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #C9A3FF;
+            color: #B4C2FF;
           }
 
           #s2d .civcrim-card.is-civil .civcrim-card-icon {
-            background: rgba(201, 163, 255, 0.14);
-            border: 1px solid rgba(201, 163, 255, 0.35);
-            color: #C9A3FF;
+            background: rgba(180, 194, 255, 0.14);
+            border: 1px solid rgba(180, 194, 255, 0.35);
+            color: #B4C2FF;
           }
 
           #s2d .civcrim-card-title {
@@ -10305,8 +10319,8 @@
           }
 
           #s2d .civcrim-card.is-civil .civcrim-pena {
-            background: rgba(201, 163, 255, 0.14);
-            border: 1px solid rgba(201, 163, 255, 0.35);
+            background: rgba(180, 194, 255, 0.14);
+            border: 1px solid rgba(180, 194, 255, 0.35);
             color: #7fd8ff;
           }
 
@@ -10340,7 +10354,7 @@
               font-family: var(--font-h);
               font-size: 11px;
               font-weight: 800;
-              color: #E0C8FF;
+              color: #C8D2FF;
               text-transform: uppercase;
               letter-spacing: 0.5px;
               text-align: center;
@@ -10385,11 +10399,11 @@
               width: 100%; max-width: 360px; margin: 0 auto; flex-shrink: 0;
             }
             #s2d .s2d-nav-btn {
-              background: linear-gradient(135deg, #8A4BB8, #4A215C);
+              background: linear-gradient(135deg, #6B7AED, #2A2D5C);
               color: #fff; border: none; border-radius: 50%;
               width: 46px; height: 46px; min-width: 46px; min-height: 46px;
               cursor: pointer; display: flex; align-items: center; justify-content: center;
-              box-shadow: 0 6px 16px rgba(201, 163, 255, 0.4);
+              box-shadow: 0 6px 16px rgba(180, 194, 255, 0.4);
               touch-action: manipulation; -webkit-tap-highlight-color: transparent;
             }
             #s2d .s2d-nav-btn:active:not(:disabled) { transform: scale(0.94); }
@@ -10412,7 +10426,7 @@
           }
 
           #s2d .s2d-lead strong {
-            color: #C9A3FF;
+            color: #B4C2FF;
           }
 
           #s2d .civcrim-grid.is-three {
@@ -10423,7 +10437,7 @@
             font-family: var(--font-h);
             font-weight: 900;
             font-size: clamp(18px, 2vw, 22px);
-            color: #C9A3FF;
+            color: #B4C2FF;
             letter-spacing: -0.02em;
             line-height: 1.1;
           }
@@ -10623,7 +10637,7 @@
 
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -10676,7 +10690,7 @@
           </div>
 
           <div id="mod1-game-result" class="mod1-game-wrap"
-            style="display:none; text-align:center; padding: 32px 24px 36px; background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%); border-radius: 24px; border: 1px solid rgba(201, 163, 255, 0.28); animation: slideUp 0.6s ease;">
+            style="display:none; text-align:center; padding: 32px 24px 36px; background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%); border-radius: 24px; border: 1px solid rgba(180, 194, 255, 0.28); animation: slideUp 0.6s ease;">
             <div class="r-icon" style="font-size: 48px; margin-bottom: 12px;">🏅</div>
             <h3
               style="font-family:var(--font-h); font-size: 26px; color:var(--gold); margin-bottom:8px; font-weight:900;">
@@ -10694,7 +10708,7 @@
 
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,50 C480,10 960,85 1440,30 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,50 C480,10 960,85 1440,30 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -10709,424 +10723,757 @@
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
             <path d="M0,65 C360,20 720,90 1080,40 C1260,15 1390,70 1440,60 L1440,100 L0,100 Z"
-              fill="rgba(201, 163, 255,0.07)" />
+              fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
-      <!-- ── S-MOD2-VIDEO: VÍDEO — Saúde Física e Mental na Operação ── -->
+      <!-- ── S-MOD2-VIDEO: VÍDEO — Limites de Carga ── -->
       <section class="slide video-slide" id="s-mod2-video">
         <div class="top-bar">
           <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Saúde Física <span>e Mental na Operação</span></div>
+            <div class="slide-title" style="margin-top:6px">Limites de <span>Carga</span></div>
             <div class="slide-subtitle">Padrões Técnicos de Cargas e Triagem Visual de Pallets</div>
           </div>
         </div>
         <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
           <div class="video-wrap">
             <div class="video-box">
-              <iframe id="panda-91cb3145-4704-43f6-be30-68825b93eb9b"
-                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=91cb3145-4704-43f6-be30-68825b93eb9b"
+              <iframe id="panda-f037c308-1ef1-4cb9-bf2d-b2d80e52e1e5"
+                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=f037c308-1ef1-4cb9-bf2d-b2d80e52e1e5"
                 frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
                 allowfullscreen="true" fetchpriority="high"
                 style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
-                title="Saúde Física e Mental na Operação — NR 12">
+                title="Limites de Carga">
               </iframe>
             </div>
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
-      <!-- ── S-MOD2-VIDEO2: VÍDEO — Controle de Acesso e Integração de Segurança ── -->
-      <section class="slide video-slide" id="s-mod2-video2">
-        <div class="top-bar">
-          <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Controle de Acesso <span>e Integração de Segurança</span></div>
-            <div class="slide-subtitle">Padrões Técnicos de Cargas e Triagem Visual de Pallets</div>
-          </div>
-        </div>
-        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div class="video-wrap">
-            <div class="video-box">
-              <iframe id="panda-3b2684c7-6736-4f65-bd03-06d80455cf0b"
-                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=3b2684c7-6736-4f65-bd03-06d80455cf0b"
-                frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
-                allowfullscreen="true" fetchpriority="high"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
-                title="Controle de Acesso e Integração de Segurança — NR 12">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S-MOD2-MOTORISTAS: CONTEÚDO — Regras para Motoristas e Manobristas ── -->
-      <section class="slide" id="s-mod2-motoristas">
+      <!-- ── S-MOD2-PALLETS: CONTEÚDO — Tipos de Pallet ── -->
+      <section class="slide" id="s-mod2-pallets">
         <style>
-          #s-mod2-motoristas .mn-content {
-            display: flex; flex-direction: column;
-            align-items: center; justify-content: center;
-            padding: clamp(12px,2.2cqh,22px) clamp(22px,4cqw,44px) clamp(68px,10cqh,100px);
-            width: 100%; box-sizing: border-box; min-height: 0;
-            overflow: auto; container-type: size;
+          #s-mod2-pallets .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px 92px;
+            justify-content: center;
+            box-sizing: border-box;
           }
-          #s-mod2-motoristas .mn-shell {
-            display: flex; flex-direction: column; gap: 24px;
-            width: min(100%, 1080px); margin: 0 auto;
-            height: min(600px, 80cqh); min-height: 0;
+          #s-mod2-pallets .plt-card-viewport {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
           }
-          #s-mod2-motoristas .mn-intro {
-            display: flex; align-items: center; gap: 12px; flex-shrink: 0;
-            background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%);
-            border: 1px solid rgba(201, 163, 255, 0.28);
-            border-radius: 14px; padding: 10px 16px;
-            position: relative; overflow: hidden;
+          #s-mod2-pallets .plt-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
           }
-          #s-mod2-motoristas .mn-intro::before {
-            content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
-            background: linear-gradient(180deg, #8A4BB8, #B48AE8);
+          #s-mod2-pallets .plt-grid.plt-two {
+            grid-template-columns: repeat(2, 1fr);
           }
-          #s-mod2-motoristas .mn-intro-icon {
-            flex-shrink: 0; width: 32px; height: 32px; border-radius: 8px;
-            background: linear-gradient(135deg, #8A4BB8, #4A215C);
-            display: flex; align-items: center; justify-content: center; font-size: 16px;
-            box-shadow: 0 6px 16px rgba(201, 163, 255, 0.35);
+          #s-mod2-pallets .plt-card {
+            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 100%);
+            border: 1px solid rgba(180, 194, 255, 0.28);
+            border-radius: 16px;
+            padding: 16px 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
           }
-          #s-mod2-motoristas .mn-intro p {
-            font-family: var(--font-p); font-size: clamp(13px, 2.1cqh, 15px);
-            color: rgba(255,255,255,0.9); margin: 0; line-height: 1.4;
+          #s-mod2-pallets .plt-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #6B7AED, #9AA6F5);
           }
-          #s-mod2-motoristas .mn-intro strong { color: #E0C8FF; font-weight: 800; }
-          #s-mod2-motoristas .mn-timeline {
-            flex: 1 1 0; min-height: 0;
-            display: flex; flex-direction: column; justify-content: space-evenly;
-            gap: clamp(12px, 2.4cqh, 22px);
-            padding-top: 8px;
+          #s-mod2-pallets .plt-kicker {
+            font-family: var(--font-h);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
           }
-          #s-mod2-motoristas .mn-row {
-            display: flex; align-items: flex-start;
-            position: relative; flex: 1 1 0; min-height: 0;
+          #s-mod2-pallets .plt-name {
+            font-family: var(--font-h);
+            font-size: clamp(16px, 1.6vw, 20px);
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.2;
           }
-          #s-mod2-motoristas .mn-row::before {
-            content: ''; position: absolute; z-index: 0;
-            left: 10%; right: 10%; top: 16px; height: 3px;
-            background: linear-gradient(90deg, #8A4BB8, #B48AE8, #8A4BB8);
-            border-radius: 99px;
-            box-shadow: 0 0 12px rgba(201, 163, 255, 0.45);
+          #s-mod2-pallets .plt-value {
+            font-family: var(--font-h);
+            font-size: clamp(20px, 2.2vw, 26px);
+            font-weight: 900;
+            color: #B4C2FF;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
           }
-          #s-mod2-motoristas .mn-step {
-            flex: 1 1 0; min-width: 0;
-            display: flex; flex-direction: column; align-items: center;
-            text-align: center; position: relative; z-index: 1;
-            padding: 0 6px;
+          #s-mod2-pallets .plt-value span {
+            display: block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 3px;
           }
-          #s-mod2-motoristas .mn-node {
-            flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-family: var(--font-h); font-size: 12px; font-weight: 900; color: #fff;
-            background: linear-gradient(135deg, #8A4BB8, #4A215C);
-            box-shadow: 0 0 0 5px #12081a, 0 0 0 7px rgba(201, 163, 255,0.5);
-            margin-bottom: 8px;
+          #s-mod2-pallets .plt-text {
+            font-family: var(--font-p);
+            font-size: clamp(12.5px, 1.1vw, 14px);
+            line-height: 1.45;
+            color: rgba(255, 255, 255, 0.82);
           }
-          #s-mod2-motoristas .mn-ico {
-            font-size: 16px; line-height: 1; margin-bottom: 4px;
+          #s-mod2-pallets .plt-text strong { color: #C8D2FF; }
+          #s-mod2-pallets .plt-grid,
+          #s-mod2-pallets .plt-card {
+            flex-shrink: 0;
           }
-          #s-mod2-motoristas .mn-copy { min-width: 0; }
-          #s-mod2-motoristas .mn-title {
-            font-family: var(--font-h); font-size: clamp(11.5px, 1.8cqh, 13px); font-weight: 800;
-            color: #fff; line-height: 1.25; margin: 0;
-          }
-          #s-mod2-motoristas .mn-text {
-            font-family: var(--font-p); font-size: clamp(10.5px, 1.55cqh, 12px);
-            color: rgba(255,255,255,0.7); line-height: 1.3; margin: 3px 0 0;
-          }
-          #s-mod2-motoristas .mn-carousel-nav { display: none; }
-          #s-mod2-motoristas .mn-jump-btn { display: none; }
-          #s-mod2-motoristas .mn-back-btn { display: none; }
-          @media (min-width: 769px) and (max-height: 820px) {
-            #s-mod2-motoristas .mn-shell { height: min(500px, 74cqh); gap: 20px; }
-            #s-mod2-motoristas .mn-intro p { font-size: 12.5px; }
-            #s-mod2-motoristas .mn-title { font-size: 11.5px; }
-            #s-mod2-motoristas .mn-text { font-size: 10.5px; }
-          }
+          #s-mod2-pallets .plt-carousel-nav { display: none; }
           @media screen and (max-width: 768px) and (orientation: portrait) {
-            @keyframes mnFadeIn {
+            @keyframes pltFadeIn {
               from { opacity: 0; transform: translateX(18px); }
               to   { opacity: 1; transform: translateX(0); }
             }
-            #s-mod2-motoristas { overflow: hidden; }
-            #s-mod2-motoristas .slide-title { font-size: 22px !important; }
-            #s-mod2-motoristas .mn-content {
+            #s-mod2-pallets { overflow: hidden; }
+            #s-mod2-pallets .slide-title {
+              font-size: 22px !important;
+              line-height: 1.2 !important;
+            }
+            #s-mod2-pallets .slide-title span {
+              display: inline !important;
+              margin-top: 0 !important;
+            }
+            #s-mod2-pallets .slide-subtitle { display: none; }
+            #s-mod2-pallets .wave { display: none; }
+            #s-mod2-pallets .content-area {
               overflow: hidden !important;
               justify-content: center !important;
               align-items: center;
               padding: 8px 16px 78px !important;
+              gap: 14px !important;
             }
-            #s-mod2-motoristas .mn-shell {
-              height: auto; width: 100%; max-width: 340px; gap: 12px;
+            #s-mod2-pallets .plt-card-viewport {
+              display: block;
+              width: 100%;
+              max-width: 360px;
+              margin: 0 auto;
             }
-            #s-mod2-motoristas .mn-intro { padding: 8px 12px; gap: 10px; }
-            #s-mod2-motoristas .mn-intro p { font-size: 13px !important; line-height: 1.4; }
-            #s-mod2-motoristas .mn-timeline {
-              display: block; flex: none; overflow: visible;
-              width: 100%; padding: 0; gap: 0;
+            #s-mod2-pallets .plt-grid,
+            #s-mod2-pallets .plt-grid.plt-two {
+              display: contents !important;
             }
-            #s-mod2-motoristas .mn-row { display: contents; }
-            #s-mod2-motoristas .mn-row::before { display: none; }
-            #s-mod2-motoristas .mn-step {
+            #s-mod2-pallets .plt-card {
               display: none !important;
-            }
-            #s-mod2-motoristas .mn-step.mn-step-active {
-              display: flex !important;
-              flex-direction: column; align-items: center; justify-content: center;
-              text-align: center; gap: 10px;
-              width: 100%; min-height: 250px;
-              padding: 32px 22px 28px;
+              width: 100%;
+              min-height: 280px;
+              padding: 22px 20px;
+              gap: 10px;
               border-radius: 20px;
-              background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%);
-              border: 1px solid rgba(201, 163, 255, 0.35);
               box-sizing: border-box;
-              animation: mnFadeIn 0.3s ease forwards;
             }
-            #s-mod2-motoristas .mn-node {
-              width: 56px; height: 56px; font-size: 22px; margin-bottom: 0;
-              box-shadow: 0 6px 16px rgba(201, 163, 255, 0.4);
-            }
-            #s-mod2-motoristas .mn-ico { font-size: 32px; margin-bottom: 0; padding: 0; }
-            #s-mod2-motoristas .mn-copy { text-align: center; }
-            #s-mod2-motoristas .mn-title { font-size: 18px !important; }
-            #s-mod2-motoristas .mn-text { font-size: 14.5px !important; line-height: 1.5; color: rgba(255,255,255,0.8); }
-            #s-mod2-motoristas .mn-jump-btn,
-            #s-mod2-motoristas .mn-back-btn { display: none !important; }
-            #s-mod2-motoristas .mn-carousel-nav {
+            #s-mod2-pallets .plt-card.plt-card-active {
               display: flex !important;
-              align-items: center; justify-content: center; gap: 16px;
-              width: 100%; flex-shrink: 0;
+              animation: pltFadeIn 0.3s ease forwards;
             }
-            #s-mod2-motoristas .mn-nav-btn {
-              background: linear-gradient(135deg, #8A4BB8, #4A215C);
-              color: #fff; border: none; border-radius: 50%;
-              width: 46px; height: 46px; min-width: 46px; min-height: 46px;
-              cursor: pointer; display: flex; align-items: center; justify-content: center;
-              box-shadow: 0 6px 16px rgba(201, 163, 255, 0.4);
-              touch-action: manipulation; -webkit-tap-highlight-color: transparent;
+            #s-mod2-pallets .plt-kicker { font-size: 11px; }
+            #s-mod2-pallets .plt-name {
+              font-size: 20px !important;
+              line-height: 1.25 !important;
             }
-            #s-mod2-motoristas .mn-nav-btn:active:not(:disabled) { transform: scale(0.94); }
-            #s-mod2-motoristas .mn-nav-btn:disabled { opacity: 0.3; cursor: default; }
-            #s-mod2-motoristas .mn-nav-btn svg { pointer-events: none; }
-            #s-mod2-motoristas .mn-counter {
-              font-family: var(--font-h); font-size: 14px; font-weight: 800;
-              color: rgba(255,255,255,0.9); min-width: 56px; text-align: center;
+            #s-mod2-pallets .plt-value { font-size: 28px !important; }
+            #s-mod2-pallets .plt-value span { font-size: 11px !important; }
+            #s-mod2-pallets .plt-text {
+              font-size: 15px !important;
+              line-height: 1.5 !important;
+            }
+            #s-mod2-pallets .plt-carousel-nav {
+              display: flex !important;
+              align-items: center;
+              justify-content: center;
+              gap: 16px;
+              width: 100%;
+              max-width: 360px;
+              margin: 0 auto;
+              flex-shrink: 0;
+            }
+            #s-mod2-pallets .plt-nav-btn {
+              background: linear-gradient(135deg, #6B7AED, #2A2D5C);
+              color: #fff;
+              border: none;
+              border-radius: 50%;
+              width: 46px;
+              height: 46px;
+              min-width: 46px;
+              min-height: 46px;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              box-shadow: 0 6px 16px rgba(180, 194, 255, 0.4);
+              touch-action: manipulation;
+              -webkit-tap-highlight-color: transparent;
+            }
+            #s-mod2-pallets .plt-nav-btn:active:not(:disabled) { transform: scale(0.94); }
+            #s-mod2-pallets .plt-nav-btn:disabled { opacity: 0.3; cursor: default; }
+            #s-mod2-pallets .plt-nav-btn svg { pointer-events: none; }
+            #s-mod2-pallets .plt-counter {
+              font-family: var(--font-h);
+              font-size: 14px;
+              font-weight: 800;
+              color: rgba(255,255,255,0.9);
+              min-width: 56px;
+              text-align: center;
               letter-spacing: 0.04em;
             }
           }
         </style>
-
         <div class="top-bar">
-          <span class="section-tag">🚦 Pedestre</span>
-          <div class="slide-title" style="margin-top:6px">Regras para <span>Motoristas e Manobristas</span></div>
-          <div class="slide-subtitle">Padrões Técnicos de Cargas e Triagem Visual de Pallets</div>
+          <div><span class="section-tag">📦 Padrões Técnicos</span>
+            <div class="slide-title" style="margin-top:6px">Tipos de <span>Pallet</span></div>
+            <div class="slide-subtitle">Padrões Técnicos de Cargas e Triagem Visual de Pallets</div>
+          </div>
         </div>
+        <div class="content-area">
+          <div class="plt-card-viewport" id="plt-card-viewport">
+          <div class="plt-grid">
+            <article class="plt-card plt-card-active">
+              <div class="plt-kicker">Base de movimentação</div>
+              <div class="plt-name">Pallet Escravo</div>
+              <div class="plt-value">50 kg<span>peso próprio</span></div>
+              <p class="plt-text">Peso próprio de 50 quilos. Serve de base para a movimentação no sistema automatizado.</p>
+            </article>
+            <article class="plt-card">
+              <div class="plt-kicker">Carga pesada</div>
+              <div class="plt-name">OneWay tipo A</div>
+              <div class="plt-value">1.950 kg<span>capacidade máxima</span></div>
+              <p class="plt-text">Mais robusto, com tábuas de topo mais grossas e largas e estrutura de suporte sólida para cargas pesadas.</p>
+            </article>
+            <article class="plt-card">
+              <div class="plt-kicker">Carga leve</div>
+              <div class="plt-name">OneWay tipo B</div>
+              <div class="plt-value">950 kg<span>capacidade máxima</span></div>
+              <p class="plt-text">Estrutura simplificada, com menos tábuas e vãos maiores, focada na economia para cargas leves.</p>
+            </article>
+          </div>
+          <div class="plt-grid plt-two">
+            <article class="plt-card">
+              <div class="plt-kicker">Robustez</div>
+              <div class="plt-name">Tipo A vs Tipo B</div>
+              <p class="plt-text">O <strong>Tipo A</strong> é visivelmente mais robusto: tábuas de topo mais grossas e largas, e suporte mais sólido. O <strong>Tipo B</strong> é simplificado, com menos tábuas e vãos maiores, para cargas leves.</p>
+            </article>
+            <article class="plt-card">
+              <div class="plt-kicker">Capacidade simulada</div>
+              <div class="plt-name">Quando usar cada um</div>
+              <p class="plt-text">O palete <strong>A</strong> é para alta resistência (ex.: 1.500 kg). O palete <strong>B</strong> é indicado para cargas leves (ex.: 500 kg), em que o volume importa mais que o peso.</p>
+            </article>
+          </div>
+          </div>
+          <div class="plt-carousel-nav" id="plt-carousel-nav">
+            <button type="button" class="plt-nav-btn" id="plt-prev" aria-label="Anterior" onclick="pltCarouselNav(-1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <span class="plt-counter" id="plt-counter">1 / 5</span>
+            <button type="button" class="plt-nav-btn" id="plt-next" aria-label="Próximo" onclick="pltCarouselNav(1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
+          </svg></div>
+      </section>
 
-        <div class="content-area mn-content">
-          <div class="mn-shell">
-            <div class="mn-intro">
-              <span class="mn-intro-icon">🚶</span>
-              <p>Os <strong>motoristas e manobristas</strong> devem conduzir seus veículos de forma a proteger o pedestre, seguindo as seguintes regras:</p>
+      <!-- ── S-MOD2-VIDEO2: VÍDEO — Pallet PBR: O Modelo de Automação ── -->
+      <section class="slide video-slide" id="s-mod2-video2">
+        <div class="top-bar">
+          <div><span class="section-tag">📹 Vídeo</span>
+            <div class="slide-title" style="margin-top:6px">Pallet PBR: <span>O Modelo de Automação</span></div>
+            <div class="slide-subtitle">Padrões Técnicos de Cargas e Triagem Visual de Pallets</div>
+          </div>
+        </div>
+        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
+          <div class="video-wrap">
+            <div class="video-box">
+              <iframe id="panda-29ecca0f-23f4-440d-a517-852c605cad53"
+                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=29ecca0f-23f4-440d-a517-852c605cad53"
+                frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+                allowfullscreen="true" fetchpriority="high"
+                style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
+                title="Pallet PBR: O Modelo de Automação">
+              </iframe>
             </div>
+          </div>
+        </div>
+        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
+          </svg></div>
+      </section>
 
-            <div class="mn-timeline" id="mn-card-viewport">
-              <div class="mn-row">
-                <div class="mn-step mn-step-active">
-                  <div class="mn-node">1</div>
-                  <span class="mn-ico">🚦</span>
-                  <div class="mn-copy">
-                    <p class="mn-title">20 km/h</p>
-                    <p class="mn-text">Velocidade máxima dentro da unidade.</p>
-                  </div>
-                </div>
-                <div class="mn-step">
-                  <div class="mn-node">2</div>
-                  <span class="mn-ico">🚨</span>
-                  <div class="mn-copy">
-                    <p class="mn-title">Pisca-alerta + faróis</p>
-                    <p class="mn-text">Sempre ligados na circulação interna.</p>
-                  </div>
-                </div>
-                <div class="mn-step">
-                  <div class="mn-node">3</div>
-                  <span class="mn-ico">🔒</span>
-                  <div class="mn-copy">
-                    <p class="mn-title">Cinto + condutor habilitado</p>
-                    <p class="mn-text">Cinto obrigatório. Somente condutor habilitado.</p>
-                  </div>
-                </div>
-                <div class="mn-step">
-                  <div class="mn-node">4</div>
-                  <span class="mn-ico">🛑</span>
-                  <div class="mn-copy">
-                    <p class="mn-title">Faixa de pedestre = PARE</p>
-                    <p class="mn-text">Pare, olhe os dois lados e dê preferência ao pedestre (contato visual).</p>
-                  </div>
-                </div>
-                <div class="mn-step">
-                  <div class="mn-node">5</div>
-                  <span class="mn-ico">📵</span>
-                  <div class="mn-copy">
-                    <p class="mn-title">Celular: proibido</p>
-                    <p class="mn-text">Proibido usar/manusear celular ao dirigir.</p>
-                  </div>
-                </div>
+      <!-- ── S-MOD2-VIDEO-TRIAGEM: VÍDEO — Proibições Absolutas na Triagem ── -->
+      <section class="slide video-slide" id="s-mod2-video-triagem">
+        <div class="top-bar">
+          <div><span class="section-tag">📹 Vídeo</span>
+            <div class="slide-title" style="margin-top:6px">Proibições Absolutas <span>na Triagem</span></div>
+            <div class="slide-subtitle">Padrões Técnicos de Cargas e Triagem Visual de Pallets</div>
+          </div>
+        </div>
+        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
+          <div class="video-wrap">
+            <div class="video-box">
+              <iframe id="panda-38ed81a8-a88e-4e4d-94b1-b66173a70f51"
+                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=38ed81a8-a88e-4e4d-94b1-b66173a70f51"
+                frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+                allowfullscreen="true" fetchpriority="high"
+                style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
+                title="Proibições Absolutas na Triagem">
+              </iframe>
+            </div>
+          </div>
+        </div>
+        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
+          </svg></div>
+      </section>
+
+      <!-- ── S-MOD2-TRIAGEM: CONTEÚDO — Defeitos Estruturais na Triagem ── -->
+      <section class="slide" id="s-mod2-triagem">
+        <style>
+          #s-mod2-triagem .tg-content {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            width: 100%;
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 0 20px 92px;
+            justify-content: center;
+            box-sizing: border-box;
+          }
+          #s-mod2-triagem .tg-intro {
+            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 100%);
+            border: 1px solid rgba(180, 194, 255, 0.28);
+            border-radius: 16px;
+            padding: 16px 22px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+          }
+          #s-mod2-triagem .tg-intro::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #6B7AED, #9AA6F5);
+          }
+          #s-mod2-triagem .tg-intro p {
+            font-family: var(--font-p);
+            font-size: clamp(14px, 1.35vw, 16.5px);
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+          }
+          #s-mod2-triagem .tg-intro strong { color: #C8D2FF; font-weight: 800; }
+          #s-mod2-triagem .tg-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+          }
+          #s-mod2-triagem .tg-progress {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 0 2px;
+          }
+          #s-mod2-triagem .tg-progress span {
+            font-family: var(--font-p);
+            font-size: 13px;
+            color: rgba(255,255,255,0.62);
+          }
+          #s-mod2-triagem .tg-progress strong {
+            font-family: var(--font-h);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            color: #C8D2FF;
+          }
+          #s-mod2-triagem .tg-card {
+            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 100%);
+            border: 1px solid rgba(180, 194, 255, 0.22);
+            border-radius: 16px;
+            padding: 16px 18px 16px 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            text-align: left;
+            font: inherit;
+            color: inherit;
+            cursor: pointer;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+            opacity: 0.58;
+            transform: scale(0.985);
+            transition: opacity 0.28s ease, transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+            animation: tgPulse 2.4s ease-in-out infinite;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+          }
+          #s-mod2-triagem .tg-card.req-item::after { display: none !important; }
+          #s-mod2-triagem .tg-card.req-done { border-color: rgba(180, 194, 255, 0.7) !important; }
+          @keyframes tgPulse {
+            0%, 100% { box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28); }
+            50% { box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(180, 194, 255, 0.35); }
+          }
+          #s-mod2-triagem .tg-card:hover:not(.req-done) {
+            opacity: 0.88;
+            transform: translateY(-2px) scale(1);
+            border-color: rgba(180, 194, 255, 0.5);
+          }
+          #s-mod2-triagem .tg-card.req-done {
+            opacity: 1;
+            transform: scale(1);
+            animation: none;
+            border-color: rgba(180, 194, 255, 0.7);
+            box-shadow: 0 14px 32px rgba(107, 122, 237, 0.28);
+          }
+          #s-mod2-triagem .tg-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #6B7AED, #9AA6F5);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.35s ease;
+          }
+          #s-mod2-triagem .tg-card.req-done::before { transform: scaleX(1); }
+          #s-mod2-triagem .tg-check {
+            position: absolute;
+            top: 10px; right: 10px;
+            width: 22px; height: 22px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6B7AED, #2A2D5C);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: scale(0.6);
+            transition: opacity 0.25s ease, transform 0.25s ease;
+          }
+          #s-mod2-triagem .tg-card.req-done .tg-check {
+            opacity: 1;
+            transform: scale(1);
+          }
+          #s-mod2-triagem .tg-ico {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #6B7AED, #2A2D5C);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 16px rgba(180, 194, 255, 0.28);
+          }
+          #s-mod2-triagem .tg-ico svg {
+            width: 26px;
+            height: 26px;
+            stroke: #E8ECFF;
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+          }
+          #s-mod2-triagem .tg-copy { min-width: 0; flex: 1; }
+          #s-mod2-triagem .tg-name {
+            font-family: var(--font-h);
+            font-size: clamp(15px, 1.45vw, 18px);
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.25;
+            margin: 0 0 6px;
+            padding-right: 18px;
+          }
+          #s-mod2-triagem .tg-text {
+            font-family: var(--font-p);
+            font-size: clamp(12.5px, 1.1vw, 14px);
+            line-height: 1.45;
+            color: rgba(255, 255, 255, 0.82);
+            margin: 0;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transform: translateY(-4px);
+            transition: max-height 0.35s ease, opacity 0.3s ease, transform 0.3s ease;
+          }
+          #s-mod2-triagem .tg-card.req-done .tg-text {
+            max-height: 90px;
+            opacity: 1;
+            transform: translateY(0);
+          }
+          #s-mod2-triagem .tg-hint {
+            font-family: var(--font-h);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(180, 194, 255, 0.7);
+            margin: 0;
+          }
+          #s-mod2-triagem .tg-card.req-done .tg-hint { display: none; }
+          #s-mod2-triagem .tg-intro,
+          #s-mod2-triagem .tg-progress,
+          #s-mod2-triagem .tg-grid,
+          #s-mod2-triagem .tg-alert {
+            flex-shrink: 0;
+          }
+          #s-mod2-triagem .tg-alert {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            background: linear-gradient(160deg, rgba(140, 36, 52, 0.45) 0%, #1a0c14 100%);
+            border: 1px solid rgba(255, 140, 150, 0.42);
+            border-radius: 16px;
+            padding: 0 18px;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            pointer-events: none;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+            transition: max-height 0.45s ease, opacity 0.4s ease, padding 0.35s ease;
+          }
+          #s-mod2-triagem .tg-alert.is-on {
+            max-height: 480px;
+            opacity: 1;
+            padding: 14px 18px;
+            pointer-events: auto;
+            overflow: visible;
+          }
+          #s-mod2-triagem .tg-alert-x {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #E85A6A, #8B1E2D);
+            color: #fff;
+            font-family: var(--font-h);
+            font-size: 18px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 16px rgba(232, 90, 106, 0.4);
+          }
+          #s-mod2-triagem .tg-alert p {
+            font-family: var(--font-p);
+            font-size: clamp(13px, 1.2vw, 15px);
+            line-height: 1.45;
+            color: rgba(255, 255, 255, 0.92);
+            margin: 0;
+          }
+          #s-mod2-triagem .tg-alert strong { color: #FFD0D5; font-weight: 800; }
+          @media screen and (max-width: 768px) {
+            #s-mod2-triagem .slide-title {
+              font-size: 20px !important;
+              line-height: 1.2 !important;
+              margin-top: 4px !important;
+            }
+            #s-mod2-triagem .slide-title span {
+              display: inline !important;
+              margin-top: 0 !important;
+            }
+            #s-mod2-triagem .slide-subtitle { display: none; }
+            #s-mod2-triagem .tg-content {
+              justify-content: flex-start !important;
+              min-height: 0;
+              padding: 4px 12px calc(132px + env(safe-area-inset-bottom, 0px)) !important;
+              gap: 8px !important;
+              overflow-y: auto;
+              overflow-x: hidden;
+              -webkit-overflow-scrolling: touch;
+            }
+            #s-mod2-triagem .wave { display: none; }
+            #s-mod2-triagem .tg-intro {
+              overflow: visible;
+              padding: 10px 12px 10px 14px;
+              border-radius: 12px;
+            }
+            #s-mod2-triagem .tg-intro p {
+              font-size: 13px !important;
+              line-height: 1.4 !important;
+            }
+            #s-mod2-triagem .tg-progress {
+              gap: 8px;
+              align-items: flex-start;
+            }
+            #s-mod2-triagem .tg-progress span {
+              font-size: 12px !important;
+              line-height: 1.35 !important;
+              flex: 1;
+            }
+            #s-mod2-triagem .tg-progress strong {
+              font-size: 12px;
+              flex-shrink: 0;
+              padding-top: 1px;
+            }
+            #s-mod2-triagem .tg-grid {
+              grid-template-columns: 1fr;
+              gap: 8px;
+            }
+            #s-mod2-triagem .tg-card {
+              padding: 12px 12px 12px 10px;
+              gap: 10px;
+              animation: none;
+              opacity: 0.78;
+              transform: none;
+              border-radius: 14px;
+            }
+            #s-mod2-triagem .tg-card:hover:not(.req-done),
+            #s-mod2-triagem .tg-card.req-done {
+              transform: none;
+            }
+            #s-mod2-triagem .tg-ico {
+              width: 40px;
+              height: 40px;
+              border-radius: 10px;
+            }
+            #s-mod2-triagem .tg-ico svg {
+              width: 22px;
+              height: 22px;
+            }
+            #s-mod2-triagem .tg-name {
+              font-size: 14px !important;
+              line-height: 1.25 !important;
+              margin: 0 0 4px;
+              padding-right: 22px;
+            }
+            #s-mod2-triagem .tg-hint {
+              font-size: 10px !important;
+              letter-spacing: 0.06em;
+            }
+            #s-mod2-triagem .tg-text {
+              font-size: 12.5px !important;
+              line-height: 1.4 !important;
+            }
+            #s-mod2-triagem .tg-card.req-done .tg-text {
+              max-height: 140px;
+            }
+            #s-mod2-triagem .tg-check {
+              top: 8px;
+              right: 8px;
+              width: 20px;
+              height: 20px;
+              font-size: 11px;
+            }
+            #s-mod2-triagem .tg-alert.is-on {
+              max-height: 480px;
+              padding: 12px;
+              gap: 10px;
+              align-items: flex-start;
+              border-radius: 12px;
+              overflow: visible;
+            }
+            #s-mod2-triagem .tg-alert-x {
+              width: 32px;
+              height: 32px;
+              font-size: 14px;
+              margin-top: 1px;
+            }
+            #s-mod2-triagem .tg-alert p {
+              font-size: 12.5px !important;
+              line-height: 1.4 !important;
+            }
+          }
+        </style>
+        <div class="top-bar">
+          <div><span class="section-tag">⚠️ Triagem</span>
+            <div class="slide-title" style="margin-top:6px">Defeitos Estruturais <span>na Triagem</span></div>
+            <div class="slide-subtitle">Padrões Técnicos de Cargas e Triagem Visual de Pallets</div>
+          </div>
+        </div>
+        <div class="content-area tg-content">
+          <div class="tg-intro">
+            <p>A triagem de pallets é etapa crítica. Pallets com defeitos estruturais <strong>não podem ser inseridos</strong> no sistema automatizado sob nenhuma circunstância.</p>
+          </div>
+          <div class="tg-progress">
+            <span id="tg-progress-hint">Toque em cada defeito para inspecionar</span>
+            <strong id="tg-progress-count">0 / 4</strong>
+          </div>
+          <div class="tg-grid">
+            <button type="button" class="tg-card req-item" onclick="tgInspect(this)" aria-label="Inspecionar: Toco Quebrado">
+              <span class="tg-check" aria-hidden="true">✓</span>
+              <div class="tg-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12" rx="1.5"/><path d="M8 6v12M16 6v12"/><path d="M4 12h5l2 3 2-6 2 3h5"/></svg>
               </div>
-              <button type="button" class="mn-jump-btn" onclick="mnJumpDown()" aria-label="Ver mais regras">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-              </button>
-              <div class="mn-row mn-row2" id="mn-row2-anchor">
-                <div class="mn-step">
-                  <div class="mn-node">6</div>
-                  <span class="mn-ico">🚫</span>
-                  <div class="mn-copy">
-                    <p class="mn-title">Nunca bloqueie áreas críticas</p>
-                    <p class="mn-text">Não pare sobre faixas, rampas ou em frente a equipamentos de emergência.</p>
-                  </div>
-                </div>
-                <div class="mn-step">
-                  <div class="mn-node">7</div>
-                  <span class="mn-ico">🚛</span>
-                  <div class="mn-copy">
-                    <p class="mn-title">Carga/descarga só nas docas</p>
-                    <p class="mn-text">Use apenas áreas sinalizadas para carga e descarga.</p>
-                  </div>
-                </div>
-                <div class="mn-step">
-                  <div class="mn-node">8</div>
-                  <span class="mn-ico">🟥</span>
-                  <div class="mn-copy">
-                    <p class="mn-title">Na Red Zone</p>
-                    <p class="mn-text">NUNCA pessoa e empilhadeira ao mesmo tempo.</p>
-                  </div>
-                </div>
-                <div class="mn-step">
-                  <div class="mn-node">9</div>
-                  <span class="mn-ico">🅿️</span>
-                  <div class="mn-copy">
-                    <p class="mn-title">Parada segura do caminhão</p>
-                    <p class="mn-text">Caminhão desligado, freio estacionário acionado e trava-rodas.</p>
-                  </div>
-                </div>
-                <div class="mn-step">
-                  <div class="mn-node">10</div>
-                  <span class="mn-ico">🚸</span>
-                  <div class="mn-copy">
-                    <p class="mn-title">Se precisar descer, use a rota segura</p>
-                    <p class="mn-text">Transite pela frente da doca e pelas faixas de pedestres.</p>
-                  </div>
-                </div>
+              <div class="tg-copy">
+                <p class="tg-name">Toco Quebrado</p>
+                <p class="tg-hint">Toque para inspecionar</p>
+                <p class="tg-text">Comprometimento da base de apoio causa instabilidade nos garfos dos transelevadores.</p>
               </div>
-              <button type="button" class="mn-back-btn" onclick="mnJumpTop()">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-                Voltar ao início
-              </button>
-            </div>
-            <div class="mn-carousel-nav" id="mn-carousel-nav">
-              <button type="button" class="mn-nav-btn" id="mn-prev" aria-label="Anterior" onclick="mnCarouselNav(-1)">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-              </button>
-              <span class="mn-counter" id="mn-counter">1 / 10</span>
-              <button type="button" class="mn-nav-btn" id="mn-next" aria-label="Próximo" onclick="mnCarouselNav(1)">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
-              </button>
-            </div>
+            </button>
+            <button type="button" class="tg-card req-item" onclick="tgInspect(this)" aria-label="Inspecionar: Tábua Quebrada ou Irregular">
+              <span class="tg-check" aria-hidden="true">✓</span>
+              <div class="tg-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M3 8c1.8-2 3.6 2 5.4 0S12 10 13.8 8s3.6 2 5.4 0M3 12c1.8-2 3.6 2 5.4 0S12 14 13.8 12s3.6 2 5.4 0M3 16c1.8-2 3.6 2 5.4 0S12 18 13.8 16s3.6 2 5.4 0"/></svg>
+              </div>
+              <div class="tg-copy">
+                <p class="tg-name">Tábua Quebrada ou Irregular</p>
+                <p class="tg-hint">Toque para inspecionar</p>
+                <p class="tg-text">Superfície irregular impede assentamento correto da carga e aumenta risco de queda.</p>
+              </div>
+            </button>
+            <button type="button" class="tg-card req-item" onclick="tgInspect(this)" aria-label="Inspecionar: Empenado ou Espaçamento Elevado">
+              <span class="tg-check" aria-hidden="true">✓</span>
+              <div class="tg-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M3 16c2.5-6 5-8 9-8s6.5 2 9 8"/><path d="M5 16h14"/><path d="M7 16v2M12 16v2M17 16v2"/></svg>
+              </div>
+              <div class="tg-copy">
+                <p class="tg-name">Empenado ou Espaçamento Elevado</p>
+                <p class="tg-hint">Toque para inspecionar</p>
+                <p class="tg-text">Deformações estruturais causam travamento mecânico e parada não programada do sistema.</p>
+              </div>
+            </button>
+            <button type="button" class="tg-card req-item" onclick="tgInspect(this)" aria-label="Inspecionar: Tábua Superior Irregular">
+              <span class="tg-check" aria-hidden="true">✓</span>
+              <div class="tg-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 4 21 20H3L12 4z"/><path d="M12 10v5M12 17.5v.5"/></svg>
+              </div>
+              <div class="tg-copy">
+                <p class="tg-name">Tábua Superior Irregular</p>
+                <p class="tg-hint">Toque para inspecionar</p>
+                <p class="tg-text">Superfície de apoio irregular compromete estabilidade da carga e pode causar desabamento.</p>
+              </div>
+            </button>
+          </div>
+          <div class="tg-alert" id="tg-alert">
+            <span class="tg-alert-x" aria-hidden="true">✕</span>
+            <p><strong>Risco principal:</strong> Desabamento de cargas, instabilidade durante transporte automático e queda de produtos com risco de dano patrimonial e lesão a pessoas.</p>
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
-
-      <!-- ── S-MOD2-VIDEO3: VÍDEO — Distrações e Proibições no Setor Logístico ── -->
-      <section class="slide video-slide" id="s-mod2-video3">
-        <div class="top-bar">
-          <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Distrações e Proibições <span>no Setor Logístico</span></div>
-            <div class="slide-subtitle">Padrões Técnicos de Cargas e Triagem Visual de Pallets</div>
-          </div>
-        </div>
-        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div class="video-wrap">
-            <div class="video-box">
-              <iframe id="panda-26e6ccab-7db6-4b44-b977-7af8c412a43c"
-                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=26e6ccab-7db6-4b44-b977-7af8c412a43c"
-                frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
-                allowfullscreen="true" fetchpriority="high"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
-                title="Distrações e Proibições no Setor Logístico — NR 12">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S-MOD2-VIDEO4: VÍDEO — Faixas de Trânsito e Preferências de Passagem ── -->
-      <section class="slide video-slide" id="s-mod2-video4">
-        <div class="top-bar">
-          <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Faixas de Trânsito <span>e Preferências de Passagem</span></div>
-            <div class="slide-subtitle">Padrões Técnicos de Cargas e Triagem Visual de Pallets</div>
-          </div>
-        </div>
-        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div class="video-wrap">
-            <div class="video-box">
-              <iframe id="panda-09e3ee91-9772-4e7e-b719-9c2cf674c04a"
-                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=09e3ee91-9772-4e7e-b719-9c2cf674c04a"
-                frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
-                allowfullscreen="true" fetchpriority="high"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
-                title="Faixas de Trânsito e Preferências de Passagem — NR 12">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
-          </svg></div>
-      </section>
-
-      <!-- ── S-MOD2-VIDEO5: VÍDEO — Bloqueio de Áreas Críticas e Estacionamento Preventivo ── -->
-      <section class="slide video-slide" id="s-mod2-video5">
-        <div class="top-bar">
-          <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Bloqueio de Áreas Críticas <span>e Estacionamento Preventivo</span></div>
-            <div class="slide-subtitle">Padrões Técnicos de Cargas e Triagem Visual de Pallets</div>
-          </div>
-        </div>
-        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <div class="video-wrap">
-            <div class="video-box">
-              <iframe id="panda-168d9989-2f60-43c9-bc79-b5f272231045"
-                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=168d9989-2f60-43c9-bc79-b5f272231045"
-                frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
-                allowfullscreen="true" fetchpriority="high"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
-                title="Bloqueio de Áreas Críticas e Estacionamento Preventivo — NR 12">
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
-          </svg></div>
-      </section>
-
 
       <!-- ── S-MOD2-GAME: DESAFIO — Verdadeiro ou Falso ── -->
       <section class="slide" id="s-mod2-game">
@@ -11150,8 +11497,8 @@
           }
           #s-mod2-game #mod2tf-intro {
             padding: 32px 24px 36px;
-            background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%);
-            border: 1px solid rgba(201, 163, 255, 0.28);
+            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%);
+            border: 1px solid rgba(180, 194, 255, 0.28);
             border-radius: 24px;
             box-shadow: 0 28px 64px rgba(0, 0, 0, 0.4);
           }
@@ -11191,7 +11538,7 @@
             }
           }
           #s-mod2-game .mod2tf-card {
-            background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%);
+            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%);
             border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 24px;
             padding: clamp(28px, 5vw, 40px) clamp(20px, 4vw, 32px);
@@ -11303,9 +11650,9 @@
           <div id="mod2tf-intro" class="mod2tf-wrap" style="text-align:center; animation: fadeIn 0.8s ease;">
             <div class="ic-circle" style="margin: 0 auto 24px; width: 96px; height: 96px; font-size: 48px;">🎮</div>
             <h3 style="font-family:var(--font-h); font-size:26px; color:var(--white); margin-bottom:12px;">
-              Desafio NR-11 — Módulo 2</h3>
+              Desafio NR 12 — Módulo 2</h3>
             <p style="color:rgba(255,255,255,0.72); font-size:16px; line-height:1.65; margin-bottom:28px; max-width: 600px; margin-left: auto; margin-right: auto;">
-              Responda <strong>Verdadeiro ou Falso</strong> para 6 afirmações sobre aptidão psicofísica, acesso, distrações e regras de circulação — e valide o que você aprendeu no Módulo 2!
+              Responda <strong>Verdadeiro ou Falso</strong> para 4 afirmações sobre limites de carga, Pallet PBR, proibições na triagem e defeitos estruturais.
             </p>
             <button class="btn-start" style="padding: 16px 40px; font-size: 15px; text-transform: uppercase;"
               onclick="startMod2TfGame()">INICIAR DESAFIO</button>
@@ -11319,7 +11666,7 @@
                   style="font-family:var(--font-h); font-size:11px; font-weight:700; color:var(--red); letter-spacing:1px; text-transform:uppercase;">Verdadeiro
                   ou Falso?</span>
                 <span id="mod2tf-counter"
-                  style="font-family:var(--font-h); font-size:14px; font-weight:700; color:var(--white);">1 / 6</span>
+                  style="font-family:var(--font-h); font-size:14px; font-weight:700; color:var(--white);">1 / 4</span>
               </div>
               <div class="game-progress"
                 style="height: 8px; background: rgba(255,255,255,0.05); border-radius: 4px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
@@ -11343,14 +11690,14 @@
           </div>
 
           <div id="mod2tf-result" class="mod2tf-wrap"
-            style="display:none; text-align:center; padding: 24px 20px; background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%); border-radius: 28px; border: 1px solid rgba(255,255,255,0.1); animation: slideUp 0.6s ease;">
+            style="display:none; text-align:center; padding: 24px 20px; background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%); border-radius: 28px; border: 1px solid rgba(255,255,255,0.1); animation: slideUp 0.6s ease;">
             <div class="r-icon" style="font-size: 56px; margin-bottom: 12px;">🏅</div>
             <h3
               style="font-family:var(--font-h); font-size: clamp(24px, 5vw, 30px); color:var(--gold); margin-bottom:8px; font-weight:900;">
               Desafio Concluído!</h3>
             <div class="r-status ap"
               style="display:inline-block; padding: 6px 18px; font-size: 13px; margin-bottom:12px; font-weight:700;">
-              Módulo 2 — Aptidão e Acesso Validados
+              Módulo 2 — Cargas e Triagem Validadas
             </div>
             <p id="mod2tf-result-msg"
               style="color:rgba(255,255,255,0.88); font-size:15px; line-height:1.55; margin-bottom:20px;"></p>
@@ -11361,7 +11708,7 @@
 
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -11376,7 +11723,7 @@
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
             <path d="M0,65 C360,20 720,90 1080,40 C1260,15 1390,70 1440,60 L1440,100 L0,100 Z"
-              fill="rgba(201, 163, 255,0.07)" />
+              fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -11402,7 +11749,7 @@
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -11429,7 +11776,7 @@
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -11455,7 +11802,7 @@
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -11488,22 +11835,22 @@
           #s-mod3-driver-rules .dr-card {
             height: 100%; box-sizing: border-box;
             background: #141414;
-            border: 1px solid rgba(201, 163, 255,0.3);
+            border: 1px solid rgba(180, 194, 255,0.3);
             border-radius: 16px;
             padding: clamp(12px,2.6cqh,18px) clamp(8px,1.6cqw,14px);
             display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
             gap: clamp(6px,1.2cqh,10px);
             transition: transform 0.3s, border-color 0.3s;
           }
-          #s-mod3-driver-rules .dr-card:hover { transform: translateY(-4px); border-color: rgba(201, 163, 255,0.55); }
+          #s-mod3-driver-rules .dr-card:hover { transform: translateY(-4px); border-color: rgba(180, 194, 255,0.55); }
           #s-mod3-driver-rules .dr-badge {
             width: clamp(40px,7.5cqh,52px); height: clamp(40px,7.5cqh,52px);
             border-radius: 50%; flex-shrink: 0;
             display: flex; align-items: center; justify-content: center;
             font-size: clamp(18px,3.4cqh,24px); font-weight: 900;
             color: #fff;
-            background: linear-gradient(135deg, #8A4BB8, #4A215C);
-            box-shadow: 0 6px 16px rgba(201, 163, 255,0.4);
+            background: linear-gradient(135deg, #6B7AED, #2A2D5C);
+            box-shadow: 0 6px 16px rgba(180, 194, 255,0.4);
           }
           #s-mod3-driver-rules .dr-card-title {
             font-family: var(--font-h); font-size: clamp(12.5px,2cqh,14px); font-weight: 800; color: #fff;
@@ -11552,8 +11899,8 @@
               padding: 32px 22px 28px !important;
               gap: 12px !important;
               border-radius: 20px;
-              background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%);
-              border: 1px solid rgba(201, 163, 255, 0.35);
+              background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%);
+              border: 1px solid rgba(180, 194, 255, 0.35);
             }
             #s-mod3-driver-rules .dr-card.dr-card-active {
               display: flex !important;
@@ -11570,11 +11917,11 @@
               width: 100%; max-width: 340px; flex-shrink: 0;
             }
             #s-mod3-driver-rules .dr-nav-btn {
-              background: linear-gradient(135deg, #8A4BB8, #4A215C);
+              background: linear-gradient(135deg, #6B7AED, #2A2D5C);
               color: #fff; border: none; border-radius: 50%;
               width: 46px; height: 46px; min-width: 46px; min-height: 46px;
               cursor: pointer; display: flex; align-items: center; justify-content: center;
-              box-shadow: 0 6px 16px rgba(201, 163, 255, 0.4);
+              box-shadow: 0 6px 16px rgba(180, 194, 255, 0.4);
               touch-action: manipulation; -webkit-tap-highlight-color: transparent;
             }
             #s-mod3-driver-rules .dr-nav-btn:active:not(:disabled) { transform: scale(0.94); }
@@ -11666,7 +12013,7 @@
 
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -11692,7 +12039,7 @@
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -11718,7 +12065,7 @@
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -11744,7 +12091,7 @@
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -11778,8 +12125,8 @@
             min-width: 0; min-height: 0; height: 100%; justify-content: flex-start;
           }
           #s-mod3-visibilidade .cr-card {
-            background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%);
-            border: 1px solid rgba(201, 163, 255,0.25);
+            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%);
+            border: 1px solid rgba(180, 194, 255,0.25);
             border-radius: 18px;
             padding: clamp(8px,1.4cqh,12px);
             display: flex; flex-direction: column; align-items: center; gap: clamp(6px,1cqh,10px);
@@ -11896,11 +12243,11 @@
               width: 100%; max-width: 360px; margin: 0 auto; flex-shrink: 0;
             }
             #s-mod3-visibilidade .cr-nav-btn {
-              background: linear-gradient(135deg, #8A4BB8, #4A215C);
+              background: linear-gradient(135deg, #6B7AED, #2A2D5C);
               color: #fff; border: none; border-radius: 50%;
               width: 46px; height: 46px; min-width: 46px; min-height: 46px;
               cursor: pointer; display: flex; align-items: center; justify-content: center;
-              box-shadow: 0 6px 16px rgba(201, 163, 255, 0.4);
+              box-shadow: 0 6px 16px rgba(180, 194, 255, 0.4);
               touch-action: manipulation; -webkit-tap-highlight-color: transparent;
             }
             #s-mod3-visibilidade .cr-nav-btn:active:not(:disabled) { transform: scale(0.94); }
@@ -11962,7 +12309,7 @@
 
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -11983,8 +12330,8 @@
             margin: 0 auto;
           }
           .m3g-shell {
-            background: radial-gradient(ellipse at 50% 0%, rgba(201, 163, 255,0.1), transparent 55%),
-                        linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%);
+            background: radial-gradient(ellipse at 50% 0%, rgba(180, 194, 255,0.1), transparent 55%),
+                        linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%);
             border: 1px solid rgba(255,255,255,0.12);
             border-radius: clamp(18px,2.5vw,26px);
             padding: clamp(24px,4vh,36px) clamp(20px,3vw,28px);
@@ -12000,7 +12347,7 @@
           }
           .m3g-label {
             font-family: var(--font-h); font-size: 11px; font-weight: 800;
-            letter-spacing: 0.08em; text-transform: uppercase; color: #C9A3FF;
+            letter-spacing: 0.08em; text-transform: uppercase; color: #B4C2FF;
           }
           .m3g-counter {
             font-family: var(--font-h); font-size: 14px; font-weight: 800;
@@ -12016,7 +12363,7 @@
           }
           .m3g-bar-fill {
             height: 100%; width: 0%;
-            background: linear-gradient(90deg, #8A4BB8, #ffc837);
+            background: linear-gradient(90deg, #6B7AED, #ffc837);
             transition: width 0.45s cubic-bezier(0.4,0,0.2,1);
           }
           /* Situation card */
@@ -12053,7 +12400,7 @@
             transition: background 0.2s, border-color 0.2s, transform 0.15s;
             display: flex; align-items: center; gap: 12px;
           }
-          .m3g-opt:hover { background: rgba(201, 163, 255,0.08); border-color: rgba(201, 163, 255,0.35); }
+          .m3g-opt:hover { background: rgba(180, 194, 255,0.08); border-color: rgba(180, 194, 255,0.35); }
           .m3g-opt:active { transform: scale(0.98); }
           .m3g-opt.m3g-correct { background: rgba(39,174,96,0.15); border-color: #27ae60; color: #fff; }
           .m3g-opt.m3g-wrong   { background: rgba(231,76,60,0.12);  border-color: #e74c3c; color: rgba(255,255,255,0.7); }
@@ -12063,7 +12410,7 @@
             background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
             display: flex; align-items: center; justify-content: center;
             font-family: var(--font-h); font-size: 12px; font-weight: 800;
-            color: #C9A3FF; flex-shrink: 0; transition: background 0.2s;
+            color: #B4C2FF; flex-shrink: 0; transition: background 0.2s;
           }
           .m3g-opt.m3g-correct .m3g-opt-letter { background: #27ae60; color: #fff; border-color: #27ae60; }
           .m3g-opt.m3g-wrong   .m3g-opt-letter { background: #e74c3c; color: #fff; border-color: #e74c3c; }
@@ -12085,10 +12432,10 @@
           .m3g-result-panel { text-align: center; padding: clamp(14px,2.5vh,24px) 0; }
           .m3g-score-ring {
             width: 120px; height: 120px; border-radius: 50%;
-            background: conic-gradient(#8A4BB8 0%, transparent 0%);
+            background: conic-gradient(#6B7AED 0%, transparent 0%);
             display: flex; align-items: center; justify-content: center;
             margin: 0 auto 18px; position: relative;
-            box-shadow: 0 0 36px rgba(201, 163, 255,0.2);
+            box-shadow: 0 0 36px rgba(180, 194, 255,0.2);
           }
           .m3g-score-ring::before {
             content: ''; position: absolute; inset: 8px;
@@ -12096,7 +12443,7 @@
           }
           .m3g-score-num {
             font-family: var(--font-h); font-size: 30px; font-weight: 900;
-            color: #C9A3FF; position: relative; z-index: 1; line-height: 1;
+            color: #B4C2FF; position: relative; z-index: 1; line-height: 1;
           }
           .m3g-score-label {
             font-family: var(--font-h); font-size: 11px;
@@ -12182,15 +12529,15 @@
           }
           #s-mod3-game #m3g-intro {
             padding: clamp(24px,10cqh,64px) clamp(24px,6cqw,48px) !important;
-            background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%);
-            border: 1px solid rgba(201, 163, 255,0.28);
+            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%);
+            border: 1px solid rgba(180, 194, 255,0.28);
             border-radius: clamp(16px,3cqw,26px);
             box-shadow: 0 28px 64px rgba(0,0,0,0.4);
             box-sizing: border-box;
           }
           #s-mod3-game #m3g-result {
-            background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%) !important;
-            border: 1px solid rgba(201, 163, 255,0.28) !important;
+            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%) !important;
+            border: 1px solid rgba(180, 194, 255,0.28) !important;
             border-radius: clamp(16px,3cqw,26px) !important;
             box-shadow: 0 28px 64px rgba(0,0,0,0.4) !important;
             box-sizing: border-box;
@@ -12276,7 +12623,7 @@
 
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -12291,7 +12638,7 @@
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
             <path d="M0,65 C360,20 720,90 1080,40 C1260,15 1390,70 1440,60 L1440,100 L0,100 Z"
-              fill="rgba(201, 163, 255,0.07)" />
+              fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -12317,7 +12664,7 @@
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -12335,8 +12682,8 @@
             width: min(100%, 1080px); margin: 0 auto;
           }
           #s-mod4-redzone .rz-card {
-            background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%);
-            border: 1px solid rgba(201, 163, 255, 0.28);
+            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%);
+            border: 1px solid rgba(180, 194, 255, 0.28);
             border-radius: 18px; box-sizing: border-box;
             box-shadow: 0 18px 40px rgba(0,0,0,0.28);
           }
@@ -12347,21 +12694,21 @@
           }
           #s-mod4-redzone .rz-alert::before {
             content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
-            background: linear-gradient(180deg, #8A4BB8, #B48AE8);
+            background: linear-gradient(180deg, #6B7AED, #9AA6F5);
           }
           #s-mod4-redzone .rz-alert-icon {
             flex-shrink: 0; width: clamp(32px,5cqh,40px); height: clamp(32px,5cqh,40px);
             border-radius: 10px;
-            background: linear-gradient(135deg, #8A4BB8, #4A215C);
+            background: linear-gradient(135deg, #6B7AED, #2A2D5C);
             display: flex; align-items: center; justify-content: center;
             font-size: clamp(15px,2.4cqh,18px);
-            box-shadow: 0 6px 16px rgba(201, 163, 255, 0.35);
+            box-shadow: 0 6px 16px rgba(180, 194, 255, 0.35);
           }
           #s-mod4-redzone .rz-alert p {
             font-family: var(--font-p); font-size: clamp(13.5px,2.2cqh,15.5px);
             color: rgba(255,255,255,0.9); margin: 0; line-height: 1.45;
           }
-          #s-mod4-redzone .rz-alert strong { color: #E0C8FF; font-weight: 800; }
+          #s-mod4-redzone .rz-alert strong { color: #C8D2FF; font-weight: 800; }
           #s-mod4-redzone .rz-row {
             display: grid; grid-template-columns: 1fr 1fr; align-items: stretch;
             gap: clamp(10px,1.6cqw,16px); min-height: min(320px, 42cqh);
@@ -12387,26 +12734,26 @@
           }
           #s-mod4-redzone .rz-negotiable::before {
             content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-            background: linear-gradient(90deg, #8A4BB8, #B48AE8);
+            background: linear-gradient(90deg, #6B7AED, #9AA6F5);
           }
           #s-mod4-redzone .rz-negotiable-title {
             font-family: var(--font-h); font-size: clamp(16px,2.6cqh,20px); font-weight: 900;
-            letter-spacing: 0.04em; color: #E0C8FF;
+            letter-spacing: 0.04em; color: #C8D2FF;
             display: flex; align-items: center; gap: 10px;
           }
           #s-mod4-redzone .rz-neg-icon {
             flex-shrink: 0; width: clamp(30px,5cqh,36px); height: clamp(30px,5cqh,36px);
             border-radius: 50%;
-            background: linear-gradient(135deg, #8A4BB8, #4A215C);
+            background: linear-gradient(135deg, #6B7AED, #2A2D5C);
             display: flex; align-items: center; justify-content: center;
             font-size: clamp(14px,2.2cqh,17px);
-            box-shadow: 0 6px 16px rgba(201, 163, 255, 0.4);
+            box-shadow: 0 6px 16px rgba(180, 194, 255, 0.4);
           }
           #s-mod4-redzone .rz-negotiable p {
             font-family: var(--font-p); font-size: clamp(13.5px,2.2cqh,15.5px);
             color: rgba(255,255,255,0.85); margin: 0; line-height: 1.5;
           }
-          #s-mod4-redzone .rz-negotiable p strong { color: #C9A3FF; }
+          #s-mod4-redzone .rz-negotiable p strong { color: #B4C2FF; }
           #s-mod4-redzone .rz-negotiable ul {
             margin: 0; padding: 0; list-style: none;
             display: flex; flex-direction: column; gap: clamp(8px,1.4cqh,12px);
@@ -12415,17 +12762,17 @@
             font-family: var(--font-p); font-size: clamp(13.5px,2.2cqh,15.5px);
             color: rgba(255,255,255,0.9); line-height: 1.4;
             display: flex; align-items: flex-start; gap: 10px;
-            background: rgba(201, 163, 255, 0.08);
-            border: 1px solid rgba(201, 163, 255, 0.18);
+            background: rgba(180, 194, 255, 0.08);
+            border: 1px solid rgba(180, 194, 255, 0.18);
             border-radius: 12px; padding: clamp(8px,1.4cqh,10px) clamp(10px,1.4cqw,12px);
           }
           #s-mod4-redzone .rz-li-icon {
             flex-shrink: 0; width: 28px; height: 28px; border-radius: 8px;
-            background: rgba(201, 163, 255, 0.18);
+            background: rgba(180, 194, 255, 0.18);
             display: flex; align-items: center; justify-content: center;
             font-size: 14px;
           }
-          #s-mod4-redzone .rz-negotiable li strong { color: #E0C8FF; }
+          #s-mod4-redzone .rz-negotiable li strong { color: #C8D2FF; }
           #s-mod4-redzone .rz-callout {
             display: flex; align-items: center; gap: clamp(10px,1.6cqw,16px);
             padding: clamp(10px,1.8cqh,14px) clamp(14px,2cqw,20px);
@@ -12433,21 +12780,21 @@
           }
           #s-mod4-redzone .rz-callout::before {
             content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
-            background: linear-gradient(180deg, #8A4BB8, #B48AE8);
+            background: linear-gradient(180deg, #6B7AED, #9AA6F5);
           }
           #s-mod4-redzone .rz-callout-icon {
             flex-shrink: 0; width: clamp(32px,5cqh,40px); height: clamp(32px,5cqh,40px);
             border-radius: 10px;
-            background: linear-gradient(135deg, #8A4BB8, #4A215C);
+            background: linear-gradient(135deg, #6B7AED, #2A2D5C);
             display: flex; align-items: center; justify-content: center;
             font-size: clamp(15px,2.4cqh,18px);
-            box-shadow: 0 6px 16px rgba(201, 163, 255, 0.35);
+            box-shadow: 0 6px 16px rgba(180, 194, 255, 0.35);
           }
           #s-mod4-redzone .rz-callout p {
             font-family: var(--font-p); font-size: clamp(13.5px,2.2cqh,15.5px); font-weight: 600;
             color: rgba(255,255,255,0.92); margin: 0; line-height: 1.5;
           }
-          #s-mod4-redzone .rz-callout strong { color: #E0C8FF; font-weight: 800; }
+          #s-mod4-redzone .rz-callout strong { color: #C8D2FF; font-weight: 800; }
           @media (min-width: 769px) and (max-height: 820px) {
             #s-mod4-redzone .rz-content { padding-bottom: 72px; }
             #s-mod4-redzone .rz-shell { gap: 8px; }
@@ -12494,9 +12841,9 @@
               bottom: 76px;
               transform: translateX(-50%);
               width: 46px; height: 46px; border: none; border-radius: 50%;
-              background: linear-gradient(135deg, #8A4BB8, #4A215C);
+              background: linear-gradient(135deg, #6B7AED, #2A2D5C);
               color: #fff; cursor: pointer;
-              box-shadow: 0 8px 20px rgba(201, 163, 255, 0.5);
+              box-shadow: 0 8px 20px rgba(180, 194, 255, 0.5);
               touch-action: manipulation; -webkit-tap-highlight-color: transparent;
               z-index: 50; animation: rzBounce 1.4s ease-in-out infinite;
               transition: opacity 0.22s ease, transform 0.22s ease;
@@ -12519,8 +12866,8 @@
               align-items: center; justify-content: center; gap: 8px;
               margin: 4px auto 0; padding: 10px 16px;
               border: none; border-radius: 99px;
-              background: rgba(201, 163, 255, 0.18);
-              color: #E0C8FF; font-family: var(--font-h); font-size: 13px; font-weight: 800;
+              background: rgba(180, 194, 255, 0.18);
+              color: #C8D2FF; font-family: var(--font-h); font-size: 13px; font-weight: 800;
               cursor: pointer; touch-action: manipulation;
             }
           }
@@ -12564,7 +12911,7 @@
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -12590,7 +12937,7 @@
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -12621,7 +12968,7 @@
           }
           #s-mod4-pontoscegos .pc-img-card {
             background: #ffffff; border-radius: 20px; overflow: hidden;
-            border: 1px solid rgba(201, 163, 255,0.25);
+            border: 1px solid rgba(180, 194, 255,0.25);
             min-width: 0; width: 100%; display: flex; align-items: center; justify-content: center;
           }
           #s-mod4-pontoscegos .pc-img-card img {
@@ -12630,7 +12977,7 @@
           #s-mod4-pontoscegos .pc-list-card {
             position: relative; overflow: hidden;
             background: #10161e;
-            border: 1px solid rgba(201, 163, 255,0.35);
+            border: 1px solid rgba(180, 194, 255,0.35);
             border-radius: 20px;
             padding: clamp(18px,3.2cqh,28px) clamp(20px,2.8cqw,30px);
             display: flex; flex-direction: column; justify-content: center; gap: clamp(14px,2.4cqh,22px);
@@ -12639,18 +12986,18 @@
           }
           #s-mod4-pontoscegos .pc-list-card::before {
             content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-            background: linear-gradient(90deg, #8A4BB8, #B48AE8);
+            background: linear-gradient(90deg, #6B7AED, #9AA6F5);
           }
           #s-mod4-pontoscegos .pc-list-title {
             font-family: var(--font-h); font-size: clamp(19px,3.4cqh,25px); font-weight: 900;
-            color: #E0C8FF; display: flex; align-items: center; gap: 10px;
+            color: #C8D2FF; display: flex; align-items: center; gap: 10px;
           }
           #s-mod4-pontoscegos .pc-list-title-icon {
             flex-shrink: 0; width: clamp(30px,5cqh,38px); height: clamp(30px,5cqh,38px);
-            border-radius: 50%; background: linear-gradient(135deg, #8A4BB8, #4A215C);
+            border-radius: 50%; background: linear-gradient(135deg, #6B7AED, #2A2D5C);
             display: flex; align-items: center; justify-content: center;
             font-size: clamp(15px,2.6cqh,19px); color: #fff;
-            box-shadow: 0 6px 16px rgba(201, 163, 255,0.4);
+            box-shadow: 0 6px 16px rgba(180, 194, 255,0.4);
           }
           #s-mod4-pontoscegos .pc-list {
             list-style: none; margin: 0; padding: 0;
@@ -12722,9 +13069,9 @@
               bottom: 76px;
               transform: translateX(-50%);
               width: 46px; height: 46px; border: none; border-radius: 50%;
-              background: linear-gradient(135deg, #8A4BB8, #4A215C);
+              background: linear-gradient(135deg, #6B7AED, #2A2D5C);
               color: #fff; cursor: pointer;
-              box-shadow: 0 8px 20px rgba(201, 163, 255, 0.5);
+              box-shadow: 0 8px 20px rgba(180, 194, 255, 0.5);
               touch-action: manipulation; -webkit-tap-highlight-color: transparent;
               z-index: 50; animation: pcBounce 1.4s ease-in-out infinite;
               transition: opacity 0.22s ease, transform 0.22s ease;
@@ -12750,8 +13097,8 @@
               align-items: center; justify-content: center; gap: 8px;
               margin: 4px auto 0; padding: 10px 16px;
               border: none; border-radius: 99px;
-              background: rgba(201, 163, 255, 0.18);
-              color: #E0C8FF; font-family: var(--font-h); font-size: 13px; font-weight: 800;
+              background: rgba(180, 194, 255, 0.18);
+              color: #C8D2FF; font-family: var(--font-h); font-size: 13px; font-weight: 800;
               cursor: pointer; touch-action: manipulation;
             }
           }
@@ -12795,7 +13142,7 @@
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -12823,15 +13170,15 @@
           }
           #s-mod4-game #m4g-intro {
             padding: clamp(24px,10cqh,64px) clamp(24px,6cqw,48px) !important;
-            background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%);
-            border: 1px solid rgba(201, 163, 255,0.28);
+            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%);
+            border: 1px solid rgba(180, 194, 255,0.28);
             border-radius: clamp(16px,3cqw,26px);
             box-shadow: 0 28px 64px rgba(0,0,0,0.4);
             box-sizing: border-box;
           }
           #s-mod4-game #m4g-result {
-            background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%) !important;
-            border: 1px solid rgba(201, 163, 255,0.28) !important;
+            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%) !important;
+            border: 1px solid rgba(180, 194, 255,0.28) !important;
             border-radius: clamp(16px,3cqw,26px) !important;
             box-shadow: 0 28px 64px rgba(0,0,0,0.4) !important;
             box-sizing: border-box;
@@ -12882,7 +13229,7 @@
           }
 
           #s-mod4-game .m4g-card {
-            background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%); border: 2px solid rgba(255,255,255,0.12);
+            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%); border: 2px solid rgba(255,255,255,0.12);
             border-radius: 24px; padding: clamp(26px,5vw,38px) clamp(20px,4vw,30px);
             min-height: 150px; display: flex; flex-direction: column; align-items: center;
             justify-content: center; text-align: center; box-shadow: 0 24px 48px rgba(0,0,0,.35);
@@ -12985,7 +13332,7 @@
 
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -13000,7 +13347,7 @@
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
             <path d="M0,65 C360,20 720,90 1080,40 C1260,15 1390,70 1440,60 L1440,100 L0,100 Z"
-              fill="rgba(201, 163, 255,0.07)" />
+              fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -13021,8 +13368,8 @@
             min-height: 0;
           }
           #s-mod5-picking .pk-card {
-            background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%);
-            border: 1px solid rgba(201, 163, 255, 0.28);
+            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%);
+            border: 1px solid rgba(180, 194, 255, 0.28);
             border-radius: 16px; box-sizing: border-box;
             box-shadow: 0 18px 40px rgba(0,0,0,0.28);
           }
@@ -13033,13 +13380,13 @@
           }
           #s-mod5-picking .pk-intro::before {
             content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
-            background: linear-gradient(180deg, #8A4BB8, #B48AE8);
+            background: linear-gradient(180deg, #6B7AED, #9AA6F5);
           }
           #s-mod5-picking .pk-intro p {
             font-family: var(--font-p); font-size: clamp(13px, 2.1cqh, 15px);
             color: rgba(255,255,255,0.9); margin: 0; line-height: 1.4;
           }
-          #s-mod5-picking .pk-intro strong { color: #E0C8FF; font-weight: 800; }
+          #s-mod5-picking .pk-intro strong { color: #C8D2FF; font-weight: 800; }
           #s-mod5-picking .pk-warn {
             display: flex; align-items: center; gap: 12px;
             padding: 10px 16px; flex-shrink: 0;
@@ -13047,21 +13394,21 @@
           }
           #s-mod5-picking .pk-warn::before {
             content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
-            background: linear-gradient(180deg, #8A4BB8, #B48AE8);
+            background: linear-gradient(180deg, #6B7AED, #9AA6F5);
           }
           #s-mod5-picking .pk-icon {
             flex-shrink: 0; width: 32px; height: 32px;
             border-radius: 8px;
-            background: linear-gradient(135deg, #8A4BB8, #4A215C);
+            background: linear-gradient(135deg, #6B7AED, #2A2D5C);
             display: flex; align-items: center; justify-content: center;
             font-size: 15px;
-            box-shadow: 0 6px 16px rgba(201, 163, 255, 0.35);
+            box-shadow: 0 6px 16px rgba(180, 194, 255, 0.35);
           }
           #s-mod5-picking .pk-warn p {
             font-family: var(--font-p); font-size: clamp(13px, 2.1cqh, 15px); font-weight: 600;
             color: rgba(255,255,255,0.92); margin: 0; line-height: 1.4;
           }
-          #s-mod5-picking .pk-warn strong { color: #E0C8FF; font-weight: 800; }
+          #s-mod5-picking .pk-warn strong { color: #C8D2FF; font-weight: 800; }
           #s-mod5-picking .pk-visual {
             flex: 1 1 0; width: 100%; min-height: 0; padding: 8px;
             display: flex; align-items: center; justify-content: center;
@@ -13124,11 +13471,11 @@
               width: 100%; max-width: 360px; margin: 0 auto; flex-shrink: 0;
             }
             #s-mod5-picking .pk-nav-btn {
-              background: linear-gradient(135deg, #8A4BB8, #4A215C);
+              background: linear-gradient(135deg, #6B7AED, #2A2D5C);
               color: #fff; border: none; border-radius: 50%;
               width: 46px; height: 46px; min-width: 46px; min-height: 46px;
               cursor: pointer; display: flex; align-items: center; justify-content: center;
-              box-shadow: 0 6px 16px rgba(201, 163, 255, 0.4);
+              box-shadow: 0 6px 16px rgba(180, 194, 255, 0.4);
               touch-action: manipulation; -webkit-tap-highlight-color: transparent;
             }
             #s-mod5-picking .pk-nav-btn:active:not(:disabled) { transform: scale(0.94); }
@@ -13173,7 +13520,7 @@
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -13199,7 +13546,7 @@
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -13224,8 +13571,8 @@
             flex-shrink: 0; min-width: 0;
           }
           #s-mod5-aproximacao .apx-card {
-            background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%);
-            border: 1px solid rgba(201, 163, 255, 0.28);
+            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%);
+            border: 1px solid rgba(180, 194, 255, 0.28);
             border-radius: 16px; box-sizing: border-box;
             box-shadow: 0 18px 40px rgba(0,0,0,0.28);
           }
@@ -13236,32 +13583,32 @@
           }
           #s-mod5-aproximacao .apx-gold::before {
             content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
-            background: linear-gradient(180deg, #8A4BB8, #B48AE8);
+            background: linear-gradient(180deg, #6B7AED, #9AA6F5);
           }
           #s-mod5-aproximacao .apx-icon {
             flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px;
-            background: linear-gradient(135deg, #8A4BB8, #4A215C);
+            background: linear-gradient(135deg, #6B7AED, #2A2D5C);
             display: flex; align-items: center; justify-content: center;
-            font-size: 20px; box-shadow: 0 6px 16px rgba(201, 163, 255, 0.35);
+            font-size: 20px; box-shadow: 0 6px 16px rgba(180, 194, 255, 0.35);
           }
           #s-mod5-aproximacao .apx-gold-body { min-width: 0; }
           #s-mod5-aproximacao .apx-kicker {
             font-family: var(--font-h); font-size: 13px; font-weight: 800;
             letter-spacing: 0.08em; text-transform: uppercase;
-            color: #E0C8FF; margin: 0 0 6px;
+            color: #C8D2FF; margin: 0 0 6px;
           }
           #s-mod5-aproximacao .apx-gold p {
             font-family: var(--font-p); font-size: clamp(15px, 2.4cqh, 18px);
             color: rgba(255,255,255,0.9); margin: 0; line-height: 1.45;
           }
-          #s-mod5-aproximacao .apx-gold strong { color: #E0C8FF; font-weight: 800; }
+          #s-mod5-aproximacao .apx-gold strong { color: #C8D2FF; font-weight: 800; }
           #s-mod5-aproximacao .apx-lead {
             display: flex; align-items: center; gap: 12px;
             padding: 12px 18px; flex-shrink: 0;
           }
           #s-mod5-aproximacao .apx-lead-icon {
             flex-shrink: 0; width: 34px; height: 34px; border-radius: 9px;
-            background: rgba(201, 163, 255, 0.18);
+            background: rgba(180, 194, 255, 0.18);
             display: flex; align-items: center; justify-content: center; font-size: 16px;
           }
           #s-mod5-aproximacao .apx-lead p {
@@ -13297,32 +13644,32 @@
             text-align: center; gap: 10px;
             padding: 22px 18px;
             box-sizing: border-box; border-radius: 18px;
-            background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%);
-            border: 1px solid rgba(201, 163, 255, 0.32);
+            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%);
+            border: 1px solid rgba(180, 194, 255, 0.32);
             box-shadow: 0 14px 32px rgba(0,0,0,0.32);
           }
           #s-mod5-aproximacao .apx-flip-back {
             transform: rotateY(180deg);
             background: linear-gradient(160deg, #1c6d8f 0%, #14587a 42%, #0d3d58 100%);
-            border: 1px solid rgba(224, 200, 255, 0.75);
-            box-shadow: 0 0 28px rgba(201, 163, 255, 0.32), inset 0 0 0 1px rgba(224, 200, 255, 0.2);
+            border: 1px solid rgba(200, 210, 255, 0.75);
+            box-shadow: 0 0 28px rgba(180, 194, 255, 0.32), inset 0 0 0 1px rgba(200, 210, 255, 0.2);
           }
           #s-mod5-aproximacao .apx-num {
             width: 52px; height: 52px; border-radius: 50%;
-            background: linear-gradient(135deg, #8A4BB8, #4A215C);
+            background: linear-gradient(135deg, #6B7AED, #2A2D5C);
             color: #fff; font-family: var(--font-h); font-weight: 900; font-size: 22px;
             display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 8px 18px rgba(201, 163, 255, 0.4);
+            box-shadow: 0 8px 18px rgba(180, 194, 255, 0.4);
             flex-shrink: 0;
           }
           #s-mod5-aproximacao .apx-flip-back .apx-num {
-            background: linear-gradient(135deg, #B48AE8, #8A4BB8);
+            background: linear-gradient(135deg, #9AA6F5, #6B7AED);
             color: #062033;
-            box-shadow: 0 8px 18px rgba(224, 200, 255, 0.45);
+            box-shadow: 0 8px 18px rgba(200, 210, 255, 0.45);
           }
           #s-mod5-aproximacao .apx-step-label {
             font-family: var(--font-h); font-size: 13px; font-weight: 800;
-            letter-spacing: 0.14em; text-transform: uppercase; color: #E0C8FF;
+            letter-spacing: 0.14em; text-transform: uppercase; color: #C8D2FF;
             margin: 0;
           }
           #s-mod5-aproximacao .apx-flip-face h3 {
@@ -13333,7 +13680,7 @@
             font-family: var(--font-p); font-size: clamp(15px, 2.3cqh, 17px);
             color: rgba(255,255,255,0.88); margin: 0; line-height: 1.45;
           }
-          #s-mod5-aproximacao .apx-flip-face strong { color: #E0C8FF; }
+          #s-mod5-aproximacao .apx-flip-face strong { color: #C8D2FF; }
           #s-mod5-aproximacao .apx-flip-hint {
             display: inline-flex; align-items: center; gap: 6px;
             margin-top: 8px;
@@ -13350,8 +13697,8 @@
           }
           #s-mod5-aproximacao .apx-arrow {
             flex: 0 0 auto; align-self: center;
-            color: #C9A3FF; font-size: 26px; font-weight: 900;
-            text-shadow: 0 0 12px rgba(201, 163, 255, 0.45);
+            color: #B4C2FF; font-size: 26px; font-weight: 900;
+            text-shadow: 0 0 12px rgba(180, 194, 255, 0.45);
             line-height: 1; padding: 0 2px;
           }
           #s-mod5-aproximacao .apx-carousel-nav { display: none; }
@@ -13404,11 +13751,11 @@
               width: 100%; max-width: 360px; margin: 0 auto; flex-shrink: 0;
             }
             #s-mod5-aproximacao .apx-nav-btn {
-              background: linear-gradient(135deg, #8A4BB8, #4A215C);
+              background: linear-gradient(135deg, #6B7AED, #2A2D5C);
               color: #fff; border: none; border-radius: 50%;
               width: 46px; height: 46px; min-width: 46px; min-height: 46px;
               cursor: pointer; display: flex; align-items: center; justify-content: center;
-              box-shadow: 0 6px 16px rgba(201, 163, 255, 0.4);
+              box-shadow: 0 6px 16px rgba(180, 194, 255, 0.4);
               touch-action: manipulation; -webkit-tap-highlight-color: transparent;
             }
             #s-mod5-aproximacao .apx-nav-btn:active:not(:disabled) { transform: scale(0.94); }
@@ -13505,7 +13852,7 @@
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -13528,34 +13875,34 @@
             position: relative; overflow: hidden; flex-shrink: 0;
             display: flex; align-items: center; gap: clamp(12px,1.8cqw,18px);
             padding: clamp(12px,2cqh,18px) clamp(16px,2.2cqw,22px);
-            background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%);
-            border: 1px solid rgba(201, 163, 255, 0.32);
+            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%);
+            border: 1px solid rgba(180, 194, 255, 0.32);
             border-radius: 18px;
             box-shadow: 0 18px 40px rgba(0,0,0,0.28);
           }
           #s-mod5-doca .dk-hero::before {
             content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
-            background: linear-gradient(180deg, #8A4BB8, #B48AE8);
+            background: linear-gradient(180deg, #6B7AED, #9AA6F5);
           }
           #s-mod5-doca .dk-hero-icon {
             flex-shrink: 0; width: clamp(42px,7cqh,52px); height: clamp(42px,7cqh,52px);
             border-radius: 14px;
-            background: linear-gradient(135deg, #8A4BB8, #4A215C);
+            background: linear-gradient(135deg, #6B7AED, #2A2D5C);
             display: flex; align-items: center; justify-content: center;
             font-size: clamp(20px,3.4cqh,26px);
-            box-shadow: 0 8px 20px rgba(201, 163, 255, 0.4);
+            box-shadow: 0 8px 20px rgba(180, 194, 255, 0.4);
           }
           #s-mod5-doca .dk-hero-body { min-width: 0; }
           #s-mod5-doca .dk-kicker {
             font-family: var(--font-h); font-size: 11px; font-weight: 800;
             letter-spacing: 0.12em; text-transform: uppercase;
-            color: #E0C8FF; margin: 0 0 4px;
+            color: #C8D2FF; margin: 0 0 4px;
           }
           #s-mod5-doca .dk-hero p {
             font-family: var(--font-p); font-size: clamp(13.5px,2.2cqh,16px);
             color: rgba(255,255,255,0.9); margin: 0; line-height: 1.45;
           }
-          #s-mod5-doca .dk-hero strong { color: #E0C8FF; font-weight: 800; }
+          #s-mod5-doca .dk-hero strong { color: #C8D2FF; font-weight: 800; }
           #s-mod5-doca .dk-grid {
             flex: 1 1 0; min-height: 0;
             display: grid; grid-template-columns: 1fr 1fr 1fr;
@@ -13566,15 +13913,15 @@
             display: flex; flex-direction: column; justify-content: center;
             gap: clamp(8px,1.4cqh,12px);
             padding: clamp(16px,2.6cqh,24px) clamp(14px,1.8cqw,20px);
-            background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%);
-            border: 1px solid rgba(201, 163, 255, 0.28);
+            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%);
+            border: 1px solid rgba(180, 194, 255, 0.28);
             border-radius: 20px;
             box-shadow: 0 18px 40px rgba(0,0,0,0.28);
             min-width: 0;
           }
           #s-mod5-doca .dk-pillar::before {
             content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-            background: linear-gradient(90deg, #8A4BB8, #B48AE8);
+            background: linear-gradient(90deg, #6B7AED, #9AA6F5);
           }
           #s-mod5-doca .dk-pillar.dk-danger::before {
             background: linear-gradient(90deg, #e74c3c, #ff7675);
@@ -13585,17 +13932,17 @@
           #s-mod5-doca .dk-num {
             font-family: var(--font-h); font-weight: 900;
             font-size: clamp(28px,5cqh,40px); line-height: 1;
-            color: rgba(201, 163, 255, 0.28);
+            color: rgba(180, 194, 255, 0.28);
             letter-spacing: -0.04em;
           }
           #s-mod5-doca .dk-danger .dk-num { color: rgba(231, 76, 60, 0.35); }
           #s-mod5-doca .dk-ico {
             width: clamp(40px,6.5cqh,48px); height: clamp(40px,6.5cqh,48px);
             border-radius: 50%;
-            background: linear-gradient(135deg, #8A4BB8, #4A215C);
+            background: linear-gradient(135deg, #6B7AED, #2A2D5C);
             display: flex; align-items: center; justify-content: center;
             font-size: clamp(18px,3cqh,22px);
-            box-shadow: 0 8px 18px rgba(201, 163, 255, 0.4);
+            box-shadow: 0 8px 18px rgba(180, 194, 255, 0.4);
             flex-shrink: 0;
           }
           #s-mod5-doca .dk-danger .dk-ico {
@@ -13604,7 +13951,7 @@
           }
           #s-mod5-doca .dk-label {
             font-family: var(--font-h); font-size: 11px; font-weight: 800;
-            letter-spacing: 0.1em; text-transform: uppercase; color: #E0C8FF; margin: 0;
+            letter-spacing: 0.1em; text-transform: uppercase; color: #C8D2FF; margin: 0;
           }
           #s-mod5-doca .dk-danger .dk-label { color: #ff7675; }
           #s-mod5-doca .dk-pillar h3 {
@@ -13615,16 +13962,16 @@
             font-family: var(--font-p); font-size: clamp(13px,2cqh,15px);
             color: rgba(255,255,255,0.82); margin: 0; line-height: 1.45;
           }
-          #s-mod5-doca .dk-pillar strong { color: #E0C8FF; font-weight: 800; }
+          #s-mod5-doca .dk-pillar strong { color: #C8D2FF; font-weight: 800; }
           #s-mod5-doca .dk-danger p strong { color: #ff7675; }
           #s-mod5-doca .dk-motto {
             flex-shrink: 0;
             display: flex; align-items: center; justify-content: center; gap: 12px;
             padding: clamp(12px,2cqh,16px) 18px;
-            background: linear-gradient(90deg, rgba(201, 163, 255,0.08), rgba(201, 163, 255,0.2), rgba(201, 163, 255,0.08));
-            border: 1px solid rgba(201, 163, 255, 0.4);
+            background: linear-gradient(90deg, rgba(180, 194, 255,0.08), rgba(180, 194, 255,0.2), rgba(180, 194, 255,0.08));
+            border: 1px solid rgba(180, 194, 255, 0.4);
             border-radius: 16px;
-            box-shadow: 0 0 28px rgba(201, 163, 255, 0.18);
+            box-shadow: 0 0 28px rgba(180, 194, 255, 0.18);
           }
           #s-mod5-doca .dk-motto-icon {
             font-size: clamp(20px,3.4cqh,26px); flex-shrink: 0;
@@ -13633,9 +13980,9 @@
             font-family: var(--font-h); font-weight: 900; margin: 0;
             font-size: clamp(16px,2.6cqh,22px); letter-spacing: 0.04em;
             color: #fff;
-            text-shadow: 0 0 18px rgba(201, 163, 255, 0.45);
+            text-shadow: 0 0 18px rgba(180, 194, 255, 0.45);
           }
-          #s-mod5-doca .dk-motto span { color: #E0C8FF; }
+          #s-mod5-doca .dk-motto span { color: #C8D2FF; }
           #s-mod5-doca .dk-carousel-nav { display: none; }
           @media (min-width: 769px) and (max-height: 820px) {
             #s-mod5-doca .dk-shell { height: min(500px, 74cqh); gap: 10px; }
@@ -13684,11 +14031,11 @@
               width: 100%; flex-shrink: 0;
             }
             #s-mod5-doca .dk-nav-btn {
-              background: linear-gradient(135deg, #8A4BB8, #4A215C);
+              background: linear-gradient(135deg, #6B7AED, #2A2D5C);
               color: #fff; border: none; border-radius: 50%;
               width: 46px; height: 46px; min-width: 46px; min-height: 46px;
               cursor: pointer; display: flex; align-items: center; justify-content: center;
-              box-shadow: 0 6px 16px rgba(201, 163, 255, 0.4);
+              box-shadow: 0 6px 16px rgba(180, 194, 255, 0.4);
               touch-action: manipulation; -webkit-tap-highlight-color: transparent;
             }
             #s-mod5-doca .dk-nav-btn:active:not(:disabled) { transform: scale(0.94); }
@@ -13765,7 +14112,7 @@
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -13791,7 +14138,7 @@
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -13809,8 +14156,8 @@
           #s-mod5-game #m5g-play,
           #s-mod5-game #m5g-result {
             padding: clamp(24px,10cqh,64px) clamp(24px,6cqw,48px);
-            background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%);
-            border: 1px solid rgba(201, 163, 255,0.28);
+            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%);
+            border: 1px solid rgba(180, 194, 255,0.28);
             border-radius: clamp(16px,3cqw,26px);
             box-shadow: 0 28px 64px rgba(0,0,0,0.4);
             box-sizing: border-box;
@@ -13841,7 +14188,7 @@
           }
           #s-mod5-game .m5g-label {
             font-family: var(--font-h); font-size: 11px; font-weight: 800;
-            letter-spacing: 0.08em; text-transform: uppercase; color: #C9A3FF;
+            letter-spacing: 0.08em; text-transform: uppercase; color: #B4C2FF;
           }
           #s-mod5-game .m5g-counter {
             font-family: var(--font-h); font-size: 13px; font-weight: 700;
@@ -13853,7 +14200,7 @@
             overflow: hidden; border: 1px solid rgba(255,255,255,0.08); margin-bottom: 18px;
           }
           #s-mod5-game .m5g-bar-fill {
-            height: 100%; width: 0%; background: linear-gradient(90deg, #8A4BB8, #ffc837);
+            height: 100%; width: 0%; background: linear-gradient(90deg, #6B7AED, #ffc837);
             transition: width 0.45s cubic-bezier(0.4,0,0.2,1);
           }
           #s-mod5-game .m5g-card {
@@ -13883,7 +14230,7 @@
             transition: background 0.2s, border-color 0.2s, transform 0.15s;
             display: flex; align-items: center; gap: 12px;
           }
-          #s-mod5-game .m5g-opt:hover:not(:disabled) { background: rgba(201, 163, 255,0.08); border-color: rgba(201, 163, 255,0.35); }
+          #s-mod5-game .m5g-opt:hover:not(:disabled) { background: rgba(180, 194, 255,0.08); border-color: rgba(180, 194, 255,0.35); }
           #s-mod5-game .m5g-opt:active:not(:disabled) { transform: scale(0.98); }
           #s-mod5-game .m5g-opt.m5g-correct { background: rgba(39,174,96,0.15); border-color: #27ae60; color: #fff; }
           #s-mod5-game .m5g-opt.m5g-wrong   { background: rgba(231,76,60,0.12); border-color: #e74c3c; color: rgba(255,255,255,0.7); }
@@ -13893,7 +14240,7 @@
             background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
             display: flex; align-items: center; justify-content: center;
             font-family: var(--font-h); font-size: 12px; font-weight: 800;
-            color: #C9A3FF; flex-shrink: 0;
+            color: #B4C2FF; flex-shrink: 0;
           }
           #s-mod5-game .m5g-opt.m5g-correct .m5g-opt-letter { background: #27ae60; color: #fff; border-color: #27ae60; }
           #s-mod5-game .m5g-opt.m5g-wrong .m5g-opt-letter { background: #e74c3c; color: #fff; border-color: #e74c3c; }
@@ -13915,15 +14262,15 @@
 
           #s-mod5-game .m5g-score-ring {
             width: 120px; height: 120px; border-radius: 50%;
-            background: conic-gradient(#8A4BB8 0%, transparent 0%);
+            background: conic-gradient(#6B7AED 0%, transparent 0%);
             display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 18px; position: relative; box-shadow: 0 0 36px rgba(201, 163, 255,0.2);
+            margin: 0 auto 18px; position: relative; box-shadow: 0 0 36px rgba(180, 194, 255,0.2);
           }
           #s-mod5-game .m5g-score-ring::before {
             content: ''; position: absolute; inset: 8px; border-radius: 50%; background: #0f1923;
           }
           #s-mod5-game .m5g-score-num {
-            font-family: var(--font-h); font-size: 30px; font-weight: 900; color: #C9A3FF;
+            font-family: var(--font-h); font-size: 30px; font-weight: 900; color: #B4C2FF;
             position: relative; z-index: 1; line-height: 1;
           }
           #s-mod5-game .m5g-score-label {
@@ -13986,7 +14333,7 @@
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -14001,7 +14348,7 @@
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
             <path d="M0,65 C360,20 720,90 1080,40 C1260,15 1390,70 1440,60 L1440,100 L0,100 Z"
-              fill="rgba(201, 163, 255,0.07)" />
+              fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -14027,7 +14374,7 @@
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -14053,7 +14400,7 @@
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -14076,33 +14423,33 @@
             position: relative; overflow: hidden; flex-shrink: 0;
             display: flex; align-items: center; gap: 16px;
             padding: clamp(14px,2.2cqh,20px) clamp(16px,2.2cqw,22px);
-            background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%);
-            border: 1px solid rgba(201, 163, 255, 0.32);
+            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%);
+            border: 1px solid rgba(180, 194, 255, 0.32);
             border-radius: 18px;
             box-shadow: 0 18px 40px rgba(0,0,0,0.28);
           }
           #s-mod6-guia .ps-hero::before {
             content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
-            background: linear-gradient(180deg, #8A4BB8, #B48AE8);
+            background: linear-gradient(180deg, #6B7AED, #9AA6F5);
           }
           #s-mod6-guia .ps-hero-icon {
             flex-shrink: 0; width: clamp(44px,7cqh,54px); height: clamp(44px,7cqh,54px);
             border-radius: 14px;
-            background: linear-gradient(135deg, #8A4BB8, #4A215C);
+            background: linear-gradient(135deg, #6B7AED, #2A2D5C);
             display: flex; align-items: center; justify-content: center;
             font-size: clamp(22px,3.6cqh,28px);
-            box-shadow: 0 8px 20px rgba(201, 163, 255, 0.4);
+            box-shadow: 0 8px 20px rgba(180, 194, 255, 0.4);
           }
           #s-mod6-guia .ps-kicker {
             font-family: var(--font-h); font-size: 11px; font-weight: 800;
             letter-spacing: 0.12em; text-transform: uppercase;
-            color: #E0C8FF; margin: 0 0 4px;
+            color: #C8D2FF; margin: 0 0 4px;
           }
           #s-mod6-guia .ps-hero p {
             font-family: var(--font-p); font-size: clamp(14px,2.3cqh,16px);
             color: rgba(255,255,255,0.9); margin: 0; line-height: 1.45;
           }
-          #s-mod6-guia .ps-hero strong { color: #E0C8FF; font-weight: 800; }
+          #s-mod6-guia .ps-hero strong { color: #C8D2FF; font-weight: 800; }
           #s-mod6-guia .ps-grid {
             display: grid; grid-template-columns: 1fr 1fr 1fr;
             gap: clamp(10px,1.6cqw,16px);
@@ -14112,15 +14459,15 @@
             display: flex; flex-direction: column; justify-content: flex-start;
             gap: 10px;
             padding: clamp(16px,2.6cqh,22px) clamp(14px,1.8cqw,18px);
-            background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%);
-            border: 1px solid rgba(201, 163, 255, 0.28);
+            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%);
+            border: 1px solid rgba(180, 194, 255, 0.28);
             border-radius: 18px;
             box-shadow: 0 18px 40px rgba(0,0,0,0.28);
             min-width: 0;
           }
           #s-mod6-guia .ps-card::before {
             content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-            background: linear-gradient(90deg, #8A4BB8, #B48AE8);
+            background: linear-gradient(90deg, #6B7AED, #9AA6F5);
           }
           #s-mod6-guia .ps-card.ban::before {
             background: linear-gradient(90deg, #e74c3c, #ff7675);
@@ -14131,15 +14478,15 @@
           #s-mod6-guia .ps-num {
             font-family: var(--font-h); font-weight: 900;
             font-size: clamp(26px,5cqh,36px); line-height: 1;
-            color: rgba(201, 163, 255, 0.3);
+            color: rgba(180, 194, 255, 0.3);
             letter-spacing: -0.04em;
           }
           #s-mod6-guia .ps-ico {
             width: 42px; height: 42px; border-radius: 50%;
-            background: linear-gradient(135deg, #8A4BB8, #4A215C);
+            background: linear-gradient(135deg, #6B7AED, #2A2D5C);
             display: flex; align-items: center; justify-content: center;
             font-size: 20px; flex-shrink: 0;
-            box-shadow: 0 8px 18px rgba(201, 163, 255, 0.4);
+            box-shadow: 0 8px 18px rgba(180, 194, 255, 0.4);
           }
           #s-mod6-guia .ps-card.ban .ps-ico {
             background: linear-gradient(135deg, #e74c3c, #c0392b);
@@ -14147,7 +14494,7 @@
           }
           #s-mod6-guia .ps-label {
             font-family: var(--font-h); font-size: 11px; font-weight: 800;
-            letter-spacing: 0.1em; text-transform: uppercase; color: #E0C8FF; margin: 0;
+            letter-spacing: 0.1em; text-transform: uppercase; color: #C8D2FF; margin: 0;
           }
           #s-mod6-guia .ps-card.ban .ps-label { color: #ff7675; }
           #s-mod6-guia .ps-card h3 {
@@ -14158,7 +14505,7 @@
             font-family: var(--font-p); font-size: clamp(13px,2cqh,15px);
             color: rgba(255,255,255,0.82); margin: 0; line-height: 1.45;
           }
-          #s-mod6-guia .ps-card strong { color: #E0C8FF; font-weight: 800; }
+          #s-mod6-guia .ps-card strong { color: #C8D2FF; font-weight: 800; }
           #s-mod6-guia .ps-card.ban p strong { color: #ff7675; }
           #s-mod6-guia .ps-bans {
             display: grid; grid-template-columns: 1fr 1fr;
@@ -14222,11 +14569,11 @@
               width: 100%; max-width: 360px; margin: 0 auto; flex-shrink: 0;
             }
             #s-mod6-guia .ps-nav-btn {
-              background: linear-gradient(135deg, #8A4BB8, #4A215C);
+              background: linear-gradient(135deg, #6B7AED, #2A2D5C);
               color: #fff; border: none; border-radius: 50%;
               width: 46px; height: 46px; min-width: 46px; min-height: 46px;
               cursor: pointer; display: flex; align-items: center; justify-content: center;
-              box-shadow: 0 6px 16px rgba(201, 163, 255, 0.4);
+              box-shadow: 0 6px 16px rgba(180, 194, 255, 0.4);
               touch-action: manipulation; -webkit-tap-highlight-color: transparent;
             }
             #s-mod6-guia .ps-nav-btn:active:not(:disabled) { transform: scale(0.94); }
@@ -14314,7 +14661,7 @@
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -14340,7 +14687,7 @@
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -14362,32 +14709,32 @@
             position: relative;
             display: flex; align-items: center; gap: 12px;
             padding: 10px 16px;
-            background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%);
-            border: 1px solid rgba(201, 163, 255, 0.32);
+            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%);
+            border: 1px solid rgba(180, 194, 255, 0.32);
             border-radius: 14px;
             box-shadow: 0 18px 40px rgba(0,0,0,0.28);
           }
           #s-mod6-zonas .zn-hero::before {
             content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
-            background: linear-gradient(180deg, #8A4BB8, #B48AE8);
+            background: linear-gradient(180deg, #6B7AED, #9AA6F5);
           }
           #s-mod6-zonas .zn-hero-icon {
             flex-shrink: 0; width: 36px; height: 36px; border-radius: 10px;
-            background: linear-gradient(135deg, #8A4BB8, #4A215C);
+            background: linear-gradient(135deg, #6B7AED, #2A2D5C);
             display: flex; align-items: center; justify-content: center;
             font-size: 18px;
-            box-shadow: 0 8px 20px rgba(201, 163, 255, 0.4);
+            box-shadow: 0 8px 20px rgba(180, 194, 255, 0.4);
           }
           #s-mod6-zonas .zn-kicker {
             font-family: var(--font-h); font-size: 10px; font-weight: 800;
             letter-spacing: 0.12em; text-transform: uppercase;
-            color: #E0C8FF; margin: 0 0 2px;
+            color: #C8D2FF; margin: 0 0 2px;
           }
           #s-mod6-zonas .zn-hero p {
             font-family: var(--font-p); font-size: 13px;
             color: rgba(255,255,255,0.9); margin: 0; line-height: 1.35;
           }
-          #s-mod6-zonas .zn-hero strong { color: #E0C8FF; font-weight: 800; }
+          #s-mod6-zonas .zn-hero strong { color: #C8D2FF; font-weight: 800; }
           #s-mod6-zonas .zn-body {
             display: grid;
             grid-template-columns: 1.08fr 0.92fr;
@@ -14398,8 +14745,8 @@
           #s-mod6-zonas .zn-map-wrap {
             display: flex; flex-direction: column;
             padding: 8px;
-            background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%);
-            border: 1px solid rgba(201, 163, 255, 0.28);
+            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%);
+            border: 1px solid rgba(180, 194, 255, 0.28);
             border-radius: 16px;
             box-shadow: 0 18px 40px rgba(0,0,0,0.28);
             min-width: 0; min-height: 0;
@@ -14429,8 +14776,8 @@
             box-sizing: border-box;
             overflow: visible;
             min-height: min-content;
-            background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%);
-            border: 1px solid rgba(201, 163, 255, 0.28);
+            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%);
+            border: 1px solid rgba(180, 194, 255, 0.28);
             border-radius: 14px;
             box-shadow: 0 12px 28px rgba(0,0,0,0.24);
           }
@@ -14473,7 +14820,7 @@
             font-family: var(--font-p); font-size: 13px;
             color: rgba(255,255,255,0.88); margin: 0; line-height: 1.4;
           }
-          #s-mod6-zonas .zn-card strong { color: #E0C8FF; font-weight: 800; }
+          #s-mod6-zonas .zn-card strong { color: #C8D2FF; font-weight: 800; }
           #s-mod6-zonas .zn-carousel-nav { display: none; }
           @media screen and (max-width: 768px) and (orientation: portrait) {
             @keyframes znFadeIn {
@@ -14525,11 +14872,11 @@
               width: 100%; max-width: 360px; margin: 0 auto; flex-shrink: 0;
             }
             #s-mod6-zonas .zn-nav-btn {
-              background: linear-gradient(135deg, #8A4BB8, #4A215C);
+              background: linear-gradient(135deg, #6B7AED, #2A2D5C);
               color: #fff; border: none; border-radius: 50%;
               width: 46px; height: 46px; min-width: 46px; min-height: 46px;
               cursor: pointer; display: flex; align-items: center; justify-content: center;
-              box-shadow: 0 6px 16px rgba(201, 163, 255, 0.4);
+              box-shadow: 0 6px 16px rgba(180, 194, 255, 0.4);
               touch-action: manipulation; -webkit-tap-highlight-color: transparent;
             }
             #s-mod6-zonas .zn-nav-btn:active:not(:disabled) { transform: scale(0.94); }
@@ -14606,7 +14953,7 @@
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -14632,7 +14979,7 @@
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -14658,7 +15005,7 @@
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -14684,7 +15031,7 @@
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -14711,8 +15058,8 @@
           #s-mod6-game #m6g-intro,
           #s-mod6-game #m6g-result {
             padding: clamp(24px,10cqh,64px) clamp(24px,6cqw,48px);
-            background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%);
-            border: 1px solid rgba(201, 163, 255,0.28);
+            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%);
+            border: 1px solid rgba(180, 194, 255,0.28);
             border-radius: clamp(16px,3cqw,26px);
             box-shadow: 0 28px 64px rgba(0,0,0,0.4);
             box-sizing: border-box;
@@ -14724,8 +15071,8 @@
             display: flex; flex-direction: column;
             padding: clamp(14px, 2.6cqh, 24px) clamp(18px, 3.4cqw, 32px);
             overflow: hidden;
-            background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%);
-            border: 1px solid rgba(201, 163, 255,0.28);
+            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%);
+            border: 1px solid rgba(180, 194, 255,0.28);
             border-radius: clamp(16px,3cqw,24px);
             box-shadow: 0 28px 64px rgba(0,0,0,0.4);
             box-sizing: border-box;
@@ -14755,7 +15102,7 @@
           }
           #s-mod6-game .m6g-label {
             font-family: var(--font-h); font-size: clamp(11px, 1.8cqh, 13px); font-weight: 800;
-            letter-spacing: 0.08em; text-transform: uppercase; color: #C9A3FF;
+            letter-spacing: 0.08em; text-transform: uppercase; color: #B4C2FF;
           }
           #s-mod6-game .m6g-counter {
             font-family: var(--font-h); font-size: clamp(12px, 2cqh, 14px); font-weight: 700;
@@ -14768,7 +15115,7 @@
             margin-bottom: clamp(8px, 1.6cqh, 14px); flex-shrink: 0;
           }
           #s-mod6-game .m6g-bar-fill {
-            height: 100%; width: 0%; background: linear-gradient(90deg, #8A4BB8, #ffc837);
+            height: 100%; width: 0%; background: linear-gradient(90deg, #6B7AED, #ffc837);
             transition: width 0.45s cubic-bezier(0.4,0,0.2,1);
           }
           #s-mod6-game .m6g-card {
@@ -14815,10 +15162,10 @@
             flex-direction: row; justify-content: flex-start; text-align: left;
             gap: 14px; padding: clamp(12px, 2.2cqh, 18px) clamp(14px, 2.4cqw, 20px);
           }
-          #s-mod6-game .m6g-tile:hover:not(:disabled) { background: rgba(201, 163, 255,0.08); border-color: rgba(201, 163, 255,0.35); }
+          #s-mod6-game .m6g-tile:hover:not(:disabled) { background: rgba(180, 194, 255,0.08); border-color: rgba(180, 194, 255,0.35); }
           #s-mod6-game .m6g-tile:active:not(:disabled) { transform: scale(0.98); }
           #s-mod6-game .m6g-tile-emoji { font-size: clamp(22px, 4cqh, 30px); line-height: 1; flex-shrink: 0; }
-          #s-mod6-game .m6g-tile.is-on { border-color: #C9A3FF; background: rgba(201, 163, 255,0.16); }
+          #s-mod6-game .m6g-tile.is-on { border-color: #B4C2FF; background: rgba(180, 194, 255,0.16); }
           #s-mod6-game .m6g-tile.is-ok { border-color: #27ae60; background: rgba(39,174,96,0.16); }
           #s-mod6-game .m6g-tile.is-bad { border-color: #e74c3c; background: rgba(231,76,60,0.14); }
           #s-mod6-game .m6g-tile:disabled { pointer-events: none; }
@@ -14834,7 +15181,7 @@
             font-family: var(--font-h); font-size: clamp(14px, 2.4cqh, 16px); font-weight: 700; text-align: left;
             transition: background 0.2s, border-color 0.2s;
           }
-          #s-mod6-game .m6g-order-item:hover:not(:disabled) { background: rgba(201, 163, 255,0.08); border-color: rgba(201, 163, 255,0.35); }
+          #s-mod6-game .m6g-order-item:hover:not(:disabled) { background: rgba(180, 194, 255,0.08); border-color: rgba(180, 194, 255,0.35); }
           #s-mod6-game .m6g-order-item.is-locked {
             border-color: #27ae60; background: rgba(39,174,96,0.14); cursor: default;
           }
@@ -14853,7 +15200,7 @@
             min-width: clamp(28px, 4.2cqh, 34px); height: clamp(28px, 4.2cqh, 34px); border-radius: 50%;
             background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
             display: flex; align-items: center; justify-content: center;
-            font-size: clamp(12px, 2cqh, 14px); color: #C9A3FF; flex-shrink: 0;
+            font-size: clamp(12px, 2cqh, 14px); color: #B4C2FF; flex-shrink: 0;
           }
           #s-mod6-game .m6g-order-item.is-locked .m6g-step-num {
             background: #27ae60; border-color: #27ae60; color: #fff;
@@ -14861,10 +15208,10 @@
           #s-mod6-game .m6g-confirm {
             display: none; width: 100%; margin-top: clamp(8px, 1.6cqh, 14px); border: none; cursor: pointer;
             padding: clamp(12px, 2.2cqh, 16px) 20px; border-radius: 999px;
-            background: linear-gradient(135deg, #8A4BB8, #4A215C);
+            background: linear-gradient(135deg, #6B7AED, #2A2D5C);
             color: #fff; font-family: var(--font-h); font-weight: 800;
             font-size: clamp(13px, 2.2cqh, 15px); letter-spacing: 0.06em; text-transform: uppercase;
-            box-shadow: 0 8px 20px rgba(201, 163, 255,0.28); flex-shrink: 0;
+            box-shadow: 0 8px 20px rgba(180, 194, 255,0.28); flex-shrink: 0;
           }
           #s-mod6-game .m6g-confirm:disabled { opacity: 0.4; cursor: default; }
           #s-mod6-game .m6g-feedback {
@@ -14877,15 +15224,15 @@
           #s-mod6-game .m6g-hint { display: none; }
           #s-mod6-game .m6g-score-ring {
             width: 120px; height: 120px; border-radius: 50%;
-            background: conic-gradient(#8A4BB8 0%, transparent 0%);
+            background: conic-gradient(#6B7AED 0%, transparent 0%);
             display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 18px; position: relative; box-shadow: 0 0 36px rgba(201, 163, 255,0.2);
+            margin: 0 auto 18px; position: relative; box-shadow: 0 0 36px rgba(180, 194, 255,0.2);
           }
           #s-mod6-game .m6g-score-ring::before {
             content: ''; position: absolute; inset: 8px; border-radius: 50%; background: #0f1923;
           }
           #s-mod6-game .m6g-score-num {
-            font-family: var(--font-h); font-size: 30px; font-weight: 900; color: #C9A3FF;
+            font-family: var(--font-h); font-size: 30px; font-weight: 900; color: #B4C2FF;
             position: relative; z-index: 1; line-height: 1;
           }
           #s-mod6-game .m6g-score-label {
@@ -14948,7 +15295,7 @@
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
@@ -14966,8 +15313,8 @@
           #s-fim .fim-card {
             text-align: center; animation: fadeIn 0.8s ease;
             padding: clamp(24px,10cqh,64px) clamp(24px,6cqw,48px);
-            background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%);
-            border: 1px solid rgba(201, 163, 255,0.28);
+            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%);
+            border: 1px solid rgba(180, 194, 255,0.28);
             border-radius: clamp(16px,3cqw,26px);
             box-shadow: 0 28px 64px rgba(0,0,0,0.4);
             box-sizing: border-box;
@@ -14990,9 +15337,9 @@
           #s-fim .fim-chip {
             font-family: var(--font-h); font-weight: 800; font-size: 13px;
             letter-spacing: 0.06em; text-transform: uppercase; color: #fff;
-            background: linear-gradient(135deg, #8A4BB8, #4A215C);
+            background: linear-gradient(135deg, #6B7AED, #2A2D5C);
             border-radius: 99px; padding: 16px 28px;
-            box-shadow: 0 8px 20px rgba(201, 163, 255,0.28);
+            box-shadow: 0 8px 20px rgba(180, 194, 255,0.28);
           }
         </style>
         <div class="top-bar">
@@ -15021,14 +15368,14 @@
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(201, 163, 255,0.07)" />
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
 
             </div><!-- /slides -->
 
     <!-- NAV -->
-    <div id="nav">
+    <div id="nav" class="nav-start nav-hidden">
       <button class="nav-btn" id="btn-back" onclick="goTo(currentSlide-1)" disabled>
         <svg viewBox="0 0 20 20" fill="currentColor">
           <polygon points="15,3 3,10 15,17" />
@@ -15200,8 +15547,8 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        background: linear-gradient(160deg, #2c1844 0%, #1f1236 40%, #120a1e 75%, #0a0610 100%) !important;
-        border: 1px solid rgba(201, 163, 255, 0.28) !important;
+        background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%) !important;
+        border: 1px solid rgba(180, 194, 255, 0.28) !important;
         border-radius: 24px !important;
         box-shadow: 0 28px 64px rgba(0, 0, 0, 0.4) !important;
       }
@@ -16763,7 +17110,7 @@
       const n = document.getElementById('notification');
       if (n) {
         const slide = document.querySelectorAll('.slide')[currentSlide];
-        if (slide?.id === 's2b') {
+        if (slide?.id === 's2b' || slide?.id === 's-mod2-triagem') {
           n.textContent = 'Toque em todos os cards para avançar';
         } else if (slide?.id === 's2e' || slide?.id === 's-mod2-game') {
           n.textContent = 'Conclua o desafio para avançar';
@@ -16881,8 +17228,8 @@
 
       const nav = document.getElementById('nav');
       if (nav) {
-        if (currentSlide === 0) nav.classList.add('nav-hidden');
-        else nav.classList.remove('nav-hidden');
+        nav.classList.toggle('nav-start', currentSlide === 0);
+        nav.classList.toggle('nav-hidden', currentSlide === 0);
       }
 
       updateTutorialButtonVisibility();
@@ -16918,6 +17265,12 @@
       }
       if (newSlide.id === 's-mod2-motoristas') {
         if (typeof window.mnResetCarousel === 'function') window.mnResetCarousel();
+      }
+      if (newSlide.id === 's-mod2-triagem' && typeof window.tgSync === 'function') {
+        window.tgSync();
+      }
+      if (newSlide.id === 's-mod2-pallets' && typeof window.pltResetCarousel === 'function') {
+        window.pltResetCarousel();
       }
       if (newSlide.id === 's2b') resetAtexSourcesCarousel();
       if (newSlide.id === 's3a') resetS3aGroupsCarousel();
@@ -17291,34 +17644,24 @@
 
     const mod2tfDeck = [
       {
-        text: 'Se o operador estiver cansado, com sono ou sob efeito de medicamento que altere os reflexos, ainda pode operar reduzindo a velocidade.',
-        answer: false,
-        tip: 'Falso! A aptidão psicofísica é obrigatória. Cansaço, sono, álcool, drogas ou medicamentos que alterem os reflexos impedem a operação.'
-      },
-      {
-        text: 'Somente condutor habilitado pode circular na unidade, e o uso do cinto de segurança é obrigatório.',
+        text: 'O limite dimensional máximo da carga é de 1.200 mm de largura, 1.200 mm de comprimento e 1.400 mm de altura, e o filme stretch é obrigatório em todas as cargas.',
         answer: true,
-        tip: 'Verdadeiro! O acesso é controlado: cinto obrigatório e somente condutor habilitado e integrado.'
+        tip: 'Verdadeiro! Se a carga ultrapassar essas dimensões, não é aceita pelo sistema automático. O filme stretch é obrigatório antes de entrar nas esteiras. O conjunto pode ter no máximo 1.950 kg.'
       },
       {
-        text: 'É permitido manusear o celular ao dirigir se for uma ligação de trabalho.',
-        answer: false,
-        tip: 'Falso! É proibido usar ou manusear celular ao dirigir — distração no setor logístico causa acidentes graves.'
-      },
-      {
-        text: 'Na faixa de pedestre, o motorista deve parar, olhar os dois lados e dar preferência ao pedestre, com contato visual.',
+        text: 'No Pallet PBR, o limite máximo é de 1.500 kg, a marcação visual deve ser verde ou vermelha e o empilhamento de pallets vazios não pode passar de 10 unidades.',
         answer: true,
-        tip: 'Verdadeiro! Faixa de pedestre = PARE. Prefira o pedestre e confirme o contato visual antes de seguir.'
+        tip: 'Verdadeiro! Além disso, todas as tábuas de madeira precisam estar íntegras, sem rachadura, quebra ou fragmentação.'
       },
       {
-        text: 'É permitido parar o veículo sobre faixas, rampas ou em frente a equipamentos de emergência por poucos minutos.',
+        text: 'Fita adesiva, fitilhos de amarração e plásticos pendurados no pallet são permitidos, desde que em pequena quantidade.',
         answer: false,
-        tip: 'Falso! Nunca bloqueie áreas críticas: faixas, rampas e equipamentos de emergência devem permanecer livres.'
+        tip: 'Falso! São três proibições absolutas. Esses materiais podem se prender nos roletes, eixos ou sensores e paralisar todo o sistema.'
       },
       {
-        text: 'A velocidade máxima dentro da unidade é de 10 km/h, e pisca-alerta e faróis devem permanecer ligados na circulação interna.',
+        text: 'Pallets com toco quebrado, tábua irregular, empenamento ou espaçamento elevado não podem entrar no sistema sob nenhuma circunstância, pois há risco de desabamento e lesões.',
         answer: true,
-        tip: 'Verdadeiro! 10 km/h é o limite interno. Pisca-alerta e faróis ligados aumentam a visibilidade e protegem o pedestre.'
+        tip: 'Verdadeiro! A triagem visual é a primeira barreira de defesa. Defeitos estruturais podem causar queda de carga, prejuízo e acidentes graves.'
       }
     ];
 
@@ -17397,8 +17740,8 @@
       const msg = document.getElementById('mod2tf-result-msg');
       if (msg) {
         msg.textContent = mod2tfMistakes === 0
-          ? 'Excelente! Você acertou todas as afirmações e demonstrou domínio sobre aptidão, acesso e regras de circulação.'
-          : 'Desafio concluído! Você errou ' + mod2tfMistakes + ' afirmação(ões). Revise saúde na operação, controle de acesso, distrações, faixas de trânsito e bloqueio de áreas críticas.';
+          ? 'Excelente! Você acertou todas as afirmações e demonstrou domínio sobre limites de carga, pallets homologados e triagem visual.'
+          : 'Desafio concluído! Você errou ' + mod2tfMistakes + ' afirmação(ões). Revise limites dimensionais, tipos de pallet, regras do PBR, proibições na triagem e defeitos estruturais.';
       }
       updateNextButton();
     }
@@ -18878,7 +19221,10 @@
 
     // Initial nav visibility
     const initialNav = document.getElementById('nav');
-    if (initialNav && currentSlide === 0) initialNav.classList.add('nav-hidden');
+    if (initialNav) {
+      initialNav.classList.toggle('nav-start', currentSlide === 0);
+      initialNav.classList.toggle('nav-hidden', currentSlide === 0);
+    }
 
     buildDots();
 
@@ -19109,6 +19455,40 @@
         ).matches;
       }
 
+      window.tgSync = function () {
+        var cards = document.querySelectorAll('#s-mod2-triagem .tg-card');
+        var done = 0;
+        cards.forEach(function (c) {
+          if (c.classList.contains('req-done')) done++;
+        });
+        var count = document.getElementById('tg-progress-count');
+        if (count) count.textContent = done + ' / ' + cards.length;
+        var hint = document.getElementById('tg-progress-hint');
+        if (hint) {
+          hint.textContent = done === cards.length && cards.length
+            ? 'Triagem concluída. Confira o risco principal.'
+            : 'Toque em cada defeito para inspecionar';
+        }
+        var alertBox = document.getElementById('tg-alert');
+        if (alertBox) {
+          var allDone = done === cards.length && cards.length > 0;
+          alertBox.classList.toggle('is-on', allDone);
+          if (allDone) {
+            setTimeout(function () {
+              var scroller = document.querySelector('#s-mod2-triagem .tg-content');
+              if (scroller) scroller.scrollTo({ top: scroller.scrollHeight, behavior: 'smooth' });
+            }, 200);
+          }
+        }
+        if (typeof updateNextButton === 'function') updateNextButton();
+      };
+      window.tgInspect = function (btn) {
+        if (!btn || btn.classList.contains('req-done')) return;
+        if (typeof playClickSound === 'function') playClickSound();
+        btn.classList.add('req-done');
+        window.tgSync();
+      };
+
       function mnCards() {
         return document.querySelectorAll('#s-mod2-motoristas .mn-step');
       }
@@ -19256,7 +19636,85 @@
       });
     })();
 
+    /* ── TIPOS DE PALLET — Mobile Carousel ── */
+    (function () {
+      var pltIdx = 0;
+      var pltTotal = 5;
 
+      function isMobilePortraitPlt() {
+        return window.matchMedia(
+          'screen and (max-width: 768px) and (orientation: portrait)'
+        ).matches;
+      }
+
+      function pltCards() {
+        return document.querySelectorAll('#s-mod2-pallets .plt-card');
+      }
+
+      function pltUpdateUI() {
+        var cards = pltCards();
+        pltTotal = cards.length || 5;
+        cards.forEach(function (c, i) {
+          c.classList.toggle('plt-card-active', i === pltIdx);
+        });
+        var counter = document.getElementById('plt-counter');
+        if (counter) counter.textContent = (pltIdx + 1) + ' / ' + pltTotal;
+        var prev = document.getElementById('plt-prev');
+        var next = document.getElementById('plt-next');
+        if (prev) prev.disabled = (pltIdx === 0);
+        if (next) next.disabled = (pltIdx === pltTotal - 1);
+      }
+
+      window.pltCarouselNav = function (dir) {
+        if (!isMobilePortraitPlt()) return;
+        var newIdx = pltIdx + dir;
+        if (newIdx < 0 || newIdx >= pltTotal) return;
+        pltIdx = newIdx;
+        if (typeof playClickSound === 'function') playClickSound();
+        pltUpdateUI();
+      };
+
+      var pltSX = 0;
+      function pltInitSwipe() {
+        var vp = document.getElementById('plt-card-viewport');
+        if (!vp) return;
+        vp.addEventListener('touchstart', function (e) {
+          pltSX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        vp.addEventListener('touchend', function (e) {
+          var diff = pltSX - e.changedTouches[0].screenX;
+          if (Math.abs(diff) > 40) window.pltCarouselNav(diff > 0 ? 1 : -1);
+        }, { passive: true });
+      }
+
+      function pltInit() {
+        pltIdx = 0;
+        pltUpdateUI();
+        pltInitSwipe();
+      }
+
+      window.pltResetCarousel = function () {
+        pltIdx = 0;
+        pltUpdateUI();
+      };
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', pltInit);
+      } else {
+        pltInit();
+      }
+
+      window.addEventListener('resize', function () {
+        if (!isMobilePortraitPlt()) pltIdx = 0;
+        pltUpdateUI();
+      });
+      window.addEventListener('orientationchange', function () {
+        setTimeout(function () {
+          if (!isMobilePortraitPlt()) pltIdx = 0;
+          pltUpdateUI();
+        }, 120);
+      });
+    })();
 
     /* ── ESPELHOS, RÉ E VELOCIDADE — Mobile Carousel ── */
     (function () {
@@ -20003,7 +20461,7 @@
         // Animate score ring
         var pct = Math.round(m3gScore / total * 100);
         document.getElementById('m3g-score-ring').style.background =
-          'conic-gradient(#8A4BB8 ' + pct + '%, rgba(255,255,255,0.06) 0%)';
+          'conic-gradient(#6B7AED ' + pct + '%, rgba(255,255,255,0.06) 0%)';
 
         var msg = document.getElementById('m3g-result-msg');
         if (m3gScore === total) {
@@ -20351,7 +20809,7 @@
 
         var pct = Math.round(m5gScore / total * 100);
         document.getElementById('m5g-score-ring').style.background =
-          'conic-gradient(#8A4BB8 ' + pct + '%, rgba(255,255,255,0.08) ' + pct + '%)';
+          'conic-gradient(#6B7AED ' + pct + '%, rgba(255,255,255,0.08) ' + pct + '%)';
 
         var msg = document.getElementById('m5g-result-msg');
         if (m5gScore === total) {
@@ -20624,7 +21082,7 @@
 
         var pct = Math.round(m6gScore / total * 100);
         document.getElementById('m6g-score-ring').style.background =
-          'conic-gradient(#8A4BB8 ' + pct + '%, rgba(255,255,255,0.08) ' + pct + '%)';
+          'conic-gradient(#6B7AED ' + pct + '%, rgba(255,255,255,0.08) ' + pct + '%)';
 
         var badge = document.getElementById('m6g-badge');
         if (badge) badge.style.display = (m6gScore >= 2) ? 'inline-block' : 'none';

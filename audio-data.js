@@ -37,17 +37,15 @@ const NARRATION_OVERRIDES = {
   's-mod2':
     'Início do Módulo 2. Padrões Técnicos de Cargas e Triagem Visual de Pallets.',
   's-mod2-video':
-    'Vídeo. Saúde Física e Mental na Operação. Padrões Técnicos de Cargas e Triagem Visual de Pallets. Assista ao vídeo sobre saúde física e mental na operação. Avance quando concluir.',
+    'Vídeo. Limites de Carga. Padrões Técnicos de Cargas e Triagem Visual de Pallets. Assista ao vídeo sobre limites de carga. Avance quando concluir.',
+  's-mod2-pallets':
+    'Tipos de Pallet. O Pallet Escravo tem peso próprio de 50 quilos. O OneWay tipo A suporta até 1.950 quilos e é mais robusto, com tábuas de topo mais grossas e largas. O OneWay tipo B suporta até 950 quilos, com estrutura simplificada para cargas leves. Na simulação, o palete A é para alta resistência, cerca de 1.500 quilos, e o palete B para cargas leves, cerca de 500 quilos, em que o volume importa mais que o peso.',
   's-mod2-video2':
-    'Vídeo. Controle de Acesso e Integração de Segurança. Padrões Técnicos de Cargas e Triagem Visual de Pallets. Assista ao vídeo sobre controle de acesso e integração de segurança. Avance quando concluir.',
-  's-mod2-video3':
-    'Vídeo. Distrações e Proibições no Setor Logístico. Padrões Técnicos de Cargas e Triagem Visual de Pallets. Assista ao vídeo sobre distrações e proibições no setor logístico. Avance quando concluir.',
-  's-mod2-video4':
-    'Vídeo. Faixas de Trânsito e Preferências de Passagem. Padrões Técnicos de Cargas e Triagem Visual de Pallets. Assista ao vídeo sobre faixas de trânsito e preferências de passagem. Avance quando concluir.',
-  's-mod2-video5':
-    'Vídeo. Bloqueio de Áreas Críticas e Estacionamento Preventivo. Padrões Técnicos de Cargas e Triagem Visual de Pallets. Assista ao vídeo sobre bloqueio de áreas críticas e estacionamento preventivo. Avance quando concluir.',
-  's-mod2-motoristas':
-    'Regras para Motoristas e Manobristas. Os motoristas e manobristas devem conduzir seus veículos de forma a proteger o pedestre. Velocidade máxima de 20 quilômetros por hora dentro da unidade. Pisca-alerta e faróis sempre ligados na circulação interna. Cinto obrigatório e somente condutor habilitado. Na faixa de pedestre, pare, olhe os dois lados e dê preferência ao pedestre, com contato visual. Proibido usar ou manusear celular ao dirigir. Nunca bloqueie áreas críticas: não pare sobre faixas, rampas ou em frente a equipamentos de emergência. Carga e descarga somente nas docas, em áreas sinalizadas. Na Red Zone, nunca pessoa e empilhadeira ao mesmo tempo. Parada segura do caminhão: desligado, freio estacionário acionado e trava-rodas. Se precisar descer, use a rota segura pela frente da doca e pelas faixas de pedestres.',
+    'Vídeo. Pallet PBR: O Modelo de Automação. Padrões Técnicos de Cargas e Triagem Visual de Pallets. Assista ao vídeo sobre o pallet PBR, o modelo de automação. Avance quando concluir.',
+  's-mod2-video-triagem':
+    'Vídeo. Proibições Absolutas na Triagem. Padrões Técnicos de Cargas e Triagem Visual de Pallets. Assista ao vídeo sobre as proibições absolutas na triagem. Avance quando concluir.',
+  's-mod2-triagem':
+    'Defeitos Estruturais na Triagem. A triagem de pallets é etapa crítica. Pallets com defeitos estruturais não podem ser inseridos no sistema automatizado sob nenhuma circunstância. Toco quebrado: comprometimento da base de apoio causa instabilidade nos garfos dos transelevadores. Tábua quebrada ou irregular: superfície irregular impede assentamento correto da carga e aumenta risco de queda. Empenado ou espaçamento elevado: deformações estruturais causam travamento mecânico e parada não programada do sistema. Tábua superior irregular: superfície de apoio irregular compromete estabilidade da carga e pode causar desabamento. Risco principal: desabamento de cargas, instabilidade durante transporte automático e queda de produtos com risco de dano patrimonial e lesão a pessoas.',
   's-mod3':
     'Início do Módulo 3. Componentes, Dispositivos de Segurança e Procedimento LOTO.',
   's-mod3-video':
@@ -220,11 +218,11 @@ function parseMod2tfDeck(html) {
 
 function buildMod2tfNarration(deck) {
   if (!deck.length) {
-    return 'Desafio Módulo 2 — Verdadeiro ou Falso. Padrões Técnicos de Cargas e Triagem Visual de Pallets. Responda seis afirmações sobre saúde na operação, controle de acesso, distrações e regras de circulação.';
+    return 'Desafio Módulo 2 — Verdadeiro ou Falso. Padrões Técnicos de Cargas e Triagem Visual de Pallets. Responda quatro afirmações sobre limites de carga, Pallet PBR, proibições na triagem e defeitos estruturais.';
   }
 
   const parts = [
-    'Desafio Módulo 2 — Verdadeiro ou Falso. Padrões Técnicos de Cargas e Triagem Visual de Pallets. Responda seis afirmações sobre saúde na operação, controle de acesso, distrações e regras de circulação.',
+    'Desafio Módulo 2 — Verdadeiro ou Falso. Padrões Técnicos de Cargas e Triagem Visual de Pallets. Responda quatro afirmações sobre limites de carga, Pallet PBR, proibições na triagem e defeitos estruturais.',
   ];
 
   deck.forEach((item, index) => {
