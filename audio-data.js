@@ -48,8 +48,12 @@ const NARRATION_OVERRIDES = {
     'Defeitos Estruturais na Triagem. A triagem de pallets é etapa crítica. Pallets com defeitos estruturais não podem ser inseridos no sistema automatizado sob nenhuma circunstância. Toco quebrado: comprometimento da base de apoio causa instabilidade nos garfos dos transelevadores. Tábua quebrada ou irregular: superfície irregular impede assentamento correto da carga e aumenta risco de queda. Empenado ou espaçamento elevado: deformações estruturais causam travamento mecânico e parada não programada do sistema. Tábua superior irregular: superfície de apoio irregular compromete estabilidade da carga e pode causar desabamento. Risco principal: desabamento de cargas, instabilidade durante transporte automático e queda de produtos com risco de dano patrimonial e lesão a pessoas.',
   's-mod3':
     'Início do Módulo 3. Componentes, Dispositivos de Segurança e Procedimento LOTO.',
+  's-mod3-equipamento':
+    'Conhecendo o Equipamento. Principais componentes para a operação do equipamento: Garra de Elevação, Balança de Precisão, Painel de Operação, Monitor de Operação, Plataforma Pantográfica Ergonômica, Proteção Lateral Fixa, Proteção Lateral Móvel e Totem de Operação.',
   's-mod3-video':
-    'Vídeo. Velocidade Máxima e Consciência Situacional. Componentes, Dispositivos de Segurança e Procedimento LOTO. Assista ao vídeo sobre velocidade máxima e consciência situacional. Avance quando concluir.',
+    'Vídeo. Barreiras Físicas e Dispositivos de Emergência. Componentes, Dispositivos de Segurança e Procedimento LOTO. Assista ao vídeo sobre barreiras físicas e dispositivos de emergência. Avance quando concluir.',
+  's-mod3-cortinas':
+    'Cortinas de Luz e Estados Tricolores. As barreiras de segurança fornecem proteção automática contínua de áreas perigosas, com sinalização visual clara para orientar operadores a qualquer distância. Verde: área livre, nenhum objeto ou pessoa detectado, sistema operando normalmente. Vermelho: área obstruída, o sistema é desligado instantaneamente. Não tente reiniciar sem verificar a área. Laranja piscante: muting ativo, barreira temporariamente inibida para passagem controlada de pallets. O desligamento instantâneo das barreiras é a principal proteção contra acidentes graves. Nunca bloqueie, cubra ou tente contornar qualquer barreira de segurança.',
   's-mod3-video2':
     'Vídeo. Sinalização Luminosa e Visibilidade Ativa. Componentes, Dispositivos de Segurança e Procedimento LOTO. Assista ao vídeo sobre sinalização luminosa e visibilidade ativa. Avance quando concluir.',
   's-mod3-video3':
@@ -280,12 +284,12 @@ function parseM3gDeck(html) {
 
 function buildM3gNarration(deck) {
   if (!deck.length) {
-    return 'Quiz NR-11 — Módulo 3. Você vai ler cinco situações reais de operação e escolher a atitude correta. Coloque em prática o que aprendeu sobre velocidade, sinalização, cinto de segurança, cruzamentos e embarque e desembarque.';
+    return 'Quiz NR 12 — Módulo 3. Você vai ler quatro situações reais e escolher a resposta correta. Coloque em prática o que aprendeu sobre proteções móveis, botão de emergência de duplo canal, cortinas de luz e o procedimento LOTO.';
   }
 
   const letters = ['A', 'B', 'C'];
   const parts = [
-    'Quiz NR-11 — Módulo 3. Você vai ler cinco situações reais de operação e escolher a atitude correta. Coloque em prática o que aprendeu sobre velocidade, sinalização, cinto de segurança, cruzamentos e embarque e desembarque.',
+    'Quiz NR 12 — Módulo 3. Você vai ler quatro situações reais e escolher a resposta correta. Coloque em prática o que aprendeu sobre proteções móveis, botão de emergência de duplo canal, cortinas de luz e o procedimento LOTO.',
   ];
 
   deck.forEach((item, index) => {

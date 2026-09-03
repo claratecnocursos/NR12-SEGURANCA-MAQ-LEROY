@@ -44,13 +44,13 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
-      background-color: #08091a;
+      background-color: #1a1230;
       background-image:
-        radial-gradient(ellipse 1200px 900px at 8% 8%, rgba(107, 122, 237, 0.22), transparent 64%),
-        radial-gradient(ellipse 1100px 950px at 95% 95%, rgba(42, 45, 92, 0.28), transparent 64%),
-        radial-gradient(ellipse 850px 700px at 90% 4%, rgba(154, 166, 245, 0.12), transparent 58%),
-        radial-gradient(ellipse 800px 650px at 4% 96%, rgba(107, 122, 237, 0.16), transparent 60%),
-        linear-gradient(135deg, #060308 0%, #120a18 30%, #2a1638 55%, #120a18 80%, #060308 100%);
+        radial-gradient(ellipse 1200px 900px at 8% 8%, rgba(107, 122, 237, 0.38), transparent 64%),
+        radial-gradient(ellipse 1100px 950px at 95% 95%, rgba(107, 122, 237, 0.26), transparent 64%),
+        radial-gradient(ellipse 850px 700px at 90% 4%, rgba(154, 166, 245, 0.22), transparent 58%),
+        radial-gradient(ellipse 800px 650px at 4% 96%, rgba(107, 122, 237, 0.28), transparent 60%),
+        linear-gradient(135deg, #1a1230 0%, #2a1a44 28%, #3d2560 55%, #2a1a44 80%, #1c1434 100%);
       background-attachment: fixed;
       font-family: var(--font-b);
       color: var(--cream);
@@ -77,7 +77,7 @@
     @media screen and (max-width: 768px), screen and (max-height: 500px) {
       #bg-texture {
         background-image:
-          radial-gradient(ellipse 78% 62% at 50% 40%, transparent 42%, rgba(18, 8, 26, 0.32) 100%),
+          radial-gradient(ellipse 78% 62% at 50% 40%, transparent 42%, rgba(18, 8, 26, 0.14) 100%),
           repeating-linear-gradient(to bottom,
               rgba(180, 194, 255, 0.05) 0px,
               rgba(180, 194, 255, 0.05) 1px,
@@ -603,6 +603,11 @@
         box-shadow: none;
       }
 
+      .s1-tutorial-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+      }
+
       /* Video */
       .video-slide-title {
         font-size: 14px !important;
@@ -933,23 +938,6 @@
       flex-direction: column;
     }
 
-    /* Degradê / sombra verde neon suave na base da tela (sempre atrás do conteúdo) */
-    #app::after {
-      content: '';
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 160px;
-      pointer-events: none;
-      z-index: 0;
-      background: linear-gradient(to top,
-          rgba(180, 194, 255, 0.22) 0%,
-          rgba(180, 194, 255, 0.1) 35%,
-          rgba(180, 194, 255, 0.03) 60%,
-          transparent 100%);
-    }
-
     /* ── PROGRESS BAR ── */
     #pbar-wrap {
       position: fixed;
@@ -1079,19 +1067,7 @@
     }
 
     #nav::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 180%;
-      pointer-events: none;
-      z-index: -1;
-      background: linear-gradient(to top,
-          rgba(8, 9, 26, 0.88) 0%,
-          rgba(12, 14, 36, 0.62) 36%,
-          rgba(28, 32, 72, 0.22) 68%,
-          transparent 100%);
+      display: none;
     }
 
     .nav-hidden {
@@ -4601,14 +4577,15 @@
    SLIDE 1 — CAPA
    ============================================================ */
     #s1 {
-      background-color: #08091a;
-      background-image:
-        linear-gradient(100deg, rgba(8, 9, 26, 0.97) 0%, rgba(8, 9, 26, 0.90) 28%, rgba(8, 9, 26, 0.50) 52%, rgba(8, 9, 26, 0.28) 68%, rgba(8, 9, 26, 0.62) 100%),
-        radial-gradient(ellipse at 22% 55%, rgba(107, 122, 237, 0.16) 0%, transparent 62%),
-        url('img/BACKGROUND.png');
-      background-position: center, center, center;
-      background-repeat: no-repeat, no-repeat, no-repeat;
-      background-size: auto, auto, cover;
+      background-color: #1a1230;
+      background-image: url('img/BACKGROUND.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    #s1 .wave {
+      display: none;
     }
 
     .s1-inner {
@@ -4656,17 +4633,7 @@
     }
 
     .s1-img-col::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      bottom: 1.5%;
-      transform: translateX(-50%);
-      width: 76%;
-      height: 5%;
-      background: radial-gradient(ellipse at center, rgba(180, 194, 255, 0.45), rgba(0, 0, 0, 0.6) 55%, transparent 75%);
-      filter: blur(10px);
-      z-index: -1;
-      pointer-events: none;
+      display: none;
     }
 
     .hero-3d-img {
@@ -4675,8 +4642,8 @@
       max-width: min(1500px, 66vw, 100%);
       max-height: min(94vh, calc(100vh - 120px), 1000px);
       display: block;
-      mix-blend-mode: lighten;
-      filter: drop-shadow(0 25px 45px rgba(0, 0, 0, 0.5));
+      mix-blend-mode: normal;
+      filter: none;
       animation: heroFloat 8s ease-in-out infinite;
     }
 
@@ -4817,6 +4784,48 @@
       background: linear-gradient(135deg, #7C8BF5, #6B7AED);
       transform: translateY(-2px);
       box-shadow: none;
+    }
+
+    .s1-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .s1-tutorial-btn {
+      appearance: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: #fff;
+      font-family: var(--font-h);
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.01em;
+      padding: 8px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(180, 194, 255, 0.55);
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    }
+
+    .s1-tutorial-btn svg {
+      width: 11px;
+      height: 11px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    .s1-tutorial-btn:hover {
+      background: rgba(180, 194, 255, 0.12);
+      border-color: var(--red-lt);
+      transform: translateY(-1px);
+    }
+
+    .s1-tutorial-btn:active {
+      transform: scale(0.98);
     }
 
     .s1-modules {
@@ -5404,12 +5413,13 @@
       position: fixed;
       inset: 0;
       z-index: 100002;
-      background: rgba(0, 0, 0, 0.88);
+      background: rgba(8, 10, 28, 0.88);
       backdrop-filter: blur(12px);
       align-items: center;
       justify-content: center;
-      padding: 20px;
+      padding: 40px 48px;
       box-sizing: border-box;
+      overflow: auto;
     }
 
     .tutorial-modal-overlay.open {
@@ -5418,93 +5428,233 @@
 
     .tutorial-modal-box {
       position: relative;
-      width: 100%;
-      max-width: 920px;
-      background: linear-gradient(180deg, #121212 0%, #080808 100%);
-      border: 1px solid rgba(180, 194, 255, 0.35);
-      border-radius: 18px;
-      padding: 28px 24px 24px;
-      box-shadow: 0 28px 90px rgba(0, 0, 0, 0.65);
-      animation: zoomIn 0.35s ease;
-    }
-
-    .tutorial-modal-close {
-      position: absolute;
-      top: 10px;
-      right: 14px;
-      width: 40px;
-      height: 40px;
-      border: none;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.08);
-      color: #fff;
-      font-size: 28px;
-      line-height: 1;
-      cursor: pointer;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s, color 0.2s, transform 0.2s;
-      z-index: 2;
+      flex-direction: column;
+      flex: 0 0 auto;
+      width: min(920px, 100%);
+      max-width: 920px;
+      height: auto;
+      max-height: none;
+      margin: auto;
+      overflow: hidden;
+      background: linear-gradient(160deg, #1c1e44 0%, #16183a 42%, #101228 100%);
+      border: 1px solid rgba(180, 194, 255, 0.35);
+      border-radius: 24px;
+      padding: 22px 28px 20px;
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.55);
+      animation: zoomIn 0.35s ease;
+      box-sizing: border-box;
     }
 
-    .tutorial-modal-close:hover {
-      background: rgba(180, 194, 255, 0.25);
-      color: var(--red-lt);
-      transform: scale(1.05);
+    .tutorial-modal-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gold-lt);
+      pointer-events: none;
+    }
+
+    .tutorial-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--red), var(--red-dk));
+      color: var(--cream);
+      font-family: var(--font-h);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border-radius: 999px;
+      margin: 0 0 12px;
+      width: fit-content;
+      flex-shrink: 0;
+    }
+
+    .tutorial-badge svg {
+      width: 12px;
+      height: 12px;
+      fill: currentColor;
     }
 
     .tutorial-modal-title {
       font-family: var(--font-h);
       font-size: 20px;
       font-weight: 800;
-      color: var(--cream);
-      margin: 0 48px 8px 0;
-      letter-spacing: 0.02em;
+      color: #fff;
+      margin: 0 0 8px;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+      flex-shrink: 0;
     }
 
     .tutorial-modal-title span {
-      color: var(--red);
+      color: var(--gold-lt);
     }
 
     .tutorial-modal-desc {
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.65);
-      margin: 0 0 18px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.82);
+      margin: 0 0 16px;
       line-height: 1.45;
+      flex-shrink: 0;
     }
 
     .tutorial-modal-box .video-wrap {
-      max-width: 100%;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 0 16px !important;
+      flex: 0 0 auto !important;
+      display: block !important;
+      min-height: 0;
+    }
+
+    .tutorial-modal-box .video-box {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      min-height: 0 !important;
+      padding: 0 !important;
+      padding-bottom: 0 !important;
+      aspect-ratio: 16 / 9 !important;
+      position: relative !important;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .tutorial-modal-box .video-box iframe {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    .tutorial-modal-footer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 0;
+      flex-shrink: 0;
+    }
+
+    .tutorial-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-b);
+      font-size: 13px;
+      color: rgba(180, 194, 255, 0.85);
+      margin: 0;
+      min-width: 0;
+    }
+
+    .tutorial-status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold-lt);
+      box-shadow: 0 0 8px rgba(180, 194, 255, 0.7);
+      flex-shrink: 0;
+    }
+
+    .tutorial-status.is-waiting .tutorial-status-dot {
+      background: rgba(255, 255, 255, 0.4);
+      box-shadow: none;
+      animation: tutorialPulse 1s ease-in-out infinite;
+    }
+
+    @keyframes tutorialPulse {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+
+    .tutorial-entendi-btn {
+      appearance: none;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-h);
+      font-size: 14px;
+      font-weight: 800;
+      color: #fff;
+      background: linear-gradient(135deg, var(--red), var(--red-dk));
+      padding: 12px 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(107, 122, 237, 0.4);
+      transition: transform 0.2s, opacity 0.2s, box-shadow 0.2s;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    .tutorial-entendi-btn:disabled {
+      cursor: not-allowed;
+      opacity: 0.4;
+      box-shadow: none;
+    }
+
+    .tutorial-entendi-btn.is-ready:not(:disabled):hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(107, 122, 237, 0.55);
+    }
+
+    .tutorial-entendi-btn.is-ready:not(:disabled):active {
+      transform: scale(0.98);
     }
 
     @media (max-width: 768px) {
       .tutorial-modal-overlay {
-        padding: 12px;
-        align-items: center;
+        padding: 20px 12px;
       }
 
       .tutorial-modal-box {
-        padding: 22px 16px 16px;
-        border-radius: 14px;
+        padding: 18px 16px 18px;
+        border-radius: 18px;
       }
 
       .tutorial-modal-title {
-        font-size: 16px;
-        margin-right: 40px;
+        font-size: 17px;
       }
 
       .tutorial-modal-desc {
-        font-size: 12px;
-        margin-bottom: 14px;
+        font-size: 13px;
+        margin-bottom: 12px;
       }
 
-      .tutorial-modal-close {
-        top: 8px;
-        right: 8px;
-        width: 36px;
-        height: 36px;
-        font-size: 24px;
+      .tutorial-modal-footer {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+      }
+
+      .tutorial-entendi-btn {
+        width: 100%;
+        white-space: normal;
+      }
+    }
+
+    @media (max-height: 800px) {
+      .tutorial-modal-overlay {
+        padding: 24px 32px;
+      }
+
+      .tutorial-modal-box {
+        width: min(760px, 100%);
+        max-width: 760px;
+        padding: 18px 22px 16px;
+      }
+
+      .tutorial-modal-title {
+        font-size: 18px;
+      }
+
+      .tutorial-modal-desc {
+        margin-bottom: 12px;
       }
     }
 
@@ -6158,13 +6308,11 @@
       from {
         opacity: 0;
         transform: translateY(18px) scale(0.97);
-        filter: blur(4px);
       }
 
       to {
         opacity: 1;
         transform: translateY(0) scale(1);
-        filter: blur(0);
       }
     }
 
@@ -6233,7 +6381,6 @@
       padding: clamp(8px, 1vw, 11px) clamp(22px, 3.5vw, 36px);
       border-radius: 99px;
       display: inline-block;
-      box-shadow: 0 6px 22px rgba(180, 194, 255, 0.32);
     }
 
     .mod-intro-title {
@@ -6242,7 +6389,6 @@
       font-size: clamp(52px, 11vw, 110px);
       color: var(--red);
       line-height: 1;
-      text-shadow: 0 8px 28px rgba(180, 194, 255, 0.22);
     }
 
     .mod-intro-sub {
@@ -8568,7 +8714,8 @@
       border-color: rgba(255, 255, 255, 0.5);
     }
 
-    .btn-accessibility-toggle.active {
+    .btn-accessibility-toggle.active,
+    .btn-music-toggle.active {
       background: rgba(180, 194, 255, 0.25);
       border-color: rgba(180, 194, 255, 0.6);
       color: #fff;
@@ -9773,6 +9920,18 @@
 
   <div id="top-controls">
     <div class="top-control-item">
+      <button id="btn-music" type="button" onclick="toggleMusic()" class="btn-music-toggle"
+        title="Música de fundo" aria-pressed="false" aria-label="Ativar música de fundo">
+        <span id="music-icon-container">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 5L9.91 7.09 12 9.18V5z"/>
+          </svg>
+        </span>
+        <span class="control-btn-text music-text">Música</span>
+      </button>
+      <span class="top-control-label">Música</span>
+    </div>
+    <div class="top-control-item">
       <button id="btn-accessibility" onclick="toggleAccessibilityNarration()" class="btn-accessibility-toggle"
         title="Transcrição em áudio" aria-pressed="false" aria-label="Ouvir transcrição em áudio do slide">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -9847,12 +10006,20 @@
                 </div>
               </div>
             </div>
-            <button class="btn-start" onclick="startCourse()">
-              <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
-                <polygon points="5,3 17,10 5,17" />
-              </svg>
-              INICIAR O TREINAMENTO
-            </button>
+            <div class="s1-actions">
+              <button class="btn-start" onclick="startCourse()">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
+                  <polygon points="5,3 17,10 5,17" />
+                </svg>
+                INICIAR O TREINAMENTO
+              </button>
+              <button type="button" class="s1-tutorial-btn" onclick="openTutorialModal()">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12" aria-hidden="true">
+                  <polygon points="5,3 17,10 5,17" />
+                </svg>
+                Ver tutorial
+              </button>
+            </div>
           </div>
         </div>
         <div class="wave">
@@ -10167,11 +10334,22 @@
       <!-- ── S2d: CONTEÚDO — Dimensionamento e Capacidade Operacional ── -->
       <section class="slide" id="s2d">
         <style>
+          #s2d {
+            align-items: stretch !important;
+            overflow: hidden;
+          }
+
+          #s2d .top-bar {
+            flex-shrink: 0;
+            padding-top: 14px;
+            padding-bottom: 0;
+          }
+
           #s2d .civcrim-subhead {
             display: flex;
             align-items: center;
             gap: 14px;
-            max-width: 1000px;
+            max-width: 1240px;
             margin: 0 auto;
             width: 100%;
           }
@@ -10190,7 +10368,7 @@
 
           #s2d .civcrim-subhead-text {
             font-family: var(--font-h);
-            font-size: clamp(15px, 1.5vw, 17px);
+            font-size: clamp(12px, 1.65vh, 15px);
             font-weight: 800;
             color: #ffffff;
             text-transform: uppercase;
@@ -10201,20 +10379,22 @@
           #s2d .civcrim-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
-            max-width: 1000px;
+            gap: clamp(12px, 1.6vh, 20px);
+            max-width: 1240px;
             margin: 0 auto;
             width: 100%;
+            flex: 0 0 auto;
           }
 
           #s2d .civcrim-card {
             background: linear-gradient(160deg, #10161e, #0a0e14);
             border: 1px solid rgba(180, 194, 255, 0.24);
-            border-radius: 18px;
-            padding: 16px 22px;
+            border-radius: 16px;
+            padding: clamp(14px, 2vh, 20px) clamp(16px, 1.5vw, 22px);
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            justify-content: flex-start;
+            gap: clamp(8px, 1.1vh, 12px);
             position: relative;
             overflow: hidden;
             box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
@@ -10259,9 +10439,9 @@
           }
 
           #s2d .civcrim-card-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 11px;
+            width: clamp(38px, 5.2vh, 48px);
+            height: clamp(38px, 5.2vh, 48px);
+            border-radius: 12px;
             flex-shrink: 0;
             background: rgba(180, 194, 255, 0.14);
             border: 1px solid rgba(180, 194, 255, 0.35);
@@ -10280,23 +10460,25 @@
           #s2d .civcrim-card-title {
             font-family: var(--font-h);
             font-weight: 800;
-            font-size: 16px;
+            font-size: clamp(15px, 2.1vh, 19px);
+            line-height: 1.25;
             color: #ffffff;
           }
 
           #s2d .civcrim-card-sub {
             font-family: var(--font-h);
             font-weight: 600;
-            font-size: 11.5px;
+            font-size: clamp(10px, 1.35vh, 12.5px);
             color: rgba(255, 255, 255, 0.55);
             text-transform: uppercase;
             letter-spacing: 0.4px;
+            margin-top: 2px;
           }
 
           #s2d .civcrim-card-text {
             font-family: var(--font-p);
-            font-size: 13px;
-            line-height: 1.5;
+            font-size: clamp(13.5px, 1.85vh, 16.5px);
+            line-height: 1.55;
             color: rgba(255, 255, 255, 0.82);
           }
 
@@ -10416,12 +10598,13 @@
             }
           }
           #s2d .s2d-lead {
-            max-width: 960px;
+            max-width: 1180px;
             margin: 0 auto;
+            flex-shrink: 0;
             font-family: var(--font-p);
-            font-size: clamp(12px, 1.05vw, 13.5px);
-            line-height: 1.4;
-            color: rgba(255, 255, 255, 0.82);
+            font-size: clamp(13.5px, 1.9vh, 17px);
+            line-height: 1.55;
+            color: rgba(255, 255, 255, 0.88);
             text-align: center;
           }
 
@@ -10436,87 +10619,74 @@
           #s2d .s2d-cap {
             font-family: var(--font-h);
             font-weight: 900;
-            font-size: clamp(18px, 2vw, 22px);
+            font-size: clamp(24px, 3.7vh, 34px);
             color: #B4C2FF;
             letter-spacing: -0.02em;
-            line-height: 1.1;
+            line-height: 1.15;
           }
 
           #s2d .s2d-cap span {
             display: block;
-            font-size: 10px;
+            font-size: clamp(10px, 1.35vh, 12.5px);
             font-weight: 700;
             letter-spacing: 0.06em;
             text-transform: uppercase;
             color: rgba(255, 255, 255, 0.55);
-            margin-top: 2px;
+            margin-top: 3px;
           }
 
           #s2d .slide-title {
-            font-size: clamp(20px, 2.2vw, 28px) !important;
-            margin-bottom: 2px;
-          }
-
-          #s2d .civcrim-subhead {
-            gap: 10px;
-          }
-
-          #s2d .civcrim-subhead-text {
-            font-size: clamp(12px, 1.2vw, 14px);
-          }
-
-          #s2d .civcrim-grid {
-            gap: 12px;
-          }
-
-          #s2d .s2d-card-viewport {
-            gap: 12px;
-          }
-
-          #s2d .civcrim-card {
-            padding: 12px 16px;
-            gap: 6px;
-            border-radius: 14px;
-          }
-
-          #s2d .civcrim-card::before {
-            height: 3px;
-          }
-
-          #s2d .civcrim-card-head {
-            gap: 10px;
-          }
-
-          #s2d .civcrim-card-icon {
-            width: 32px;
-            height: 32px;
-            border-radius: 9px;
+            font-size: clamp(22px, 2.4vw, 31px) !important;
+            margin-top: 6px;
+            margin-bottom: 0;
           }
 
           #s2d .civcrim-card-icon svg {
-            width: 18px;
-            height: 18px;
+            width: 55%;
+            height: 55%;
           }
 
-          #s2d .civcrim-card-title {
-            font-size: 14px;
+          #s2d .s2d-card-viewport {
+            flex: 0 1 auto;
+            min-height: 0;
+            justify-content: center;
+            gap: clamp(10px, 2.4vh, 26px);
           }
 
-          #s2d .civcrim-card-sub {
-            font-size: 10px;
+          #s2d .civcrim-subhead { flex-shrink: 0; }
+
+          #s2d .content-area {
+            flex: 1 1 0;
+            min-height: 0;
+            width: 100%;
+            max-width: 1300px !important;
+            margin: 0 auto;
+            overflow: hidden !important;
+            justify-content: center !important;
+            gap: clamp(10px, 2.4vh, 26px) !important;
+            padding: clamp(4px, 1vh, 10px) 36px 82px !important;
           }
 
-          #s2d .civcrim-card-text {
-            font-size: 12px;
-            line-height: 1.4;
+          @media screen and (min-width: 1700px) {
+            #s2d .content-area { max-width: 1500px !important; }
+            #s2d .civcrim-grid,
+            #s2d .civcrim-subhead { max-width: 1420px; }
+            #s2d .s2d-lead { max-width: 1300px; }
+          }
+
+          @media screen and (min-width: 769px) and (max-height: 600px) {
+            #s2d .top-bar { padding-top: 8px; }
+            #s2d .slide-title { font-size: clamp(20px, 2.2vw, 26px) !important; }
+            #s2d .content-area { padding: 4px 30px 68px !important; }
+            #s2d .civcrim-card { padding: 10px 16px; }
           }
         </style>
         <div class="top-bar">
           <span class="section-tag">⚙️ Sistema Automatizado</span>
-          <div class="slide-title" style="margin-top:6px">Dimensionamento e <span>Capacidade Operacional</span></div>
+          <div class="slide-title">Dimensionamento e <span>Capacidade Operacional</span></div>
           <div class="slide-subtitle">Contexto Legal, Introdução e Fluxos do Sistema Automatizado</div>
         </div>
-        <div class="content-area" style="display:flex; flex-direction:column; gap: 10px; width:100%; max-width:1100px; margin:0 auto; padding: 0 20px 88px;">
+        <div class="content-area" style="display:flex; flex-direction:column;">
 
           <p class="s2d-lead">Você pode estar se perguntando: este sistema automatizado realmente suporta a alta demanda do <strong>CD Cajamar</strong>? A resposta é <strong>sim</strong>. O equipamento foi projetado sob medida e todos os fluxos foram dimensionados prevendo a pior condição de consolidação de dados da Leroy Merlin, operando de forma simultânea.</p>
 
@@ -11727,23 +11897,416 @@
           </svg></div>
       </section>
 
-      <!-- ── S-MOD3-VIDEO: VÍDEO — Velocidade Máxima e Consciência Situacional ── -->
+      <!-- ── S-MOD3-EQUIPAMENTO: CONTEÚDO — Conhecendo o Equipamento ── -->
+      <section class="slide" id="s-mod3-equipamento">
+        <style>
+          #s-mod3-equipamento {
+            align-items: stretch !important;
+          }
+          #s-mod3-equipamento .eq-lead,
+          #s-mod3-equipamento .wave {
+            display: none !important;
+          }
+          #s-mod3-equipamento .top-bar {
+            display: flex;
+            flex-shrink: 0;
+            overflow: visible;
+            padding-top: 18px;
+            padding-bottom: 0;
+          }
+          #s-mod3-equipamento .slide-title {
+            overflow: visible;
+            line-height: 1.2;
+            font-size: clamp(22px, 3.2vw, 34px);
+          }
+          #s-mod3-equipamento .eq-content {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            max-width: 1280px;
+            min-width: 0;
+            min-height: 0;
+            margin: 0 auto;
+            padding: 6px 28px 88px;
+            justify-content: center;
+            box-sizing: border-box;
+            overflow: hidden;
+          }
+          #s-mod3-equipamento .eq-viewport {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            min-width: 0;
+            min-height: 0;
+            flex: 1;
+          }
+          #s-mod3-equipamento .eq-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, auto));
+            gap: 8px 12px;
+            width: 100%;
+            min-width: 0;
+            min-height: 0;
+            flex: 1;
+            align-content: center;
+            justify-content: center;
+            justify-items: center;
+          }
+          #s-mod3-equipamento .eq-item {
+            position: relative;
+            display: block;
+            min-width: 0;
+            min-height: 0;
+            width: min(22vw, calc((100dvh - 235px) / 2));
+            border-radius: 14px;
+            overflow: hidden;
+            cursor: pointer;
+            background: #0d1024;
+            border: 1px solid rgba(180, 194, 255, 0.18);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.32);
+            transition: transform 0.32s cubic-bezier(0.165, 0.84, 0.44, 1),
+                        box-shadow 0.32s ease, border-color 0.32s ease;
+            -webkit-tap-highlight-color: transparent;
+          }
+          #s-mod3-equipamento .eq-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(180, 194, 255, 0.6);
+            box-shadow: 0 20px 38px rgba(0, 0, 0, 0.45), 0 0 30px -10px #6B7AED;
+          }
+          #s-mod3-equipamento .eq-item:focus-visible {
+            outline: 2px solid #9AA6F5;
+            outline-offset: 3px;
+          }
+          #s-mod3-equipamento .eq-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 14px;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+            pointer-events: none;
+          }
+          #s-mod3-equipamento .eq-label {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+            font-family: var(--font-h);
+            font-size: clamp(11px, 0.95vw, 13.5px) !important;
+            font-weight: 700;
+            color: #fff;
+            text-align: center;
+            line-height: 1.25 !important;
+            margin: 0;
+            padding: 26px 9px 10px;
+            letter-spacing: 0.01em;
+            background: linear-gradient(180deg, transparent, rgba(5, 7, 18, 0.82) 45%, rgba(5, 7, 18, 0.95) 100%);
+            transition: padding-bottom 0.3s ease;
+          }
+          #s-mod3-equipamento .eq-item:hover .eq-label { padding-bottom: 13px; }
+          #s-mod3-equipamento .eq-num {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            z-index: 3;
+            font-family: var(--font-h);
+            font-size: 9.5px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(8, 10, 24, 0.6);
+            border: 1px solid rgba(180, 194, 255, 0.28);
+            border-radius: 999px;
+            padding: 2px 8px;
+            backdrop-filter: blur(4px);
+          }
+          #s-mod3-equipamento .eq-zoom {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            z-index: 3;
+            width: 30px;
+            height: 30px;
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #C8D2FF;
+            background: rgba(8, 10, 24, 0.68);
+            border: 1px solid rgba(180, 194, 255, 0.35);
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+            pointer-events: none;
+          }
+          #s-mod3-equipamento .eq-item:hover .eq-zoom,
+          #s-mod3-equipamento .eq-item:focus-visible .eq-zoom {
+            opacity: 1;
+            transform: scale(1);
+          }
+          #s-mod3-equipamento .eq-photo {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            display: block;
+            overflow: hidden;
+            background: transparent;
+            padding: 0;
+            box-sizing: border-box;
+          }
+          #s-mod3-equipamento .eq-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            border: none;
+            outline: none;
+            transform: scale(1.04);
+            transition: transform 0.55s cubic-bezier(0.165, 0.84, 0.44, 1);
+          }
+          #s-mod3-equipamento .eq-item:hover .eq-photo img { transform: scale(1.14); }
+
+          @keyframes eqCardIn {
+            from { opacity: 0; transform: translateY(16px) scale(0.96); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+          }
+          #s-mod3-equipamento.active .eq-item {
+            animation: eqCardIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) backwards;
+            animation-delay: calc(var(--d, 0) * 65ms);
+          }
+          @media (prefers-reduced-motion: reduce) {
+            #s-mod3-equipamento.active .eq-item { animation: none; }
+            #s-mod3-equipamento .eq-photo img { transition: none; }
+          }
+          #s-mod3-equipamento .eq-carousel-nav { display: none; }
+          @media screen and (max-width: 768px) and (orientation: portrait) {
+            @keyframes eqFadeIn {
+              from { opacity: 0; transform: translateX(18px); }
+              to   { opacity: 1; transform: translateX(0); }
+            }
+            #s-mod3-equipamento .eq-lead,
+            #s-mod3-equipamento .slide-subtitle,
+            #s-mod3-equipamento .wave { display: none !important; }
+            #s-mod3-equipamento .top-bar {
+              display: flex !important;
+              padding: 12px 16px 0 16px;
+            }
+            #s-mod3-equipamento .slide-title {
+              display: block !important;
+              font-size: 20px !important;
+              line-height: 1.2 !important;
+              overflow: visible;
+            }
+            #s-mod3-equipamento .eq-content {
+              overflow-x: hidden !important;
+              overflow-y: auto !important;
+              justify-content: flex-start !important;
+              align-items: stretch;
+              padding: 8px 16px calc(90px + env(safe-area-inset-bottom, 0px)) !important;
+              gap: 12px !important;
+              max-width: 100%;
+            }
+            #s-mod3-equipamento .eq-viewport {
+              width: 100%;
+              max-width: 360px;
+              margin: 0 auto;
+              flex: 0 1 auto;
+            }
+            #s-mod3-equipamento .eq-grid {
+              display: contents !important;
+              grid-template-rows: none;
+            }
+            #s-mod3-equipamento .eq-item {
+              display: none !important;
+              width: 100%;
+              max-width: 100%;
+              height: auto;
+              gap: 6px;
+            }
+            #s-mod3-equipamento .eq-item.eq-card-active {
+              display: flex !important;
+              flex-direction: column !important;
+              align-items: stretch !important;
+              animation: eqFadeIn 0.3s ease forwards;
+            }
+            #s-mod3-equipamento .eq-label {
+              position: static !important;
+              order: -1;
+              padding: 0 4px 8px !important;
+              background: none !important;
+              font-size: 16px !important;
+              text-align: center !important;
+              min-height: 0;
+              width: 100%;
+            }
+            #s-mod3-equipamento .eq-photo {
+              flex: none;
+              aspect-ratio: 1 / 1;
+              width: 100%;
+              border-radius: 12px;
+              padding: 0;
+              border: none;
+              box-shadow: none;
+              overflow: hidden;
+            }
+            #s-mod3-equipamento .eq-carousel-nav {
+              display: flex !important;
+              align-items: center;
+              justify-content: center;
+              gap: 16px;
+              width: 100%;
+              max-width: 360px;
+              margin: 0 auto;
+              flex-shrink: 0;
+            }
+            #s-mod3-equipamento .eq-nav-btn {
+              background: linear-gradient(135deg, #6B7AED, #2A2D5C);
+              color: #fff;
+              border: none;
+              border-radius: 50%;
+              width: 46px;
+              height: 46px;
+              min-width: 46px;
+              min-height: 46px;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              box-shadow: 0 6px 16px rgba(180, 194, 255, 0.4);
+              touch-action: manipulation;
+              -webkit-tap-highlight-color: transparent;
+            }
+            #s-mod3-equipamento .eq-nav-btn:active:not(:disabled) { transform: scale(0.94); }
+            #s-mod3-equipamento .eq-nav-btn:disabled { opacity: 0.3; cursor: default; }
+            #s-mod3-equipamento .eq-nav-btn svg { pointer-events: none; }
+            #s-mod3-equipamento .eq-counter {
+              font-family: var(--font-h);
+              font-size: 14px;
+              font-weight: 800;
+              color: rgba(255,255,255,0.9);
+              min-width: 56px;
+              text-align: center;
+              letter-spacing: 0.04em;
+            }
+            #s-mod3-equipamento .eq-item {
+              border: none;
+              box-shadow: none;
+              background: transparent;
+              border-radius: 12px;
+              transform: none !important;
+              flex-direction: column !important;
+            }
+            #s-mod3-equipamento .eq-item::after { display: none; }
+            #s-mod3-equipamento .eq-label {
+              position: static !important;
+              order: -1;
+              padding: 0 4px 8px !important;
+              background: none !important;
+              font-size: 16px !important;
+              text-align: center !important;
+              min-height: 0;
+              width: 100%;
+            }
+            #s-mod3-equipamento .eq-num,
+            #s-mod3-equipamento .eq-zoom { display: none; }
+            #s-mod3-equipamento .eq-photo { border-radius: 12px; overflow: hidden; }
+            #s-mod3-equipamento .eq-photo img { transform: scale(1.04) !important; }
+          }
+        </style>
+        <div class="top-bar">
+          <div><span class="section-tag">⚙️ Componentes</span>
+            <div class="slide-title" style="margin-top:6px">Conhecendo o <span>Equipamento</span></div>
+            <div class="slide-subtitle">Componentes, Dispositivos de Segurança e Procedimento LOTO</div>
+          </div>
+        </div>
+        <div class="content-area eq-content">
+          <p class="eq-lead">Principais componentes para a operação do equipamento:</p>
+          <div class="eq-viewport" id="eq-card-viewport">
+            <div class="eq-grid">
+              <article class="eq-item eq-card-active" style="--d:0" role="button" tabindex="0" aria-label="Ampliar foto: Garra de Elevação">
+                <span class="eq-num">01</span>
+                <span class="eq-zoom" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.2-4.2M11 8v6M8 11h6"/></svg></span>
+                <p class="eq-label">Garra de Elevação</p>
+                <div class="eq-photo"><img src="img/GARRA DE ELEVAÇÃO.png" alt="Garra de Elevação INDEVA"></div>
+              </article>
+              <article class="eq-item" style="--d:1" role="button" tabindex="0" aria-label="Ampliar foto: Balança de Precisão">
+                <span class="eq-num">02</span>
+                <span class="eq-zoom" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.2-4.2M11 8v6M8 11h6"/></svg></span>
+                <p class="eq-label">Balança de Precisão</p>
+                <div class="eq-photo"><img src="img/BALANÇA DE PRECISÃO.png" alt="Balança de Precisão INDEVA"></div>
+              </article>
+              <article class="eq-item" style="--d:2" role="button" tabindex="0" aria-label="Ampliar foto: Painel de Operação">
+                <span class="eq-num">03</span>
+                <span class="eq-zoom" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.2-4.2M11 8v6M8 11h6"/></svg></span>
+                <p class="eq-label">Painel de Operação</p>
+                <div class="eq-photo"><img src="img/PAINEL DE OPERAÇÃO.png" alt="Painel de Operação"></div>
+              </article>
+              <article class="eq-item" style="--d:3" role="button" tabindex="0" aria-label="Ampliar foto: Monitor de Operação">
+                <span class="eq-num">04</span>
+                <span class="eq-zoom" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.2-4.2M11 8v6M8 11h6"/></svg></span>
+                <p class="eq-label">Monitor de Operação</p>
+                <div class="eq-photo"><img src="img/MONITOR DE OPERAÇÃO.png" alt="Monitor de Operação"></div>
+              </article>
+              <article class="eq-item" style="--d:4" role="button" tabindex="0" aria-label="Ampliar foto: Plataforma Pantográfica Ergonômica">
+                <span class="eq-num">05</span>
+                <span class="eq-zoom" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.2-4.2M11 8v6M8 11h6"/></svg></span>
+                <div class="eq-photo"><img src="img/PLATAFORMA PANTOGRAFICA.png" alt="Plataforma Pantográfica Ergonômica"></div>
+                <p class="eq-label">Plataforma Pantográfica Ergonômica</p>
+              </article>
+              <article class="eq-item" style="--d:5" role="button" tabindex="0" aria-label="Ampliar foto: Proteção Lateral Fixa">
+                <span class="eq-num">06</span>
+                <span class="eq-zoom" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.2-4.2M11 8v6M8 11h6"/></svg></span>
+                <div class="eq-photo"><img src="img/PROTEÇÃO LATERAL FIXA.png" alt="Proteção Lateral Fixa"></div>
+                <p class="eq-label">Proteção Lateral Fixa</p>
+              </article>
+              <article class="eq-item" style="--d:6" role="button" tabindex="0" aria-label="Ampliar foto: Proteção Lateral Móvel">
+                <span class="eq-num">07</span>
+                <span class="eq-zoom" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.2-4.2M11 8v6M8 11h6"/></svg></span>
+                <div class="eq-photo"><img src="img/PROTEÇÃO LATERAL MÓVEL.png" alt="Proteção Lateral Móvel"></div>
+                <p class="eq-label">Proteção Lateral Móvel</p>
+              </article>
+              <article class="eq-item" style="--d:7" role="button" tabindex="0" aria-label="Ampliar foto: Totem de Operação">
+                <span class="eq-num">08</span>
+                <span class="eq-zoom" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.2-4.2M11 8v6M8 11h6"/></svg></span>
+                <div class="eq-photo"><img src="img/TOTEM DE OPERAÇÃO.png" alt="Totem de Operação Leroy Merlin"></div>
+                <p class="eq-label">Totem de Operação</p>
+              </article>
+            </div>
+          </div>
+          <div class="eq-carousel-nav" id="eq-carousel-nav">
+            <button type="button" class="eq-nav-btn" id="eq-prev" aria-label="Anterior" onclick="eqCarouselNav(-1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <span class="eq-counter" id="eq-counter">1 / 8</span>
+            <button type="button" class="eq-nav-btn" id="eq-next" aria-label="Próximo" onclick="eqCarouselNav(1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
+          </svg></div>
+      </section>
+
+      <!-- ── S-MOD3-VIDEO: VÍDEO — Barreiras Físicas e Dispositivos de Emergência ── -->
       <section class="slide video-slide" id="s-mod3-video">
         <div class="top-bar">
           <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Velocidade Máxima <span>e Consciência Situacional</span></div>
+            <div class="slide-title" style="margin-top:6px">Barreiras Físicas <span>e Dispositivos de Emergência</span></div>
             <div class="slide-subtitle">Componentes, Dispositivos de Segurança e Procedimento LOTO</div>
           </div>
         </div>
         <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
           <div class="video-wrap">
             <div class="video-box">
-              <iframe id="panda-7c2abc9c-5d8a-44b4-aeb1-62a7d8786dc1"
-                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=7c2abc9c-5d8a-44b4-aeb1-62a7d8786dc1"
+              <iframe id="panda-3378fcb8-9405-4e23-8507-b9392f9ec81f"
+                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=3378fcb8-9405-4e23-8507-b9392f9ec81f"
                 frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
                 allowfullscreen="true" fetchpriority="high"
                 style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
-                title="Velocidade Máxima e Consciência Situacional — NR 12">
+                title="Barreiras Físicas e Dispositivos de Emergência — NR 12">
               </iframe>
             </div>
           </div>
@@ -11753,24 +12316,662 @@
           </svg></div>
       </section>
 
-      <!-- ── S-MOD3-VIDEO2: VÍDEO — Sinalização Luminosa e Visibilidade Ativa ── -->
+      <!-- ── S-MOD3-CORTINAS: CONTEÚDO — Cortinas de Luz e Estados Tricolores ── -->
+      <section class="slide" id="s-mod3-cortinas">
+        <style>
+          #s-mod3-cortinas { align-items: stretch !important; overflow: hidden; }
+          #s-mod3-cortinas .top-bar { flex-shrink: 0; }
+          #s-mod3-cortinas .ct-content {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(10px, 1.7vh, 18px);
+            width: 100%;
+            max-width: 1260px;
+            margin: 0 auto;
+            padding: clamp(4px, 1vh, 10px) 28px 86px;
+            justify-content: center;
+            box-sizing: border-box;
+            flex: 1 1 0;
+            min-width: 0;
+            min-height: 0;
+            overflow: hidden;
+          }
+          #s-mod3-cortinas .ct-intro {
+            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 100%);
+            border: 1px solid rgba(180, 194, 255, 0.28);
+            border-radius: 16px;
+            padding: 16px 22px 16px 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+            flex-shrink: 0;
+          }
+          #s-mod3-cortinas .ct-intro::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #6B7AED, #9AA6F5);
+          }
+          #s-mod3-cortinas .ct-intro p {
+            font-family: var(--font-p);
+            font-size: clamp(14px, 1.35vw, 16.5px) !important;
+            line-height: 1.5 !important;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+          }
+          #s-mod3-cortinas .ct-grid {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(8px, 1.2vh, 14px);
+            width: 100%;
+            min-width: 0;
+          }
+          #s-mod3-cortinas .ct-card {
+            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 100%);
+            border: 1px solid rgba(180, 194, 255, 0.22);
+            border-radius: 16px;
+            padding: 20px 18px 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            min-width: 0;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+            position: relative;
+            overflow: hidden;
+          }
+          #s-mod3-cortinas .ct-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+          }
+          #s-mod3-cortinas .ct-card-green::before { background: #2ecc71; }
+          #s-mod3-cortinas .ct-card-red::before { background: #e74c3c; }
+          #s-mod3-cortinas .ct-card-orange::before { background: #f39c12; }
+          #s-mod3-cortinas .ct-head {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          }
+          #s-mod3-cortinas .ct-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            flex-shrink: 0;
+          }
+          #s-mod3-cortinas .ct-dot-green {
+            background: #2ecc71;
+            box-shadow: 0 0 10px rgba(46, 204, 113, 0.7);
+          }
+          #s-mod3-cortinas .ct-dot-red {
+            background: #e74c3c;
+            box-shadow: 0 0 10px rgba(231, 76, 60, 0.7);
+          }
+          #s-mod3-cortinas .ct-dot-orange {
+            background: #f39c12;
+            box-shadow: 0 0 10px rgba(243, 156, 18, 0.7);
+            animation: ctBlink 1.1s ease-in-out infinite;
+          }
+          @keyframes ctBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.25; }
+          }
+          #s-mod3-cortinas .ct-title {
+            font-family: var(--font-h);
+            font-size: clamp(14px, 1.25vw, 16px) !important;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.25 !important;
+            margin: 0;
+          }
+          #s-mod3-cortinas .ct-text {
+            font-family: var(--font-p);
+            font-size: clamp(13px, 1.15vw, 14.5px) !important;
+            line-height: 1.45 !important;
+            color: rgba(255, 255, 255, 0.82);
+            margin: 0;
+          }
+          #s-mod3-cortinas .ct-text strong { color: #fff; font-weight: 800; }
+          #s-mod3-cortinas .ct-alert {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            background: linear-gradient(160deg, #2a2410 0%, #1c1810 100%);
+            border: 1px solid rgba(243, 156, 18, 0.4);
+            border-radius: 16px;
+            padding: 14px 18px;
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+          }
+          #s-mod3-cortinas .ct-alert::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #f39c12, #e67e22);
+          }
+          #s-mod3-cortinas .ct-alert-icon {
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #f39c12, #c87a0a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 6px 16px rgba(243, 156, 18, 0.35);
+          }
+          #s-mod3-cortinas .ct-alert p {
+            font-family: var(--font-p);
+            font-size: clamp(13px, 1.2vw, 15px) !important;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+            line-height: 1.45 !important;
+          }
+          #s-mod3-cortinas .ct-carousel-nav { display: none; }
+          @media screen and (max-width: 768px) and (orientation: portrait) {
+            @keyframes ctFadeIn {
+              from { opacity: 0; transform: translateX(18px); }
+              to   { opacity: 1; transform: translateX(0); }
+            }
+            #s-mod3-cortinas { overflow: hidden; }
+            #s-mod3-cortinas .slide-title {
+              font-size: 18px !important;
+              line-height: 1.2 !important;
+            }
+            #s-mod3-cortinas .slide-title span {
+              display: inline !important;
+              margin-top: 0 !important;
+            }
+            #s-mod3-cortinas .slide-subtitle { display: none; }
+            #s-mod3-cortinas .wave { display: none; }
+            #s-mod3-cortinas .ct-content {
+              justify-content: flex-start !important;
+              padding: 8px 16px calc(90px + env(safe-area-inset-bottom, 0px)) !important;
+              gap: 12px !important;
+            }
+            #s-mod3-cortinas .ct-intro p {
+              font-size: 13px !important;
+              line-height: 1.4 !important;
+            }
+            #s-mod3-cortinas .ct-grid { display: contents !important; }
+            #s-mod3-cortinas .ct-card {
+              display: none !important;
+              width: 100%;
+            }
+            #s-mod3-cortinas .ct-card.ct-card-active {
+              display: flex !important;
+              animation: ctFadeIn 0.3s ease forwards;
+            }
+            #s-mod3-cortinas .ct-title { font-size: 16px !important; }
+            #s-mod3-cortinas .ct-text { font-size: 14px !important; }
+            #s-mod3-cortinas .ct-alert p { font-size: 13px !important; }
+            #s-mod3-cortinas .ct-carousel-nav {
+              display: flex !important;
+              align-items: center;
+              justify-content: center;
+              gap: 16px;
+              width: 100%;
+              flex-shrink: 0;
+            }
+            #s-mod3-cortinas .ct-nav-btn {
+              background: linear-gradient(135deg, #6B7AED, #2A2D5C);
+              color: #fff;
+              border: none;
+              border-radius: 50%;
+              width: 46px;
+              height: 46px;
+              min-width: 46px;
+              min-height: 46px;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              box-shadow: 0 6px 16px rgba(180, 194, 255, 0.4);
+              touch-action: manipulation;
+              -webkit-tap-highlight-color: transparent;
+            }
+            #s-mod3-cortinas .ct-nav-btn:active:not(:disabled) { transform: scale(0.94); }
+            #s-mod3-cortinas .ct-nav-btn:disabled { opacity: 0.3; cursor: default; }
+            #s-mod3-cortinas .ct-nav-btn svg { pointer-events: none; }
+            #s-mod3-cortinas .ct-counter {
+              font-family: var(--font-h);
+              font-size: 14px;
+              font-weight: 800;
+              color: rgba(255,255,255,0.9);
+              min-width: 56px;
+              text-align: center;
+            }
+          }
+
+          /* ── Palco interativo: simulador + seletor de estados ── */
+          #s-mod3-cortinas .ct-stage {
+            display: grid;
+            grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+            gap: clamp(12px, 1.4vw, 20px);
+            align-items: stretch;
+            min-height: 0;
+            flex: 0 1 auto;
+          }
+
+          #s-mod3-cortinas .ct-sim {
+            --ct-c: #2ecc71;
+            --ct-glow: rgba(46, 204, 113, 0.38);
+            display: flex;
+            flex-direction: column;
+            gap: clamp(8px, 1.1vh, 12px);
+            padding: clamp(10px, 1.4vh, 15px);
+            border-radius: 18px;
+            background: linear-gradient(160deg, #1c1e44 0%, #16183a 45%, #101228 100%);
+            border: 1px solid var(--ct-glow);
+            box-shadow: 0 14px 34px rgba(0, 0, 0, 0.34), 0 0 26px -14px var(--ct-c);
+            transition: border-color 0.45s ease, box-shadow 0.45s ease;
+            min-width: 0;
+          }
+          #s-mod3-cortinas .ct-sim[data-state="red"] { --ct-c: #e74c3c; --ct-glow: rgba(231, 76, 60, 0.4); }
+          #s-mod3-cortinas .ct-sim[data-state="orange"] { --ct-c: #f39c12; --ct-glow: rgba(243, 156, 18, 0.4); }
+
+          #s-mod3-cortinas .ct-sim-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+          }
+          #s-mod3-cortinas .ct-sim-label {
+            font-family: var(--font-h);
+            font-size: clamp(9.5px, 1.25vh, 11.5px);
+            font-weight: 800;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+          }
+          #s-mod3-cortinas .ct-sim-badge {
+            font-family: var(--font-h);
+            font-size: clamp(9.5px, 1.25vh, 11.5px);
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--ct-c);
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--ct-glow);
+            border-radius: 999px;
+            padding: 3px 11px;
+            white-space: nowrap;
+            transition: color 0.4s ease, border-color 0.4s ease;
+          }
+
+          #s-mod3-cortinas .ct-scene {
+            position: relative;
+            flex: 1 1 auto;
+            min-height: clamp(130px, 20vh, 200px);
+            border-radius: 14px;
+            overflow: hidden;
+            background:
+              radial-gradient(120% 90% at 50% 0%, rgba(180, 194, 255, 0.09), transparent 60%),
+              linear-gradient(180deg, #0d1024, #080a18);
+            border: 1px solid rgba(180, 194, 255, 0.14);
+          }
+          #s-mod3-cortinas .ct-scene::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(60% 70% at 50% 50%, var(--ct-glow), transparent 70%);
+            opacity: 0.28;
+            transition: opacity 0.45s ease;
+            pointer-events: none;
+          }
+          #s-mod3-cortinas .ct-sim[data-state="red"] .ct-scene::after { opacity: 0.42; }
+
+          #s-mod3-cortinas .ct-floor {
+            position: absolute;
+            left: 6%;
+            right: 6%;
+            bottom: 11%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(180, 194, 255, 0.3), transparent);
+          }
+
+          #s-mod3-cortinas .ct-post {
+            position: absolute;
+            top: 14%;
+            bottom: 14%;
+            width: 15px;
+            border-radius: 7px;
+            background: linear-gradient(180deg, #3d4173 0%, #262a52 60%, #1a1d3c 100%);
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.09), 0 6px 14px rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            padding: 7px 0;
+            z-index: 2;
+          }
+          #s-mod3-cortinas .ct-post-l { left: 8%; }
+          #s-mod3-cortinas .ct-post-r { right: 8%; }
+          #s-mod3-cortinas .ct-post i {
+            display: block;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--ct-c);
+            box-shadow: 0 0 7px var(--ct-c);
+            transition: background 0.4s ease, box-shadow 0.4s ease;
+          }
+
+          #s-mod3-cortinas .ct-beams {
+            position: absolute;
+            left: calc(8% + 15px);
+            right: calc(8% + 15px);
+            top: 16%;
+            bottom: 16%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 1;
+          }
+          #s-mod3-cortinas .ct-beam {
+            position: relative;
+            height: 3px;
+            border-radius: 3px;
+            background: var(--ct-c);
+            box-shadow: 0 0 9px var(--ct-c);
+            opacity: 0.9;
+            transition: background 0.35s ease, opacity 0.35s ease, box-shadow 0.35s ease;
+          }
+          /* varredura contínua no estado seguro */
+          #s-mod3-cortinas .ct-beam::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 3px;
+            background: linear-gradient(90deg, transparent, #ffffff, transparent);
+            opacity: 0;
+          }
+          #s-mod3-cortinas .ct-sim[data-state="green"] .ct-beam::after {
+            animation: ctScan 2.4s linear infinite;
+            animation-delay: calc(var(--i) * 0.09s);
+          }
+          @keyframes ctScan {
+            0% { opacity: 0; transform: translateX(-100%) scaleX(0.25); }
+            35% { opacity: 0.75; }
+            70%, 100% { opacity: 0; transform: translateX(100%) scaleX(0.25); }
+          }
+          #s-mod3-cortinas .ct-sim[data-state="red"] .ct-beam {
+            animation: ctFlicker 0.5s steps(2, end) infinite;
+          }
+          @keyframes ctFlicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+          }
+          #s-mod3-cortinas .ct-sim[data-state="orange"] .ct-beam {
+            animation: ctBeamBlink 1.05s ease-in-out infinite;
+            animation-delay: calc(var(--i) * 0.05s);
+          }
+          @keyframes ctBeamBlink {
+            0%, 100% { opacity: 0.95; }
+            50% { opacity: 0.2; }
+          }
+
+          #s-mod3-cortinas .ct-status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-radius: 12px;
+            padding: clamp(7px, 1vh, 10px) 12px;
+            background: rgba(255, 255, 255, 0.045);
+            border: 1px solid var(--ct-glow);
+            transition: border-color 0.45s ease;
+          }
+          #s-mod3-cortinas .ct-status-led {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            background: var(--ct-c);
+            box-shadow: 0 0 10px var(--ct-c);
+            transition: background 0.4s ease, box-shadow 0.4s ease;
+          }
+          #s-mod3-cortinas .ct-sim[data-state="orange"] .ct-status-led { animation: ctBlink 1.05s ease-in-out infinite; }
+          #s-mod3-cortinas .ct-status-txt { min-width: 0; }
+          #s-mod3-cortinas .ct-status-title {
+            display: block;
+            font-family: var(--font-h);
+            font-weight: 800;
+            font-size: clamp(12px, 1.65vh, 14.5px);
+            color: #fff;
+            line-height: 1.2;
+          }
+          #s-mod3-cortinas .ct-status-desc {
+            display: block;
+            font-family: var(--font-p);
+            font-size: clamp(11px, 1.45vh, 13px);
+            color: rgba(255, 255, 255, 0.62);
+            line-height: 1.35;
+            margin-top: 1px;
+          }
+
+          /* ── Cards de estado como seletores ── */
+          #s-mod3-cortinas .ct-card {
+            --c: #6B7AED;
+            cursor: pointer;
+            padding: clamp(10px, 1.4vh, 15px) clamp(13px, 1.1vw, 17px);
+            gap: clamp(5px, 0.7vh, 8px);
+            justify-content: center;
+            border-radius: 14px;
+            transition: transform 0.25s cubic-bezier(0.165, 0.84, 0.44, 1),
+                        border-color 0.25s ease, box-shadow 0.3s ease, background 0.3s ease;
+            -webkit-tap-highlight-color: transparent;
+          }
+          #s-mod3-cortinas .ct-card-green { --c: #2ecc71; }
+          #s-mod3-cortinas .ct-card-red { --c: #e74c3c; }
+          #s-mod3-cortinas .ct-card-orange { --c: #f39c12; }
+          #s-mod3-cortinas .ct-card::before {
+            background: var(--c);
+            transform: scaleX(0.2);
+            transform-origin: left center;
+            opacity: 0.55;
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.3s ease;
+          }
+          #s-mod3-cortinas .ct-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(180, 194, 255, 0.45);
+          }
+          #s-mod3-cortinas .ct-card:hover::before { transform: scaleX(0.6); opacity: 0.8; }
+          #s-mod3-cortinas .ct-card:focus-visible {
+            outline: 2px solid var(--c);
+            outline-offset: 3px;
+          }
+          #s-mod3-cortinas .ct-card[aria-pressed="true"] {
+            border-color: var(--c);
+            background: linear-gradient(160deg, #23264f 0%, #191c3f 45%, #12142c 100%);
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.36), 0 0 30px -12px var(--c);
+          }
+          #s-mod3-cortinas .ct-card[aria-pressed="true"]::before { transform: scaleX(1); opacity: 1; }
+          #s-mod3-cortinas .ct-card[aria-pressed="false"] { opacity: 0.72; }
+          #s-mod3-cortinas .ct-card[aria-pressed="false"]:hover { opacity: 1; }
+
+          #s-mod3-cortinas .ct-head { justify-content: space-between; }
+          #s-mod3-cortinas .ct-head-l { display: flex; align-items: center; gap: 10px; min-width: 0; }
+          #s-mod3-cortinas .ct-pick {
+            font-family: var(--font-h);
+            font-size: 9.5px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--c);
+            opacity: 0;
+            transform: translateX(-4px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            white-space: nowrap;
+          }
+          #s-mod3-cortinas .ct-card[aria-pressed="true"] .ct-pick { opacity: 1; transform: translateX(0); }
+
+          #s-mod3-cortinas .ct-hint {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            font-family: var(--font-h);
+            font-size: clamp(9.5px, 1.25vh, 11px);
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: rgba(180, 194, 255, 0.7);
+          }
+          #s-mod3-cortinas .ct-hint svg { flex-shrink: 0; }
+          #s-mod3-cortinas .ct-hint.is-off { opacity: 0; transition: opacity 0.5s ease; }
+
+          @media (prefers-reduced-motion: reduce) {
+            #s-mod3-cortinas .ct-beam,
+            #s-mod3-cortinas .ct-beam::after,
+            #s-mod3-cortinas .ct-dot-orange,
+            #s-mod3-cortinas .ct-status-led { animation: none !important; }
+          }
+
+          @media screen and (max-width: 768px) and (orientation: portrait) {
+            #s-mod3-cortinas .ct-stage { display: contents !important; }
+            #s-mod3-cortinas .ct-sim { display: none !important; }
+            #s-mod3-cortinas .ct-hint { display: none !important; }
+            #s-mod3-cortinas .ct-pick { display: none !important; }
+            #s-mod3-cortinas .ct-card {
+              cursor: default;
+              opacity: 1 !important;
+              pointer-events: none;
+            }
+            #s-mod3-cortinas .ct-card[aria-pressed="true"],
+            #s-mod3-cortinas .ct-card[aria-pressed="false"] {
+              opacity: 1 !important;
+              border-color: rgba(180, 194, 255, 0.22);
+              box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+              background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 100%);
+            }
+            #s-mod3-cortinas .ct-card[aria-pressed="true"]::before,
+            #s-mod3-cortinas .ct-card[aria-pressed="false"]::before {
+              transform: scaleX(1);
+              opacity: 0.9;
+            }
+            #s-mod3-cortinas .ct-card:hover {
+              transform: none;
+            }
+          }
+        </style>
+        <div class="top-bar">
+          <div><span class="section-tag">💡 Sensores</span>
+            <div class="slide-title" style="margin-top:6px">Cortinas de Luz <span>e Estados Tricolores</span></div>
+            <div class="slide-subtitle">Componentes, Dispositivos de Segurança e Procedimento LOTO</div>
+          </div>
+        </div>
+        <div class="content-area ct-content">
+          <div class="ct-intro">
+            <p>As barreiras de segurança fornecem proteção automática contínua de áreas perigosas, com sinalização visual clara para orientar operadores a qualquer distância.</p>
+          </div>
+          <div class="ct-stage">
+            <div class="ct-sim" id="ct-sim" data-state="green">
+              <div class="ct-sim-head">
+                <span class="ct-sim-label">Simulação da barreira</span>
+                <span class="ct-sim-badge" id="ct-sim-badge">Área livre</span>
+              </div>
+              <div class="ct-scene" aria-hidden="true">
+                <div class="ct-post ct-post-l"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                <div class="ct-post ct-post-r"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                <div class="ct-beams">
+                  <span class="ct-beam" style="--i:0"></span>
+                  <span class="ct-beam" style="--i:1"></span>
+                  <span class="ct-beam" style="--i:2"></span>
+                  <span class="ct-beam" style="--i:3"></span>
+                  <span class="ct-beam" style="--i:4"></span>
+                  <span class="ct-beam" style="--i:5"></span>
+                  <span class="ct-beam" style="--i:6"></span>
+                </div>
+                <div class="ct-floor"></div>
+              </div>
+              <div class="ct-status">
+                <span class="ct-status-led" aria-hidden="true"></span>
+                <div class="ct-status-txt" role="status" aria-live="polite">
+                  <strong class="ct-status-title" id="ct-status-title">Máquina operando</strong>
+                  <span class="ct-status-desc" id="ct-status-desc">Zona protegida livre — ciclo automático liberado.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="ct-grid" id="ct-card-viewport">
+              <article class="ct-card ct-card-green ct-card-active" data-state="green" role="button" tabindex="0" aria-pressed="true">
+                <div class="ct-head">
+                  <span class="ct-head-l">
+                    <span class="ct-dot ct-dot-green" aria-hidden="true"></span>
+                    <h3 class="ct-title">Verde — Área Livre</h3>
+                  </span>
+                  <span class="ct-pick">Simulando</span>
+                </div>
+                <p class="ct-text">Nenhum objeto ou pessoa detectado na zona protegida. Sistema operando normalmente.</p>
+              </article>
+              <article class="ct-card ct-card-red" data-state="red" role="button" tabindex="0" aria-pressed="false">
+                <div class="ct-head">
+                  <span class="ct-head-l">
+                    <span class="ct-dot ct-dot-red" aria-hidden="true"></span>
+                    <h3 class="ct-title">Vermelho — Área Obstruída</h3>
+                  </span>
+                  <span class="ct-pick">Simulando</span>
+                </div>
+                <p class="ct-text">Obstrução detectada. Sistema é desligado <strong>instantaneamente</strong>. Não tente reiniciar sem verificar a área.</p>
+              </article>
+              <article class="ct-card ct-card-orange" data-state="orange" role="button" tabindex="0" aria-pressed="false">
+                <div class="ct-head">
+                  <span class="ct-head-l">
+                    <span class="ct-dot ct-dot-orange" aria-hidden="true"></span>
+                    <h3 class="ct-title">Laranja Piscante — Muting</h3>
+                  </span>
+                  <span class="ct-pick">Simulando</span>
+                </div>
+                <p class="ct-text">Ciclo de muting ativo — barreira temporariamente inibida para passagem controlada de pallets. Estado programado e monitorado.</p>
+              </article>
+              <div class="ct-hint" id="ct-hint">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11.5V5a1.5 1.5 0 0 1 3 0v6"/><path d="M12 11V4.5a1.5 1.5 0 0 1 3 0V11"/><path d="M15 11.5v-1a1.5 1.5 0 0 1 3 0V16a5 5 0 0 1-5 5h-1.5a5.5 5.5 0 0 1-4.4-2.2L4 14.5a1.6 1.6 0 0 1 2.5-2L9 15"/></svg>
+                Clique em um estado para simular
+              </div>
+            </div>
+          </div>
+          <div class="ct-carousel-nav" id="ct-carousel-nav">
+            <button type="button" class="ct-nav-btn" id="ct-prev" aria-label="Anterior" onclick="ctCarouselNav(-1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <span class="ct-counter" id="ct-counter">1 / 3</span>
+            <button type="button" class="ct-nav-btn" id="ct-next" aria-label="Próximo" onclick="ctCarouselNav(1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+            </button>
+          </div>
+          <div class="ct-alert">
+            <div class="ct-alert-icon" aria-hidden="true">⚠</div>
+            <p>O desligamento instantâneo das barreiras é a principal proteção contra acidentes graves. Nunca bloqueie, cubra ou tente contornar qualquer barreira de segurança.</p>
+          </div>
+        </div>
+        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
+          </svg></div>
+      </section>
+
+      <!-- ── S-MOD3-VIDEO2: VÍDEO — Procedimento LOTO: Garantia de Energia Zero ── -->
 
       <section class="slide video-slide" id="s-mod3-video2">
         <div class="top-bar">
           <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Sinalização Luminosa <span>e Visibilidade Ativa</span></div>
+            <div class="slide-title" style="margin-top:6px">Procedimento LOTO: <span>Garantia de Energia Zero</span></div>
             <div class="slide-subtitle">Componentes, Dispositivos de Segurança e Procedimento LOTO</div>
           </div>
         </div>
         <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
           <div class="video-wrap">
             <div class="video-box">
-              <iframe id="panda-fc2f2f1a-95bc-481c-bffb-7ba88addf73a"
-                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=fc2f2f1a-95bc-481c-bffb-7ba88addf73a"
+              <iframe id="panda-9d6f9453-5968-44b6-b134-f3b3d18a0fdb"
+                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=9d6f9453-5968-44b6-b134-f3b3d18a0fdb"
                 frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
                 allowfullscreen="true" fetchpriority="high"
                 style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
-                title="Sinalização Luminosa e Visibilidade Ativa — NR 12">
+                title="Procedimento LOTO: Garantia de Energia Zero — NR 12">
               </iframe>
             </div>
           </div>
@@ -11780,6 +12981,8 @@
           </svg></div>
       </section>
 
+      <template id="paginas-mod3-removidas">
+      <!-- Páginas 22 a 27 removidas da sequência do treinamento. -->
       <!-- ── S-MOD3-VIDEO3: VÍDEO — Cinto de Segurança e Ergonomia na Cabine ── -->
       <section class="slide video-slide" id="s-mod3-video3">
         <div class="top-bar">
@@ -12313,6 +13516,8 @@
           </svg></div>
       </section>
 
+      </template>
+
       <!-- ── S-MOD3-GAME: DESAFIO — Módulo 3 ── -->
       <section class="slide" id="s-mod3-game">
         <style>
@@ -12337,8 +13542,8 @@
             padding: clamp(24px,4vh,36px) clamp(20px,3vw,28px);
             box-shadow: 0 20px 48px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08);
             backdrop-filter: blur(12px);
-            max-height: calc(100dvh - 200px);
-            overflow-y: auto;
+            max-height: none;
+            overflow: visible;
           }
           /* Progress bar */
           .m3g-progress-row {
@@ -12450,7 +13655,7 @@
             color: rgba(255,255,255,0.5); position: relative; z-index: 1;
           }
           @media (max-height: 860px) {
-            .m3g-shell { max-height: calc(100dvh - 130px); }
+            .m3g-shell { max-height: none; }
           }
           @media (min-width: 769px) and (max-width: 1499px) {
             .m3g-shell { padding: 28px 34px; }
@@ -12486,13 +13691,14 @@
           }
           /* ── Card shell igual ao Módulo 2 ── */
           #s-mod3-game .content-area {
-            padding-top: 12px !important;
-            padding-bottom: 110px !important;
+            padding-top: 8px !important;
+            padding-bottom: 128px !important;
             justify-content: center;
             justify-content: safe center;
             align-items: center;
             min-height: 0;
             flex: 1 1 auto;
+            overflow-x: hidden;
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
           }
@@ -12573,11 +13779,11 @@
 
           <!-- INTRO -->
           <div id="m3g-intro" class="m3g-wrap" style="text-align:center; animation: fadeIn 0.8s ease;">
-            <div class="ic-circle" style="margin: 0 auto 24px; width: 96px; height: 96px; font-size: 48px;">🚜</div>
+            <div class="ic-circle" style="margin: 0 auto 24px; width: 96px; height: 96px; font-size: 48px;">🛡️</div>
             <h3 style="font-family:var(--font-h); font-size:26px; color:var(--white); margin-bottom:12px;">
-              Quiz NR-11 — Módulo 3</h3>
+              Quiz NR 12 — Módulo 3</h3>
             <p style="color:rgba(255,255,255,0.72); font-size:16px; line-height:1.65; margin-bottom:28px; max-width: 600px; margin-left: auto; margin-right: auto;">
-              Você vai ler <strong>5 situações reais</strong> de operação e escolher a atitude correta. Coloque em prática tudo o que aprendeu sobre velocidade, sinalização, cinto de segurança, cruzamentos e embarque/desembarque!
+              Você vai ler <strong>4 situações reais</strong> e escolher a resposta correta. Coloque em prática o que aprendeu sobre <strong>proteções móveis</strong>, <strong>botão de emergência de duplo canal</strong>, <strong>cortinas de luz</strong> e o <strong>procedimento LOTO</strong>!
             </p>
             <button class="btn-start" onclick="startM3Game()" style="padding: 16px 40px; font-size: 15px; text-transform: uppercase;">
               INICIAR DESAFIO
@@ -12588,8 +13794,8 @@
           <div id="m3g-play" class="m3g-wrap" style="display:none;">
             <div class="m3g-shell">
               <div class="m3g-progress-row">
-                <span class="m3g-label">🎯 Escolha a ação correta</span>
-                <span class="m3g-counter" id="m3g-counter">1 / 5</span>
+                <span class="m3g-label">🎯 Escolha a resposta correta</span>
+                <span class="m3g-counter" id="m3g-counter">1 / 4</span>
               </div>
               <div class="m3g-bar-bg">
                 <div class="m3g-bar-fill" id="m3g-bar"></div>
@@ -12609,13 +13815,13 @@
             <div class="m3g-score-ring" id="m3g-score-ring">
               <div>
                 <div class="m3g-score-num" id="m3g-score-num">0</div>
-                <div class="m3g-score-label">/ 5</div>
+                <div class="m3g-score-label">/ 4</div>
               </div>
             </div>
             <h3 style="font-family:var(--font-h); font-size:clamp(22px,4vw,28px); color:var(--gold); margin-bottom:8px; font-weight:900;">
               Missão Concluída!</h3>
             <div class="r-status ap" style="display:inline-block; padding:6px 18px; font-size:13px; margin-bottom:14px; font-weight:700;">
-              Módulo 3 — Operação Segura Validada</div>
+              Módulo 3 — Proteções e LOTO Validados</div>
             <p id="m3g-result-msg" style="color:rgba(255,255,255,0.88); font-size:15px; line-height:1.55; margin-bottom:22px; max-width:480px; margin-left:auto; margin-right:auto;"></p>
             <button class="btn-retry" onclick="resetM3Game()" style="background:var(--white); color:var(--black); font-weight:800; border-radius:99px; padding:12px 32px;">
               JOGAR NOVAMENTE</button>
@@ -15384,7 +16590,7 @@
       </button>
       <div id="nav-dots"></div>
       <button class="nav-btn" id="btn-fwd" onclick="goTo(currentSlide+1)">
-        AVANÇAR
+        PRÓXIMO
         <svg viewBox="0 0 20 20" fill="currentColor">
           <polygon points="5,3 17,10 5,17" />
         </svg>
@@ -15475,6 +16681,10 @@
         max-width: 760px !important;
         margin-top: 30px !important;
       }
+      /* No play do Módulo 3, zero o margin-top para não invadir a onda */
+      #s-mod3-game #m3g-play {
+        margin-top: 0 !important;
+      }
       #s-mod2-game #mod2tf-intro,
       #s-mod3-game #m3g-intro,
       #s-mod3-game #m3g-result,
@@ -15525,6 +16735,122 @@
       #s-mod6-game #m6g-intro .btn-start {
         padding: 16px 38px !important;
         font-size: 15.5px !important;
+      }
+    }
+
+    /* Quiz Módulo 3 — card cabe as 4 opções sem cortar, acima da onda */
+    @media (min-width: 768px) {
+      #s-mod3-game .content-area {
+        align-items: center !important;
+        justify-content: center !important;
+        padding-top: 8px !important;
+        padding-bottom: 128px !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+      }
+      /* Anula o margin-top: 56px herdado da padronização dos games */
+      #s-mod3-game #m3g-play {
+        margin-top: 8px !important;
+        max-width: 800px !important;
+        width: 100% !important;
+      }
+      #s-mod3-game #m3g-play .m3g-shell {
+        max-height: none;
+        overflow: visible;
+        padding: 20px 28px 18px;
+        border-radius: 24px;
+        box-shadow: 0 20px 48px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08);
+      }
+      #s-mod3-game #m3g-play .m3g-progress-row {
+        margin-bottom: 8px;
+      }
+      #s-mod3-game #m3g-play .m3g-label {
+        font-size: 13px;
+      }
+      #s-mod3-game #m3g-play .m3g-counter {
+        font-size: 15px;
+        padding: 4px 12px;
+      }
+      #s-mod3-game #m3g-play .m3g-bar-bg {
+        height: 8px;
+        margin-bottom: 12px;
+      }
+      #s-mod3-game #m3g-play .m3g-situation {
+        min-height: 0;
+        padding: 16px 24px;
+        margin-bottom: 12px;
+        border-radius: 18px;
+      }
+      #s-mod3-game #m3g-play .m3g-sit-emoji {
+        font-size: 28px;
+        margin-bottom: 6px;
+      }
+      #s-mod3-game #m3g-play .m3g-sit-text {
+        font-size: 18px;
+        line-height: 1.35;
+        max-width: 100%;
+      }
+      #s-mod3-game #m3g-play .m3g-options {
+        gap: 8px;
+      }
+      #s-mod3-game #m3g-play .m3g-opt {
+        padding: 12px 16px;
+        font-size: 14.5px;
+        border-radius: 14px;
+        gap: 14px;
+      }
+      #s-mod3-game #m3g-play .m3g-opt-letter {
+        min-width: 28px;
+        height: 28px;
+        font-size: 13px;
+      }
+      #s-mod3-game #m3g-play .m3g-feedback {
+        min-height: 18px;
+        margin-top: 10px;
+        font-size: 13px;
+      }
+      #s-mod3-game #m3g-play .m3g-hint {
+        margin-top: 10px;
+        margin-bottom: 0;
+        font-size: 13px;
+      }
+    }
+
+    @media (min-width: 768px) and (max-height: 700px) {
+      #s-mod3-game .content-area {
+        padding-bottom: 120px !important;
+        align-items: flex-start !important;
+      }
+      #s-mod3-game #m3g-play .m3g-shell {
+        padding: 14px 18px 12px;
+        max-height: none;
+        overflow: visible;
+      }
+      #s-mod3-game #m3g-play .m3g-situation {
+        min-height: 0;
+        padding: 12px 16px;
+        margin-bottom: 10px;
+      }
+      #s-mod3-game #m3g-play .m3g-sit-emoji {
+        font-size: 24px;
+        margin-bottom: 4px;
+      }
+      #s-mod3-game #m3g-play .m3g-sit-text {
+        font-size: 15.5px;
+      }
+      #s-mod3-game #m3g-play .m3g-options {
+        gap: 6px;
+      }
+      #s-mod3-game #m3g-play .m3g-opt {
+        padding: 10px 14px;
+        font-size: 13.5px;
+      }
+      #s-mod3-game #m3g-play .m3g-bar-bg {
+        margin-bottom: 10px;
+      }
+      #s-mod3-game #m3g-play .m3g-hint {
+        margin-top: 8px;
+        font-size: 12px;
       }
     }
 
@@ -15654,7 +16980,10 @@
        BACKGROUND MUSIC
        ══════════════════════════════════════════ */
     let musicEnabled = false;
-    let simulationMode = localStorage.getItem('nr17_simulation') === '1';
+    // O modo simulação é sempre iniciado desligado e só vale para a sessão atual.
+    // Remove também a preferência persistida por versões anteriores.
+    localStorage.removeItem('nr17_simulation');
+    let simulationMode = false;
 
     function updateSimulationButton() {
       const btn = document.getElementById('btn-simulation');
@@ -15668,7 +16997,6 @@
 
     function toggleSimulationMode() {
       simulationMode = !simulationMode;
-      localStorage.setItem('nr17_simulation', simulationMode ? '1' : '0');
       updateSimulationButton();
       updateNextButton();
     }
@@ -15686,22 +17014,23 @@
       const bgMusic = document.getElementById('bg-music');
       const btnMusic = document.getElementById('btn-music');
       const iconContainer = document.getElementById('music-icon-container');
-      const musicText = btnMusic?.querySelector('.music-text');
       if (!bgMusic || !btnMusic) return;
 
-      const iconOn = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V5L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>';
-      const iconOff = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 5L9.91 7.09 12 9.18V5z"/></svg>';
+      const iconOn = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 9v6h4l5 5V5L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>';
+      const iconOff = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 5L9.91 7.09 12 9.18V5z"/></svg>';
 
       if (musicEnabled) {
         musicEnabled = false;
         bgMusic.pause();
-        iconContainer.innerHTML = iconOff;
-        if (musicText) musicText.textContent = 'Música: OFF';
+        if (iconContainer) iconContainer.innerHTML = iconOff;
+        btnMusic.classList.remove('active');
+        btnMusic.setAttribute('aria-pressed', 'false');
         btnMusic.setAttribute('aria-label', 'Ativar música de fundo');
       } else {
         musicEnabled = true;
-        iconContainer.innerHTML = iconOn;
-        if (musicText) musicText.textContent = 'Música: ON';
+        if (iconContainer) iconContainer.innerHTML = iconOn;
+        btnMusic.classList.add('active');
+        btnMusic.setAttribute('aria-pressed', 'true');
         btnMusic.setAttribute('aria-label', 'Desativar música de fundo');
         bgMusic.play().catch(e => console.log('Music play error:', e));
       }
@@ -15907,6 +17236,9 @@
       const root = scopeEl || document;
       root.querySelectorAll('iframe[data-panda-src]').forEach((iframe) => {
         if (iframe.src !== iframe.dataset.pandaSrc) {
+          iframe.addEventListener('load', () => {
+            initPandaDurationReader(iframe, true);
+          }, { once: true });
           iframe.src = iframe.dataset.pandaSrc;
         }
       });
@@ -15929,13 +17261,15 @@
        PANDA VIDEO — Regra anti-pular vídeo (NR)
        Guarda o tempo máximo já assistido (maxWatched) por vídeo.
        Pular pra frente além da tolerância força o player de volta.
-       Só libera o Avançar quando faltarem ≤3s ou o vídeo terminar.
+       Só libera o Avançar quando faltarem ≤8s ou o vídeo terminar.
        ══════════════════════════════════════════ */
     const pandaVideoDurations = new Map(); // iframe -> duration em segundos
     const pandaMaxWatched = new Map(); // iframe -> maior tempo já assistido em segundos
+    const pandaPlayers = new Map(); // iframe -> instância da API oficial
     const PANDA_TIMEUPDATE_TOLERANCE = 2.5; // tolerância de pulo durante a reprodução
     const PANDA_SEEKING_TOLERANCE = 1.25; // tolerância de arraste da barra
-    const PANDA_COMPLETE_MARGIN = 3; // libera com até 3s restantes
+    const VIDEO_UNLOCK_MARGIN = 10; // libera o Avançar faltando 10s para o fim
+    const PANDA_COMPLETE_MARGIN = VIDEO_UNLOCK_MARGIN;
 
     function initPandaVideoBoxes() {
       document.querySelectorAll('iframe[src*="pandavideo.com"]').forEach((iframe) => {
@@ -15943,6 +17277,51 @@
         if (box) box.classList.add('req-item');
       });
     }
+
+    function storePandaDuration(iframe, value) {
+      Promise.resolve(value).then((duration) => {
+        duration = Number(duration);
+        if (duration > 0) pandaVideoDurations.set(iframe, duration);
+      }).catch(() => { });
+    }
+
+    function initPandaDurationReader(iframe, force = false) {
+      if (!iframe || typeof PandaPlayer === 'undefined') return;
+      if (pandaPlayers.has(iframe) && !force) return;
+
+      // Não chama destroy() aqui: ele enviaria o comando ao iframe recém-restaurado
+      // e encerraria justamente a nova instância do vídeo.
+      pandaPlayers.delete(iframe);
+      pandaVideoDurations.delete(iframe);
+
+      if (!iframe.id) {
+        iframe.id = `panda-player-${document.querySelectorAll('iframe').length}-${Date.now()}`;
+      }
+
+      let player;
+      try {
+        player = new PandaPlayer(iframe.id, {
+          onReady: () => {
+            try {
+              storePandaDuration(iframe, player.getDuration());
+            } catch (e) { /* duração ainda indisponível — tenta no timeupdate */ }
+          }
+        });
+        pandaPlayers.set(iframe, player);
+      } catch (e) {
+        console.log('Panda Player duration error:', e);
+      }
+    }
+
+    function initPandaDurationReaders() {
+      document.querySelectorAll('iframe[src*="pandavideo.com"]').forEach((iframe) => {
+        initPandaDurationReader(iframe);
+      });
+    }
+
+    // A API é assíncrona. A fila executa assim que api.v2.js estiver pronta.
+    window.pandascripttag = window.pandascripttag || [];
+    window.pandascripttag.push(initPandaDurationReaders);
 
     function findPandaIframeBySource(source) {
       const iframes = document.querySelectorAll('iframe[src*="pandavideo.com"], iframe[data-panda-src]');
@@ -15983,7 +17362,16 @@
         const reportedDuration = Number(data.duration || data.videoDuration || data.length || data.total);
         if (reportedDuration > 0) pandaVideoDurations.set(iframe, reportedDuration);
 
-        const duration = pandaVideoDurations.get(iframe);
+        let duration = pandaVideoDurations.get(iframe);
+        if (!(duration > 0)) {
+          const player = pandaPlayers.get(iframe);
+          if (player) {
+            try {
+              storePandaDuration(iframe, player.getDuration());
+            } catch (e) { /* tenta novamente no próximo timeupdate */ }
+          }
+          duration = pandaVideoDurations.get(iframe);
+        }
         const currentTime = Number(data.currentTime);
         if (!Number.isFinite(currentTime)) return;
 
@@ -16100,9 +17488,9 @@
       });
 
       player.on('timeupdate', (data) => {
-        if (box.classList.contains('req-done')) return;
+        const done = box.classList.contains('req-done');
 
-        if (!simulationMode) {
+        if (!simulationMode && !done) {
           if (data.seconds > maxTime) {
             if (data.seconds - maxTime > 3.0) {
               player.setCurrentTime(maxTime).catch(() => {});
@@ -16111,10 +17499,16 @@
               maxTime = data.seconds;
             }
           }
+        } else if (data.seconds > maxTime) {
+          maxTime = data.seconds;
         }
 
         player.getDuration().then((duration) => {
-          if (duration > 0 && data.seconds >= duration - 0.5) {
+          if (!(duration > 0)) return;
+          if (!done && data.seconds >= duration - VIDEO_UNLOCK_MARGIN) {
+            markVideoComplete(box);
+          }
+          if (data.seconds >= duration - 0.5) {
             resetVimeoAfterEnd(player, box);
           }
         }).catch(() => { });
@@ -17271,6 +18665,12 @@
       }
       if (newSlide.id === 's-mod2-pallets' && typeof window.pltResetCarousel === 'function') {
         window.pltResetCarousel();
+      }
+      if (newSlide.id === 's-mod3-cortinas' && typeof window.ctResetCarousel === 'function') {
+        window.ctResetCarousel();
+      }
+      if (newSlide.id === 's-mod3-equipamento' && typeof window.eqResetCarousel === 'function') {
+        window.eqResetCarousel();
       }
       if (newSlide.id === 's2b') resetAtexSourcesCarousel();
       if (newSlide.id === 's3a') resetS3aGroupsCarousel();
@@ -19309,11 +20709,58 @@
 
     /* ── TUTORIAL MODAL (recarregar na capa — página 1) ── */
     const TUTORIAL_PANDA_ID = '58c2b207-5c32-4336-acba-6df97de39825';
+    const TUTORIAL_UNLOCK_SECONDS = 5;
+    let tutorialUnlockTimer = null;
+    let tutorialUnlocked = false;
+    let tutorialCountdown = TUTORIAL_UNLOCK_SECONDS;
 
     function updateTutorialButtonVisibility() {
       const item = document.getElementById('tutorial-control-item');
       if (!item) return;
-      item.style.display = currentSlide === 0 ? 'flex' : 'none';
+      item.style.display = 'none';
+    }
+
+    function setTutorialGate(ready) {
+      tutorialUnlocked = ready;
+      const btn = document.getElementById('tutorialEntendiBtn');
+      const status = document.getElementById('tutorialStatus');
+      const statusText = document.getElementById('tutorialStatusText');
+      if (btn) {
+        btn.disabled = !ready;
+        btn.classList.toggle('is-ready', ready);
+      }
+      if (status) status.classList.toggle('is-waiting', !ready);
+      if (statusText) {
+        statusText.textContent = ready
+          ? 'Botão liberado — você pode continuar'
+          : ('Aguarde ' + tutorialCountdown + 's para continuar');
+      }
+    }
+
+    function clearTutorialGate() {
+      if (tutorialUnlockTimer) {
+        clearTimeout(tutorialUnlockTimer);
+        tutorialUnlockTimer = null;
+      }
+    }
+
+    function startTutorialGate() {
+      clearTutorialGate();
+      tutorialCountdown = TUTORIAL_UNLOCK_SECONDS;
+      setTutorialGate(false);
+
+      function tick() {
+        tutorialCountdown -= 1;
+        if (tutorialCountdown <= 0) {
+          tutorialUnlockTimer = null;
+          setTutorialGate(true);
+          return;
+        }
+        setTutorialGate(false);
+        tutorialUnlockTimer = setTimeout(tick, 1000);
+      }
+
+      tutorialUnlockTimer = setTimeout(tick, 1000);
     }
 
     function openTutorialModal() {
@@ -19328,6 +20775,7 @@
       modal.classList.add('open');
       modal.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
+      startTutorialGate();
     }
 
     function closeTutorialModal() {
@@ -19335,11 +20783,17 @@
       const iframe = document.getElementById('tutorialVideoIframe');
       if (!modal) return;
 
+      clearTutorialGate();
       if (iframe) iframe.setAttribute('src', '');
 
       modal.classList.remove('open');
       modal.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
+    }
+
+    function confirmTutorialModal() {
+      if (!tutorialUnlocked) return;
+      closeTutorialModal();
     }
 
     function tryShowTutorialModal() {
@@ -19351,7 +20805,7 @@
     document.addEventListener('keydown', (e) => {
       const modal = document.getElementById('tutorialModal');
       if (e.key === 'Escape' && modal?.classList.contains('open')) {
-        closeTutorialModal();
+        if (tutorialUnlocked) closeTutorialModal();
       }
     });
 
@@ -19714,6 +21168,374 @@
           pltUpdateUI();
         }, 120);
       });
+    })();
+
+    /* ── CONHECENDO O EQUIPAMENTO — Mobile Carousel ── */
+    (function () {
+      var eqIdx = 0;
+      var eqTotal = 8;
+
+      function isMobilePortraitEq() {
+        return window.matchMedia(
+          'screen and (max-width: 768px) and (orientation: portrait)'
+        ).matches;
+      }
+
+      function eqCards() {
+        return document.querySelectorAll('#s-mod3-equipamento .eq-item');
+      }
+
+      function eqUpdateUI() {
+        var cards = eqCards();
+        eqTotal = cards.length || 8;
+        cards.forEach(function (c, i) {
+          c.classList.toggle('eq-card-active', i === eqIdx);
+        });
+        var counter = document.getElementById('eq-counter');
+        if (counter) counter.textContent = (eqIdx + 1) + ' / ' + eqTotal;
+        var prev = document.getElementById('eq-prev');
+        var next = document.getElementById('eq-next');
+        if (prev) prev.disabled = (eqIdx === 0);
+        if (next) next.disabled = (eqIdx === eqTotal - 1);
+      }
+
+      window.eqCarouselNav = function (dir) {
+        if (!isMobilePortraitEq()) return;
+        var newIdx = eqIdx + dir;
+        if (newIdx < 0 || newIdx >= eqTotal) return;
+        eqIdx = newIdx;
+        if (typeof playClickSound === 'function') playClickSound();
+        eqUpdateUI();
+      };
+
+      var eqSX = 0;
+      function eqInitSwipe() {
+        var vp = document.getElementById('eq-card-viewport');
+        if (!vp) return;
+        vp.addEventListener('touchstart', function (e) {
+          eqSX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        vp.addEventListener('touchend', function (e) {
+          var diff = eqSX - e.changedTouches[0].screenX;
+          if (Math.abs(diff) > 40) window.eqCarouselNav(diff > 0 ? 1 : -1);
+        }, { passive: true });
+      }
+
+      function eqInit() {
+        eqIdx = 0;
+        eqUpdateUI();
+        eqInitSwipe();
+      }
+
+      window.eqResetCarousel = function () {
+        eqIdx = 0;
+        eqUpdateUI();
+      };
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', eqInit);
+      } else {
+        eqInit();
+      }
+
+      window.addEventListener('resize', function () {
+        if (!isMobilePortraitEq()) eqIdx = 0;
+        eqUpdateUI();
+      });
+      window.addEventListener('orientationchange', function () {
+        setTimeout(function () {
+          if (!isMobilePortraitEq()) eqIdx = 0;
+          eqUpdateUI();
+        }, 120);
+      });
+    })();
+
+    /* ── CORTINAS DE LUZ — Mobile Carousel ── */
+    (function () {
+      var ctIdx = 0;
+      var ctTotal = 3;
+
+      function isMobilePortraitCt() {
+        return window.matchMedia(
+          'screen and (max-width: 768px) and (orientation: portrait)'
+        ).matches;
+      }
+
+      function ctCards() {
+        return document.querySelectorAll('#s-mod3-cortinas .ct-card');
+      }
+
+      function ctUpdateUI() {
+        var cards = ctCards();
+        ctTotal = cards.length || 3;
+        cards.forEach(function (c, i) {
+          c.classList.toggle('ct-card-active', i === ctIdx);
+        });
+        var counter = document.getElementById('ct-counter');
+        if (counter) counter.textContent = (ctIdx + 1) + ' / ' + ctTotal;
+        var prev = document.getElementById('ct-prev');
+        var next = document.getElementById('ct-next');
+        if (prev) prev.disabled = (ctIdx === 0);
+        if (next) next.disabled = (ctIdx === ctTotal - 1);
+      }
+
+      window.ctCarouselNav = function (dir) {
+        if (!isMobilePortraitCt()) return;
+        var newIdx = ctIdx + dir;
+        if (newIdx < 0 || newIdx >= ctTotal) return;
+        ctIdx = newIdx;
+        if (typeof playClickSound === 'function') playClickSound();
+        ctUpdateUI();
+      };
+
+      var ctSX = 0;
+      function ctInitSwipe() {
+        var vp = document.getElementById('ct-card-viewport');
+        if (!vp) return;
+        vp.addEventListener('touchstart', function (e) {
+          ctSX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        vp.addEventListener('touchend', function (e) {
+          var diff = ctSX - e.changedTouches[0].screenX;
+          if (Math.abs(diff) > 40) window.ctCarouselNav(diff > 0 ? 1 : -1);
+        }, { passive: true });
+      }
+
+      function ctInit() {
+        ctIdx = 0;
+        ctUpdateUI();
+        ctInitSwipe();
+      }
+
+      window.ctResetCarousel = function () {
+        ctIdx = 0;
+        ctUpdateUI();
+      };
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', ctInit);
+      } else {
+        ctInit();
+      }
+
+      window.addEventListener('resize', function () {
+        if (!isMobilePortraitCt()) ctIdx = 0;
+        ctUpdateUI();
+      });
+      window.addEventListener('orientationchange', function () {
+        setTimeout(function () {
+          if (!isMobilePortraitCt()) ctIdx = 0;
+          ctUpdateUI();
+        }, 120);
+      });
+    })();
+
+    /* ── CONHECENDO O EQUIPAMENTO — Galeria com lightbox ── */
+    (function () {
+      var lb, imgEl, titleEl, countEl, thumbsEl, items = [], data = [], cur = 0, lastFocus = null;
+
+      function isOpen() { return lb && lb.classList.contains('is-open'); }
+
+      function render() {
+        var it = data[cur];
+        if (!it) return;
+        imgEl.src = it.src;
+        imgEl.alt = it.alt;
+        titleEl.textContent = it.label;
+        countEl.textContent = (cur + 1) + ' / ' + data.length;
+        Array.prototype.forEach.call(thumbsEl.children, function (t, i) {
+          t.classList.toggle('is-active', i === cur);
+        });
+      }
+
+      function open(i) {
+        cur = i;
+        lastFocus = document.activeElement;
+        render();
+        lb.classList.add('is-open');
+        lb.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        document.getElementById('eqLbClose').focus();
+        if (typeof playClickSound === 'function') playClickSound();
+      }
+
+      function close() {
+        lb.classList.remove('is-open');
+        lb.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        if (lastFocus && lastFocus.focus) lastFocus.focus();
+      }
+
+      function go(dir) {
+        cur = (cur + dir + data.length) % data.length;
+        render();
+      }
+
+      function eqGalleryInit() {
+        lb = document.getElementById('eqLightbox');
+        if (!lb) return;
+        imgEl = document.getElementById('eqLbImg');
+        titleEl = document.getElementById('eqLbTitle');
+        countEl = document.getElementById('eqLbCount');
+        thumbsEl = document.getElementById('eqLbThumbs');
+
+        items = Array.prototype.slice.call(
+          document.querySelectorAll('#s-mod3-equipamento .eq-item')
+        );
+        if (!items.length) return;
+
+        data = items.map(function (el) {
+          var img = el.querySelector('img');
+          var label = el.querySelector('.eq-label');
+          return {
+            src: img ? img.getAttribute('src') : '',
+            alt: img ? (img.getAttribute('alt') || '') : '',
+            label: label ? label.textContent.trim() : ''
+          };
+        });
+
+        data.forEach(function (d, i) {
+          var t = document.createElement('button');
+          t.type = 'button';
+          t.className = 'eq-lb-thumb';
+          t.setAttribute('aria-label', d.label);
+          t.innerHTML = '<img src="' + d.src + '" alt="">';
+          t.addEventListener('click', function () { cur = i; render(); });
+          thumbsEl.appendChild(t);
+        });
+
+        items.forEach(function (el, i) {
+          el.addEventListener('click', function () { open(i); });
+          el.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+              e.preventDefault();
+              open(i);
+            }
+          });
+        });
+
+        document.getElementById('eqLbClose').addEventListener('click', close);
+        document.getElementById('eqLbPrev').addEventListener('click', function () { go(-1); });
+        document.getElementById('eqLbNext').addEventListener('click', function () { go(1); });
+        lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+
+        // captura antes do handler global de setas do curso
+        document.addEventListener('keydown', function (e) {
+          if (!isOpen()) return;
+          if (e.key === 'Escape') { e.stopPropagation(); close(); }
+          else if (e.key === 'ArrowRight') { e.stopPropagation(); go(1); }
+          else if (e.key === 'ArrowLeft') { e.stopPropagation(); go(-1); }
+          else if (e.key === 'ArrowUp' || e.key === 'ArrowDown') { e.stopPropagation(); }
+        }, true);
+
+        // fecha ao trocar de slide
+        var section = document.getElementById('s-mod3-equipamento');
+        if (section) {
+          new MutationObserver(function () {
+            if (!section.classList.contains('active') && isOpen()) close();
+          }).observe(section, { attributes: true, attributeFilter: ['class'] });
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', eqGalleryInit);
+      } else {
+        eqGalleryInit();
+      }
+    })();
+
+    /* ── CORTINAS DE LUZ — Simulador interativo de estados ── */
+    (function () {
+      var STATES = {
+        green: {
+          badge: 'Área livre',
+          title: 'Máquina operando',
+          desc: 'Zona protegida livre — ciclo automático liberado.'
+        },
+        red: {
+          badge: 'Parada imediata',
+          title: 'Máquina desligada',
+          desc: 'Feixe interrompido — parada instantânea até a área ser liberada.'
+        },
+        orange: {
+          badge: 'Muting ativo',
+          title: 'Passagem autorizada',
+          desc: 'Barreira inibida de forma programada para o pallet cruzar.'
+        }
+      };
+
+      var sim, badge, statusTitle, statusDesc, hint, cards;
+      var demoTimer = null;
+      var userTook = false;
+      var order = ['green', 'red', 'orange'];
+
+      function setState(state) {
+        if (!sim || !STATES[state]) return;
+        sim.setAttribute('data-state', state);
+        badge.textContent = STATES[state].badge;
+        statusTitle.textContent = STATES[state].title;
+        statusDesc.textContent = STATES[state].desc;
+        cards.forEach(function (c) {
+          c.setAttribute('aria-pressed', String(c.dataset.state === state));
+        });
+      }
+
+      function stopDemo() {
+        if (demoTimer) { clearInterval(demoTimer); demoTimer = null; }
+      }
+
+      function startDemo() {
+        stopDemo();
+        if (userTook || !sim) return;
+        demoTimer = setInterval(function () {
+          var next = order[(order.indexOf(sim.getAttribute('data-state')) + 1) % order.length];
+          setState(next);
+        }, 3600);
+      }
+
+      function takeOver(state) {
+        userTook = true;
+        stopDemo();
+        if (hint) hint.classList.add('is-off');
+        setState(state);
+        if (typeof playClickSound === 'function') playClickSound();
+      }
+
+      function ctSimInit() {
+        sim = document.getElementById('ct-sim');
+        if (!sim) return;
+        badge = document.getElementById('ct-sim-badge');
+        statusTitle = document.getElementById('ct-status-title');
+        statusDesc = document.getElementById('ct-status-desc');
+        hint = document.getElementById('ct-hint');
+        cards = Array.prototype.slice.call(
+          document.querySelectorAll('#s-mod3-cortinas .ct-card[data-state]')
+        );
+
+        cards.forEach(function (card) {
+          card.addEventListener('click', function () { takeOver(card.dataset.state); });
+          card.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+              e.preventDefault();
+              takeOver(card.dataset.state);
+            }
+          });
+        });
+
+        var section = document.getElementById('s-mod3-cortinas');
+        new MutationObserver(function () {
+          if (section.classList.contains('active')) startDemo();
+          else stopDemo();
+        }).observe(section, { attributes: true, attributeFilter: ['class'] });
+
+        if (section.classList.contains('active')) startDemo();
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', ctSimInit);
+      } else {
+        ctSimInit();
+      }
     })();
 
     /* ── ESPELHOS, RÉ E VELOCIDADE — Mobile Carousel ── */
@@ -20326,59 +22148,48 @@
 
       var m3gDeck = [
         {
-          emoji: '🚦',
-          sit: 'Você está circulando dentro da unidade, sem carga, e o corredor está livre. Qual é a velocidade máxima permitida?',
+          emoji: '🚪',
+          sit: 'O que acontece se um portão de acesso com sensor intertravado for aberto com o sistema em pleno ciclo de operação?',
           opts: [
-            '30 km/h, já que o corredor está livre.',
-            '10 km/h, o limite máximo em toda a unidade.',
-            'Não há limite, desde que o operador tenha experiência.'
+            'Nada: o portão é só uma barreira física e o ciclo continua normalmente.',
+            'A máquina para imediatamente, porque a trava elétrica e o sensor intertravado interrompem o ciclo.',
+            'O sistema apenas reduz a velocidade pela metade e emite um aviso sonoro.'
           ],
           ans: 1,
-          fb: '✅ Correto! A velocidade máxima é de 10 km/h em toda a unidade — a pressa é o caminho mais rápido para um acidente grave.'
+          fb: '✅ Correto! As Proteções Móveis são portões com travas elétricas e sensores intertravados — abriu o portão com o sistema em ciclo, a máquina para na hora.'
         },
         {
-          emoji: '💡',
-          sit: 'Ao trafegar pelos corredores do armazém, mesmo em áreas bem iluminadas, como devem estar os sinalizadores da empilhadeira?',
+          emoji: '🔴',
+          sit: 'Os botões de emergência do sistema são de Duplo Canal. O que essa característica garante na prática?',
           opts: [
-            'Apagados durante o dia, para economizar bateria.',
-            'Acesos apenas em áreas escuras ou externas.',
-            'Faróis e pisca-alerta sempre ativos durante qualquer deslocamento.'
+            'Que o botão precisa ser pressionado duas vezes para desligar a máquina.',
+            'Que dois operadores diferentes precisam autorizar a parada de emergência.',
+            'Redundância de sinal elétrico: se um circuito de segurança falhar, o outro canal atua e desliga a máquina.'
           ],
           ans: 2,
-          fb: '✅ Correto! Os dispositivos de sinalização devem estar ativos durante qualquer deslocamento, para que você veja e seja visto a tempo.'
+          fb: '✅ Correto! O Duplo Canal é uma redundância eletrônica: uma falha única no circuito não impede a parada, porque o segundo canal desliga o sistema.'
+        },
+        {
+          emoji: '🚦',
+          sit: 'Durante a operação, a cortina de luz passa a piscar em laranja. O que esse estado indica?',
+          opts: [
+            'Falha no sensor — a barreira deve ser desligada imediatamente.',
+            'Ciclo de muting ativo: a barreira foi inibida de forma programada e monitorada para a passagem controlada de pallets.',
+            'Área obstruída por uma pessoa, com parada instantânea do sistema.'
+          ],
+          ans: 1,
+          fb: '✅ Correto! O laranja piscante é o muting — uma inibição programada e monitorada da barreira. Já o vermelho indica área obstruída e parada instantânea.'
         },
         {
           emoji: '🔒',
-          sit: 'Antes de iniciar a operação, qual é o procedimento obrigatório do operador em relação à sua segurança pessoal?',
+          sit: 'O procedimento LOTO garante o estado de Energia Zero antes de manutenções, ajustes ou limpeza. Quais fontes de energia devem ser identificadas e neutralizadas?',
           opts: [
-            'Colocar o cinto de segurança e ajustar bem a postura no assento.',
-            'Verificar apenas o nível de combustível.',
-            'O cinto só é necessário em rampas ou áreas externas.'
+            'Somente a energia elétrica, que é a mais perigosa do sistema.',
+            'Elétrica e pneumática, as únicas presentes em sistemas automatizados.',
+            'Todas as fontes da área: elétrica, mecânica, hidráulica, pneumática, térmica e química.'
           ],
-          ans: 0,
-          fb: '✅ Correto! O cinto de segurança é obrigatório durante toda a condução — em um tombamento, ele evita que o corpo seja projetado para fora da cabine.'
-        },
-        {
-          emoji: '📯',
-          sit: 'Você se aproxima de um cruzamento de corredores com visibilidade reduzida. Qual é a conduta correta?',
-          opts: [
-            'Acelerar para atravessar rapidamente antes de outra máquina chegar.',
-            'Reduzir a marcha, buzinar repetidamente e observar os espelhos convexos.',
-            'Manter a velocidade e confiar que os pedestres vão perceber a aproximação.'
-          ],
-          ans: 1,
-          fb: '✅ Correto! Em cruzamentos e pontos cegos, reduza a marcha, buzine repetidamente e observe os espelhos convexos antes de avançar.'
-        },
-        {
-          emoji: '🪜',
-          sit: 'Qual é a forma correta de subir ou descer da cabine da empilhadeira?',
-          opts: [
-            'Pular diretamente do assento para o piso, para agilizar.',
-            'Usar sempre as alças de apoio e o degrau integrado da máquina.',
-            'Descer de costas para a cabine, sem se apoiar em nada.'
-          ],
-          ans: 1,
-          fb: '✅ Correto! Utilize sempre as alças de apoio e o degrau integrado — nunca pule para subir ou descer da cabine.'
+          ans: 2,
+          fb: '✅ Correto! LOTO significa Bloqueio e Identificação e é determinado pela NR 10. O técnico autorizado neutraliza as seis fontes de energia perigosa da área.'
         }
       ];
 
@@ -20465,11 +22276,11 @@
 
         var msg = document.getElementById('m3g-result-msg');
         if (m3gScore === total) {
-          msg.textContent = '🏆 Perfeito! Você acertou todas as situações. Está pronto para operar com máxima segurança!';
+          msg.textContent = '🏆 Perfeito! Você domina as proteções móveis, o botão de emergência de duplo canal, os estados da cortina de luz e o procedimento LOTO.';
         } else if (m3gScore >= total - 2) {
-          msg.textContent = 'Muito bem! Você tem um bom domínio dos procedimentos do Módulo 3. Revise as questões erradas antes de avançar.';
+          msg.textContent = 'Muito bem! Você tem um bom domínio dos dispositivos de segurança do Módulo 3. Revise as questões erradas antes de avançar.';
         } else {
-          msg.textContent = 'Você acertou ' + m3gScore + ' de ' + total + '. Recomendamos rever os vídeos do Módulo 3 para reforçar os procedimentos de operação segura.';
+          msg.textContent = 'Você acertou ' + m3gScore + ' de ' + total + '. Recomendamos rever os vídeos do Módulo 3 sobre barreiras físicas, dispositivos de emergência e o procedimento LOTO.';
         }
       }
 
@@ -21120,17 +22931,26 @@
   <div id="tutorialModal" class="tutorial-modal-overlay" aria-hidden="true" role="dialog"
     aria-labelledby="tutorialModalTitle" aria-modal="true">
     <div class="tutorial-modal-box" onclick="event.stopPropagation()">
-      <button type="button" class="tutorial-modal-close" onclick="closeTutorialModal()"
-        aria-label="Fechar tutorial">&times;</button>
-      <h2 class="tutorial-modal-title" id="tutorialModalTitle">Tutorial — <span>Como usar este curso</span></h2>
-      <p class="tutorial-modal-desc">Assista ao vídeo abaixo para conhecer a plataforma. Você pode fechar a qualquer
-        momento clicando no X.</p>
+      <span class="tutorial-badge">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        Tutorial — Obrigatório
+      </span>
+      <h2 class="tutorial-modal-title" id="tutorialModalTitle">Antes de começar — <span>Orientações iniciais do treinamento</span></h2>
+      <p class="tutorial-modal-desc">Assista ao vídeo abaixo para entender como navegar pelos módulos, responder aos quizzes e usar as ferramentas de acessibilidade.</p>
       <div class="video-wrap">
         <div class="video-box">
           <iframe id="tutorialVideoIframe" title="Tutorial do curso" frameborder="0"
             allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture" allowfullscreen="true"
             fetchpriority="high" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"></iframe>
         </div>
+      </div>
+      <div class="tutorial-modal-footer">
+        <p class="tutorial-status is-waiting" id="tutorialStatus">
+          <span class="tutorial-status-dot" aria-hidden="true"></span>
+          <span id="tutorialStatusText">Aguarde 5s para continuar</span>
+        </p>
+        <button type="button" class="tutorial-entendi-btn" id="tutorialEntendiBtn" disabled
+          onclick="confirmTutorialModal()">✓ Entendi, vamos começar</button>
       </div>
     </div>
   </div>
@@ -21139,6 +22959,175 @@
   <div id="imgModal" class="modal-overlay" onclick="closeImgModal()">
     <span class="close-modal">&times;</span>
     <img class="modal-content" id="modalImg">
+  </div>
+
+  <!-- LIGHTBOX — Galeria de componentes do equipamento -->
+  <style>
+    .eq-lb {
+      position: fixed;
+      inset: 0;
+      z-index: 10050;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 24px 20px;
+      box-sizing: border-box;
+      background: rgba(6, 8, 20, 0.9);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .eq-lb.is-open { opacity: 1; visibility: visible; }
+    .eq-lb-fig {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      min-height: 0;
+      transform: scale(0.94);
+      opacity: 0;
+      transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.35s ease;
+    }
+    .eq-lb.is-open .eq-lb-fig { transform: scale(1); opacity: 1; }
+    .eq-lb-img {
+      display: block;
+      max-width: min(84vw, 900px);
+      max-height: 62vh;
+      object-fit: contain;
+      border-radius: 16px;
+      border: 1px solid rgba(180, 194, 255, 0.28);
+      box-shadow: 0 26px 60px rgba(0, 0, 0, 0.6);
+      background: #0d1024;
+    }
+    .eq-lb-cap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-h);
+    }
+    .eq-lb-count {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: #C8D2FF;
+      background: rgba(180, 194, 255, 0.14);
+      border: 1px solid rgba(180, 194, 255, 0.32);
+      border-radius: 999px;
+      padding: 4px 11px;
+      white-space: nowrap;
+    }
+    .eq-lb-title {
+      font-size: clamp(15px, 1.6vw, 20px);
+      font-weight: 800;
+      color: #fff;
+    }
+    .eq-lb-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid rgba(180, 194, 255, 0.32);
+      background: rgba(20, 23, 52, 0.8);
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+    }
+    .eq-lb-btn:hover {
+      background: linear-gradient(135deg, #6B7AED, #2A2D5C);
+      border-color: rgba(180, 194, 255, 0.6);
+    }
+    .eq-lb-btn:active { transform: translateY(-50%) scale(0.93); }
+    .eq-lb-prev { left: clamp(10px, 3vw, 40px); }
+    .eq-lb-next { right: clamp(10px, 3vw, 40px); }
+    .eq-lb-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid rgba(180, 194, 255, 0.3);
+      background: rgba(20, 23, 52, 0.8);
+      color: #fff;
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.25s ease, transform 0.25s ease;
+    }
+    .eq-lb-close:hover { background: #e74c3c; transform: rotate(90deg); }
+    .eq-lb-thumbs {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      max-width: min(90vw, 900px);
+    }
+    .eq-lb-thumb {
+      width: 54px;
+      height: 54px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(180, 194, 255, 0.22);
+      background: #0d1024;
+      padding: 0;
+      cursor: pointer;
+      opacity: 0.5;
+      transition: opacity 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+    }
+    .eq-lb-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .eq-lb-thumb:hover { opacity: 0.85; transform: translateY(-2px); }
+    .eq-lb-thumb.is-active {
+      opacity: 1;
+      border-color: #9AA6F5;
+      box-shadow: 0 0 0 1px #9AA6F5, 0 8px 18px rgba(0, 0, 0, 0.4);
+    }
+    .eq-lb-hint {
+      font-family: var(--font-h);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(200, 210, 255, 0.5);
+    }
+    @media screen and (max-width: 768px) {
+      .eq-lb-img { max-height: 50vh; max-width: 92vw; }
+      .eq-lb-btn { width: 40px; height: 40px; }
+      .eq-lb-thumb { width: 42px; height: 42px; }
+      .eq-lb-hint { display: none; }
+    }
+  </style>
+  <div id="eqLightbox" class="eq-lb" role="dialog" aria-modal="true" aria-hidden="true"
+    aria-label="Galeria de componentes do equipamento">
+    <button type="button" class="eq-lb-close" id="eqLbClose" aria-label="Fechar galeria">&times;</button>
+    <button type="button" class="eq-lb-btn eq-lb-prev" id="eqLbPrev" aria-label="Componente anterior">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <figure class="eq-lb-fig">
+      <img class="eq-lb-img" id="eqLbImg" alt="">
+      <figcaption class="eq-lb-cap">
+        <span class="eq-lb-count" id="eqLbCount">1 / 8</span>
+        <span class="eq-lb-title" id="eqLbTitle"></span>
+      </figcaption>
+    </figure>
+    <div class="eq-lb-thumbs" id="eqLbThumbs"></div>
+    <span class="eq-lb-hint">Use as setas do teclado para navegar &middot; Esc para fechar</span>
+    <button type="button" class="eq-lb-btn eq-lb-next" id="eqLbNext" aria-label="Próximo componente">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+    </button>
   </div>
   <div id="notification">Termine de assistir o vídeo para avançar</div>
 
