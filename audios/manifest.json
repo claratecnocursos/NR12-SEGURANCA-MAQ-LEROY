@@ -69,7 +69,7 @@
                        "audioReady":  false
                    },
                    {
-                       "index":  10,
+                       "index":  8,
                        "id":  "s2e",
                        "title":  "Quiz NR 12 — Módulo 1",
                        "file":  "audios/s2e.mp3",
@@ -77,7 +77,7 @@
                        "audioReady":  false
                    },
                    {
-                       "index":  11,
+                       "index":  9,
                        "id":  "s-mod2",
                        "title":  "MÓDULO 2",
                        "file":  "audios/s-mod2.mp3",
@@ -85,7 +85,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  12,
+                       "index":  10,
                        "id":  "s-mod2-video",
                        "title":  "Limites de Carga",
                        "file":  "audios/s-mod2-video.mp3",
@@ -93,7 +93,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  12,
+                       "index":  11,
                        "id":  "s-mod2-pallets",
                        "title":  "Tipos de Pallet",
                        "file":  "audios/s-mod2-pallets.mp3",
@@ -101,7 +101,7 @@
                        "audioReady":  false
                    },
                    {
-                       "index":  13,
+                       "index":  12,
                        "id":  "s-mod2-video2",
                        "title":  "Pallet PBR: O Modelo de Automação",
                        "file":  "audios/s-mod2-video2.mp3",
@@ -109,7 +109,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  14,
+                       "index":  13,
                        "id":  "s-mod2-video-triagem",
                        "title":  "Proibições Absolutas na Triagem",
                        "file":  "audios/s-mod2-video-triagem.mp3",
@@ -117,7 +117,7 @@
                        "audioReady":  false
                    },
                    {
-                       "index":  15,
+                       "index":  14,
                        "id":  "s-mod2-triagem",
                        "title":  "Defeitos Estruturais na Triagem",
                        "file":  "audios/s-mod2-triagem.mp3",
@@ -125,7 +125,7 @@
                        "audioReady":  false
                    },
                    {
-                       "index":  16,
+                       "index":  15,
                        "id":  "s-mod2-game",
                        "title":  "Verdadeiro ou Falso?",
                        "file":  "audios/s-mod2-game.mp3",
@@ -133,7 +133,7 @@
                        "audioReady":  false
                    },
                    {
-                       "index":  20,
+                       "index":  16,
                        "id":  "s-mod3",
                        "title":  "MÓDULO 3",
                        "file":  "audios/s-mod3.mp3",
@@ -141,7 +141,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  18,
+                       "index":  17,
                        "id":  "s-mod3-equipamento",
                        "title":  "Conhecendo o Equipamento",
                        "file":  "audios/s-mod3-equipamento.mp3",
@@ -149,7 +149,7 @@
                        "audioReady":  false
                    },
                    {
-                       "index":  21,
+                       "index":  18,
                        "id":  "s-mod3-video",
                        "title":  "Barreiras Físicas e Dispositivos de Emergência",
                        "file":  "audios/s-mod3-video.mp3",
@@ -157,7 +157,7 @@
                        "audioReady":  false
                    },
                    {
-                       "index":  20,
+                       "index":  19,
                        "id":  "s-mod3-cortinas",
                        "title":  "Cortinas de Luz e Estados Tricolores",
                        "file":  "audios/s-mod3-cortinas.mp3",
@@ -165,7 +165,7 @@
                        "audioReady":  false
                    },
                    {
-                       "index":  22,
+                       "index":  20,
                        "id":  "s-mod3-video2",
                        "title":  "Sinalização Luminosa e Visibilidade Ativa",
                        "file":  "audios/s-mod3-video2.mp3",
@@ -173,7 +173,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  23,
+                       "index":  21,
                        "id":  "s-mod3-video3",
                        "title":  "Cinto de Segurança e Ergonomia na Cabine",
                        "file":  "audios/s-mod3-video3.mp3",
@@ -181,7 +181,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  24,
+                       "index":  22,
                        "id":  "s-mod3-driver-rules",
                        "title":  "Regras de Trânsito Interno",
                        "file":  "audios/s-mod3-driver-rules.mp3",
@@ -189,7 +189,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  25,
+                       "index":  23,
                        "id":  "s-mod3-video4",
                        "title":  "Curvas, Cruzamentos e Sinalização Sonora",
                        "file":  "audios/s-mod3-video4.mp3",
@@ -197,7 +197,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  26,
+                       "index":  24,
                        "id":  "s-mod3-video5",
                        "title":  "Subida, Descida e Estacionamento Preventivo",
                        "file":  "audios/s-mod3-video5.mp3",
@@ -205,7 +205,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  27,
+                       "index":  25,
                        "id":  "s-mod3-video6",
                        "title":  "Transporte de Cargas e Estabilidade Operacional",
                        "file":  "audios/s-mod3-video6.mp3",
@@ -213,7 +213,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  28,
+                       "index":  26,
                        "id":  "s-mod3-visibilidade",
                        "title":  "Espelhos, Ré e Velocidade Máxima",
                        "file":  "audios/s-mod3-visibilidade.mp3",
@@ -221,7 +221,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  29,
+                       "index":  27,
                        "id":  "s-mod3-game",
                        "title":  "Quiz — Módulo 3",
                        "file":  "audios/s-mod3-game.mp3",
@@ -229,7 +229,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  30,
+                       "index":  28,
                        "id":  "s-mod4",
                        "title":  "MÓDULO 4",
                        "file":  "audios/s-mod4.mp3",
@@ -237,47 +237,39 @@
                        "audioReady":  true
                    },
                    {
+                       "index":  29,
+                       "id":  "s-mod4-riscos",
+                       "title":  "Fatores de Risco",
+                       "file":  "audios/s-mod4-riscos.mp3",
+                       "text":  "Fatores de Risco. Sempre estar atentos a todos os fatores de riscos que possam gerar incidentes ou acidentes de trabalho durante a operação do equipamento. Observe: piso danificado, fitas de amarração danificadas, pallets danificados e embalagens com produtos danificados.",
+                       "audioReady":  false
+                   },
+                   {
+                       "index":  30,
+                       "id":  "s-mod4-video",
+                       "title":  "Sensores e Portais: Limites Inegociáveis",
+                       "file":  "audios/s-mod4-video.mp3",
+                       "text":  "Vídeo. Sensores e Portais: Limites Inegociáveis. Fatores de Risco, Sensores e Cuidados com o Equipamento. Assista ao vídeo sobre sensores e portais. Avance quando concluir.",
+                       "audioReady":  false
+                   },
+                   {
                        "index":  31,
                        "id":  "s-mod4-video2",
-                       "title":  "A Regra de Ouro da Red Zone",
+                       "title":  "Garras de Vácuo: Regras de Manuseio",
                        "file":  "audios/s-mod4-video2.mp3",
-                       "text":  "Vídeo. A Regra de Ouro da Red Zone. Fatores de Risco, Sensores e Cuidados com o Equipamento. Assista ao vídeo sobre a regra de ouro da Red Zone. Avance quando concluir.",
+                       "text":  "Vídeo. Garras de Vácuo: Regras de Manuseio. Fatores de Risco, Sensores e Cuidados com o Equipamento. Assista ao vídeo sobre as regras de manuseio das garras de vácuo. Avance quando concluir.",
                        "audioReady":  true
                    },
                    {
                        "index":  32,
-                       "id":  "s-mod4-redzone",
-                       "title":  "Entendendo a Red Zone",
-                       "file":  "audios/s-mod4-redzone.mp3",
-                       "text":  "Entendendo a Red Zone. As Red Zones, ou Zonas Vermelhas, são as áreas entre docas, destinadas ao acesso lateral para colocar ou retirar produtos. Esta regra é inegociável: na Red Zone nunca pode haver uma pessoa dentro da área ao mesmo tempo que uma empilhadeira em operação, seja entrando, manobrando, carregando ou saindo. O acesso à Red Zone é permitido apenas para o conferente, o motorista, para abrir e fechar a lona, e os amarradores.",
+                       "id":  "s-mod4-game",
+                       "title":  "Risco ou Seguro?",
+                       "file":  "audios/s-mod4-game.mp3",
+                       "text":  "Risco ou Seguro? — Módulo 4. Veja cinco situações rápidas e toque em Risco ou Seguro. Temas: piso e carga, portal e sensores, e uso correto da garra a vácuo.",
                        "audioReady":  true
                    },
                    {
                        "index":  33,
-                       "id":  "s-mod4-video5",
-                       "title":  "Interação em Cruzamentos e Pontos Cegos",
-                       "file":  "audios/s-mod4-video5.mp3",
-                       "text":  "Vídeo. Interação em Cruzamentos e Pontos Cegos. Fatores de Risco, Sensores e Cuidados com o Equipamento. Assista ao vídeo sobre interação em cruzamentos e pontos cegos. Avance quando concluir.",
-                       "audioReady":  true
-                   },
-                   {
-                       "index":  34,
-                       "id":  "s-mod4-pontoscegos",
-                       "title":  "Proteja-se dos Pontos Cegos",
-                       "file":  "audios/s-mod4-pontoscegos.mp3",
-                       "text":  "Proteja-se dos Pontos Cegos. Ponto cego é a área onde o operador pode não te ver. Pontos cegos da máquina: um, coluna traseira esquerda do protetor superior. Dois, estrutura superior, o teto de proteção, e coluna central. Três, parte superior do mastro e estrutura frontal. Quatro, região atrás do mastro e do porta-garfos. Cinco, coluna dianteira direita do protetor superior. Seis, coluna traseira direita do protetor superior, no lado do operador.",
-                       "audioReady":  true
-                   },
-                   {
-                       "index":  35,
-                       "id":  "s-mod4-game",
-                       "title":  "Quiz — Módulo 4",
-                       "file":  "audios/s-mod4-game.mp3",
-                       "text":  "Quiz NR-11 — Módulo 4. Cinco afirmações rápidas sobre distância de segurança e a regra de ouro da Red Zone. Responda Certo ou Errado em cada uma. Afirmação 1: Como pedestre, você deve manter a distância mínima de 4 metros de qualquer empilhadeira ativa quando não houver barreira física de proteção. Resposta correta: Certo. Correto! A regra dos 4 metros é a distância mínima segura em relação a máquinas ativas sem barreira de proteção. Afirmação 2: É permitido caminhar por qualquer parte do corredor, desde que o pedestre preste atenção ao redor. Resposta correta: Errado. Errado! A circulação de pedestres deve ser feita exclusivamente pelas guias e faixas demarcadas no piso. Afirmação 3: É seguro parar rapidamente no raio de giro da empilhadeira, mesmo que por poucos segundos. Resposta correta: Errado. Nunca pare no trajeto ou no raio de giro da empilhadeira — um único passo fora da área segura pode causar prensamento. Afirmação 4: Na Red Zone, pode haver uma pessoa e uma empilhadeira ativa ao mesmo tempo, desde que seja por poucos segundos. Resposta correta: Errado. Errado! Na Red Zone nunca podem estar uma pessoa e uma empilhadeira ativa ao mesmo tempo — é uma regra inegociável. Afirmação 5: Se um pedestre invade a Red Zone do seu equipamento, o operador deve parar a máquina imediatamente e pedir a saída da pessoa. Resposta correta: Certo. Correto! É obrigação do operador parar a máquina de imediato e só retomar as manobras quando a área estiver completamente livre.",
-                       "audioReady":  true
-                   },
-                   {
-                       "index":  36,
                        "id":  "s-mod5",
                        "title":  "MÓDULO 5",
                        "file":  "audios/s-mod5.mp3",
@@ -285,7 +277,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  37,
+                       "index":  34,
                        "id":  "s-mod5-picking",
                        "title":  "Abastecimento do Picking",
                        "file":  "audios/s-mod5-picking.mp3",
@@ -293,7 +285,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  38,
+                       "index":  35,
                        "id":  "s-mod5-video-picking",
                        "title":  "Protocolo de Aproximação Segura no Picking",
                        "file":  "audios/s-mod5-video-picking.mp3",
@@ -301,7 +293,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  39,
+                       "index":  36,
                        "id":  "s-mod5-aproximacao",
                        "title":  "A Regra Inicial de Ouro",
                        "file":  "audios/s-mod5-aproximacao.mp3",
@@ -309,7 +301,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  40,
+                       "index":  37,
                        "id":  "s-mod5-doca",
                        "title":  "Chaves, Motorista e Área Segura",
                        "file":  "audios/s-mod5-doca.mp3",
@@ -317,7 +309,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  41,
+                       "index":  38,
                        "id":  "s-mod5-video-garfos",
                        "title":  "Riscos de Garfos Elevados e Movimentações Práticas",
                        "file":  "audios/s-mod5-video-garfos.mp3",
@@ -325,7 +317,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  42,
+                       "index":  39,
                        "id":  "s-mod5-game",
                        "title":  "Quiz — Módulo 5",
                        "file":  "audios/s-mod5-game.mp3",
@@ -333,7 +325,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  43,
+                       "index":  40,
                        "id":  "s-mod6",
                        "title":  "MÓDULO 6",
                        "file":  "audios/s-mod6.mp3",
@@ -341,7 +333,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  44,
+                       "index":  41,
                        "id":  "s-mod6-video",
                        "title":  "O Pit Stop e as Regras de Entrada",
                        "file":  "audios/s-mod6-video.mp3",
@@ -349,7 +341,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  45,
+                       "index":  42,
                        "id":  "s-mod6-video2",
                        "title":  "Proibições Críticas no Abastecimento",
                        "file":  "audios/s-mod6-video2.mp3",
@@ -357,7 +349,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  46,
+                       "index":  43,
                        "id":  "s-mod6-guia",
                        "title":  "Guia Rápido de Segurança do Pit Stop",
                        "file":  "audios/s-mod6-guia.mp3",
@@ -365,7 +357,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  47,
+                       "index":  44,
                        "id":  "s-mod6-video3",
                        "title":  "Manobra de Abastecimento pelo Técnico",
                        "file":  "audios/s-mod6-video3.mp3",
@@ -373,7 +365,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  48,
+                       "index":  45,
                        "id":  "s-mod6-zonas",
                        "title":  "Zoneamento de Risco do Armazém",
                        "file":  "audios/s-mod6-zonas.mp3",
@@ -381,7 +373,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  49,
+                       "index":  46,
                        "id":  "s-mod6-video4",
                        "title":  "Condições Adversas de Luz e Ofuscamento",
                        "file":  "audios/s-mod6-video4.mp3",
@@ -389,7 +381,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  50,
+                       "index":  47,
                        "id":  "s-mod6-video5",
                        "title":  "Comportamento e a Tolerância Zero a Brincadeiras",
                        "file":  "audios/s-mod6-video5.mp3",
@@ -397,7 +389,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  51,
+                       "index":  48,
                        "id":  "s-mod6-video6",
                        "title":  "Compromisso Coletivo e Encerramento",
                        "file":  "audios/s-mod6-video6.mp3",
@@ -405,7 +397,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  52,
+                       "index":  49,
                        "id":  "s-mod6-game",
                        "title":  "Missão — Pit Stop",
                        "file":  "audios/s-mod6-game.mp3",
@@ -413,7 +405,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  53,
+                       "index":  50,
                        "id":  "s-fim",
                        "title":  "Treinamento — Concluído",
                        "file":  "audios/s-fim.mp3",

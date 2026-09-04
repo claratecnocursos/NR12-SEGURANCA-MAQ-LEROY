@@ -13848,23 +13848,269 @@
           </svg></div>
       </section>
 
-      <!-- ── S-MOD4-VIDEO2: VÍDEO — A Regra de Ouro da Red Zone ── -->
-      <section class="slide video-slide" id="s-mod4-video2">
+      <!-- ── S-MOD4-RISCOS: CONTEÚDO — Fatores de Risco na Operação ── -->
+      <section class="slide" id="s-mod4-riscos">
+        <style>
+          #s-mod4-riscos { overflow: hidden; }
+          #s-mod4-riscos .top-bar { flex-shrink: 0; }
+          #s-mod4-riscos .rk-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: clamp(14px, 2.4cqh, 22px);
+            width: 100%;
+            max-width: 1220px;
+            margin: 0 auto;
+            padding: 2px clamp(16px, 2.6vw, 32px) clamp(78px, 12cqh, 118px);
+            box-sizing: border-box;
+            container-type: size;
+            min-height: 0;
+            flex: 1;
+          }
+          #s-mod4-riscos .rk-banner {
+            width: 100%;
+            max-width: 980px;
+            display: flex;
+            align-items: flex-start;
+            gap: clamp(12px, 1.8cqw, 18px);
+            padding: clamp(14px, 2.2cqh, 20px) clamp(16px, 2.2cqw, 24px);
+            border-radius: 18px;
+            background:
+              radial-gradient(ellipse at 0% 0%, rgba(255, 200, 55, 0.14), transparent 55%),
+              linear-gradient(145deg, rgba(28, 30, 68, 0.95), rgba(12, 14, 32, 0.92));
+            border: 1px solid rgba(255, 200, 55, 0.28);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+            box-sizing: border-box;
+            animation: rkFadeUp 0.55s ease both;
+          }
+          #s-mod4-riscos .rk-banner-icon {
+            flex-shrink: 0;
+            width: clamp(40px, 5.5cqh, 48px);
+            height: clamp(40px, 5.5cqh, 48px);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(18px, 2.6cqh, 22px);
+            background: rgba(255, 200, 55, 0.14);
+            border: 1px solid rgba(255, 200, 55, 0.35);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+          }
+          #s-mod4-riscos .rk-lead {
+            margin: 0;
+            font-family: var(--font-p);
+            font-size: clamp(14px, 2.3cqh, 18px);
+            font-weight: 500;
+            line-height: 1.45;
+            color: rgba(255, 255, 255, 0.88);
+          }
+          #s-mod4-riscos .rk-lead strong {
+            font-family: var(--font-h);
+            font-weight: 800;
+            color: #ffc837;
+          }
+          #s-mod4-riscos .rk-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: clamp(12px, 1.8cqw, 18px);
+            width: 100%;
+            align-items: stretch;
+          }
+          #s-mod4-riscos .rk-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            border-radius: 18px;
+            overflow: hidden;
+            background: #0b0e1c;
+            border: 1px solid rgba(180, 194, 255, 0.16);
+            box-shadow: 0 14px 34px rgba(0, 0, 0, 0.34);
+            cursor: default;
+            transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1),
+                        border-color 0.3s ease,
+                        box-shadow 0.35s ease;
+            animation: rkFadeUp 0.6s ease both;
+          }
+          #s-mod4-riscos .rk-card:nth-child(1) { animation-delay: 0.08s; }
+          #s-mod4-riscos .rk-card:nth-child(2) { animation-delay: 0.16s; }
+          #s-mod4-riscos .rk-card:nth-child(3) { animation-delay: 0.24s; }
+          #s-mod4-riscos .rk-card:nth-child(4) { animation-delay: 0.32s; }
+          #s-mod4-riscos .rk-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 200, 55, 0.45);
+            box-shadow: 0 22px 44px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 200, 55, 0.12);
+          }
+          #s-mod4-riscos .rk-card::before {
+            content: '';
+            position: absolute;
+            left: 0; right: 0; top: 0;
+            height: 3px;
+            z-index: 3;
+            background: linear-gradient(90deg, #ffc837, #e74c3c);
+            opacity: 0.9;
+          }
+          #s-mod4-riscos .rk-num {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            z-index: 3;
+            min-width: 28px;
+            height: 28px;
+            padding: 0 8px;
+            border-radius: 999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-h);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            color: #fff;
+            background: rgba(8, 10, 24, 0.72);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(6px);
+          }
+          #s-mod4-riscos .rk-photo {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            overflow: hidden;
+            background: #0d1024;
+          }
+          #s-mod4-riscos .rk-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transform: scale(1.02);
+            transition: transform 0.55s cubic-bezier(0.165, 0.84, 0.44, 1);
+          }
+          #s-mod4-riscos .rk-card:hover .rk-photo img {
+            transform: scale(1.08);
+          }
+          #s-mod4-riscos .rk-photo::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+              transparent 42%,
+              rgba(6, 8, 20, 0.55) 70%,
+              rgba(6, 8, 20, 0.96) 100%);
+            pointer-events: none;
+          }
+          #s-mod4-riscos .rk-label {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+            margin: 0;
+            padding: 18px 12px 14px;
+            text-align: center;
+            font-family: var(--font-h);
+            font-size: clamp(12.5px, 1.7cqh, 15px);
+            font-weight: 800;
+            line-height: 1.25;
+            color: #fff;
+            letter-spacing: 0.01em;
+          }
+          @keyframes rkFadeUp {
+            from { opacity: 0; transform: translateY(14px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+          @media (max-width: 900px) {
+            #s-mod4-riscos .rk-grid {
+              grid-template-columns: repeat(2, minmax(0, 1fr));
+              gap: 12px;
+              max-width: 560px;
+            }
+            #s-mod4-riscos .rk-photo { aspect-ratio: 1 / 1; }
+            #s-mod4-riscos .rk-banner { max-width: 100%; }
+            #s-mod4-riscos .rk-lead { font-size: clamp(13.5px, 3.4vw, 16px); }
+          }
+          @media (max-width: 480px) {
+            #s-mod4-riscos .rk-content { gap: 12px; }
+            #s-mod4-riscos .rk-label { font-size: 12px; padding: 14px 8px 12px; }
+            #s-mod4-riscos .rk-num { top: 8px; left: 8px; min-width: 24px; height: 24px; font-size: 10px; }
+          }
+          @media (max-height: 700px) and (min-width: 901px) {
+            #s-mod4-riscos .rk-content { gap: 10px; padding-bottom: 90px; }
+            #s-mod4-riscos .rk-banner { padding: 12px 16px; }
+            #s-mod4-riscos .rk-lead { font-size: 14.5px; }
+            #s-mod4-riscos .rk-photo { aspect-ratio: 1 / 1; }
+            #s-mod4-riscos .rk-label { font-size: 12.5px; padding: 14px 10px 12px; }
+          }
+        </style>
+        <div class="top-bar">
+          <div><span class="section-tag">⚠️ Atenção</span>
+            <div class="slide-title" style="margin-top:6px">Fatores de <span>Risco</span></div>
+            <div class="slide-subtitle">Fatores de Risco, Sensores e Cuidados com o Equipamento</div>
+          </div>
+        </div>
+        <div class="content-area rk-content">
+          <div class="rk-banner">
+            <div class="rk-banner-icon" aria-hidden="true">⚠️</div>
+            <p class="rk-lead">
+              Sempre estar atentos a todos os fatores de riscos que possam gerar
+              <strong>“incidentes ou acidentes de trabalho”</strong>
+              durante a operação do equipamento.
+            </p>
+          </div>
+          <div class="rk-grid">
+            <article class="rk-card">
+              <span class="rk-num">01</span>
+              <div class="rk-photo">
+                <img src="img/PISOS DANIFICADOS.png" alt="Piso metálico danificado">
+                <p class="rk-label">Piso Danificado</p>
+              </div>
+            </article>
+            <article class="rk-card">
+              <span class="rk-num">02</span>
+              <div class="rk-photo">
+                <img src="img/FITAS DE AMARRAÇÃO.png" alt="Fitas de amarração danificadas">
+                <p class="rk-label">Fitas de Amarração Danificadas</p>
+              </div>
+            </article>
+            <article class="rk-card">
+              <span class="rk-num">03</span>
+              <div class="rk-photo">
+                <img src="img/PALLETS DANIFICADOS.png" alt="Pallets de madeira danificados">
+                <p class="rk-label">Pallets Danificados</p>
+              </div>
+            </article>
+            <article class="rk-card">
+              <span class="rk-num">04</span>
+              <div class="rk-photo">
+                <img src="img/EMBALAGENS DANIFICADOS.png" alt="Embalagens com produtos danificados">
+                <p class="rk-label">Embalagens com Produtos Danificados</p>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
+          </svg></div>
+      </section>
+
+      <!-- ── S-MOD4-VIDEO: VÍDEO — Sensores e Portais: Limites Inegociáveis ── -->
+      <section class="slide video-slide" id="s-mod4-video">
         <div class="top-bar">
           <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">A Regra de Ouro <span>da Red Zone</span></div>
+            <div class="slide-title" style="margin-top:6px">Sensores e Portais: <span>Limites Inegociáveis</span></div>
             <div class="slide-subtitle">Fatores de Risco, Sensores e Cuidados com o Equipamento</div>
           </div>
         </div>
         <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
           <div class="video-wrap">
             <div class="video-box">
-              <iframe id="panda-7374adbb-c8d4-44e4-8b19-28536d206a1f"
-                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=7374adbb-c8d4-44e4-8b19-28536d206a1f"
+              <iframe id="panda-7ffe503e-cf0c-4554-912f-8f8cefafb21b"
+                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=7ffe503e-cf0c-4554-912f-8f8cefafb21b"
                 frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
                 allowfullscreen="true" fetchpriority="high"
                 style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
-                title="A Regra de Ouro da Red Zone — NR 12">
+                title="Sensores e Portais: Limites Inegociáveis — NR 12">
               </iframe>
             </div>
           </div>
@@ -13874,6 +14120,34 @@
           </svg></div>
       </section>
 
+      <!-- ── S-MOD4-VIDEO2: VÍDEO — Garras de Vácuo: Regras de Manuseio ── -->
+      <section class="slide video-slide" id="s-mod4-video2">
+        <div class="top-bar">
+          <div><span class="section-tag">📹 Vídeo</span>
+            <div class="slide-title" style="margin-top:6px">Garras de Vácuo: <span>Regras de Manuseio</span></div>
+            <div class="slide-subtitle">Fatores de Risco, Sensores e Cuidados com o Equipamento</div>
+          </div>
+        </div>
+        <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
+          <div class="video-wrap">
+            <div class="video-box">
+              <iframe id="panda-030fa769-2ce1-4439-a2ed-37421b205628"
+                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=030fa769-2ce1-4439-a2ed-37421b205628"
+                frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+                allowfullscreen="true" fetchpriority="high"
+                style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
+                title="Garras de Vácuo: Regras de Manuseio — NR 12">
+              </iframe>
+            </div>
+          </div>
+        </div>
+        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
+          </svg></div>
+      </section>
+
+      <template id="paginas-mod4-removidas">
+      <!-- Páginas 27 a 29 removidas da sequência do treinamento (Red Zone, vídeo cruzamentos, pontos cegos). -->
       <!-- ── S-MOD4-REDZONE: CONTEÚDO — Entendendo a Red Zone ── -->
       <section class="slide" id="s-mod4-redzone">
         <style>
@@ -14351,187 +14625,251 @@
             <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
           </svg></div>
       </section>
-
-      <!-- ── S-MOD4-GAME: DESAFIO — Turno Relâmpago ── -->
+      </template>
+      <!-- ── S-MOD4-GAME: DESAFIO — Risco ou Seguro? ── -->
       <section class="slide" id="s-mod4-game">
         <style>
-          /* ── Card shell igual ao Módulo 3 ── */
+          #s-mod4-game { overflow: hidden; }
           #s-mod4-game .content-area {
-            padding-top: 12px !important;
-            padding-bottom: 110px !important;
+            padding: 8px clamp(14px, 3vw, 28px) 118px !important;
             justify-content: center;
-            justify-content: safe center;
             align-items: center;
             min-height: 0;
             flex: 1 1 auto;
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
-            container-type: size;
           }
           #s-mod4-game .m4g-wrap {
-            flex-shrink: 0;
             width: 100%;
-            max-width: clamp(360px, 68cqw, 860px);
+            max-width: 720px;
             margin: 0 auto;
           }
-          #s-mod4-game #m4g-intro {
-            padding: clamp(24px,10cqh,64px) clamp(24px,6cqw,48px) !important;
+          #s-mod4-game #m4g-intro,
+          #s-mod4-game #m4g-result,
+          #s-mod4-game #m4g-play {
             background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%);
-            border: 1px solid rgba(180, 194, 255,0.28);
-            border-radius: clamp(16px,3cqw,26px);
-            box-shadow: 0 28px 64px rgba(0,0,0,0.4);
+            border: 1px solid rgba(180, 194, 255, 0.28);
+            border-radius: 24px;
+            box-shadow: 0 24px 56px rgba(0, 0, 0, 0.4);
             box-sizing: border-box;
           }
+          #s-mod4-game #m4g-intro,
           #s-mod4-game #m4g-result {
-            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%) !important;
-            border: 1px solid rgba(180, 194, 255,0.28) !important;
-            border-radius: clamp(16px,3cqw,26px) !important;
-            box-shadow: 0 28px 64px rgba(0,0,0,0.4) !important;
-            box-sizing: border-box;
-            padding: clamp(24px,10cqh,64px) clamp(24px,6cqw,48px) !important;
+            text-align: center;
+            padding: clamp(28px, 5vh, 48px) clamp(20px, 4vw, 40px);
           }
           #s-mod4-game #m4g-intro .ic-circle {
-            width: clamp(64px,20cqh,120px) !important;
-            height: clamp(64px,20cqh,120px) !important;
-            font-size: clamp(32px,10cqh,60px) !important;
-            margin: 0 auto clamp(20px,7cqh,44px) !important;
+            width: 88px !important;
+            height: 88px !important;
+            font-size: 44px !important;
+            margin: 0 auto 18px !important;
           }
-          #s-mod4-game #m4g-intro h3 {
-            font-size: clamp(20px,6.5cqh,36px) !important;
-            margin-bottom: clamp(10px,3.5cqh,22px) !important;
+          #s-mod4-game #m4g-intro h3,
+          #s-mod4-game #m4g-result h3 {
+            font-family: var(--font-h);
+            font-size: clamp(22px, 4vh, 30px);
+            color: #fff;
+            margin: 0 0 10px;
+            font-weight: 900;
           }
-          #s-mod4-game #m4g-intro p {
-            font-size: clamp(13.5px,3cqh,17px) !important;
-            line-height: 1.5 !important;
-            margin-bottom: clamp(16px,8cqh,52px) !important;
+          #s-mod4-game #m4g-intro p,
+          #s-mod4-game #m4g-result p {
+            color: rgba(255, 255, 255, 0.72);
+            font-size: clamp(14px, 2.2vh, 16.5px);
+            line-height: 1.55;
+            margin: 0 auto 24px;
+            max-width: 480px;
           }
-          #s-mod4-game #m4g-intro .btn-start {
-            padding: clamp(12px,3cqh,18px) clamp(28px,5cqw,44px) !important;
-            font-size: clamp(13px,2.2cqh,15px) !important;
+          #s-mod4-game #m4g-play {
+            padding: clamp(16px, 2.5vh, 24px) clamp(16px, 3vw, 28px);
           }
-
-          #s-mod4-game .m4g-top-row {
-            display: flex; justify-content: space-between; align-items: center;
-            margin-bottom: 10px; flex-wrap: wrap; gap: 8px;
+          #s-mod4-game .m4g-bar-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            gap: 10px;
           }
           #s-mod4-game .m4g-counter {
-            font-family: var(--font-h); font-size: 13px; font-weight: 700;
-            color: var(--white); letter-spacing: .04em;
+            font-family: var(--font-h);
+            font-size: 13px;
+            font-weight: 800;
+            color: #B4C2FF;
+            letter-spacing: 0.04em;
           }
-          #s-mod4-game .m4g-lives { font-size: 17px; letter-spacing: 3px; }
-          #s-mod4-game .m4g-streak {
-            font-family: var(--font-h); font-size: 12.5px; font-weight: 800;
-            color: #ffb703; align-items: center; gap: 4px; display: none;
+          #s-mod4-game .m4g-score-live {
+            font-family: var(--font-h);
+            font-size: 13px;
+            font-weight: 800;
+            color: #ffc837;
           }
-          #s-mod4-game .m4g-streak.show { display: inline-flex; animation: m4gPop .35s ease; }
-
-          #s-mod4-game .m4g-timer-bg {
-            height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px;
-            overflow: hidden; border: 1px solid rgba(255,255,255,0.12); margin-bottom: 18px;
+          #s-mod4-game .m4g-track {
+            height: 8px;
+            border-radius: 99px;
+            background: rgba(255, 255, 255, 0.08);
+            overflow: hidden;
+            margin-bottom: 16px;
           }
-          #s-mod4-game .m4g-timer-fill {
-            height: 100%; width: 100%; background: linear-gradient(90deg,#2ecc71,#27ae60);
-            transition: width .15s linear, background-color .3s ease;
+          #s-mod4-game .m4g-track > span {
+            display: block;
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #6B7AED, #ffc837);
+            transition: width 0.35s ease;
           }
-
-          #s-mod4-game .m4g-card {
-            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%); border: 2px solid rgba(255,255,255,0.12);
-            border-radius: 24px; padding: clamp(26px,5vw,38px) clamp(20px,4vw,30px);
-            min-height: 150px; display: flex; flex-direction: column; align-items: center;
-            justify-content: center; text-align: center; box-shadow: 0 24px 48px rgba(0,0,0,.35);
-            margin-bottom: 20px; transition: transform .25s ease, border-color .25s ease;
+          #s-mod4-game .m4g-scene {
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            background: #0b0e1c;
+            margin-bottom: 14px;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
           }
-          #s-mod4-game .m4g-card-emoji { font-size: clamp(30px,4.5vw,40px); margin-bottom: 10px; }
-          #s-mod4-game .m4g-card-text {
-            font-family: var(--font-h); font-size: clamp(16px,3.2vw,20px); font-weight: 800;
-            color: var(--cream); line-height: 1.45;
+          #s-mod4-game .m4g-scene-media {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            max-height: 240px;
+            background: linear-gradient(160deg, #1a1d3a, #0d1024);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
           }
-          #s-mod4-game .m4g-card.m4g-ok  { border-color: rgba(39,174,96,.6); transform: scale(1.02); }
-          #s-mod4-game .m4g-card.m4g-err { border-color: rgba(231,76,60,.6); animation: m4gShake .4s ease; }
-
-          #s-mod4-game .m4g-answers { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
-          #s-mod4-game .m4g-abtn {
-            display: flex; align-items: center; justify-content: center; gap: 8px;
-            background: rgba(255,255,255,0.03); border: 2px solid rgba(255,255,255,0.12);
-            border-radius: 16px; padding: 20px 14px; color: #fff; font-family: var(--font-h);
-            font-size: 15px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase;
-            transition: all .22s ease; cursor: pointer; width: 100%;
+          #s-mod4-game .m4g-scene-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
           }
-          #s-mod4-game .m4g-abtn.m4g-yes:hover:not(:disabled) { background: rgba(40,167,69,.1); border-color: rgba(40,167,69,.55); transform: translateY(-2px); }
-          #s-mod4-game .m4g-abtn.m4g-no:hover:not(:disabled)  { background: rgba(220,53,69,.1); border-color: rgba(220,53,69,.55); transform: translateY(-2px); }
-          #s-mod4-game .m4g-abtn.m4g-correct { background: rgba(40,167,69,.2) !important; border-color: #27ae60 !important; }
-          #s-mod4-game .m4g-abtn.m4g-wrong   { background: rgba(220,53,69,.18) !important; border-color: #e74c3c !important; color: rgba(255,255,255,.7) !important; }
-          #s-mod4-game .m4g-abtn:disabled { opacity: .55; cursor: not-allowed; }
-          #s-mod4-game .m4g-abtn:active:not(:disabled) { transform: scale(0.97); }
-
-          #s-mod4-game .m4g-feedback { min-height: 20px; margin-top: 14px; font-family: var(--font-p); font-size: 14px; text-align: center; }
-          #s-mod4-game .m4g-feedback.ok  { color: #2ecc71; }
-          #s-mod4-game .m4g-feedback.err { color: #e74c3c; }
-
-          #s-mod4-game .m4g-stars { font-size: 34px; letter-spacing: 8px; margin-bottom: 8px; }
-
+          #s-mod4-game .m4g-scene-emoji {
+            font-size: clamp(52px, 10vh, 72px);
+            line-height: 1;
+          }
+          #s-mod4-game .m4g-scene-text {
+            margin: 0;
+            padding: 14px 16px 16px;
+            font-family: var(--font-h);
+            font-size: clamp(15px, 2.4vh, 18px);
+            font-weight: 800;
+            line-height: 1.35;
+            color: #fff;
+            text-align: center;
+          }
+          #s-mod4-game .m4g-scene.ok { border-color: rgba(46, 204, 113, 0.65); box-shadow: 0 0 0 2px rgba(46, 204, 113, 0.18); }
+          #s-mod4-game .m4g-scene.err { border-color: rgba(231, 76, 60, 0.65); animation: m4gShake 0.4s ease; }
+          #s-mod4-game .m4g-choices {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+          }
+          #s-mod4-game .m4g-btn {
+            appearance: none;
+            border: 2px solid rgba(255, 255, 255, 0.14);
+            border-radius: 16px;
+            padding: 18px 12px;
+            font-family: var(--font-h);
+            font-size: clamp(15px, 2.2vh, 17px);
+            font-weight: 900;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            color: #fff;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.2s, border-color 0.2s;
+            -webkit-tap-highlight-color: transparent;
+          }
+          #s-mod4-game .m4g-btn-risk {
+            background: rgba(231, 76, 60, 0.12);
+            border-color: rgba(231, 76, 60, 0.4);
+          }
+          #s-mod4-game .m4g-btn-safe {
+            background: rgba(46, 204, 113, 0.12);
+            border-color: rgba(46, 204, 113, 0.4);
+          }
+          #s-mod4-game .m4g-btn:hover:not(:disabled) { transform: translateY(-2px); }
+          #s-mod4-game .m4g-btn:active:not(:disabled) { transform: scale(0.97); }
+          #s-mod4-game .m4g-btn:disabled { opacity: 0.55; cursor: default; }
+          #s-mod4-game .m4g-btn.picked-ok {
+            background: rgba(46, 204, 113, 0.28) !important;
+            border-color: #27ae60 !important;
+          }
+          #s-mod4-game .m4g-btn.picked-bad {
+            background: rgba(231, 76, 60, 0.22) !important;
+            border-color: #e74c3c !important;
+          }
+          #s-mod4-game .m4g-tip {
+            min-height: 40px;
+            margin-top: 12px;
+            text-align: center;
+            font-size: 13.5px;
+            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.75);
+            font-family: var(--font-p);
+          }
+          #s-mod4-game .m4g-tip.ok { color: #2ecc71; font-weight: 700; }
+          #s-mod4-game .m4g-tip.err { color: #ffc837; font-weight: 700; }
+          #s-mod4-game .m4g-stars {
+            font-size: 34px;
+            letter-spacing: 8px;
+            margin-bottom: 8px;
+          }
           @keyframes m4gShake {
-            10%,90% { transform: translateX(-1px); } 20%,80% { transform: translateX(2px); }
-            30%,50%,70% { transform: translateX(-4px); } 40%,60% { transform: translateX(4px); }
+            10%, 90% { transform: translateX(-1px); }
+            20%, 80% { transform: translateX(2px); }
+            30%, 50%, 70% { transform: translateX(-4px); }
+            40%, 60% { transform: translateX(4px); }
           }
-          @keyframes m4gPop {
-            0% { transform: scale(0.6); opacity: 0; } 60% { transform: scale(1.15); } 100% { transform: scale(1); opacity: 1; }
-          }
-          @media (max-width: 520px) {
-            #s-mod4-game .m4g-answers { grid-template-columns: 1fr; }
+          @media (max-width: 480px) {
+            #s-mod4-game .m4g-choices { gap: 10px; }
+            #s-mod4-game .m4g-btn { padding: 16px 10px; font-size: 14px; }
+            #s-mod4-game .m4g-scene-media { max-height: 180px; }
           }
         </style>
 
         <div class="top-bar">
           <span class="section-tag">🎮 DESAFIO</span>
-          <div class="slide-title" style="margin-top:6px">Quiz — <span>Módulo 4</span></div>
+          <div class="slide-title" style="margin-top:6px">Risco ou <span>Seguro?</span></div>
         </div>
 
         <div class="content-area">
 
-          <!-- INTRO -->
-          <div id="m4g-intro" class="m4g-wrap" style="text-align:center; animation: fadeIn 0.8s ease;">
-            <div class="ic-circle" style="margin: 0 auto 24px; width: 96px; height: 96px; font-size: 48px;">⚡</div>
-            <h3 style="font-family:var(--font-h); font-size:26px; color:var(--white); margin-bottom:12px;">
-              Quiz NR-11 — Módulo 4</h3>
-            <p style="color:rgba(255,255,255,0.72); font-size:16px; line-height:1.65; margin-bottom:28px; max-width: 600px; margin-left: auto; margin-right: auto;">
-              5 afirmações rápidas sobre distância de segurança e a regra de ouro da Red Zone.
-              Você tem <strong>12 segundos</strong> e <strong>3 vidas</strong> para responder <strong>Certo</strong> ou <strong>Errado</strong> em cada uma. Acerte em sequência para ganhar combo! 🔥
+          <div id="m4g-intro" class="m4g-wrap" style="animation: fadeIn 0.8s ease;">
+            <div class="ic-circle" style="margin: 0 auto 24px; width: 96px; height: 96px; font-size: 48px;">👀</div>
+            <h3>Risco ou Seguro?</h3>
+            <p>
+              Veja a situação e toque em <strong style="color:#e74c3c">Risco</strong> ou <strong style="color:#2ecc71">Seguro</strong>.
+              São só 5 cenas rápidas do Módulo 4 — fácil e direto!
             </p>
             <button class="btn-start" onclick="startM4Game()" style="padding: 16px 40px; font-size: 15px; text-transform: uppercase;">
-              INICIAR DESAFIO
+              JOGAR
             </button>
           </div>
 
-          <!-- PLAY -->
           <div id="m4g-play" class="m4g-wrap" style="display:none;">
-            <div class="m4g-top-row">
+            <div class="m4g-bar-row">
               <span class="m4g-counter" id="m4g-counter">1 / 5</span>
-              <span class="m4g-streak" id="m4g-streak">🔥 <span id="m4g-streak-num">2</span></span>
-              <span class="m4g-lives" id="m4g-lives">❤️❤️❤️</span>
+              <span class="m4g-score-live" id="m4g-score-live">⭐ 0</span>
             </div>
-            <div class="m4g-timer-bg">
-              <div class="m4g-timer-fill" id="m4g-timer-fill"></div>
+            <div class="m4g-track"><span id="m4g-track-fill"></span></div>
+            <div class="m4g-scene" id="m4g-scene">
+              <div class="m4g-scene-media" id="m4g-media"></div>
+              <p class="m4g-scene-text" id="m4g-text">...</p>
             </div>
-            <div class="m4g-card" id="m4g-card">
-              <div class="m4g-card-emoji" id="m4g-emoji">🔍</div>
-              <p class="m4g-card-text" id="m4g-text">...</p>
+            <div class="m4g-choices">
+              <button type="button" class="m4g-btn m4g-btn-risk" id="m4g-btn-risk" onclick="handleM4Answer(true)">⚠️ Risco</button>
+              <button type="button" class="m4g-btn m4g-btn-safe" id="m4g-btn-safe" onclick="handleM4Answer(false)">✅ Seguro</button>
             </div>
-            <div class="m4g-answers" id="m4g-answers">
-              <button type="button" class="m4g-abtn m4g-yes" onclick="handleM4Answer(true)">✅ Certo</button>
-              <button type="button" class="m4g-abtn m4g-no" onclick="handleM4Answer(false)">🚫 Errado</button>
-            </div>
-            <div class="m4g-feedback" id="m4g-feedback"></div>
+            <div class="m4g-tip" id="m4g-tip"></div>
           </div>
 
-          <!-- RESULT -->
-          <div id="m4g-result" class="m4g-wrap" style="display:none; text-align:center; padding:24px 20px; background:rgba(255,255,255,0.03); border-radius:28px; border:1px solid rgba(255,255,255,0.1); animation:slideUp 0.6s ease;">
+          <div id="m4g-result" class="m4g-wrap" style="display:none; animation: slideUp 0.6s ease;">
             <div class="m4g-stars" id="m4g-stars">⭐⭐⭐</div>
-            <h3 style="font-family:var(--font-h); font-size:clamp(22px,4vw,28px); color:var(--gold); margin-bottom:8px; font-weight:900;">
-              Turno Encerrado!</h3>
+            <h3 style="color:var(--gold);">Olho vivo!</h3>
             <div class="r-status ap" style="display:inline-block; padding:6px 18px; font-size:13px; margin-bottom:14px; font-weight:700;">
-              Módulo 4 — <span id="m4g-score-text">0 / 5</span> acertos</div>
-            <p id="m4g-result-msg" style="color:rgba(255,255,255,0.88); font-size:15px; line-height:1.55; margin-bottom:22px; max-width:480px; margin-left:auto; margin-right:auto;"></p>
+              Módulo 4 — <span id="m4g-score-text">0 / 5</span></div>
+            <p id="m4g-result-msg"></p>
             <button class="btn-retry" onclick="resetM4Game()" style="background:var(--white); color:var(--black); font-weight:800; border-radius:99px; padding:12px 32px;">
               JOGAR NOVAMENTE</button>
           </div>
@@ -22297,24 +22635,45 @@
     })();
 
     /* ════════════════════════════════════════
-       DESAFIO MÓDULO 4 — Turno Relâmpago
+       DESAFIO MÓDULO 4 — Risco ou Seguro?
     ════════════════════════════════════════ */
     (function () {
-      var m4gIdx    = 0;
-      var m4gScore  = 0;
-      var m4gLives  = 3;
-      var m4gStreak = 0;
-      var m4gBusy   = false;
-      var m4gTimerInterval = null;
-      var m4gTimeLeft = 0;
-      var M4G_TIME_MS = 12000;
+      var m4gIdx = 0;
+      var m4gScore = 0;
+      var m4gBusy = false;
 
+      // risk: true = situação de RISCO | false = situação SEGURA
       var m4gDeck = [
-        { emoji: '📏', text: 'Como pedestre, você deve manter a distância mínima de 4 metros de qualquer empilhadeira ativa quando não houver barreira física de proteção.', ans: true, tip: 'Correto! A regra dos 4 metros é a distância mínima segura em relação a máquinas ativas sem barreira de proteção.' },
-        { emoji: '🚶', text: 'É permitido caminhar por qualquer parte do corredor, desde que o pedestre preste atenção ao redor.', ans: false, tip: 'Errado! A circulação de pedestres deve ser feita exclusivamente pelas guias e faixas demarcadas no piso.' },
-        { emoji: '🛑', text: 'É seguro parar rapidamente no raio de giro da empilhadeira, mesmo que por poucos segundos.', ans: false, tip: 'Nunca pare no trajeto ou no raio de giro da empilhadeira — um único passo fora da área segura pode causar prensamento.' },
-        { emoji: '🟥', text: 'Na Red Zone, pode haver uma pessoa e uma empilhadeira ativa ao mesmo tempo, desde que seja por poucos segundos.', ans: false, tip: 'Errado! Na Red Zone nunca podem estar uma pessoa e uma empilhadeira ativa ao mesmo tempo — é uma regra inegociável.' },
-        { emoji: '⛔', text: 'Se um pedestre invade a Red Zone do seu equipamento, o operador deve parar a máquina imediatamente e pedir a saída da pessoa.', ans: true, tip: 'Correto! É obrigação do operador parar a máquina de imediato e só retomar as manobras quando a área estiver completamente livre.' }
+        {
+          img: 'img/m4g-piso-danificado.png',
+          text: 'Piso metálico danificado ou desalinhado no posto.',
+          risk: true,
+          tip: 'Risco! Piso ruim pode desestabilizar paletes — avise a liderança.'
+        },
+        {
+          img: 'img/m4g-fitas-danificadas.png',
+          text: 'Fitas de amarração rompidas ou desfiadas na carga.',
+          risk: true,
+          tip: 'Risco! Fita ruim aumenta chance de queda de material.'
+        },
+        {
+          img: 'img/m4g-portal-proibido.png',
+          text: 'Ultrapassar o portal amarelo com o equipamento em operação.',
+          risk: true,
+          tip: 'Risco! Nunca ultrapasse o portal — limite inegociável.'
+        },
+        {
+          img: 'img/m4g-sensores-limpos.png',
+          text: 'Manter a área dos sensores limpa, seca e sem obstruções.',
+          risk: false,
+          tip: 'Seguro! Área limpa ajuda os sensores a funcionar bem.'
+        },
+        {
+          img: 'img/m4g-garra-paralela.png',
+          text: 'Aproximar a garra a vácuo paralela e bem perto do palete.',
+          risk: false,
+          tip: 'Seguro! Alinhamento paralelo é o jeito certo de usar a garra.'
+        }
       ];
 
       function m4gShow(id) {
@@ -22324,153 +22683,114 @@
         });
       }
 
-      function m4gRenderLives() {
-        var el = document.getElementById('m4g-lives');
-        if (!el) return;
-        var s = '';
-        for (var i = 0; i < 3; i++) s += (i < m4gLives) ? '❤️' : '🖤';
-        el.textContent = s;
-      }
-
-      function m4gRenderStreak() {
-        var el = document.getElementById('m4g-streak');
-        var num = document.getElementById('m4g-streak-num');
-        if (!el || !num) return;
-        if (m4gStreak >= 2) {
-          num.textContent = m4gStreak;
-          el.classList.add('show');
-        } else {
-          el.classList.remove('show');
-        }
-      }
-
-      function m4gClearTimer() {
-        if (m4gTimerInterval) { clearInterval(m4gTimerInterval); m4gTimerInterval = null; }
-      }
-
-      function m4gStartTimer() {
-        m4gClearTimer();
-        m4gTimeLeft = M4G_TIME_MS;
-        var fill = document.getElementById('m4g-timer-fill');
-        if (fill) { fill.style.width = '100%'; fill.style.background = 'linear-gradient(90deg,#2ecc71,#27ae60)'; }
-        m4gTimerInterval = setInterval(function () {
-          m4gTimeLeft -= 100;
-          var pct = Math.max(0, (m4gTimeLeft / M4G_TIME_MS) * 100);
-          if (fill) {
-            fill.style.width = pct + '%';
-            if (pct <= 20) fill.style.background = 'linear-gradient(90deg,#e74c3c,#c0392b)';
-            else if (pct <= 50) fill.style.background = 'linear-gradient(90deg,#f1c40f,#f39c12)';
-          }
-          if (m4gTimeLeft <= 0) {
-            m4gClearTimer();
-            m4gAnswer(null);
-          }
-        }, 100);
-      }
-
       function m4gRender() {
-        if (m4gIdx >= m4gDeck.length) { m4gFinish(); return; }
-        var item = m4gDeck[m4gIdx];
+        if (m4gIdx >= m4gDeck.length) {
+          m4gFinish();
+          return;
+        }
         m4gBusy = false;
+        var item = m4gDeck[m4gIdx];
+        var total = m4gDeck.length;
 
-        document.getElementById('m4g-counter').textContent = (m4gIdx + 1) + ' / ' + m4gDeck.length;
-        document.getElementById('m4g-emoji').textContent = item.emoji;
+        document.getElementById('m4g-counter').textContent = (m4gIdx + 1) + ' / ' + total;
+        document.getElementById('m4g-score-live').textContent = '⭐ ' + m4gScore;
+        document.getElementById('m4g-track-fill').style.width = (m4gIdx / total * 100) + '%';
         document.getElementById('m4g-text').textContent = item.text;
 
-        var card = document.getElementById('m4g-card');
-        card.className = 'm4g-card';
+        var media = document.getElementById('m4g-media');
+        if (item.img) {
+          media.innerHTML = '<img src="' + item.img + '" alt="">';
+        } else {
+          media.innerHTML = '<span class="m4g-scene-emoji">' + (item.emoji || '🔍') + '</span>';
+        }
 
-        var btns = document.querySelectorAll('#m4g-answers .m4g-abtn');
-        btns.forEach(function (b) { b.disabled = false; b.classList.remove('m4g-correct', 'm4g-wrong'); });
+        var scene = document.getElementById('m4g-scene');
+        scene.className = 'm4g-scene';
 
-        var fb = document.getElementById('m4g-feedback');
-        fb.className = 'm4g-feedback';
-        fb.textContent = '';
+        var tip = document.getElementById('m4g-tip');
+        tip.className = 'm4g-tip';
+        tip.textContent = 'Toque em Risco ou Seguro';
 
-        m4gRenderLives();
-        m4gRenderStreak();
-        m4gStartTimer();
+        ['m4g-btn-risk', 'm4g-btn-safe'].forEach(function (id) {
+          var b = document.getElementById(id);
+          b.disabled = false;
+          b.classList.remove('picked-ok', 'picked-bad');
+        });
       }
 
-      function m4gAnswer(chosen) {
+      function m4gAnswer(choseRisk) {
         if (m4gBusy) return;
         m4gBusy = true;
-        m4gClearTimer();
 
         var item = m4gDeck[m4gIdx];
-        var isOk = (chosen === item.ans);
-        var card = document.getElementById('m4g-card');
-        var fb = document.getElementById('m4g-feedback');
-        var btns = document.querySelectorAll('#m4g-answers .m4g-abtn');
+        var ok = (choseRisk === item.risk);
+        var scene = document.getElementById('m4g-scene');
+        var tip = document.getElementById('m4g-tip');
+        var btnRisk = document.getElementById('m4g-btn-risk');
+        var btnSafe = document.getElementById('m4g-btn-safe');
 
-        btns.forEach(function (b, i) {
-          b.disabled = true;
-          var isYesBtn = b.classList.contains('m4g-yes');
-          if (isYesBtn === item.ans) b.classList.add('m4g-correct');
-          else if (chosen !== null && isYesBtn === chosen && !isOk) b.classList.add('m4g-wrong');
-        });
+        btnRisk.disabled = true;
+        btnSafe.disabled = true;
 
-        if (typeof playGameFeedback === 'function') playGameFeedback(isOk ? 'ok' : 'nok');
-
-        if (isOk) {
+        if (ok) {
           m4gScore++;
-          m4gStreak++;
-          card.classList.add('m4g-ok');
-          fb.className = 'm4g-feedback ok';
+          scene.classList.add('ok');
+          tip.className = 'm4g-tip ok';
+          tip.textContent = '✅ ' + item.tip;
+          (choseRisk ? btnRisk : btnSafe).classList.add('picked-ok');
+          if (typeof playGameFeedback === 'function') playGameFeedback('ok');
         } else {
-          m4gStreak = 0;
-          m4gLives--;
-          card.classList.add('m4g-err');
-          fb.className = 'm4g-feedback err';
+          scene.classList.add('err');
+          tip.className = 'm4g-tip err';
+          tip.textContent = '❌ ' + item.tip;
+          (choseRisk ? btnRisk : btnSafe).classList.add('picked-bad');
+          (item.risk ? btnRisk : btnSafe).classList.add('picked-ok');
+          if (typeof playGameFeedback === 'function') playGameFeedback('nok');
         }
-        fb.textContent = (isOk ? '✅ ' : '❌ ') + item.tip;
-        m4gRenderLives();
-        m4gRenderStreak();
+
+        document.getElementById('m4g-score-live').textContent = '⭐ ' + m4gScore;
 
         setTimeout(function () {
           m4gIdx++;
-          if (m4gLives <= 0) { m4gFinish(); return; }
           m4gRender();
         }, 1100);
       }
 
       function m4gFinish() {
-        m4gClearTimer();
         m4gShow('m4g-result');
         var total = m4gDeck.length;
-        var attempted = Math.min(m4gIdx, total);
-
         document.getElementById('m4g-score-text').textContent = m4gScore + ' / ' + total;
+        document.getElementById('m4g-track-fill').style.width = '100%';
 
         var pct = m4gScore / total;
-        var stars = pct >= 0.8 ? 3 : (pct >= 0.5 ? 2 : 1);
+        var stars = pct === 1 ? 3 : (pct >= 0.6 ? 2 : 1);
         document.getElementById('m4g-stars').textContent = '⭐'.repeat(stars) + '☆'.repeat(3 - stars);
 
         var msg = document.getElementById('m4g-result-msg');
-        if (m4gLives <= 0 && attempted < total) {
-          msg.textContent = 'Suas vidas acabaram! Você acertou ' + m4gScore + ' de ' + attempted + ' rodadas. Revise os vídeos do Módulo 4 e tente de novo.';
-        } else if (m4gScore === total) {
-          msg.textContent = 'Turno perfeito! Você dominou estabilidade de carga, paletes, classificação de cargas e regras de armazenamento.';
+        if (m4gScore === total) {
+          msg.textContent = 'Perfeito! Você reconheceu riscos de piso e carga, limites de portal/sensores e o uso seguro da garra.';
+        } else if (stars === 2) {
+          msg.textContent = 'Bom trabalho! Revise mentalmente: riscos físicos, nunca ultrapassar portal/sensores e garra longe do piso.';
         } else {
-          msg.textContent = 'Você acertou ' + m4gScore + ' de ' + total + '. Revise os vídeos do Módulo 4 para fechar com 3 estrelas!';
+          msg.textContent = 'Você acertou ' + m4gScore + ' de ' + total + '. Vale jogar de novo — é rápido!';
         }
       }
 
       window.startM4Game = function () {
-        m4gIdx = 0; m4gScore = 0; m4gLives = 3; m4gStreak = 0; m4gBusy = false;
+        m4gIdx = 0;
+        m4gScore = 0;
+        m4gBusy = false;
         m4gShow('m4g-play');
         m4gRender();
       };
 
-      window.handleM4Answer = function (chosen) {
-        m4gAnswer(chosen);
+      window.handleM4Answer = function (choseRisk) {
+        m4gAnswer(choseRisk);
       };
 
       window.resetM4Game = function () {
-        m4gClearTimer();
         m4gShow('m4g-intro');
       };
-
     })();
 
     /* ════════════════════════════════════════

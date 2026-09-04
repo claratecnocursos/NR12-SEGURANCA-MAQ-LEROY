@@ -71,15 +71,20 @@ const NARRATION_OVERRIDES = {
   's-mod3-game': null, // montado a partir do deck do jogo Módulo 3
   's-mod4':
     'Início do Módulo 4. Fatores de Risco, Sensores e Cuidados com o Equipamento.',
+  's-mod4-riscos':
+    'Fatores de Risco. Sempre estar atentos a todos os fatores de riscos que possam gerar incidentes ou acidentes de trabalho durante a operação do equipamento. Observe: piso danificado, fitas de amarração danificadas, pallets danificados e embalagens com produtos danificados.',
+  's-mod4-video':
+    'Vídeo. Sensores e Portais: Limites Inegociáveis. Fatores de Risco, Sensores e Cuidados com o Equipamento. Assista ao vídeo sobre sensores e portais. Avance quando concluir.',
   's-mod4-video2':
-    'Vídeo. A Regra de Ouro da Red Zone. Fatores de Risco, Sensores e Cuidados com o Equipamento. Assista ao vídeo sobre a regra de ouro da Red Zone. Avance quando concluir.',
+    'Vídeo. Garras de Vácuo: Regras de Manuseio. Fatores de Risco, Sensores e Cuidados com o Equipamento. Assista ao vídeo sobre as regras de manuseio das garras de vácuo. Avance quando concluir.',
   's-mod4-redzone':
     'Entendendo a Red Zone. As Red Zones, ou Zonas Vermelhas, são as áreas entre docas, destinadas ao acesso lateral para colocar ou retirar produtos. Esta regra é inegociável: na Red Zone nunca pode haver uma pessoa dentro da área ao mesmo tempo que uma empilhadeira em operação, seja entrando, manobrando, carregando ou saindo. O acesso à Red Zone é permitido apenas para o conferente, o motorista, para abrir e fechar a lona, e os amarradores.',
   's-mod4-video5':
     'Vídeo. Interação em Cruzamentos e Pontos Cegos. Fatores de Risco, Sensores e Cuidados com o Equipamento. Assista ao vídeo sobre interação em cruzamentos e pontos cegos. Avance quando concluir.',
   's-mod4-pontoscegos':
     'Proteja-se dos Pontos Cegos. Ponto cego é a área onde o operador pode não te ver. Pontos cegos da máquina: um, coluna traseira esquerda do protetor superior. Dois, estrutura superior, o teto de proteção, e coluna central. Três, parte superior do mastro e estrutura frontal. Quatro, região atrás do mastro e do porta-garfos. Cinco, coluna dianteira direita do protetor superior. Seis, coluna traseira direita do protetor superior, no lado do operador.',
-  's-mod4-game': null, // montado a partir do deck do jogo Módulo 4
+  's-mod4-game':
+    'Risco ou Seguro? — Módulo 4. Veja cinco situações rápidas e toque em Risco ou Seguro. Temas: piso e carga, portal e sensores, e uso correto da garra a vácuo.',
   's-mod5':
     'Início do Módulo 5. Instruções de Trabalho (IT), Passos Operacionais e EPIs.',
   's-mod5-picking':
@@ -315,20 +320,7 @@ function parseM4gDeck(html) {
 }
 
 function buildM4gNarration(deck) {
-  if (!deck.length) {
-    return 'Quiz NR-11 — Módulo 4. Cinco afirmações rápidas sobre distância de segurança e a regra de ouro da Red Zone. Responda Certo ou Errado em cada uma.';
-  }
-
-  const parts = [
-    'Quiz NR-11 — Módulo 4. Cinco afirmações rápidas sobre distância de segurança e a regra de ouro da Red Zone. Responda Certo ou Errado em cada uma.',
-  ];
-
-  deck.forEach((item, index) => {
-    parts.push(`Afirmação ${index + 1}: ${cleanText(item.text)}`);
-    parts.push(`Resposta correta: ${item.ans ? 'Certo' : 'Errado'}. ${cleanText(item.tip)}`);
-  });
-
-  return parts.join(' ');
+  return 'Risco ou Seguro? — Módulo 4. Veja cinco situações rápidas e toque em Risco ou Seguro. Temas: piso e carga, portal e sensores, e uso correto da garra a vácuo.';
 }
 
 function parseM5gDeck(html) {
