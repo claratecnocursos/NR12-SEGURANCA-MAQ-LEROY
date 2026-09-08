@@ -18,7 +18,7 @@ const MANIFEST_PATH = path.join(OUTPUT_DIR, 'manifest.json');
 /** Textos customizados para slides com pouco conteúdo textual ou conteúdo dinâmico. */
 const NARRATION_OVERRIDES = {
   s1:
-    'Módulo de Treinamento. Segurança do Trabalho. NR 12 - Segurança na Operação de Máquinas. Treinamento de capacitação e reciclagem em segurança na operação de máquinas conforme a NR 12. São seis módulos, conteúdo completo, cento por cento online.',
+    'Módulo de Treinamento. Segurança do Trabalho. NR 12 - Segurança na Operação de Máquinas. Sistema de Movimentação e Armazenagem Automática de Pallets — Entrada, Saída, Picking e Picking Reverso — WMS. São seis módulos, conteúdo completo, cento por cento online.',
   s2:
     'Apresentação. Bem-vindo ao Treinamento. NR 12. Assista ao vídeo de introdução à NR 11 e o nosso objetivo. Avance quando concluir.',
   s6:
@@ -87,16 +87,16 @@ const NARRATION_OVERRIDES = {
     'Risco ou Seguro? — Módulo 4. Veja cinco situações rápidas e toque em Risco ou Seguro. Temas: piso e carga, portal e sensores, e uso correto da garra a vácuo.',
   's-mod5':
     'Início do Módulo 5. Instruções de Trabalho (IT), Passos Operacionais e EPIs.',
-  's-mod5-picking':
-    'Abastecimento do Picking. O processo de ressuprir, ou abastecer, o picking parece simples, mas se não for executado seguindo as regras, pode causar graves acidentes. Pessoas são prensadas entre paletes no momento do ressuprimento. Isto ocorre porque a visão do operador é obstruída por paletes, principalmente quando as pessoas estão abaixadas. No corredor de abastecimento, o operador avança com a empilhadeira em direção à célula de picking, onde pode haver um trabalhador abaixado e fora do campo de visão.',
-  's-mod5-video-picking':
-    'Vídeo. Protocolo de Aproximação Segura no Picking. Instruções de Trabalho (IT), Passos Operacionais e EPIs. Assista ao vídeo sobre o protocolo de aproximação segura no picking. Avance quando concluir.',
-  's-mod5-aproximacao':
-    'A Regra Inicial de Ouro. Nunca se aproxime de uma empilhadeira em movimento. Mantenha-se à distância segura de quatro metros e faça contato visual com o condutor para chamar sua atenção. O pedestre só pode se aproximar e iniciar a conversa após o operador realizar rigorosamente estes três passos. Passo 1: parada total do equipamento. A empilhadeira deve estar completamente estática. Passo 2: descida completa do garfo até o solo. Os garfos devem ser baixados e deitados planos contra o chão. Passo 3: desligamento do motor e retirada da chave. O motor deve ser desligado e a chave de ignição removida pelo operador.',
-  's-mod5-doca':
-    'Chaves, Motorista e Área Segura. Durante todo o processo de carregamento ou descarregamento na doca, um protocolo crítico deve ser seguido para que o veículo não saia antes da hora e ninguém entre na área de manobra. As chaves do caminhão nunca devem permanecer na ignição ou sob a posse do motorista. Elas devem ser recolhidas e mantidas sob a guarda da equipe de expedição. O motorista externo deve aguardar o fim da operação permanecendo de forma contínua dentro da área segura demarcada e protegida para pedestres. Ele é expressamente proibido de caminhar pela Red Zone ou pela baia operacional enquanto as empilhadeiras realizam as manobras de carga. Organização gera segurança.',
-  's-mod5-video-garfos':
-    'Vídeo. Riscos de Garfos Elevados e Movimentações Práticas. Instruções de Trabalho (IT), Passos Operacionais e EPIs. Assista ao vídeo sobre os riscos de dirigir com garfos elevados e as movimentações práticas. Avance quando concluir.',
+  's-mod5-requisitos':
+    'Instruções de Trabalho — Requisitos Obrigatórios. Um: Acesso ao Sistema. Somente pessoal treinado e autorizado pode operar ou acessar a área da automação. É proibido circular ou intervir fora da área designada. Dois: Treinamentos Mínimos Obrigatórios. NR-12 Segurança em Máquinas e Equipamentos. NR-06 Uso Correto de EPIs. Integração de Segurança. Formação Específica no Sistema Cassioli. Reciclagem anual ou a cada atualização de sistema. Três: Brigada de Emergência. É obrigatória a presença de no mínimo dois brigadistas por turno operacional.',
+  's-mod5-video-epi':
+    'Vídeo. Equipamentos de Proteção Individual (EPIs). Instruções de Trabalho (IT), Passos Operacionais e EPIs. Assista ao vídeo sobre os equipamentos de proteção individual. Avance quando concluir.',
+  's-mod5-it':
+    'Instruções de Trabalho — Requisitos Obrigatórios. Um: Acesso ao Sistema. Somente pessoal treinado e autorizado pode operar ou acessar a área da automação. É proibido circular ou intervir fora da área designada. Dois: Treinamentos Mínimos Obrigatórios. NR-12 Segurança em Máquinas e Equipamentos. NR-06 Uso Correto de EPIs. Integração de Segurança. Formação Específica no Sistema Cassioli. Reciclagem anual ou a cada atualização de sistema. Três: Brigada de Emergência. É obrigatória a presença de no mínimo dois brigadistas por turno operacional.',
+  's-mod5-video-area':
+    'Vídeo. Preparação da Área e Ativação do Sistema. Instruções de Trabalho (IT), Passos Operacionais e EPIs. Assista ao vídeo sobre a preparação da área e a ativação do sistema. Avance quando concluir.',
+  's-mod5-video-manutencao':
+    'Vídeo. Manutenção, Finalização e Responsabilidades. Instruções de Trabalho (IT), Passos Operacionais e EPIs. Assista ao vídeo sobre manutenção, finalização e responsabilidades. Avance quando concluir.',
   's-mod5-game': null, // montado a partir do deck do jogo Módulo 5
   's-mod6':
     'Início do Módulo 6. Empilhamento Ergonômico, Regras de Conduta e Recomendações SESMT.',
@@ -324,7 +324,7 @@ function buildM4gNarration(deck) {
 }
 
 function parseM5gDeck(html) {
-  const match = html.match(/var\s+m5gDeck\s*=\s*(\[[\s\S]*?\n\s*\]);/);
+  const match = html.match(/var\s+m5gRounds\s*=\s*(\[[\s\S]*?\n\s*\]);/);
   if (!match) return [];
 
   try {
@@ -336,20 +336,32 @@ function parseM5gDeck(html) {
 
 function buildM5gNarration(deck) {
   if (!deck.length) {
-    return 'Quiz NR-11 — Módulo 5. Você vai responder cinco situações sobre picking, aproximação segura, conversa com o operador, docas e garfos elevados. Escolha a atitude correta.';
+    return 'Missão Turno Seguro — Módulo 5. São duas etapas práticas: vista a armadura de EPIs e toque no semáforo dos quadros.';
   }
 
-  const letters = ['A', 'B', 'C'];
   const parts = [
-    'Quiz NR-11 — Módulo 5. Você vai responder cinco situações sobre picking, aproximação segura, conversa com o operador, docas e garfos elevados. Escolha a atitude correta.',
+    'Missão Turno Seguro — Módulo 5. São duas etapas práticas: vista a armadura de EPIs e toque no semáforo dos quadros.',
   ];
 
   deck.forEach((item, index) => {
-    parts.push(`Situação ${index + 1}: ${cleanText(item.sit)}`);
-    item.opts.forEach((opt, optIndex) => {
-      parts.push(`Alternativa ${letters[optIndex] || optIndex + 1}: ${cleanText(opt)}`);
-    });
-    parts.push(`Resposta correta: alternativa ${letters[item.ans] || item.ans + 1}. ${cleanText(item.fb)}`);
+    parts.push(`Etapa ${index + 1}: ${cleanText(item.title)}. ${cleanText(item.inst)}`);
+    if (item.type === 'order') {
+      parts.push('Ordem correta:');
+      item.items.forEach((opt, optIndex) => {
+        parts.push(`Passo ${optIndex + 1}: ${cleanText(opt.t)}`);
+      });
+    } else if (item.type === 'select') {
+      const yes = item.items.filter((opt) => opt.ok).map((opt) => cleanText(opt.t));
+      const no = item.items.filter((opt) => !opt.ok).map((opt) => cleanText(opt.t));
+      parts.push(`Marque: ${yes.join('; ')}.`);
+      if (no.length) parts.push(`Não marque: ${no.join('; ')}.`);
+    } else if (item.type === 'lights') {
+      item.prompts.forEach((prompt) => {
+        const colorLabel = prompt.color === 'green' ? 'verde' : prompt.color === 'yellow' ? 'amarela' : 'vermelha';
+        parts.push(`${cleanText(prompt.t)}: luz ${colorLabel}.`);
+      });
+    }
+    if (item.fb) parts.push(cleanText(item.fb));
   });
 
   return parts.join(' ');

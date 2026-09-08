@@ -9,7 +9,7 @@
                        "id":  "s1",
                        "title":  "NR 12 - SEGURANÇA NA OPERAÇÃO DE MÁQUINAS",
                        "file":  "audios/s1.mp3",
-                       "text":  "Módulo de Treinamento. Segurança do Trabalho. NR 12 - Segurança na Operação de Máquinas. Treinamento de capacitação e reciclagem em segurança na operação de máquinas conforme a NR 12. São seis módulos, conteúdo completo, cento por cento online.",
+                       "text":  "Módulo de Treinamento. Segurança do Trabalho. NR 12 - Segurança na Operação de Máquinas. Sistema de Movimentação e Armazenagem Automática de Pallets — Entrada, Saída, Picking e Picking Reverso — WMS. São seis módulos, conteúdo completo, cento por cento online.",
                        "audioReady":  true
                    },
                    {
@@ -278,51 +278,51 @@
                    },
                    {
                        "index":  34,
-                       "id":  "s-mod5-picking",
-                       "title":  "Abastecimento do Picking",
-                       "file":  "audios/s-mod5-picking.mp3",
-                       "text":  "Abastecimento do Picking. O processo de ressuprir, ou abastecer, o picking parece simples, mas se não for executado seguindo as regras, pode causar graves acidentes. Pessoas são prensadas entre paletes no momento do ressuprimento. Isto ocorre porque a visão do operador é obstruída por paletes, principalmente quando as pessoas estão abaixadas. No corredor de abastecimento, o operador avança com a empilhadeira em direção à célula de picking, onde pode haver um trabalhador abaixado e fora do campo de visão.",
-                       "audioReady":  true
+                       "id":  "s-mod5-requisitos",
+                       "title":  "Requisitos Obrigatórios",
+                       "file":  "audios/s-mod5-requisitos.mp3",
+                       "text":  "Instruções de Trabalho — Requisitos Obrigatórios. Um: Acesso ao Sistema. Somente pessoal treinado e autorizado pode operar ou acessar a área da automação. É proibido circular ou intervir fora da área designada. Dois: Treinamentos Mínimos Obrigatórios. NR-12 Segurança em Máquinas e Equipamentos. NR-06 Uso Correto de EPIs. Integração de Segurança. Formação Específica no Sistema Cassioli. Reciclagem anual ou a cada atualização de sistema. Três: Brigada de Emergência. É obrigatória a presença de no mínimo dois brigadistas por turno operacional.",
+                       "audioReady":  false
                    },
                    {
                        "index":  35,
-                       "id":  "s-mod5-video-picking",
-                       "title":  "Protocolo de Aproximação Segura no Picking",
-                       "file":  "audios/s-mod5-video-picking.mp3",
-                       "text":  "Vídeo. Protocolo de Aproximação Segura no Picking. Instruções de Trabalho (IT), Passos Operacionais e EPIs. Assista ao vídeo sobre o protocolo de aproximação segura no picking. Avance quando concluir.",
-                       "audioReady":  true
+                       "id":  "s-mod5-video-epi",
+                       "title":  "Equipamentos de Proteção Individual (EPIs)",
+                       "file":  "audios/s-mod5-video-epi.mp3",
+                       "text":  "Vídeo. Equipamentos de Proteção Individual (EPIs). Instruções de Trabalho (IT), Passos Operacionais e EPIs. Assista ao vídeo sobre os equipamentos de proteção individual. Avance quando concluir.",
+                       "audioReady":  false
                    },
                    {
                        "index":  36,
-                       "id":  "s-mod5-aproximacao",
-                       "title":  "A Regra Inicial de Ouro",
-                       "file":  "audios/s-mod5-aproximacao.mp3",
-                       "text":  "A Regra Inicial de Ouro. Nunca se aproxime de uma empilhadeira em movimento. Mantenha-se à distância segura de quatro metros e faça contato visual com o condutor para chamar sua atenção. O pedestre só pode se aproximar e iniciar a conversa após o operador realizar rigorosamente estes três passos. Passo 1: parada total do equipamento. A empilhadeira deve estar completamente estática. Passo 2: descida completa do garfo até o solo. Os garfos devem ser baixados e deitados planos contra o chão. Passo 3: desligamento do motor e retirada da chave. O motor deve ser desligado e a chave de ignição removida pelo operador.",
-                       "audioReady":  true
+                       "id":  "s-mod5-it",
+                       "title":  "Requisitos Obrigatórios",
+                       "file":  "audios/s-mod5-it.mp3",
+                       "text":  "Instruções de Trabalho — Requisitos Obrigatórios. Um: Acesso ao Sistema. Somente pessoal treinado e autorizado pode operar ou acessar a área da automação. É proibido circular ou intervir fora da área designada. Dois: Treinamentos Mínimos Obrigatórios. NR-12 Segurança em Máquinas e Equipamentos. NR-06 Uso Correto de EPIs. Integração de Segurança. Formação Específica no Sistema Cassioli. Reciclagem anual ou a cada atualização de sistema. Três: Brigada de Emergência. É obrigatória a presença de no mínimo dois brigadistas por turno operacional.",
+                       "audioReady":  false
                    },
                    {
                        "index":  37,
-                       "id":  "s-mod5-doca",
-                       "title":  "Chaves, Motorista e Área Segura",
-                       "file":  "audios/s-mod5-doca.mp3",
-                       "text":  "Chaves, Motorista e Área Segura. Durante todo o processo de carregamento ou descarregamento na doca, um protocolo crítico deve ser seguido para que o veículo não saia antes da hora e ninguém entre na área de manobra. As chaves do caminhão nunca devem permanecer na ignição ou sob a posse do motorista. Elas devem ser recolhidas e mantidas sob a guarda da equipe de expedição. O motorista externo deve aguardar o fim da operação permanecendo de forma contínua dentro da área segura demarcada e protegida para pedestres. Ele é expressamente proibido de caminhar pela Red Zone ou pela baia operacional enquanto as empilhadeiras realizam as manobras de carga. Organização gera segurança.",
-                       "audioReady":  true
+                       "id":  "s-mod5-video-area",
+                       "title":  "Preparação da Área e Ativação do Sistema",
+                       "file":  "audios/s-mod5-video-area.mp3",
+                       "text":  "Vídeo. Preparação da Área e Ativação do Sistema. Instruções de Trabalho (IT), Passos Operacionais e EPIs. Assista ao vídeo sobre a preparação da área e a ativação do sistema. Avance quando concluir.",
+                       "audioReady":  false
                    },
                    {
                        "index":  38,
-                       "id":  "s-mod5-video-garfos",
-                       "title":  "Riscos de Garfos Elevados e Movimentações Práticas",
-                       "file":  "audios/s-mod5-video-garfos.mp3",
-                       "text":  "Vídeo. Riscos de Garfos Elevados e Movimentações Práticas. Instruções de Trabalho (IT), Passos Operacionais e EPIs. Assista ao vídeo sobre os riscos de dirigir com garfos elevados e as movimentações práticas. Avance quando concluir.",
-                       "audioReady":  true
+                       "id":  "s-mod5-video-manutencao",
+                       "title":  "Manutenção, Finalização e Responsabilidades",
+                       "file":  "audios/s-mod5-video-manutencao.mp3",
+                       "text":  "Vídeo. Manutenção, Finalização e Responsabilidades. Instruções de Trabalho (IT), Passos Operacionais e EPIs. Assista ao vídeo sobre manutenção, finalização e responsabilidades. Avance quando concluir.",
+                       "audioReady":  false
                    },
                    {
                        "index":  39,
                        "id":  "s-mod5-game",
-                       "title":  "Quiz — Módulo 5",
+                       "title":  "Missão — Turno Seguro",
                        "file":  "audios/s-mod5-game.mp3",
-                       "text":  "Quiz NR-11 — Módulo 5. Você vai responder cinco situações sobre picking, aproximação segura, conversa com o operador, docas e garfos elevados. Escolha a atitude correta. Situação 1: Você vai ressuprir o picking com um palete alto que cobre a visão à frente no corredor. Qual é o maior risco? Alternativa A: O palete alto não interfere, desde que a velocidade seja baixa. Alternativa B: Cargas altas bloqueiam a linha de visão e podem esmagar um ajudante no corredor. Alternativa C: O risco só existe se o corredor estiver sem iluminação. Resposta correta: alternativa B. Paletes volumosos ou cargas altas bloqueiam a visão do operador. Nunca subestime a entrada nesses corredores — operadores e ajudantes precisam de sintonia e atenção duplicada. Situação 2: Para abastecer o picking, qual é o protocolo inegociável de aproximação da empilhadeira? Alternativa A: Aproximar-se lentamente, alinhado ao box, buzinar e só entrar quando o ajudante sair e levantar o braço. Alternativa B: Entrar rápido para não atrasar, buzinando uma vez. Alternativa C: Esperar o ajudante continuar trabalhando na baia para ganhar tempo. Resposta correta: alternativa A. Aproxime-se lento e alinhado, buzine. O ajudante deve parar, sair do corredor e autorizar com o braço erguido — essa é a única autorização válida. Situação 3: Você é pedestre e precisa falar com o operador de uma empilhadeira em atividade. O que fazer? Alternativa A: Aproximar-se pela lateral enquanto a máquina ainda se move, para chamar a atenção. Alternativa B: Bater no mastro para o operador perceber e ir conversando. Alternativa C: Manter 4 metros, chamar a atenção e só se aproximar após parada total, garfos no solo, motor desligado e chave retirada. Resposta correta: alternativa C. Nunca se aproxime da máquina em movimento. Distância de 4 metros, contato visual e os 3 passos: parada, garfos no solo e desligamento com chave retirada. Situação 4: Antes e durante a carga ou descarga na doca, o que é obrigatório? Alternativa A: O motorista fica na cabine com o motor ligado e as chaves na ignição. Alternativa B: Freio estacionário, motor desligado, calços nas rodas, chaves com a expedição e motorista na área segura de pedestres. Alternativa C: Só o calço de um lado já garante a estabilidade, e o motorista pode circular na baia. Resposta correta: alternativa B. Carga e descarga só nas docas. O veículo precisa estar calçado e travado, as chaves ficam com a expedição e o motorista permanece na área segura — nunca na Red Zone ou na baia operacional. Situação 5: Ao trafegar com a empilhadeira, qual regra sobre os garfos está correta? Alternativa A: Pode dirigir com garfos elevados se o corredor estiver livre. Alternativa B: Empurrar a carga de lado com os garfos é aceitável para ajeitar o palete. Alternativa C: É proibido dirigir com garfos ou cargas elevados, passar sob os garfos erguidos ou usar os garfos para elevar pessoas. Resposta correta: alternativa C. Garfos elevados alteram o centro de gravidade e causam tombamento. Ninguém sob os garfos, e a máquina só serve para o transporte seguro — nunca para elevar pessoas.",
-                       "audioReady":  true
+                       "text":  "Missão Turno Seguro — Módulo 5. São duas etapas práticas: vista a armadura de EPIs e toque no semáforo dos quadros. Etapa 1: Vista o colaborador. Toque em todos os EPIs obrigatórios. Marque: Óculos incolores; Mangote de segurança; Perneira de segurança; Luva com proteção no dorso; Calçado com biqueira e metatarso; Uniforme refletivo. Não marque: Óculos escuros; Fone de ouvido. Etapa 2: Toque a cor certa. Ciclo automático normal: luz verde. Alerta de desvio: luz amarela. Emergência acionada: luz vermelha.",
+                       "audioReady":  false
                    },
                    {
                        "index":  40,
