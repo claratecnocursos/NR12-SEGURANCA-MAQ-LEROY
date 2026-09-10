@@ -100,10 +100,16 @@ const NARRATION_OVERRIDES = {
   's-mod5-game': null, // montado a partir do deck do jogo Módulo 5
   's-mod6':
     'Início do Módulo 6. Empilhamento Ergonômico, Regras de Conduta e Recomendações SESMT.',
+  's-mod6-empilhamento':
+    'Instruções de Atividade. Empilhamento Manual de Caixas em Palete. Padronização do procedimento de empilhamento manual de caixas em paletes, garantindo segurança, estabilidade da carga e prevenção de acidentes. Procedimento correto. Baixar somente uma caixa por vez para o palete. Posicionar a caixa de forma alinhada e estável, antes de apoiar a próxima caixa. Manter o palete em local nivelado e em boas condições. Respeitar o limite de empilhamento do produto e do palete. Utilizar técnica correta de levantamento, joelhos flexionados e coluna ereta. Caso a caixa seja pesada, solicitar apoio. Jamais ficar sobre o palete, risco de torção no tornozelo. Fique atento no seu posicionamento na baía, mantenha seus pés afastados do palete, há risco de queda de material.',
+  's-mod6-proibido':
+    'O que não fazer. Proibido. Descer duas ou mais caixas ao mesmo tempo. Arremessar caixas sobre o palete. Montar pilhas desalinhadas ou instáveis. Trabalhar com palete danificado. Não coloque seus pés em cima do palete ou muito próximo da baía. Risco de lesão grave.',
   's-mod6-video':
-    'Vídeo. O Pit Stop e as Regras de Entrada. Empilhamento Ergonômico, Regras de Conduta e Recomendações SESMT. Assista ao vídeo sobre o pit stop e as regras de entrada. Avance quando concluir.',
+    'Vídeo. Vestimentas e a Proibição de Adornos (NR 12). Empilhamento Ergonômico, Regras de Conduta e Recomendações SESMT. Assista ao vídeo sobre vestimentas e a proibição de adornos. Avance quando concluir.',
   's-mod6-video2':
-    'Vídeo. Proibições Críticas no Abastecimento. Empilhamento Ergonômico, Regras de Conduta e Recomendações SESMT. Assista ao vídeo sobre as proibições críticas no abastecimento. Avance quando concluir.',
+    'Vídeo. Recomendações Práticas de Segurança do SESMT. Empilhamento Ergonômico, Regras de Conduta e Recomendações SESMT. Assista ao vídeo sobre as recomendações práticas de segurança do SESMT. Avance quando concluir.',
+  's-mod6-suporte':
+    'Suporte e Contato. Em caso de dúvidas operacionais, problemas técnicos ou necessidade de orientação sobre procedimentos de segurança, utilize os canais oficiais. Portal Leroy Merlin: acesse lmb ponto service-now ponto com para abertura de chamados, consulta de procedimentos e registro de ocorrências operacionais. Portal 3PIR: disponível via link na navegação superior do sistema. Ponto de acesso para informações complementares e documentação técnica. Suporte Técnico: canal dedicado ao atendimento de dúvidas e problemas operacionais. Acionado para situações que não constam nos procedimentos padrão. Instruções SESMT: fonte oficial dos procedimentos de segurança homologados. Consultar sempre em caso de dúvida sobre normas e práticas de trabalho seguro.',
   's-mod6-guia':
     'Guia rápido de segurança do Pit Stop. Regras fundamentais para a baia de abastecimento de GLP e baterias. A área de abastecimento é uma das zonas de maior risco químico e de explosão do armazém. Três regras de acesso e operação. Primeira: permitido apenas um equipamento por vez dentro da baia. Aguarde a sua vez na fila recuada. Segunda: o operador deve apenas estacionar, desligar a máquina e puxar o freio. A troca do cilindro de GLP ou a conexão das baterias é de responsabilidade exclusiva do técnico abastecedor habilitado. Terceira: respeite os avisos de piso e mantenha as saídas do Pit Stop sempre totalmente livres. Fontes de ignição proibidas, tolerância zero. Proibido fumar ou portar qualquer chama exposta. Proibido manusear celulares ou qualquer dispositivo eletrônico ligado, pelo perigo de faíscas estáticas e distração.',
   's-mod6-video3':
@@ -380,11 +386,11 @@ function parseM6gDeck(html) {
 
 function buildM6gNarration(deck) {
   if (!deck.length) {
-    return 'Missão Pit Stop — Módulo 6. São três etapas práticas: acesso ao Pit Stop, proibições e ordem da manobra.';
+    return 'Missão Turno no Palete — Módulo 6. São quatro etapas práticas: empilhamento, o que não fazer, vestimentas e adornos, e recomendações do SESMT.';
   }
 
   const parts = [
-    'Missão Pit Stop — Módulo 6. São três etapas práticas: acesso ao Pit Stop, proibições e ordem da manobra.',
+    'Missão Turno no Palete — Módulo 6. São quatro etapas práticas: empilhamento, o que não fazer, vestimentas e adornos, e recomendações do SESMT.',
   ];
 
   deck.forEach((item, index) => {

@@ -14,17 +14,19 @@
   <style>
     :root {
       --gold: #FFFFFF;
-      --gold-lt: #B4C2FF;
+      --gold-lt: #D4DCFF;
       --gold-dk: #555555;
       --black: #050505;
       --black-s: #151515;
       --black-xs: #252525;
-      --red: #6B7AED;
-      --red-dk: #2A2D5C;
-      --red-lt: #9AA6F5;
-      --cream: #EAEAEA;
-      --cream-dk: #A0A0A0;
+      --red: #7C8EFF;
+      --red-dk: #3A42A8;
+      --red-lt: #B7C4FF;
+      --cream: #F6F7FF;
+      --cream-dk: #C5CBE8;
       --white: #FFFFFF;
+      --neon: #9EB0FF;
+      --neon-glow: 0 0 18px rgba(124, 142, 255, 0.55);
 
       --font-h: 'Montserrat', sans-serif;
       --font-b: 'Open Sans', sans-serif;
@@ -44,13 +46,13 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
-      background-color: #1a1230;
+      background-color: #110a24;
       background-image:
-        radial-gradient(ellipse 1200px 900px at 8% 8%, rgba(107, 122, 237, 0.38), transparent 64%),
-        radial-gradient(ellipse 1100px 950px at 95% 95%, rgba(107, 122, 237, 0.26), transparent 64%),
-        radial-gradient(ellipse 850px 700px at 90% 4%, rgba(154, 166, 245, 0.22), transparent 58%),
-        radial-gradient(ellipse 800px 650px at 4% 96%, rgba(107, 122, 237, 0.28), transparent 60%),
-        linear-gradient(135deg, #1a1230 0%, #2a1a44 28%, #3d2560 55%, #2a1a44 80%, #1c1434 100%);
+        radial-gradient(ellipse 1100px 820px at 8% 6%, rgba(124, 142, 255, 0.55), transparent 62%),
+        radial-gradient(ellipse 980px 780px at 96% 8%, rgba(168, 140, 255, 0.32), transparent 58%),
+        radial-gradient(ellipse 1000px 860px at 92% 98%, rgba(124, 142, 255, 0.38), transparent 62%),
+        radial-gradient(ellipse 780px 620px at 4% 96%, rgba(90, 210, 255, 0.12), transparent 58%),
+        linear-gradient(145deg, #100820 0%, #1c1038 26%, #3a1f72 52%, #27144c 78%, #140a2a 100%);
       background-attachment: fixed;
       font-family: var(--font-b);
       color: var(--cream);
@@ -65,12 +67,73 @@
       pointer-events: none;
       opacity: 1;
       background-image: repeating-linear-gradient(to bottom,
-          rgba(180, 194, 255, 0.05) 0px,
-          rgba(180, 194, 255, 0.05) 1px,
+          rgba(180, 194, 255, 0.08) 0px,
+          rgba(180, 194, 255, 0.08) 1px,
           transparent 1px,
           transparent 4px);
       background-size: 100% 4px;
       background-position: 0 0;
+    }
+
+    /* ── BOTTOM GLOW ── */
+    #bottom-glow {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 220px;
+      z-index: 850;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    #bottom-glow::before {
+      content: '';
+      position: absolute;
+      left: -20%;
+      right: -20%;
+      bottom: -55%;
+      height: 170%;
+      background: radial-gradient(ellipse 80% 70% at 50% 100%,
+          rgba(255, 255, 255, 0.42) 0%,
+          rgba(158, 176, 255, 0.22) 34%,
+          transparent 70%);
+      animation: bottomGlowPulse 5.2s ease-in-out infinite;
+    }
+    #bottom-glow::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 90px;
+      background: linear-gradient(to top,
+          rgba(255, 255, 255, 0.22) 0%,
+          rgba(180, 194, 255, 0.1) 42%,
+          transparent 100%);
+    }
+    @keyframes bottomGlowPulse {
+      0%, 100% { opacity: 0.82; transform: translateY(0) scaleY(1); }
+      50% { opacity: 1; transform: translateY(-6px) scaleY(1.08); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #bottom-glow::before { animation: none; }
+    }
+    html:has(#s-fim.active) #bottom-glow {
+      height: 260px;
+    }
+    html:has(#s-fim.active) #bottom-glow::before {
+      background: radial-gradient(ellipse 90% 80% at 50% 100%,
+          rgba(107, 122, 237, 0.72) 0%,
+          rgba(90, 48, 170, 0.48) 34%,
+          rgba(50, 24, 110, 0.18) 58%,
+          transparent 74%);
+    }
+    html:has(#s-fim.active) #bottom-glow::after {
+      height: 120px;
+      background: linear-gradient(to top,
+          rgba(72, 40, 150, 0.55) 0%,
+          rgba(107, 122, 237, 0.32) 42%,
+          transparent 100%);
     }
 
     /* Mobile: vinheta leve — o roxo permanece, as bordas ganham sombra */
@@ -88,7 +151,7 @@
       }
 
       .nav-btn {
-        box-shadow: none;
+        box-shadow: 0 4px 14px rgba(16, 10, 40, 0.22);
       }
     }
 
@@ -138,7 +201,7 @@
       }
 
       .slide-title {
-        font-size: clamp(22px, 5vw, 40px) !important;
+        font-size: clamp(18px, 3.6vw, 32px) !important;
         margin-top: 4px;
         line-height: 1.3;
         display: block;
@@ -201,7 +264,7 @@
         right: 12px !important;
       }
       #logo img {
-        height: 40px !important;
+        height: 32px !important;
       }
 
       /* Nav */
@@ -214,8 +277,9 @@
         left: 0;
         right: 0;
         box-sizing: border-box;
-        overflow: hidden;
+        overflow: visible;
       }
+      #bottom-glow { height: 160px; }
 
       #nav-dots {
         display: none !important;
@@ -600,7 +664,6 @@
       .btn-start {
         padding: 15px 36px;
         font-size: 16px;
-        box-shadow: none;
       }
 
       .s1-tutorial-btn {
@@ -671,7 +734,7 @@
       }
 
       #s2b .slide-title {
-        font-size: clamp(22px, 5vw, 40px) !important;
+        font-size: clamp(18px, 3.6vw, 32px) !important;
         margin-top: 4px !important;
         line-height: 1.15 !important;
         padding-right: 0 !important;
@@ -946,12 +1009,13 @@
       right: 0;
       height: 5px;
       z-index: 900;
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.12);
     }
 
     #pbar {
       height: 100%;
-      background: linear-gradient(90deg, var(--red), var(--gold));
+      background: linear-gradient(90deg, #5ee7ff, var(--red), #c4b5ff);
+      box-shadow: 0 0 12px rgba(124, 142, 255, 0.85);
       transition: width 0.5s ease;
     }
 
@@ -967,7 +1031,7 @@
     }
 
     #logo img {
-      height: 54px;
+      height: 42px;
       width: auto;
       display: block;
     }
@@ -982,12 +1046,13 @@
       font-family: var(--font-h);
       font-size: 11px;
       font-weight: 700;
-      color: var(--gold);
+      color: #fff;
       letter-spacing: 0.1em;
-      background: rgba(5, 5, 5, 0.6);
+      background: rgba(18, 10, 40, 0.72);
       padding: 4px 14px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.25);
+      border: 1px solid rgba(180, 194, 255, 0.45);
+      box-shadow: 0 0 16px rgba(124, 142, 255, 0.25);
     }
 
     /* ── SLIDES CONTAINER ── */
@@ -1059,11 +1124,11 @@
       border-radius: 1px;
       background: linear-gradient(90deg,
           transparent 0%,
-          rgba(107, 122, 237, 0.35) 22%,
-          rgba(180, 194, 255, 0.45) 50%,
-          rgba(107, 122, 237, 0.35) 78%,
+          rgba(124, 142, 255, 0.55) 22%,
+          rgba(255, 255, 255, 0.85) 50%,
+          rgba(124, 142, 255, 0.55) 78%,
           transparent 100%);
-      box-shadow: 0 0 16px 2px rgba(42, 45, 92, 0.35);
+      box-shadow: 0 0 18px 3px rgba(124, 142, 255, 0.45);
     }
 
     #nav::after {
@@ -1091,25 +1156,26 @@
       position: relative;
       z-index: 2;
       font-family: var(--font-h);
-      font-weight: 700;
+      font-weight: 800;
       font-size: 13px;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.04em;
       padding: 11px 24px;
       border-radius: 999px;
       border: none;
-      background: var(--red);
-      color: var(--white);
+      background: #B4C2FF;
+      color: #1a1640;
       cursor: pointer;
       transition: all 0.2s;
       white-space: nowrap;
-      box-shadow: none;
+      box-shadow: 0 4px 14px rgba(16, 10, 40, 0.22);
     }
 
     @media (hover: hover) and (pointer: fine) {
       .nav-btn:hover:not(:disabled) {
-        filter: brightness(1.12);
+        filter: none;
+        background: #c5ceff;
         transform: translateY(-2px);
-        box-shadow: none;
+        box-shadow: 0 6px 18px rgba(16, 10, 40, 0.28);
       }
     }
 
@@ -1118,8 +1184,9 @@
     }
 
     .nav-btn:disabled {
-      background: var(--red-dk);
-      opacity: 0.4;
+      background: #8d97c9;
+      color: #1a1640;
+      opacity: 0.45;
       cursor: not-allowed;
       box-shadow: none;
     }
@@ -1136,7 +1203,6 @@
         padding: 15px 32px;
         gap: 10px;
       }
-
       .nav-btn svg {
         width: 20px;
         height: 20px;
@@ -1182,8 +1248,8 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: linear-gradient(135deg, var(--red), var(--red-dk));
-      color: var(--cream);
+      background: linear-gradient(135deg, #9aa8ff, var(--red) 50%, var(--red-dk));
+      color: var(--white);
       font-family: var(--font-h);
       font-weight: 700;
       font-size: 10px;
@@ -1191,13 +1257,14 @@
       text-transform: uppercase;
       padding: 5px 14px;
       border-radius: 999px;
+      box-shadow: 0 0 16px rgba(124, 142, 255, 0.4);
     }
 
     .slide-title {
       font-family: var(--font-h);
       font-weight: 900;
-      font-size: clamp(22px, 5vw, 40px);
-      color: var(--cream);
+      font-size: clamp(18px, 3.6vw, 32px);
+      color: #ffffff;
       line-height: 1.2;
       margin-top: 8px;
       text-align: left;
@@ -1206,7 +1273,7 @@
     }
 
     .slide-title span {
-      color: var(--red);
+      color: var(--neon);
     }
 
     .slide-subtitle {
@@ -1249,7 +1316,7 @@
       }
 
       #logo img {
-        height: 26px;
+        height: 22px;
       }
 
       .top-bar {
@@ -1257,7 +1324,7 @@
       }
 
       .slide-title {
-        font-size: clamp(22px, 5vw, 40px);
+        font-size: clamp(18px, 3.6vw, 32px);
         margin-top: 1px;
       }
 
@@ -1863,7 +1930,7 @@
       }
 
       #s2b .slide-title {
-        font-size: clamp(22px, 5vw, 40px) !important;
+        font-size: clamp(18px, 3.6vw, 32px) !important;
         margin-top: 4px !important;
       }
 
@@ -4764,7 +4831,10 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: linear-gradient(135deg, #6B7AED, #2A2D5C);
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      background: linear-gradient(135deg, #a8b4ff, #7C8EFF 40%, #4a58d8);
       color: var(--white);
       font-family: var(--font-h);
       font-weight: 700;
@@ -4774,16 +4844,38 @@
       border-radius: 999px;
       border: none;
       cursor: pointer;
-      transition: all 0.25s;
-      box-shadow: none;
+      transition: transform 0.25s, box-shadow 0.25s;
+      box-shadow: 0 0 22px rgba(124, 142, 255, 0.55), 0 8px 28px rgba(107, 122, 237, 0.45);
       align-self: flex-start;
       white-space: nowrap;
     }
 
+    .btn-start::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 42%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+      transform: translateX(-160%) skewX(-18deg);
+      animation: btnStartShine 2.4s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes btnStartShine {
+      0% { transform: translateX(-160%) skewX(-18deg); }
+      55%, 100% { transform: translateX(280%) skewX(-18deg); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .btn-start::after { animation: none; }
+    }
+
     .btn-start:hover {
-      background: linear-gradient(135deg, #7C8BF5, #6B7AED);
+      background: linear-gradient(135deg, #9aa6f5, #6B7AED 42%, #4a56c8);
       transform: translateY(-2px);
-      box-shadow: none;
+      box-shadow: 0 12px 32px rgba(107, 122, 237, 0.58);
     }
 
     .s1-actions {
@@ -5894,7 +5986,7 @@
       }
 
       .slide-title {
-        font-size: clamp(22px, 5vw, 40px);
+        font-size: clamp(18px, 3.6vw, 32px);
         margin-top: 10px;
         padding-right: 0;
         display: block;
@@ -6028,7 +6120,7 @@
       }
 
       .slide-title {
-        font-size: clamp(22px, 5vw, 40px) !important;
+        font-size: clamp(18px, 3.6vw, 32px) !important;
       }
 
       .slide-subtitle {
@@ -6088,7 +6180,7 @@
       }
 
       .video-slide .slide-title {
-        font-size: clamp(22px, 5vw, 40px) !important;
+        font-size: clamp(18px, 3.6vw, 32px) !important;
       }
 
       .video-slide-title {
@@ -6377,17 +6469,18 @@
       letter-spacing: 0.14em;
       text-transform: uppercase;
       margin-bottom: clamp(18px, 3vw, 28px);
-      background: var(--red);
+      background: linear-gradient(135deg, #9aa8ff, var(--red));
       padding: clamp(8px, 1vw, 11px) clamp(22px, 3.5vw, 36px);
       border-radius: 99px;
       display: inline-block;
+      box-shadow: 0 0 18px rgba(124, 142, 255, 0.45);
     }
 
     .mod-intro-title {
       font-family: var(--font-h);
       font-weight: 900;
       font-size: clamp(52px, 11vw, 110px);
-      color: var(--red);
+      color: var(--neon);
       line-height: 1;
     }
 
@@ -6395,12 +6488,129 @@
       font-family: var(--font-h);
       font-weight: 700;
       font-size: clamp(16px, 2.8vw, 26px);
-      color: var(--cream);
+      color: #ffffff;
       margin-top: clamp(18px, 3.5vw, 32px);
       max-width: min(92vw, 640px);
       line-height: 1.4;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    #s-mod1,
+    #s-mod2,
+    #s-mod3,
+    #s-mod4,
+    #s-mod5,
+    #s-mod6 {
+      overflow: hidden;
+    }
+    #s-mod1 .mod-intro-mascot,
+    #s-mod2 .mod-intro-mascot,
+    #s-mod3 .mod-intro-mascot,
+    #s-mod4 .mod-intro-mascot,
+    #s-mod5 .mod-intro-mascot,
+    #s-mod6 .mod-intro-mascot {
+      position: absolute;
+      top: 72px;
+      bottom: auto;
+      z-index: 4;
+      pointer-events: none;
+      height: min(48vh, 430px);
+      width: auto;
+      max-width: 32vw;
+      opacity: 0;
+    }
+    #s-mod1 .mod-intro-mascot {
+      left: -28px;
+      right: auto;
+    }
+    #s-mod3 .mod-intro-mascot {
+      left: 24px;
+      right: auto;
+      top: auto;
+      bottom: 100px;
+      height: min(62vh, 580px);
+      max-width: 42vw;
+    }
+    #s-mod5 .mod-intro-mascot {
+      left: -48px;
+      right: auto;
+      top: 56px;
+      bottom: auto;
+      height: min(38vh, 380px);
+      max-width: 48vw;
+    }
+    #s-mod6 .mod-intro-mascot {
+      right: -48px;
+      left: auto;
+      top: 148px;
+      bottom: auto;
+      height: min(38vh, 380px);
+      max-width: 48vw;
+    }
+    #s-mod4 .mod-intro-mascot {
+      right: 24px;
+      left: auto;
+      top: auto;
+      bottom: 100px;
+      height: min(62vh, 580px);
+      max-width: 42vw;
+    }
+    #s-mod2 .mod-intro-mascot {
+      right: -72px;
+      left: auto;
+      top: 168px;
+    }
+    #s-mod1 .mod-intro-mascot img,
+    #s-mod2 .mod-intro-mascot img,
+    #s-mod3 .mod-intro-mascot img,
+    #s-mod4 .mod-intro-mascot img,
+    #s-mod5 .mod-intro-mascot img,
+    #s-mod6 .mod-intro-mascot img {
+      display: block;
+      height: 100%;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+    }
+    #s-mod1 .mod-intro-mascot img { object-position: left top; }
+    #s-mod3 .mod-intro-mascot img { object-position: left bottom; }
+    #s-mod5 .mod-intro-mascot img { object-position: left bottom; }
+    #s-mod6 .mod-intro-mascot img { object-position: right bottom; }
+    #s-mod4 .mod-intro-mascot img { object-position: right bottom; }
+    #s-mod2 .mod-intro-mascot img { object-position: right top; }
+    #s-mod1.active .mod-intro-mascot,
+    #s-mod3.active .mod-intro-mascot,
+    #s-mod5.active .mod-intro-mascot {
+      animation: modIntroMascotIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
+    }
+    #s-mod2.active .mod-intro-mascot,
+    #s-mod4.active .mod-intro-mascot,
+    #s-mod6.active .mod-intro-mascot {
+      animation: modIntroMascotInRight 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
+    }
+    #s-mod1:not(.active) .mod-intro-mascot,
+    #s-mod2:not(.active) .mod-intro-mascot,
+    #s-mod3:not(.active) .mod-intro-mascot,
+    #s-mod4:not(.active) .mod-intro-mascot,
+    #s-mod5:not(.active) .mod-intro-mascot,
+    #s-mod6:not(.active) .mod-intro-mascot {
+      animation: none;
+      opacity: 0;
+    }
+    @keyframes modIntroMascotIn {
+      from { opacity: 0; transform: translateX(-28px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes modIntroMascotInRight {
+      from { opacity: 0; transform: translateX(28px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @media screen and (max-width: 768px),
+           screen and (max-height: 500px) {
+      .mod-intro-mascot {
+        display: none !important;
+      }
     }
 
     @media (min-width: 768px) {
@@ -6427,7 +6637,13 @@
 
       .mod-intro-slide.active .mod-intro-badge,
       .mod-intro-slide.active .mod-intro-title,
-      .mod-intro-slide.active .mod-intro-sub {
+      .mod-intro-slide.active .mod-intro-sub,
+      #s-mod1.active .mod-intro-mascot,
+      #s-mod2.active .mod-intro-mascot,
+      #s-mod3.active .mod-intro-mascot,
+      #s-mod4.active .mod-intro-mascot,
+      #s-mod5.active .mod-intro-mascot,
+      #s-mod6.active .mod-intro-mascot {
         animation: none;
         opacity: 1;
         transform: none;
@@ -6436,7 +6652,13 @@
 
       .mod-intro-slide:not(.active) .mod-intro-badge,
       .mod-intro-slide:not(.active) .mod-intro-title,
-      .mod-intro-slide:not(.active) .mod-intro-sub {
+      .mod-intro-slide:not(.active) .mod-intro-sub,
+      #s-mod1:not(.active) .mod-intro-mascot,
+      #s-mod2:not(.active) .mod-intro-mascot,
+      #s-mod3:not(.active) .mod-intro-mascot,
+      #s-mod4:not(.active) .mod-intro-mascot,
+      #s-mod5:not(.active) .mod-intro-mascot,
+      #s-mod6:not(.active) .mod-intro-mascot {
         opacity: 0;
       }
     }
@@ -8742,7 +8964,7 @@
       }
 
       #logo img {
-        height: 40px !important;
+        height: 32px !important;
       }
 
       #top-controls {
@@ -9915,6 +10137,7 @@
 
 <body>
   <div id="bg-texture" aria-hidden="true"></div>
+  <div id="bottom-glow" aria-hidden="true"></div>
   <!-- BACKGROUND MUSIC -->
   <audio id="bg-music" src="musica/musica_foco.mp3" loop></audio>
 
@@ -10106,6 +10329,9 @@
             box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
             transform: none !important;
             overflow: hidden;
+            cursor: default;
+            pointer-events: none;
+            transition: none !important;
           }
           #s6 .sum-item::before { display: none !important; }
           #s6 .sum-item::after {
@@ -10118,9 +10344,9 @@
             pointer-events: none;
           }
           #s6 .sum-item:hover {
-            transform: translateY(-4px) !important;
-            border-color: rgba(200, 210, 255, 0.55) !important;
-            box-shadow: 0 18px 36px rgba(180, 194, 255, 0.18);
+            transform: none !important;
+            border-color: rgba(180, 194, 255, 0.28) !important;
+            box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
           }
           #s6 .sum-num-big {
             display: inline-flex;
@@ -10161,22 +10387,40 @@
             }
           }
 
+          @media (max-height: 780px) and (min-width: 821px) {
+            #s6 .sum-item { min-height: 168px; padding: 20px 18px !important; gap: 10px !important; }
+            #s6 .sum-text { font-size: 15.5px !important; }
+          }
+
           @media screen and (max-width: 768px) and (orientation: portrait) {
-            #s6 .slide-title { font-size: 22px !important; margin-top: 4px !important; }
-            #s6 .content-area { padding: 6px 14px 76px !important; }
+            #s6 { overflow: hidden !important; }
+            #s6 .top-bar { padding-right: 118px !important; }
+            #s6 .section-tag { margin-bottom: 0 !important; }
+            #s6 .slide-title {
+              font-size: 20px !important;
+              margin-top: 2px !important;
+              line-height: 1.15 !important;
+            }
+            #s6 .content-area {
+              padding: 4px 12px 88px !important;
+              justify-content: stretch !important;
+              align-items: stretch !important;
+            }
             #s6 .sum-grid {
               flex-direction: column !important;
-              flex-wrap: nowrap;
-              gap: 7px !important;
+              flex-wrap: nowrap !important;
+              justify-content: flex-start !important;
+              align-content: stretch !important;
+              gap: 6px !important;
               height: 100%;
               max-width: 100% !important;
             }
             #s6 .sum-item {
-              flex: 1 1 0;
+              flex: 1 1 0 !important;
               width: 100% !important;
-              max-width: none;
-              min-height: 0;
-              padding: 8px 12px !important;
+              max-width: none !important;
+              min-height: 0 !important;
+              padding: 7px 12px !important;
               gap: 4px !important;
               border-radius: 12px !important;
             }
@@ -10187,12 +10431,12 @@
             #s6 .sum-text {
               font-size: 12px !important;
               line-height: 1.22 !important;
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
             }
-          }
-
-          @media (max-height: 780px) {
-            #s6 .sum-item { min-height: 168px; padding: 20px 18px !important; gap: 10px !important; }
-            #s6 .sum-text { font-size: 15.5px !important; }
+            #s6 .wave { display: none; }
           }
         </style>
         <div class="top-bar"><span class="section-tag">🗺️ Sumário</span>
@@ -10240,6 +10484,9 @@
 
       <!-- ── MÓDULO 1 INTRO ── -->
       <section class="slide mod-intro-slide" id="s-mod1">
+        <div class="mod-intro-mascot">
+          <img src="img/módulo1.png" alt="Instrutor apresentando o Módulo 1">
+        </div>
         <div class="content-area mod-intro-area">
           <div class="mod-intro-inner">
             <div class="mod-intro-badge">Início do Módulo</div>
@@ -10339,10 +10586,12 @@
             overflow: hidden;
           }
 
-          #s2d .top-bar {
-            flex-shrink: 0;
-            padding-top: 14px;
-            padding-bottom: 0;
+          @media screen and (min-width: 769px) {
+            #s2d .top-bar {
+              flex-shrink: 0;
+              padding-top: 14px;
+              padding-bottom: 0;
+            }
           }
 
           #s2d .civcrim-subhead {
@@ -10387,8 +10636,8 @@
           }
 
           #s2d .civcrim-card {
-            background: linear-gradient(160deg, #10161e, #0a0e14);
-            border: 1px solid rgba(180, 194, 255, 0.24);
+            background: #ffffff;
+            border: 1px solid rgba(107, 122, 237, 0.18);
             border-radius: 16px;
             padding: clamp(14px, 2vh, 20px) clamp(16px, 1.5vw, 22px);
             display: flex;
@@ -10397,24 +10646,24 @@
             gap: clamp(8px, 1.1vh, 12px);
             position: relative;
             overflow: hidden;
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 10px 28px rgba(20, 16, 48, 0.12);
             transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s, border-color 0.3s;
           }
 
           #s2d .civcrim-card:hover {
             transform: translateY(-4px);
-            border-color: rgba(180, 194, 255, 0.55);
-            box-shadow: 0 18px 36px rgba(180, 194, 255, 0.2);
+            border-color: rgba(107, 122, 237, 0.45);
+            box-shadow: 0 16px 32px rgba(107, 122, 237, 0.18);
           }
 
           #s2d .civcrim-card.is-civil {
-            background: linear-gradient(160deg, #0f1b22, #0b0f14);
-            border-color: rgba(180, 194, 255, 0.25);
+            background: #f7f8ff;
+            border-color: rgba(107, 122, 237, 0.22);
           }
 
           #s2d .civcrim-card.is-civil:hover {
-            border-color: rgba(180, 194, 255, 0.55);
-            box-shadow: 0 18px 36px rgba(180, 194, 255, 0.2);
+            border-color: rgba(107, 122, 237, 0.5);
+            box-shadow: 0 16px 32px rgba(107, 122, 237, 0.18);
           }
 
           #s2d .civcrim-card::before {
@@ -10443,18 +10692,18 @@
             height: clamp(38px, 5.2vh, 48px);
             border-radius: 12px;
             flex-shrink: 0;
-            background: rgba(180, 194, 255, 0.14);
-            border: 1px solid rgba(180, 194, 255, 0.35);
+            background: rgba(107, 122, 237, 0.12);
+            border: 1px solid rgba(107, 122, 237, 0.28);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #B4C2FF;
+            color: #3d4db8;
           }
 
           #s2d .civcrim-card.is-civil .civcrim-card-icon {
-            background: rgba(180, 194, 255, 0.14);
-            border: 1px solid rgba(180, 194, 255, 0.35);
-            color: #B4C2FF;
+            background: rgba(107, 122, 237, 0.14);
+            border: 1px solid rgba(107, 122, 237, 0.3);
+            color: #3d4db8;
           }
 
           #s2d .civcrim-card-title {
@@ -10462,14 +10711,14 @@
             font-weight: 800;
             font-size: clamp(15px, 2.1vh, 19px);
             line-height: 1.25;
-            color: #ffffff;
+            color: #121428;
           }
 
           #s2d .civcrim-card-sub {
             font-family: var(--font-h);
             font-weight: 600;
             font-size: clamp(10px, 1.35vh, 12.5px);
-            color: rgba(255, 255, 255, 0.55);
+            color: #5a6288;
             text-transform: uppercase;
             letter-spacing: 0.4px;
             margin-top: 2px;
@@ -10479,19 +10728,19 @@
             font-family: var(--font-p);
             font-size: clamp(13.5px, 1.85vh, 16.5px);
             line-height: 1.55;
-            color: rgba(255, 255, 255, 0.82);
+            color: #2a2f45;
           }
 
           #s2d .civcrim-card-text strong {
-            color: #ffc837;
+            color: #2A2D5C;
           }
 
           #s2d .civcrim-pena {
             display: inline-block;
             margin-top: 2px;
-            background: rgba(255, 199, 0, 0.14);
-            border: 1px solid rgba(255, 199, 0, 0.35);
-            color: #ffc837;
+            background: rgba(107, 122, 237, 0.12);
+            border: 1px solid rgba(107, 122, 237, 0.28);
+            color: #2A2D5C;
             font-family: var(--font-h);
             font-weight: 700;
             font-size: 11.5px;
@@ -10501,13 +10750,16 @@
           }
 
           #s2d .civcrim-card.is-civil .civcrim-pena {
-            background: rgba(180, 194, 255, 0.14);
-            border: 1px solid rgba(180, 194, 255, 0.35);
-            color: #7fd8ff;
+            background: rgba(107, 122, 237, 0.12);
+            border: 1px solid rgba(107, 122, 237, 0.28);
+            color: #2A2D5C;
           }
 
           #s2d .s2d-mobile-subhead,
           #s2d .s2d-carousel-nav { display: none; }
+
+          #s2d .s2d-lead-short { display: none; }
+          #s2d .s2d-mobile-stage { display: contents; }
 
           #s2d .s2d-card-viewport {
             display: flex;
@@ -10518,83 +10770,182 @@
 
           @media screen and (max-width: 768px) and (orientation: portrait) {
             @keyframes s2dFadeIn {
-              from { opacity: 0; transform: translateX(18px); }
+              from { opacity: 0; transform: translateX(16px); }
               to   { opacity: 1; transform: translateX(0); }
             }
-            #s2d { overflow: hidden; }
+            #s2d {
+              overflow: hidden !important;
+              display: flex;
+              flex-direction: column;
+            }
+            #s2d .wave { display: none; }
+            #s2d .top-bar { flex-shrink: 0; }
             #s2d .content-area {
               overflow: hidden !important;
               justify-content: center !important;
-              padding: 8px 16px 78px !important;
-              gap: 12px !important;
+              padding: 6px 16px calc(92px + env(safe-area-inset-bottom, 0px)) !important;
+              gap: 8px !important;
+              min-height: 0;
+              flex: 1 1 auto;
             }
             #s2d .civcrim-subhead { display: none !important; }
+            #s2d .s2d-lead-full { display: none !important; }
+            #s2d .s2d-lead-short {
+              display: block !important;
+              font-size: 11px !important;
+              line-height: 1.35 !important;
+              text-align: left;
+              flex: 0 0 auto;
+              margin: 0;
+              padding: 0 2px;
+              position: relative;
+              z-index: 1;
+            }
+            #s2d .s2d-lead {
+              font-size: 11px !important;
+              line-height: 1.35 !important;
+              text-align: left;
+              flex: 0 0 auto;
+            }
             #s2d .s2d-mobile-subhead {
               display: flex !important;
               align-items: center;
               justify-content: center;
               font-family: var(--font-h);
-              font-size: 11px;
+              font-size: 10px;
               font-weight: 800;
               color: #C8D2FF;
               text-transform: uppercase;
               letter-spacing: 0.5px;
               text-align: center;
-              line-height: 1.35;
-              padding: 0 8px;
+              line-height: 1.3;
+              padding: 0 4px;
+              flex: 0 0 auto;
             }
-            #s2d .civcrim-grid {
-              display: contents !important;
+            #s2d .civcrim-grid { display: contents !important; }
+            #s2d .s2d-mobile-stage {
+              display: flex;
+              flex-direction: column;
+              align-items: stretch;
+              gap: 10px;
+              width: 100%;
+              max-width: 360px;
+              margin: 0 auto;
+              flex: 0 0 auto;
+              min-height: 0;
+              z-index: 2;
+              padding: 0;
             }
             #s2d .s2d-card-viewport {
               display: block;
               width: 100%;
-              max-width: 360px;
-              margin: 0 auto;
+              flex: 0 0 auto;
+              min-height: 0;
+              overflow: visible;
             }
             #s2d .civcrim-card {
               display: none !important;
               width: 100%;
-              min-height: 250px;
-              padding: 22px 20px !important;
-              gap: 12px !important;
-              border-radius: 20px;
+              min-height: 0;
+              height: auto !important;
+              max-height: none;
+              padding: 16px 16px 16px !important;
+              gap: 8px !important;
+              border-radius: 18px;
+              align-items: center;
+              justify-content: flex-start;
+              text-align: center;
+              overflow: visible !important;
+              box-sizing: border-box;
             }
             #s2d .civcrim-card.s2d-card-active {
               display: flex !important;
-              animation: s2dFadeIn 0.3s ease forwards;
+              animation: s2dFadeIn 0.28s ease forwards;
             }
-            #s2d .civcrim-card-icon { width: 44px; height: 44px; }
-            #s2d .civcrim-card-title { font-size: 18px !important; }
-            #s2d .civcrim-card-sub { font-size: 12px !important; }
-            #s2d .civcrim-card-text { font-size: 14.5px !important; line-height: 1.55 !important; }
-            #s2d .civcrim-pena { font-size: 12.5px; padding: 5px 12px; }
-            #s2d .s2d-lead {
-              font-size: 12.5px !important;
-              line-height: 1.45 !important;
-              text-align: left;
+            #s2d .civcrim-card-head {
+              flex-direction: column;
+              align-items: center;
+              text-align: center;
+              gap: 6px;
+              min-width: 0;
+              width: 100%;
+              flex-shrink: 0;
             }
-            #s2d .s2d-cap { font-size: 24px !important; }
+            #s2d .civcrim-card-head > div:last-child {
+              flex: 0 1 auto;
+              min-width: 0;
+              width: 100%;
+            }
+            #s2d .civcrim-card-icon {
+              width: 42px;
+              height: 42px;
+              border-radius: 14px;
+            }
+            #s2d .civcrim-card-title {
+              font-size: 16px !important;
+              line-height: 1.2 !important;
+              word-break: normal !important;
+              overflow-wrap: normal;
+              white-space: normal;
+            }
+            #s2d .civcrim-card-sub {
+              font-size: 10px !important;
+              margin-top: 2px;
+            }
+            #s2d .civcrim-card-text {
+              font-size: 13px !important;
+              line-height: 1.35 !important;
+              text-align: center;
+              overflow: hidden;
+              flex-shrink: 1;
+            }
+            #s2d .civcrim-pena { font-size: 12px; padding: 4px 10px; }
+            #s2d .s2d-cap { font-size: 20px !important; }
             #s2d .s2d-carousel-nav {
               display: flex !important;
-              align-items: center; justify-content: center; gap: 16px;
-              width: 100%; max-width: 360px; margin: 0 auto; flex-shrink: 0;
+              align-items: center;
+              justify-content: center;
+              gap: 14px;
+              width: 100%;
+              flex: 0 0 auto;
+              position: relative;
+              z-index: 2;
+              margin: 0;
+              padding: 0 0 2px;
             }
             #s2d .s2d-nav-btn {
               background: linear-gradient(135deg, #6B7AED, #2A2D5C);
-              color: #fff; border: none; border-radius: 50%;
-              width: 46px; height: 46px; min-width: 46px; min-height: 46px;
-              cursor: pointer; display: flex; align-items: center; justify-content: center;
+              color: #fff;
+              border: none;
+              border-radius: 50%;
+              width: 40px;
+              height: 40px;
+              min-width: 40px;
+              min-height: 40px;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
               box-shadow: 0 6px 16px rgba(180, 194, 255, 0.4);
-              touch-action: manipulation; -webkit-tap-highlight-color: transparent;
+              touch-action: manipulation;
+              -webkit-tap-highlight-color: transparent;
+              pointer-events: auto;
+              position: static;
             }
-            #s2d .s2d-nav-btn:active:not(:disabled) { transform: scale(0.94); }
-            #s2d .s2d-nav-btn:disabled { opacity: 0.3; cursor: default; }
+            #s2d #s2d-prev,
+            #s2d #s2d-next { left: auto; right: auto; top: auto; }
+            #s2d .s2d-nav-btn:active { transform: scale(0.94); }
             #s2d .s2d-nav-btn svg { pointer-events: none; }
             #s2d .s2d-counter {
-              font-family: var(--font-h); font-size: 14px; font-weight: 800;
-              color: rgba(255,255,255,0.9); min-width: 56px; text-align: center;
+              position: static;
+              font-family: var(--font-h);
+              font-size: 13px;
+              font-weight: 800;
+              color: rgba(255,255,255,0.9);
+              min-width: 48px;
+              text-align: center;
               letter-spacing: 0.04em;
+              pointer-events: none;
             }
           }
           #s2d .s2d-lead {
@@ -10620,7 +10971,7 @@
             font-family: var(--font-h);
             font-weight: 900;
             font-size: clamp(24px, 3.7vh, 34px);
-            color: #B4C2FF;
+            color: #3b36b5 !important;
             letter-spacing: -0.02em;
             line-height: 1.15;
           }
@@ -10631,14 +10982,34 @@
             font-weight: 700;
             letter-spacing: 0.06em;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.55);
+            color: #4a3f9e !important;
+            margin-top: 3px;
             margin-top: 3px;
           }
 
-          #s2d .slide-title {
-            font-size: clamp(22px, 2.4vw, 31px) !important;
-            margin-top: 6px;
-            margin-bottom: 0;
+          @media screen and (min-width: 769px) {
+            #s2d .slide-title {
+              font-size: clamp(22px, 2.4vw, 31px) !important;
+              margin-top: 6px;
+              margin-bottom: 0;
+            }
+            #s2d .s2d-card-viewport {
+              flex: 0 1 auto;
+              min-height: 0;
+              justify-content: center;
+              gap: clamp(10px, 2.4vh, 26px);
+            }
+            #s2d .content-area {
+              flex: 1 1 0;
+              min-height: 0;
+              width: 100%;
+              max-width: 1300px !important;
+              margin: 0 auto;
+              overflow: hidden !important;
+              justify-content: center !important;
+              gap: clamp(10px, 2.4vh, 26px) !important;
+              padding: clamp(4px, 1vh, 10px) 36px 82px !important;
+            }
           }
 
           #s2d .civcrim-card-icon svg {
@@ -10646,26 +11017,7 @@
             height: 55%;
           }
 
-          #s2d .s2d-card-viewport {
-            flex: 0 1 auto;
-            min-height: 0;
-            justify-content: center;
-            gap: clamp(10px, 2.4vh, 26px);
-          }
-
           #s2d .civcrim-subhead { flex-shrink: 0; }
-
-          #s2d .content-area {
-            flex: 1 1 0;
-            min-height: 0;
-            width: 100%;
-            max-width: 1300px !important;
-            margin: 0 auto;
-            overflow: hidden !important;
-            justify-content: center !important;
-            gap: clamp(10px, 2.4vh, 26px) !important;
-            padding: clamp(4px, 1vh, 10px) 36px 82px !important;
-          }
 
           @media screen and (min-width: 1700px) {
             #s2d .content-area { max-width: 1500px !important; }
@@ -10682,16 +11034,20 @@
           }
         </style>
         <div class="top-bar">
-          <span class="section-tag">⚙️ Sistema Automatizado</span>
-          <div class="slide-title">Dimensionamento e <span>Capacidade Operacional</span></div>
-          <div class="slide-subtitle">Contexto Legal, Introdução e Fluxos do Sistema Automatizado</div>
+          <div>
+            <span class="section-tag">⚙️ Sistema Automatizado</span>
+            <div class="slide-title" style="margin-top:6px">Dimensionamento e <span>Capacidade Operacional</span></div>
+            <div class="slide-subtitle">Contexto Legal, Introdução e Fluxos do Sistema Automatizado</div>
+          </div>
         </div>
         <div class="content-area" style="display:flex; flex-direction:column;">
 
-          <p class="s2d-lead">Você pode estar se perguntando: este sistema automatizado realmente suporta a alta demanda do <strong>CD Cajamar</strong>? A resposta é <strong>sim</strong>. O equipamento foi projetado sob medida e todos os fluxos foram dimensionados prevendo a pior condição de consolidação de dados da Leroy Merlin, operando de forma simultânea.</p>
+          <p class="s2d-lead s2d-lead-full">Você pode estar se perguntando: este sistema automatizado realmente suporta a alta demanda do <strong>CD Cajamar</strong>? A resposta é <strong>sim</strong>. O equipamento foi projetado sob medida e todos os fluxos foram dimensionados prevendo a pior condição de consolidação de dados da Leroy Merlin, operando de forma simultânea.</p>
+          <p class="s2d-lead s2d-lead-short">O sistema do <strong>CD Cajamar</strong> foi projetado sob medida para a pior condição de demanda da Leroy Merlin, com todos os fluxos ao mesmo tempo.</p>
 
           <div class="s2d-mobile-subhead" id="s2d-mobile-subhead">Equipamentos do sistema</div>
 
+          <div class="s2d-mobile-stage">
           <div class="s2d-card-viewport" id="s2d-card-viewport">
           <div class="civcrim-subhead"><span class="civcrim-subhead-text">Equipamentos do sistema</span></div>
 
@@ -10796,13 +11152,14 @@
           </div>
 
           <div class="s2d-carousel-nav" id="s2d-carousel-nav">
-            <button type="button" class="s2d-nav-btn" id="s2d-prev" aria-label="Anterior" onclick="s2dCarouselNav(-1)">
+            <button type="button" class="s2d-nav-btn" id="s2d-prev" aria-label="Anterior">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
             </button>
             <span class="s2d-counter" id="s2d-counter">1 / 5</span>
-            <button type="button" class="s2d-nav-btn" id="s2d-next" aria-label="Próximo" onclick="s2dCarouselNav(1)">
+            <button type="button" class="s2d-nav-btn" id="s2d-next" aria-label="Próximo">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
             </button>
+          </div>
           </div>
 
         </div>
@@ -10815,8 +11172,10 @@
             <!-- ── S2e: DESAFIO — Quiz Módulo 1 ── -->
       <section class="slide" id="s2e">
         <div class="top-bar">
-          <span class="section-tag">🎮 DESAFIO</span>
-          <div class="slide-title" style="margin-top:6px">Quiz — <span>Módulo 1</span></div>
+          <div>
+            <span class="section-tag">🎮 DESAFIO</span>
+            <div class="slide-title" style="margin-top:6px">Quiz — <span>Módulo 1</span></div>
+          </div>
         </div>
         <div class="content-area mod1-state-intro">
 
@@ -10825,7 +11184,7 @@
             <h3 style="font-family:var(--font-h); font-size:26px; color:var(--white); margin-bottom:12px;">
               Quiz NR 12 — Módulo 1</h3>
             <p style="color:rgba(255,255,255,0.72); font-size:16px; line-height:1.65; margin-bottom:28px; max-width: 600px; margin-left: auto; margin-right: auto;">
-              Responda a <strong>4 perguntas rápidas</strong> sobre responsabilidades compartilhadas, o sistema de Cajamar, a rota do palete e as capacidades nominais — e valide seu aprendizado!
+              Responda 4 perguntas rápidas sobre responsabilidades, o sistema de Cajamar, a rota do palete e as capacidades nominais.
             </p>
             <button class="btn-start" style="padding: 16px 40px; font-size: 15px; text-transform: uppercase;"
               onclick="startMod1Game()">INICIAR DESAFIO</button>
@@ -10884,6 +11243,9 @@
 
       <!-- ── MÓDULO 2 INTRO ── -->
       <section class="slide mod-intro-slide" id="s-mod2">
+        <div class="mod-intro-mascot">
+          <img src="img/módulo2.png" alt="Instrutor apresentando o Módulo 2">
+        </div>
         <div class="content-area mod-intro-area">
           <div class="mod-intro-inner">
             <div class="mod-intro-badge">Início do Módulo</div>
@@ -10952,8 +11314,8 @@
             grid-template-columns: repeat(2, 1fr);
           }
           #s-mod2-pallets .plt-card {
-            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 100%);
-            border: 1px solid rgba(180, 194, 255, 0.28);
+            background: #ffffff;
+            border: 1px solid rgba(107, 122, 237, 0.18);
             border-radius: 16px;
             padding: 16px 18px;
             display: flex;
@@ -10961,7 +11323,7 @@
             gap: 8px;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+            box-shadow: 0 10px 28px rgba(20, 16, 48, 0.12);
           }
           #s-mod2-pallets .plt-card::before {
             content: '';
@@ -10976,20 +11338,20 @@
             font-weight: 700;
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.5);
+            color: #5a6288;
           }
           #s-mod2-pallets .plt-name {
             font-family: var(--font-h);
             font-size: clamp(16px, 1.6vw, 20px);
             font-weight: 800;
-            color: #fff;
+            color: #121428;
             line-height: 1.2;
           }
           #s-mod2-pallets .plt-value {
             font-family: var(--font-h);
             font-size: clamp(20px, 2.2vw, 26px);
             font-weight: 900;
-            color: #B4C2FF;
+            color: #3b36b5 !important;
             letter-spacing: -0.02em;
             line-height: 1.1;
           }
@@ -10999,16 +11361,16 @@
             font-weight: 700;
             letter-spacing: 0.05em;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.5);
+            color: #4a3f9e;
             margin-top: 3px;
           }
           #s-mod2-pallets .plt-text {
             font-family: var(--font-p);
             font-size: clamp(12.5px, 1.1vw, 14px);
             line-height: 1.45;
-            color: rgba(255, 255, 255, 0.82);
+            color: #2a2f45;
           }
-          #s-mod2-pallets .plt-text strong { color: #C8D2FF; }
+          #s-mod2-pallets .plt-text strong { color: #2A2D5C; }
           #s-mod2-pallets .plt-grid,
           #s-mod2-pallets .plt-card {
             flex-shrink: 0;
@@ -11235,13 +11597,13 @@
             box-sizing: border-box;
           }
           #s-mod2-triagem .tg-intro {
-            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 100%);
-            border: 1px solid rgba(180, 194, 255, 0.28);
+            background: #ffffff;
+            border: 1px solid rgba(107, 122, 237, 0.18);
             border-radius: 16px;
             padding: 16px 22px;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+            box-shadow: 0 10px 28px rgba(20, 16, 48, 0.12);
           }
           #s-mod2-triagem .tg-intro::before {
             content: '';
@@ -11254,10 +11616,10 @@
             font-family: var(--font-p);
             font-size: clamp(14px, 1.35vw, 16.5px);
             line-height: 1.5;
-            color: rgba(255, 255, 255, 0.9);
+            color: #2a2f45;
             margin: 0;
           }
-          #s-mod2-triagem .tg-intro strong { color: #C8D2FF; font-weight: 800; }
+          #s-mod2-triagem .tg-intro strong { color: #3b36b5; font-weight: 800; }
           #s-mod2-triagem .tg-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -11283,8 +11645,8 @@
             color: #C8D2FF;
           }
           #s-mod2-triagem .tg-card {
-            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 100%);
-            border: 1px solid rgba(180, 194, 255, 0.22);
+            background: #ffffff;
+            border: 1px solid rgba(107, 122, 237, 0.18);
             border-radius: 16px;
             padding: 16px 18px 16px 16px;
             display: flex;
@@ -11297,8 +11659,8 @@
             font: inherit;
             color: inherit;
             cursor: pointer;
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
-            opacity: 0.58;
+            box-shadow: 0 10px 28px rgba(20, 16, 48, 0.12);
+            opacity: 0.72;
             transform: scale(0.985);
             transition: opacity 0.28s ease, transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
             animation: tgPulse 2.4s ease-in-out infinite;
@@ -11306,22 +11668,22 @@
             -webkit-tap-highlight-color: transparent;
           }
           #s-mod2-triagem .tg-card.req-item::after { display: none !important; }
-          #s-mod2-triagem .tg-card.req-done { border-color: rgba(180, 194, 255, 0.7) !important; }
+          #s-mod2-triagem .tg-card.req-done { border-color: rgba(107, 122, 237, 0.45) !important; }
           @keyframes tgPulse {
-            0%, 100% { box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28); }
-            50% { box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(180, 194, 255, 0.35); }
+            0%, 100% { box-shadow: 0 10px 28px rgba(20, 16, 48, 0.12); }
+            50% { box-shadow: 0 10px 28px rgba(20, 16, 48, 0.12), 0 0 0 1px rgba(107, 122, 237, 0.35); }
           }
           #s-mod2-triagem .tg-card:hover:not(.req-done) {
-            opacity: 0.88;
+            opacity: 1;
             transform: translateY(-2px) scale(1);
-            border-color: rgba(180, 194, 255, 0.5);
+            border-color: rgba(107, 122, 237, 0.45);
           }
           #s-mod2-triagem .tg-card.req-done {
             opacity: 1;
             transform: scale(1);
             animation: none;
-            border-color: rgba(180, 194, 255, 0.7);
-            box-shadow: 0 14px 32px rgba(107, 122, 237, 0.28);
+            border-color: rgba(107, 122, 237, 0.5);
+            box-shadow: 0 12px 28px rgba(107, 122, 237, 0.16);
           }
           #s-mod2-triagem .tg-card::before {
             content: '';
@@ -11379,7 +11741,7 @@
             font-family: var(--font-h);
             font-size: clamp(15px, 1.45vw, 18px);
             font-weight: 800;
-            color: #fff;
+            color: #121428;
             line-height: 1.25;
             margin: 0 0 6px;
             padding-right: 18px;
@@ -11388,7 +11750,7 @@
             font-family: var(--font-p);
             font-size: clamp(12.5px, 1.1vw, 14px);
             line-height: 1.45;
-            color: rgba(255, 255, 255, 0.82);
+            color: #2a2f45;
             margin: 0;
             max-height: 0;
             opacity: 0;
@@ -11884,6 +12246,9 @@
 
       <!-- ── MÓDULO 3 INTRO ── -->
       <section class="slide mod-intro-slide" id="s-mod3">
+        <div class="mod-intro-mascot">
+          <img src="img/módulo3.png" alt="Instrutor apresentando o Módulo 3">
+        </div>
         <div class="content-area mod-intro-area">
           <div class="mod-intro-inner">
             <div class="mod-intro-badge">Início do Módulo</div>
@@ -13768,11 +14133,76 @@
             padding: clamp(12px,3cqh,18px) clamp(28px,5cqw,44px) !important;
             font-size: clamp(13px,2.2cqh,15px) !important;
           }
+          @media screen and (max-width: 768px) and (orientation: portrait) {
+            #s-mod3-game .content-area {
+              padding: 4px 12px calc(92px + env(safe-area-inset-bottom, 0px)) !important;
+              overflow: hidden !important;
+              align-items: center !important;
+              justify-content: center !important;
+            }
+            #s-mod3-game #m3g-play.m3g-wrap {
+              flex: 0 0 auto;
+              min-height: 0;
+              max-width: 100%;
+              height: auto;
+              display: flex;
+              flex-direction: column;
+            }
+            #s-mod3-game #m3g-play .m3g-shell {
+              flex: 0 0 auto;
+              min-height: 0;
+              overflow: hidden;
+              padding: 10px 12px 8px;
+              display: flex;
+              flex-direction: column;
+              border-radius: 18px;
+            }
+            #s-mod3-game .m3g-progress-row { margin-bottom: 4px; }
+            #s-mod3-game .m3g-label { font-size: 9px; }
+            #s-mod3-game .m3g-counter { font-size: 11px; padding: 2px 10px; }
+            #s-mod3-game .m3g-bar-bg { height: 6px; margin-bottom: 8px; }
+            #s-mod3-game .m3g-situation {
+              min-height: 0;
+              padding: 10px 12px;
+              margin-bottom: 8px;
+              flex-shrink: 1;
+            }
+            #s-mod3-game .m3g-sit-emoji { font-size: 22px; margin-bottom: 4px; }
+            #s-mod3-game .m3g-sit-text {
+              font-size: 12px !important;
+              line-height: 1.3 !important;
+            }
+            #s-mod3-game .m3g-options {
+              gap: 6px;
+              flex: 0 0 auto;
+            }
+            #s-mod3-game .m3g-opt {
+              padding: 8px 10px;
+              font-size: 11px !important;
+              line-height: 1.3 !important;
+              gap: 8px;
+              border-radius: 12px;
+            }
+            #s-mod3-game .m3g-opt-letter {
+              min-width: 24px;
+              height: 24px;
+              font-size: 11px;
+            }
+            #s-mod3-game .m3g-feedback {
+              min-height: 16px;
+              margin-top: 6px;
+              font-size: 11px;
+              flex-shrink: 0;
+            }
+            #s-mod3-game .m3g-hint { display: none; }
+          }
         </style>
 
         <div class="top-bar">
-          <span class="section-tag">🎮 DESAFIO</span>
-          <div class="slide-title" style="margin-top:6px">Quiz — <span>Módulo 3</span></div>
+          <div>
+            <span class="section-tag">🎮 DESAFIO</span>
+            <div class="slide-title" style="margin-top:6px">Quiz — <span>Módulo 3</span></div>
+          </div>
         </div>
 
         <div class="content-area">
@@ -13835,6 +14265,9 @@
 
       <!-- ── MÓDULO 4 INTRO ── -->
       <section class="slide mod-intro-slide" id="s-mod4">
+        <div class="mod-intro-mascot">
+          <img src="img/módulo 4.png" alt="Instrutor apresentando o Módulo 4">
+        </div>
         <div class="content-area mod-intro-area">
           <div class="mod-intro-inner">
             <div class="mod-intro-badge">Início do Módulo</div>
@@ -13927,7 +14360,7 @@
             background: #0b0e1c;
             border: 1px solid rgba(180, 194, 255, 0.16);
             box-shadow: 0 14px 34px rgba(0, 0, 0, 0.34);
-            cursor: default;
+            cursor: pointer;
             transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1),
                         border-color 0.3s ease,
                         box-shadow 0.35s ease;
@@ -13941,6 +14374,28 @@
             transform: translateY(-8px);
             border-color: rgba(255, 200, 55, 0.45);
             box-shadow: 0 22px 44px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 200, 55, 0.12);
+          }
+          #s-mod4-riscos .rk-card:focus-visible {
+            outline: 2px solid #B4C2FF;
+            outline-offset: 3px;
+          }
+          #s-mod4-riscos .rk-zoom {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 3;
+            width: 32px;
+            height: 32px;
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #C8D2FF;
+            background: rgba(8, 10, 24, 0.68);
+            border: 1px solid rgba(180, 194, 255, 0.35);
+            backdrop-filter: blur(4px);
+            opacity: 0.9;
+            pointer-events: none;
           }
           #s-mod4-riscos .rk-card::before {
             content: '';
@@ -14059,29 +14514,41 @@
             </p>
           </div>
           <div class="rk-grid">
-            <article class="rk-card">
+            <article class="rk-card" role="button" tabindex="0" aria-label="Ampliar foto: Piso Danificado">
               <span class="rk-num">01</span>
+              <span class="rk-zoom" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </span>
               <div class="rk-photo">
                 <img src="img/PISOS DANIFICADOS.png" alt="Piso metálico danificado">
                 <p class="rk-label">Piso Danificado</p>
               </div>
             </article>
-            <article class="rk-card">
+            <article class="rk-card" role="button" tabindex="0" aria-label="Ampliar foto: Fitas de Amarração Danificadas">
               <span class="rk-num">02</span>
+              <span class="rk-zoom" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </span>
               <div class="rk-photo">
                 <img src="img/FITAS DE AMARRAÇÃO.png" alt="Fitas de amarração danificadas">
                 <p class="rk-label">Fitas de Amarração Danificadas</p>
               </div>
             </article>
-            <article class="rk-card">
+            <article class="rk-card" role="button" tabindex="0" aria-label="Ampliar foto: Pallets Danificados">
               <span class="rk-num">03</span>
+              <span class="rk-zoom" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </span>
               <div class="rk-photo">
                 <img src="img/PALLETS DANIFICADOS.png" alt="Pallets de madeira danificados">
                 <p class="rk-label">Pallets Danificados</p>
               </div>
             </article>
-            <article class="rk-card">
+            <article class="rk-card" role="button" tabindex="0" aria-label="Ampliar foto: Embalagens com Produtos Danificados">
               <span class="rk-num">04</span>
+              <span class="rk-zoom" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </span>
               <div class="rk-photo">
                 <img src="img/EMBALAGENS DANIFICADOS.png" alt="Embalagens com produtos danificados">
                 <p class="rk-label">Embalagens com Produtos Danificados</p>
@@ -14882,6 +15349,9 @@
 
       <!-- ── MÓDULO 5 INTRO ── -->
       <section class="slide mod-intro-slide" id="s-mod5">
+        <div class="mod-intro-mascot">
+          <img src="img/módulo 5.png" alt="Instrutor apresentando o Módulo 5">
+        </div>
         <div class="content-area mod-intro-area">
           <div class="mod-intro-inner">
             <div class="mod-intro-badge">Início do Módulo</div>
@@ -14935,12 +15405,27 @@
             gap: 16px;
             padding: var(--rq-pad);
             border-radius: var(--rq-radius);
-            background: linear-gradient(160deg, #1c1e44 0%, #151736 45%, #0e1024 100%);
-            border: 1px solid rgba(180, 194, 255, 0.2);
-            box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
+            background: #ffffff;
+            border: 1px solid rgba(107, 122, 237, 0.18);
+            box-shadow: 0 10px 28px rgba(20, 16, 48, 0.12);
             box-sizing: border-box;
             min-height: 0;
             height: 100%;
+            overflow: hidden;
+            position: relative;
+          }
+          #s-mod5-requisitos .rq-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #6B7AED, #9AA6F5);
+          }
+          #s-mod5-requisitos .rq-card:nth-child(2)::before {
+            background: linear-gradient(90deg, #e6a800, #ffc837);
+          }
+          #s-mod5-requisitos .rq-card:nth-child(3)::before {
+            background: linear-gradient(90deg, #c0392b, #e74c3c);
           }
           #s-mod5-requisitos .rq-head {
             display: flex;
@@ -14959,19 +15444,19 @@
             font-family: var(--font-h);
             font-size: 17px;
             font-weight: 900;
-            color: #fff;
-            background: rgba(107, 122, 237, 0.22);
-            border: 1px solid rgba(180, 194, 255, 0.32);
+            color: #3b36b5;
+            background: rgba(107, 122, 237, 0.14);
+            border: 1px solid rgba(107, 122, 237, 0.28);
           }
           #s-mod5-requisitos .rq-card:nth-child(2) .rq-badge {
-            color: #ffc837;
-            background: rgba(255, 200, 55, 0.14);
-            border-color: rgba(255, 200, 55, 0.32);
+            color: #b8860b;
+            background: rgba(255, 200, 55, 0.18);
+            border-color: rgba(184, 134, 11, 0.28);
           }
           #s-mod5-requisitos .rq-card:nth-child(3) .rq-badge {
-            color: #ff8a80;
-            background: rgba(231, 76, 60, 0.14);
-            border-color: rgba(231, 76, 60, 0.32);
+            color: #c0392b;
+            background: rgba(231, 76, 60, 0.12);
+            border-color: rgba(192, 57, 43, 0.28);
           }
           #s-mod5-requisitos .rq-title {
             margin: 0;
@@ -14979,7 +15464,7 @@
             font-size: var(--rq-title);
             font-weight: 800;
             line-height: 1.25;
-            color: #fff;
+            color: #121428;
           }
           #s-mod5-requisitos .rq-items {
             list-style: none;
@@ -14989,6 +15474,8 @@
             flex-direction: column;
             gap: 12px;
             flex: 1;
+            min-height: 0;
+            overflow: auto;
           }
           #s-mod5-requisitos .rq-items li {
             display: flex;
@@ -14999,7 +15486,7 @@
             font-family: var(--font-p);
             font-size: var(--rq-body);
             line-height: 1.45;
-            color: rgba(255, 255, 255, 0.84);
+            color: #2a2f45;
           }
           #s-mod5-requisitos .rq-dot {
             width: 9px;
@@ -15012,32 +15499,115 @@
           #s-mod5-requisitos .rq-card:nth-child(2) .rq-dot { background: #ffc837; }
           #s-mod5-requisitos .rq-card:nth-child(3) .rq-dot { background: #e74c3c; }
           #s-mod5-requisitos .rq-items strong {
-            color: #fff;
+            color: #2A2D5C;
             font-weight: 700;
           }
           #s-mod5-requisitos .rq-note {
             margin-top: auto;
             padding-top: 12px;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(43, 47, 90, 0.12);
             font-family: var(--font-h);
             font-size: var(--rq-label);
             font-weight: 800;
             letter-spacing: 0.06em;
             text-transform: uppercase;
-            color: rgba(180, 194, 255, 0.75);
+            color: #3b36b5;
           }
-          #s-mod5-requisitos .rq-card:nth-child(2) .rq-note { color: rgba(255, 200, 55, 0.8); }
-          #s-mod5-requisitos .rq-card:nth-child(3) .rq-note { color: rgba(255, 138, 128, 0.85); }
+          #s-mod5-requisitos .rq-card:nth-child(2) .rq-note { color: #b8860b; }
+          #s-mod5-requisitos .rq-card:nth-child(3) .rq-note { color: #c0392b; }
+          #s-mod5-requisitos .rq-carousel-nav { display: none; }
           @media (max-width: 900px) {
             #s-mod5-requisitos .rq-grid {
               grid-template-columns: 1fr;
               min-height: 0;
             }
-            #s-mod5-requisitos .rq-content {
-              align-items: flex-start;
-              overflow-y: auto;
+            #s-mod5-requisitos .rq-card {
+              height: auto;
+              overflow: hidden;
             }
-            #s-mod5-requisitos .rq-card { height: auto; }
+          }
+          @media screen and (max-width: 768px) and (orientation: portrait) {
+            @keyframes rqFadeIn {
+              from { opacity: 0; transform: translateX(16px); }
+              to { opacity: 1; transform: translateX(0); }
+            }
+            #s-mod5-requisitos { overflow: hidden; }
+            #s-mod5-requisitos .slide-title { font-size: 22px !important; }
+            #s-mod5-requisitos .slide-subtitle { display: none; }
+            #s-mod5-requisitos .rq-content {
+              overflow: hidden !important;
+              justify-content: center !important;
+              padding: 8px 16px 88px !important;
+            }
+            #s-mod5-requisitos .rq-grid {
+              display: flex;
+              flex-direction: column;
+              height: 100%;
+              gap: 10px;
+              width: 100%;
+              max-width: 420px;
+              margin: 0 auto;
+            }
+            #s-mod5-requisitos .rq-card {
+              display: none !important;
+            }
+            #s-mod5-requisitos .rq-card.rq-slide-active {
+              display: flex !important;
+              flex: 1 1 auto;
+              min-height: 0;
+              height: auto;
+              overflow: hidden;
+              padding: 16px 16px 14px;
+              gap: 12px;
+              animation: rqFadeIn 0.28s ease forwards;
+            }
+            #s-mod5-requisitos .rq-title { font-size: 18px !important; }
+            #s-mod5-requisitos .rq-items {
+              flex: 1 1 auto;
+              gap: 8px;
+              min-height: 0;
+              overflow: auto;
+            }
+            #s-mod5-requisitos .rq-items li {
+              font-size: 14.5px !important;
+              line-height: 1.35 !important;
+            }
+            #s-mod5-requisitos .rq-note { padding-top: 10px; flex-shrink: 0; }
+            #s-mod5-requisitos .rq-carousel-nav {
+              display: flex !important;
+              align-items: center;
+              justify-content: center;
+              gap: 16px;
+              width: 100%;
+              flex-shrink: 0;
+            }
+            #s-mod5-requisitos .rq-nav-btn {
+              background: linear-gradient(135deg, #6B7AED, #2A2D5C);
+              color: #fff;
+              border: none;
+              border-radius: 50%;
+              width: 46px;
+              height: 46px;
+              min-width: 46px;
+              min-height: 46px;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              box-shadow: 0 6px 16px rgba(180, 194, 255, 0.4);
+              touch-action: manipulation;
+            }
+            #s-mod5-requisitos .rq-nav-btn:active:not(:disabled) { transform: scale(0.94); }
+            #s-mod5-requisitos .rq-nav-btn:disabled { opacity: 0.3; cursor: default; }
+            #s-mod5-requisitos .rq-nav-btn svg { pointer-events: none; }
+            #s-mod5-requisitos .rq-counter {
+              font-family: var(--font-h);
+              font-size: 14px;
+              font-weight: 800;
+              color: rgba(255,255,255,0.9);
+              min-width: 56px;
+              text-align: center;
+            }
           }
           @media (max-height: 720px) and (min-width: 901px) {
             #s-mod5-requisitos .rq-grid { min-height: calc(100dvh - 210px); }
@@ -15058,7 +15628,7 @@
         </div>
         <div class="content-area rq-content">
           <div class="rq-grid">
-            <article class="rq-card">
+            <article class="rq-card rq-slide rq-slide-active">
               <div class="rq-head">
                 <span class="rq-badge">1</span>
                 <h3 class="rq-title">Acesso ao Sistema</h3>
@@ -15070,7 +15640,7 @@
               <div class="rq-note">Acesso controlado</div>
             </article>
 
-            <article class="rq-card">
+            <article class="rq-card rq-slide">
               <div class="rq-head">
                 <span class="rq-badge">2</span>
                 <h3 class="rq-title">Treinamentos Mínimos</h3>
@@ -15085,7 +15655,7 @@
               <div class="rq-note">Capacitação obrigatória</div>
             </article>
 
-            <article class="rq-card">
+            <article class="rq-card rq-slide">
               <div class="rq-head">
                 <span class="rq-badge">3</span>
                 <h3 class="rq-title">Brigada de Emergência</h3>
@@ -15095,6 +15665,15 @@
               </ul>
               <div class="rq-note">Mínimo: 2 por turno</div>
             </article>
+            <div class="rq-carousel-nav" id="rq-carousel-nav">
+              <button type="button" class="rq-nav-btn" id="rq-prev" aria-label="Anterior" onclick="rqCarouselNav(-1)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+              <span class="rq-counter" id="rq-counter">1 / 3</span>
+              <button type="button" class="rq-nav-btn" id="rq-next" aria-label="Próximo" onclick="rqCarouselNav(1)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+              </button>
+            </div>
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
@@ -15160,11 +15739,22 @@
             box-sizing: border-box;
             min-width: 0;
             text-align: left;
+            position: relative;
+            overflow: hidden;
+            background: #ffffff;
+            box-shadow: 0 10px 28px rgba(20, 16, 48, 0.12);
+          }
+          #s-mod5-it .it-panel::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
           }
           #s-mod5-it .it-access {
-            background: linear-gradient(165deg, #1b1e46 0%, #121632 100%);
-            border: 1px solid rgba(180, 194, 255, 0.22);
-            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+            border: 1px solid rgba(107, 122, 237, 0.18);
+          }
+          #s-mod5-it .it-access::before {
+            background: linear-gradient(90deg, #6B7AED, #9AA6F5);
           }
           #s-mod5-it .it-head {
             display: flex;
@@ -15186,14 +15776,14 @@
             letter-spacing: 0.04em;
           }
           #s-mod5-it .it-access .it-step {
-            color: #B4C2FF;
-            background: rgba(107, 122, 237, 0.2);
-            border: 1px solid rgba(180, 194, 255, 0.35);
+            color: #3b36b5;
+            background: rgba(107, 122, 237, 0.14);
+            border: 1px solid rgba(107, 122, 237, 0.28);
           }
           #s-mod5-it .it-train .it-step {
-            color: #ffc837;
-            background: rgba(255, 200, 55, 0.14);
-            border: 1px solid rgba(255, 200, 55, 0.35);
+            color: #b8860b;
+            background: rgba(255, 200, 55, 0.18);
+            border: 1px solid rgba(184, 134, 11, 0.28);
           }
           #s-mod5-it .it-kicker {
             margin: 0;
@@ -15202,7 +15792,7 @@
             font-weight: 800;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: rgba(180, 194, 255, 0.7);
+            color: #3b36b5;
           }
           #s-mod5-it .it-title {
             margin: 2px 0 0;
@@ -15210,7 +15800,7 @@
             font-size: clamp(18px, 2.8cqh, 22px);
             font-weight: 800;
             line-height: 1.2;
-            color: #fff;
+            color: #121428;
           }
           #s-mod5-it .it-rules {
             display: grid;
@@ -15224,8 +15814,8 @@
             margin: 0;
             padding: 12px 14px;
             border-radius: 14px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: #f4f6ff;
+            border: 1px solid rgba(107, 122, 237, 0.16);
           }
           #s-mod5-it .it-rule::before {
             content: '';
@@ -15240,21 +15830,22 @@
             font-family: var(--font-p);
             font-size: clamp(15px, 2.3cqh, 17px);
             line-height: 1.45;
-            color: rgba(255, 255, 255, 0.9);
+            color: #2a2f45;
             text-align: left;
             text-wrap: pretty;
           }
-          #s-mod5-it .it-rule strong { color: #fff; font-weight: 700; }
+          #s-mod5-it .it-rule strong { color: #2A2D5C; font-weight: 700; }
           #s-mod5-it .it-brigade {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             gap: 12px;
-            background: linear-gradient(160deg, #3a1520 0%, #1a0d16 55%, #120c16 100%);
-            border: 1px solid rgba(231, 76, 60, 0.38);
-            box-shadow: 0 16px 36px rgba(80, 12, 20, 0.28);
+            border: 1px solid rgba(192, 57, 43, 0.22);
           }
-          #s-mod5-it .it-brigade .it-kicker { color: rgba(255, 138, 128, 0.9); }
+          #s-mod5-it .it-brigade::before {
+            background: linear-gradient(90deg, #c0392b, #e74c3c);
+          }
+          #s-mod5-it .it-brigade .it-kicker { color: #c0392b; }
           #s-mod5-it .it-hero {
             display: flex;
             align-items: center;
@@ -15265,7 +15856,7 @@
             font-size: clamp(56px, 10cqh, 78px);
             font-weight: 900;
             line-height: 0.9;
-            color: #ff8a80;
+            color: #c0392b;
             letter-spacing: -0.04em;
             flex-shrink: 0;
           }
@@ -15274,11 +15865,11 @@
             font-family: var(--font-p);
             font-size: clamp(14.5px, 2.2cqh, 16.5px);
             line-height: 1.4;
-            color: rgba(255, 255, 255, 0.9);
+            color: #2a2f45;
             text-align: left;
             text-wrap: pretty;
           }
-          #s-mod5-it .it-hero strong { color: #fff; }
+          #s-mod5-it .it-hero strong { color: #2A2D5C; }
           #s-mod5-it .it-pill {
             align-self: flex-start;
             margin: 0;
@@ -15289,16 +15880,18 @@
             font-weight: 800;
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            color: #ffc2bc;
-            background: rgba(231, 76, 60, 0.16);
-            border: 1px solid rgba(231, 76, 60, 0.28);
+            color: #c0392b;
+            background: rgba(231, 76, 60, 0.1);
+            border: 1px solid rgba(192, 57, 43, 0.22);
           }
           #s-mod5-it .it-train {
             grid-column: 1 / -1;
-            background: linear-gradient(165deg, #1c1a32 0%, #141426 100%);
-            border: 1px solid rgba(255, 200, 55, 0.22);
-            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+            border: 1px solid rgba(184, 134, 11, 0.2);
           }
+          #s-mod5-it .it-train::before {
+            background: linear-gradient(90deg, #e6a800, #ffc837);
+          }
+          #s-mod5-it .it-train .it-kicker { color: #b8860b; }
           #s-mod5-it .it-chips {
             display: flex;
             flex-wrap: wrap;
@@ -15312,25 +15905,125 @@
             min-width: 0;
             padding: 12px 14px;
             border-radius: 14px;
-            background: rgba(255, 200, 55, 0.07);
-            border: 1px solid rgba(255, 200, 55, 0.2);
+            background: #fff8e8;
+            border: 1px solid rgba(184, 134, 11, 0.18);
           }
           #s-mod5-it .it-chip b {
             font-family: var(--font-h);
             font-size: clamp(13px, 2cqh, 15px);
             font-weight: 800;
-            color: #ffc837;
+            color: #b8860b;
           }
           #s-mod5-it .it-chip span {
             font-family: var(--font-p);
             font-size: clamp(13px, 1.9cqh, 14.5px);
             line-height: 1.3;
-            color: rgba(255, 255, 255, 0.86);
+            color: #2a2f45;
             text-align: left;
           }
           @media (max-width: 900px) {
             #s-mod5-it .it-bento { grid-template-columns: 1fr; }
-            #s-mod5-it .it-content { overflow-y: auto; align-items: flex-start; }
+          }
+          #s-mod5-it .it-carousel-nav { display: none; }
+          @media screen and (max-width: 768px) and (orientation: portrait) {
+            @keyframes itFadeIn {
+              from { opacity: 0; transform: translateX(16px); }
+              to { opacity: 1; transform: translateX(0); }
+            }
+            #s-mod5-it { overflow: hidden; }
+            #s-mod5-it .slide-title { font-size: 22px !important; }
+            #s-mod5-it .slide-subtitle { display: none; }
+            #s-mod5-it .it-content {
+              overflow: hidden !important;
+              justify-content: center !important;
+              padding: 8px 16px 88px !important;
+            }
+            #s-mod5-it .it-bento {
+              display: flex;
+              flex-direction: column;
+              grid-template-columns: none;
+              grid-template-rows: none;
+              height: 100%;
+              gap: 10px;
+              width: 100%;
+              max-width: 420px;
+              margin: 0 auto;
+            }
+            #s-mod5-it .it-panel {
+              display: none !important;
+            }
+            #s-mod5-it .it-panel.it-slide-active {
+              display: flex !important;
+              flex-direction: column;
+              flex: 1 1 auto;
+              min-height: 0;
+              overflow: hidden;
+              padding: 16px 14px;
+              animation: itFadeIn 0.28s ease forwards;
+            }
+            #s-mod5-it .it-train.it-slide-active {
+              grid-column: auto;
+              overflow: hidden;
+              padding: 14px 14px 12px;
+            }
+            #s-mod5-it .it-head { margin-bottom: 10px; flex-shrink: 0; }
+            #s-mod5-it .it-title { font-size: 17px !important; }
+            #s-mod5-it .it-rule p,
+            #s-mod5-it .it-hero p { font-size: 15px !important; line-height: 1.4 !important; }
+            #s-mod5-it .it-num { font-size: 64px; }
+            #s-mod5-it .it-chips {
+              display: flex;
+              flex-direction: column;
+              flex-wrap: nowrap;
+              gap: 6px;
+              flex: 1 1 auto;
+              min-height: 0;
+              overflow: hidden;
+            }
+            #s-mod5-it .it-chip {
+              flex: 1 1 0;
+              min-height: 0;
+              min-width: 0;
+              padding: 8px 12px;
+              justify-content: center;
+            }
+            #s-mod5-it .it-chip b { font-size: 13px; }
+            #s-mod5-it .it-chip span { font-size: 12px !important; line-height: 1.25 !important; }
+            #s-mod5-it .it-carousel-nav {
+              display: flex !important;
+              align-items: center;
+              justify-content: center;
+              gap: 16px;
+              width: 100%;
+              flex-shrink: 0;
+            }
+            #s-mod5-it .it-nav-btn {
+              background: linear-gradient(135deg, #6B7AED, #2A2D5C);
+              color: #fff;
+              border: none;
+              border-radius: 50%;
+              width: 46px;
+              height: 46px;
+              min-width: 46px;
+              min-height: 46px;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              box-shadow: 0 6px 16px rgba(180, 194, 255, 0.4);
+              touch-action: manipulation;
+            }
+            #s-mod5-it .it-nav-btn:active:not(:disabled) { transform: scale(0.94); }
+            #s-mod5-it .it-nav-btn:disabled { opacity: 0.3; cursor: default; }
+            #s-mod5-it .it-nav-btn svg { pointer-events: none; }
+            #s-mod5-it .it-counter {
+              font-family: var(--font-h);
+              font-size: 14px;
+              font-weight: 800;
+              color: rgba(255,255,255,0.9);
+              min-width: 56px;
+              text-align: center;
+            }
           }
         </style>
         <div class="top-bar">
@@ -15341,7 +16034,7 @@
         </div>
         <div class="content-area it-content">
           <div class="it-bento">
-            <article class="it-panel it-access">
+            <article class="it-panel it-access it-slide it-slide-active">
               <div class="it-head">
                 <div class="it-step">01</div>
                 <div>
@@ -15358,7 +16051,7 @@
                 </div>
               </div>
             </article>
-            <article class="it-panel it-brigade">
+            <article class="it-panel it-brigade it-slide">
               <div>
                 <p class="it-kicker">03 · Emergência</p>
                 <h3 class="it-title">Brigada de Emergência</h3>
@@ -15369,7 +16062,7 @@
               </div>
               <p class="it-pill">Obrigatório em todo turno</p>
             </article>
-            <article class="it-panel it-train">
+            <article class="it-panel it-train it-slide">
               <div class="it-head">
                 <div class="it-step">02</div>
                 <div>
@@ -15385,6 +16078,15 @@
                 <div class="it-chip"><b>Reciclagem</b><span>Anual ou a cada atualização de sistema</span></div>
               </div>
             </article>
+            <div class="it-carousel-nav" id="it-carousel-nav">
+              <button type="button" class="it-nav-btn" id="it-prev" aria-label="Anterior" onclick="itCarouselNav(-1)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+              <span class="it-counter" id="it-counter">1 / 3</span>
+              <button type="button" class="it-nav-btn" id="it-next" aria-label="Próximo" onclick="itCarouselNav(1)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+              </button>
+            </div>
           </div>
         </div>
         <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
@@ -16454,11 +17156,66 @@
             font-family: var(--font-h); font-size: 11px; color: rgba(255,255,255,0.5);
             position: relative; z-index: 1;
           }
+          @media screen and (max-width: 768px) and (orientation: portrait) {
+            #s-mod5-game { overflow: hidden; }
+            #s-mod5-game .content-area {
+              padding: 4px 12px calc(92px + env(safe-area-inset-bottom, 0px)) !important;
+              overflow: hidden !important;
+              justify-content: center !important;
+              align-items: stretch !important;
+            }
+            #s-mod5-game .m5g-wrap.is-play {
+              flex: 1 1 auto;
+              width: 100% !important;
+              max-width: 100% !important;
+              min-height: 0;
+              max-height: 100%;
+            }
+            #s-mod5-game #m5g-play {
+              padding: 10px 12px;
+              overflow: hidden;
+              min-height: 0;
+            }
+            #s-mod5-game .m5g-top-row { margin-bottom: 4px; }
+            #s-mod5-game .m5g-label { font-size: 9px !important; }
+            #s-mod5-game .m5g-counter { font-size: 11px; padding: 2px 10px; }
+            #s-mod5-game .m5g-bar-bg { height: 6px; margin-bottom: 8px; }
+            #s-mod5-game .m5g-card { padding: 8px 10px; margin-bottom: 8px; }
+            #s-mod5-game .m5g-emoji { font-size: 18px; margin-bottom: 2px; }
+            #s-mod5-game .m5g-round-title { font-size: 15px !important; }
+            #s-mod5-game .m5g-round-instr {
+              font-size: 11px !important;
+              line-height: 1.3 !important;
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+            }
+            #s-mod5-game #m5g-stage { min-height: 0; }
+            #s-mod5-game .m5g-grid { gap: 6px; }
+            #s-mod5-game .m5g-tile {
+              font-size: 10px !important;
+              line-height: 1.2 !important;
+              padding: 5px 6px;
+              gap: 3px;
+              border-radius: 10px;
+              overflow: hidden;
+            }
+            #s-mod5-game .m5g-tile-emoji { font-size: 16px !important; }
+            #s-mod5-game .m5g-confirm {
+              padding: 10px 14px;
+              font-size: 12px !important;
+              margin-top: 8px;
+            }
+            #s-mod5-game .m5g-feedback { font-size: 11px; margin-top: 4px; }
+          }
         </style>
 
         <div class="top-bar">
-          <span class="section-tag">🎮 DESAFIO</span>
-          <div class="slide-title" style="margin-top:6px">Missão — <span>Turno Seguro</span></div>
+          <div>
+            <span class="section-tag">🎮 DESAFIO</span>
+            <div class="slide-title" style="margin-top:6px">Missão — <span>Turno Seguro</span></div>
+          </div>
         </div>
 
         <div class="content-area">
@@ -16512,6 +17269,9 @@
 
       <!-- ── MÓDULO 6 INTRO ── -->
       <section class="slide mod-intro-slide" id="s-mod6">
+        <div class="mod-intro-mascot">
+          <img src="img/módulo 6.png" alt="Instrutor apresentando o Módulo 6">
+        </div>
         <div class="content-area mod-intro-area">
           <div class="mod-intro-inner">
             <div class="mod-intro-badge">Início do Módulo</div>
@@ -16525,23 +17285,598 @@
           </svg></div>
       </section>
 
-      <!-- ── S-MOD6-VIDEO: VÍDEO — O Pit Stop e as Regras de Entrada ── -->
+      <!-- ── S-MOD6-EMPILHAMENTO: CONTEÚDO — Empilhamento Manual de Caixas em Palete ── -->
+      <section class="slide" id="s-mod6-empilhamento">
+        <style>
+          #s-mod6-empilhamento { overflow: hidden; }
+          #s-mod6-empilhamento .top-bar { flex-shrink: 0; }
+          #s-mod6-empilhamento .em-content {
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            width: 100%;
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 8px clamp(24px, 4vw, 48px) clamp(96px, 13cqh, 120px);
+            box-sizing: border-box;
+            min-height: 0;
+            flex: 1 1 auto;
+            container-type: size;
+          }
+          #s-mod6-empilhamento .em-shell {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(320px, 1.15fr);
+            grid-template-rows: auto 1fr;
+            gap: 12px;
+            width: 100%;
+            min-height: 0;
+            align-items: stretch;
+          }
+          #s-mod6-empilhamento .em-lead {
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 10px 14px;
+            border-radius: 14px;
+            background: linear-gradient(145deg, rgba(28, 30, 68, 0.95), rgba(12, 14, 32, 0.92));
+            border: 1px solid rgba(46, 204, 113, 0.28);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+          }
+          #s-mod6-empilhamento .em-lead-icon {
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(46, 204, 113, 0.16);
+            border: 1px solid rgba(46, 204, 113, 0.35);
+            color: #2ecc71;
+          }
+          #s-mod6-empilhamento .em-lead p {
+            margin: 0;
+            font-family: var(--font-p);
+            font-size: clamp(14px, 2.2cqh, 16.5px);
+            line-height: 1.45;
+            color: rgba(255, 255, 255, 0.88);
+            text-align: left;
+          }
+          #s-mod6-empilhamento .em-lead strong { color: #fff; font-weight: 800; }
+          #s-mod6-empilhamento .em-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 7px;
+            min-height: 0;
+          }
+          #s-mod6-empilhamento .em-item {
+            display: grid;
+            grid-template-columns: 26px minmax(0, 1fr);
+            gap: 8px;
+            align-items: start;
+            margin: 0;
+            padding: 8px 10px;
+            border-radius: 12px;
+            background:
+              radial-gradient(120% 90% at 8% 0%, rgba(46, 204, 113, 0.16), transparent 55%),
+              linear-gradient(165deg, #1c1e44 0%, #121632 100%);
+            border: 1px solid rgba(46, 204, 113, 0.42);
+            box-shadow:
+              0 0 0 1px rgba(46, 204, 113, 0.12),
+              0 8px 22px rgba(0, 0, 0, 0.28),
+              0 0 18px rgba(46, 204, 113, 0.22);
+            box-sizing: border-box;
+          }
+          #s-mod6-empilhamento .em-check {
+            width: 20px;
+            height: 20px;
+            margin-top: 1px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #27ae60;
+            color: #fff;
+            flex-shrink: 0;
+            box-shadow: 0 0 10px rgba(46, 204, 113, 0.55);
+          }
+          #s-mod6-empilhamento .em-check svg { width: 11px; height: 11px; }
+          #s-mod6-empilhamento .em-item p {
+            margin: 0;
+            font-family: var(--font-p);
+            font-size: clamp(12.5px, 2cqh, 14.5px);
+            line-height: 1.35;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: left;
+          }
+          #s-mod6-empilhamento .em-item strong { color: #fff; font-weight: 800; }
+          #s-mod6-empilhamento .em-photo {
+            position: relative;
+            width: 100%;
+            min-height: min(360px, 46cqh);
+            height: 100%;
+            aspect-ratio: 4 / 3;
+            justify-self: stretch;
+            border-radius: 18px;
+            overflow: hidden;
+            background: #0d1a18;
+            border: 1px solid rgba(46, 204, 113, 0.32);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.32);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+          }
+          #s-mod6-empilhamento .em-photo img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: left top;
+          }
+          #s-mod6-empilhamento .em-caption {
+            position: relative;
+            z-index: 1;
+            padding: 48px 16px 16px;
+            background: linear-gradient(180deg, transparent 0%, rgba(8, 16, 14, 0.92) 55%);
+          }
+          #s-mod6-empilhamento .em-badge {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            left: auto;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(39, 174, 96, 0.92);
+            color: #fff;
+            font-family: var(--font-h);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+          }
+          #s-mod6-empilhamento .em-photo h3 {
+            margin: 0 0 4px;
+            font-family: var(--font-h);
+            font-size: clamp(15px, 2.4cqh, 18px);
+            font-weight: 800;
+            color: #fff;
+          }
+          #s-mod6-empilhamento .em-photo span {
+            font-family: var(--font-p);
+            font-size: clamp(12px, 1.9cqh, 14px);
+            color: rgba(255, 255, 255, 0.72);
+            line-height: 1.35;
+          }
+          #s-mod6-empilhamento .em-carousel-nav { display: none; }
+          @media (max-width: 900px) {
+            #s-mod6-empilhamento .em-shell { grid-template-columns: 1fr; }
+            #s-mod6-empilhamento .em-photo { min-height: 240px; aspect-ratio: 4 / 3; }
+            #s-mod6-empilhamento .em-list { grid-template-columns: 1fr; }
+          }
+          @media screen and (max-width: 768px) and (orientation: portrait) {
+            @keyframes emFadeIn {
+              from { opacity: 0; transform: translateX(16px); }
+              to { opacity: 1; transform: translateX(0); }
+            }
+            #s-mod6-empilhamento { overflow: hidden; }
+            #s-mod6-empilhamento .slide-title { font-size: 20px !important; }
+            #s-mod6-empilhamento .slide-subtitle { display: none; }
+            #s-mod6-empilhamento .em-content {
+              overflow: hidden !important;
+              justify-content: center !important;
+              padding: 8px 16px 88px !important;
+            }
+            #s-mod6-empilhamento .em-shell {
+              display: flex;
+              flex-direction: column;
+              grid-template-columns: none;
+              grid-template-rows: none;
+              height: 100%;
+              gap: 10px;
+              width: 100%;
+              max-width: 420px;
+              margin: 0 auto;
+            }
+            #s-mod6-empilhamento .em-lead {
+              flex: 0 0 auto;
+              grid-column: auto;
+              padding: 10px 12px;
+              gap: 8px;
+            }
+            #s-mod6-empilhamento .em-lead p { font-size: 13px !important; line-height: 1.4 !important; }
+            #s-mod6-empilhamento .em-list { display: contents; }
+            #s-mod6-empilhamento .em-photo,
+            #s-mod6-empilhamento .em-item { display: none !important; }
+            #s-mod6-empilhamento .em-photo.em-slide-active {
+              display: flex !important;
+              flex: 1 1 auto;
+              min-height: 0;
+              height: auto;
+              aspect-ratio: auto;
+              animation: emFadeIn 0.28s ease forwards;
+            }
+            #s-mod6-empilhamento .em-item.em-slide-active {
+              display: grid !important;
+              flex: 1 1 auto;
+              min-height: 0;
+              align-content: center;
+              padding: 22px 18px;
+              gap: 14px;
+              animation: emFadeIn 0.28s ease forwards;
+            }
+            #s-mod6-empilhamento .em-item p { font-size: 16px !important; line-height: 1.45 !important; }
+            #s-mod6-empilhamento .em-carousel-nav {
+              display: flex !important;
+              align-items: center;
+              justify-content: center;
+              gap: 16px;
+              width: 100%;
+              flex-shrink: 0;
+            }
+            #s-mod6-empilhamento .em-nav-btn {
+              background: linear-gradient(135deg, #6B7AED, #2A2D5C);
+              color: #fff;
+              border: none;
+              border-radius: 50%;
+              width: 46px;
+              height: 46px;
+              min-width: 46px;
+              min-height: 46px;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              box-shadow: 0 6px 16px rgba(180, 194, 255, 0.4);
+              touch-action: manipulation;
+            }
+            #s-mod6-empilhamento .em-nav-btn:active:not(:disabled) { transform: scale(0.94); }
+            #s-mod6-empilhamento .em-nav-btn:disabled { opacity: 0.3; cursor: default; }
+            #s-mod6-empilhamento .em-nav-btn svg { pointer-events: none; }
+            #s-mod6-empilhamento .em-counter {
+              font-family: var(--font-h);
+              font-size: 14px;
+              font-weight: 800;
+              color: rgba(255,255,255,0.9);
+              min-width: 56px;
+              text-align: center;
+            }
+          }
+        </style>
+        <div class="top-bar">
+          <div><span class="section-tag">📦 IT</span>
+            <div class="slide-title" style="margin-top:6px">Empilhamento Manual de <span>Caixas em Palete</span></div>
+            <div class="slide-subtitle">Instruções de Atividade — Empilhamento Ergonômico, Regras de Conduta e Recomendações SESMT</div>
+          </div>
+        </div>
+        <div class="content-area em-content">
+          <div class="em-shell">
+            <div class="em-lead">
+              <div class="em-lead-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <p>Padronização do empilhamento manual de caixas em paletes, garantindo <strong>segurança</strong>, <strong>estabilidade da carga</strong> e <strong>prevenção de acidentes</strong>.</p>
+            </div>
+            <div class="em-list">
+              <article class="em-item em-slide"><span class="em-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p>Baixar somente <strong>uma caixa por vez</strong> para o palete.</p></article>
+              <article class="em-item em-slide"><span class="em-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p>Posicionar a caixa <strong>alinhada e estável</strong> antes da próxima.</p></article>
+              <article class="em-item em-slide"><span class="em-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p>Manter o palete em local <strong>nivelado</strong> e em boas condições.</p></article>
+              <article class="em-item em-slide"><span class="em-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p>Respeitar o <strong>limite de empilhamento</strong> do produto e do palete.</p></article>
+              <article class="em-item em-slide"><span class="em-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p>Técnica correta: <strong>joelhos flexionados</strong> e coluna ereta.</p></article>
+              <article class="em-item em-slide"><span class="em-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p>Caixa pesada: <strong>solicitar apoio</strong>.</p></article>
+              <article class="em-item em-slide"><span class="em-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p><strong>Jamais ficar sobre o palete</strong> — risco de torção no tornozelo.</p></article>
+              <article class="em-item em-slide"><span class="em-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p>Pés <strong>afastados do palete</strong> na baia — risco de queda de material.</p></article>
+            </div>
+            <aside class="em-photo em-slide em-slide-active">
+              <img src="img/certo.png" alt="Colaborador posicionando uma caixa alinhada no palete">
+              <div class="em-badge">✓ Procedimento correto</div>
+              <div class="em-caption">
+                <h3>Uma caixa por vez</h3>
+                <span>Alinhada, estável e com o palete no nível do piso.</span>
+              </div>
+            </aside>
+            <div class="em-carousel-nav" id="em-carousel-nav">
+              <button type="button" class="em-nav-btn" id="em-prev" aria-label="Anterior" onclick="emCarouselNav(-1)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+              <span class="em-counter" id="em-counter">1 / 9</span>
+              <button type="button" class="em-nav-btn" id="em-next" aria-label="Próximo" onclick="emCarouselNav(1)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
+          </svg></div>
+      </section>
+
+      <!-- ── S-MOD6-PROIBIDO: CONTEÚDO — O que não fazer no empilhamento ── -->
+      <section class="slide" id="s-mod6-proibido">
+        <style>
+          #s-mod6-proibido { overflow: hidden; }
+          #s-mod6-proibido .top-bar { flex-shrink: 0; }
+          #s-mod6-proibido .pb-content {
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            width: 100%;
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 6px clamp(16px, 2.6vw, 32px) clamp(96px, 13cqh, 124px);
+            box-sizing: border-box;
+            min-height: 0;
+            flex: 1 1 auto;
+            container-type: size;
+          }
+          #s-mod6-proibido .pb-shell {
+            display: grid;
+            grid-template-columns: minmax(360px, 1.15fr) minmax(0, 1fr);
+            gap: 16px;
+            width: 100%;
+            min-height: 0;
+          }
+          #s-mod6-proibido .pb-photo {
+            position: relative;
+            min-height: min(420px, 52cqh);
+            border-radius: 20px;
+            overflow: hidden;
+            background: #1a0d16;
+            border: 1px solid rgba(231, 76, 60, 0.38);
+            box-shadow: 0 16px 36px rgba(80, 12, 20, 0.28);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+          }
+          #s-mod6-proibido .pb-photo img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+          #s-mod6-proibido .pb-caption {
+            position: relative;
+            z-index: 1;
+            padding: 48px 16px 16px;
+            background: linear-gradient(180deg, transparent 0%, rgba(20, 8, 12, 0.92) 55%);
+          }
+          #s-mod6-proibido .pb-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            right: auto;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: rgba(231, 76, 60, 0.95);
+            color: #fff;
+            font-family: var(--font-h);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+          }
+          #s-mod6-proibido .pb-photo h3 {
+            margin: 0 0 4px;
+            font-family: var(--font-h);
+            font-size: clamp(16px, 2.6cqh, 20px);
+            font-weight: 800;
+            color: #fff;
+          }
+          #s-mod6-proibido .pb-photo span {
+            font-family: var(--font-p);
+            font-size: clamp(12px, 1.9cqh, 14px);
+            color: rgba(255, 255, 255, 0.72);
+            line-height: 1.35;
+          }
+          #s-mod6-proibido .pb-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            min-height: 0;
+          }
+          #s-mod6-proibido .pb-kicker {
+            margin: 0;
+            font-family: var(--font-h);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255, 138, 128, 0.9);
+          }
+          #s-mod6-proibido .pb-item {
+            display: grid;
+            grid-template-columns: 32px minmax(0, 1fr);
+            gap: 12px;
+            align-items: start;
+            flex: 1 1 auto;
+            margin: 0;
+            padding: 12px 14px;
+            border-radius: 16px;
+            background:
+              radial-gradient(120% 90% at 8% 0%, rgba(231, 76, 60, 0.18), transparent 55%),
+              linear-gradient(165deg, #2a1620 0%, #161018 100%);
+            border: 1px solid rgba(231, 76, 60, 0.5);
+            box-shadow:
+              0 0 0 1px rgba(231, 76, 60, 0.14),
+              0 8px 22px rgba(0, 0, 0, 0.28),
+              0 0 18px rgba(231, 76, 60, 0.28);
+            box-sizing: border-box;
+          }
+          #s-mod6-proibido .pb-no {
+            width: 26px;
+            height: 26px;
+            margin-top: 1px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e74c3c;
+            color: #fff;
+            flex-shrink: 0;
+            box-shadow: 0 0 10px rgba(231, 76, 60, 0.6);
+          }
+          #s-mod6-proibido .pb-no svg { width: 13px; height: 13px; }
+          #s-mod6-proibido .pb-item p {
+            margin: 0;
+            font-family: var(--font-p);
+            font-size: clamp(14px, 2.3cqh, 16.5px);
+            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.92);
+            text-align: left;
+          }
+          #s-mod6-proibido .pb-item strong { color: #fff; font-weight: 800; }
+          #s-mod6-proibido .pb-carousel-nav { display: none; }
+          @media (max-width: 900px) {
+            #s-mod6-proibido .pb-shell { grid-template-columns: 1fr; }
+            #s-mod6-proibido .pb-photo { min-height: 240px; }
+          }
+          @media screen and (max-width: 768px) and (orientation: portrait) {
+            @keyframes pbFadeIn {
+              from { opacity: 0; transform: translateX(16px); }
+              to { opacity: 1; transform: translateX(0); }
+            }
+            #s-mod6-proibido { overflow: hidden; }
+            #s-mod6-proibido .slide-title { font-size: 22px !important; }
+            #s-mod6-proibido .slide-subtitle { display: none; }
+            #s-mod6-proibido .pb-content {
+              overflow: hidden !important;
+              justify-content: center !important;
+              padding: 8px 16px 88px !important;
+            }
+            #s-mod6-proibido .pb-shell {
+              display: flex;
+              flex-direction: column;
+              height: 100%;
+              gap: 10px;
+              width: 100%;
+              max-width: 420px;
+              margin: 0 auto;
+            }
+            #s-mod6-proibido .pb-list { display: contents; }
+            #s-mod6-proibido .pb-kicker { display: none; }
+            #s-mod6-proibido .pb-photo,
+            #s-mod6-proibido .pb-item { display: none !important; }
+            #s-mod6-proibido .pb-photo.pb-slide-active {
+              display: flex !important;
+              flex: 1 1 auto;
+              min-height: 0;
+              animation: pbFadeIn 0.28s ease forwards;
+            }
+            #s-mod6-proibido .pb-item.pb-slide-active {
+              display: grid !important;
+              flex: 1 1 auto;
+              min-height: 0;
+              align-content: center;
+              padding: 22px 18px;
+              gap: 14px;
+              animation: pbFadeIn 0.28s ease forwards;
+            }
+            #s-mod6-proibido .pb-item p { font-size: 16px !important; line-height: 1.45 !important; }
+            #s-mod6-proibido .pb-carousel-nav {
+              display: flex !important;
+              align-items: center;
+              justify-content: center;
+              gap: 16px;
+              width: 100%;
+              flex-shrink: 0;
+            }
+            #s-mod6-proibido .pb-nav-btn {
+              background: linear-gradient(135deg, #6B7AED, #2A2D5C);
+              color: #fff;
+              border: none;
+              border-radius: 50%;
+              width: 46px;
+              height: 46px;
+              min-width: 46px;
+              min-height: 46px;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              box-shadow: 0 6px 16px rgba(180, 194, 255, 0.4);
+              touch-action: manipulation;
+            }
+            #s-mod6-proibido .pb-nav-btn:active:not(:disabled) { transform: scale(0.94); }
+            #s-mod6-proibido .pb-nav-btn:disabled { opacity: 0.3; cursor: default; }
+            #s-mod6-proibido .pb-nav-btn svg { pointer-events: none; }
+            #s-mod6-proibido .pb-counter {
+              font-family: var(--font-h);
+              font-size: 14px;
+              font-weight: 800;
+              color: rgba(255,255,255,0.9);
+              min-width: 56px;
+              text-align: center;
+            }
+          }
+        </style>
+        <div class="top-bar">
+          <div><span class="section-tag">🚫 Proibido</span>
+            <div class="slide-title" style="margin-top:6px">O que <span>não fazer</span></div>
+            <div class="slide-subtitle">Instruções de Atividade — Empilhamento Manual de Caixas em Palete</div>
+          </div>
+        </div>
+        <div class="content-area pb-content">
+          <div class="pb-shell">
+            <aside class="pb-photo pb-slide pb-slide-active">
+              <img src="img/errado.png" alt="Situação proibida no empilhamento de caixas no palete">
+              <div class="pb-badge">✕ Proibido</div>
+              <div class="pb-caption">
+                <h3>Pilhas instáveis</h3>
+                <span>Duas caixas de uma vez, arremesso e palete danificado não passam.</span>
+              </div>
+            </aside>
+            <div class="pb-list">
+              <p class="pb-kicker">O que não fazer</p>
+              <article class="pb-item pb-slide"><span class="pb-no" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span><p>Descer <strong>duas ou mais caixas</strong> ao mesmo tempo.</p></article>
+              <article class="pb-item pb-slide"><span class="pb-no" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span><p><strong>Arremessar</strong> caixas sobre o palete.</p></article>
+              <article class="pb-item pb-slide"><span class="pb-no" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span><p>Montar pilhas <strong>desalinhadas ou instáveis</strong>.</p></article>
+              <article class="pb-item pb-slide"><span class="pb-no" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span><p>Trabalhar com <strong>palete danificado</strong>.</p></article>
+              <article class="pb-item pb-slide"><span class="pb-no" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span><p>Não coloque os pés <strong>em cima do palete</strong> nem muito próximo da baia. Risco de lesão grave.</p></article>
+            </div>
+            <div class="pb-carousel-nav" id="pb-carousel-nav">
+              <button type="button" class="pb-nav-btn" id="pb-prev" aria-label="Anterior" onclick="pbCarouselNav(-1)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+              <span class="pb-counter" id="pb-counter">1 / 6</span>
+              <button type="button" class="pb-nav-btn" id="pb-next" aria-label="Próximo" onclick="pbCarouselNav(1)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
+          </svg></div>
+      </section>
+
+      <!-- ── S-MOD6-VIDEO: VÍDEO — Vestimentas e a Proibição de Adornos (NR 12) ── -->
       <section class="slide video-slide" id="s-mod6-video">
         <div class="top-bar">
           <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">O Pit Stop <span>e as Regras de Entrada</span></div>
+            <div class="slide-title" style="margin-top:6px">Vestimentas e a Proibição de <span>Adornos (NR 12)</span></div>
             <div class="slide-subtitle">Empilhamento Ergonômico, Regras de Conduta e Recomendações SESMT</div>
           </div>
         </div>
         <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
           <div class="video-wrap">
             <div class="video-box">
-              <iframe id="panda-97f29445-ac4c-423a-ba10-486dc37619d2"
-                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=97f29445-ac4c-423a-ba10-486dc37619d2"
+              <iframe id="panda-78e4f659-43d6-429c-b28a-2a815e44f4be"
+                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=78e4f659-43d6-429c-b28a-2a815e44f4be"
                 frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
                 allowfullscreen="true" fetchpriority="high"
                 style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
-                title="O Pit Stop e as Regras de Entrada — NR 12">
+                title="Vestimentas e a Proibição de Adornos (NR 12)">
               </iframe>
             </div>
           </div>
@@ -16551,23 +17886,23 @@
           </svg></div>
       </section>
 
-      <!-- ── S-MOD6-VIDEO2: VÍDEO — Proibições Críticas no Abastecimento ── -->
+      <!-- ── S-MOD6-VIDEO2: VÍDEO — Recomendações Práticas de Segurança do SESMT ── -->
       <section class="slide video-slide" id="s-mod6-video2">
         <div class="top-bar">
           <div><span class="section-tag">📹 Vídeo</span>
-            <div class="slide-title" style="margin-top:6px">Proibições Críticas <span>no Abastecimento</span></div>
+            <div class="slide-title" style="margin-top:6px">Recomendações Práticas de Segurança <span>do SESMT</span></div>
             <div class="slide-subtitle">Empilhamento Ergonômico, Regras de Conduta e Recomendações SESMT</div>
           </div>
         </div>
         <div class="content-area" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
           <div class="video-wrap">
             <div class="video-box">
-              <iframe id="panda-e652bb0f-b575-4470-9e72-3b68ec5a4da2"
-                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=e652bb0f-b575-4470-9e72-3b68ec5a4da2"
+              <iframe id="panda-52d73236-8be0-4bbd-995e-5501600c332c"
+                src="https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=52d73236-8be0-4bbd-995e-5501600c332c"
                 frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
                 allowfullscreen="true" fetchpriority="high"
                 style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
-                title="Proibições Críticas no Abastecimento — NR 12">
+                title="Recomendações Práticas de Segurança do SESMT — NR 12">
               </iframe>
             </div>
           </div>
@@ -16577,6 +17912,271 @@
           </svg></div>
       </section>
 
+      <!-- ── S-MOD6-SUPORTE: CONTEÚDO — Suporte e Contato ── -->
+      <section class="slide" id="s-mod6-suporte">
+        <style>
+          #s-mod6-suporte { overflow: hidden; }
+          #s-mod6-suporte .top-bar { flex-shrink: 0; }
+          #s-mod6-suporte .sp-content {
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            width: 100%;
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 6px clamp(20px, 3.2vw, 40px) clamp(92px, 12cqh, 118px);
+            box-sizing: border-box;
+            min-height: 0;
+            flex: 1 1 auto;
+            container-type: size;
+          }
+          #s-mod6-suporte .sp-shell {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            min-height: 0;
+          }
+          #s-mod6-suporte .sp-lead {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 18px;
+            border-radius: 16px;
+            background: #ffffff;
+            border: 1px solid rgba(107, 122, 237, 0.18);
+            box-shadow: 0 10px 28px rgba(20, 16, 48, 0.12);
+          }
+          #s-mod6-suporte .sp-lead p {
+            margin: 0;
+            font-family: var(--font-p);
+            font-size: clamp(14px, 2.2cqh, 17px);
+            line-height: 1.45;
+            color: #2a2f45;
+            text-align: left;
+          }
+          #s-mod6-suporte .sp-lead strong { color: #2A2D5C; font-weight: 800; }
+          #s-mod6-suporte .sp-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            flex: 1 1 auto;
+            min-height: 0;
+          }
+          #s-mod6-suporte .sp-card {
+            display: grid;
+            grid-template-columns: 48px minmax(0, 1fr);
+            gap: 14px;
+            align-items: center;
+            flex: 1 1 auto;
+            margin: 0;
+            padding: 14px 18px;
+            border-radius: 16px;
+            background: #ffffff;
+            border: 1px solid rgba(107, 122, 237, 0.18);
+            box-shadow: 0 10px 28px rgba(20, 16, 48, 0.12);
+            box-sizing: border-box;
+          }
+          #s-mod6-suporte .sp-ico {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(145deg, #6B7AED, #3d4db8);
+            color: #fff;
+            flex-shrink: 0;
+            box-shadow: 0 6px 14px rgba(107, 122, 237, 0.28);
+          }
+          #s-mod6-suporte .sp-ico svg { width: 20px; height: 20px; }
+          #s-mod6-suporte .sp-card h3 {
+            margin: 0 0 4px;
+            font-family: var(--font-h);
+            font-size: clamp(15px, 2.4cqh, 18px);
+            font-weight: 800;
+            color: #121428;
+            text-align: left;
+          }
+          #s-mod6-suporte .sp-card p {
+            margin: 0;
+            font-family: var(--font-p);
+            font-size: clamp(13px, 2cqh, 15.5px);
+            line-height: 1.4;
+            color: #2a2f45;
+            text-align: left;
+          }
+          #s-mod6-suporte .sp-card strong { color: #2A2D5C; font-weight: 800; }
+          #s-mod6-suporte .sp-link {
+            color: #3b36b5;
+            font-weight: 800;
+            word-break: break-word;
+          }
+          #s-mod6-suporte .sp-carousel-nav { display: none; }
+          @media screen and (max-width: 768px) and (orientation: portrait) {
+            @keyframes spFadeIn {
+              from { opacity: 0; transform: translateX(16px); }
+              to { opacity: 1; transform: translateX(0); }
+            }
+            #s-mod6-suporte { overflow: hidden; }
+            #s-mod6-suporte .slide-title { font-size: 22px !important; }
+            #s-mod6-suporte .slide-subtitle { display: none; }
+            #s-mod6-suporte .sp-content {
+              overflow: hidden !important;
+              justify-content: center !important;
+              align-items: stretch;
+              padding: 8px 16px 88px !important;
+              gap: 12px;
+            }
+            #s-mod6-suporte .sp-shell {
+              width: 100%;
+              max-width: 420px;
+              margin: 0 auto;
+              height: 100%;
+              gap: 10px;
+            }
+            #s-mod6-suporte .sp-lead {
+              flex: 0 0 auto;
+              padding: 10px 12px;
+            }
+            #s-mod6-suporte .sp-lead p {
+              font-size: 13px !important;
+              line-height: 1.4 !important;
+            }
+            #s-mod6-suporte .sp-list {
+              display: block;
+              flex: 1 1 auto;
+              min-height: 0;
+            }
+            #s-mod6-suporte .sp-card {
+              display: none !important;
+              flex: none;
+            }
+            #s-mod6-suporte .sp-card.sp-slide-active {
+              display: grid !important;
+              grid-template-columns: 1fr;
+              justify-items: center;
+              text-align: center;
+              min-height: 220px;
+              height: 100%;
+              padding: 22px 18px;
+              gap: 12px;
+              animation: spFadeIn 0.28s ease forwards;
+            }
+            #s-mod6-suporte .sp-card.sp-slide-active .sp-ico {
+              width: 52px;
+              height: 52px;
+            }
+            #s-mod6-suporte .sp-card.sp-slide-active .sp-ico svg { width: 24px; height: 24px; }
+            #s-mod6-suporte .sp-card h3 { font-size: 18px !important; text-align: center; }
+            #s-mod6-suporte .sp-card p { font-size: 14.5px !important; line-height: 1.45 !important; text-align: center; }
+            #s-mod6-suporte .sp-link { word-break: break-all; }
+            #s-mod6-suporte .sp-carousel-nav {
+              display: flex !important;
+              align-items: center;
+              justify-content: center;
+              gap: 16px;
+              width: 100%;
+              max-width: 360px;
+              margin: 0 auto;
+              flex-shrink: 0;
+            }
+            #s-mod6-suporte .sp-nav-btn {
+              background: linear-gradient(135deg, #6B7AED, #2A2D5C);
+              color: #fff;
+              border: none;
+              border-radius: 50%;
+              width: 46px;
+              height: 46px;
+              min-width: 46px;
+              min-height: 46px;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              box-shadow: 0 6px 16px rgba(180, 194, 255, 0.4);
+              touch-action: manipulation;
+            }
+            #s-mod6-suporte .sp-nav-btn:active:not(:disabled) { transform: scale(0.94); }
+            #s-mod6-suporte .sp-nav-btn:disabled { opacity: 0.3; cursor: default; }
+            #s-mod6-suporte .sp-nav-btn svg { pointer-events: none; }
+            #s-mod6-suporte .sp-counter {
+              font-family: var(--font-h);
+              font-size: 14px;
+              font-weight: 800;
+              color: rgba(255,255,255,0.9);
+              min-width: 56px;
+              text-align: center;
+            }
+          }
+        </style>
+        <div class="top-bar">
+          <div><span class="section-tag">📞 Contato</span>
+            <div class="slide-title" style="margin-top:6px">Suporte e <span>Contato</span></div>
+            <div class="slide-subtitle">Canais oficiais para dúvidas, chamados e procedimentos de segurança</div>
+          </div>
+        </div>
+        <div class="content-area sp-content">
+          <div class="sp-shell">
+            <div class="sp-lead">
+              <p>Em caso de <strong>dúvidas operacionais</strong>, problemas técnicos ou necessidade de orientação sobre <strong>procedimentos</strong> de segurança, utilize os canais oficiais abaixo.</p>
+            </div>
+            <div class="sp-list">
+              <article class="sp-card sp-slide sp-slide-active">
+                <div class="sp-ico" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg>
+                </div>
+                <div>
+                  <h3>Portal Leroy Merlin</h3>
+                  <p>Acesse <span class="sp-link">lmb.service-now.com/sp?id=home</span> para abertura de chamados, consulta de procedimentos e registro de ocorrências operacionais.</p>
+                </div>
+              </article>
+              <article class="sp-card sp-slide">
+                <div class="sp-ico" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+                </div>
+                <div>
+                  <h3>Portal 3PIR</h3>
+                  <p>Disponível via <strong>link na navegação superior</strong> do sistema. Ponto de acesso para informações complementares e documentação técnica.</p>
+                </div>
+              </article>
+              <article class="sp-card sp-slide">
+                <div class="sp-ico" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                </div>
+                <div>
+                  <h3>Suporte Técnico</h3>
+                  <p>Canal dedicado ao atendimento de <strong>dúvidas e problemas operacionais</strong>. Acionado para situações que não constam nos procedimentos padrão.</p>
+                </div>
+              </article>
+              <article class="sp-card sp-slide">
+                <div class="sp-ico" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                </div>
+                <div>
+                  <h3>Instruções SESMT</h3>
+                  <p>Fonte oficial dos <strong>procedimentos de segurança</strong> homologados. Consultar sempre em caso de dúvida sobre normas e práticas de trabalho seguro.</p>
+                </div>
+              </article>
+            </div>
+            <div class="sp-carousel-nav" id="sp-carousel-nav">
+              <button type="button" class="sp-nav-btn" id="sp-prev" aria-label="Anterior" onclick="spCarouselNav(-1)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+              <span class="sp-counter" id="sp-counter">1 / 4</span>
+              <button type="button" class="sp-nav-btn" id="sp-next" aria-label="Próximo" onclick="spCarouselNav(1)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(180, 194, 255,0.07)" />
+          </svg></div>
+      </section>
+
+      <template id="paginas-mod6-removidas">
+      <!-- Páginas 40 a 45 removidas da sequência (guia Pit Stop, vídeo 3, zonas, vídeos 4 a 6). -->
       <!-- ── S-MOD6-GUIA: GUIA RÁPIDO DE SEGURANÇA DO PIT STOP ── -->
       <section class="slide" id="s-mod6-guia">
         <style>
@@ -17208,7 +18808,9 @@
           </svg></div>
       </section>
 
-      <!-- ── S-MOD6-GAME: DESAFIO — Pit Stop, Comportamento e Encerramento ── -->
+      </template>
+
+      <!-- ── S-MOD6-GAME: DESAFIO — Empilhamento, Vestimentas e SESMT ── -->
       <section class="slide" id="s-mod6-game">
         <style>
           #s-mod6-game .content-area {
@@ -17419,7 +19021,7 @@
 
         <div class="top-bar">
           <span class="section-tag">🎮 DESAFIO</span>
-          <div class="slide-title" style="margin-top:6px">Missão — <span>Pit Stop</span></div>
+          <div class="slide-title" style="margin-top:6px">Missão — <span>Turno no Palete</span></div>
         </div>
 
         <div class="content-area">
@@ -17427,11 +19029,11 @@
 
             <!-- INTRO -->
             <div id="m6g-intro" style="text-align:center; animation: fadeIn 0.8s ease;">
-              <div class="ic-circle" style="margin: 0 auto 24px; width: 96px; height: 96px; font-size: 48px;">⛽</div>
+              <div class="ic-circle" style="margin: 0 auto 24px; width: 96px; height: 96px; font-size: 48px;">📦</div>
               <h3 style="font-family:var(--font-h); font-size:26px; color:var(--white); margin-bottom:12px;">
-                Missão Pit Stop — Módulo 6</h3>
+                Missão Turno no Palete</h3>
               <p style="color:rgba(255,255,255,0.72); font-size:16px; line-height:1.65; margin-bottom:28px; max-width: 600px; margin-left: auto; margin-right: auto;">
-                São <strong>3 etapas práticas</strong>: acesso ao Pit Stop, proibições e ordem da manobra. Toque, selecione e coloque na ordem certa!
+                São <strong>4 etapas práticas</strong>: empilhamento, o que não fazer, vestimentas e adornos, e recomendações do SESMT. Toque, selecione e confirme!
               </p>
               <button class="btn-start" onclick="startM6Game()" style="padding: 16px 40px; font-size: 15px; text-transform: uppercase;">
                 INICIAR DESAFIO
@@ -17442,7 +19044,7 @@
             <div id="m6g-play" style="display:none;">
               <div class="m6g-top-row">
                 <span class="m6g-label" id="m6g-label">Etapa 1</span>
-                <span class="m6g-counter" id="m6g-counter">1 / 3</span>
+                <span class="m6g-counter" id="m6g-counter">1 / 4</span>
               </div>
               <div class="m6g-bar-bg"><div class="m6g-bar-fill" id="m6g-bar"></div></div>
               <div class="m6g-card">
@@ -17458,10 +19060,10 @@
 
             <div id="m6g-result" style="display:none; text-align:center; animation:slideUp 0.6s ease;">
               <div class="m6g-score-ring" id="m6g-score-ring">
-                <div><div class="m6g-score-num" id="m6g-score-num">0</div><div class="m6g-score-label">/ 3</div></div>
+                <div><div class="m6g-score-num" id="m6g-score-num">0</div><div class="m6g-score-label">/ 4</div></div>
               </div>
               <h3 style="font-family:var(--font-h); font-size:clamp(22px,4vw,28px); color:var(--gold); margin-bottom:8px; font-weight:900;">Desafio Concluído!</h3>
-              <div class="r-status ap" id="m6g-badge" style="display:inline-block; padding:6px 18px; font-size:13px; margin-bottom:14px; font-weight:700;">Módulo 6 — Missão Pit Stop Validada</div>
+              <div class="r-status ap" id="m6g-badge" style="display:inline-block; padding:6px 18px; font-size:13px; margin-bottom:14px; font-weight:700;">Módulo 6 — Missão Turno no Palete Validada</div>
               <p id="m6g-result-msg" style="color:rgba(255,255,255,0.88); font-size:15px; line-height:1.55; margin-bottom:22px; max-width:480px; margin-left:auto; margin-right:auto;"></p>
               <button class="btn-retry" onclick="resetM6Game()" style="background:var(--white); color:var(--black); font-weight:800; border-radius:99px; padding:12px 32px;">JOGAR NOVAMENTE</button>
             </div>
@@ -17475,67 +19077,246 @@
       <!-- ── S-FIM: CONCLUSÃO DO TREINAMENTO ── -->
       <section class="slide" id="s-fim">
         <style>
+          #s-fim {
+            background: url("img/fundo final.png") center / cover no-repeat;
+          }
+          #s-fim::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 180px;
+            pointer-events: none;
+            z-index: 2;
+            background: linear-gradient(to top,
+              rgba(58, 28, 130, 0.55) 0%,
+              rgba(107, 122, 237, 0.22) 48%,
+              transparent 100%);
+          }
+          #s-fim .top-bar {
+            position: relative;
+            z-index: 3;
+          }
           #s-fim .content-area {
-            display: flex; align-items: center; justify-content: center;
-            overflow-y: auto;
-            container-type: size;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 0 24px 110px;
+            position: relative;
+            z-index: 3;
+          }
+          @media screen and (max-width: 768px) and (orientation: portrait) {
+            #s-fim .content-area {
+              justify-content: center;
+              padding: 0 16px 110px;
+            }
           }
           #s-fim .fim-wrap {
-            width: 100%; max-width: clamp(360px, 68cqw, 860px); margin: 0 auto;
-          }
-          #s-fim .fim-card {
-            text-align: center; animation: fadeIn 0.8s ease;
-            padding: clamp(24px,10cqh,64px) clamp(24px,6cqw,48px);
-            background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%);
-            border: 1px solid rgba(180, 194, 255,0.28);
-            border-radius: clamp(16px,3cqw,26px);
-            box-shadow: 0 28px 64px rgba(0,0,0,0.4);
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0;
             box-sizing: border-box;
           }
-          #s-fim .fim-card .ic-circle {
-            margin: 0 auto 24px; width: 96px; height: 96px;
+          #s-fim .fim-orb {
+            display: none;
           }
-          #s-fim .fim-card .ic-circle svg { width: 48%; height: 48%; }
+          #s-fim .fim-orb-a {
+            width: 180px; height: 180px;
+            top: -50px; left: -40px;
+            background: rgba(124, 142, 255, 0.35);
+          }
+          #s-fim .fim-orb-b {
+            width: 140px; height: 140px;
+            bottom: -30px; right: -20px;
+            background: rgba(180, 194, 255, 0.28);
+          }
+          #s-fim .fim-card {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 42px 38px 44px;
+            background:
+              linear-gradient(165deg, rgba(72, 58, 150, 0.82) 0%, rgba(46, 32, 110, 0.88) 48%, rgba(32, 22, 78, 0.9) 100%);
+            border: 1px solid rgba(180, 194, 255, 0.28);
+            border-radius: 24px;
+            box-shadow: 0 28px 70px rgba(8, 6, 28, 0.45);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-sizing: border-box;
+            overflow: hidden;
+            opacity: 0;
+          }
+          #s-fim.active .fim-card {
+            animation: fimCardIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+          }
+          #s-fim .fim-card::before {
+            display: none;
+          }
+          #s-fim .fim-icon {
+            position: relative;
+            width: 78px;
+            height: 78px;
+            margin: 4px auto 18px;
+            opacity: 0;
+          }
+          #s-fim.active .fim-icon {
+            animation: fimTrophy 0.75s cubic-bezier(0.34, 1.4, 0.64, 1) 0.18s both;
+          }
+          #s-fim .fim-icon-ring {
+            position: absolute;
+            inset: -8px;
+            border-radius: 50%;
+            border: 2px solid rgba(180, 194, 255, 0.45);
+            animation: none;
+            opacity: 0;
+          }
+          #s-fim.active .fim-icon-ring {
+            animation: fimPulse 2.2s ease-in-out 0.7s infinite;
+          }
+          #s-fim .fim-icon-core {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(160deg, #C5CEFF 0%, #8B97F8 45%, #6B7AED 100%);
+            box-shadow: 0 10px 28px rgba(107, 122, 237, 0.45);
+          }
+          #s-fim .fim-icon-core svg { width: 32px; height: 32px; }
+          #s-fim .fim-kicker {
+            display: inline-block;
+            margin: 0 0 18px;
+            padding: 5px 14px;
+            font-family: var(--font-h);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #fff;
+            background: rgba(20, 14, 48, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            border-radius: 999px;
+            opacity: 0;
+          }
+          #s-fim.active .fim-kicker {
+            animation: fimPop 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.08s both;
+          }
           #s-fim .fim-card h3 {
-            font-family: var(--font-h); font-size: 26px; color: var(--white);
-            margin-bottom: 12px; font-weight: 700;
+            font-family: var(--font-h);
+            font-size: clamp(28px, 3.6vw, 36px);
+            color: #ffffff;
+            margin: 0 0 10px;
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            opacity: 0;
           }
-          #s-fim .fim-card p {
-            color: rgba(255,255,255,0.72); font-size: 16px; line-height: 1.65;
-            margin-bottom: 28px; max-width: 600px; margin-left: auto; margin-right: auto;
+          #s-fim.active .fim-card h3 {
+            animation: fimPop 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.32s both;
+          }
+          #s-fim .fim-card p.fim-body {
+            color: rgba(255, 255, 255, 0.92);
+            font-size: 14.5px;
+            line-height: 1.55;
+            margin: 0 auto 26px;
+            max-width: 460px;
+            opacity: 0;
+          }
+          #s-fim.active .fim-card p.fim-body {
+            animation: fimPop 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.42s both;
           }
           #s-fim .fim-chips {
-            display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
           }
           #s-fim .fim-chip {
-            font-family: var(--font-h); font-weight: 800; font-size: 13px;
-            letter-spacing: 0.06em; text-transform: uppercase; color: #fff;
-            background: linear-gradient(135deg, #6B7AED, #2A2D5C);
-            border-radius: 99px; padding: 16px 28px;
-            box-shadow: 0 8px 20px rgba(180, 194, 255,0.28);
+            font-family: var(--font-h);
+            font-weight: 800;
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #ffffff;
+            background: linear-gradient(180deg, rgba(110, 88, 210, 0.95) 0%, rgba(62, 42, 150, 0.95) 100%);
+            border: 1px solid rgba(200, 210, 255, 0.55);
+            border-radius: 999px;
+            padding: 10px 22px;
+            box-shadow:
+              0 6px 18px rgba(40, 24, 110, 0.45),
+              0 0 18px rgba(140, 160, 255, 0.35),
+              inset 0 1px 0 rgba(255, 255, 255, 0.35);
+            opacity: 0;
+          }
+          #s-fim .fim-chip:nth-child(1) {
+            color: #8ef6ff;
+            text-shadow: 0 0 12px rgba(94, 231, 255, 0.65);
+          }
+          #s-fim.active .fim-chip:nth-child(1) { animation: fimPop 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.52s both; }
+          #s-fim.active .fim-chip:nth-child(2) { animation: fimPop 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both; }
+          #s-fim.active .fim-chip:nth-child(3) { animation: fimPop 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.68s both; }
+          @keyframes fimCardIn {
+            0% { opacity: 0; transform: translateY(28px) scale(0.9); }
+            68% { opacity: 1; transform: translateY(-6px) scale(1.03); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+          }
+          @keyframes fimTrophy {
+            0% { opacity: 0; transform: scale(0.35) rotate(-18deg); }
+            55% { opacity: 1; transform: scale(1.18) rotate(8deg); }
+            100% { opacity: 1; transform: scale(1) rotate(0); }
+          }
+          @keyframes fimPop {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+          @keyframes fimPulse {
+            0%, 100% { transform: scale(1); opacity: 0.55; }
+            50% { transform: scale(1.12); opacity: 0.15; }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            #s-fim .fim-card,
+            #s-fim .fim-kicker,
+            #s-fim .fim-icon,
+            #s-fim .fim-card h3,
+            #s-fim .fim-card p.fim-body,
+            #s-fim .fim-chip,
+            #s-fim .fim-icon-ring { animation: none !important; opacity: 1; transform: none; }
           }
         </style>
         <div class="top-bar">
-          <span class="section-tag">🏆 CONCLUSÃO</span>
-          <div class="slide-title" style="margin-top:6px">Treinamento — <span>Concluído</span></div>
+          <div>
+            <span class="section-tag">🏆 CONCLUSÃO</span>
+            <div class="slide-title" style="margin-top:6px">Treinamento — <span>Concluído</span></div>
+          </div>
         </div>
         <div class="content-area">
           <div class="fim-wrap">
+            <div class="fim-orb fim-orb-a" aria-hidden="true"></div>
+            <div class="fim-orb fim-orb-b" aria-hidden="true"></div>
             <div class="fim-card">
-              <div class="ic-circle" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M8 21h8" />
-                  <path d="M12 17v4" />
-                  <path d="M7 4h10v6a5 5 0 0 1-10 0V4Z" />
-                  <path d="M17 6h2a2.5 2.5 0 0 1 0 5h-2" />
-                  <path d="M7 6H5a2.5 2.5 0 0 0 0 5h2" />
-                </svg>
+              <p class="fim-kicker">Certificado de conclusão</p>
+              <div class="fim-icon" aria-hidden="true">
+                <span class="fim-icon-ring"></span>
+                <div class="fim-icon-core">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M8 21h8" />
+                    <path d="M12 17v4" />
+                    <path d="M7 4h10v6a5 5 0 0 1-10 0V4Z" />
+                    <path d="M17 6h2a2.5 2.5 0 0 1 0 5h-2" />
+                    <path d="M7 6H5a2.5 2.5 0 0 0 0 5h2" />
+                  </svg>
+                </div>
               </div>
               <h3>Parabéns!</h3>
-              <p>Você concluiu o treinamento NR 12. Por mérito, dedicação e compromisso com a segurança, você percorreu os 6 módulos.</p>
+              <p class="fim-body">Você concluiu o treinamento NR 12. Por mérito, dedicação e compromisso com a segurança, você percorreu os 6 módulos.</p>
               <div class="fim-chips">
                 <span class="fim-chip">6 módulos</span>
                 <span class="fim-chip">NR 12</span>
+                <span class="fim-chip">Máquinas</span>
               </div>
             </div>
           </div>
@@ -17550,16 +19331,16 @@
     <!-- NAV -->
     <div id="nav" class="nav-start nav-hidden">
       <button class="nav-btn" id="btn-back" onclick="goTo(currentSlide-1)" disabled>
-        <svg viewBox="0 0 20 20" fill="currentColor">
-          <polygon points="15,3 3,10 15,17" />
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="15 18 9 12 15 6"/>
         </svg>
         VOLTAR
       </button>
       <div id="nav-dots"></div>
       <button class="nav-btn" id="btn-fwd" onclick="goTo(currentSlide+1)">
         PRÓXIMO
-        <svg viewBox="0 0 20 20" fill="currentColor">
-          <polygon points="5,3 17,10 5,17" />
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="9 6 15 12 9 18"/>
         </svg>
       </button>
     </div>
@@ -17579,8 +19360,7 @@
       #s-mod3-game .m3g-wrap,
       #s-mod4-game .m4g-wrap,
       #s-mod5-game .m5g-wrap,
-      #s-mod6-game .m6g-wrap,
-      #s-fim .fim-wrap {
+      #s-mod6-game .m6g-wrap {
         max-width: 980px !important;
         margin-top: 56px !important;
       }
@@ -17592,8 +19372,7 @@
       #s-mod5-game #m5g-intro,
       #s-mod5-game #m5g-result,
       #s-mod6-game #m6g-intro,
-      #s-mod6-game #m6g-result,
-      #s-fim .fim-card {
+      #s-mod6-game #m6g-result {
         padding: 52px 64px 56px !important;
         border-radius: 32px !important;
       }
@@ -17601,8 +19380,7 @@
       #s-mod3-game #m3g-intro .ic-circle,
       #s-mod4-game #m4g-intro .ic-circle,
       #s-mod5-game #m5g-intro .ic-circle,
-      #s-mod6-game #m6g-intro .ic-circle,
-      #s-fim .fim-card .ic-circle {
+      #s-mod6-game #m6g-intro .ic-circle {
         width: 132px !important;
         height: 132px !important;
         font-size: 64px !important;
@@ -17612,8 +19390,7 @@
       #s-mod3-game #m3g-intro h3,
       #s-mod4-game #m4g-intro h3,
       #s-mod5-game #m5g-intro h3,
-      #s-mod6-game #m6g-intro h3,
-      #s-fim .fim-card h3 {
+      #s-mod6-game #m6g-intro h3 {
         font-size: 40px !important;
         margin-bottom: 20px !important;
         line-height: 1.2 !important;
@@ -17622,8 +19399,7 @@
       #s-mod3-game #m3g-intro p,
       #s-mod4-game #m4g-intro p,
       #s-mod5-game #m5g-intro p,
-      #s-mod6-game #m6g-intro p,
-      #s-fim .fim-card p {
+      #s-mod6-game #m6g-intro p {
         font-size: 20px !important;
         line-height: 1.7 !important;
         margin-bottom: 40px !important;
@@ -17644,8 +19420,7 @@
       #s-mod3-game .m3g-wrap,
       #s-mod4-game .m4g-wrap,
       #s-mod5-game .m5g-wrap,
-      #s-mod6-game .m6g-wrap,
-      #s-fim .fim-wrap {
+      #s-mod6-game .m6g-wrap {
         max-width: 760px !important;
         margin-top: 30px !important;
       }
@@ -17661,8 +19436,7 @@
       #s-mod5-game #m5g-intro,
       #s-mod5-game #m5g-result,
       #s-mod6-game #m6g-intro,
-      #s-mod6-game #m6g-result,
-      #s-fim .fim-card {
+      #s-mod6-game #m6g-result {
         padding: 38px 46px 44px !important;
         border-radius: 28px !important;
       }
@@ -17670,8 +19444,7 @@
       #s-mod3-game #m3g-intro .ic-circle,
       #s-mod4-game #m4g-intro .ic-circle,
       #s-mod5-game #m5g-intro .ic-circle,
-      #s-mod6-game #m6g-intro .ic-circle,
-      #s-fim .fim-card .ic-circle {
+      #s-mod6-game #m6g-intro .ic-circle {
         width: 96px !important;
         height: 96px !important;
         font-size: 44px !important;
@@ -17681,8 +19454,7 @@
       #s-mod3-game #m3g-intro h3,
       #s-mod4-game #m4g-intro h3,
       #s-mod5-game #m5g-intro h3,
-      #s-mod6-game #m6g-intro h3,
-      #s-fim .fim-card h3 {
+      #s-mod6-game #m6g-intro h3 {
         font-size: 29px !important;
         margin-bottom: 14px !important;
       }
@@ -17690,8 +19462,7 @@
       #s-mod3-game #m3g-intro p,
       #s-mod4-game #m4g-intro p,
       #s-mod5-game #m5g-intro p,
-      #s-mod6-game #m6g-intro p,
-      #s-fim .fim-card p {
+      #s-mod6-game #m6g-intro p {
         font-size: 16.5px !important;
         line-height: 1.6 !important;
         margin-bottom: 26px !important;
@@ -17822,8 +19593,12 @@
       }
     }
 
-    /* Card inicial do desafio — mesmo tamanho/formato do Módulo 1 em qualquer mobile */
+    /* Card inicial do desafio — compacto no mobile, sem vazar na barra */
     @media screen and (max-width: 768px) {
+      #s2e .content-area.mod1-state-intro {
+        overflow: hidden !important;
+        padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)) !important;
+      }
       #s2e #mod1-game-intro,
       #s-mod2-game #mod2tf-intro,
       #s-mod3-game #m3g-intro,
@@ -17833,14 +19608,16 @@
         width: 100% !important;
         max-width: 640px !important;
         margin: 0 auto !important;
-        min-height: min(420px, calc(100dvh - 240px));
-        padding: 32px 24px 36px !important;
+        min-height: 0 !important;
+        height: auto !important;
+        padding: 22px 18px 22px !important;
         box-sizing: border-box !important;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center;
+        overflow: hidden;
         background: linear-gradient(160deg, #1c1e44 0%, #16183a 40%, #101228 75%, #0a0b18 100%) !important;
         border: 1px solid rgba(180, 194, 255, 0.28) !important;
         border-radius: 24px !important;
@@ -17854,10 +19631,10 @@
       #s-mod6-game #m6g-intro .ic-circle {
         flex-shrink: 0;
         align-self: center;
-        width: 96px !important;
-        height: 96px !important;
-        font-size: 48px !important;
-        margin: 0 auto 24px !important;
+        width: 72px !important;
+        height: 72px !important;
+        font-size: 36px !important;
+        margin: 0 auto 14px !important;
         transform: none !important;
       }
       #s2e #mod1-game-intro h3,
@@ -17868,8 +19645,8 @@
       #s-mod6-game #m6g-intro h3 {
         width: 100%;
         text-align: center !important;
-        font-size: 26px !important;
-        margin: 0 0 12px !important;
+        font-size: 20px !important;
+        margin: 0 0 8px !important;
         font-weight: 700 !important;
         line-height: 1.25 !important;
         color: var(--white) !important;
@@ -17883,9 +19660,9 @@
       #s-mod6-game #m6g-intro p {
         width: 100%;
         text-align: center !important;
-        font-size: 16px !important;
-        line-height: 1.65 !important;
-        margin: 0 auto 28px !important;
+        font-size: 13px !important;
+        line-height: 1.45 !important;
+        margin: 0 auto 16px !important;
         max-width: 600px !important;
         color: rgba(255, 255, 255, 0.72) !important;
         transform: none !important;
@@ -17899,38 +19676,24 @@
         align-self: center !important;
         margin-left: auto !important;
         margin-right: auto !important;
-        padding: 16px 40px !important;
-        font-size: 15px !important;
+        padding: 12px 32px !important;
+        font-size: 13px !important;
         letter-spacing: 0.04em;
         text-transform: uppercase;
       }
       #s-fim .fim-wrap {
-        max-width: 640px !important;
-        width: 100%;
+        max-width: 100% !important;
         margin: 0 auto !important;
       }
       #s-fim .fim-card {
-        padding: 32px 24px 36px !important;
-        border-radius: 24px !important;
-        box-sizing: border-box;
-      }
-      #s-fim .fim-card .ic-circle {
-        width: 96px !important;
-        height: 96px !important;
-        font-size: 48px !important;
-        margin: 0 auto 24px !important;
+        padding: 36px 20px 38px !important;
       }
       #s-fim .fim-card h3 {
-        font-size: 26px !important;
-        margin-bottom: 12px !important;
-        font-weight: 700 !important;
-        line-height: 1.25 !important;
+        font-size: 28px !important;
       }
       #s-fim .fim-card p {
-        font-size: 16px !important;
-        line-height: 1.65 !important;
-        margin-bottom: 28px !important;
-        max-width: 600px !important;
+        font-size: 14px !important;
+        color: rgba(255, 255, 255, 0.92) !important;
       }
     }
   </style>
@@ -19538,6 +21301,31 @@
       }
     }
 
+    function playAchievementSound() {
+      try {
+        var Ctx = window.AudioContext || window.webkitAudioContext;
+        if (!Ctx) return;
+        if (!window._sfxCtx) window._sfxCtx = new Ctx();
+        var ctx = window._sfxCtx;
+        if (ctx.state === 'suspended') ctx.resume();
+        var notes = [523.25, 659.25, 783.99, 1046.5];
+        notes.forEach(function (freq, i) {
+          var t0 = ctx.currentTime + i * 0.1;
+          var osc = ctx.createOscillator();
+          var gain = ctx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.value = freq;
+          gain.gain.setValueAtTime(0.0001, t0);
+          gain.gain.linearRampToValueAtTime(0.14, t0 + 0.03);
+          gain.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.42);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(t0);
+          osc.stop(t0 + 0.45);
+        });
+      } catch (e) {}
+    }
+
     function goTo(idx, force = false) {
       if (idx < 0 || idx >= TOTAL) return;
 
@@ -19598,14 +21386,36 @@
 
       updateNextButton();
 
+      if (newSlide.id === 's-fim') {
+        setTimeout(playAchievementSound, 220);
+      }
+
       buildDots();
       localStorage.setItem('nr17_current_slide', currentSlide);
 
+      if (newSlide.id === 's2d' && typeof window.s2dResetCarousel === 'function') {
+        window.s2dResetCarousel();
+      }
       if (newSlide.id === 's-mod5-aproximacao' && typeof window.apxResetFlips === 'function') {
         window.apxResetFlips();
       }
       if (newSlide.id === 's-mod5-doca' && typeof window.dkResetCarousel === 'function') {
         window.dkResetCarousel();
+      }
+      if (newSlide.id === 's-mod5-requisitos' && typeof window.rqResetCarousel === 'function') {
+        window.rqResetCarousel();
+      }
+      if (newSlide.id === 's-mod5-it' && typeof window.itResetCarousel === 'function') {
+        window.itResetCarousel();
+      }
+      if (newSlide.id === 's-mod6-empilhamento' && typeof window.emResetCarousel === 'function') {
+        window.emResetCarousel();
+      }
+      if (newSlide.id === 's-mod6-proibido' && typeof window.pbResetCarousel === 'function') {
+        window.pbResetCarousel();
+      }
+      if (newSlide.id === 's-mod6-suporte' && typeof window.spResetCarousel === 'function') {
+        window.spResetCarousel();
       }
       if (newSlide.id === 's-mod6-guia' && typeof window.psResetCarousel === 'function') {
         window.psResetCarousel();
@@ -21998,26 +23808,29 @@
       function s2dUpdateUI() {
         var cards = s2dCards();
         s2dTotal = cards.length || 5;
+        if (s2dIdx < 0) s2dIdx = 0;
+        if (s2dIdx >= s2dTotal) s2dIdx = 0;
         var active = cards[s2dIdx];
         cards.forEach(function (c, i) {
           c.classList.toggle('s2d-card-active', i === s2dIdx);
         });
         var counter = document.getElementById('s2d-counter');
         if (counter) counter.textContent = (s2dIdx + 1) + ' / ' + s2dTotal;
-        var prev = document.getElementById('s2d-prev');
-        var next = document.getElementById('s2d-next');
-        if (prev) prev.disabled = (s2dIdx === 0);
-        if (next) next.disabled = (s2dIdx === s2dTotal - 1);
         var sub = document.getElementById('s2d-mobile-subhead');
         if (sub && active) sub.textContent = active.getAttribute('data-group') || '';
       }
 
       window.s2dCarouselNav = function (dir) {
-        if (!isMobilePortraitS2d()) return;
-        var newIdx = s2dIdx + dir;
-        if (newIdx < 0 || newIdx >= s2dTotal) return;
-        s2dIdx = newIdx;
+        var cards = s2dCards();
+        s2dTotal = cards.length || 5;
+        if (!s2dTotal) return;
+        s2dIdx = (s2dIdx + dir + s2dTotal) % s2dTotal;
         if (typeof playClickSound === 'function') playClickSound();
+        s2dUpdateUI();
+      };
+
+      window.s2dResetCarousel = function () {
+        s2dIdx = 0;
         s2dUpdateUI();
       };
 
@@ -22034,10 +23847,30 @@
         }, { passive: true });
       }
 
+      function s2dBindButtons() {
+        var prev = document.getElementById('s2d-prev');
+        var next = document.getElementById('s2d-next');
+        if (prev) {
+          prev.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            window.s2dCarouselNav(-1);
+          });
+        }
+        if (next) {
+          next.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            window.s2dCarouselNav(1);
+          });
+        }
+      }
+
       function s2dInit() {
         s2dIdx = 0;
         s2dUpdateUI();
         s2dInitSwipe();
+        s2dBindButtons();
       }
 
       if (document.readyState === 'loading') {
@@ -22298,11 +24131,24 @@
       });
     })();
 
-    /* ── CONHECENDO O EQUIPAMENTO — Galeria com lightbox ── */
+    /* ── Galeria com lightbox (equipamento + fatores de risco) ── */
     (function () {
-      var lb, imgEl, titleEl, countEl, thumbsEl, items = [], data = [], cur = 0, lastFocus = null;
+      var lb, imgEl, titleEl, countEl, thumbsEl, data = [], cur = 0, lastFocus = null;
 
       function isOpen() { return lb && lb.classList.contains('is-open'); }
+
+      function rebuildThumbs() {
+        thumbsEl.innerHTML = '';
+        data.forEach(function (d, i) {
+          var t = document.createElement('button');
+          t.type = 'button';
+          t.className = 'eq-lb-thumb';
+          t.setAttribute('aria-label', d.label);
+          t.innerHTML = '<img src="' + d.src + '" alt="">';
+          t.addEventListener('click', function () { cur = i; render(); });
+          thumbsEl.appendChild(t);
+        });
+      }
 
       function render() {
         var it = data[cur];
@@ -22319,6 +24165,7 @@
       function open(i) {
         cur = i;
         lastFocus = document.activeElement;
+        rebuildThumbs();
         render();
         lb.classList.add('is-open');
         lb.setAttribute('aria-hidden', 'false');
@@ -22335,8 +24182,44 @@
       }
 
       function go(dir) {
+        if (!data.length) return;
         cur = (cur + dir + data.length) % data.length;
         render();
+      }
+
+      function bindGallery(itemSelector, labelSelector) {
+        var items = Array.prototype.slice.call(document.querySelectorAll(itemSelector));
+        if (!items.length) return;
+        var gallery = items.map(function (el) {
+          var img = el.querySelector('img');
+          var label = el.querySelector(labelSelector);
+          return {
+            src: img ? img.getAttribute('src') : '',
+            alt: img ? (img.getAttribute('alt') || '') : '',
+            label: label ? label.textContent.trim() : ''
+          };
+        });
+        items.forEach(function (el, i) {
+          el.addEventListener('click', function () {
+            data = gallery;
+            open(i);
+          });
+          el.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+              e.preventDefault();
+              data = gallery;
+              open(i);
+            }
+          });
+        });
+      }
+
+      function watchClose(sectionId) {
+        var section = document.getElementById(sectionId);
+        if (!section) return;
+        new MutationObserver(function () {
+          if (!section.classList.contains('active') && isOpen()) close();
+        }).observe(section, { attributes: true, attributeFilter: ['class'] });
       }
 
       function eqGalleryInit() {
@@ -22347,47 +24230,14 @@
         countEl = document.getElementById('eqLbCount');
         thumbsEl = document.getElementById('eqLbThumbs');
 
-        items = Array.prototype.slice.call(
-          document.querySelectorAll('#s-mod3-equipamento .eq-item')
-        );
-        if (!items.length) return;
-
-        data = items.map(function (el) {
-          var img = el.querySelector('img');
-          var label = el.querySelector('.eq-label');
-          return {
-            src: img ? img.getAttribute('src') : '',
-            alt: img ? (img.getAttribute('alt') || '') : '',
-            label: label ? label.textContent.trim() : ''
-          };
-        });
-
-        data.forEach(function (d, i) {
-          var t = document.createElement('button');
-          t.type = 'button';
-          t.className = 'eq-lb-thumb';
-          t.setAttribute('aria-label', d.label);
-          t.innerHTML = '<img src="' + d.src + '" alt="">';
-          t.addEventListener('click', function () { cur = i; render(); });
-          thumbsEl.appendChild(t);
-        });
-
-        items.forEach(function (el, i) {
-          el.addEventListener('click', function () { open(i); });
-          el.addEventListener('keydown', function (e) {
-            if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
-              e.preventDefault();
-              open(i);
-            }
-          });
-        });
+        bindGallery('#s-mod3-equipamento .eq-item', '.eq-label');
+        bindGallery('#s-mod4-riscos .rk-card', '.rk-label');
 
         document.getElementById('eqLbClose').addEventListener('click', close);
         document.getElementById('eqLbPrev').addEventListener('click', function () { go(-1); });
         document.getElementById('eqLbNext').addEventListener('click', function () { go(1); });
         lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
 
-        // captura antes do handler global de setas do curso
         document.addEventListener('keydown', function (e) {
           if (!isOpen()) return;
           if (e.key === 'Escape') { e.stopPropagation(); close(); }
@@ -22396,13 +24246,8 @@
           else if (e.key === 'ArrowUp' || e.key === 'ArrowDown') { e.stopPropagation(); }
         }, true);
 
-        // fecha ao trocar de slide
-        var section = document.getElementById('s-mod3-equipamento');
-        if (section) {
-          new MutationObserver(function () {
-            if (!section.classList.contains('active') && isOpen()) close();
-          }).observe(section, { attributes: true, attributeFilter: ['class'] });
-        }
+        watchClose('s-mod3-equipamento');
+        watchClose('s-mod4-riscos');
       }
 
       if (document.readyState === 'loading') {
@@ -22829,6 +24674,411 @@
       });
     })();
 
+    /* ── REQUISITOS (3 CARDS) — Mobile Carousel ── */
+    (function () {
+      var rqIdx = 0;
+      var rqTotal = 3;
+
+      function isMobilePortraitRq() {
+        return window.matchMedia(
+          'screen and (max-width: 768px) and (orientation: portrait)'
+        ).matches;
+      }
+
+      function rqCards() {
+        return document.querySelectorAll('#s-mod5-requisitos .rq-slide');
+      }
+
+      function rqUpdateUI() {
+        var cards = rqCards();
+        rqTotal = cards.length || 3;
+        cards.forEach(function (c, i) {
+          c.classList.toggle('rq-slide-active', i === rqIdx);
+        });
+        var counter = document.getElementById('rq-counter');
+        if (counter) counter.textContent = (rqIdx + 1) + ' / ' + rqTotal;
+        var prev = document.getElementById('rq-prev');
+        var next = document.getElementById('rq-next');
+        if (prev) prev.disabled = (rqIdx === 0);
+        if (next) next.disabled = (rqIdx === rqTotal - 1);
+      }
+
+      window.rqCarouselNav = function (dir) {
+        if (!isMobilePortraitRq()) return;
+        var newIdx = rqIdx + dir;
+        if (newIdx < 0 || newIdx >= rqTotal) return;
+        rqIdx = newIdx;
+        if (typeof playClickSound === 'function') playClickSound();
+        rqUpdateUI();
+      };
+
+      window.rqResetCarousel = function () {
+        rqIdx = 0;
+        rqUpdateUI();
+      };
+
+      var rqSX = 0;
+      function rqInitSwipe() {
+        var vp = document.querySelector('#s-mod5-requisitos .rq-content');
+        if (!vp) return;
+        vp.addEventListener('touchstart', function (e) {
+          rqSX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        vp.addEventListener('touchend', function (e) {
+          var diff = rqSX - e.changedTouches[0].screenX;
+          if (Math.abs(diff) > 40) window.rqCarouselNav(diff > 0 ? 1 : -1);
+        }, { passive: true });
+      }
+
+      function rqInit() {
+        rqIdx = 0;
+        rqUpdateUI();
+        rqInitSwipe();
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', rqInit);
+      } else {
+        rqInit();
+      }
+
+      window.addEventListener('resize', function () {
+        if (!isMobilePortraitRq()) rqIdx = 0;
+        rqUpdateUI();
+      });
+      window.addEventListener('orientationchange', function () {
+        setTimeout(function () {
+          if (!isMobilePortraitRq()) rqIdx = 0;
+          rqUpdateUI();
+        }, 120);
+      });
+    })();
+
+    /* ── REQUISITOS OBRIGATÓRIOS — Mobile Carousel ── */
+    (function () {
+      var itIdx = 0;
+      var itTotal = 3;
+
+      function isMobilePortraitIt() {
+        return window.matchMedia(
+          'screen and (max-width: 768px) and (orientation: portrait)'
+        ).matches;
+      }
+
+      function itCards() {
+        return document.querySelectorAll('#s-mod5-it .it-slide');
+      }
+
+      function itUpdateUI() {
+        var cards = itCards();
+        itTotal = cards.length || 3;
+        cards.forEach(function (c, i) {
+          c.classList.toggle('it-slide-active', i === itIdx);
+        });
+        var counter = document.getElementById('it-counter');
+        if (counter) counter.textContent = (itIdx + 1) + ' / ' + itTotal;
+        var prev = document.getElementById('it-prev');
+        var next = document.getElementById('it-next');
+        if (prev) prev.disabled = (itIdx === 0);
+        if (next) next.disabled = (itIdx === itTotal - 1);
+      }
+
+      window.itCarouselNav = function (dir) {
+        if (!isMobilePortraitIt()) return;
+        var newIdx = itIdx + dir;
+        if (newIdx < 0 || newIdx >= itTotal) return;
+        itIdx = newIdx;
+        if (typeof playClickSound === 'function') playClickSound();
+        itUpdateUI();
+      };
+
+      window.itResetCarousel = function () {
+        itIdx = 0;
+        itUpdateUI();
+      };
+
+      var itSX = 0;
+      function itInitSwipe() {
+        var vp = document.querySelector('#s-mod5-it .it-content');
+        if (!vp) return;
+        vp.addEventListener('touchstart', function (e) {
+          itSX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        vp.addEventListener('touchend', function (e) {
+          var diff = itSX - e.changedTouches[0].screenX;
+          if (Math.abs(diff) > 40) window.itCarouselNav(diff > 0 ? 1 : -1);
+        }, { passive: true });
+      }
+
+      function itInit() {
+        itIdx = 0;
+        itUpdateUI();
+        itInitSwipe();
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', itInit);
+      } else {
+        itInit();
+      }
+
+      window.addEventListener('resize', function () {
+        if (!isMobilePortraitIt()) itIdx = 0;
+        itUpdateUI();
+      });
+      window.addEventListener('orientationchange', function () {
+        setTimeout(function () {
+          if (!isMobilePortraitIt()) itIdx = 0;
+          itUpdateUI();
+        }, 120);
+      });
+    })();
+
+    /* ── EMPILHAMENTO — Mobile Carousel ── */
+    (function () {
+      var emIdx = 0;
+      var emTotal = 9;
+
+      function isMobilePortraitEm() {
+        return window.matchMedia(
+          'screen and (max-width: 768px) and (orientation: portrait)'
+        ).matches;
+      }
+
+      function emCards() {
+        var photo = document.querySelector('#s-mod6-empilhamento .em-photo');
+        var items = document.querySelectorAll('#s-mod6-empilhamento .em-item');
+        var arr = [];
+        if (photo) arr.push(photo);
+        items.forEach(function (el) { arr.push(el); });
+        return arr;
+      }
+
+      function emUpdateUI() {
+        var cards = emCards();
+        emTotal = cards.length || 9;
+        cards.forEach(function (c, i) {
+          c.classList.toggle('em-slide-active', i === emIdx);
+        });
+        var counter = document.getElementById('em-counter');
+        if (counter) counter.textContent = (emIdx + 1) + ' / ' + emTotal;
+        var prev = document.getElementById('em-prev');
+        var next = document.getElementById('em-next');
+        if (prev) prev.disabled = (emIdx === 0);
+        if (next) next.disabled = (emIdx === emTotal - 1);
+      }
+
+      window.emCarouselNav = function (dir) {
+        if (!isMobilePortraitEm()) return;
+        var newIdx = emIdx + dir;
+        if (newIdx < 0 || newIdx >= emTotal) return;
+        emIdx = newIdx;
+        if (typeof playClickSound === 'function') playClickSound();
+        emUpdateUI();
+      };
+
+      window.emResetCarousel = function () {
+        emIdx = 0;
+        emUpdateUI();
+      };
+
+      var emSX = 0;
+      function emInitSwipe() {
+        var vp = document.querySelector('#s-mod6-empilhamento .em-content');
+        if (!vp) return;
+        vp.addEventListener('touchstart', function (e) {
+          emSX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        vp.addEventListener('touchend', function (e) {
+          var diff = emSX - e.changedTouches[0].screenX;
+          if (Math.abs(diff) > 40) window.emCarouselNav(diff > 0 ? 1 : -1);
+        }, { passive: true });
+      }
+
+      function emInit() {
+        emIdx = 0;
+        emUpdateUI();
+        emInitSwipe();
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', emInit);
+      } else {
+        emInit();
+      }
+
+      window.addEventListener('resize', function () {
+        if (!isMobilePortraitEm()) emIdx = 0;
+        emUpdateUI();
+      });
+      window.addEventListener('orientationchange', function () {
+        setTimeout(function () {
+          if (!isMobilePortraitEm()) emIdx = 0;
+          emUpdateUI();
+        }, 120);
+      });
+    })();
+
+    /* ── O QUE NÃO FAZER — Mobile Carousel ── */
+    (function () {
+      var pbIdx = 0;
+      var pbTotal = 6;
+
+      function isMobilePortraitPb() {
+        return window.matchMedia(
+          'screen and (max-width: 768px) and (orientation: portrait)'
+        ).matches;
+      }
+
+      function pbCards() {
+        return document.querySelectorAll('#s-mod6-proibido .pb-slide');
+      }
+
+      function pbUpdateUI() {
+        var cards = pbCards();
+        pbTotal = cards.length || 6;
+        cards.forEach(function (c, i) {
+          c.classList.toggle('pb-slide-active', i === pbIdx);
+        });
+        var counter = document.getElementById('pb-counter');
+        if (counter) counter.textContent = (pbIdx + 1) + ' / ' + pbTotal;
+        var prev = document.getElementById('pb-prev');
+        var next = document.getElementById('pb-next');
+        if (prev) prev.disabled = (pbIdx === 0);
+        if (next) next.disabled = (pbIdx === pbTotal - 1);
+      }
+
+      window.pbCarouselNav = function (dir) {
+        if (!isMobilePortraitPb()) return;
+        var newIdx = pbIdx + dir;
+        if (newIdx < 0 || newIdx >= pbTotal) return;
+        pbIdx = newIdx;
+        if (typeof playClickSound === 'function') playClickSound();
+        pbUpdateUI();
+      };
+
+      window.pbResetCarousel = function () {
+        pbIdx = 0;
+        pbUpdateUI();
+      };
+
+      var pbSX = 0;
+      function pbInitSwipe() {
+        var vp = document.querySelector('#s-mod6-proibido .pb-content');
+        if (!vp) return;
+        vp.addEventListener('touchstart', function (e) {
+          pbSX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        vp.addEventListener('touchend', function (e) {
+          var diff = pbSX - e.changedTouches[0].screenX;
+          if (Math.abs(diff) > 40) window.pbCarouselNav(diff > 0 ? 1 : -1);
+        }, { passive: true });
+      }
+
+      function pbInit() {
+        pbIdx = 0;
+        pbUpdateUI();
+        pbInitSwipe();
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', pbInit);
+      } else {
+        pbInit();
+      }
+
+      window.addEventListener('resize', function () {
+        if (!isMobilePortraitPb()) pbIdx = 0;
+        pbUpdateUI();
+      });
+      window.addEventListener('orientationchange', function () {
+        setTimeout(function () {
+          if (!isMobilePortraitPb()) pbIdx = 0;
+          pbUpdateUI();
+        }, 120);
+      });
+    })();
+
+    /* ── SUPORTE E CONTATO — Mobile Carousel ── */
+    (function () {
+      var spIdx = 0;
+      var spTotal = 4;
+
+      function isMobilePortraitSp() {
+        return window.matchMedia(
+          'screen and (max-width: 768px) and (orientation: portrait)'
+        ).matches;
+      }
+
+      function spCards() {
+        return document.querySelectorAll('#s-mod6-suporte .sp-slide');
+      }
+
+      function spUpdateUI() {
+        var cards = spCards();
+        spTotal = cards.length || 4;
+        cards.forEach(function (c, i) {
+          c.classList.toggle('sp-slide-active', i === spIdx);
+        });
+        var counter = document.getElementById('sp-counter');
+        if (counter) counter.textContent = (spIdx + 1) + ' / ' + spTotal;
+        var prev = document.getElementById('sp-prev');
+        var next = document.getElementById('sp-next');
+        if (prev) prev.disabled = (spIdx === 0);
+        if (next) next.disabled = (spIdx === spTotal - 1);
+      }
+
+      window.spCarouselNav = function (dir) {
+        if (!isMobilePortraitSp()) return;
+        var newIdx = spIdx + dir;
+        if (newIdx < 0 || newIdx >= spTotal) return;
+        spIdx = newIdx;
+        if (typeof playClickSound === 'function') playClickSound();
+        spUpdateUI();
+      };
+
+      window.spResetCarousel = function () {
+        spIdx = 0;
+        spUpdateUI();
+      };
+
+      var spSX = 0;
+      function spInitSwipe() {
+        var vp = document.querySelector('#s-mod6-suporte .sp-content');
+        if (!vp) return;
+        vp.addEventListener('touchstart', function (e) {
+          spSX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        vp.addEventListener('touchend', function (e) {
+          var diff = spSX - e.changedTouches[0].screenX;
+          if (Math.abs(diff) > 40) window.spCarouselNav(diff > 0 ? 1 : -1);
+        }, { passive: true });
+      }
+
+      function spInit() {
+        spIdx = 0;
+        spUpdateUI();
+        spInitSwipe();
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', spInit);
+      } else {
+        spInit();
+      }
+
+      window.addEventListener('resize', function () {
+        if (!isMobilePortraitSp()) spIdx = 0;
+        spUpdateUI();
+      });
+      window.addEventListener('orientationchange', function () {
+        setTimeout(function () {
+          if (!isMobilePortraitSp()) spIdx = 0;
+          spUpdateUI();
+        }, 120);
+      });
+    })();
+
     /* ── GUIA PIT STOP — Mobile Carousel ── */
     (function () {
       var psIdx = 0;
@@ -23166,6 +25416,10 @@
           var el = document.getElementById(p);
           if (el) el.style.display = (p === id) ? 'block' : 'none';
         });
+        var area = document.querySelector('#s-mod3-game .content-area');
+        if (area) {
+          area.classList.toggle('m3g-state-play', id === 'm3g-play');
+        }
       }
 
       function m3gRender() {
@@ -23440,7 +25694,7 @@
           emoji: '🦺',
           label: 'Armadura',
           title: 'Vista o colaborador',
-          inst: 'Toque em TODOS os EPIs obrigatórios. Depois confirme. Itens extras não valem.',
+          inst: 'Toque em todos os EPIs obrigatórios e confirme. Itens extras não valem.',
           hint: 'Faltar um único item impede o início do turno.',
           items: [
             { t: 'Óculos incolores', ok: true, emoji: '🥽' },
@@ -23684,7 +25938,7 @@
     })();
 
     /* ════════════════════════════════════════
-       MISSÃO MÓDULO 6 — Pit Stop
+       MISSÃO MÓDULO 6 — Turno no Palete
     ════════════════════════════════════════ */
     (function () {
       var m6gIdx = 0;
@@ -23697,47 +25951,68 @@
       var m6gRounds = [
         {
           type: 'choice',
-          emoji: '⛽',
-          label: 'Acesso',
-          title: 'Acesso ao Pit Stop',
-          inst: 'Toque na regra de entrada correta da baia de recarga e GLP.',
-          hint: 'Uma escolha. Só uma empilhadeira — e só quem está autorizado.',
+          emoji: '📦',
+          label: 'Palete',
+          title: 'Empilhamento no palete',
+          inst: 'Toque na prática CORRETA para baixar caixas no palete.',
+          hint: 'Uma escolha. Uma caixa por vez, alinhada e estável.',
           items: [
-            { t: 'Qualquer operador entra, desde que em baixa velocidade.', ok: false, emoji: '🚦' },
-            { t: 'Só pessoas autorizadas e equipadas. Uma empilhadeira por vez.', ok: true, emoji: '🚧' },
-            { t: 'Duas empilhadeiras entram juntas se a fila estiver longa.', ok: false, emoji: '🚚' }
+            { t: 'Uma caixa por vez, alinhada e estável, palete nivelado.', ok: true, emoji: '✅' },
+            { t: 'Duas ou mais caixas de uma vez para ganhar tempo.', ok: false, emoji: '📦' },
+            { t: 'Arremessar a caixa sobre o palete.', ok: false, emoji: '🎯' }
           ],
-          fb: 'O Pit Stop é área crítica: acesso controlado, autorização, EPIs e limite de uma empilhadeira. Organize a fila do lado de fora e respeite a barreira física.'
+          fb: 'Só uma caixa por vez, alinhada e estável, com o palete no nível do piso. Caixa pesada: peça apoio. Joelhos flexionados e coluna ereta.'
         },
         {
           type: 'select',
           emoji: '🚫',
-          label: 'Proibições',
-          title: 'Fontes de ignição',
-          inst: 'Toque em TUDO o que é PROIBIDO no Pit Stop. Depois confirme.',
-          hint: 'Vários itens. EPIs não são proibição — são obrigação.',
+          label: 'Proibido',
+          title: 'O que não fazer',
+          inst: 'Marque TUDO o que é PROIBIDO no empilhamento. Depois confirme.',
+          hint: 'Vários itens. Técnica correta não é proibição.',
           items: [
-            { t: 'Fumar, chama aberta ou faísca', ok: true, emoji: '🚭' },
-            { t: 'Celular ou eletrônico ligado', ok: true, emoji: '📵' },
-            { t: 'EPIs: luvas e óculos de proteção', ok: false, emoji: '🥽' },
-            { t: 'Gerar calor ou ignição na baia', ok: true, emoji: '🔥' }
+            { t: 'Subir ou colocar os pés em cima do palete', ok: true, emoji: '🦶' },
+            { t: 'Trabalhar com palete danificado', ok: true, emoji: '🪵' },
+            { t: 'Montar pilhas desalinhadas ou instáveis', ok: true, emoji: '📚' },
+            { t: 'Pés muito próximos da baia', ok: true, emoji: '⚠️' },
+            { t: 'Arremessar caixas sobre o palete', ok: true, emoji: '🎯' },
+            { t: 'Joelhos flexionados e coluna ereta', ok: false, emoji: '🦵' }
           ],
-          fb: 'Tolerância zero a fumo, chama, faísca, calor e eletrônicos ligados. Vapores de GLP e de baterias são invisíveis e voláteis. Desligue o celular antes da linha sinalizada.'
+          fb: 'Proibido: duas caixas de uma vez, arremesso, pilha instável, palete danificado e pés em cima do palete ou colados na baia. Risco de torção e queda de material.'
         },
         {
-          type: 'order',
-          emoji: '🔧',
-          label: 'Manobra',
-          title: 'Sequência do operador',
-          inst: 'Toque os passos do OPERADOR na ordem certa. O técnico faz o GLP e os cabos.',
-          hint: 'A ordem importa. O abastecedor capacitado manobra até a baia.',
+          type: 'select',
+          emoji: '👕',
+          label: 'Adornos',
+          title: 'Vestimentas e adornos (NR 12)',
+          inst: 'Marque TUDO o que é PROIBIDO na área produtiva. Depois confirme.',
+          hint: 'Cabelo preso e roupa ajustada são obrigação — não são proibição.',
           items: [
-            { t: 'Posicionar a empilhadeira na entrada', ok: true, emoji: '🅿️' },
-            { t: 'Desligar o motor', ok: true, emoji: '🔑' },
-            { t: 'Puxar o freio de estacionamento', ok: true, emoji: '🛑' },
-            { t: 'Sair da cabine com segurança', ok: true, emoji: '🚪' }
+            { t: 'Colar, corrente ou pulseira', ok: true, emoji: '📿' },
+            { t: 'Relógio ou smartwatch', ok: true, emoji: '⌚' },
+            { t: 'Anel, aliança ou brinco exposto', ok: true, emoji: '💍' },
+            { t: 'Cabelo comprido solto', ok: true, emoji: '💇' },
+            { t: 'Cabelo preso com touca ou elástico', ok: false, emoji: '🧢' },
+            { t: 'Mangas e bainhas ajustadas', ok: false, emoji: '👔' }
           ],
-          fb: 'Só o abastecedor capacitado manobra até a baia. Você posiciona na entrada, desliga, puxa o freio e sai. O técnico com luvas e óculos troca o GLP ou conecta os cabos.'
+          fb: 'Cabelo preso. Roupas ajustadas. Zero adornos: colar, pulseira, relógio, anel, aliança e brinco. Enroscamento em peças móveis pode amputar.'
+        },
+        {
+          type: 'select',
+          emoji: '🛡️',
+          label: 'SESMT',
+          title: 'Recomendações do SESMT',
+          inst: 'Marque as práticas CORRETAS do dia a dia. Depois confirme.',
+          hint: 'Operador não faz manutenção. Garra a vácuo: no máximo duas caixas.',
+          items: [
+            { t: 'Local limpo e checagem visual no início do turno', ok: true, emoji: '🧹' },
+            { t: 'Garra a vácuo: no máximo 2 caixas por ciclo', ok: true, emoji: '🦾' },
+            { t: 'Trocar cinta com ranhura ou desgaste', ok: true, emoji: '🪢' },
+            { t: 'Palete desalinhado: chamar a liderança', ok: true, emoji: '📞' },
+            { t: 'Cortar fitas plásticas com estilete', ok: true, emoji: '✂️' },
+            { t: 'Operador faz manutenção na máquina sozinho', ok: false, emoji: '🔧' }
+          ],
+          fb: 'Área limpa, checagem visual e corte de fita com estilete. Garra: no máximo duas caixas. Cinta gasta sai. Falha ou palete desalinhado: chame o líder. Nunca faça manutenção por conta própria.'
         }
       ];
 
@@ -23844,6 +26119,12 @@
 
       window.m6gTapChoice = function (i) {
         if (m6gBusy) return;
+        var snd = document.getElementById('click-sound');
+        if (snd) {
+          var tap = snd.cloneNode(true);
+          tap.volume = 0.5;
+          tap.play().catch(function () {});
+        }
         var r = m6gRounds[m6gIdx];
         var ok = !!r.items[i].ok;
         var j, tile;
@@ -23858,6 +26139,12 @@
 
       window.m6gToggleSelect = function (i) {
         if (m6gBusy) return;
+        var snd = document.getElementById('click-sound');
+        if (snd) {
+          var tap = snd.cloneNode(true);
+          tap.volume = 0.5;
+          tap.play().catch(function () {});
+        }
         m6gPicked[i] = !m6gPicked[i];
         var tile = document.getElementById('m6g-tile-' + i);
         if (tile) tile.classList.toggle('is-on', !!m6gPicked[i]);
@@ -23935,15 +26222,15 @@
           'conic-gradient(#6B7AED ' + pct + '%, rgba(255,255,255,0.08) ' + pct + '%)';
 
         var badge = document.getElementById('m6g-badge');
-        if (badge) badge.style.display = (m6gScore >= 2) ? 'inline-block' : 'none';
+        if (badge) badge.style.display = (m6gScore >= 3) ? 'inline-block' : 'none';
 
         var msg = document.getElementById('m6g-result-msg');
         if (m6gScore === total) {
-          msg.textContent = 'Missão completa! Você aplicou as regras do Pit Stop, as proibições e a manobra do técnico.';
-        } else if (m6gScore >= 2) {
+          msg.textContent = 'Missão completa! Empilhamento, vestimentas, adornos e SESMT no ponto. Pode seguir o turno.';
+        } else if (m6gScore >= 3) {
           msg.textContent = 'Missão validada com ' + m6gScore + ' de ' + total + '. Revise o ponto que faltou e siga com responsabilidade.';
         } else {
-          msg.textContent = 'Você concluiu ' + m6gScore + ' de ' + total + ' etapas. Reveja os vídeos do Pit Stop e tente de novo.';
+          msg.textContent = 'Você concluiu ' + m6gScore + ' de ' + total + ' etapas. Reveja o empilhamento, os vídeos de vestimentas e do SESMT e tente de novo.';
         }
       }
 
@@ -24035,8 +26322,8 @@
     .eq-lb.is-open .eq-lb-fig { transform: scale(1); opacity: 1; }
     .eq-lb-img {
       display: block;
-      max-width: min(84vw, 900px);
-      max-height: 62vh;
+      max-width: min(94vw, 1100px);
+      max-height: 78vh;
       object-fit: contain;
       border-radius: 16px;
       border: 1px solid rgba(180, 194, 255, 0.28);
@@ -24143,7 +26430,7 @@
       color: rgba(200, 210, 255, 0.5);
     }
     @media screen and (max-width: 768px) {
-      .eq-lb-img { max-height: 50vh; max-width: 92vw; }
+      .eq-lb-img { max-height: 68vh; max-width: 92vw; }
       .eq-lb-btn { width: 40px; height: 40px; }
       .eq-lb-thumb { width: 42px; height: 42px; }
       .eq-lb-hint { display: none; }

@@ -334,22 +334,46 @@
                    },
                    {
                        "index":  41,
-                       "id":  "s-mod6-video",
-                       "title":  "O Pit Stop e as Regras de Entrada",
-                       "file":  "audios/s-mod6-video.mp3",
-                       "text":  "Vídeo. O Pit Stop e as Regras de Entrada. Empilhamento Ergonômico, Regras de Conduta e Recomendações SESMT. Assista ao vídeo sobre o pit stop e as regras de entrada. Avance quando concluir.",
-                       "audioReady":  true
+                       "id":  "s-mod6-empilhamento",
+                       "title":  "Empilhamento Manual de Caixas em Palete",
+                       "file":  "audios/s-mod6-empilhamento.mp3",
+                       "text":  "Instruções de Atividade. Empilhamento Manual de Caixas em Palete. Padronização do procedimento de empilhamento manual de caixas em paletes, garantindo segurança, estabilidade da carga e prevenção de acidentes. Procedimento correto. Baixar somente uma caixa por vez para o palete. Posicionar a caixa de forma alinhada e estável, antes de apoiar a próxima caixa. Manter o palete em local nivelado e em boas condições. Respeitar o limite de empilhamento do produto e do palete. Utilizar técnica correta de levantamento, joelhos flexionados e coluna ereta. Caso a caixa seja pesada, solicitar apoio. Jamais ficar sobre o palete, risco de torção no tornozelo. Fique atento no seu posicionamento na baía, mantenha seus pés afastados do palete, há risco de queda de material.",
+                       "audioReady":  false
                    },
                    {
                        "index":  42,
-                       "id":  "s-mod6-video2",
-                       "title":  "Proibições Críticas no Abastecimento",
-                       "file":  "audios/s-mod6-video2.mp3",
-                       "text":  "Vídeo. Proibições Críticas no Abastecimento. Empilhamento Ergonômico, Regras de Conduta e Recomendações SESMT. Assista ao vídeo sobre as proibições críticas no abastecimento. Avance quando concluir.",
-                       "audioReady":  true
+                       "id":  "s-mod6-proibido",
+                       "title":  "O que não fazer",
+                       "file":  "audios/s-mod6-proibido.mp3",
+                       "text":  "O que não fazer. Proibido. Descer duas ou mais caixas ao mesmo tempo. Arremessar caixas sobre o palete. Montar pilhas desalinhadas ou instáveis. Trabalhar com palete danificado. Não coloque seus pés em cima do palete ou muito próximo da baía. Risco de lesão grave.",
+                       "audioReady":  false
                    },
                    {
                        "index":  43,
+                       "id":  "s-mod6-video",
+                       "title":  "Vestimentas e a Proibição de Adornos (NR 12)",
+                       "file":  "audios/s-mod6-video.mp3",
+                       "text":  "Vídeo. Vestimentas e a Proibição de Adornos (NR 12). Empilhamento Ergonômico, Regras de Conduta e Recomendações SESMT. Assista ao vídeo sobre vestimentas e a proibição de adornos. Avance quando concluir.",
+                       "audioReady":  false
+                   },
+                   {
+                       "index":  44,
+                       "id":  "s-mod6-video2",
+                       "title":  "Recomendações Práticas de Segurança do SESMT",
+                       "file":  "audios/s-mod6-video2.mp3",
+                       "text":  "Vídeo. Recomendações Práticas de Segurança do SESMT. Empilhamento Ergonômico, Regras de Conduta e Recomendações SESMT. Assista ao vídeo sobre as recomendações práticas de segurança do SESMT. Avance quando concluir.",
+                       "audioReady":  false
+                   },
+                   {
+                       "index":  45,
+                       "id":  "s-mod6-suporte",
+                       "title":  "Suporte e Contato",
+                       "file":  "audios/s-mod6-suporte.mp3",
+                       "text":  "Suporte e Contato. Em caso de dúvidas operacionais, problemas técnicos ou necessidade de orientação sobre procedimentos de segurança, utilize os canais oficiais. Portal Leroy Merlin: acesse lmb ponto service-now ponto com para abertura de chamados, consulta de procedimentos e registro de ocorrências operacionais. Portal 3PIR: disponível via link na navegação superior do sistema. Ponto de acesso para informações complementares e documentação técnica. Suporte Técnico: canal dedicado ao atendimento de dúvidas e problemas operacionais. Acionado para situações que não constam nos procedimentos padrão. Instruções SESMT: fonte oficial dos procedimentos de segurança homologados. Consultar sempre em caso de dúvida sobre normas e práticas de trabalho seguro.",
+                       "audioReady":  false
+                   },
+                   {
+                       "index":  45,
                        "id":  "s-mod6-guia",
                        "title":  "Guia Rápido de Segurança do Pit Stop",
                        "file":  "audios/s-mod6-guia.mp3",
@@ -357,7 +381,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  44,
+                       "index":  46,
                        "id":  "s-mod6-video3",
                        "title":  "Manobra de Abastecimento pelo Técnico",
                        "file":  "audios/s-mod6-video3.mp3",
@@ -365,7 +389,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  45,
+                       "index":  47,
                        "id":  "s-mod6-zonas",
                        "title":  "Zoneamento de Risco do Armazém",
                        "file":  "audios/s-mod6-zonas.mp3",
@@ -373,7 +397,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  46,
+                       "index":  48,
                        "id":  "s-mod6-video4",
                        "title":  "Condições Adversas de Luz e Ofuscamento",
                        "file":  "audios/s-mod6-video4.mp3",
@@ -381,7 +405,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  47,
+                       "index":  49,
                        "id":  "s-mod6-video5",
                        "title":  "Comportamento e a Tolerância Zero a Brincadeiras",
                        "file":  "audios/s-mod6-video5.mp3",
@@ -389,7 +413,7 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  48,
+                       "index":  50,
                        "id":  "s-mod6-video6",
                        "title":  "Compromisso Coletivo e Encerramento",
                        "file":  "audios/s-mod6-video6.mp3",
@@ -397,15 +421,15 @@
                        "audioReady":  true
                    },
                    {
-                       "index":  49,
+                       "index":  51,
                        "id":  "s-mod6-game",
-                       "title":  "Missão — Pit Stop",
+                       "title":  "Missão — Turno no Palete",
                        "file":  "audios/s-mod6-game.mp3",
-                       "text":  "Missão Pit Stop — Módulo 6. São três etapas práticas: acesso ao Pit Stop, proibições e ordem da manobra. Etapa 1: Acesso ao Pit Stop. Toque na regra de entrada correta da baia de recarga e GLP. Opção incorreta: Qualquer operador entra, desde que em baixa velocidade. Regra correta: Só pessoas autorizadas e equipadas. Uma empilhadeira por vez. Opção incorreta: Duas empilhadeiras entram juntas se a fila estiver longa. O Pit Stop é área crítica: acesso controlado, autorização, EPIs e limite de uma empilhadeira. Organize a fila do lado de fora e respeite a barreira física. Etapa 2: Fontes de ignição. Toque em TUDO o que é PROIBIDO no Pit Stop. Depois confirme. Marque: Fumar, chama aberta ou faísca; Celular ou eletrônico ligado; Gerar calor ou ignição na baia. Não marque: EPIs: luvas e óculos de proteção. Tolerância zero a fumo, chama, faísca, calor e eletrônicos ligados. Vapores de GLP e de baterias são invisíveis e voláteis. Desligue o celular antes da linha sinalizada. Etapa 3: Sequência do operador. Toque os passos do OPERADOR na ordem certa. O técnico faz o GLP e os cabos. Ordem correta: Passo 1: Posicionar a empilhadeira na entrada Passo 2: Desligar o motor Passo 3: Puxar o freio de estacionamento Passo 4: Sair da cabine com segurança Só o abastecedor capacitado manobra até a baia. Você posiciona na entrada, desliga, puxa o freio e sai. O técnico com luvas e óculos troca o GLP ou conecta os cabos.",
-                       "audioReady":  true
+                       "text":  "Missão Turno no Palete — Módulo 6. São quatro etapas práticas: empilhamento, o que não fazer, vestimentas e adornos, e recomendações do SESMT. Etapa 1: Empilhamento no palete. Toque na prática correta para baixar caixas no palete. Regra correta: Uma caixa por vez, alinhada e estável, palete nivelado. Opção incorreta: Duas ou mais caixas de uma vez. Opção incorreta: Arremessar a caixa sobre o palete. Etapa 2: O que não fazer. Marque tudo o que é proibido no empilhamento. Marque: Subir no palete; palete danificado; pilhas instáveis; pés próximos da baia; arremessar caixas. Não marque: Joelhos flexionados e coluna ereta. Etapa 3: Vestimentas e adornos. Marque tudo o que é proibido na área produtiva. Marque: Colar, pulseira, relógio, anel, aliança, brinco e cabelo solto. Não marque: Cabelo preso e mangas ajustadas. Etapa 4: Recomendações do SESMT. Marque as práticas corretas. Marque: Local limpo e checagem visual; garra a vácuo no máximo duas caixas; trocar cinta gasta; palete desalinhado chamar liderança; cortar fitas com estilete. Não marque: Operador faz manutenção sozinho.",
+                       "audioReady":  false
                    },
                    {
-                       "index":  50,
+                       "index":  52,
                        "id":  "s-fim",
                        "title":  "Treinamento — Concluído",
                        "file":  "audios/s-fim.mp3",
