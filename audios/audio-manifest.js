@@ -1,6 +1,6 @@
 window.__AUDIO_NARRATION__ = {
     "version":  1,
-    "generatedAt":  "2026-08-21T19:55:37.888Z",
+    "generatedAt":  "2026-09-10T19:46:43.9583390Z",
     "source":  "index.html",
     "audioDir":  "audios",
     "slides":  [
@@ -58,7 +58,7 @@ window.__AUDIO_NARRATION__ = {
                        "title":  "A Rota do Pallet: Entrada, Saída e Picking",
                        "file":  "audios/s2b3.mp3",
                        "text":  "Vídeo. A Rota do Pallet: Entrada, Saída e Picking. Contexto Legal, Introdução e Fluxos do Sistema Automatizado. Assista ao vídeo sobre a rota do pallet: entrada, saída e picking. Avance quando concluir.",
-                       "audioReady":  false
+                       "audioReady":  true
                    },
                    {
                        "index":  7,
@@ -66,7 +66,7 @@ window.__AUDIO_NARRATION__ = {
                        "title":  "Dimensionamento e Capacidade Operacional",
                        "file":  "audios/s2d.mp3",
                        "text":  "Dimensionamento e Capacidade Operacional. Este sistema automatizado suporta a alta demanda do CD Cajamar. O equipamento foi projetado sob medida e todos os fluxos foram dimensionados prevendo a pior condição de consolidação de dados da Leroy Merlin, operando de forma simultânea. São seis transelevadores para armazenagem automática de paletes, seis baias operacionais de picking mais uma baia dedicada a avarias, e dois carros duplos responsáveis pelos fluxos de entrada e saída. O fluxo de entrada suporta de 29 a 128 paletes por hora. O fluxo de saída varia de 5 a 132 paletes por hora, o que garante alta flexibilidade para atender qualquer pico de expedição com total segurança.",
-                       "audioReady":  false
+                       "audioReady":  true
                    },
                    {
                        "index":  8,
@@ -74,7 +74,7 @@ window.__AUDIO_NARRATION__ = {
                        "title":  "Quiz NR 12 — Módulo 1",
                        "file":  "audios/s2e.mp3",
                        "text":  "Quiz NR 12 — Módulo 1. Contexto Legal, Introdução e Fluxos do Sistema Automatizado. Responda a quatro perguntas rápidas sobre responsabilidades compartilhadas, o sistema de Cajamar, a rota do palete e as capacidades nominais.",
-                       "audioReady":  false
+                       "audioReady":  true
                    },
                    {
                        "index":  9,
@@ -98,7 +98,7 @@ window.__AUDIO_NARRATION__ = {
                        "title":  "Tipos de Pallet",
                        "file":  "audios/s-mod2-pallets.mp3",
                        "text":  "Tipos de Pallet. O Pallet Escravo tem peso próprio de 50 quilos. O OneWay tipo A suporta até 1.950 quilos e é mais robusto, com tábuas de topo mais grossas e largas. O OneWay tipo B suporta até 950 quilos, com estrutura simplificada para cargas leves. Na simulação, o palete A é para alta resistência, cerca de 1.500 quilos, e o palete B para cargas leves, cerca de 500 quilos, em que o volume importa mais que o peso.",
-                       "audioReady":  false
+                       "audioReady":  true
                    },
                    {
                        "index":  12,
@@ -114,7 +114,7 @@ window.__AUDIO_NARRATION__ = {
                        "title":  "Proibições Absolutas na Triagem",
                        "file":  "audios/s-mod2-video-triagem.mp3",
                        "text":  "Vídeo. Proibições Absolutas na Triagem. Padrões Técnicos de Cargas e Triagem Visual de Pallets. Assista ao vídeo sobre as proibições absolutas na triagem. Avance quando concluir.",
-                       "audioReady":  false
+                       "audioReady":  true
                    },
                    {
                        "index":  14,
@@ -122,7 +122,7 @@ window.__AUDIO_NARRATION__ = {
                        "title":  "Defeitos Estruturais na Triagem",
                        "file":  "audios/s-mod2-triagem.mp3",
                        "text":  "Defeitos Estruturais na Triagem. A triagem de pallets é etapa crítica. Pallets com defeitos estruturais não podem ser inseridos no sistema automatizado sob nenhuma circunstância. Toco quebrado: comprometimento da base de apoio causa instabilidade nos garfos dos transelevadores. Tábua quebrada ou irregular: superfície irregular impede assentamento correto da carga e aumenta risco de queda. Empenado ou espaçamento elevado: deformações estruturais causam travamento mecânico e parada não programada do sistema. Tábua superior irregular: superfície de apoio irregular compromete estabilidade da carga e pode causar desabamento. Risco principal: desabamento de cargas, instabilidade durante transporte automático e queda de produtos com risco de dano patrimonial e lesão a pessoas.",
-                       "audioReady":  false
+                       "audioReady":  true
                    },
                    {
                        "index":  15,
@@ -130,7 +130,7 @@ window.__AUDIO_NARRATION__ = {
                        "title":  "Verdadeiro ou Falso?",
                        "file":  "audios/s-mod2-game.mp3",
                        "text":  "Desafio Módulo 2 — Verdadeiro ou Falso. Padrões Técnicos de Cargas e Triagem Visual de Pallets. Responda quatro afirmações sobre limites de carga, Pallet PBR, proibições na triagem e defeitos estruturais. Afirmação 1: O limite dimensional máximo da carga é de 1.200 mm de largura, 1.200 mm de comprimento e 1.400 mm de altura, e o filme stretch é obrigatório em todas as cargas. Resposta correta: Verdadeiro. Verdadeiro! Se a carga ultrapassar essas dimensões, não é aceita pelo sistema automático. O filme stretch é obrigatório antes de entrar nas esteiras. O conjunto pode ter no máximo 1.950 kg. Afirmação 2: No Pallet PBR, o limite máximo é de 1.500 kg, a marcação visual deve ser verde ou vermelha e o empilhamento de pallets vazios não pode passar de 10 unidades. Resposta correta: Verdadeiro. Verdadeiro! Além disso, todas as tábuas de madeira precisam estar íntegras, sem rachadura, quebra ou fragmentação. Afirmação 3: Fita adesiva, fitilhos de amarração e plásticos pendurados no pallet são permitidos, desde que em pequena quantidade. Resposta correta: Falso. Falso! São três proibições absolutas. Esses materiais podem se prender nos roletes, eixos ou sensores e paralisar todo o sistema. Afirmação 4: Pallets com toco quebrado, tábua irregular, empenamento ou espaçamento elevado não podem entrar no sistema sob nenhuma circunstância, pois há risco de desabamento e lesões. Resposta correta: Verdadeiro. Verdadeiro! A triagem visual é a primeira barreira de defesa. Defeitos estruturais podem causar queda de carga, prejuízo e acidentes graves.",
-                       "audioReady":  false
+                       "audioReady":  true
                    },
                    {
                        "index":  16,
@@ -146,7 +146,7 @@ window.__AUDIO_NARRATION__ = {
                        "title":  "Conhecendo o Equipamento",
                        "file":  "audios/s-mod3-equipamento.mp3",
                        "text":  "Conhecendo o Equipamento. Principais componentes para a operação do equipamento: Garra de Elevação, Balança de Precisão, Painel de Operação, Monitor de Operação, Plataforma Pantográfica Ergonômica, Proteção Lateral Fixa, Proteção Lateral Móvel e Totem de Operação.",
-                       "audioReady":  false
+                       "audioReady":  true
                    },
                    {
                        "index":  18,
@@ -154,7 +154,7 @@ window.__AUDIO_NARRATION__ = {
                        "title":  "Barreiras Físicas e Dispositivos de Emergência",
                        "file":  "audios/s-mod3-video.mp3",
                        "text":  "Vídeo. Barreiras Físicas e Dispositivos de Emergência. Componentes, Dispositivos de Segurança e Procedimento LOTO. Assista ao vídeo sobre barreiras físicas e dispositivos de emergência. Avance quando concluir.",
-                       "audioReady":  false
+                       "audioReady":  true
                    },
                    {
                        "index":  19,
@@ -162,7 +162,7 @@ window.__AUDIO_NARRATION__ = {
                        "title":  "Cortinas de Luz e Estados Tricolores",
                        "file":  "audios/s-mod3-cortinas.mp3",
                        "text":  "Cortinas de Luz e Estados Tricolores. As barreiras de segurança fornecem proteção automática contínua de áreas perigosas, com sinalização visual clara para orientar operadores a qualquer distância. Verde: área livre, nenhum objeto ou pessoa detectado, sistema operando normalmente. Vermelho: área obstruída, o sistema é desligado instantaneamente. Não tente reiniciar sem verificar a área. Laranja piscante: muting ativo, barreira temporariamente inibida para passagem controlada de pallets. O desligamento instantâneo das barreiras é a principal proteção contra acidentes graves. Nunca bloqueie, cubra ou tente contornar qualquer barreira de segurança.",
-                       "audioReady":  false
+                       "audioReady":  true
                    },
                    {
                        "index":  20,
@@ -233,7 +233,7 @@ window.__AUDIO_NARRATION__ = {
                        "id":  "s-mod4",
                        "title":  "MÓDULO 4",
                        "file":  "audios/s-mod4.mp3",
-                       "text":  "Início do Módulo 4. Fatores de Risco, Sensores e Cuidados com o Equipamento.",
+                       "text":  "Início do módulo 4. Fatores de risco, sensores e cuidados com o equipamento.",
                        "audioReady":  true
                    },
                    {
@@ -241,155 +241,219 @@ window.__AUDIO_NARRATION__ = {
                        "id":  "s-mod4-riscos",
                        "title":  "Fatores de Risco",
                        "file":  "audios/s-mod4-riscos.mp3",
-                       "text":  "Fatores de Risco. Sempre estar atentos a todos os fatores de riscos que possam gerar incidentes ou acidentes de trabalho durante a operação do equipamento. Observe: piso danificado, fitas de amarração danificadas, pallets danificados e embalagens com produtos danificados.",
-                       "audioReady":  false
+                       "text":  "Fatores de risco. Sempre estar atentos a todos os fatores de riscos que possam gerar incidentes ou acidentes de trabalho durante a operação do equipamento. Observe: piso danificado, fitas de amarração danificadas, pallets danificados e embalagens com produtos danificados.",
+                       "audioReady":  true
                    },
                    {
                        "index":  30,
                        "id":  "s-mod4-video",
-                       "title":  "Sensores e Portais: Limites Inegociáveis",
+                       "title":  "Sensores e Portais",
                        "file":  "audios/s-mod4-video.mp3",
-                       "text":  "Vídeo. Sensores e Portais: Limites Inegociáveis. Fatores de Risco, Sensores e Cuidados com o Equipamento. Assista ao vídeo sobre sensores e portais. Avance quando concluir.",
-                       "audioReady":  false
+                       "text":  "Vídeo. Sensores e portais: limites inegociáveis. Fatores de risco, sensores e cuidados com o equipamento. Assista ao vídeo sobre sensores e portais. Avance quando concluir.",
+                       "audioReady":  true
                    },
                    {
                        "index":  31,
                        "id":  "s-mod4-video2",
-                       "title":  "Garras de Vácuo: Regras de Manuseio",
+                       "title":  "Garras de Vácuo",
                        "file":  "audios/s-mod4-video2.mp3",
-                       "text":  "Vídeo. Garras de Vácuo: Regras de Manuseio. Fatores de Risco, Sensores e Cuidados com o Equipamento. Assista ao vídeo sobre as regras de manuseio das garras de vácuo. Avance quando concluir.",
+                       "text":  "Vídeo. Garras de vácuo: regras de manuseio. Fatores de risco, sensores e cuidados com o equipamento. Assista ao vídeo sobre as regras de manuseio das garras de vácuo. Avance quando concluir.",
                        "audioReady":  true
                    },
                    {
                        "index":  32,
-                       "id":  "s-mod4-game",
-                       "title":  "Risco ou Seguro?",
-                       "file":  "audios/s-mod4-game.mp3",
-                       "text":  "Risco ou Seguro? — Módulo 4. Veja cinco situações rápidas e toque em Risco ou Seguro. Temas: piso e carga, portal e sensores, e uso correto da garra a vácuo.",
+                       "id":  "s-mod4-redzone",
+                       "title":  "Red Zone",
+                       "file":  "audios/s-mod4-redzone.mp3",
+                       "text":  "Entendendo a red zone. As red zones, ou zonas vermelhas, são as áreas entre docas, destinadas ao acesso lateral para colocar ou retirar produtos. Esta regra é inegociável: na red zone nunca pode haver uma pessoa dentro da área ao mesmo tempo que uma empilhadeira em operação, seja entrando, manobrando, carregando ou saindo. O acesso à red zone é permitido apenas para o conferente, o motorista, para abrir e fechar a lona, e os amarradores.",
                        "audioReady":  true
                    },
                    {
                        "index":  33,
-                       "id":  "s-mod5",
-                       "title":  "MÓDULO 5",
-                       "file":  "audios/s-mod5.mp3",
-                       "text":  "Início do Módulo 5. Instruções de Trabalho (IT), Passos Operacionais e EPIs.",
+                       "id":  "s-mod4-video5",
+                       "title":  "Cruzamentos e Pontos Cegos",
+                       "file":  "audios/s-mod4-video5.mp3",
+                       "text":  "Vídeo. Interação em cruzamentos e pontos cegos. Fatores de risco, sensores e cuidados com o equipamento. Assista ao vídeo sobre interação em cruzamentos e pontos cegos. Avance quando concluir.",
                        "audioReady":  true
                    },
                    {
                        "index":  34,
-                       "id":  "s-mod5-requisitos",
-                       "title":  "Requisitos Obrigatórios",
-                       "file":  "audios/s-mod5-requisitos.mp3",
-                       "text":  "Instruções de Trabalho — Requisitos Obrigatórios. Um: Acesso ao Sistema. Somente pessoal treinado e autorizado pode operar ou acessar a área da automação. É proibido circular ou intervir fora da área designada. Dois: Treinamentos Mínimos Obrigatórios. NR-12 Segurança em Máquinas e Equipamentos. NR-06 Uso Correto de EPIs. Integração de Segurança. Formação Específica no Sistema Cassioli. Reciclagem anual ou a cada atualização de sistema. Três: Brigada de Emergência. É obrigatória a presença de no mínimo dois brigadistas por turno operacional.",
-                       "audioReady":  false
+                       "id":  "s-mod4-pontoscegos",
+                       "title":  "Pontos Cegos",
+                       "file":  "audios/s-mod4-pontoscegos.mp3",
+                       "text":  "Proteja-se dos pontos cegos. Ponto cego é a área onde o operador pode não te ver. Pontos cegos da máquina: um, coluna traseira esquerda do protetor superior. Dois, estrutura superior, o teto de proteção, e coluna central. Três, parte superior do mastro e estrutura frontal. Quatro, região atrás do mastro e do porta-garfos. Cinco, coluna dianteira direita do protetor superior. Seis, coluna traseira direita do protetor superior, no lado do operador.",
+                       "audioReady":  true
                    },
                    {
                        "index":  35,
-                       "id":  "s-mod5-video-epi",
-                       "title":  "Equipamentos de Proteção Individual (EPIs)",
-                       "file":  "audios/s-mod5-video-epi.mp3",
-                       "text":  "Vídeo. Equipamentos de Proteção Individual (EPIs). Instruções de Trabalho (IT), Passos Operacionais e EPIs. Assista ao vídeo sobre os equipamentos de proteção individual. Avance quando concluir.",
-                       "audioReady":  false
+                       "id":  "s-mod4-game",
+                       "title":  "Risco ou Seguro?",
+                       "file":  "audios/s-mod4-game.mp3",
+                       "text":  "Risco ou seguro? Módulo 4. Veja cinco situações rápidas e toque em risco ou seguro. Situação 1: piso metálico danificado ou desalinhado no posto. Resposta: risco. Piso ruim pode desestabilizar paletes. Avise a liderança. Situação 2: fitas de amarração rompidas ou desfiadas na carga. Resposta: risco. Fita ruim aumenta chance de queda de material. Situação 3: ultrapassar o portal amarelo com o equipamento em operação. Resposta: risco. Nunca ultrapasse o portal. É um limite inegociável. Situação 4: manter a área dos sensores limpa, seca e sem obstruções. Resposta: seguro. Área limpa ajuda os sensores a funcionar bem. Situação 5: aproximar a garra a vácuo paralela e bem perto do palete. Resposta: seguro. Alinhamento paralelo é o jeito certo de usar a garra.",
+                       "audioReady":  true
                    },
                    {
                        "index":  36,
-                       "id":  "s-mod5-it",
-                       "title":  "Requisitos Obrigatórios",
-                       "file":  "audios/s-mod5-it.mp3",
-                       "text":  "Instruções de Trabalho — Requisitos Obrigatórios. Um: Acesso ao Sistema. Somente pessoal treinado e autorizado pode operar ou acessar a área da automação. É proibido circular ou intervir fora da área designada. Dois: Treinamentos Mínimos Obrigatórios. NR-12 Segurança em Máquinas e Equipamentos. NR-06 Uso Correto de EPIs. Integração de Segurança. Formação Específica no Sistema Cassioli. Reciclagem anual ou a cada atualização de sistema. Três: Brigada de Emergência. É obrigatória a presença de no mínimo dois brigadistas por turno operacional.",
-                       "audioReady":  false
+                       "id":  "s-mod5",
+                       "title":  "MÓDULO 5",
+                       "file":  "audios/s-mod5.mp3",
+                       "text":  "Início do módulo 5. Instruções de trabalho, passos operacionais e E P Is.",
+                       "audioReady":  true
                    },
                    {
                        "index":  37,
-                       "id":  "s-mod5-video-area",
-                       "title":  "Preparação da Área e Ativação do Sistema",
-                       "file":  "audios/s-mod5-video-area.mp3",
-                       "text":  "Vídeo. Preparação da Área e Ativação do Sistema. Instruções de Trabalho (IT), Passos Operacionais e EPIs. Assista ao vídeo sobre a preparação da área e a ativação do sistema. Avance quando concluir.",
-                       "audioReady":  false
+                       "id":  "s-mod5-requisitos",
+                       "title":  "Requisitos Obrigatórios",
+                       "file":  "audios/s-mod5-requisitos.mp3",
+                       "text":  "Instruções de trabalho, requisitos obrigatórios. Um: acesso ao sistema. Somente pessoal treinado e autorizado pode operar ou acessar a área da automação. É proibido circular ou intervir fora da área designada. Dois: treinamentos mínimos obrigatórios. N R doze, segurança em máquinas e equipamentos. N R seis, uso correto de E P Is. Integração de segurança. Formação específica no sistema Cassioli. Reciclagem anual ou a cada atualização de sistema. Três: brigada de emergência. É obrigatória a presença de no mínimo dois brigadistas por turno operacional.",
+                       "audioReady":  true
                    },
                    {
                        "index":  38,
-                       "id":  "s-mod5-video-manutencao",
-                       "title":  "Manutenção, Finalização e Responsabilidades",
-                       "file":  "audios/s-mod5-video-manutencao.mp3",
-                       "text":  "Vídeo. Manutenção, Finalização e Responsabilidades. Instruções de Trabalho (IT), Passos Operacionais e EPIs. Assista ao vídeo sobre manutenção, finalização e responsabilidades. Avance quando concluir.",
-                       "audioReady":  false
+                       "id":  "s-mod5-video-epi",
+                       "title":  "EPIs",
+                       "file":  "audios/s-mod5-video-epi.mp3",
+                       "text":  "Vídeo. Equipamentos de proteção individual. Instruções de trabalho, passos operacionais e E P Is. Assista ao vídeo sobre os equipamentos de proteção individual. Avance quando concluir.",
+                       "audioReady":  true
                    },
                    {
                        "index":  39,
-                       "id":  "s-mod5-game",
-                       "title":  "Missão — Turno Seguro",
-                       "file":  "audios/s-mod5-game.mp3",
-                       "text":  "Missão Turno Seguro — Módulo 5. São duas etapas práticas: vista a armadura de EPIs e toque no semáforo dos quadros. Etapa 1: Vista o colaborador. Toque em todos os EPIs obrigatórios. Marque: Óculos incolores; Mangote de segurança; Perneira de segurança; Luva com proteção no dorso; Calçado com biqueira e metatarso; Uniforme refletivo. Não marque: Óculos escuros; Fone de ouvido. Etapa 2: Toque a cor certa. Ciclo automático normal: luz verde. Alerta de desvio: luz amarela. Emergência acionada: luz vermelha.",
-                       "audioReady":  false
+                       "id":  "s-mod5-it",
+                       "title":  "Instruções de Trabalho",
+                       "file":  "audios/s-mod5-it.mp3",
+                       "text":  "Instruções de trabalho, requisitos obrigatórios. Um: acesso ao sistema. Somente pessoal treinado e autorizado pode operar ou acessar a área da automação. É proibido circular ou intervir fora da área designada. Dois: treinamentos mínimos obrigatórios. N R doze, segurança em máquinas e equipamentos. N R seis, uso correto de E P Is. Integração de segurança. Formação específica no sistema Cassioli. Reciclagem anual ou a cada atualização de sistema. Três: brigada de emergência. É obrigatória a presença de no mínimo dois brigadistas por turno operacional.",
+                       "audioReady":  true
                    },
                    {
                        "index":  40,
-                       "id":  "s-mod6",
-                       "title":  "MÓDULO 6",
-                       "file":  "audios/s-mod6.mp3",
-                       "text":  "Início do Módulo 6. Empilhamento Ergonômico, Regras de Conduta e Recomendações SESMT.",
+                       "id":  "s-mod5-video-area",
+                       "title":  "Preparação da Área",
+                       "file":  "audios/s-mod5-video-area.mp3",
+                       "text":  "Vídeo. Preparação da área e ativação do sistema. Instruções de trabalho, passos operacionais e E P Is. Assista ao vídeo sobre a preparação da área e a ativação do sistema. Avance quando concluir.",
                        "audioReady":  true
                    },
                    {
                        "index":  41,
-                       "id":  "s-mod6-empilhamento",
-                       "title":  "Empilhamento Manual de Caixas em Palete",
-                       "file":  "audios/s-mod6-empilhamento.mp3",
-                       "text":  "Instruções de Atividade. Empilhamento Manual de Caixas em Palete. Padronização do procedimento de empilhamento manual de caixas em paletes, garantindo segurança, estabilidade da carga e prevenção de acidentes. Procedimento correto. Baixar somente uma caixa por vez para o palete. Posicionar a caixa de forma alinhada e estável, antes de apoiar a próxima caixa. Manter o palete em local nivelado e em boas condições. Respeitar o limite de empilhamento do produto e do palete. Utilizar técnica correta de levantamento, joelhos flexionados e coluna ereta. Caso a caixa seja pesada, solicitar apoio. Jamais ficar sobre o palete, risco de torção no tornozelo. Fique atento no seu posicionamento na baía, mantenha seus pés afastados do palete, há risco de queda de material.",
-                       "audioReady":  false
+                       "id":  "s-mod5-video-manutencao",
+                       "title":  "Manutenção e Finalização",
+                       "file":  "audios/s-mod5-video-manutencao.mp3",
+                       "text":  "Vídeo. Manutenção, finalização e responsabilidades. Instruções de trabalho, passos operacionais e E P Is. Assista ao vídeo sobre manutenção, finalização e responsabilidades. Avance quando concluir.",
+                       "audioReady":  true
                    },
                    {
                        "index":  42,
-                       "id":  "s-mod6-proibido",
-                       "title":  "O que não fazer",
-                       "file":  "audios/s-mod6-proibido.mp3",
-                       "text":  "O que não fazer. Proibido. Descer duas ou mais caixas ao mesmo tempo. Arremessar caixas sobre o palete. Montar pilhas desalinhadas ou instáveis. Trabalhar com palete danificado. Não coloque seus pés em cima do palete ou muito próximo da baía. Risco de lesão grave.",
-                       "audioReady":  false
+                       "id":  "s-mod5-picking",
+                       "title":  "Abastecimento do Picking",
+                       "file":  "audios/s-mod5-picking.mp3",
+                       "text":  "Abastecimento do picking. O processo de ressuprir, ou abastecer, o picking parece simples, mas se não for executado seguindo as regras, pode causar graves acidentes. Pessoas são prensadas entre paletes no momento do ressuprimento. Isto ocorre porque a visão do operador é obstruída por paletes, principalmente quando as pessoas estão abaixadas.",
+                       "audioReady":  true
                    },
                    {
                        "index":  43,
-                       "id":  "s-mod6-video",
-                       "title":  "Vestimentas e a Proibição de Adornos (NR 12)",
-                       "file":  "audios/s-mod6-video.mp3",
-                       "text":  "Vídeo. Vestimentas e a Proibição de Adornos (NR 12). Empilhamento Ergonômico, Regras de Conduta e Recomendações SESMT. Assista ao vídeo sobre vestimentas e a proibição de adornos. Avance quando concluir.",
-                       "audioReady":  false
+                       "id":  "s-mod5-video-picking",
+                       "title":  "Aproximação Segura no Picking",
+                       "file":  "audios/s-mod5-video-picking.mp3",
+                       "text":  "Vídeo. Protocolo de aproximação segura no picking. Instruções de trabalho, passos operacionais e E P Is. Assista ao vídeo sobre o protocolo de aproximação segura no picking. Avance quando concluir.",
+                       "audioReady":  true
                    },
                    {
                        "index":  44,
-                       "id":  "s-mod6-video2",
-                       "title":  "Recomendações Práticas de Segurança do SESMT",
-                       "file":  "audios/s-mod6-video2.mp3",
-                       "text":  "Vídeo. Recomendações Práticas de Segurança do SESMT. Empilhamento Ergonômico, Regras de Conduta e Recomendações SESMT. Assista ao vídeo sobre as recomendações práticas de segurança do SESMT. Avance quando concluir.",
-                       "audioReady":  false
+                       "id":  "s-mod5-aproximacao",
+                       "title":  "Regra Inicial de Ouro",
+                       "file":  "audios/s-mod5-aproximacao.mp3",
+                       "text":  "A regra inicial de ouro. Nunca se aproxime de uma empilhadeira em movimento. Mantenha-se à distância segura de quatro metros e faça contato visual com o condutor para chamar sua atenção. O pedestre só pode se aproximar e iniciar a conversa após o operador realizar rigorosamente estes três passos. Passo 1, parada total: a empilhadeira deve estar completamente estática. Passo 2, garfos no solo: os garfos devem ser baixados e deitados planos contra o chão. Passo 3, desligamento: o motor deve ser desligado e a chave de ignição removida pelo operador.",
+                       "audioReady":  true
                    },
                    {
                        "index":  45,
-                       "id":  "s-mod6-suporte",
-                       "title":  "Suporte e Contato",
-                       "file":  "audios/s-mod6-suporte.mp3",
-                       "text":  "Suporte e Contato. Em caso de dúvidas operacionais, problemas técnicos ou necessidade de orientação sobre procedimentos de segurança, utilize os canais oficiais. Portal Leroy Merlin: acesse lmb ponto service-now ponto com para abertura de chamados, consulta de procedimentos e registro de ocorrências operacionais. Portal 3PIR: disponível via link na navegação superior do sistema. Ponto de acesso para informações complementares e documentação técnica. Suporte Técnico: canal dedicado ao atendimento de dúvidas e problemas operacionais. Acionado para situações que não constam nos procedimentos padrão. Instruções SESMT: fonte oficial dos procedimentos de segurança homologados. Consultar sempre em caso de dúvida sobre normas e práticas de trabalho seguro.",
-                       "audioReady":  false
-                   },
-                   {
-                       "index":  45,
-                       "id":  "s-mod6-guia",
-                       "title":  "Guia Rápido de Segurança do Pit Stop",
-                       "file":  "audios/s-mod6-guia.mp3",
-                       "text":  "Guia rápido de segurança do Pit Stop. Regras fundamentais para a baia de abastecimento de GLP e baterias. A área de abastecimento é uma das zonas de maior risco químico e de explosão do armazém. Três regras de acesso e operação. Primeira: permitido apenas um equipamento por vez dentro da baia. Aguarde a sua vez na fila recuada. Segunda: o operador deve apenas estacionar, desligar a máquina e puxar o freio. A troca do cilindro de GLP ou a conexão das baterias é de responsabilidade exclusiva do técnico abastecedor habilitado. Terceira: respeite os avisos de piso e mantenha as saídas do Pit Stop sempre totalmente livres. Fontes de ignição proibidas, tolerância zero. Proibido fumar ou portar qualquer chama exposta. Proibido manusear celulares ou qualquer dispositivo eletrônico ligado, pelo perigo de faíscas estáticas e distração.",
+                       "id":  "s-mod5-doca",
+                       "title":  "Protocolo da Doca",
+                       "file":  "audios/s-mod5-doca.mp3",
+                       "text":  "Protocolo crítico na doca. Durante todo o processo de carregamento ou descarregamento na doca, um protocolo crítico deve ser seguido para que o veículo não saia antes da hora e ninguém entre na área de manobra. As chaves do caminhão nunca devem permanecer na ignição ou sob a posse do motorista. Elas devem ser recolhidas e mantidas sob a guarda da equipe de expedição. O motorista externo deve aguardar o fim da operação permanecendo de forma contínua dentro da área segura demarcada e protegida para pedestres. Ele é expressamente proibido de caminhar pela red zone ou pela baia operacional enquanto as empilhadeiras realizam as manobras de carga. Organização gera segurança.",
                        "audioReady":  true
                    },
                    {
                        "index":  46,
-                       "id":  "s-mod6-video3",
-                       "title":  "Manobra de Abastecimento pelo Técnico",
-                       "file":  "audios/s-mod6-video3.mp3",
-                       "text":  "Vídeo. Manobra de Abastecimento pelo Técnico. Empilhamento Ergonômico, Regras de Conduta e Recomendações SESMT. Assista ao vídeo sobre a manobra de abastecimento pelo técnico. Avance quando concluir.",
+                       "id":  "s-mod5-video-garfos",
+                       "title":  "Garfos Elevados",
+                       "file":  "audios/s-mod5-video-garfos.mp3",
+                       "text":  "Vídeo. Riscos de garfos elevados e movimentações práticas. Instruções de trabalho, passos operacionais e E P Is. Assista ao vídeo sobre riscos de garfos elevados e movimentações práticas. Avance quando concluir.",
                        "audioReady":  true
                    },
                    {
                        "index":  47,
+                       "id":  "s-mod5-game",
+                       "title":  "Missão Turno Seguro",
+                       "file":  "audios/s-mod5-game.mp3",
+                       "text":  "Missão turno seguro, módulo 5. São duas etapas práticas. Etapa 1: vista o colaborador. Toque em todos os E P Is obrigatórios. Marque: óculos incolores, mangote de segurança, perneira de segurança, luva com proteção no dorso, calçado com biqueira e metatarso, uniforme refletivo. Não marque: óculos escuros e fone de ouvido. Armadura completa: óculos incolores, mangotes, perneiras, luvas com dorso, calçado com biqueira de aço e protetor de metatarso e uniforme refletivo. Faltar qualquer um impede a operação. Etapa 2: toque a cor certa. Verde: ciclo automático normal. Amarela: alerta de desvio. Vermelha: emergência acionada. Verde é ciclo normal. Amarela é desvio. Vermelha é emergência. Intervenção só da manutenção com N R 10, N R doze e L O T O.",
+                       "audioReady":  true
+                   },
+                   {
+                       "index":  48,
+                       "id":  "s-mod6",
+                       "title":  "MÓDULO 6",
+                       "file":  "audios/s-mod6.mp3",
+                       "text":  "Início do módulo 6. Empilhamento ergonômico, regras de conduta e recomendações S E S M T.",
+                       "audioReady":  true
+                   },
+                   {
+                       "index":  49,
+                       "id":  "s-mod6-empilhamento",
+                       "title":  "Empilhamento Manual de Caixas em Palete",
+                       "file":  "audios/s-mod6-empilhamento.mp3",
+                       "text":  "Instruções de atividade. Empilhamento manual de caixas em palete. Padronização do procedimento de empilhamento manual de caixas em paletes, garantindo segurança, estabilidade da carga e prevenção de acidentes. Procedimento correto. Baixar somente uma caixa por vez para o palete. Posicionar a caixa de forma alinhada e estável, antes de apoiar a próxima caixa. Manter o palete em local nivelado e em boas condições. Respeitar o limite de empilhamento do produto e do palete. Utilizar técnica correta de levantamento, joelhos flexionados e coluna ereta. Caso a caixa seja pesada, solicitar apoio. Jamais ficar sobre o palete, risco de torção no tornozelo. Fique atento no seu posicionamento na baía, mantenha seus pés afastados do palete, há risco de queda de material.",
+                       "audioReady":  true
+                   },
+                   {
+                       "index":  50,
+                       "id":  "s-mod6-proibido",
+                       "title":  "O que não fazer",
+                       "file":  "audios/s-mod6-proibido.mp3",
+                       "text":  "O que não fazer. Proibido. Descer duas ou mais caixas ao mesmo tempo. Arremessar caixas sobre o palete. Montar pilhas desalinhadas ou instáveis. Trabalhar com palete danificado. Não coloque seus pés em cima do palete ou muito próximo da baía. Risco de lesão grave.",
+                       "audioReady":  true
+                   },
+                   {
+                       "index":  51,
+                       "id":  "s-mod6-video",
+                       "title":  "Vestimentas e a Proibição de Adornos (NR 12)",
+                       "file":  "audios/s-mod6-video.mp3",
+                       "text":  "Vídeo. Vestimentas e a proibição de adornos, N R doze. Empilhamento ergonômico, regras de conduta e recomendações S E S M T. Assista ao vídeo sobre vestimentas e a proibição de adornos. Avance quando concluir.",
+                       "audioReady":  true
+                   },
+                   {
+                       "index":  52,
+                       "id":  "s-mod6-video2",
+                       "title":  "Recomendações Práticas de Segurança do SESMT",
+                       "file":  "audios/s-mod6-video2.mp3",
+                       "text":  "Vídeo. Recomendações práticas de segurança do S E S M T. Empilhamento ergonômico, regras de conduta e recomendações S E S M T. Assista ao vídeo sobre as recomendações práticas de segurança do S E S M T. Avance quando concluir.",
+                       "audioReady":  true
+                   },
+                   {
+                       "index":  53,
+                       "id":  "s-mod6-suporte",
+                       "title":  "Suporte e Contato",
+                       "file":  "audios/s-mod6-suporte.mp3",
+                       "text":  "Suporte e contato. Em caso de dúvidas operacionais, problemas técnicos ou necessidade de orientação sobre procedimentos de segurança, utilize os canais oficiais. Portal Leroy Merlin: acesse lmb ponto service-now ponto com para abertura de chamados, consulta de procedimentos e registro de ocorrências operacionais. Portal 3 P I R: disponível via link na navegação superior do sistema. Ponto de acesso para informações complementares e documentação técnica. Suporte técnico: canal dedicado ao atendimento de dúvidas e problemas operacionais. Acionado para situações que não constam nos procedimentos padrão. Instruções S E S M T: fonte oficial dos procedimentos de segurança homologados. Consultar sempre em caso de dúvida sobre normas e práticas de trabalho seguro.",
+                       "audioReady":  true
+                   },
+                   {
+                       "index":  54,
+                       "id":  "s-mod6-guia",
+                       "title":  "Guia Rápido de Segurança do Pit Stop",
+                       "file":  "audios/s-mod6-guia.mp3",
+                       "text":  "Guia rápido de segurança do pit stop. Regras fundamentais para a baia de abastecimento de G L P e baterias. A área de abastecimento é uma das zonas de maior risco químico e de explosão do armazém. Três regras de acesso e operação. Primeira: permitido apenas um equipamento por vez dentro da baia. Aguarde a sua vez na fila recuada. Segunda: o operador deve apenas estacionar, desligar a máquina e puxar o freio. A troca do cilindro de G L P ou a conexão das baterias é de responsabilidade exclusiva do técnico abastecedor habilitado. Terceira: respeite os avisos de piso e mantenha as saídas do pit stop sempre totalmente livres. Fontes de ignição proibidas, tolerância zero. Proibido fumar ou portar qualquer chama exposta. Proibido manusear celulares ou qualquer dispositivo eletrônico ligado, pelo perigo de faíscas estáticas e distração.",
+                       "audioReady":  true
+                   },
+                   {
+                       "index":  55,
+                       "id":  "s-mod6-video3",
+                       "title":  "Manobra de Abastecimento pelo Técnico",
+                       "file":  "audios/s-mod6-video3.mp3",
+                       "text":  "Vídeo. Manobra de abastecimento pelo técnico. Empilhamento ergonômico, regras de conduta e recomendações S E S M T. Assista ao vídeo sobre a manobra de abastecimento pelo técnico. Avance quando concluir.",
+                       "audioReady":  true
+                   },
+                   {
+                       "index":  56,
                        "id":  "s-mod6-zonas",
                        "title":  "Zoneamento de Risco do Armazém",
                        "file":  "audios/s-mod6-zonas.mp3",
@@ -397,43 +461,43 @@ window.__AUDIO_NARRATION__ = {
                        "audioReady":  true
                    },
                    {
-                       "index":  48,
+                       "index":  57,
                        "id":  "s-mod6-video4",
                        "title":  "Condições Adversas de Luz e Ofuscamento",
                        "file":  "audios/s-mod6-video4.mp3",
-                       "text":  "Vídeo. Condições Adversas de Luz e Ofuscamento. Empilhamento Ergonômico, Regras de Conduta e Recomendações SESMT. Assista ao vídeo sobre condições adversas de luz e ofuscamento. Avance quando concluir.",
+                       "text":  "Vídeo. Condições adversas de luz e ofuscamento. Empilhamento ergonômico, regras de conduta e recomendações S E S M T. Assista ao vídeo sobre condições adversas de luz e ofuscamento. Avance quando concluir.",
                        "audioReady":  true
                    },
                    {
-                       "index":  49,
+                       "index":  58,
                        "id":  "s-mod6-video5",
                        "title":  "Comportamento e a Tolerância Zero a Brincadeiras",
                        "file":  "audios/s-mod6-video5.mp3",
-                       "text":  "Vídeo. Comportamento e a Tolerância Zero a Brincadeiras. Empilhamento Ergonômico, Regras de Conduta e Recomendações SESMT. Assista ao vídeo sobre comportamento e a tolerância zero a brincadeiras. Avance quando concluir.",
+                       "text":  "Vídeo. Comportamento e a tolerância zero a brincadeiras. Empilhamento ergonômico, regras de conduta e recomendações S E S M T. Assista ao vídeo sobre comportamento e a tolerância zero a brincadeiras. Avance quando concluir.",
                        "audioReady":  true
                    },
                    {
-                       "index":  50,
+                       "index":  59,
                        "id":  "s-mod6-video6",
                        "title":  "Compromisso Coletivo e Encerramento",
                        "file":  "audios/s-mod6-video6.mp3",
-                       "text":  "Vídeo. Compromisso Coletivo e Encerramento. Empilhamento Ergonômico, Regras de Conduta e Recomendações SESMT. Assista ao vídeo de compromisso coletivo e encerramento. Avance quando concluir.",
+                       "text":  "Vídeo. Compromisso coletivo e encerramento. Empilhamento ergonômico, regras de conduta e recomendações S E S M T. Assista ao vídeo de compromisso coletivo e encerramento. Avance quando concluir.",
                        "audioReady":  true
                    },
                    {
-                       "index":  51,
+                       "index":  60,
                        "id":  "s-mod6-game",
                        "title":  "Missão — Turno no Palete",
                        "file":  "audios/s-mod6-game.mp3",
-                       "text":  "Missão Turno no Palete — Módulo 6. São quatro etapas práticas: empilhamento, o que não fazer, vestimentas e adornos, e recomendações do SESMT. Etapa 1: Empilhamento no palete. Toque na prática correta para baixar caixas no palete. Regra correta: Uma caixa por vez, alinhada e estável, palete nivelado. Opção incorreta: Duas ou mais caixas de uma vez. Opção incorreta: Arremessar a caixa sobre o palete. Etapa 2: O que não fazer. Marque tudo o que é proibido no empilhamento. Marque: Subir no palete; palete danificado; pilhas instáveis; pés próximos da baia; arremessar caixas. Não marque: Joelhos flexionados e coluna ereta. Etapa 3: Vestimentas e adornos. Marque tudo o que é proibido na área produtiva. Marque: Colar, pulseira, relógio, anel, aliança, brinco e cabelo solto. Não marque: Cabelo preso e mangas ajustadas. Etapa 4: Recomendações do SESMT. Marque as práticas corretas. Marque: Local limpo e checagem visual; garra a vácuo no máximo duas caixas; trocar cinta gasta; palete desalinhado chamar liderança; cortar fitas com estilete. Não marque: Operador faz manutenção sozinho.",
-                       "audioReady":  false
+                       "text":  "Desafio do módulo 6. Empilhamento, vestimentas e recomendações S E S M T. Etapa 1: empilhamento no palete. Toque na prática correta. Correta: uma caixa por vez, alinhada e estável, palete nivelado. Incorretas: duas ou mais caixas de uma vez, ou arremessar a caixa sobre o palete. Só uma caixa por vez, joelhos flexionados e coluna ereta. Caixa pesada: peça apoio. Etapa 2: o que não fazer. Marque o que é proibido: subir ou colocar os pés em cima do palete, trabalhar com palete danificado, montar pilhas desalinhadas ou instáveis, pés muito próximos da baia, arremessar caixas. Não marque: joelhos flexionados e coluna ereta. Etapa 3: vestimentas e adornos, N R doze. Proibido: colar, corrente ou pulseira, relógio ou smartwatch, anel, aliança ou brinco exposto, cabelo comprido solto. Permitido: cabelo preso com touca ou elástico, mangas e bainhas ajustadas. Zero adornos. Enroscamento em peças móveis pode amputar. Etapa 4: recomendações do S E S M T. Práticas corretas: local limpo e checagem visual no início do turno, garra a vácuo no máximo duas caixas por ciclo, trocar cinta com ranhura ou desgaste, palete desalinhado chamar a liderança, cortar fitas plásticas com estilete. Incorreto: operador faz manutenção na máquina sozinho. Nunca faça manutenção por conta própria.",
+                       "audioReady":  true
                    },
                    {
-                       "index":  52,
+                       "index":  61,
                        "id":  "s-fim",
                        "title":  "Treinamento — Concluído",
                        "file":  "audios/s-fim.mp3",
-                       "text":  "Parabéns. Você concluiu o treinamento NR 12. Por mérito, dedicação e compromisso com a segurança, você percorreu os seis módulos e demonstrou responsabilidade com a sua vida e com a vida dos seus colegas. A segurança é um direito de todos e um dever de cada um. Continue fazendo a sua parte.",
+                       "text":  "Parabéns. Você concluiu o treinamento N R doze. Por mérito, dedicação e compromisso com a segurança, você percorreu os seis módulos e demonstrou responsabilidade com a sua vida e com a vida dos seus colegas. A segurança é um direito de todos e um dever de cada um. Continue fazendo a sua parte.",
                        "audioReady":  true
                    }
                ]
