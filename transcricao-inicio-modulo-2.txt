@@ -1,0 +1,131 @@
+TRANSCRIÇÃO — NR 12 SEGURANÇA NA OPERAÇÃO DE MÁQUINAS
+TecnoCursos / Leroy Merlin
+Do início do treinamento até o encerramento do Módulo 2
+
+========================================================================
+ABERTURA
+========================================================================
+
+------------------------------------------------------------------------
+S1 — Capa
+------------------------------------------------------------------------
+Módulo de Treinamento. Segurança do Trabalho. NR 12 — Segurança na Operação de Máquinas. Sistema de Movimentação e Armazenagem Automática de Pallets — Entrada, Saída, Picking e Picking Reverso — WMS. São seis módulos, conteúdo completo, cento por cento online.
+
+------------------------------------------------------------------------
+S2 — Vídeo: Bem-vindo ao Treinamento
+------------------------------------------------------------------------
+Apresentação. Bem-vindo ao Treinamento. NR 12. Assista ao vídeo de introdução à NR 12 e o nosso objetivo. Avance quando concluir.
+
+------------------------------------------------------------------------
+S6 — Sumário: Conteúdo Programático
+------------------------------------------------------------------------
+Sumário. Conteúdo Programático. Módulo 1: Contexto Legal, Introdução e Fluxos do Sistema Automatizado. Módulo 2: Padrões Técnicos de Cargas e Triagem Visual de Pallets. Módulo 3: Componentes, Dispositivos de Segurança e Procedimento LOTO. Módulo 4: Fatores de Risco, Sensores e Cuidados com o Equipamento. Módulo 5: Instruções de Trabalho (IT), Passos Operacionais e EPIs. Módulo 6: Empilhamento Ergonômico, Regras de Conduta e Recomendações SESMT.
+
+========================================================================
+MÓDULO 1 — Contexto Legal, Introdução e Fluxos do Sistema Automatizado
+========================================================================
+
+------------------------------------------------------------------------
+S-MOD1 — Início do Módulo 1
+------------------------------------------------------------------------
+Início do Módulo 1. Contexto Legal, Introdução e Fluxos do Sistema Automatizado.
+
+------------------------------------------------------------------------
+S2B — Vídeo: Responsabilidades Compartilhadas: A Empresa e Você
+------------------------------------------------------------------------
+Vídeo. Responsabilidades Compartilhadas: A Empresa e Você. Contexto Legal, Introdução e Fluxos do Sistema Automatizado. Assista ao vídeo sobre as responsabilidades compartilhadas entre a empresa e você. Avance quando concluir.
+
+------------------------------------------------------------------------
+S2B2 — Vídeo: Introdução ao Sistema Automatizado de Cajamar
+------------------------------------------------------------------------
+Vídeo. Introdução ao Sistema Automatizado de Cajamar. Contexto Legal, Introdução e Fluxos do Sistema Automatizado. Assista ao vídeo de introdução ao sistema automatizado de Cajamar. Avance quando concluir.
+
+------------------------------------------------------------------------
+S2B3 — Vídeo: A Rota do Pallet: Entrada, Saída e Picking
+------------------------------------------------------------------------
+Vídeo. A Rota do Pallet: Entrada, Saída e Picking. Contexto Legal, Introdução e Fluxos do Sistema Automatizado. Assista ao vídeo sobre a rota do pallet: entrada, saída e picking. Avance quando concluir.
+
+------------------------------------------------------------------------
+S2D — Dimensionamento e Capacidade Operacional
+------------------------------------------------------------------------
+Dimensionamento e Capacidade Operacional. Este sistema automatizado suporta a alta demanda do CD Cajamar. O equipamento foi projetado sob medida e todos os fluxos foram dimensionados prevendo a pior condição de consolidação de dados da Leroy Merlin, operando de forma simultânea. São seis transelevadores para armazenagem automática de paletes, seis baias operacionais de picking mais uma baia dedicada a avarias, e dois carros duplos responsáveis pelos fluxos de entrada e saída. O fluxo de entrada suporta de 29 a 128 paletes por hora. O fluxo de saída varia de 5 a 132 paletes por hora, o que garante alta flexibilidade para atender qualquer pico de expedição com total segurança.
+
+------------------------------------------------------------------------
+S2E — Quiz NR 12 — Módulo 1
+------------------------------------------------------------------------
+Quiz NR 12 — Módulo 1. Contexto Legal, Introdução e Fluxos do Sistema Automatizado. Responda a quatro perguntas rápidas sobre os conceitos do módulo e valide seu aprendizado.
+
+Pergunta 1: Segundo a NR 12, a segurança no trabalho é uma responsabilidade compartilhada. Qual afirmação está correta?
+Alternativa A: Só a Leroy Merlin é responsável; o trabalhador apenas opera o equipamento.
+Alternativa B: A empresa fornece EPIs, treinamentos e mantém o maquinário; o trabalhador segue as orientações, participa das capacitações e comunica falhas ao superior.
+Alternativa C: O trabalhador pode alterar proteções mecânicas por conta própria, desde que tenha experiência.
+Resposta correta: alternativa B. A NR 12 define um dever mútuo. É proibido fazer manutenção ou alterar proteções por conta própria. Se um dispositivo de segurança falhar, comunique o superior imediatamente.
+
+Pergunta 2: Como é composto o Sistema de Movimentação e Armazenagem Automática de Pallets no CD Cajamar?
+Alternativa A: Estrutura autoportante a céu aberto, com 4 transelevadores no pé-direito alto.
+Alternativa B: Estrutura de armazenagem não autoportante, em área coberta, com 6 transelevadores na zona de Unit Load, fora da área do pé-direito alto.
+Alternativa C: Apenas esteiras manuais e 2 empilhadeiras no picking.
+Resposta correta: alternativa B. O sistema é integrado ao WMS. Os 6 transelevadores estocam e retiram paletes com precisão nas prateleiras industriais.
+
+Pergunta 3: Qual é o caminho do palete no sistema, da entrada até a expedição?
+Alternativa A: O palete entra direto nas prateleiras, sem verificação de peso ou dimensões.
+Alternativa B: Check-in físico e lógico, esteiras, 6 baias de picking + 1 baia de devoluções e avarias, 2 carros duplos e 2 saídas para paletes pickeados.
+Alternativa C: Há apenas 3 baias de picking e um único carro para toda a movimentação.
+Resposta correta: alternativa B. Tudo começa no controle de peso e dimensões. Depois, 6 baias operacionais + 1 de avarias e 2 carros duplos fazem a movimentação de entrada e saída.
+
+Pergunta 4: Quais são as capacidades nominais de entrada e saída do sistema automatizado?
+Alternativa A: Entrada de 10 a 40 paletes/hora e saída fixa de 80 paletes/hora.
+Alternativa B: Entrada de 29 a 128 paletes/hora e saída de 5 a 132 paletes/hora, dimensionadas para o pior cenário da Leroy Merlin.
+Alternativa C: Entrada e saída iguais, sempre 100 paletes/hora, independentemente do tipo de palete.
+Resposta correta: alternativa B. O sistema foi projetado sob medida para o CD Cajamar, inclusive na pior condição de consolidação de dados, operando de forma simultânea.
+
+========================================================================
+MÓDULO 2 — Padrões Técnicos de Cargas e Triagem Visual de Pallets
+========================================================================
+
+------------------------------------------------------------------------
+S-MOD2 — Início do Módulo 2
+------------------------------------------------------------------------
+Início do Módulo 2. Padrões Técnicos de Cargas e Triagem Visual de Pallets.
+
+------------------------------------------------------------------------
+S-MOD2-VIDEO — Vídeo: Limites de Carga
+------------------------------------------------------------------------
+Vídeo. Limites de Carga. Padrões Técnicos de Cargas e Triagem Visual de Pallets. Assista ao vídeo sobre limites de carga. Avance quando concluir.
+
+------------------------------------------------------------------------
+S-MOD2-PALLETS — Tipos de Pallet
+------------------------------------------------------------------------
+Tipos de Pallet. O Pallet Escravo tem peso próprio de 50 quilos. O OneWay tipo A suporta até 1.950 quilos e é mais robusto, com tábuas de topo mais grossas e largas. O OneWay tipo B suporta até 950 quilos, com estrutura simplificada para cargas leves. Na simulação, o palete A é para alta resistência, cerca de 1.500 quilos, e o palete B para cargas leves, cerca de 500 quilos, em que o volume importa mais que o peso.
+
+------------------------------------------------------------------------
+S-MOD2-VIDEO2 — Vídeo: Pallet PBR: O Modelo de Automação
+------------------------------------------------------------------------
+Vídeo. Pallet PBR: O Modelo de Automação. Padrões Técnicos de Cargas e Triagem Visual de Pallets. Assista ao vídeo sobre o pallet PBR, o modelo de automação. Avance quando concluir.
+
+------------------------------------------------------------------------
+S-MOD2-VIDEO-TRIAGEM — Vídeo: Proibições Absolutas na Triagem
+------------------------------------------------------------------------
+Vídeo. Proibições Absolutas na Triagem. Padrões Técnicos de Cargas e Triagem Visual de Pallets. Assista ao vídeo sobre as proibições absolutas na triagem. Avance quando concluir.
+
+------------------------------------------------------------------------
+S-MOD2-TRIAGEM — Defeitos Estruturais na Triagem
+------------------------------------------------------------------------
+Defeitos Estruturais na Triagem. A triagem de pallets é etapa crítica. Pallets com defeitos estruturais não podem ser inseridos no sistema automatizado sob nenhuma circunstância. Toco quebrado: comprometimento da base de apoio causa instabilidade nos garfos dos transelevadores. Tábua quebrada ou irregular: superfície irregular impede assentamento correto da carga e aumenta risco de queda. Empenado ou espaçamento elevado: deformações estruturais causam travamento mecânico e parada não programada do sistema. Tábua superior irregular: superfície de apoio irregular compromete estabilidade da carga e pode causar desabamento. Risco principal: desabamento de cargas, instabilidade durante transporte automático e queda de produtos com risco de dano patrimonial e lesão a pessoas.
+
+------------------------------------------------------------------------
+S-MOD2-GAME — Desafio: Verdadeiro ou Falso
+------------------------------------------------------------------------
+Desafio Módulo 2 — Verdadeiro ou Falso. Padrões Técnicos de Cargas e Triagem Visual de Pallets. Responda quatro afirmações sobre limites de carga, Pallet PBR, proibições na triagem e defeitos estruturais.
+
+Afirmação 1: O limite dimensional máximo da carga é de 1.200 mm de largura, 1.200 mm de comprimento e 1.400 mm de altura, e o filme stretch é obrigatório em todas as cargas.
+Resposta correta: Verdadeiro. Verdadeiro! Se a carga ultrapassar essas dimensões, não é aceita pelo sistema automático. O filme stretch é obrigatório antes de entrar nas esteiras. O conjunto pode ter no máximo 1.950 kg.
+
+Afirmação 2: No Pallet PBR, o limite máximo é de 1.500 kg, a marcação visual deve ser verde ou vermelha e o empilhamento de pallets vazios não pode passar de 10 unidades.
+Resposta correta: Verdadeiro. Verdadeiro! Além disso, todas as tábuas de madeira precisam estar íntegras, sem rachadura, quebra ou fragmentação.
+
+Afirmação 3: Fita adesiva, fitilhos de amarração e plásticos pendurados no pallet são permitidos, desde que em pequena quantidade.
+Resposta correta: Falso. Falso! São três proibições absolutas. Esses materiais podem se prender nos roletes, eixos ou sensores e paralisar todo o sistema.
+
+Afirmação 4: Pallets com toco quebrado, tábua irregular, empenamento ou espaçamento elevado não podem entrar no sistema sob nenhuma circunstância, pois há risco de desabamento e lesões.
+Resposta correta: Verdadeiro. Verdadeiro! A triagem visual é a primeira barreira de defesa. Defeitos estruturais podem causar queda de carga, prejuízo e acidentes graves.
